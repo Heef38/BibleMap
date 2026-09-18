@@ -74,10 +74,12 @@ interface Placed<T> {
   x0: number
   x1: number
   lane: number
+  /** the label sits to the left of the mark (it would run off the right edge otherwise) */
+  flip?: boolean
 }
 
 /** Greedy interval packing into lanes; anything past maxLanes lands in the last lane unlabeled. */
-function packLanes<T>(spans: { ref: T; x0: number; x1: number }[], maxLanes: number): { placed: Placed<T>[]; lanes: number; overflow: Set<T> } {
+function packLanes<T>(spans: { ref: T; x0: number; x1: number; flip?: boolean }[], maxLanes: number): { placed: Placed<T>[]; lanes: number; overflow: Set<T> } {
   const sorted = [...spans].sort((a, b) => a.x0 - b.x0 || a.x1 - b.x1)
   const laneEnds: number[] = []
   const placed: Placed<T>[] = []
@@ -98,7 +100,9 @@ function packLanes<T>(spans: { ref: T; x0: number; x1: number }[], maxLanes: num
   return { placed, lanes: laneEnds.length, overflow }
 }
 
-export default function Timeline({ items, bands = [], bins = [], lanes, initialDomain, focusDomain, binLabel = 'verses', selectedId, onItem, onBand, onBin, onLane, maxItemLanes = 10 }: Props) {
+const NONE: never[] = []
+
+export default function Timeline({ items, bands = NONE, bins = NONE, lanes, initialDomain, focusDomain, binLabel = 'verses', selectedId, onItem, onBand, onBin, onLane, maxItemLanes = 10 }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null)
@@ -119,7 +123,7 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
     let hi = Math.max(...ys)
     const pad = Math.max(1, (hi - lo) * 0.03)
     lo -= pad
-    hi += pad
+    hi += pad * 1.5
     return [lo, hi]
   }, [items, bands, bins, lanes])
 
@@ -127,10 +131,13 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
   const x = useMemo(() => transform.rescaleX(baseX), [transform, baseX])
 
   const itemSpan = (i: TimelineItem) => {
-    const x0 = x(i.year)
-    const barEnd = i.end !== undefined ? x(i.end) : x0
+    const cx = x(i.year)
+    const barEnd = i.end !== undefined ? x(i.end) : cx
+    const markEnd = Math.max(barEnd, cx)
     const labelW = Math.min(i.label.length * LABEL_PX + 18, 200)
-    return { ref: i, x0: x0 - 6, x1: Math.max(barEnd, x0) + labelW }
+    // Flip the label to the left when it would run off the right edge and there is room for it.
+    const flip = markEnd + labelW > width - 4 && cx - labelW - 6 >= GUTTER
+    return flip ? { ref: i, x0: cx - labelW - 6, x1: markEnd + 6, flip } : { ref: i, x0: cx - 6, x1: markEnd + labelW, flip }
   }
 
   // Lay out bands and items against the current scale.
@@ -146,7 +153,7 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
     if (lanes) return { placed: [] as Placed<TimelineItem>[], lanes: 0, overflow: new Set<TimelineItem>() }
     return packLanes(items.map(itemSpan), maxItemLanes)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items, x, maxItemLanes, lanes])
+  }, [items, x, maxItemLanes, lanes, width])
   const laneLayout = useMemo(() => {
     if (!lanes) return []
     let top = 0
@@ -208,7 +215,10 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
         if (e.type === 'wheel') return (e as WheelEvent).ctrlKey || (e as WheelEvent).metaKey
         return !(e as MouseEvent).button
       })
-      .on('zoom', (e) => setTransform(e.transform))
+      .on('zoom', (e) => {
+        if (e.sourceEvent) userMoved.current = true
+        setTransform(e.transform)
+      })
     zoomRef.current = zoom
     const sel = d3.select(svg)
     sel.call(zoom)
@@ -223,15 +233,19 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
     return d3.zoomIdentity.translate(GUTTER - baseX(a) * k, 0).scale(k)
   }
 
-  // Apply the initial domain once the width is known.
+  // Apply the opening domain once the width is known, and again whenever the data (and so the
+  // full domain) changes underneath it, until the user moves the view themselves.
   const initialApplied = useRef(false)
+  const userMoved = useRef(false)
   useEffect(() => {
-    if (initialApplied.current || width <= 0 || !zoomRef.current || !svgRef.current) return
+    if (width <= 0 || !zoomRef.current || !svgRef.current || userMoved.current) return
     initialApplied.current = true
-    if (!initialDomain) return
-    d3.select(svgRef.current).call(zoomRef.current.transform, transformFor(initialDomain[0], initialDomain[1]))
+    const target = initialDomain ? transformFor(initialDomain[0], initialDomain[1]) : d3.zoomIdentity
+    const cur = d3.zoomTransform(svgRef.current)
+    if (Math.abs(cur.k - target.k) < 1e-6 && Math.abs(cur.x - target.x) < 0.5 && Math.abs(cur.y - target.y) < 0.5) return
+    d3.select(svgRef.current).call(zoomRef.current.transform, target)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [width, initialDomain, fullDomain, baseX])
+  }, [width, initialDomain, fullDomain, baseX, GUTTER])
 
   const focusKey = focusDomain ? `${focusDomain[0]}:${focusDomain[1]}` : ''
   const lastFocus = useRef<string | null>(null)
@@ -243,6 +257,7 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
     }
     if (lastFocus.current === focusKey) return
     lastFocus.current = focusKey
+    userMoved.current = true
     const sel = d3.select(svgRef.current).transition().duration(400)
     if (!focusDomain) {
       sel.call(zoomRef.current.transform, d3.zoomIdentity)
@@ -254,23 +269,26 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
 
   const zoomBy = (f: number) => {
     if (!svgRef.current || !zoomRef.current) return
+    userMoved.current = true
     d3.select(svgRef.current).transition().duration(250).call(zoomRef.current.scaleBy, f)
   }
   const reset = () => {
     if (!svgRef.current || !zoomRef.current) return
+    userMoved.current = true
     d3.select(svgRef.current).transition().duration(300).call(zoomRef.current.transform, d3.zoomIdentity)
   }
   const zoomTo = (a: number, b: number) => {
     if (!svgRef.current || !zoomRef.current) return
+    userMoved.current = true
     const pad = Math.max(1, (b - a) * 0.08)
     d3.select(svgRef.current).transition().duration(400).call(zoomRef.current.transform, transformFor(a - pad, b + pad))
   }
 
-  const ticks = useMemo(() => x.ticks(Math.max(2, Math.floor((width - GUTTER) / 110))).filter((t) => Number.isInteger(t)), [x, width, GUTTER])
+  const ticks = useMemo(() => x.ticks(Math.max(2, Math.floor((width - GUTTER) / 110))).filter((t) => Number.isInteger(t) && x(t) >= GUTTER + 28 && x(t) <= width - 28), [x, width, GUTTER])
   const showTip = (e: PointerEvent, content: TipState['content']) => setTip({ x: e.clientX, y: e.clientY, content })
   const yearsLabel = (a: number, b?: number) => (b !== undefined && Math.round(b) !== Math.round(a) ? `${formatYear(Math.round(a))} – ${formatYear(Math.round(b))}` : formatYear(Math.round(a)))
 
-  const renderItem = (it: TimelineItem, y: number, hidden: boolean) => {
+  const renderItem = (it: TimelineItem, y: number, hidden: boolean, flip = false) => {
     const cx = x(it.year)
     const color = it.color ?? 'var(--series-1)'
     const barEnd = it.end !== undefined ? x(it.end) : cx
@@ -278,6 +296,7 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
     const selected = selectedId === it.id
     const maxChars = 30
     const label = it.label.length > maxChars ? `${it.label.slice(0, maxChars - 1)}…` : it.label
+    const labelW = Math.min(it.label.length * LABEL_PX + 10, 200)
     return (
       <g
         key={it.id}
@@ -299,14 +318,14 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
         }
         onPointerLeave={() => setTip(null)}
       >
-        <rect x={cx - 8} y={y - ITEM_H / 2} width={Math.max(16, barEnd - cx + 16) + (hidden ? 0 : Math.min(it.label.length * LABEL_PX + 10, 200))} height={ITEM_H} fill="transparent" />
+        <rect x={flip && !hidden ? cx - 8 - labelW : cx - 8} y={y - ITEM_H / 2} width={Math.max(16, barEnd - cx + 16) + (hidden ? 0 : labelW)} height={ITEM_H} fill="transparent" />
         {isBar ? (
           <rect x={cx} y={y - 4} width={barEnd - cx} height={8} rx={3} fill={color} opacity={0.85} stroke={selected ? 'var(--ink)' : 'var(--surface)'} strokeWidth={selected ? 1.5 : 1} />
         ) : (
           <circle cx={cx} cy={y} r={selected ? 6 : 5} fill={color} stroke={selected ? 'var(--ink)' : 'var(--surface)'} strokeWidth={2} />
         )}
         {!hidden && (
-          <text x={(isBar ? barEnd : cx) + 8} y={y + 3.5} fontSize={11} fill="var(--ink)" fontWeight={selected ? 600 : 400} style={{ paintOrder: 'stroke', stroke: 'var(--surface)', strokeWidth: 3, strokeLinejoin: 'round' }}>
+          <text x={flip ? cx - 8 : (isBar ? barEnd : cx) + 8} y={y + 3.5} textAnchor={flip ? 'end' : 'start'} fontSize={11} fill="var(--ink)" fontWeight={selected ? 600 : 400} style={{ paintOrder: 'stroke', stroke: 'var(--surface)', strokeWidth: 3, strokeLinejoin: 'round' }}>
             {label}
           </text>
         )}
@@ -420,8 +439,8 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
               )
             })}
             {/* items: packed, or by lane */}
-            {!lanes && itemLayout.placed.map(({ ref: it, lane }) => renderItem(it, itemsTop + lane * (ITEM_H + LANE_GAP) + ITEM_H / 2, itemLayout.overflow.has(it)))}
-            {lanes && laneLayout.map(({ packed, top }) => packed.placed.map(({ ref: it, lane: sub }) => renderItem(it, itemsTop + top + LANE_PAD + sub * (ITEM_H + LANE_GAP) + ITEM_H / 2, packed.overflow.has(it))))}
+            {!lanes && itemLayout.placed.map(({ ref: it, lane, flip }) => renderItem(it, itemsTop + lane * (ITEM_H + LANE_GAP) + ITEM_H / 2, itemLayout.overflow.has(it), flip))}
+            {lanes && laneLayout.map(({ packed, top }) => packed.placed.map(({ ref: it, lane: sub, flip }) => renderItem(it, itemsTop + top + LANE_PAD + sub * (ITEM_H + LANE_GAP) + ITEM_H / 2, packed.overflow.has(it), flip)))}
             {/* mentions histogram */}
             {hist.bars.map((b) => {
               const h = Math.max(2, (b.count / hist.max) * (histH - 12))
@@ -460,20 +479,27 @@ export default function Timeline({ items, bands = [], bins = [], lanes, initialD
             )}
           </g>
           {/* off-screen counts per lane */}
-          {laneLayout.map(({ lane, top, beyondRight, beyondLeft }) => (
-            <g key={`edge-${lane.id}`}>
-              {beyondRight > 0 && (
-                <text x={width - 4} y={itemsTop + top + 17} textAnchor="end" fontSize={10.5} fill="var(--accent)" style={{ cursor: 'pointer', paintOrder: 'stroke', stroke: 'var(--surface)', strokeWidth: 3 }} onClick={reset}>
-                  {beyondRight} later →
-                </text>
-              )}
-              {beyondLeft > 0 && (
-                <text x={GUTTER + 4} y={itemsTop + top + 17} fontSize={10.5} fill="var(--accent)" style={{ cursor: 'pointer', paintOrder: 'stroke', stroke: 'var(--surface)', strokeWidth: 3 }} onClick={reset}>
-                  ← {beyondLeft} earlier
-                </text>
-              )}
-            </g>
-          ))}
+          {laneLayout.map(({ lane, top, h, beyondRight, beyondLeft }) => {
+            const badge = (label: string, anchorRight: boolean) => {
+              const w = label.length * 6.2 + 12
+              const bx = anchorRight ? width - w - 3 : GUTTER + 3
+              const by = itemsTop + top + h - 18
+              return (
+                <g role="button" tabIndex={0} aria-label={`${label}: show everything`} style={{ cursor: 'pointer' }} onClick={reset} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && reset()}>
+                  <rect x={bx} y={by} width={w} height={15} rx={7.5} fill="var(--surface)" stroke="var(--line-strong)" />
+                  <text x={bx + w / 2} y={by + 11} textAnchor="middle" fontSize={10} fill="var(--accent)" fontWeight={600}>
+                    {label}
+                  </text>
+                </g>
+              )
+            }
+            return (
+              <g key={`edge-${lane.id}`}>
+                {beyondRight > 0 && badge(`${beyondRight} later →`, true)}
+                {beyondLeft > 0 && badge(`← ${beyondLeft} earlier`, false)}
+              </g>
+            )
+          })}
           {/* axis */}
           <line x1={GUTTER} x2={width} y1={axisTop} y2={axisTop} stroke="var(--axis)" strokeWidth={1} />
           {ticks.map((t) => (
