@@ -40,6 +40,16 @@ export interface Bible {
   headings?: Record<number, string>
 }
 
+export interface NameMeaning {
+  meaning?: string
+  hebrew?: string
+  translit?: string
+  strongs?: string
+  greek?: string
+  greekTranslit?: string
+  /** Hitchcock's gloss when it differs from the primary meaning */
+  hitchcock?: string
+}
 export interface PersonIndexEntry {
   id: string
   title: string
@@ -48,6 +58,7 @@ export interface PersonIndexEntry {
   birth?: number
   death?: number
   aka?: string[]
+  meaning?: string
   shard: string
 }
 export interface Person {
@@ -72,6 +83,7 @@ export interface Person {
   verseCount: number
   dict?: string
   status?: string
+  name_meaning?: NameMeaning
 }
 
 export interface PlaceIndexEntry {
@@ -82,6 +94,7 @@ export interface PlaceIndexEntry {
   lat?: number
   lon?: number
   aliases?: string[]
+  meaning?: string
   shard: string
 }
 export interface Place {
@@ -102,6 +115,7 @@ export interface Place {
   verseCount: number
   dict?: string
   comment?: string
+  name_meaning?: NameMeaning
 }
 
 export interface BibleEvent {
@@ -156,7 +170,10 @@ export interface StudyRef {
   ranges: Range[]
   verses: number
   weight: number
+  /** Jesus's words are in the passage itself or in one of its links */
   jesus: boolean
+  /** Jesus's words are in the passage itself */
+  jesusOwn?: boolean
   note?: string
   /** for connection studies: the passage this reference points to (e.g. the NT fulfilment) */
   to?: Range[]

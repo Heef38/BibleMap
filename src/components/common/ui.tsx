@@ -4,6 +4,7 @@ import { useSession } from '@/store/session'
 import type { Range } from '@/lib/refs'
 import { parseRefs } from '@/lib/refs'
 import type { Canon } from '@/lib/canon'
+import type { NameMeaning } from '@/data/types'
 
 export function PageHeader({ kicker, title, subtitle, right }: { kicker?: ReactNode; title: ReactNode; subtitle?: ReactNode; right?: ReactNode }) {
   return (
@@ -130,4 +131,39 @@ function linkBareRefs(text: string, canon: Canon, keyPrefix: string): ReactNode[
   }
   if (last < text.length) out.push(text.slice(last))
   return out
+}
+
+
+/** The meaning of a name, with its Hebrew and Greek forms when known. */
+export function NameCard({ name, meaning }: { name: string; meaning?: NameMeaning }) {
+  if (!meaning?.meaning && !meaning?.hebrew) return null
+  return (
+    <div className="mt-3 rounded-xl border border-line bg-surface px-4 py-3 text-sm flex flex-wrap items-baseline gap-x-4 gap-y-1">
+      <span className="kicker">Name</span>
+      {meaning.hebrew && (
+        <span className="flex items-baseline gap-2">
+          <span lang="he" dir="rtl" className="text-lg leading-none">
+            {meaning.hebrew}
+          </span>
+          {meaning.translit && <span className="text-ink-2 italic">{meaning.translit}</span>}
+        </span>
+      )}
+      {meaning.greek && meaning.greek !== meaning.hebrew && (
+        <span className="flex items-baseline gap-2">
+          <span lang="grc" className="text-base leading-none">
+            {meaning.greek}
+          </span>
+          {meaning.greekTranslit && <span className="text-ink-2 italic">{meaning.greekTranslit}</span>}
+        </span>
+      )}
+      {meaning.meaning && (
+        <span>
+          <span className="text-ink-2">{name} means </span>
+          <span className="font-medium">“{meaning.meaning}”</span>
+        </span>
+      )}
+      {meaning.strongs && <span className="chip">Strong's {meaning.strongs}</span>}
+      {meaning.hitchcock && <span className="text-ink-2">Hitchcock: {meaning.hitchcock}</span>}
+    </div>
+  )
 }

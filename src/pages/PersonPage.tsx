@@ -4,7 +4,7 @@ import { useParams } from 'react-router'
 import CanonStrip from '@/components/viz/CanonStrip'
 import Timeline, { type TimelineBand, type TimelineBin, type TimelineItem } from '@/components/viz/Timeline'
 import VerseList from '@/components/common/VerseList'
-import { DictText, EntityLink, ErrorBlock, Loading, PageHeader, RefLink, Section } from '@/components/common/ui'
+import { DictText, EntityLink, ErrorBlock, Loading, NameCard, PageHeader, RefLink, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadCanon, loadEvents, loadPeopleIndex, loadPerson, loadPlacesIndex, loadYears } from '@/data/loaders'
 import { durationYears, formatDuration, formatYear, formatYearRange } from '@/lib/format'
@@ -123,6 +123,8 @@ export default function PersonPage() {
           </Link>
         }
       />
+      <NameCard name={person.name} meaning={person.name_meaning} />
+      <div className="mt-4" />
       <CanonStrip canon={canon} ranges={ranges} color={COLOR} caption={`Where ${person.title} appears`} />
 
       {(bins.length > 0 || items.length > 0 || bands.length > 0) && (

@@ -132,7 +132,7 @@ export default function Sunburst({
           <div className="v">{r.label}</div>
           <div className="k">
             {n.data.group?.title} · weight {r.weight}
-            {r.jesus ? ' · words of Jesus' : ''}
+            {r.jesusOwn ? ' · words of Jesus' : r.jesus ? ' · connected by Jesus' : ''}
           </div>
           {r.note && <div className="k mt-1">{r.note}</div>}
           {first && <div className="mt-1 font-serif">{truncate(first, 140)}</div>}

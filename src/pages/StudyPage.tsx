@@ -177,7 +177,7 @@ export default function StudyPage() {
               </ol>
               <div className="mt-4 text-xs text-ink-2 space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="swatch" style={{ background: refFill(0, true) }} /> words of Jesus (weight 3)
+                  <span className="swatch" style={{ background: refFill(0, true) }} /> {isConnections ? 'Jesus speaks, or makes the connection (weight 3)' : 'words of Jesus (weight 3)'}
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="swatch" style={{ background: refFill(0, false) }} /> other references (weight 1)

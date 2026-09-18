@@ -106,6 +106,10 @@ Every person page has a timeline: their lifespan when the text gives it, the lif
 
 `/` focuses the search box, `[` hides or shows the search pane, `]` hides or shows the reading pane. Both panes also have edge handles.
 
+## Name meanings
+
+Every person and place page shows what the name means, with the Hebrew and Greek forms, transliteration and Strong's number where the BibleData labels have them, and Hitchcock's 1869 gloss as a second opinion. The meaning also appears in search results and on map dots.
+
 ## Data sources
 
 All sources are open. See the in-app credits page for the full list; the main ones are the Berean Standard Bible (public domain), Theographic Bible Metadata (CC BY-SA 4.0), OpenBible.info cross references (CC BY), and the audited Nave's and Torrey's topical indexes (public domain sources). Dates follow traditional chronology and are approximate.

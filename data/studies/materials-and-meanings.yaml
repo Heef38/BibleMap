@@ -1,0 +1,438 @@
+# The materials of the tabernacle and the Old Testament, and what they came to mean.
+# Each material is anchored to a passage; the links show where Scripture states its meaning
+# outright, where a pattern of use gives it, and where it points to Christ or to His people.
+# Notes mark the traditional readings so the reader can weigh them.
+id: materials-and-meanings
+title: "Materials and Their Meanings"
+subtitle: "Gold, silver, bronze, acacia, linen and scarlet, oil and blood, fire and stone, and the numbers: what the materials of Scripture came to mean"
+kind: connections
+chart: map
+summary: >-
+  The text never pauses to explain why the altar is bronze and the ark is gold, or why the
+  frames are acacia and the priests wear linen. But Scripture uses its materials with great
+  consistency, sometimes says outright what one means, and the New Testament reads several of
+  them as pictures of Christ and His people. Each entry here gives the anchor passage, then the
+  places that show the pattern and the places that state the meaning. Where a meaning is a
+  long-standing reading rather than a statement of the text, the note says so.
+tags: [typology, tabernacle, symbols, materials, numbers]
+categories:
+  stated:
+    title: "Stated in Scripture"
+    note: "A passage that gives the meaning outright."
+  pattern:
+    title: "Pattern of use"
+    note: "The material recurring in the same role, from which the meaning is drawn."
+  christ:
+    title: "Pointing to Christ"
+    note: "Where the material becomes a picture of Jesus."
+  church:
+    title: "The believer and the church"
+    note: "Where the material describes God's people."
+views:
+  - title: "By material"
+    note: "Metals, colors and fabrics, woods and plants, what is poured and eaten, fire and stone, and the numbers."
+    groups:
+      - title: "Metals"
+        note: "The nearer to God's presence, the more gold; the nearer the entrance, the more bronze."
+        refs:
+          - ref: "Exod 25:10-11, 17"
+            label: "Gold"
+            note: "The ark and the mercy seat are pure gold, and everything in the Most Holy Place. Read as glory, deity, and what endures the fire."
+            links:
+              - { to: "Exod 25:31", topic: "Gold in the sanctuary", category: pattern }
+              - { to: "1 Kgs 6:20-22", topic: "Gold in the sanctuary", category: pattern }
+              - { to: "1 Pet 1:6-7", topic: "Faith more precious than gold, refined by fire", category: stated }
+              - { to: "Job 23:10", topic: "I will come forth as gold", category: stated }
+              - { to: "Rev 21:18, 21", topic: "The city of pure gold", category: stated }
+              - { to: "Rev 3:18", topic: "Buy from Me gold refined in the fire", category: christ }
+              - { to: "Ps 19:9-10", topic: "More precious than gold", category: pattern }
+              - { to: "1 Cor 3:12-15", topic: "Gold, silver, precious stones tested by fire", category: church }
+          - ref: "Exod 30:11-16"
+            label: "Silver"
+            note: "The atonement money, half a shekel of silver for every life. Read as redemption, the price paid."
+            links:
+              - { to: "Exod 38:25-28", topic: "The silver sockets made from the atonement money", category: pattern }
+              - { to: "Num 3:44-51", topic: "Redemption money for the firstborn", category: stated }
+              - { to: "Lev 27:1-8", topic: "Valuations in silver", category: pattern }
+              - { to: "Zech 11:12-13", topic: "Thirty pieces of silver", category: pattern }
+              - { to: "Matt 26:14-15", topic: "Sold for silver", category: christ }
+              - { to: "1 Pet 1:18-19", topic: "Not redeemed with silver or gold, but with precious blood", category: christ }
+              - { to: "Ps 12:6", topic: "Words purified like silver", category: pattern }
+              - { to: "Mal 3:2-3", topic: "A refiner and purifier of silver", category: church }
+          - ref: "Exod 27:1-2"
+            label: "Bronze"
+            note: "The altar where sin is dealt with is bronze, and so is the serpent lifted up in the wilderness. Read as judgment, and sin borne."
+            links:
+              - { to: "Num 21:8-9", topic: "The bronze serpent", category: pattern }
+              - { to: "John 3:14-15", topic: "The bronze serpent", category: christ }
+              - { to: "Exod 30:17-18", topic: "The bronze basin", category: pattern }
+              - { to: "Deut 28:23", topic: "The sky over your head will be bronze", category: pattern }
+              - { to: "Rev 1:15", topic: "Feet like burnished bronze", category: christ }
+              - { to: "Dan 2:32, 39", topic: "The kingdom of bronze", category: pattern }
+              - { to: "2 Chr 4:1", topic: "The bronze altar of the temple", category: pattern }
+              - { to: "1 Kgs 7:13-16", topic: "The bronze pillars, Jachin and Boaz", category: pattern }
+              - { to: "Mic 4:13", topic: "Hooves of bronze", category: pattern }
+          - ref: "Ps 2:7-9"
+            label: "Iron"
+            note: "A rod of iron in the hand of the King. Read as unbreakable rule, and hard bondage."
+            links:
+              - { to: "Rev 19:15", topic: "He will rule them with a rod of iron", category: christ }
+              - { to: "Rev 2:26-27", topic: "Authority over the nations", category: church }
+              - { to: "Deut 4:20", topic: "The iron furnace of Egypt", category: pattern }
+              - { to: "Dan 2:40-43", topic: "The kingdom of iron", category: pattern }
+              - { to: "1 Kgs 6:7", topic: "No iron tool heard at the temple", category: pattern }
+              - { to: "Deut 27:5", topic: "No iron on the altar stones", category: pattern }
+              - { to: "Isa 60:17", topic: "In place of iron I will bring silver", category: pattern }
+      - title: "Colors and fabrics"
+        note: "The four colors of the gate, the veil and the priest, and the coverings over the tent."
+        refs:
+          - ref: "Exod 26:1"
+            label: "Fine linen"
+            note: "White and clean, worn by the priests and hung around the court. Revelation states the meaning: the righteous acts of the saints."
+            links:
+              - { to: "Rev 19:7-8", topic: "The righteous acts of the saints", category: stated }
+              - { to: "Exod 28:39-43", topic: "The priests' linen garments", category: pattern }
+              - { to: "Lev 16:4", topic: "Linen on the Day of Atonement", category: pattern }
+              - { to: "Rev 15:6", topic: "Angels clothed in clean linen", category: pattern }
+              - { to: "Mark 15:46", topic: "The linen shroud", category: christ }
+              - { to: "Isa 61:10", topic: "Garments of salvation", category: church }
+              - { to: "Rev 3:4-5", topic: "Dressed in white", category: church }
+          - ref: "Num 15:37-41"
+            label: "Blue"
+            note: "A cord of blue on every tassel, to remember the commandments. The color of the sky: heaven, and what comes from it."
+            links:
+              - { to: "Exod 26:31", topic: "Blue in the veil", category: pattern }
+              - { to: "Exod 28:31", topic: "The robe of the ephod, all blue", category: pattern }
+              - { to: "Exod 24:9-10", topic: "A pavement like sapphire, clear as the sky", category: pattern }
+              - { to: "Ezek 1:26", topic: "A throne like sapphire", category: pattern }
+              - { to: "John 3:13", topic: "He who came down from heaven", category: christ }
+              - { to: "John 6:38", topic: "I have come down from heaven", category: christ }
+          - ref: "Judg 8:26"
+            label: "Purple"
+            note: "The garments of kings. Royalty and wealth, and the robe they mocked Him in."
+            links:
+              - { to: "Exod 26:1", topic: "Purple in the curtains", category: pattern }
+              - { to: "Esth 8:15", topic: "Mordecai in royal purple", category: pattern }
+              - { to: "Dan 5:29", topic: "Daniel clothed in purple", category: pattern }
+              - { to: "Mark 15:17-20", topic: "They clothed Him in purple", category: christ }
+              - { to: "John 19:2-5", topic: "Behold the man, in a purple robe", category: christ }
+              - { to: "Luke 16:19", topic: "The rich man dressed in purple", category: pattern }
+              - { to: "Acts 16:14", topic: "Lydia, a seller of purple", category: pattern }
+          - ref: "Isa 1:18"
+            label: "Scarlet"
+            note: "Though your sins are as scarlet, they shall be white as snow. Blood, sin and its covering."
+            links:
+              - { to: "Exod 26:1", topic: "Scarlet in the curtains", category: pattern }
+              - { to: "Lev 14:4-7", topic: "Scarlet yarn in the cleansing of the leper", category: pattern }
+              - { to: "Num 19:6", topic: "Scarlet in the red heifer", category: pattern }
+              - { to: "Josh 2:18-21", topic: "The scarlet cord in the window", category: pattern }
+              - { to: "Heb 9:19", topic: "Scarlet wool and hyssop", category: pattern }
+              - { to: "Matt 27:28", topic: "A scarlet robe", category: christ }
+              - { to: "Gen 38:28-30", topic: "The scarlet thread on Zerah", category: pattern }
+          - ref: "Exod 26:7-14"
+            label: "Goat hair, rams' skins and hides"
+            note: "The rough outer coverings over the beauty inside. Read as the humble appearance of Christ, and of His people."
+            links:
+              - { to: "Isa 53:2", topic: "No beauty that we should desire Him", category: christ }
+              - { to: "Lev 16:7-10", topic: "The two goats", category: pattern }
+              - { to: "Gen 22:13", topic: "The ram caught in the thicket", category: christ }
+              - { to: "Heb 11:37-38", topic: "They went about in sheepskins and goatskins", category: church }
+              - { to: "2 Cor 4:7", topic: "Treasure in jars of clay", category: church }
+      - title: "Woods and plants"
+        note: "The wood of the ark, the cedar of the temple, the oil of the olive, and the plants of cleansing."
+        refs:
+          - ref: "Exod 25:10"
+            label: "Acacia wood"
+            note: "Hard desert wood that resists decay, always overlaid with gold. Read traditionally as the incorruptible humanity of Christ joined to His deity."
+            links:
+              - { to: "Exod 25:23", topic: "Acacia in the furnishings", category: pattern }
+              - { to: "Exod 26:15", topic: "Acacia in the furnishings", category: pattern }
+              - { to: "Exod 27:1", topic: "Acacia in the furnishings", category: pattern }
+              - { to: "Exod 30:1", topic: "Acacia in the furnishings", category: pattern }
+              - { to: "Isa 41:19", topic: "I will put the acacia in the wilderness", category: pattern }
+              - { to: "Isa 53:2", topic: "A root out of dry ground", category: christ }
+              - { to: "Acts 2:25-31", topic: "His body did not see decay", category: christ }
+          - ref: "1 Kgs 6:9-10, 15-18"
+            label: "Cedar"
+            note: "Lebanon's cedar lined the temple. Strength, height and permanence; also the pride that will be brought low."
+            links:
+              - { to: "Ps 92:12-14", topic: "Grow like a cedar in Lebanon", category: church }
+              - { to: "Lev 14:4", topic: "Cedar in the cleansing of the leper", category: pattern }
+              - { to: "Ezek 17:22-24", topic: "The tender sprig planted on the mountain", category: christ }
+              - { to: "Isa 2:12-13", topic: "Against all the cedars of Lebanon", category: pattern }
+              - { to: "2 Sam 7:2, 7", topic: "A house of cedar", category: pattern }
+              - { to: "Song 1:17", topic: "The beams of our house are cedar", category: pattern }
+          - ref: "Exod 27:20"
+            label: "Olive"
+            note: "Pure oil of pressed olives for the light. The tree that gives the oil: the Spirit's supply, and Israel and the church as one olive tree."
+            links:
+              - { to: "Zech 4:11-14", topic: "The two olive trees, the anointed ones", category: stated }
+              - { to: "Rom 11:17-24", topic: "Grafted into the olive tree", category: church }
+              - { to: "Ps 52:8", topic: "Like an olive tree in the house of God", category: church }
+              - { to: "Jer 11:16", topic: "A thriving olive tree", category: pattern }
+              - { to: "Gen 8:11", topic: "The dove's olive leaf", category: pattern }
+              - { to: "Matt 26:36-39", topic: "Gethsemane, the oil press", category: christ }
+              - { to: "Rev 11:3-4", topic: "The two olive trees", category: pattern }
+          - ref: "Exod 12:22"
+            label: "Hyssop"
+            note: "The humble plant that applied the Passover blood. Cleansing, as David prays: purge me with hyssop."
+            links:
+              - { to: "Ps 51:7", topic: "Purge me with hyssop", category: stated }
+              - { to: "Lev 14:4-7", topic: "Hyssop in the cleansing of the leper", category: pattern }
+              - { to: "Num 19:18", topic: "Hyssop in the water of cleansing", category: pattern }
+              - { to: "Heb 9:19", topic: "Scarlet wool and hyssop", category: pattern }
+              - { to: "John 19:28-30", topic: "A sponge on a stalk of hyssop", category: christ }
+              - { to: "1 Kgs 4:33", topic: "From the cedar to the hyssop", category: pattern }
+          - ref: "Judg 9:8-15"
+            label: "The vine and the fig"
+            note: "Israel's two trees in Jotham's parable. The vine for joy and for Israel itself; the fig for the nation's fruit, or its lack."
+            links:
+              - { to: "Isa 5:1-7", topic: "The vineyard is the house of Israel", category: stated }
+              - { to: "Ps 80:8-16", topic: "The vine out of Egypt", category: pattern }
+              - { to: "John 15:1-5", topic: "I am the true vine", category: christ }
+              - { to: "Hos 9:10", topic: "Like the first fruit on the fig tree", category: pattern }
+              - { to: "Matt 21:18-19", topic: "The fig tree withered", category: christ }
+              - { to: "Mic 4:4", topic: "Each under his own vine and fig tree", category: church }
+              - { to: "Luke 13:6-9", topic: "The barren fig tree", category: christ }
+          - ref: "Num 17:8-10"
+            label: "The almond"
+            note: "Aaron's dead staff budded, blossomed and bore almonds overnight. The first tree to wake in spring: watching, and life out of death."
+            links:
+              - { to: "Jer 1:11-12", topic: "The almond branch, for I am watching", category: stated }
+              - { to: "Exod 25:33-34", topic: "Almond blossoms on the lampstand", category: pattern }
+              - { to: "Heb 9:4", topic: "Aaron's rod that budded", category: pattern }
+              - { to: "Eccl 12:5", topic: "When the almond tree blossoms", category: pattern }
+              - { to: "Rom 1:4", topic: "Declared the Son of God by the resurrection", category: christ }
+          - ref: "Exod 30:23, 34"
+            label: "Myrrh and frankincense"
+            note: "Myrrh in the anointing oil and frankincense in the incense. Myrrh for burial and bitterness; frankincense for worship rising."
+            links:
+              - { to: "Matt 2:11", topic: "Gold, frankincense and myrrh", category: christ }
+              - { to: "John 19:39-40", topic: "Myrrh and aloes for His burial", category: christ }
+              - { to: "Mark 15:23", topic: "Wine mixed with myrrh", category: christ }
+              - { to: "Lev 2:1-2", topic: "Frankincense on the grain offering", category: pattern }
+              - { to: "Ps 45:8", topic: "Robes fragrant with myrrh", category: christ }
+              - { to: "Song 3:6", topic: "Perfumed with myrrh and frankincense", category: pattern }
+              - { to: "Isa 60:6", topic: "Bringing gold and frankincense", category: pattern }
+      - title: "Poured and eaten"
+        note: "Oil, water, wine, blood, salt, leaven, bread, honey and milk."
+        refs:
+          - ref: "Exod 30:22-33"
+            label: "Oil"
+            note: "The anointing oil on priest, king and prophet. The Spirit's anointing, stated plainly when Samuel anoints David."
+            links:
+              - { to: "1 Sam 16:13", topic: "Anointed, and the Spirit came upon him", category: stated }
+              - { to: "Acts 10:38", topic: "Anointed with the Holy Spirit and power", category: stated }
+              - { to: "Isa 61:1", topic: "The Spirit of the Lord has anointed Me", category: christ }
+              - { to: "Ps 45:7", topic: "The oil of gladness", category: christ }
+              - { to: "1 John 2:20, 27", topic: "The anointing you received", category: church }
+              - { to: "2 Cor 1:21-22", topic: "He anointed us and sealed us", category: church }
+              - { to: "Matt 25:1-13", topic: "Oil for the lamps", category: church }
+              - { to: "Ps 133", topic: "Oil running down Aaron's beard", category: pattern }
+          - ref: "Exod 30:18-21"
+            label: "Water"
+            note: "Washing before serving. Cleansing, the Word, the Spirit, and life itself."
+            links:
+              - { to: "Eph 5:26", topic: "The washing of water by the word", category: stated }
+              - { to: "Ezek 36:25-27", topic: "I will sprinkle clean water on you", category: stated }
+              - { to: "John 7:37-39", topic: "Rivers of living water, meaning the Spirit", category: stated }
+              - { to: "John 4:10-14", topic: "A spring welling up to eternal life", category: christ }
+              - { to: "1 Cor 10:4", topic: "They drank from the rock, and the rock was Christ", category: christ }
+              - { to: "Isa 55:1", topic: "Come, all who are thirsty", category: pattern }
+              - { to: "Ps 1:3", topic: "A tree planted by streams of water", category: church }
+              - { to: "Jer 2:13", topic: "The fountain of living water", category: pattern }
+          - ref: "Gen 14:18"
+            label: "Wine"
+            note: "Melchizedek brought out bread and wine. Joy and blessing, the cup of the covenant; and also the cup of wrath."
+            links:
+              - { to: "Ps 104:14-15", topic: "Wine that gladdens the heart", category: stated }
+              - { to: "Isa 25:6", topic: "A feast of aged wine", category: pattern }
+              - { to: "John 2:1-11", topic: "Water into wine", category: christ }
+              - { to: "Matt 26:27-29", topic: "The cup of the covenant", category: christ }
+              - { to: "Isa 51:17", topic: "The cup of His wrath", category: pattern }
+              - { to: "Jer 25:15", topic: "The cup of the wine of wrath", category: pattern }
+              - { to: "Eph 5:18", topic: "Not drunk on wine, but filled with the Spirit", category: church }
+          - ref: "Lev 17:11"
+            label: "Blood"
+            note: "The life of the flesh is in the blood, and it makes atonement. Life given for life."
+            links:
+              - { to: "Exod 12:13", topic: "When I see the blood, I will pass over you", category: stated }
+              - { to: "Heb 9:22", topic: "Without the shedding of blood there is no forgiveness", category: stated }
+              - { to: "Exod 24:8", topic: "The blood of the covenant", category: pattern }
+              - { to: "Heb 9:12-14", topic: "By His own blood", category: christ }
+              - { to: "1 Pet 1:18-19", topic: "The precious blood of Christ", category: christ }
+              - { to: "Matt 26:28", topic: "My blood of the covenant", category: christ }
+              - { to: "1 John 1:7", topic: "The blood of Jesus cleanses us from all sin", category: church }
+              - { to: "Rev 7:14", topic: "Robes washed white in the blood of the Lamb", category: church }
+              - { to: "Gen 4:10", topic: "Your brother's blood cries out", category: pattern }
+          - ref: "Lev 2:13"
+            label: "Salt"
+            note: "The salt of the covenant on every offering. What preserves and does not fail; the covenant that lasts."
+            links:
+              - { to: "Num 18:19", topic: "An everlasting covenant of salt", category: stated }
+              - { to: "2 Chr 13:5", topic: "A covenant of salt", category: stated }
+              - { to: "Matt 5:13", topic: "You are the salt of the earth", category: church }
+              - { to: "Col 4:6", topic: "Speech seasoned with salt", category: church }
+              - { to: "Mark 9:49-50", topic: "Have salt among yourselves", category: church }
+              - { to: "2 Kgs 2:19-22", topic: "Elisha heals the water with salt", category: pattern }
+              - { to: "Gen 19:26", topic: "A pillar of salt", category: pattern }
+          - ref: "Exod 12:15-20"
+            label: "Leaven"
+            note: "No leaven for seven days. What spreads through the whole batch: hypocrisy, malice and false teaching, stated outright; and once, the kingdom."
+            links:
+              - { to: "Luke 12:1", topic: "The leaven of the Pharisees, which is hypocrisy", category: stated }
+              - { to: "1 Cor 5:6-8", topic: "The leaven of malice and wickedness", category: stated }
+              - { to: "Matt 16:6-12", topic: "The leaven of their teaching", category: stated }
+              - { to: "Gal 5:9", topic: "A little leaven leavens the whole batch", category: stated }
+              - { to: "Matt 13:33", topic: "The kingdom is like leaven", category: christ }
+              - { to: "Lev 2:11", topic: "No leaven in the grain offering", category: pattern }
+              - { to: "Exod 13:6-7", topic: "Unleavened bread for seven days", category: pattern }
+          - ref: "Exod 16:31-35"
+            label: "Bread and manna"
+            note: "Bread from heaven every morning. Daily provision, the Word, and Christ the bread of life."
+            links:
+              - { to: "Deut 8:3", topic: "Not by bread alone, but by every word", category: stated }
+              - { to: "John 6:31-35, 48-51", topic: "I am the bread of life", category: christ }
+              - { to: "Lev 24:5-9", topic: "The bread of the Presence", category: pattern }
+              - { to: "Matt 6:11", topic: "Give us today our daily bread", category: church }
+              - { to: "1 Cor 10:16-17", topic: "One bread, one body", category: church }
+              - { to: "Ps 78:23-25", topic: "The bread of angels", category: pattern }
+              - { to: "Rev 2:17", topic: "The hidden manna", category: christ }
+          - ref: "Exod 3:8"
+            label: "Milk and honey"
+            note: "A land flowing with milk and honey. Sweetness and abundance: the goodness of the land, and of God's word."
+            links:
+              - { to: "Ps 19:9-10", topic: "Sweeter than honey", category: stated }
+              - { to: "Ps 119:103", topic: "How sweet are Your words", category: stated }
+              - { to: "Ezek 3:1-3", topic: "The scroll as sweet as honey", category: pattern }
+              - { to: "Rev 10:9-10", topic: "The scroll as sweet as honey", category: pattern }
+              - { to: "1 Pet 2:2-3", topic: "Pure spiritual milk", category: church }
+              - { to: "Isa 7:14-15", topic: "He will eat curds and honey", category: christ }
+              - { to: "Judg 14:8-9", topic: "Honey from the lion", category: pattern }
+      - title: "Fire, cloud, stone and dust"
+        note: "The elements God appears in, and the stuff we are made of."
+        refs:
+          - ref: "Exod 3:2-6"
+            label: "Fire"
+            note: "The bush that burned and was not consumed. God's presence, His holiness that consumes, and His refining."
+            links:
+              - { to: "Deut 4:24", topic: "The LORD your God is a consuming fire", category: stated }
+              - { to: "Heb 12:28-29", topic: "Our God is a consuming fire", category: stated }
+              - { to: "Mal 3:2-3", topic: "A refiner's fire", category: stated }
+              - { to: "Exod 13:21", topic: "The pillar of fire", category: pattern }
+              - { to: "Lev 9:24", topic: "Fire from the LORD consumed the offering", category: pattern }
+              - { to: "1 Kgs 18:38", topic: "The fire of the LORD fell", category: pattern }
+              - { to: "Acts 2:3", topic: "Tongues of fire", category: church }
+              - { to: "1 Cor 3:12-15", topic: "The fire will test each one's work", category: church }
+              - { to: "Matt 3:11-12", topic: "He will baptize you with the Holy Spirit and fire", category: christ }
+              - { to: "Isa 6:6-7", topic: "A live coal touched my lips", category: pattern }
+          - ref: "Exod 13:21-22"
+            label: "Cloud and glory"
+            note: "The pillar of cloud by day. God's presence, guiding and veiled."
+            links:
+              - { to: "Exod 40:34-38", topic: "The cloud covered the tent", category: stated }
+              - { to: "1 Kgs 8:10-11", topic: "The cloud filled the temple", category: pattern }
+              - { to: "Isa 4:5-6", topic: "A cloud by day over Mount Zion", category: pattern }
+              - { to: "Matt 17:5", topic: "A bright cloud: This is My beloved Son", category: christ }
+              - { to: "Acts 1:9", topic: "A cloud hid Him from their sight", category: christ }
+              - { to: "1 Thess 4:17", topic: "Caught up in the clouds", category: church }
+              - { to: "Rev 1:7", topic: "He is coming with the clouds", category: christ }
+          - ref: "Exod 17:5-6"
+            label: "Rock and stone"
+            note: "Strike the rock, and water will come out. God the Rock, Christ the Rock and the cornerstone, believers the living stones."
+            links:
+              - { to: "Deut 32:3-4", topic: "He is the Rock", category: stated }
+              - { to: "1 Cor 10:4", topic: "That rock was Christ", category: stated }
+              - { to: "Ps 118:22", topic: "The stone the builders rejected", category: pattern }
+              - { to: "Matt 21:42-44", topic: "The stone the builders rejected", category: christ }
+              - { to: "Isa 28:16", topic: "A precious cornerstone", category: christ }
+              - { to: "Dan 2:34-35, 44-45", topic: "The stone cut without hands", category: christ }
+              - { to: "1 Pet 2:4-8", topic: "Living stones", category: church }
+              - { to: "Matt 16:18", topic: "On this rock I will build My church", category: church }
+              - { to: "Exod 20:24-25", topic: "An altar of uncut stones", category: pattern }
+          - ref: "Gen 2:7"
+            label: "Dust and ashes"
+            note: "Formed from the dust of the ground. What we are made of, and the posture of mourning and repentance."
+            links:
+              - { to: "Gen 3:19", topic: "Dust you are, and to dust you will return", category: stated }
+              - { to: "Ps 103:13-14", topic: "He remembers that we are dust", category: stated }
+              - { to: "Gen 18:27", topic: "I am but dust and ashes", category: pattern }
+              - { to: "Job 42:5-6", topic: "I repent in dust and ashes", category: pattern }
+              - { to: "Jonah 3:5-6", topic: "He sat down in the dust", category: pattern }
+              - { to: "Num 19:9", topic: "The ashes of the heifer", category: pattern }
+              - { to: "Isa 61:3", topic: "Beauty for ashes", category: christ }
+              - { to: "1 Cor 15:47-49", topic: "The man of dust and the man from heaven", category: church }
+          - ref: "Exod 28:17-21"
+            label: "The precious stones"
+            note: "Twelve stones with the names of the tribes, worn over the priest's heart. God's people as jewels carried before Him, and the foundations of the city."
+            links:
+              - { to: "Exod 28:29", topic: "Bearing the names over his heart", category: stated }
+              - { to: "Mal 3:16-17", topic: "They will be Mine, My treasured possession", category: church }
+              - { to: "Rev 21:19-20", topic: "Foundations adorned with precious stones", category: pattern }
+              - { to: "Isa 54:11-12", topic: "Foundations of sapphires", category: pattern }
+              - { to: "Zech 9:16", topic: "Jewels in a crown", category: church }
+              - { to: "1 Cor 3:12", topic: "Gold, silver, precious stones", category: church }
+      - title: "Numbers"
+        note: "Seven, twelve, forty, three and one: the numbers Scripture keeps returning to."
+        refs:
+          - ref: "Gen 2:1-3"
+            label: "Seven"
+            note: "God finished His work and rested on the seventh day. Completeness, rest, the finished work."
+            links:
+              - { to: "Lev 23:15-16", topic: "Seven full weeks", category: pattern }
+              - { to: "Josh 6:3-4", topic: "Seven priests, seven trumpets, seven days", category: pattern }
+              - { to: "Lev 25:8-10", topic: "Seven sevens of years, then the Jubilee", category: pattern }
+              - { to: "Matt 18:21-22", topic: "Seventy times seven", category: christ }
+              - { to: "Rev 1:4, 12, 16", topic: "Seven spirits, seven lampstands, seven stars", category: pattern }
+              - { to: "Ps 12:6", topic: "Purified seven times", category: pattern }
+              - { to: "Heb 4:9-10", topic: "A Sabbath rest remains", category: church }
+          - ref: "Gen 49:28"
+            label: "Twelve"
+            note: "The twelve tribes of Israel. The people of God, complete."
+            links:
+              - { to: "Exod 28:21", topic: "Twelve stones for the twelve tribes", category: pattern }
+              - { to: "Matt 10:1-4", topic: "The twelve apostles", category: christ }
+              - { to: "Matt 19:28", topic: "Twelve thrones, twelve tribes", category: christ }
+              - { to: "Rev 21:12-14", topic: "Twelve gates, twelve foundations", category: stated }
+              - { to: "Rev 7:4-8", topic: "Twelve thousand from every tribe", category: pattern }
+              - { to: "John 6:13", topic: "Twelve baskets", category: pattern }
+              - { to: "1 Kgs 18:31", topic: "Twelve stones for the altar", category: pattern }
+          - ref: "Num 14:33-34"
+            label: "Forty"
+            note: "Forty years in the wilderness, a year for each day. Testing, a generation, preparation."
+            links:
+              - { to: "Deut 8:2-3", topic: "Forty years to humble and test you", category: stated }
+              - { to: "Gen 7:12", topic: "Forty days of rain", category: pattern }
+              - { to: "Exod 24:18", topic: "Forty days on the mountain", category: pattern }
+              - { to: "1 Kgs 19:8", topic: "Forty days to Horeb", category: pattern }
+              - { to: "Jonah 3:4", topic: "Forty days and Nineveh", category: pattern }
+              - { to: "Matt 4:1-2", topic: "Forty days in the wilderness", category: christ }
+              - { to: "Acts 1:3", topic: "Forty days after the resurrection", category: christ }
+          - ref: "Gen 22:4"
+            label: "Three"
+            note: "On the third day Abraham saw the place. The third day: the day of rising."
+            links:
+              - { to: "Hos 6:2", topic: "On the third day He will raise us up", category: stated }
+              - { to: "1 Cor 15:3-4", topic: "Raised on the third day according to the Scriptures", category: stated }
+              - { to: "Jonah 1:17", topic: "Three days and three nights", category: pattern }
+              - { to: "Matt 12:40", topic: "The sign of Jonah", category: christ }
+              - { to: "Exod 19:10-11", topic: "Be ready for the third day", category: pattern }
+              - { to: "John 2:19-21", topic: "In three days I will raise it up", category: christ }
+              - { to: "Luke 13:32", topic: "On the third day I will reach My goal", category: christ }
+          - ref: "Deut 6:4-5"
+            label: "One"
+            note: "Hear, O Israel: the LORD our God, the LORD is one. God's oneness, and the oneness He gives His people."
+            links:
+              - { to: "John 10:30", topic: "I and the Father are one", category: christ }
+              - { to: "John 17:20-23", topic: "That they may be one as We are one", category: church }
+              - { to: "Eph 4:4-6", topic: "One body, one Spirit, one Lord", category: stated }
+              - { to: "Gen 2:24", topic: "The two become one flesh", category: pattern }
+              - { to: "Eph 5:31-32", topic: "A profound mystery: Christ and the church", category: christ }
+              - { to: "Gal 3:28", topic: "All one in Christ Jesus", category: church }
+              - { to: "Zech 14:9", topic: "The LORD will be one, and His name one", category: pattern }
+  - title: "By kind of meaning"
+    note: "Stated outright, shown by pattern, pointing to Christ, describing His people."
+    auto: category
+  - title: "Jesus and the rest"
+    note: "Where Jesus Himself uses the material."
+    auto: jesus

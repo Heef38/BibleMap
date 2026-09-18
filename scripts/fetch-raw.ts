@@ -30,7 +30,7 @@ const files: [string, string][] = [
   ['topical/LICENSE', 'https://raw.githubusercontent.com/j86schroeder/topical-bible-search/main/LICENSE'],
   ...['KJV', 'ASV', 'YLT'].map((t): [string, string] => [`scrollmapper/${t}.json`, `${SCROLLMAPPER}/${t}.json`]),
   ['web/eng-web_usfm.zip', 'https://ebible.org/Scriptures/eng-web_usfm.zip'],
-  ...['BibleData-Event', 'BibleData-Epoch', 'BibleData-Person', 'BibleData-PersonRelationship', 'BibleData-PersonVerse', 'BibleData-Reference'].map(
+  ...['BibleData-Event', 'BibleData-Epoch', 'BibleData-Person', 'BibleData-PersonRelationship', 'BibleData-PersonVerse', 'BibleData-Reference', 'BibleData-PersonLabel', 'BibleData-PlaceLabel', 'HitchcocksBibleNamesDictionary'].map(
     (n): [string, string] => [`bibledata/${n}.csv`, `${BIBLEDATA}/${n}.csv`],
   ),
   ['bibledata/LICENSE', `${BIBLEDATA}/LICENSE`],

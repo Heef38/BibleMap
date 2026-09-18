@@ -52,7 +52,7 @@ export async function buildSearchIndex(): Promise<MiniSearch<EntityDoc>> {
       key: p.id,
       title: p.title,
       aka: p.aka?.join(' ') ?? '',
-      sub: `${p.verseCount.toLocaleString()} verse${p.verseCount === 1 ? '' : 's'}`,
+      sub: [p.meaning ? `“${p.meaning}”` : undefined, `${p.verseCount.toLocaleString()} verse${p.verseCount === 1 ? '' : 's'}`].filter(Boolean).join(' · '),
       n: p.verseCount,
     })
   for (const p of places)
@@ -62,7 +62,7 @@ export async function buildSearchIndex(): Promise<MiniSearch<EntityDoc>> {
       key: p.id,
       title: p.name,
       aka: p.aliases?.join(' ') ?? '',
-      sub: [p.type, `${p.verseCount.toLocaleString()} verse${p.verseCount === 1 ? '' : 's'}`].filter(Boolean).join(' · '),
+      sub: [p.meaning ? `“${p.meaning}”` : undefined, p.type, `${p.verseCount.toLocaleString()} verse${p.verseCount === 1 ? '' : 's'}`].filter(Boolean).join(' · '),
       n: p.verseCount,
     })
   for (const t of topics)

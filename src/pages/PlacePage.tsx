@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react'
 import { useParams } from 'react-router'
 import CanonStrip from '@/components/viz/CanonStrip'
 import VerseList from '@/components/common/VerseList'
-import { DictText, EntityLink, ErrorBlock, Loading, PageHeader, Section } from '@/components/common/ui'
+import { DictText, EntityLink, ErrorBlock, Loading, NameCard, PageHeader, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadCanon, loadEvents, loadPeopleIndex, loadPlace } from '@/data/loaders'
 import { formatYear } from '@/lib/format'
@@ -54,6 +54,8 @@ export default function PlacePage() {
           </>
         }
       />
+      <NameCard name={place.name} meaning={place.name_meaning} />
+      <div className="mt-4" />
       <CanonStrip canon={canon} ranges={ranges} color={COLOR} caption={`Where ${place.name} appears`} />
       {place.dict && (
         <Section title="Easton's Bible Dictionary">

@@ -63,6 +63,113 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
 
+/** A small RFC 4180 CSV reader (quotes, escaped quotes, newlines inside quotes). */
+function parseCsv(text: string): Record<string, string>[] {
+  const rows: string[][] = []
+  let row: string[] = []
+  let field = ''
+  let inQuotes = false
+  const src = text.replace(/^\uFEFF/, '')
+  for (let i = 0; i < src.length; i++) {
+    const c = src[i]
+    if (inQuotes) {
+      if (c === '"') {
+        if (src[i + 1] === '"') {
+          field += '"'
+          i++
+        } else inQuotes = false
+      } else field += c
+    } else if (c === '"') inQuotes = true
+    else if (c === ',') {
+      row.push(field)
+      field = ''
+    } else if (c === '\n' || c === '\r') {
+      if (c === '\r' && src[i + 1] === '\n') i++
+      row.push(field)
+      field = ''
+      if (row.length > 1 || row[0] !== '') rows.push(row)
+      row = []
+    } else field += c
+  }
+  if (field || row.length) {
+    row.push(field)
+    rows.push(row)
+  }
+  const [header, ...body] = rows
+  return body.map((r) => Object.fromEntries(header.map((h, i) => [h.trim(), (r[i] ?? '').trim()])))
+}
+
+interface NameInfo {
+  hebrew?: string
+  translit?: string
+  meaning?: string
+  strongs?: string
+  greek?: string
+  greekTranslit?: string
+}
+const tidyMeaning = (m: string) => m.replace(/y-h-v-h/gi, 'the LORD').replace(/\bG-d\b/g, 'God').replace(/\s+/g, ' ').trim()
+
+/** Name meanings: Hitchcock's Bible Names Dictionary (1869) plus the Hebrew and Greek forms from BibleData's labels. */
+const hitchcock = new Map<string, string>()
+for (const r of parseCsv(readText(path.join(RAW, 'bibledata', 'HitchcocksBibleNamesDictionary.csv')))) if (r.Name && r.Meaning) hitchcock.set(r.Name.toLowerCase(), r.Meaning)
+
+function buildNameIndex(rows: Record<string, string>[]): Map<string, NameInfo> {
+  const tally = new Map<string, Map<string, { info: NameInfo; n: number }>>()
+  for (const l of rows) {
+    if (l.label_type && l.label_type !== 'proper name' && l.label_type !== 'name') continue
+    const key = (l.english_label ?? '').toLowerCase()
+    if (!key || !l.hebrew_label) continue
+    const info: NameInfo = {
+      hebrew: l.hebrew_label || undefined,
+      translit: l.hebrew_label_transliterated || undefined,
+      meaning: l.hebrew_label_meaning ? tidyMeaning(l.hebrew_label_meaning) : undefined,
+      strongs: (l.hebrew_strongs_number || '').split(/\s+/)[0] || undefined,
+      greek: l.greek_label || undefined,
+      greekTranslit: l.greek_label_transliterated || undefined,
+    }
+    const variant = `${info.hebrew}|${info.meaning ?? ''}`
+    const m = tally.get(key) ?? tally.set(key, new Map()).get(key)!
+    const e = m.get(variant) ?? m.set(variant, { info, n: 0 }).get(variant)!
+    e.n++
+  }
+  const out = new Map<string, NameInfo>()
+  for (const [key, m] of tally) out.set(key, [...m.values()].sort((a, b) => b.n - a.n)[0].info)
+  return out
+}
+const personNames = buildNameIndex(parseCsv(readText(path.join(RAW, 'bibledata', 'BibleData-PersonLabel.csv'))))
+const placeNames = buildNameIndex(parseCsv(readText(path.join(RAW, 'bibledata', 'BibleData-PlaceLabel.csv'))))
+
+interface NameMeaning {
+  meaning?: string
+  hebrew?: string
+  translit?: string
+  strongs?: string
+  greek?: string
+  greekTranslit?: string
+  hitchcock?: string
+}
+function nameMeaning(index: Map<string, NameInfo>, ...names: (string | undefined)[]): NameMeaning | undefined {
+  let info: NameInfo | undefined
+  let hitch: string | undefined
+  for (const n of names) {
+    if (!n) continue
+    const key = n.toLowerCase().replace(/\s*\(.*\)$/, '')
+    info ??= index.get(key)
+    hitch ??= hitchcock.get(key)
+  }
+  if (!info && !hitch) return undefined
+  const meaning = info?.meaning ?? hitch
+  return {
+    meaning,
+    hebrew: info?.hebrew,
+    translit: info?.translit,
+    strongs: info?.strongs,
+    greek: info?.greek,
+    greekTranslit: info?.greekTranslit,
+    hitchcock: hitch && hitch !== meaning ? hitch : undefined,
+  }
+}
+
 const SMALL = new Set(['a', 'an', 'and', 'at', 'by', 'for', 'in', 'of', 'on', 'or', 'the', 'to', 'with', 'from', 'as'])
 function titleCase(s: string): string {
   return s
@@ -195,6 +302,7 @@ interface PersonFull {
   verseCount: number
   dict?: string
   status?: string
+  name_meaning?: NameMeaning
 }
 const people: PersonFull[] = []
 for (const r of tPeople) {
@@ -229,9 +337,11 @@ for (const r of tPeople) {
     verseCount: verses.length,
     dict: cleanDict(str(f, 'dictText') ?? str(f, 'dictionaryText')),
     status: str(f, 'status'),
+    name_meaning: nameMeaning(personNames, name, str(f, 'displayTitle')),
   })
 }
 people.sort((a, b) => a.id.localeCompare(b.id))
+log(`name meanings: ${people.filter((p) => p.name_meaning).length} people (${people.filter((p) => p.name_meaning?.hebrew).length} with Hebrew)`)
 {
   const shards = new Map<string, Record<string, PersonFull>>()
   for (const p of people) {
@@ -250,6 +360,7 @@ people.sort((a, b) => a.id.localeCompare(b.id))
       birth: p.birth,
       death: p.death,
       aka: p.aka.length ? p.aka : undefined,
+      meaning: p.name_meaning?.meaning,
       shard: shardOf(p.id),
     })),
   )
@@ -274,6 +385,7 @@ interface PlaceFull {
   verseCount: number
   dict?: string
   comment?: string
+  name_meaning?: NameMeaning
 }
 const places: PlaceFull[] = []
 for (const r of tPlaces) {
@@ -301,9 +413,11 @@ for (const r of tPlaces) {
     verseCount: verses.length,
     dict: cleanDict(str(f, 'dictText') ?? str(f, 'dictionaryText')),
     comment: str(f, 'comment'),
+    name_meaning: nameMeaning(placeNames, str(f, 'displayTitle'), str(f, 'kjvName'), str(f, 'esvName')),
   })
 }
 places.sort((a, b) => a.id.localeCompare(b.id))
+log(`place meanings: ${places.filter((p) => p.name_meaning).length} places`)
 {
   const shards = new Map<string, Record<string, PlaceFull>>()
   for (const p of places) {
@@ -322,6 +436,7 @@ places.sort((a, b) => a.id.localeCompare(b.id))
       lat: p.lat,
       lon: p.lon,
       aliases: p.aliases.length ? p.aliases : undefined,
+      meaning: p.name_meaning?.meaning,
       shard: shardOf(p.id),
     })),
   )
@@ -763,7 +878,10 @@ interface StudyRef {
   ranges: Range[]
   verses: number
   weight: number
+  /** Jesus's words are in the passage itself or in one of its links */
   jesus: boolean
+  /** Jesus's words are in the passage itself */
+  jesusOwn?: boolean
   note?: string
   to?: Range[]
   toLabel?: string
@@ -843,7 +961,8 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
               jesus: jesusSpeaksIn(parsedL.ranges),
             })
           }
-          const jesus = jesusSpeaksIn(ranges) || links.some((l) => l.jesus)
+          const jesusOwn = jesusSpeaksIn(ranges)
+          const jesus = jesusOwn || links.some((l) => l.jesus)
           const weight = r.weight ?? g.weight ?? (jesus ? 3 : 1)
           all.push(...ranges)
           for (const l of links) all.push(...l.ranges)
@@ -854,6 +973,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
             verses: countVerses(ranges),
             weight,
             jesus,
+            jesusOwn: jesusOwn || undefined,
             note: r.note,
             to,
             toLabel: to ? to.map((x) => canon.rangeLabel(x[0], x[1])).join('; ') : undefined,
@@ -984,6 +1104,8 @@ writeJson('manifest.json', {
     { id: 'openbible', name: 'OpenBible.info cross references', license: 'CC BY 4.0', url: 'https://www.openbible.info/labs/cross-references/' },
     { id: 'topical', name: "Nave's Topical Bible and Torrey's Topical Textbook (audited edition)", license: 'Public domain sources; pipeline MIT', url: 'https://github.com/j86schroeder/topical-bible-search' },
     { id: 'easton', name: "Easton's Bible Dictionary (1897), via Theographic", license: 'Public domain', url: 'https://www.ccel.org/ccel/easton/ebd2.html' },
+    { id: 'hitchcock', name: "Hitchcock's Bible Names Dictionary (1869), via BibleData", license: 'Public domain', url: 'https://github.com/BradyStephenson/bible-data' },
+    { id: 'bibledata', name: 'BibleData person and place labels (Hebrew and Greek forms, meanings, Strong\'s numbers)', license: 'CC BY 4.0', url: 'https://github.com/BradyStephenson/bible-data' },
   ],
 })
 log(`done: ${filesWritten} files, ${(bytesWritten / 1e6).toFixed(1)} MB`)

@@ -156,7 +156,7 @@ export default function ArcDiagram({
                           </div>
                           <div className="k">
                             {[study.categories?.find((c) => c.id === l.target.category)?.title ?? l.target.category, l.target.topic, l.groupTitle].filter(Boolean).join(' · ')}
-                            {l.ref.jesus ? ' · words of Jesus' : ''}
+                            {l.target.ranges && l.ref.jesusOwn ? ' · words of Jesus' : l.ref.jesus ? ' · connected by Jesus' : ''}
                           </div>
                           {(l.target.note ?? l.ref.note) && <div className="k mt-1">{l.target.note ?? l.ref.note}</div>}
                           {bible && <div className="mt-1 font-serif">{truncate(bible.verses[l.ref.ranges[0][0]], 120)}</div>}

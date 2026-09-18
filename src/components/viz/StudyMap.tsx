@@ -59,6 +59,8 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
 
   const personName = useMemo(() => new Map(people?.map((p) => [p.id, p.title]) ?? []), [people])
   const placeName = useMemo(() => new Map(places?.map((p) => [p.id, p.name]) ?? []), [places])
+  const personMeaning = useMemo(() => new Map(people?.filter((p) => p.meaning).map((p) => [p.id, p.meaning!]) ?? []), [people])
+  const placeMeaning = useMemo(() => new Map(places?.filter((p) => p.meaning).map((p) => [p.id, p.meaning!]) ?? []), [places])
 
   const snip = (ranges: Range[]) => (bible ? truncate(bible.verses[ranges[0][0]] || '', 140) : undefined)
   const catTitle = (id?: string) => (id ? study.categories?.find((c) => c.id === id)?.title : undefined)
@@ -75,7 +77,7 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
       color,
       r: r.weight >= 3 ? 6.5 : 4.5,
       solid: r.jesus,
-      sub: [catTitle(r.category), r.jesus ? 'words of Jesus' : undefined, `weight ${r.weight}`].filter(Boolean).join(' · '),
+      sub: [catTitle(r.category), r.jesusOwn ? 'words of Jesus' : r.jesus ? 'connected by Jesus' : undefined, `weight ${r.weight}`].filter(Boolean).join(' · '),
       note: r.note,
       snippet: snip(r.ranges),
     })
@@ -133,7 +135,7 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
             muted: true,
             dots: topP.map(([id, n]) => {
               targets.set(`p:${id}`, { kind: 'person', id })
-              return { id: `p:${id}`, label: personName.get(id) ?? id, color: MUTED, r: 4.5, sub: `${n} verse${n === 1 ? '' : 's'}` }
+              return { id: `p:${id}`, label: personName.get(id) ?? id, color: MUTED, r: 4.5, sub: [personMeaning.get(id) ? `“${personMeaning.get(id)}”` : undefined, `${n} verse${n === 1 ? '' : 's'}`].filter(Boolean).join(' · ') }
             }),
           })
         if (topL.length)
@@ -145,7 +147,7 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
             muted: true,
             dots: topL.map(([id, n]) => {
               targets.set(`l:${id}`, { kind: 'place', id })
-              return { id: `l:${id}`, label: placeName.get(id) ?? id, color: MUTED, r: 4.5, sub: `${n} verse${n === 1 ? '' : 's'}` }
+              return { id: `l:${id}`, label: placeName.get(id) ?? id, color: MUTED, r: 4.5, sub: [placeMeaning.get(id) ? `“${placeMeaning.get(id)}”` : undefined, `${n} verse${n === 1 ? '' : 's'}`].filter(Boolean).join(' · ') }
             }),
           })
       }
@@ -236,7 +238,7 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
       for (const [rel, ids] of fam)
         for (const id of ids) {
           targets.set(`p:${id}`, { kind: 'person', id })
-          famDots.push({ id: `p:${id}`, label: personName.get(id) ?? id, color: 'var(--series-1)', r: 4.5, sub: rel })
+          famDots.push({ id: `p:${id}`, label: personName.get(id) ?? id, color: 'var(--series-1)', r: 4.5, sub: [rel, personMeaning.get(id) ? `“${personMeaning.get(id)}”` : undefined].filter(Boolean).join(' · ') })
         }
       if (famDots.length) branches.push({ id: 'family', title: 'Family', color: 'var(--series-1)', dots: famDots })
       const evs = (events ?? []).filter((e) => e.participants.includes(person.id)).slice(0, CAP)
@@ -303,7 +305,7 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
     }
     return { branches, targets, branchTargets }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [focus, groups, xrefs, ents, person, place, events, personName, placeName, showAuto, bible])
+  }, [focus, groups, xrefs, ents, person, place, events, personName, placeName, personMeaning, placeMeaning, showAuto, bible])
 
   const labelOf = (f: Focus): string => {
     switch (f.kind) {

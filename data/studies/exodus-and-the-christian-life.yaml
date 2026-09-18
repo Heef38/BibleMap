@@ -1,0 +1,375 @@
+# The Exodus read as the shape of following Christ: Egypt, the sea, the wilderness, the Jordan,
+# and the battles in the land. The New Testament reads the story this way itself
+# (1 Corinthians 10, Hebrews 3 and 4, Jude 5), and the links show where.
+id: exodus-and-the-christian-life
+title: "The Exodus and the Christian Life"
+subtitle: "Egypt, the sea, the wilderness, the Jordan and the battles in the land, and how the New Testament reads them as the shape of following Christ"
+kind: connections
+chart: map
+summary: >-
+  "These things happened to them as examples and were written down as warnings for us"
+  (1 Corinthians 10:11). Israel's road out of Egypt is the oldest map of the life of faith:
+  bondage and a Passover, a sea crossed, a wilderness of provision and testing, a river, and
+  a land with battles still in it. Zoom into any stage to see where the New Testament finds
+  Christ in it, applies it to the believer's walk, or holds it up as a warning. Notes say when
+  a mapping is a long-standing devotional reading rather than a stated one.
+tags: [exodus, discipleship, typology, wilderness, promised land]
+categories:
+  christ:
+    title: "Christ in the story"
+    note: "Where the New Testament finds Jesus in the Exodus."
+  life:
+    title: "Our walk"
+    note: "Where the New Testament applies the story to the believer and the church."
+  warning:
+    title: "A warning for us"
+    note: "Where the New Testament holds up Israel's failure as a caution."
+  echo:
+    title: "Retold in Scripture"
+    note: "Where the Prophets, the Psalms and the apostles retell the story."
+views:
+  - title: "By stage"
+    note: "Seven stages of the road, from the house of slavery to the land with battles still in it."
+    groups:
+      - title: "Egypt: the house of slavery"
+        note: "Life under a master we did not choose, and the God who hears the groaning."
+        refs:
+          - ref: "Exod 1:8-14"
+            label: "Slaves in Egypt"
+            note: "Before deliverance comes a bondage we cannot break ourselves"
+            links:
+              - { to: "John 8:34-36", topic: "Slaves to sin, set free by the Son", category: life }
+              - { to: "Rom 6:16-18", topic: "Slaves to sin, set free by the Son", category: life }
+              - { to: "Eph 2:1-3", topic: "Dead in trespasses, following the ruler of this world", category: life }
+              - { to: "Titus 3:3", topic: "Once we too were enslaved", category: life }
+              - { to: "Deut 5:15", topic: "Remember that you were slaves in Egypt", category: echo }
+          - ref: "Exod 2:23-25"
+            label: "The groaning"
+            note: "Israel groaned, and God heard, remembered, looked, and knew"
+            links:
+              - { to: "Rom 8:22-27", topic: "Creation groans, and the Spirit groans with us", category: life }
+              - { to: "Ps 34:17-18", topic: "The LORD hears the cry of the righteous", category: echo }
+              - { to: "Luke 18:7-8", topic: "Will not God bring justice for His elect who cry out?", category: christ }
+              - { to: "Exod 3:7-10", topic: "I have surely seen the affliction of My people", category: echo }
+          - ref: "Exod 3:1-15"
+            label: "The burning bush: I AM"
+            note: "God comes down to deliver, and gives His name"
+            links:
+              - { to: "John 8:58", topic: "Before Abraham was born, I am", category: christ }
+              - { to: "Heb 2:14-15", topic: "To free those held in slavery by the fear of death", category: christ }
+              - { to: "Phil 2:6-8", topic: "He came down, taking the form of a servant", category: christ }
+              - { to: "Acts 7:30-35", topic: "Stephen retells the bush", category: echo }
+          - ref: "Exod 7:1-5; Exod 12:12"
+            label: "Judgment on the gods of Egypt"
+            note: "The plagues: the powers that held Israel are unmasked and judged"
+            links:
+              - { to: "Col 2:15", topic: "He disarmed the powers and made a public spectacle of them", category: christ }
+              - { to: "1 John 5:19", topic: "The whole world lies under the evil one", category: life }
+              - { to: "Rev 16:1-4", topic: "The plagues poured out again", category: echo }
+              - { to: "Num 33:3-4", topic: "The LORD had brought judgment on their gods", category: echo }
+      - title: "The Passover and the night of deliverance"
+        note: "Redeemed by blood, brought out the same night, and claimed as His own."
+        refs:
+          - ref: "Exod 12:1-14"
+            label: "The Passover lamb"
+            note: "A lamb without defect, its blood on the doorposts; when I see the blood, I will pass over you"
+            links:
+              - { to: "1 Cor 5:7-8", topic: "Christ, our Passover lamb", category: christ }
+              - { to: "John 1:29", topic: "The Lamb of God who takes away the sin of the world", category: christ }
+              - { to: "1 Pet 1:18-19", topic: "Redeemed with the precious blood of a lamb without blemish", category: christ }
+              - { to: "John 19:31-36", topic: "Not one of His bones will be broken", category: christ }
+              - { to: "Rev 5:9-10", topic: "You purchased for God persons from every tribe", category: christ }
+              - { to: "Heb 11:28", topic: "By faith he kept the Passover", category: life }
+          - ref: "Exod 12:29-42"
+            label: "Brought out the same night"
+            note: "Four hundred and thirty years ended in a single night"
+            links:
+              - { to: "Col 1:13-14", topic: "Rescued from the dominion of darkness", category: life }
+              - { to: "Luke 4:18", topic: "To proclaim freedom for the captives", category: christ }
+              - { to: "Gal 5:1", topic: "It is for freedom that Christ has set us free", category: life }
+              - { to: "Ps 105:37-43", topic: "He brought out Israel with silver and gold", category: echo }
+              - { to: "Deut 16:1-3", topic: "Remember the day you came out of Egypt", category: echo }
+          - ref: "Exod 13:1-16"
+            label: "The firstborn belong to Me"
+            note: "Consecrate every firstborn; eat unleavened bread; tell your son on that day"
+            links:
+              - { to: "1 Cor 6:19-20", topic: "You are not your own; you were bought at a price", category: life }
+              - { to: "Col 1:15-18", topic: "The firstborn over all creation", category: christ }
+              - { to: "Heb 12:22-23", topic: "The church of the firstborn", category: life }
+              - { to: "Luke 2:22-24", topic: "Jesus presented as the firstborn", category: christ }
+      - title: "The sea and the song"
+        note: "Through the waters, the old life left behind, and the first song of the redeemed."
+        refs:
+          - ref: "Exod 14:10-31"
+            label: "Through the Red Sea"
+            note: "The waters divide; Israel walks through on dry ground; Egypt's army is gone"
+            links:
+              - { to: "1 Cor 10:1-2", topic: "Baptized into Moses in the cloud and in the sea", category: life }
+              - { to: "Rom 6:3-4", topic: "Baptized into His death, raised to walk in new life", category: life }
+              - { to: "Col 2:12", topic: "Buried with Him in baptism", category: life }
+              - { to: "Heb 11:29", topic: "By faith they passed through the sea", category: life }
+              - { to: "Isa 43:16-19", topic: "The LORD who made a way through the sea", category: echo }
+              - { to: "Ps 106:7-12", topic: "He rebuked the Red Sea", category: echo }
+              - { to: "Isa 51:9-11", topic: "Was it not You who dried up the sea?", category: echo }
+          - ref: "Exod 15:1-21"
+            label: "The song of Moses and Miriam"
+            note: "I will sing to the LORD, for He is highly exalted"
+            links:
+              - { to: "Rev 15:2-4", topic: "The song of Moses and the song of the Lamb", category: life }
+              - { to: "Ps 118:14", topic: "The LORD is my strength and my song", category: echo }
+              - { to: "Isa 12:2-3", topic: "The LORD is my strength and my song", category: echo }
+              - { to: "Col 3:16", topic: "Singing psalms, hymns and spiritual songs", category: life }
+          - ref: "Exod 15:22-27"
+            label: "Marah and Elim"
+            note: "Three days later, bitter water made sweet by a tree; then twelve springs and seventy palms"
+            links:
+              - { to: "Jas 1:2-4", topic: "Consider it pure joy when you face trials", category: life }
+              - { to: "Ruth 1:20-21", topic: "Call me Mara", category: echo }
+              - { to: "2 Cor 1:3-5", topic: "The God of all comfort", category: life }
+              - { to: "1 Pet 2:24", topic: "He bore our sins in His body on the tree", category: christ }
+      - title: "The wilderness: provision and testing"
+        note: "Forty years of manna, water from the rock, the cloud, the mountain, and the failures on the way."
+        refs:
+          - ref: "Exod 16:1-18, 31-35"
+            label: "Manna"
+            note: "Bread from heaven every morning, enough for the day"
+            links:
+              - { to: "John 6:31-35, 48-51", topic: "I am the bread of life", category: christ }
+              - { to: "Matt 6:11", topic: "Give us today our daily bread", category: life }
+              - { to: "Deut 8:2-3", topic: "He humbled you and fed you with manna", category: echo }
+              - { to: "1 Cor 10:3", topic: "They all ate the same spiritual food", category: life }
+              - { to: "Ps 78:23-31", topic: "They craved, and He gave them what they asked", category: warning }
+          - ref: "Exod 17:1-7"
+            label: "Water from the rock"
+            note: "Strike the rock, and water will come out; the place was called Massah and Meribah"
+            links:
+              - { to: "1 Cor 10:4", topic: "They drank from the spiritual rock, and the rock was Christ", category: christ }
+              - { to: "John 7:37-39", topic: "Come to Me and drink", category: christ }
+              - { to: "Ps 95:7-9", topic: "Do not harden your hearts as at Meribah", category: warning }
+              - { to: "Heb 3:7-11", topic: "Today, if you hear His voice", category: warning }
+              - { to: "Num 20:2-13", topic: "The second rock, and Moses' failure", category: echo }
+          - ref: "Exod 17:8-16"
+            label: "Amalek"
+            note: "The first battle; Israel prevails while Moses' hands are lifted"
+            links:
+              - { to: "Gal 5:16-17", topic: "The flesh desires what is contrary to the Spirit", category: life }
+              - { to: "Eph 6:10-13", topic: "Our struggle is not against flesh and blood", category: life }
+              - { to: "1 Tim 2:8", topic: "Lifting up holy hands in prayer", category: life }
+              - { to: "Deut 25:17-19", topic: "Remember what Amalek did", category: echo }
+          - ref: "Exod 13:21-22; Num 9:15-23"
+            label: "The pillar of cloud and fire"
+            note: "Whenever the cloud lifted, they set out; where it settled, they camped"
+            links:
+              - { to: "Rom 8:14", topic: "Those led by the Spirit of God are children of God", category: life }
+              - { to: "John 16:13", topic: "The Spirit of truth will guide you", category: christ }
+              - { to: "Ps 78:14", topic: "He led them with a cloud by day", category: echo }
+              - { to: "Neh 9:19", topic: "The pillar of cloud did not depart", category: echo }
+              - { to: "Isa 58:8-11", topic: "The LORD will guide you always", category: life }
+          - ref: "Exod 19:1-6; Exod 20:1-21"
+            label: "Sinai"
+            note: "The mountain, the thunder, the ten words; a kingdom of priests"
+            links:
+              - { to: "Heb 12:18-24", topic: "Not to a mountain that can be touched, but to Mount Zion", category: life }
+              - { to: "1 Pet 2:9", topic: "A royal priesthood, a holy nation", category: life }
+              - { to: "Gal 3:19-25", topic: "The law was our guardian until Christ came", category: life }
+              - { to: "Jer 31:31-34", topic: "A new covenant, written on hearts", category: echo }
+              - { to: "Matt 5:17", topic: "Not to abolish the Law but to fulfill it", category: christ }
+          - ref: "Exod 32:1-14"
+            label: "The golden calf"
+            note: "Idolatry at the foot of the mountain, while God was still speaking"
+            links:
+              - { to: "1 Cor 10:6-8", topic: "Do not be idolaters, as some of them were", category: warning }
+              - { to: "Ps 106:19-23", topic: "They exchanged their Glory for the image of a bull", category: echo }
+              - { to: "Acts 7:39-41", topic: "In their hearts they turned back to Egypt", category: echo }
+              - { to: "1 John 5:21", topic: "Keep yourselves from idols", category: life }
+              - { to: "Col 3:5", topic: "Greed, which is idolatry", category: life }
+          - ref: "Num 11:1-6, 31-34"
+            label: "Craving Egypt's food"
+            note: "We remember the fish we ate in Egypt; the graves of craving"
+            links:
+              - { to: "1 Cor 10:9-10", topic: "Do not grumble, as some of them did", category: warning }
+              - { to: "Phil 2:14-15", topic: "Do everything without grumbling", category: life }
+              - { to: "Luke 9:62", topic: "No one who looks back is fit for the kingdom", category: christ }
+              - { to: "Ps 78:17-22", topic: "They tested God in the wilderness", category: echo }
+          - ref: "Num 13:1-14:38"
+            label: "Kadesh: unbelief at the border"
+            note: "Ten spies saw giants, two saw God; a generation turned back into the wilderness"
+            links:
+              - { to: "Heb 3:7-19", topic: "They could not enter because of unbelief", category: warning }
+              - { to: "Heb 4:1-11", topic: "A Sabbath rest remains for the people of God", category: life }
+              - { to: "Jude 5", topic: "He destroyed those who did not believe", category: warning }
+              - { to: "Deut 1:19-40", topic: "Moses retells Kadesh", category: echo }
+              - { to: "Num 14:24", topic: "Caleb, because he had a different spirit", category: life }
+          - ref: "Num 21:4-9"
+            label: "The bronze serpent"
+            note: "Look at it and live"
+            links:
+              - { to: "John 3:14-15", topic: "As Moses lifted up the serpent, so the Son of Man must be lifted up", category: christ }
+              - { to: "Isa 45:22", topic: "Turn to Me and be saved", category: echo }
+              - { to: "1 Cor 10:9", topic: "Nor test Christ, as some of them did", category: warning }
+              - { to: "2 Kgs 18:4", topic: "Nehushtan broken in pieces", category: echo }
+          - ref: "Deut 8:1-5, 11-18"
+            label: "What the wilderness was for"
+            note: "To humble you and test you, to know what was in your heart; as a man disciplines his son"
+            links:
+              - { to: "Heb 12:5-11", topic: "The Lord disciplines the one He loves", category: life }
+              - { to: "Matt 4:1-11", topic: "Forty days in the wilderness, answering with Deuteronomy", category: christ }
+              - { to: "Jas 1:2-4, 12", topic: "The testing of your faith produces perseverance", category: life }
+              - { to: "Hos 2:14-15", topic: "I will lead her into the wilderness and speak tenderly", category: echo }
+              - { to: "Rev 12:6, 14", topic: "The woman nourished in the wilderness", category: life }
+      - title: "The Jordan: entering the inheritance"
+        note: "Moses dies, Joshua leads; through the water again, and into the land."
+        refs:
+          - ref: "Deut 34:1-8; Josh 1:1-9"
+            label: "Moses dies; Joshua leads"
+            note: "The law could bring them to the edge; Joshua, whose name is Jesus, brings them in"
+            links:
+              - { to: "John 1:17", topic: "The law through Moses; grace and truth through Jesus Christ", category: christ }
+              - { to: "Heb 4:8-10", topic: "If Joshua had given them rest", category: christ }
+              - { to: "Rom 8:3-4", topic: "What the law was powerless to do", category: life }
+              - { to: "Heb 3:5-6", topic: "Moses faithful as a servant; Christ as a Son", category: christ }
+              - { to: "Heb 13:5-6", topic: "Never will I leave you", category: life }
+          - ref: "Josh 3:1-17"
+            label: "Crossing the Jordan"
+            note: "The priests carry the ark into the river, and the people follow on dry ground"
+            links:
+              - { to: "Rom 6:5-11", topic: "Dead to sin, alive to God", category: life }
+              - { to: "Col 3:1-4", topic: "Raised with Christ, set your hearts above", category: life }
+              - { to: "Matt 3:13-17", topic: "Jesus baptized in the Jordan", category: christ }
+              - { to: "Ps 114", topic: "The Jordan turned back", category: echo }
+              - { to: "2 Kgs 2:8, 14", topic: "Elijah and Elisha cross the Jordan", category: echo }
+          - ref: "Josh 4:1-9, 19-24"
+            label: "Twelve stones of remembrance"
+            note: "When your children ask, tell them: Israel crossed on dry ground"
+            links:
+              - { to: "Luke 22:19", topic: "Do this in remembrance of Me", category: christ }
+              - { to: "1 Pet 2:4-5", topic: "Living stones", category: life }
+              - { to: "Ps 77:11-15", topic: "I will remember the deeds of the LORD", category: echo }
+              - { to: "Deut 6:20-25", topic: "When your son asks you", category: echo }
+          - ref: "Josh 5:2-12"
+            label: "Gilgal: the reproach rolled away"
+            note: "Circumcised in the land, the Passover kept, and the manna stops"
+            links:
+              - { to: "Col 2:11-13", topic: "Circumcised with a circumcision not made by hands", category: life }
+              - { to: "Rom 2:28-29", topic: "Circumcision of the heart, by the Spirit", category: life }
+              - { to: "Phil 3:3", topic: "We are the circumcision, who worship by the Spirit", category: life }
+              - { to: "Heb 5:12-14", topic: "Solid food is for the mature", category: life }
+              - { to: "Eph 1:11-14", topic: "In Him we have obtained an inheritance", category: life }
+          - ref: "Josh 5:13-15"
+            label: "The commander of the LORD's army"
+            note: "Are you for us or for our enemies? Neither; I have come as commander"
+            links:
+              - { to: "Rev 19:11-16", topic: "The armies of heaven follow Him", category: christ }
+              - { to: "Exod 3:5", topic: "Take off your sandals; holy ground", category: echo }
+              - { to: "Dan 10:5-6", topic: "A man clothed in linen", category: echo }
+              - { to: "John 18:36", topic: "My kingdom is not of this world", category: christ }
+      - title: "Battles in the land"
+        note: "The inheritance is a gift, and it still has to be taken: faith, hidden sin, hasty alliances, giants, and the war that continues."
+        refs:
+          - ref: "Josh 6:1-27"
+            label: "Jericho"
+            note: "Walls fall by faith, not force; seven days, seven circuits, a shout"
+            links:
+              - { to: "Heb 11:30", topic: "By faith the walls of Jericho fell", category: life }
+              - { to: "2 Cor 10:3-5", topic: "Divine power to demolish strongholds", category: life }
+              - { to: "Zech 4:6", topic: "Not by might nor by power, but by My Spirit", category: echo }
+              - { to: "Heb 11:31", topic: "By faith Rahab", category: life }
+              - { to: "Matt 1:5", topic: "Rahab in the line of Christ", category: christ }
+          - ref: "Josh 7:1-26"
+            label: "Achan and the defeat at Ai"
+            note: "One hidden sin, and the whole camp cannot stand"
+            links:
+              - { to: "Acts 5:1-11", topic: "Ananias and Sapphira", category: warning }
+              - { to: "1 Cor 5:6-7", topic: "A little leaven leavens the whole batch", category: warning }
+              - { to: "Heb 12:15", topic: "See that no root of bitterness grows up", category: warning }
+              - { to: "Num 32:23", topic: "Be sure your sin will find you out", category: echo }
+              - { to: "Josh 8:1", topic: "Do not be afraid; restored after repentance", category: life }
+          - ref: "Josh 9:1-27"
+            label: "The Gibeonite deception"
+            note: "Moldy bread and worn sandals; they did not ask the LORD"
+            links:
+              - { to: "Jas 1:5", topic: "If any of you lacks wisdom, let him ask God", category: life }
+              - { to: "Prov 3:5-6", topic: "Lean not on your own understanding", category: echo }
+              - { to: "2 Cor 11:13-15", topic: "Satan disguises himself as an angel of light", category: warning }
+              - { to: "Isa 30:1-2", topic: "Plans made without asking Me", category: echo }
+          - ref: "Josh 10:1-15"
+            label: "The day the sun stood still"
+            note: "The LORD fought for Israel"
+            links:
+              - { to: "Exod 14:14", topic: "The LORD will fight for you", category: echo }
+              - { to: "Rom 8:31-37", topic: "If God is for us, who can be against us?", category: life }
+              - { to: "Ps 44:1-3", topic: "It was not by their sword that they won the land", category: echo }
+              - { to: "Isa 28:21", topic: "The LORD will rise up as at Gibeon", category: echo }
+          - ref: "Josh 14:6-15"
+            label: "Caleb: give me this mountain"
+            note: "Forty-five years later, still wholeheartedly following the LORD"
+            links:
+              - { to: "Num 14:24", topic: "A different spirit", category: echo }
+              - { to: "Heb 10:35-39", topic: "Do not throw away your confidence", category: life }
+              - { to: "2 Tim 4:7-8", topic: "I have finished the race", category: life }
+              - { to: "Phil 3:12-14", topic: "Pressing on toward the goal", category: life }
+              - { to: "Ps 92:12-15", topic: "Still bearing fruit in old age", category: echo }
+          - ref: "Josh 13:1-7; Josh 23:1-13"
+            label: "Much land remains"
+            note: "The nations left among you: the war that goes on inside the inheritance"
+            links:
+              - { to: "Judg 2:1-3, 20-23", topic: "I will not drive them out before you", category: echo }
+              - { to: "Gal 5:16-25", topic: "The flesh against the Spirit", category: life }
+              - { to: "Rom 7:21-25", topic: "The war within my members", category: life }
+              - { to: "Eph 6:10-18", topic: "Put on the full armor of God", category: life }
+              - { to: "1 Pet 5:8-9", topic: "Your enemy prowls like a roaring lion", category: life }
+              - { to: "Heb 12:1-2", topic: "Run with endurance the race set before us", category: life }
+          - ref: "Josh 21:43-45; Josh 24:14-24"
+            label: "Every promise kept; choose this day"
+            note: "Not one of all the good promises failed; as for me and my house, we will serve the LORD"
+            links:
+              - { to: "2 Cor 1:20", topic: "All the promises of God are Yes in Him", category: christ }
+              - { to: "1 Kgs 8:56", topic: "Not one word has failed", category: echo }
+              - { to: "Matt 6:24", topic: "No one can serve two masters", category: christ }
+              - { to: "Deut 30:19-20", topic: "Choose life", category: echo }
+              - { to: "Heb 4:9-11", topic: "Make every effort to enter that rest", category: life }
+      - title: "What the New Testament says it means"
+        note: "The passages that read the Exodus this way, which anchor the whole study."
+        refs:
+          - ref: "1 Cor 10:1-13"
+            label: "These things happened as examples"
+            note: "Paul reads the sea, the manna, the rock, the calf and the serpent as written for us"
+            category: life
+          - ref: "Heb 3:7-4:11"
+            label: "Today, if you hear His voice"
+            note: "Kadesh becomes the warning of the church, and the land becomes the rest that remains"
+            category: warning
+          - ref: "Heb 11:23-31"
+            label: "By faith: Moses, the Passover, the sea, Jericho"
+            note: "The Exodus retold as a history of faith"
+            category: life
+          - ref: "Jude 5"
+            label: "The Lord saved a people out of Egypt"
+            note: "And afterward destroyed those who did not believe"
+            category: warning
+          - ref: "Acts 7:17-45"
+            label: "Stephen retells the story"
+            note: "Moses rejected, then sent as ruler and deliverer"
+            category: echo
+          - ref: "Ps 78; Ps 106"
+            label: "Israel retells its own story"
+            note: "Two psalms that walk the same road and confess the same failures"
+            category: echo
+          - ref: "Isa 43:16-21; Isa 51:9-11"
+            label: "A new exodus"
+            note: "The prophets promise a second going-out, greater than the first"
+            category: echo
+          - ref: "1 Pet 2:9-10"
+            label: "A chosen people, once not a people"
+            note: "Exodus 19 spoken over the church"
+            category: life
+          - ref: "Rev 15:2-4"
+            label: "The song of Moses and the Lamb"
+            note: "The redeemed by the sea of glass sing the song of Exodus 15"
+            category: life
+  - title: "By kind"
+    note: "Christ in the story, our walk, the warnings, and the retellings."
+    auto: category
+  - title: "Jesus and the rest"
+    note: "Where Jesus Himself reads the Exodus."
+    auto: jesus

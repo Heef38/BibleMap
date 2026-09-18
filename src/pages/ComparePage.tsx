@@ -110,6 +110,7 @@ export default function ComparePage() {
 
   const personName = useMemo(() => new Map(people?.map((p) => [p.id, p.title]) ?? []), [people])
   const placeName = useMemo(() => new Map(places?.map((p) => [p.id, p.name]) ?? []), [places])
+  const personMeaning = useMemo(() => new Map(people?.filter((p) => p.meaning).map((p) => [p.id, p.meaning!]) ?? []), [people])
   const setPair = (which: 'a' | 'b', id: string) => {
     const next = new URLSearchParams(params)
     next.set(which, id)
@@ -175,7 +176,7 @@ export default function ComparePage() {
     const peopleDots = (ids: string[], prefix: string, counts: (id: string) => string): DualDot[] =>
       ids.slice(0, CAP).map((id) => {
         targets.set(`${prefix}p:${id}`, () => navigate(`/person/${id}`))
-        return { id: `${prefix}p:${id}`, label: personName.get(id) ?? id, sub: counts(id) }
+        return { id: `${prefix}p:${id}`, label: personName.get(id) ?? id, sub: [personMeaning.get(id) ? `“${personMeaning.get(id)}”` : undefined, counts(id)].filter(Boolean).join(' · ') }
       })
     const placeDots = (ids: string[], prefix: string, counts: (id: string) => string): DualDot[] =>
       ids.slice(0, CAP).map((id) => {
@@ -208,7 +209,7 @@ export default function ComparePage() {
       targets,
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [canon, a, b, cmp, personName, placeName, bible])
+  }, [canon, a, b, cmp, personName, placeName, personMeaning, bible])
 
   const timeline = useMemo(() => {
     if (!a || !b || !cmp) return null
@@ -267,6 +268,16 @@ export default function ComparePage() {
                       {person.title}
                     </EntityLink>
                   </div>
+                  {person.name_meaning?.meaning && (
+                    <div className="text-xs text-ink-2 mt-0.5">
+                      {person.name_meaning.hebrew && (
+                        <span lang="he" dir="rtl" className="text-sm mr-1.5">
+                          {person.name_meaning.hebrew}
+                        </span>
+                      )}
+                      “{person.name_meaning.meaning}”
+                    </div>
+                  )}
                   <div className="text-ink-2 text-xs mt-1 leading-relaxed">
                     {person.verseCount.toLocaleString()} verses in {new Set(person.verses.map((o) => canon.locate(o).b)).size} books
                     {person.birth !== undefined && person.death !== undefined ? <> · lived {formatYearRange(person.birth, person.death)}</> : span ? <> · appears {formatYearRange(...(span as [number, number]))}</> : null}
