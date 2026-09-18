@@ -1,0 +1,569 @@
+# The Old Testament witness to Jesus, as the New Testament reads it.
+# Each reference is an Old Testament passage; `to` is where the New Testament takes it up.
+# `category` says how: a direct reference, a type, or a shadow (see the definitions below).
+# Weights follow the usual rule: when Jesus Himself makes the connection, it counts three.
+id: christ-in-the-old-testament
+title: Christ in the Old Testament
+subtitle: How the Law, the Prophets and the Psalms speak of Jesus, sorted into direct references, types and shadows
+kind: connections
+summary: >-
+  "Beginning with Moses and all the Prophets, He explained to them what was written in all the
+  Scriptures about Himself" (Luke 24:27). This study follows that reading. A direct reference is a
+  passage that speaks of the Messiah and that the New Testament cites as fulfilled in Jesus. A type
+  is a person or event God shaped to prefigure Him. A shadow is an institution of the Law whose
+  substance is Christ. The categories are a reading aid, not a verdict; many passages carry more
+  than one.
+tags: [typology, prophecy, jesus, old-testament]
+categories:
+  direct:
+    title: Direct reference
+    note: The passage speaks of the Messiah, and the New Testament cites it as fulfilled in Jesus.
+  type:
+    title: Type
+    note: A person or event God shaped to prefigure Christ, read that way by the New Testament.
+  shadow:
+    title: Shadow
+    note: An institution or practice of the Law whose substance is Christ (Colossians 2:17, Hebrews 10:1).
+  witness:
+    title: Witness
+    note: Jesus and the apostles saying, in so many words, that the Scriptures are about Him.
+views:
+  - title: By theme
+    note: Nine strands of one witness, from the first promise to the empty tomb and the throne.
+    groups:
+      - title: Promised
+        note: The seed, the star and the scepter. The promises that a Deliverer would come.
+        refs:
+          - ref: Gen 3:15
+            to: Gal 4:4-5; Rom 16:20
+            category: direct
+            note: The seed of the woman who crushes the serpent
+          - ref: Gen 12:1-3
+            to: Gal 3:8
+            category: direct
+            note: All nations blessed through Abraham's seed
+          - ref: Gen 22:15-18
+            to: Gal 3:16
+            category: direct
+            note: The seed to whom the promises were spoken is Christ
+          - ref: Gen 49:8-10
+            to: Rev 5:5
+            category: direct
+            note: The scepter of Judah; the Lion of the tribe of Judah
+          - ref: Num 24:17
+            to: Matt 2:1-2
+            category: direct
+            note: A star out of Jacob; the Magi follow His star
+          - ref: Deut 18:15-19
+            to: Acts 3:22-23
+            category: direct
+            note: The prophet like Moses
+          - ref: 2 Sam 7:12-16
+            to: Luke 1:32-33
+            category: direct
+            note: A son of David whose throne is forever
+          - ref: Isa 11:1-10
+            to: Rom 15:12
+            category: direct
+            note: The root of Jesse, the hope of the nations
+          - ref: Jer 23:5-6
+            to: 1 Cor 1:30
+            category: direct
+            note: The righteous Branch, "the LORD our Righteousness"
+          - ref: Dan 7:13-14
+            to: Matt 26:63-64
+            category: direct
+            note: The Son of Man given an everlasting dominion
+          - ref: Mic 5:2
+            to: Matt 2:4-6
+            category: direct
+            note: Born in Bethlehem
+          - ref: Zech 9:9-10
+            to: Matt 21:4-5
+            category: direct
+            note: The King comes riding on a donkey
+      - title: Born and revealed
+        note: His birth, His forerunner, and the opening of His ministry.
+        refs:
+          - ref: Isa 7:14
+            to: Matt 1:22-23
+            category: direct
+            note: Immanuel, born of a virgin
+          - ref: Hos 11:1
+            to: Matt 2:14-15
+            category: type
+            note: Israel's exodus relived in the Son called out of Egypt
+          - ref: Jer 31:15
+            to: Matt 2:16-18
+            category: type
+            note: Rachel weeping; Israel's sorrow patterns Bethlehem's
+          - ref: Isa 11:1
+            to: Matt 2:23
+            category: direct
+            note: The Branch (netzer); "He will be called a Nazarene"
+          - ref: Isa 9:6-7
+            to: Luke 2:10-11
+            category: direct
+            note: A child is born; a Savior, Christ the Lord
+          - ref: Isa 49:6
+            to: Luke 2:29-32
+            category: direct
+            note: A light for the Gentiles, in Simeon's arms
+          - ref: Isa 40:3-5
+            to: Luke 3:2-6
+            category: direct
+            note: A voice preparing the way of the LORD
+          - ref: Mal 3:1
+            to: Mark 1:1-3
+            category: direct
+            note: The messenger before the Lord who comes to His temple
+          - ref: Mal 4:5-6
+            to: Matt 11:11-14
+            category: direct
+            note: Elijah before the great day; Jesus names John
+          - ref: Isa 9:1-2
+            to: Matt 4:12-16
+            category: direct
+            note: Light dawns in Galilee of the Gentiles
+          - ref: Isa 61:1-2
+            to: Luke 4:16-21
+            category: direct
+            note: Anointed to proclaim good news; "today this Scripture is fulfilled"
+          - ref: Isa 35:5-6
+            to: Matt 11:2-6
+            category: direct
+            note: The blind see, the lame walk; Jesus's answer to John
+          - ref: Isa 53:4
+            to: Matt 8:16-17
+            category: direct
+            note: He took up our infirmities
+          - ref: Isa 42:1-4
+            to: Matt 12:15-21
+            category: direct
+            note: The chosen Servant who will not break a bruised reed
+          - ref: Ps 78:2
+            to: Matt 13:34-35
+            category: direct
+            note: He opened His mouth in parables
+          - ref: Isa 6:9-10
+            to: Matt 13:13-15
+            category: direct
+            note: Hearing but never understanding
+      - title: Prophet, priest and king
+        note: The three offices, each filled by men who point past themselves.
+        refs:
+          - ref: Exod 3:10-12
+            to: Heb 3:1-6
+            category: type
+            note: Moses faithful as a servant in God's house; Christ as a Son over it
+          - ref: Gen 14:18-20
+            to: Heb 7:1-4
+            category: type
+            note: Melchizedek, king of righteousness and peace, priest of God Most High
+          - ref: Ps 110:4
+            to: Heb 5:5-6; Heb 7:15-17
+            category: direct
+            note: A priest forever in the order of Melchizedek
+          - ref: Lev 16:11-17
+            to: Heb 9:11-12
+            category: shadow
+            note: The high priest enters the Most Holy Place once a year; Christ entered once for all
+          - ref: Exod 28:1-4
+            to: Heb 7:23-28
+            category: shadow
+            note: Priests who die, then a priest who lives forever
+          - ref: 1 Sam 16:1-13
+            to: Acts 13:22-23
+            category: type
+            note: The shepherd anointed king; from his line, the Savior
+          - ref: Ps 110:1
+            to: Matt 22:41-46
+            category: direct
+            note: David calls Him Lord
+          - ref: 1 Kgs 10:1-9
+            to: Matt 12:42
+            category: type
+            note: The queen came to hear Solomon; something greater than Solomon is here
+          - ref: Josh 1:1-9
+            to: Heb 4:8-10
+            category: type
+            note: Joshua led them into the land but not into the rest
+          - ref: Ezek 34:11-16, 23-24
+            to: John 10:11-16
+            category: direct
+            note: God Himself will shepherd His flock; "I am the good shepherd"
+      - title: Persons who prefigure Him
+        note: Lives whose shape the New Testament recognizes in Jesus.
+        refs:
+          - ref: Gen 2:7; Gen 5:1-5
+            to: Rom 5:12-19; 1 Cor 15:45-49
+            category: type
+            note: Adam, "a type of the one to come"; the last Adam
+          - ref: Gen 4:8-10
+            to: Heb 12:24
+            category: type
+            note: Abel's blood cries out; Jesus's blood speaks a better word
+          - ref: Gen 6:13-22; Gen 7:23
+            to: 1 Pet 3:18-22
+            category: type
+            note: Eight saved through water in the ark
+          - ref: Gen 22:1-14
+            to: Heb 11:17-19; Rom 8:32
+            category: type
+            note: The beloved son carried the wood; God did not spare His own Son
+          - ref: Gen 28:10-17
+            to: John 1:51
+            category: type
+            note: Jacob's ladder; angels ascending and descending on the Son of Man
+          - ref: Gen 37:18-28; Gen 45:4-8
+            to: Acts 7:9-14
+            category: type
+            note: Joseph, rejected by his brothers, exalted to save them
+          - ref: Exod 2:1-10
+            to: Matt 2:13-16
+            category: type
+            note: A deliverer hidden from a king who kills the boys
+          - ref: Ruth 4:1-10
+            to: Gal 4:4-5
+            category: type
+            note: Boaz the kinsman-redeemer; traditional, without a direct citation
+          - ref: 1 Sam 17:45-50
+            to: Col 2:13-15
+            category: type
+            note: One champion's victory shared by all his people; traditional
+          - ref: Jonah 1:17; Jonah 2:10
+            to: Matt 12:38-41
+            category: type
+            note: Three days in the fish; the sign of Jonah
+          - ref: Ps 41:9
+            to: John 13:18-19
+            category: direct
+            note: David betrayed by a close friend; Jesus by Judas
+          - ref: Ps 69:4
+            to: John 15:24-25
+            category: direct
+            note: Hated without reason
+      - title: Signs in the wilderness
+        note: What Israel ate, drank, looked upon and worshipped in, and what it meant.
+        refs:
+          - ref: Exod 12:3-13
+            to: 1 Cor 5:7; John 1:29
+            category: type
+            note: The Passover lamb; "Christ, our Passover lamb"
+          - ref: Exod 12:46
+            to: John 19:33-36
+            category: type
+            note: Not one of its bones broken
+          - ref: Exod 16:4, 14-15
+            to: John 6:30-35, 48-51
+            category: type
+            note: Manna from heaven; "I am the bread of life"
+          - ref: Exod 17:1-7
+            to: 1 Cor 10:1-4
+            category: type
+            note: The struck rock that gave water; "that rock was Christ"
+          - ref: Num 21:4-9
+            to: John 3:14-15
+            category: type
+            note: The bronze serpent lifted up
+          - ref: Exod 24:3-8
+            to: Matt 26:27-28; Heb 9:18-22
+            category: shadow
+            note: The blood of the covenant
+          - ref: Exod 25:8-9; Exod 40:34-35
+            to: John 1:14; Heb 8:1-5
+            category: shadow
+            note: The tabernacle; "the Word became flesh and dwelt among us"
+          - ref: Exod 26:31-33
+            to: Matt 27:50-51; Heb 10:19-20
+            category: shadow
+            note: The veil torn; a new and living way
+          - ref: Exod 25:17-22
+            to: Rom 3:23-25; Heb 9:3-5
+            category: shadow
+            note: The mercy seat; God presented Him as the place of atonement
+          - ref: Exod 25:30; Lev 24:5-9
+            to: John 6:35
+            category: shadow
+            note: The bread of the Presence; traditional
+          - ref: Exod 25:31-37
+            to: John 8:12
+            category: shadow
+            note: The lampstand; "I am the light of the world"; traditional
+          - ref: Exod 30:17-21
+            to: John 13:8-10; Titus 3:4-6
+            category: shadow
+            note: The basin for washing; traditional
+          - ref: Exod 30:1-10
+            to: Heb 7:25; Rev 8:3-4
+            category: shadow
+            note: The altar of incense and His intercession; traditional
+          - ref: Num 19:1-9
+            to: Heb 9:13-14
+            category: shadow
+            note: The ashes of the heifer cleanse the flesh; His blood the conscience
+          - ref: Num 35:9-15
+            to: Heb 6:17-20
+            category: shadow
+            note: Cities of refuge; we have fled to take hold of the hope
+      - title: Feasts, Sabbaths and sacrifices
+        note: The calendar and the altar of Israel as a shadow of the good things to come.
+        refs:
+          - ref: Lev 1:1-9
+            to: Eph 5:1-2; Heb 10:1-4
+            category: shadow
+            note: The burnt offering; a fragrant offering and sacrifice to God
+          - ref: Lev 4:1-12
+            to: Heb 10:5-14
+            category: shadow
+            note: The sin offering; one sacrifice for sins for all time
+          - ref: Lev 16:20-22
+            to: Heb 9:24-28; Isa 53:6
+            category: shadow
+            note: The scapegoat carries the sins away
+          - ref: Lev 16:29-34
+            to: Heb 9:6-10
+            category: shadow
+            note: The Day of Atonement, once a year, until the time of reformation
+          - ref: Lev 23:4-8
+            to: 1 Cor 5:7-8; Luke 22:14-20
+            category: shadow
+            note: Passover and Unleavened Bread; the Last Supper
+          - ref: Lev 23:9-14
+            to: 1 Cor 15:20-23
+            category: shadow
+            note: Firstfruits; Christ the firstfruits of those who sleep
+          - ref: Lev 23:15-21
+            to: Acts 2:1-4, 32-33
+            category: shadow
+            note: Pentecost; the exalted Christ pours out the Spirit
+          - ref: Lev 23:33-43
+            to: John 7:2, 37-39
+            category: shadow
+            note: Tabernacles; on the last day of the feast, "come to Me and drink"
+          - ref: Lev 25:8-13
+            to: Luke 4:18-19
+            category: shadow
+            note: The year of Jubilee; the year of the Lord's favor
+          - ref: Gen 2:1-3; Exod 20:8-11
+            to: Matt 11:28-30; Heb 4:1-11
+            category: shadow
+            note: The Sabbath; "I will give you rest"
+          - ref: Exod 29:38-42
+            to: John 1:29; Heb 7:27
+            category: shadow
+            note: The daily lamb, morning and evening
+          - ref: Gen 17:9-14
+            to: Col 2:11-12
+            category: shadow
+            note: Circumcision; the circumcision of Christ
+          - ref: 1 Kgs 8:10-13
+            to: John 2:18-22; Matt 12:6
+            category: shadow
+            note: The temple; "something greater than the temple is here"
+          - ref: Col 2:16-17
+            category: shadow
+            note: Paul's own summary; a shadow of the things to come, but the substance belongs to Christ
+      - title: His suffering and death
+        note: The Psalms and the Prophets at the cross.
+        refs:
+          - ref: Ps 2:1-2
+            to: Acts 4:24-28
+            category: direct
+            note: The rulers gather against the LORD's Anointed
+          - ref: Isa 53:1
+            to: John 12:37-38
+            category: direct
+            note: Who has believed our message?
+          - ref: Isa 53:3
+            to: John 1:10-11
+            category: direct
+            note: Despised and rejected by men
+          - ref: Isa 53:5-6
+            to: 1 Pet 2:24-25
+            category: direct
+            note: By His wounds you have been healed
+          - ref: Isa 53:7-8
+            to: Acts 8:30-35
+            category: direct
+            note: Led like a lamb to the slaughter; Philip explains the good news
+          - ref: Isa 53:9
+            to: 1 Pet 2:22; Matt 27:57-60
+            category: direct
+            note: No deceit in His mouth; a rich man's tomb
+          - ref: Isa 53:12
+            to: Luke 22:37
+            category: direct
+            note: Numbered with the transgressors
+          - ref: Isa 50:6
+            to: Matt 26:67-68; Matt 27:26-30
+            category: direct
+            note: My back to those who strike, my cheeks to those who pluck
+          - ref: Zech 13:7
+            to: Matt 26:31
+            category: direct
+            note: Strike the Shepherd and the sheep will scatter
+          - ref: Zech 11:12-13
+            to: Matt 27:3-10
+            category: direct
+            note: Thirty pieces of silver, thrown into the house of the LORD
+          - ref: Ps 22:1
+            to: Matt 27:45-46
+            category: direct
+            note: My God, my God, why have You forsaken me?
+          - ref: Ps 22:6-8
+            to: Matt 27:39-43
+            category: direct
+            note: Mocked; "He trusts in God, let God deliver Him"
+          - ref: Ps 22:14-18
+            to: John 19:23-24
+            category: direct
+            note: Pierced hands and feet; they cast lots for His garments
+          - ref: Ps 69:21
+            to: John 19:28-30
+            category: direct
+            note: Vinegar for His thirst
+          - ref: Ps 31:5
+            to: Luke 23:46
+            category: direct
+            note: Into Your hands I commit my spirit
+          - ref: Ps 34:19-20
+            to: John 19:31-36
+            category: direct
+            note: Not one of His bones broken
+          - ref: Zech 12:10
+            to: John 19:37
+            category: direct
+            note: They will look on the one they have pierced
+          - ref: Deut 21:22-23
+            to: Gal 3:13
+            category: direct
+            note: Cursed is everyone who is hung on a tree
+          - ref: Ps 109:8
+            to: Acts 1:15-20
+            category: direct
+            note: Let another take his office; Judas replaced
+          - ref: Dan 9:24-26
+            to: Luke 24:25-27
+            category: direct
+            note: The Anointed One cut off; "did not the Christ have to suffer?"
+      - title: Risen, exalted, returning
+        note: The tomb, the throne, and the day every eye will see Him.
+        refs:
+          - ref: Ps 16:8-11
+            to: Acts 2:24-32
+            category: direct
+            note: You will not abandon my soul to Sheol or let Your Holy One see decay
+          - ref: Ps 2:7
+            to: Acts 13:32-33; Heb 1:5
+            category: direct
+            note: You are My Son; today I have become Your Father
+          - ref: Isa 55:3
+            to: Acts 13:34
+            category: direct
+            note: The sure mercies of David
+          - ref: Hos 6:1-2
+            to: 1 Cor 15:3-4
+            category: direct
+            note: On the third day He will raise us up; "according to the Scriptures"
+          - ref: Ps 118:22-23
+            to: Matt 21:42; Acts 4:10-12
+            category: direct
+            note: The stone the builders rejected has become the cornerstone
+          - ref: Isa 28:16
+            to: 1 Pet 2:4-8; Rom 9:33
+            category: direct
+            note: A precious cornerstone laid in Zion
+          - ref: Ps 110:1
+            to: Acts 2:33-36; Heb 1:13
+            category: direct
+            note: Sit at My right hand
+          - ref: Ps 68:18
+            to: Eph 4:7-10
+            category: direct
+            note: He ascended on high and gave gifts to men
+          - ref: Ps 8:4-6
+            to: Heb 2:5-9
+            category: direct
+            note: Crowned with glory and honor, everything under His feet
+          - ref: Ps 45:6-7
+            to: Heb 1:8-9
+            category: direct
+            note: Your throne, O God, endures forever
+          - ref: Ps 102:25-27
+            to: Heb 1:10-12
+            category: direct
+            note: The heavens perish, but You remain
+          - ref: Joel 2:28-32
+            to: Acts 2:16-21, 33
+            category: direct
+            note: The Spirit poured out on all flesh, by the exalted Christ
+          - ref: Amos 9:11-12
+            to: Acts 15:13-18
+            category: direct
+            note: David's fallen tent rebuilt; the Gentiles gathered
+          - ref: Isa 25:8
+            to: 1 Cor 15:54
+            category: direct
+            note: Death swallowed up in victory
+          - ref: Hos 13:14
+            to: 1 Cor 15:55-57
+            category: direct
+            note: Where, O death, is your sting?
+          - ref: Zech 12:10
+            to: Rev 1:7
+            category: direct
+            note: Every eye will see Him, even those who pierced Him
+          - ref: Dan 7:13-14
+            to: Rev 1:12-18
+            category: direct
+            note: One like a son of man among the lampstands
+          - ref: Isa 9:7
+            to: Rev 11:15
+            category: direct
+            note: Of the increase of His government there will be no end
+      - title: In His own words
+        note: Where Jesus and the apostles say that the Scriptures are about Him. These anchor the whole study.
+        refs:
+          - ref: Luke 24:25-27
+            category: witness
+            note: Beginning with Moses and all the Prophets
+          - ref: Luke 24:44-47
+            category: witness
+            note: Everything written about Me in the Law, the Prophets and the Psalms
+          - ref: John 5:39-40, 46
+            category: witness
+            note: The Scriptures testify about Me; Moses wrote about Me
+          - ref: Matt 5:17-18
+            category: witness
+            note: Not to abolish but to fulfill
+          - ref: John 8:56-58
+            category: witness
+            note: Abraham rejoiced to see My day
+          - ref: Luke 4:21
+            category: witness
+            note: Today this Scripture is fulfilled in your hearing
+          - ref: Acts 3:18, 24
+            category: witness
+            note: All the prophets foretold these days
+          - ref: 1 Pet 1:10-12
+            category: witness
+            note: The Spirit of Christ in the prophets predicted His sufferings and glory
+          - ref: 2 Cor 1:20
+            category: witness
+            note: All the promises of God are "Yes" in Him
+          - ref: Heb 10:5-7
+            category: witness
+            note: In the scroll of the book it is written about Me
+          - ref: Rev 19:10
+            category: witness
+            note: The testimony of Jesus is the spirit of prophecy
+  - title: By kind
+    note: Direct references, types and shadows side by side.
+    auto: category
+  - title: By book
+    note: Where in the Old Testament each witness sits.
+    auto: book
+  - title: Jesus and the rest
+    note: How much of the connecting is done by Jesus Himself.
+    auto: jesus

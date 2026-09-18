@@ -75,6 +75,11 @@ export default function SearchPane() {
           ) : (
             <div className="text-muted text-sm">No studies yet.</div>
           )}
+          <div className="kicker mt-6 mb-2">Explore</div>
+          <Link to="/timeline" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
+            <div className="font-medium">The story in time</div>
+            <div className="text-xs text-ink-2">All dated events on one timeline</div>
+          </Link>
           <div className="kicker mt-6 mb-2">Try</div>
           <div className="flex flex-wrap gap-1.5">
             {SUGGESTIONS.map((s) => (

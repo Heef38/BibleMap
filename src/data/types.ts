@@ -145,6 +145,15 @@ export interface StudyRef {
   weight: number
   jesus: boolean
   note?: string
+  /** for connection studies: the passage this reference points to (e.g. the NT fulfilment) */
+  to?: Range[]
+  toLabel?: string
+  category?: string
+}
+export interface StudyCategory {
+  id: string
+  title: string
+  note?: string
 }
 export interface StudyGroup {
   id: string
@@ -166,6 +175,9 @@ export interface Study {
   subtitle?: string
   summary?: string
   tags: string[]
+  /** "connections" when references link two passages (drawn as arcs) */
+  kind?: string
+  categories?: StudyCategory[]
   views: StudyView[]
   ranges: Range[]
   refCount: number
@@ -176,6 +188,7 @@ export interface StudyIndexEntry {
   title: string
   subtitle?: string
   tags: string[]
+  kind?: string
   refCount: number
   verseCount: number
 }

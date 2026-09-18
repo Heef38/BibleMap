@@ -44,6 +44,15 @@ export default function HomePage() {
         )}
       </Section>
 
+      <Section title="Explore">
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link to="/timeline" className="block rounded-xl border border-line bg-surface p-4 hover:border-line-strong hover:no-underline text-ink">
+            <div className="font-semibold text-base">The story in time</div>
+            <div className="text-ink-2 text-sm mt-0.5">Every dated event from creation to the apostles on one zoomable timeline.</div>
+          </Link>
+        </div>
+      </Section>
+
       <Section title="Start somewhere">
         <div className="flex flex-wrap gap-1.5">
           {STARTERS.map((s) => (

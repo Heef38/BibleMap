@@ -13,7 +13,7 @@ pnpm data:build     # compiles them into public/data (about 12 seconds)
 pnpm dev            # http://localhost:5173
 ```
 
-`pnpm build` produces a deployable `dist/` for any static host (Cloudflare Pages, Netlify, GitHub Pages). The app uses client-side routing, so the host must serve `index.html` for unknown paths.
+`pnpm build` produces a deployable `dist/` for any static host. The app uses client-side routing; `public/_redirects` handles that on Netlify and Cloudflare Pages, and the build writes a `404.html` copy for GitHub Pages. To host under a sub-path (a GitHub Pages project site), build with `BASE_PATH=/repo-name/`. The workflow in `.github/workflows/deploy.yml` does this automatically on every push to `main` once Pages is enabled with "GitHub Actions" as the source.
 
 `pnpm test` runs the reference-parser and USFM-parser tests. `pnpm typecheck` runs TypeScript.
 
@@ -27,7 +27,7 @@ pnpm dev            # http://localhost:5173
 | `scripts/lib/usfm.ts` | USFM parser (verse text, words of Jesus, headings). |
 | `src/lib/canon.ts` | The 66 books, every spelling of their names, and the 31,102-verse grid. |
 | `src/lib/refs.ts` | Reference parser: `John 3:16`, `Matt 13:24-30, 36-43`, `Gen.1.1-Gen.2.3`. |
-| `src/components/viz/` | Visualizations: the canon strip and the theme-map sunburst. |
+| `src/components/viz/` | Visualizations: the canon strip, the theme-map sunburst, the zoomable timeline, and the arc diagram for connection studies. |
 | `src/pages/` | One page per kind of thing: person, place, topic, event, study, search. |
 | `public/data/` | Compiled data the app fetches. Committed so the site deploys without a data build. |
 
@@ -52,6 +52,32 @@ views:
 ```
 
 Weights are computed: a reference that contains the words of Jesus (red-letter markup in the Berean Standard Bible) counts 3, everything else 1. Add `weight:` to a reference or a group to override. Keep a view to eight groups or fewer so every group gets its own color.
+
+A *connection* study links each reference to a second passage and sorts the links into categories, which the app draws as arcs between the two Testaments:
+
+```yaml
+id: christ-in-the-old-testament
+kind: connections
+categories:
+  direct: { title: Direct reference }
+  type: { title: Type }
+  shadow: { title: Shadow }
+views:
+  - title: By theme
+    groups:
+      - title: Signs in the wilderness
+        refs:
+          - ref: Num 21:4-9
+            to: John 3:14-15
+            category: type
+            note: The bronze serpent lifted up
+  - title: By kind
+    auto: category
+```
+
+## Timelines
+
+Every person page has a timeline: their lifespan when the text gives it, the lifespans of parents, spouses and children, the events they took part in, and a histogram of the verses that mention them by year of the story. The `/timeline` page shows all 450 dated events, with the longer periods (kingdoms, journeys, patriarchs' lifetimes) as bands. Years follow the traditional chronology in the Theographic data and are approximate.
 
 ## Data sources
 

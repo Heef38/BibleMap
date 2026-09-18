@@ -54,7 +54,7 @@ const arr = (f: Record<string, unknown>, k: string): string[] => {
   return Array.isArray(v) ? (v.filter((x) => typeof x === 'string') as string[]) : []
 }
 const uniq = <T>(xs: T[]) => [...new Set(xs)]
-const cleanDict = (t?: string) => t?.replace(/\uFFFD/g, ' ').replace(/\(\s+/g, '(').replace(/\s+\)/g, ')').replace(/[ \t]+/g, ' ').trim()
+const cleanDict = (t?: string) => t?.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\uFFFD/g, ' ').replace(/\(\s+/g, '(').replace(/\s+\)/g, ')').replace(/[ \t]+/g, ' ').trim()
 const shardOf = (id: string) => (/^[a-z]/.test(id) ? id[0] : '_')
 const slugify = (s: string) =>
   s
@@ -693,6 +693,9 @@ interface StudyRefYaml {
   note?: string
   label?: string
   weight?: number
+  /** connection studies: the passage this reference points to */
+  to?: string
+  category?: string
 }
 interface StudyGroupYaml {
   id?: string
@@ -707,7 +710,11 @@ interface StudyViewYaml {
   note?: string
   groups?: StudyGroupYaml[]
   /** Derive the groups from every reference in the authored views. */
-  auto?: 'book' | 'testament' | 'jesus'
+  auto?: 'book' | 'testament' | 'jesus' | 'category'
+}
+interface StudyCategoryYaml {
+  title: string
+  note?: string
 }
 interface StudyYaml {
   id: string
@@ -715,6 +722,8 @@ interface StudyYaml {
   subtitle?: string
   summary?: string
   tags?: string[]
+  kind?: string
+  categories?: Record<string, StudyCategoryYaml>
   views: StudyViewYaml[]
 }
 interface StudyRef {
@@ -724,6 +733,9 @@ interface StudyRef {
   weight: number
   jesus: boolean
   note?: string
+  to?: Range[]
+  toLabel?: string
+  category?: string
 }
 interface StudyGroup {
   id: string
@@ -745,6 +757,8 @@ interface StudyJson {
   subtitle?: string
   summary?: string
   tags: string[]
+  kind?: string
+  categories?: { id: string; title: string; note?: string }[]
   views: StudyView[]
   ranges: Range[]
   refCount: number
@@ -771,9 +785,18 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
           for (const err of parsed.errors) warn(`${file} › ${g.title}: ${err}`)
           if (!parsed.ranges.length) throw new Error(`${file} › ${g.title}: could not parse "${r.ref}"`)
           const ranges = parsed.ranges
-          const jesus = jesusSpeaksIn(ranges)
+          let to: Range[] | undefined
+          if (r.to) {
+            const parsedTo = parseRefs(r.to, canon)
+            for (const err of parsedTo.errors) warn(`${file} › ${g.title}: ${err}`)
+            if (!parsedTo.ranges.length) throw new Error(`${file} › ${g.title}: could not parse "${r.to}"`)
+            to = parsedTo.ranges
+          }
+          if (r.category && doc.categories && !doc.categories[r.category]) throw new Error(`${file} › ${g.title}: unknown category "${r.category}"`)
+          const jesus = jesusSpeaksIn(ranges) || (to ? jesusSpeaksIn(to) : false)
           const weight = r.weight ?? g.weight ?? (jesus ? 3 : 1)
           all.push(...ranges)
+          if (to) all.push(...to)
           refCount++
           return {
             label: r.label ?? ranges.map((x) => canon.rangeLabel(x[0], x[1])).join('; '),
@@ -782,6 +805,9 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
             weight,
             jesus,
             note: r.note,
+            to,
+            toLabel: to ? to.map((x) => canon.rangeLabel(x[0], x[1])).join('; ') : undefined,
+            category: r.category,
           }
         })
         return {
@@ -825,6 +851,11 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
           const ot = allRefs.filter((r) => canon.locate(r.ranges[0][0]).b <= 39)
           const nt = allRefs.filter((r) => canon.locate(r.ranges[0][0]).b > 39)
           groups = [bucket('Old Testament', ot), bucket('New Testament', nt)].filter((g) => g.refs.length)
+        } else if (v.auto === 'category') {
+          const cats = Object.entries(doc.categories ?? {})
+          groups = cats.map(([id, c]) => bucket(c.title, allRefs.filter((r) => r.category === id))).filter((g) => g.refs.length)
+          const rest = allRefs.filter((r) => !r.category || !doc.categories?.[r.category])
+          if (rest.length) groups.push(bucket('Uncategorized', rest))
         } else if (v.auto === 'jesus') {
           groups = [bucket("In Jesus's own words", allRefs.filter((r) => r.jesus)), bucket('In the rest of Scripture', allRefs.filter((r) => !r.jesus))].filter((g) => g.refs.length)
         }
@@ -838,6 +869,8 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
         subtitle: doc.subtitle,
         summary: doc.summary,
         tags: doc.tags ?? [],
+        kind: doc.kind,
+        categories: doc.categories ? Object.entries(doc.categories).map(([id, c]) => ({ id, title: c.title, note: c.note })) : undefined,
         views,
         ranges: merged,
         refCount,
@@ -850,7 +883,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
   }
   writeJson(
     'studies/index.json',
-    studies.map((s) => ({ id: s.id, title: s.title, subtitle: s.subtitle, tags: s.tags, refCount: s.refCount, verseCount: s.verseCount })),
+    studies.map((s) => ({ id: s.id, title: s.title, subtitle: s.subtitle, tags: s.tags, kind: s.kind, refCount: s.refCount, verseCount: s.verseCount })),
   )
 }
 

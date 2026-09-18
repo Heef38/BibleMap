@@ -28,7 +28,7 @@ const ROW_GAP = 10
 const LEFT = 26
 const TICK_CAP = 4000
 
-function layoutRow(books: CanonBook[], avail: number, gap = 2, min = 4): { x: number; w: number }[] {
+export function layoutRow(books: CanonBook[], avail: number, gap = 2, min = 4): { x: number; w: number }[] {
   const total = books.reduce((s, b) => s + b.verseCount, 0)
   const inner = Math.max(0, avail - gap * (books.length - 1))
   let widths = books.map((b) => (b.verseCount / total) * inner)

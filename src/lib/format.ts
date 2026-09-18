@@ -27,3 +27,30 @@ export function truncate(s: string, n: number): string {
 export function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
+
+/** "390Y", "8D", "19M", "1W", "2.5Y" -> years (fractional for short spans). */
+export function durationYears(d?: string | null): number | undefined {
+  if (!d) return undefined
+  const m = /^(\d+(?:\.\d+)?)\s*([DWMY])$/i.exec(d.trim())
+  if (!m) return undefined
+  const n = parseFloat(m[1])
+  switch (m[2].toUpperCase()) {
+    case 'D':
+      return n / 365
+    case 'W':
+      return (n * 7) / 365
+    case 'M':
+      return n / 12
+    default:
+      return n
+  }
+}
+
+export function formatDuration(d?: string | null): string {
+  if (!d) return ''
+  const m = /^(\d+(?:\.\d+)?)\s*([DWMY])$/i.exec(d.trim())
+  if (!m) return d
+  const n = m[1]
+  const unit = { D: 'day', W: 'week', M: 'month', Y: 'year' }[m[2].toUpperCase() as 'D' | 'W' | 'M' | 'Y']
+  return `${n} ${unit}${n === '1' ? '' : 's'}`
+}
