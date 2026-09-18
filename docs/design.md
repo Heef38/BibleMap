@@ -46,3 +46,7 @@ Two centers, one per person. What they share is drawn as bridges between them (v
 ## The cross-reference chord
 
 A d3 chord diagram over the book-to-book cross-reference matrix compiled by the data build. Within-book references are left out (they would swamp the drawing). Ribbons are colored by the testament they start from; hovering a group lifts its ribbons and dims the rest, and a table of the strongest pairs carries the numbers.
+
+## The study timeline
+
+The timeline component gains a lane mode: fixed, labeled rows with a left gutter, each row packing its own items into up to four sub-rows, a faint span band showing the years the row covers, and "n later →" markers at a row's edge when items sit outside the current view. The study timeline puts one row per group so the themes of a study are read down the page and the story across it.

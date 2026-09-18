@@ -2,11 +2,14 @@ import { useEffect, useMemo, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router'
 import ArcDiagram, { categoryColor, type ArcPair } from '@/components/viz/ArcDiagram'
 import StudyMap from '@/components/viz/StudyMap'
+import StudyTimeline from '@/components/viz/StudyTimeline'
+import RefOverview from '@/components/study/RefOverview'
 import CanonStrip from '@/components/viz/CanonStrip'
 import Sunburst, { groupColor, refFill } from '@/components/viz/Sunburst'
 import { ErrorBlock, Loading, PageHeader, RefLink, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadBible, loadCanon, loadStudy } from '@/data/loaders'
+import type { StudyGroup, StudyRef } from '@/data/types'
 import { truncate } from '@/lib/format'
 import { useSettings } from '@/store/settings'
 import { useSession } from '@/store/session'
@@ -22,6 +25,7 @@ export default function StudyPage() {
   const goTo = useSession((s) => s.goTo)
   const [selected, setSelected] = useState<string | null>(null)
   const [selectedPair, setSelectedPair] = useState<ArcPair | null>(null)
+  const [focusRef, setFocusRef] = useState<{ ref: StudyRef; group: StudyGroup } | null>(null)
   const [hiddenCats, setHiddenCats] = useState<Set<string>>(() => new Set())
 
   const isConnections = study?.kind === 'connections'
@@ -32,6 +36,7 @@ export default function StudyPage() {
   useEffect(() => {
     setSelected(null)
     setSelectedPair(null)
+    setFocusRef(null)
   }, [view?.id])
 
   useEffect(() => {
@@ -58,7 +63,11 @@ export default function StudyPage() {
       if (r.links?.length) for (const l of r.links) if (l.category ?? r.category) catCounts.set(l.category ?? r.category!, (catCounts.get(l.category ?? r.category!) ?? 0) + 1)
       else if (r.category) catCounts.set(r.category, (catCounts.get(r.category) ?? 0) + 1)
     }
-  const charts: [string, string][] = [...(isConnections ? [['arcs', 'Arcs'] as [string, string]] : []), ['map', 'Map'], ['sunburst', 'Sunburst']]
+  const charts: [string, string][] = [...(isConnections ? [['arcs', 'Arcs'] as [string, string]] : []), ['map', 'Map'], ['sunburst', 'Sunburst'], ['timeline', 'Timeline']]
+  const openRef = (ref: StudyRef, group: StudyGroup) => {
+    setFocusRef({ ref, group })
+    goTo(ref.ranges[0][0], { pane: false })
+  }
   const toggleCat = (cid: string) =>
     setHiddenCats((s) => {
       const n = new Set(s)
@@ -114,6 +123,15 @@ export default function StudyPage() {
 
       {chart === 'map' ? (
         <StudyMap study={study} view={view} canon={canon} bible={bible} />
+      ) : chart === 'timeline' ? (
+        <div className="@container">
+          <StudyTimeline study={study} view={view} canon={canon} bible={bible} selected={focusRef?.ref ?? null} onRef={openRef} />
+          {focusRef && (
+            <div className="mt-4 max-w-2xl">
+              <RefOverview study={study} view={view} group={focusRef.group} item={focusRef.ref} canon={canon} bible={bible} onClose={() => setFocusRef(null)} />
+            </div>
+          )}
+        </div>
       ) : isConnections && chart === 'arcs' ? (
         <div>
           <ArcDiagram study={study} view={view} canon={canon} bible={bible} selectedGroup={selected} hiddenCategories={hiddenCats} selected={selectedPair} onSelect={setSelectedPair} />
@@ -151,12 +169,17 @@ export default function StudyPage() {
         </div>
       ) : (
         <div className="@container">
-          <div className="grid gap-6 @3xl:grid-cols-[minmax(0,1fr)_260px] items-start">
+          <div className="grid gap-6 @3xl:grid-cols-[minmax(0,1fr)_300px] items-start">
             <div>
-              <Sunburst study={study} view={view} bible={bible} selected={selected} onSelect={setSelected} />
-              <p className="text-xs text-muted text-center mt-1">Sectors are sized by weight: the words of Jesus count three times, and are drawn solid. Click a group to zoom, a reference to read it.</p>
+              <Sunburst study={study} view={view} bible={bible} selected={selected} onSelect={setSelected} onRef={openRef} />
+              <p className="text-xs text-muted text-center mt-1">Sectors are sized by weight: the words of Jesus count three times, and are drawn solid. Click a group to zoom, a reference for its overview.</p>
             </div>
             <div>
+              {focusRef && (
+                <div className="mb-4">
+                  <RefOverview study={study} view={view} group={focusRef.group} item={focusRef.ref} canon={canon} bible={bible} onClose={() => setFocusRef(null)} />
+                </div>
+              )}
               <div className="kicker mb-2">{view.title}</div>
               <ol className="space-y-1">
                 {view.groups.map((g, i) => (

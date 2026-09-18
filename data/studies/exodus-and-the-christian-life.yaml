@@ -5,7 +5,11 @@ id: exodus-and-the-christian-life
 title: "The Exodus and the Christian Life"
 subtitle: "Egypt, the sea, the wilderness, the Jordan and the battles in the land, and how the New Testament reads them as the shape of following Christ"
 kind: connections
-chart: map
+chart: timeline
+timeline:
+  from: -1650
+  to: -1415
+  note: "The apostles' retellings sit fifteen centuries to the right; press fit all to see them."
 summary: >-
   "These things happened to them as examples and were written down as warnings for us"
   (1 Corinthians 10:11). Israel's road out of Egypt is the oldest map of the life of faith:

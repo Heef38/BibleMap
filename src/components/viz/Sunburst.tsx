@@ -34,12 +34,15 @@ export default function Sunburst({
   bible,
   selected,
   onSelect,
+  onRef,
 }: {
   study: Study
   view: StudyView
   bible?: Bible
   selected: string | null
   onSelect: (groupId: string | null) => void
+  /** a reference was clicked; when absent the reader simply jumps to it */
+  onRef?: (ref: StudyRef, group: StudyGroup) => void
 }) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const width = useWidth(wrapRef)
@@ -136,6 +139,7 @@ export default function Sunburst({
           </div>
           {r.note && <div className="k mt-1">{r.note}</div>}
           {first && <div className="mt-1 font-serif">{truncate(first, 140)}</div>}
+          {onRef && <div className="k mt-1">click for the overview</div>}
         </>
       )
     }
@@ -186,12 +190,14 @@ export default function Sunburst({
                   aria-label={isGroup ? `${label}: ${n.data.group?.refs.length} references` : `${label}${n.data.ref?.jesus ? ', words of Jesus' : ''}`}
                   onClick={() => {
                     if (isGroup) onSelect(n.data.group!.id)
+                    else if (n.data.ref && onRef) onRef(n.data.ref, n.data.group!)
                     else if (n.data.ref) goTo(n.data.ref.ranges[0][0])
                   }}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
                       if (isGroup) onSelect(n.data.group!.id)
+                      else if (n.data.ref && onRef) onRef(n.data.ref, n.data.group!)
                       else if (n.data.ref) goTo(n.data.ref.ranges[0][0])
                     }
                   }}

@@ -209,8 +209,10 @@ export interface Study {
   tags: string[]
   /** "connections" when references link two passages (drawn as arcs) */
   kind?: string
-  /** which chart to open with: map, arcs or sunburst */
+  /** which chart to open with: map, arcs, sunburst or timeline */
   chart?: string
+  /** the years the timeline opens on, when the automatic choice is not right */
+  timeline?: { from?: number; to?: number; note?: string }
   categories?: StudyCategory[]
   views: StudyView[]
   ranges: Range[]

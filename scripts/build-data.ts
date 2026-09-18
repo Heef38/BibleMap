@@ -862,6 +862,7 @@ interface StudyYaml {
   tags?: string[]
   kind?: string
   chart?: string
+  timeline?: { from?: number; to?: number; note?: string }
   categories?: Record<string, StudyCategoryYaml>
   views: StudyViewYaml[]
 }
@@ -910,6 +911,7 @@ interface StudyJson {
   tags: string[]
   kind?: string
   chart?: string
+  timeline?: { from?: number; to?: number; note?: string }
   categories?: { id: string; title: string; note?: string }[]
   views: StudyView[]
   ranges: Range[]
@@ -1050,9 +1052,30 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
           groups = [bucket('Old Testament', ot), bucket('New Testament', nt)].filter((g) => g.refs.length)
         } else if (v.auto === 'category') {
           const cats = Object.entries(doc.categories ?? {})
-          groups = cats.map(([id, c]) => bucket(c.title, allRefs.filter((r) => r.category === id))).filter((g) => g.refs.length)
-          const rest = allRefs.filter((r) => !r.category || !doc.categories?.[r.category])
-          if (rest.length) groups.push(bucket('Uncategorized', rest))
+          const linkCats = allRefs.some((r) => r.links?.some((l) => l.category))
+          if (linkCats) {
+            // Categories live on the links: a passage appears under every kind of connection it has,
+            // carrying only the links of that kind.
+            groups = cats
+              .map(([id, c]) =>
+                bucket(
+                  c.title,
+                  allRefs.flatMap((r) => {
+                    const mine = (r.links ?? []).filter((l) => (l.category ?? r.category) === id)
+                    if (!mine.length && r.category !== id) return []
+                    const jesus = !!r.jesusOwn || mine.some((l) => l.jesus)
+                    return [{ ...r, links: mine.length ? mine : undefined, jesus, weight: jesus ? Math.max(r.weight, 3) : Math.min(r.weight, 1) }]
+                  }),
+                ),
+              )
+              .filter((g) => g.refs.length)
+            const rest = allRefs.filter((r) => !r.category && !(r.links ?? []).some((l) => l.category))
+            if (rest.length) groups.push(bucket('Uncategorized', rest))
+          } else {
+            groups = cats.map(([id, c]) => bucket(c.title, allRefs.filter((r) => r.category === id))).filter((g) => g.refs.length)
+            const rest = allRefs.filter((r) => !r.category || !doc.categories?.[r.category])
+            if (rest.length) groups.push(bucket('Uncategorized', rest))
+          }
         } else if (v.auto === 'jesus') {
           groups = [bucket("In Jesus's own words", allRefs.filter((r) => r.jesus)), bucket('In the rest of Scripture', allRefs.filter((r) => !r.jesus))].filter((g) => g.refs.length)
         }
@@ -1068,6 +1091,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
         tags: doc.tags ?? [],
         kind: doc.kind,
         chart: doc.chart,
+        timeline: doc.timeline,
         categories: doc.categories ? Object.entries(doc.categories).map(([id, c]) => ({ id, title: c.title, note: c.note })) : undefined,
         views,
         ranges: merged,

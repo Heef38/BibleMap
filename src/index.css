@@ -146,6 +146,9 @@ button, input, select {
   outline-offset: 2px;
   border-radius: 4px;
 }
+svg [role="button"]:focus:not(:focus-visible) {
+  outline: none;
+}
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--line-strong) transparent;
