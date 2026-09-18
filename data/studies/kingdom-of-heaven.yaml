@@ -1,0 +1,425 @@
+# A study is a plain file: groups of references, several ways to view them.
+# Weights are computed at build time: any reference containing the words of Jesus
+# (red-letter markup in the Berean Standard Bible) counts 3, everything else 1.
+# Override with `weight:` on a reference or a group when you disagree.
+id: kingdom-of-heaven
+title: The Kingdom of Heaven
+subtitle: Every reference to the kingdom of heaven and the kingdom of God, and the promises behind them
+summary: >-
+  "The kingdom of heaven" is Matthew's phrase; Mark, Luke and John say "the kingdom of God"
+  for the same reality. Jesus announces it, describes it in parables, tells us who enters it,
+  and reveals Himself as its King. The Old Testament prepared for it, the apostles preached it,
+  and Revelation shows it fulfilled. This study gathers all of those references so the whole
+  arc can be seen at once.
+tags: [theme, jesus, gospels]
+views:
+  - title: By theme
+    note: Eight movements of one story, from the promise of a King to the feast at the end.
+    groups:
+      - title: Announced
+        note: The message John preached, Jesus took up, and the disciples carried to every town.
+        refs:
+          - ref: Matt 3:1-2
+            note: John the Baptist
+          - ref: Matt 4:17
+            note: Jesus begins to preach
+          - Matt 4:23
+          - Matt 9:35
+          - ref: Matt 10:5-7
+            note: The Twelve are sent
+          - Matt 11:11-13
+          - ref: Mark 1:14-15
+            note: The time is fulfilled
+          - Luke 4:43
+          - Luke 8:1
+          - Luke 9:1-2
+          - Luke 9:11
+          - Luke 9:60
+          - ref: Luke 10:8-11
+            note: The seventy-two are sent
+          - Luke 16:16
+          - Luke 21:29-31
+          - ref: Matt 24:14
+            note: Preached in all the world
+      - title: Parables of the kingdom
+        note: What the kingdom is like.
+        refs:
+          - ref: Matt 13:10-17
+            note: Why parables; the mysteries of the kingdom
+          - ref: Matt 13:18-23
+            note: The sower explained
+          - ref: Matt 13:24-30, 36-43
+            note: The weeds among the wheat
+          - ref: Matt 13:31-32
+            note: The mustard seed
+          - ref: Matt 13:33
+            note: The leaven
+          - ref: Matt 13:44
+            note: The hidden treasure
+          - ref: Matt 13:45-46
+            note: The pearl of great price
+          - ref: Matt 13:47-50
+            note: The net
+          - ref: Matt 13:51-52
+            note: The scribe discipled in the kingdom
+          - ref: Matt 18:23-35
+            note: The unforgiving servant
+          - ref: Matt 20:1-16
+            note: The workers in the vineyard
+          - ref: Matt 22:1-14
+            note: The wedding banquet
+          - ref: Matt 25:1-13
+            note: The ten virgins
+          - ref: Matt 25:14-30
+            note: The talents
+          - ref: Mark 4:10-12
+            note: The mystery of the kingdom
+          - ref: Mark 4:26-29
+            note: The growing seed
+          - ref: Mark 4:30-32
+            note: The mustard seed (Mark)
+          - ref: Luke 8:9-10
+            note: The knowledge of the mysteries
+          - ref: Luke 13:18-21
+            note: Mustard seed and leaven (Luke)
+          - ref: Luke 19:11-27
+            note: The ten minas
+      - title: Entering the kingdom
+        note: Who enters, what it costs, and who is shut out.
+        refs:
+          - Matt 5:20
+          - Matt 7:21-23
+          - ref: Matt 18:1-5
+            note: Become like little children
+          - Matt 19:13-15
+          - ref: Matt 19:23-26
+            note: The camel and the needle
+          - ref: Matt 21:28-32
+            note: Tax collectors and prostitutes enter first
+          - Matt 23:13
+          - Mark 9:43-48
+          - Mark 10:13-16
+          - Mark 10:23-27
+          - ref: Luke 9:57-62
+            note: The hand to the plow
+          - ref: Luke 13:22-30
+            note: The narrow door
+          - Luke 18:15-17
+          - Luke 18:24-30
+          - ref: John 3:1-8
+            note: Born of water and the Spirit
+          - ref: Acts 14:21-22
+            note: Through many hardships
+          - 1 Cor 6:9-11
+          - 1 Cor 15:50
+          - Gal 5:19-21
+          - Eph 5:5
+      - title: Its character
+        note: What the kingdom is made of, and where it is found.
+        refs:
+          - ref: Matt 5:3
+            note: The poor in spirit
+          - ref: Matt 5:10
+            note: The persecuted
+          - Matt 5:17-19
+          - ref: Matt 6:9-10
+            note: Your kingdom come
+          - ref: Matt 6:33
+            note: Seek first the kingdom
+          - ref: Matt 12:25-28
+            note: The kingdom has come upon you
+          - Matt 21:43
+          - Luke 6:20
+          - Luke 11:2
+          - Luke 11:17-20
+          - ref: Luke 12:29-32
+            note: The Father is pleased to give you the kingdom
+          - ref: Luke 17:20-21
+            note: In your midst
+          - ref: Mark 12:32-34
+            note: Not far from the kingdom
+          - ref: John 18:36
+            note: Not of this world
+          - ref: Rom 14:17
+            note: Righteousness, peace and joy
+          - 1 Cor 4:20
+          - Col 1:13
+          - Heb 12:28
+      - title: The King
+        note: The kingdom has a King, the Son of David and the Son of Man.
+        refs:
+          - ref: Luke 1:31-33
+            note: He will reign forever
+          - ref: Matt 2:1-2
+            note: Born King of the Jews
+          - John 1:49
+          - ref: Matt 21:1-9
+            note: The triumphal entry
+          - Mark 11:9-10
+          - Luke 19:37-38
+          - John 12:12-15
+          - ref: Matt 16:27-28
+            note: The Son of Man coming in His kingdom
+          - ref: Matt 25:31-34
+            note: The King on His throne
+          - Matt 27:11
+          - ref: Luke 22:28-30
+            note: I bestow on you a kingdom
+          - ref: Luke 23:39-43
+            note: Remember me when You come into Your kingdom
+          - John 18:33-37
+          - ref: Acts 17:6-7
+            note: Another king, Jesus
+          - Heb 1:8-9
+          - 1 Tim 6:14-16
+          - Rev 11:15
+          - ref: Rev 19:16
+            note: King of kings
+      - title: Old Testament foundations
+        note: The Lord reigns. The promises and visions the Gospels take up.
+        refs:
+          - Exod 15:18
+          - ref: Exod 19:5-6
+            note: A kingdom of priests
+          - ref: 1 Sam 8:4-7
+            note: They have rejected Me as their king
+          - ref: 2 Sam 7:12-16
+            note: David's throne forever
+          - 1 Chr 29:10-12
+          - ref: Ps 2:6-9
+            note: My King on Zion
+          - Ps 22:27-28
+          - ref: Ps 45:6-7
+            note: Quoted in Hebrews 1
+          - Ps 47:6-8
+          - Ps 93:1-2
+          - Ps 103:19
+          - Ps 145:10-13
+          - ref: Isa 9:6-7
+            note: No end to His government
+          - ref: Isa 52:7
+            note: Your God reigns
+          - ref: Dan 2:44
+            note: A kingdom never destroyed
+          - ref: Dan 7:13-14
+            note: One like a son of man
+          - Dan 7:27
+          - Mic 4:6-8
+          - Obad 21
+          - ref: Zech 9:9-10
+            note: Your King comes to you
+          - Zech 14:9
+      - title: The Church and the apostles
+        note: Keys, testimony, and the kingdom preached to the ends of the earth.
+        refs:
+          - ref: Matt 16:18-19
+            note: The keys of the kingdom
+          - Matt 18:18-20
+          - Acts 1:3
+          - ref: Acts 1:6-8
+            note: Will You restore the kingdom to Israel?
+          - Acts 8:12
+          - Acts 19:8
+          - Acts 20:25
+          - Acts 28:23
+          - Acts 28:30-31
+          - Col 4:11
+          - 1 Thess 2:11-12
+          - 2 Thess 1:4-5
+          - Jas 2:5
+          - ref: Rev 1:5-6
+            note: A kingdom, priests to His God
+          - Rev 1:9
+          - Rev 5:9-10
+      - title: The kingdom to come
+        note: The feast, the throne, and the end, when God is all in all.
+        refs:
+          - ref: Matt 8:11-12
+            note: The banquet with Abraham, Isaac and Jacob
+          - Matt 26:29
+          - Mark 14:25
+          - Luke 22:14-18
+          - ref: Luke 14:15-24
+            note: The great banquet
+          - Mark 9:1
+          - Luke 9:27
+          - ref: Mark 15:43
+            note: Waiting for the kingdom
+          - ref: 1 Cor 15:24-28
+            note: He hands over the kingdom to the Father
+          - 2 Tim 4:1
+          - 2 Tim 4:18
+          - 2 Pet 1:10-11
+          - Rev 12:10
+          - Rev 21:1-5
+          - Rev 22:1-5
+  - title: By speaker
+    note: Who is talking. Jesus's own words carry the most weight.
+    groups:
+      - title: Jesus
+        note: Everything Jesus Himself says about the kingdom in the four Gospels.
+        refs:
+          - Matt 4:17
+          - Matt 5:3
+          - Matt 5:10
+          - Matt 5:19-20
+          - Matt 6:10
+          - Matt 6:33
+          - Matt 7:21
+          - Matt 8:11-12
+          - Matt 10:7
+          - Matt 11:11-12
+          - Matt 12:28
+          - Matt 13:11
+          - Matt 13:24-30
+          - Matt 13:31-33
+          - Matt 13:44-50
+          - Matt 13:52
+          - Matt 16:19
+          - Matt 16:28
+          - Matt 18:3-4
+          - Matt 18:23
+          - Matt 19:12
+          - Matt 19:14
+          - Matt 19:23-24
+          - Matt 20:1
+          - Matt 21:31
+          - Matt 21:43
+          - Matt 22:2
+          - Matt 23:13
+          - Matt 24:14
+          - Matt 25:1
+          - Matt 25:34
+          - Matt 26:29
+          - Mark 1:15
+          - Mark 4:11
+          - Mark 4:26
+          - Mark 4:30
+          - Mark 9:1
+          - Mark 9:47
+          - Mark 10:14-15
+          - Mark 10:23-25
+          - Mark 12:34
+          - Mark 14:25
+          - Luke 4:43
+          - Luke 6:20
+          - Luke 7:28
+          - Luke 8:10
+          - Luke 9:27
+          - Luke 9:60
+          - Luke 9:62
+          - Luke 10:9-11
+          - Luke 11:2
+          - Luke 11:20
+          - Luke 12:31-32
+          - Luke 13:18-20
+          - Luke 13:28-29
+          - Luke 16:16
+          - Luke 17:20-21
+          - Luke 18:16-17
+          - Luke 18:24-25
+          - Luke 18:29
+          - Luke 21:31
+          - Luke 22:16-18
+          - Luke 22:29-30
+          - John 3:3-5
+          - John 18:36
+      - title: John the Baptist
+        refs:
+          - Matt 3:2
+      - title: People around Jesus
+        note: Disciples, seekers and crowds asking about the kingdom.
+        refs:
+          - ref: Matt 2:2
+            note: The Magi
+          - ref: John 1:49
+            note: Nathanael
+          - ref: Matt 18:1
+            note: The disciples
+          - ref: Matt 20:21
+            note: The mother of James and John
+          - ref: Mark 11:10
+            note: The crowds at the entry
+          - ref: Luke 14:15
+            note: A guest at table
+          - ref: Luke 17:20
+            note: The Pharisees
+          - ref: Luke 23:42
+            note: The thief on the cross
+          - ref: Acts 1:6
+            note: The apostles
+      - title: Narrators and messengers
+        note: The Evangelists' own words, and voices from heaven.
+        refs:
+          - ref: Luke 1:33
+            note: The angel Gabriel
+          - Matt 4:23
+          - Matt 9:35
+          - Luke 8:1
+          - Luke 9:2
+          - Luke 9:11
+          - Luke 19:11
+          - Mark 15:43
+          - Luke 23:51
+          - ref: Rev 11:15
+            note: Loud voices in heaven
+          - ref: Rev 12:10
+            note: A loud voice in heaven
+      - title: The apostles in Acts
+        refs:
+          - Acts 1:3
+          - Acts 8:12
+          - Acts 14:22
+          - Acts 19:8
+          - Acts 20:25
+          - Acts 28:23
+          - Acts 28:31
+      - title: Paul
+        refs:
+          - Rom 14:17
+          - 1 Cor 4:20
+          - 1 Cor 6:9-10
+          - 1 Cor 15:24
+          - 1 Cor 15:50
+          - Gal 5:21
+          - Eph 5:5
+          - Col 1:13
+          - Col 4:11
+          - 1 Thess 2:12
+          - 2 Thess 1:5
+          - 2 Tim 4:1
+          - 2 Tim 4:18
+      - title: Other letters
+        refs:
+          - Heb 1:8
+          - Heb 12:28
+          - Jas 2:5
+          - 2 Pet 1:11
+          - Rev 1:6
+          - Rev 1:9
+          - Rev 5:10
+      - title: Prophets and psalms
+        refs:
+          - Exod 15:18
+          - Exod 19:6
+          - 2 Sam 7:16
+          - 1 Chr 29:11
+          - Ps 2:6
+          - Ps 45:6
+          - Ps 103:19
+          - Ps 145:13
+          - Isa 9:7
+          - Isa 52:7
+          - Dan 2:44
+          - Dan 7:14
+          - Dan 7:27
+          - Mic 4:7
+          - Obad 21
+          - Zech 9:9
+          - Zech 14:9
+  - title: By book
+    note: Where in the Bible each reference sits.
+    auto: book
+  - title: Jesus and the rest
+    note: How much of this theme rests on Jesus's own words.
+    auto: jesus
