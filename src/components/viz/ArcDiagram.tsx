@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState, type PointerEvent } from 'react'
 import { layoutRow } from './CanonStrip'
 import { VizTooltip, type TipState } from './Tooltip'
+import { groupColor } from './Sunburst'
 import type { Bible, Study, StudyRef, StudyView } from '@/data/types'
 import type { Canon, CanonBook } from '@/lib/canon'
 import type { Range } from '@/lib/refs'
@@ -105,6 +106,9 @@ export default function ArcDiagram({
 
   const visible = (l: Link) => !(l.target.category && hiddenCategories.has(l.target.category))
   const active = (l: Link) => !selectedGroup || l.groupId === selectedGroup
+  const groupIndex = (id: string) => view.groups.findIndex((g) => g.id === id)
+  /** Arcs are colored by kind; a selected group's arcs take the group's own color so they match its chip. */
+  const colorOf = (l: Link) => (selectedGroup && l.groupId === selectedGroup ? groupColor(groupIndex(l.groupId)) : categoryColor(study.categories, l.target.category))
 
   return (
     <div ref={wrapRef} className="w-full">
@@ -130,7 +134,7 @@ export default function ArcDiagram({
                 const cy2 = l.row2 === 0 ? y2 + ARC_H * 0.55 : y2 - ARC_H * 0.55
                 d = `M${l.x1},${y1} C${l.x1},${cy1} ${l.x2},${cy2} ${l.x2},${y2}`
               }
-              const color = categoryColor(study.categories, l.target.category)
+              const color = colorOf(l)
               const emphasized = isHover || isSel
               return (
                 <g key={k}>
@@ -200,7 +204,7 @@ export default function ArcDiagram({
           {links.filter(visible).map((l) => {
             const k = keyOf(l)
             const on = active(l)
-            const color = categoryColor(study.categories, l.target.category)
+            const color = colorOf(l)
             const yOf = (row: number) => (row === 0 ? topY + ROW_H / 2 : bottomY + ROW_H / 2)
             return (
               <g key={`e-${k}`} pointerEvents="none" opacity={on ? 1 : 0.15}>

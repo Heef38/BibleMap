@@ -135,7 +135,7 @@ export default function StudyPage() {
       ) : isConnections && chart === 'arcs' ? (
         <div>
           <ArcDiagram study={study} view={view} canon={canon} bible={bible} selectedGroup={selected} hiddenCategories={hiddenCats} selected={selectedPair} onSelect={setSelectedPair} />
-          <p className="text-xs text-muted mt-1">Each arc joins an Old Testament passage to where the New Testament takes it up, colored by kind. Hover to read, click to pin a pair; pick a group below to focus on it.</p>
+          <p className="text-xs text-muted mt-1">Each arc joins a passage to where Scripture takes it up, colored by kind. Hover to read, click to pin a pair. Pick a group below to focus on it: its arcs take the group's color and the rest fade.</p>
           {selectedPair && (
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               {[
