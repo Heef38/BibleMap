@@ -38,3 +38,11 @@ A radial "dandelion": the focus at the center, straight branches at even angles,
 ## The Bible layout
 
 A squarified treemap (d3.treemap) of the 66 books by verse count, nested testament, division, book. Only two hues are used, one per testament; divisions are separated by layout and labels rather than by color, which keeps the chart within the categorical palette rules.
+
+## The comparison map
+
+Two centers, one per person. What they share is drawn as bridges between them (verses mentioning both, people both know, places both appear in, events they share); what belongs to one alone fans out on that person's side. The two people take the first two categorical hues and the shared bridges the violet slot, and the same three colors carry through the timeline and the canon strip on the page.
+
+## The cross-reference chord
+
+A d3 chord diagram over the book-to-book cross-reference matrix compiled by the data build. Within-book references are left out (they would swamp the drawing). Ribbons are colored by the testament they start from; hovering a group lifts its ribbons and dims the rest, and a table of the strongest pairs carries the numbers.

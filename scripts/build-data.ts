@@ -420,6 +420,11 @@ log(`events: ${events.length}`)
     for (const k of Object.keys(obj)) obj[+k].sort((x, y) => y[2] - x[2] || x[0] - y[0])
     writeJson(`xrefs/${canon.book(b).osis}.json`, obj)
   }
+  // Book-to-book matrix: how often each book points at each other book.
+  const matrix = canon.books.map(() => canon.books.map(() => 0))
+  for (const [b, obj] of perBook)
+    for (const list of Object.values(obj)) for (const [s] of list) matrix[b - 1][canon.locate(s).b - 1]++
+  writeJson('xrefs/matrix.json', { books: canon.books.map((x) => x.osis), counts: matrix })
   log(`cross references: ${kept} kept, ${dropped} dropped`)
 }
 

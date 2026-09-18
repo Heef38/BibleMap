@@ -7,8 +7,8 @@ import type { Canon } from '@/lib/canon'
 
 export function PageHeader({ kicker, title, subtitle, right }: { kicker?: ReactNode; title: ReactNode; subtitle?: ReactNode; right?: ReactNode }) {
   return (
-    <div className="flex flex-wrap items-start gap-x-6 gap-y-2 mb-5">
-      <div className="min-w-0 flex-1">
+    <div className="flex flex-wrap items-start gap-x-6 gap-y-3 mb-5">
+      <div className="min-w-[18rem] flex-1">
         {kicker && <div className="kicker mb-1">{kicker}</div>}
         <h1 className="text-2xl font-semibold leading-tight tracking-tight">{title}</h1>
         {subtitle && <div className="text-ink-2 mt-1">{subtitle}</div>}

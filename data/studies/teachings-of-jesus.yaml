@@ -1,0 +1,553 @@
+# What Jesus taught, gathered by subject across the four Gospels. The parables and the
+# Sermon on the Mount have their own studies; this one reaches across all His sayings.
+# Each saying links to its Old Testament roots, Jesus's own parallels, and the apostles' echoes.
+id: teachings-of-jesus
+title: "The Teachings of Jesus"
+subtitle: "What Jesus taught, by subject, across the four Gospels, with the roots and the echoes of each saying"
+kind: connections
+chart: map
+summary: >-
+  "No one ever spoke like this man" (John 7:46). This study gathers what Jesus taught about
+  Himself, the kingdom, discipleship, love and forgiveness, prayer and faith, money, the
+  Spirit and the Word, and the end. Every saying is in His own words, so every reference
+  weighs three; zoom into one to see the Scripture it grows from, where He said it again,
+  and how the apostles carried it on.
+tags: [jesus, teaching, gospels, discipleship]
+categories:
+  background:
+    title: "Old Testament roots"
+    note: "The promise, law, psalm or prophet the saying grows from."
+  parallel:
+    title: "Parallel account"
+    note: "The same teaching in another Gospel."
+  jesus:
+    title: "Jesus elsewhere"
+    note: "Where Jesus says it again, or fills it out."
+  echo:
+    title: "Echoed by the apostles"
+    note: "Where the apostles teach the same thing."
+views:
+  - title: "By subject"
+    note: "Eight subjects Jesus returned to again and again."
+    groups:
+      - title: "Who He is"
+        note: "The 'I am' sayings and what Jesus said about the Father and the Son."
+        refs:
+          - ref: "John 6:35-40"
+            label: "I am the bread of life"
+            note: "Whoever comes to Me will never hunger"
+            links:
+              - { to: "Exod 16:4, 14-15", topic: "The manna", category: background }
+              - { to: "Isa 55:1-3", topic: "Come, buy and eat", category: background }
+              - { to: "John 6:48-51", topic: "The living bread", category: jesus }
+          - ref: "John 8:12"
+            label: "I am the light of the world"
+            note: "Whoever follows Me will never walk in darkness"
+            links:
+              - { to: "Isa 9:2", topic: "The people walking in darkness", category: background }
+              - { to: "Isa 49:6", topic: "A light for the Gentiles", category: background }
+              - { to: "John 1:4-9", topic: "The true light", category: echo }
+              - { to: "1 John 1:5-7", topic: "Walking in the light", category: echo }
+          - ref: "John 10:7-18"
+            label: "I am the door; I am the good shepherd"
+            note: "The good shepherd lays down His life for the sheep"
+            links:
+              - { to: "Ezek 34:11-16", topic: "God the shepherd", category: background }
+              - { to: "Ps 23", topic: "The LORD is my shepherd", category: background }
+              - { to: "1 Pet 5:1-4", topic: "The Chief Shepherd", category: echo }
+              - { to: "Heb 13:20-21", topic: "The great Shepherd", category: echo }
+          - ref: "John 11:25-26"
+            label: "I am the resurrection and the life"
+            note: "Whoever believes in Me will live, even though he dies"
+            links:
+              - { to: "Dan 12:2", topic: "Many who sleep will awake", category: background }
+              - { to: "1 Cor 15:20-22", topic: "The firstfruits of those who sleep", category: echo }
+              - { to: "John 5:24-29", topic: "The hour is coming", category: jesus }
+          - ref: "John 14:6-11"
+            label: "I am the way, the truth and the life"
+            note: "Anyone who has seen Me has seen the Father"
+            links:
+              - { to: "Ps 25:4-5", topic: "Show me Your ways", category: background }
+              - { to: "Acts 4:12", topic: "No other name", category: echo }
+              - { to: "Heb 10:19-22", topic: "A new and living way", category: echo }
+              - { to: "John 1:18", topic: "The Son has made Him known", category: echo }
+          - ref: "John 15:1-8"
+            label: "I am the true vine"
+            note: "Apart from Me you can do nothing"
+            links:
+              - { to: "Isa 5:1-7", topic: "The song of the vineyard", category: background }
+              - { to: "Ps 80:8-16", topic: "The vine out of Egypt", category: background }
+              - { to: "Gal 5:22-23", topic: "The fruit of the Spirit", category: echo }
+          - ref: "John 8:54-58"
+            label: "Before Abraham was born, I am"
+            note: "Abraham rejoiced to see My day"
+            links:
+              - { to: "Exod 3:13-15", topic: "I AM WHO I AM", category: background }
+              - { to: "Isa 43:10-13", topic: "I am He", category: background }
+              - { to: "John 1:1-3", topic: "In the beginning was the Word", category: echo }
+              - { to: "Col 1:15-17", topic: "Before all things", category: echo }
+          - ref: "Matt 11:25-30"
+            label: "No one knows the Father except the Son"
+            note: "Come to Me, all you who are weary"
+            links:
+              - { to: "Luke 10:21-22", topic: "Hidden from the wise", category: parallel }
+              - { to: "Jer 6:16", topic: "Rest for your souls", category: background }
+              - { to: "Exod 33:14", topic: "I will give you rest", category: background }
+              - { to: "John 17:25-26", topic: "I have made You known", category: jesus }
+          - ref: "John 5:19-24"
+            label: "The Son does what He sees the Father doing"
+            note: "Whoever hears My word and believes has eternal life"
+            links:
+              - { to: "John 10:27-30", topic: "I and the Father are one", category: jesus }
+              - { to: "Heb 1:1-3", topic: "The exact representation of His being", category: echo }
+              - { to: "Deut 18:18", topic: "My words in his mouth", category: background }
+      - title: "The kingdom and repentance"
+        note: "The announcement that God's reign has come near, and the turning it demands."
+        refs:
+          - ref: "Mark 1:14-15"
+            label: "The kingdom of God is near; repent and believe"
+            note: "The time is fulfilled"
+            links:
+              - { to: "Matt 4:17", topic: "Repent, for the kingdom is near", category: parallel }
+              - { to: "Isa 52:7", topic: "Your God reigns", category: background }
+              - { to: "Dan 2:44", topic: "A kingdom never destroyed", category: background }
+              - { to: "Acts 2:38", topic: "Repent and be baptized", category: echo }
+          - ref: "Luke 13:1-5"
+            label: "Unless you repent"
+            note: "Do you think they were worse sinners?"
+            links:
+              - { to: "Ezek 18:30-32", topic: "Repent and live", category: background }
+              - { to: "2 Pet 3:9", topic: "Not wanting anyone to perish", category: echo }
+              - { to: "Luke 15:7", topic: "Joy over one sinner who repents", category: jesus }
+          - ref: "Matt 18:1-5"
+            label: "Become like little children"
+            note: "Whoever humbles himself like this child is the greatest"
+            links:
+              - { to: "Mark 10:13-16", topic: "Let the little children come", category: parallel }
+              - { to: "Ps 131", topic: "A weaned child with its mother", category: background }
+              - { to: "1 Pet 2:1-3", topic: "Like newborn infants", category: echo }
+          - ref: "John 3:1-8"
+            label: "You must be born again"
+            note: "Unless one is born of water and the Spirit"
+            links:
+              - { to: "Ezek 36:25-27", topic: "A new heart and a new spirit", category: background }
+              - { to: "Titus 3:4-7", topic: "The washing of rebirth", category: echo }
+              - { to: "1 Pet 1:23", topic: "Born again of imperishable seed", category: echo }
+          - ref: "Luke 17:20-21"
+            label: "The kingdom of God is in your midst"
+            note: "Not with observable signs"
+            links:
+              - { to: "Rom 14:17", topic: "Righteousness, peace and joy", category: echo }
+              - { to: "Matt 12:28", topic: "The kingdom has come upon you", category: jesus }
+          - ref: "Matt 6:33"
+            label: "Seek first the kingdom"
+            note: "And all these things will be added to you"
+            links:
+              - { to: "Luke 12:31", topic: "Seek His kingdom", category: parallel }
+              - { to: "Ps 37:3-5", topic: "Trust in the LORD and do good", category: background }
+              - { to: "Col 3:1-2", topic: "Set your minds on things above", category: echo }
+          - ref: "Matt 11:11-15"
+            label: "From the days of John until now"
+            note: "The least in the kingdom is greater than John"
+            links:
+              - { to: "Luke 16:16", topic: "The Law and the Prophets until John", category: parallel }
+              - { to: "Mal 4:5-6", topic: "Elijah who is to come", category: background }
+      - title: "Discipleship and the cross"
+        note: "What it costs to follow, and the shape of a life that serves."
+        refs:
+          - ref: "Matt 16:24-26"
+            label: "Take up your cross"
+            note: "Whoever loses his life for My sake will find it"
+            links:
+              - { to: "Mark 8:34-38", topic: "Deny yourself", category: parallel }
+              - { to: "Luke 9:23-25", topic: "Take up your cross daily", category: parallel }
+              - { to: "Gal 2:20", topic: "Crucified with Christ", category: echo }
+              - { to: "Phil 3:7-11", topic: "Sharing in His sufferings", category: echo }
+          - ref: "Luke 14:25-33"
+            label: "Count the cost"
+            note: "Anyone who does not carry his cross cannot be My disciple"
+            links:
+              - { to: "Luke 9:57-62", topic: "The hand to the plow", category: jesus }
+              - { to: "Matt 10:37-39", topic: "Loving father or mother more than Me", category: jesus }
+              - { to: "Deut 33:8-9", topic: "Levi, who did not acknowledge his brothers", category: background }
+          - ref: "Matt 11:28-30"
+            label: "My yoke is easy"
+            note: "Learn from Me, for I am gentle and humble in heart"
+            links:
+              - { to: "Jer 6:16", topic: "Rest for your souls", category: background }
+              - { to: "1 John 5:3", topic: "His commands are not burdensome", category: echo }
+              - { to: "Matt 23:2-4", topic: "Burdens hard to carry", category: jesus }
+          - ref: "John 13:12-17"
+            label: "Wash one another's feet"
+            note: "I have set you an example"
+            links:
+              - { to: "Phil 2:5-8", topic: "He took the form of a servant", category: echo }
+              - { to: "1 Pet 2:21", topic: "Follow in His steps", category: echo }
+              - { to: "Luke 22:24-27", topic: "I am among you as one who serves", category: jesus }
+          - ref: "Mark 10:42-45"
+            label: "The Son of Man came to serve"
+            note: "Whoever wants to be first must be slave of all"
+            links:
+              - { to: "Matt 20:25-28", topic: "Not so with you", category: parallel }
+              - { to: "Isa 53:10-12", topic: "The Servant who bore the sin of many", category: background }
+              - { to: "Phil 2:5-8", topic: "He took the form of a servant", category: echo }
+          - ref: "John 12:24-26"
+            label: "Unless a grain of wheat dies"
+            note: "Whoever serves Me must follow Me"
+            links:
+              - { to: "1 Cor 15:36-38", topic: "What you sow does not come to life unless it dies", category: echo }
+              - { to: "Rom 6:4-5", topic: "United with Him in death", category: echo }
+              - { to: "Matt 16:25", topic: "Losing your life to find it", category: jesus }
+          - ref: "Matt 28:18-20"
+            label: "Go and make disciples of all nations"
+            note: "I am with you always, to the end of the age"
+            links:
+              - { to: "Dan 7:13-14", topic: "All authority", category: background }
+              - { to: "Isa 49:6", topic: "Salvation to the ends of the earth", category: background }
+              - { to: "Acts 1:8", topic: "You will be My witnesses", category: jesus }
+              - { to: "Rom 10:13-15", topic: "How will they hear?", category: echo }
+          - ref: "Matt 10:16-33"
+            label: "Sheep among wolves"
+            note: "Do not fear those who kill the body"
+            links:
+              - { to: "Luke 12:4-12", topic: "Whom to fear", category: parallel }
+              - { to: "Isa 51:12-13", topic: "Who are you that you fear mortal men?", category: background }
+              - { to: "1 Pet 3:13-17", topic: "Do not fear their threats", category: echo }
+              - { to: "Acts 5:29", topic: "We must obey God rather than men", category: echo }
+      - title: "Love, forgiveness and mercy"
+        note: "The greatest commandment, the new commandment, and mercy without limit."
+        refs:
+          - ref: "Matt 22:34-40"
+            label: "The greatest commandment"
+            note: "Love the Lord your God; love your neighbor as yourself"
+            links:
+              - { to: "Deut 6:4-5", topic: "Hear, O Israel", category: background }
+              - { to: "Lev 19:18", topic: "Love your neighbor", category: background }
+              - { to: "Mark 12:28-34", topic: "Not far from the kingdom", category: parallel }
+              - { to: "Rom 13:8-10", topic: "Love fulfills the Law", category: echo }
+              - { to: "1 John 4:19-21", topic: "We love because He first loved us", category: echo }
+          - ref: "John 13:34-35"
+            label: "A new command: love one another"
+            note: "By this everyone will know that you are My disciples"
+            links:
+              - { to: "John 15:12-17", topic: "Greater love has no one than this", category: jesus }
+              - { to: "1 John 3:11-18", topic: "Love in deed and truth", category: echo }
+              - { to: "Rom 12:9-10", topic: "Be devoted to one another", category: echo }
+          - ref: "Luke 6:27-36"
+            label: "Love your enemies; be merciful"
+            note: "Be merciful, just as your Father is merciful"
+            links:
+              - { to: "Matt 5:43-48", topic: "Love your enemies", category: parallel }
+              - { to: "Prov 25:21-22", topic: "Feed your enemy", category: background }
+              - { to: "Rom 12:14-21", topic: "Bless those who persecute you", category: echo }
+          - ref: "Matt 18:21-22"
+            label: "Seventy times seven"
+            note: "How many times shall I forgive my brother?"
+            links:
+              - { to: "Gen 4:23-24", topic: "Lamech's seventy-sevenfold vengeance", category: background }
+              - { to: "Luke 17:3-4", topic: "Seven times in a day", category: parallel }
+              - { to: "Col 3:13", topic: "Forgive as the Lord forgave you", category: echo }
+              - { to: "Matt 18:23-35", topic: "The unforgiving servant", category: jesus }
+          - ref: "Mark 11:25"
+            label: "Forgive when you pray"
+            note: "So that your Father may forgive you"
+            links:
+              - { to: "Matt 6:14-15", topic: "Forgive, and you will be forgiven", category: parallel }
+              - { to: "Ps 130:3-4", topic: "With You there is forgiveness", category: background }
+              - { to: "Eph 4:32", topic: "Forgive as God forgave you", category: echo }
+          - ref: "Matt 9:10-13"
+            label: "I desire mercy, not sacrifice"
+            note: "I have not come to call the righteous, but sinners"
+            links:
+              - { to: "Hos 6:6", topic: "Mercy, not sacrifice", category: background }
+              - { to: "Mic 6:6-8", topic: "What does the LORD require?", category: background }
+              - { to: "Matt 12:1-8", topic: "Mercy, not sacrifice, again", category: jesus }
+              - { to: "Jas 2:13", topic: "Mercy triumphs over judgment", category: echo }
+          - ref: "John 8:1-11"
+            label: "Neither do I condemn you"
+            note: "Let him who is without sin cast the first stone"
+            links:
+              - { to: "Deut 22:22-24", topic: "The law on adultery", category: background }
+              - { to: "Rom 8:1", topic: "No condemnation", category: echo }
+              - { to: "John 3:17", topic: "Not to condemn the world", category: jesus }
+          - ref: "Luke 7:36-50"
+            label: "She loved much"
+            note: "Her many sins have been forgiven, for she loved much"
+            links:
+              - { to: "Ps 32:1-5", topic: "Blessed is the one whose sin is covered", category: background }
+              - { to: "Eph 2:4-7", topic: "Rich in mercy", category: echo }
+              - { to: "Luke 7:41-43", topic: "The two debtors", category: jesus }
+      - title: "Prayer and faith"
+        note: "How to pray, what to expect, and the faith that moves mountains."
+        refs:
+          - ref: "Matt 6:5-13"
+            label: "How to pray; the Lord's Prayer"
+            note: "Your Father knows what you need before you ask"
+            links:
+              - { to: "Luke 11:1-4", topic: "Lord, teach us to pray", category: parallel }
+              - { to: "Isa 65:24", topic: "Before they call, I will answer", category: background }
+              - { to: "Rom 8:26-27", topic: "The Spirit intercedes", category: echo }
+          - ref: "Luke 11:5-13"
+            label: "Ask, seek, knock"
+            note: "How much more will the Father give the Holy Spirit"
+            links:
+              - { to: "Matt 7:7-11", topic: "Ask, seek, knock", category: parallel }
+              - { to: "Jer 29:12-13", topic: "You will seek Me and find Me", category: background }
+              - { to: "Jas 1:5-6", topic: "Ask in faith", category: echo }
+          - ref: "Mark 11:22-24"
+            label: "Have faith in God"
+            note: "Whatever you ask in prayer, believe that you have received it"
+            links:
+              - { to: "Matt 21:21-22", topic: "The mountain thrown into the sea", category: parallel }
+              - { to: "Jas 1:6-8", topic: "Ask without doubting", category: echo }
+              - { to: "1 John 5:14-15", topic: "If we ask according to His will", category: echo }
+          - ref: "Matt 17:14-20"
+            label: "Faith like a mustard seed"
+            note: "Nothing will be impossible for you"
+            links:
+              - { to: "Mark 9:14-29", topic: "Help my unbelief", category: parallel }
+              - { to: "Luke 17:5-6", topic: "Increase our faith", category: parallel }
+              - { to: "Heb 11:1-6", topic: "Faith is the assurance of things hoped for", category: echo }
+          - ref: "Luke 18:1-8"
+            label: "Always pray and do not lose heart"
+            note: "Will not God bring about justice for His elect?"
+            links:
+              - { to: "Ps 88:1-2", topic: "Day and night I cry out", category: background }
+              - { to: "Rom 12:12", topic: "Persistent in prayer", category: echo }
+              - { to: "Col 4:2", topic: "Devote yourselves to prayer", category: echo }
+          - ref: "John 14:12-14; John 16:23-24"
+            label: "Ask in My name"
+            note: "Ask and you will receive, so that your joy may be complete"
+            links:
+              - { to: "1 John 3:21-22", topic: "We receive whatever we ask", category: echo }
+              - { to: "Heb 4:14-16", topic: "Approach the throne of grace", category: echo }
+          - ref: "Matt 26:36-46"
+            label: "Not as I will, but as You will"
+            note: "Watch and pray so that you will not enter into temptation"
+            links:
+              - { to: "Luke 22:39-46", topic: "Gethsemane", category: parallel }
+              - { to: "Heb 5:7-9", topic: "Prayers with loud cries and tears", category: echo }
+              - { to: "Ps 40:6-8", topic: "I delight to do Your will", category: background }
+              - { to: "Isa 50:5-7", topic: "I did not turn back", category: background }
+          - ref: "Mark 9:23-24"
+            label: "Everything is possible for one who believes"
+            note: "I believe; help my unbelief"
+            links:
+              - { to: "Gen 18:14", topic: "Is anything too hard for the LORD?", category: background }
+              - { to: "Luke 1:37", topic: "Nothing is impossible with God", category: echo }
+              - { to: "Heb 11:6", topic: "Without faith it is impossible to please God", category: echo }
+      - title: "Money, possessions and the poor"
+        note: "Treasure, worry, the rich, the widow's coins, and the least of these."
+        refs:
+          - ref: "Luke 12:13-21"
+            label: "The rich fool"
+            note: "A man's life does not consist in the abundance of his possessions"
+            links:
+              - { to: "Eccl 2:18-21", topic: "Leaving it all to another", category: background }
+              - { to: "1 Tim 6:6-10", topic: "Godliness with contentment", category: echo }
+          - ref: "Luke 12:22-34"
+            label: "Do not worry; sell your possessions"
+            note: "Where your treasure is, there your heart will be also"
+            links:
+              - { to: "Matt 6:25-34", topic: "The birds and the lilies", category: parallel }
+              - { to: "Ps 55:22", topic: "Cast your burden on the LORD", category: background }
+              - { to: "Phil 4:6-7", topic: "Be anxious for nothing", category: echo }
+              - { to: "1 Tim 6:17-19", topic: "Rich in good works", category: echo }
+          - ref: "Mark 10:17-27"
+            label: "The rich young ruler"
+            note: "It is easier for a camel to go through the eye of a needle"
+            links:
+              - { to: "Matt 19:16-26", topic: "Sell your possessions", category: parallel }
+              - { to: "Luke 18:18-27", topic: "Sell your possessions", category: parallel }
+              - { to: "Prov 11:28", topic: "Whoever trusts in riches will fall", category: background }
+              - { to: "1 Tim 6:9-10", topic: "The love of money", category: echo }
+          - ref: "Luke 16:9-15"
+            label: "You cannot serve God and money"
+            note: "What is highly esteemed among men is detestable before God"
+            links:
+              - { to: "Matt 6:24", topic: "Two masters", category: parallel }
+              - { to: "Josh 24:14-15", topic: "Choose whom you will serve", category: background }
+              - { to: "Jas 4:4", topic: "Friendship with the world", category: echo }
+          - ref: "Mark 12:41-44"
+            label: "The widow's two coins"
+            note: "She put in everything she had"
+            links:
+              - { to: "Luke 21:1-4", topic: "The widow's offering", category: parallel }
+              - { to: "2 Cor 8:1-5", topic: "Beyond their ability", category: echo }
+              - { to: "Deut 16:16-17", topic: "According to the blessing given", category: background }
+          - ref: "Luke 14:12-14"
+            label: "Invite the poor, the crippled, the lame, the blind"
+            note: "You will be repaid at the resurrection of the righteous"
+            links:
+              - { to: "Deut 14:28-29", topic: "The tithe for the foreigner, the fatherless and the widow", category: background }
+              - { to: "Prov 19:17", topic: "Lending to the LORD", category: background }
+              - { to: "Jas 2:1-6", topic: "Favoritism and the poor", category: echo }
+          - ref: "Luke 6:20-26"
+            label: "Blessed are you who are poor; woe to you who are rich"
+            note: "You have already received your comfort"
+            links:
+              - { to: "Matt 5:3-12", topic: "The Beatitudes", category: parallel }
+              - { to: "Isa 61:1-2", topic: "Good news to the poor", category: background }
+              - { to: "Amos 6:1-7", topic: "Woe to the complacent", category: background }
+              - { to: "Jas 5:1-6", topic: "Come now, you rich", category: echo }
+          - ref: "Matt 19:27-30"
+            label: "A hundredfold, and eternal life"
+            note: "Many who are first will be last"
+            links:
+              - { to: "Mark 10:28-31", topic: "Left everything to follow", category: parallel }
+              - { to: "Matt 20:1-16", topic: "The workers in the vineyard", category: jesus }
+              - { to: "2 Cor 4:17-18", topic: "An eternal weight of glory", category: echo }
+      - title: "The Spirit and the Word"
+        note: "The Helper He promised, and the Scripture He lived by."
+        refs:
+          - ref: "John 14:15-27"
+            label: "The Helper, the Spirit of truth"
+            note: "He will teach you all things"
+            links:
+              - { to: "John 16:5-15", topic: "It is for your good that I go away", category: jesus }
+              - { to: "Joel 2:28-29", topic: "I will pour out My Spirit", category: background }
+              - { to: "Ezek 36:26-27", topic: "I will put My Spirit within you", category: background }
+              - { to: "Rom 8:9-16", topic: "Led by the Spirit", category: echo }
+              - { to: "Acts 2:1-4", topic: "Pentecost", category: echo }
+          - ref: "John 7:37-39"
+            label: "Rivers of living water"
+            note: "This He said about the Spirit"
+            links:
+              - { to: "Isa 44:3", topic: "Water on the thirsty land", category: background }
+              - { to: "Isa 55:1", topic: "Come, all who are thirsty", category: background }
+              - { to: "Ezek 47:1-12", topic: "The river from the temple", category: background }
+              - { to: "Rev 22:17", topic: "Let the thirsty come", category: echo }
+          - ref: "John 6:63"
+            label: "My words are spirit and life"
+            note: "The flesh counts for nothing"
+            links:
+              - { to: "Deut 8:3", topic: "Every word from the mouth of the LORD", category: background }
+              - { to: "Matt 4:4", topic: "It is written", category: jesus }
+              - { to: "Heb 4:12", topic: "The word of God is living and active", category: echo }
+          - ref: "Matt 4:1-11"
+            label: "It is written"
+            note: "Jesus answers each temptation with Scripture"
+            links:
+              - { to: "Deut 8:3", topic: "Not by bread alone", category: background }
+              - { to: "Deut 6:16", topic: "Do not test the LORD", category: background }
+              - { to: "Deut 6:13", topic: "Worship the LORD only", category: background }
+              - { to: "Luke 4:1-13", topic: "The temptation", category: parallel }
+              - { to: "Eph 6:17", topic: "The sword of the Spirit", category: echo }
+              - { to: "Heb 4:15", topic: "Tempted in every way, yet without sin", category: echo }
+          - ref: "John 8:31-32"
+            label: "The truth will set you free"
+            note: "If you continue in My word, you are truly My disciples"
+            links:
+              - { to: "Ps 119:45", topic: "Walking in freedom", category: background }
+              - { to: "Rom 6:17-18", topic: "Set free from sin", category: echo }
+              - { to: "Gal 5:1", topic: "It is for freedom that Christ has set us free", category: echo }
+              - { to: "John 17:17", topic: "Your word is truth", category: jesus }
+          - ref: "Matt 24:35"
+            label: "My words will never pass away"
+            note: "Heaven and earth will pass away"
+            links:
+              - { to: "Isa 40:8", topic: "The word of our God stands forever", category: background }
+              - { to: "1 Pet 1:24-25", topic: "The word of the Lord endures forever", category: echo }
+              - { to: "Mark 13:31", topic: "My words will never pass away", category: parallel }
+          - ref: "Luke 24:44-49"
+            label: "Everything written about Me must be fulfilled"
+            note: "Stay in the city until you are clothed with power from on high"
+            links:
+              - { to: "Acts 1:4-8", topic: "The promise of the Father", category: jesus }
+              - { to: "Isa 32:15", topic: "Until the Spirit is poured out", category: background }
+              - { to: "John 5:39", topic: "The Scriptures testify about Me", category: jesus }
+          - ref: "Matt 12:31-32"
+            label: "Blasphemy against the Spirit"
+            note: "Every sin will be forgiven, but not this"
+            links:
+              - { to: "Mark 3:28-30", topic: "An eternal sin", category: parallel }
+              - { to: "Isa 63:10", topic: "They grieved His Holy Spirit", category: background }
+              - { to: "Heb 10:26-29", topic: "Insulting the Spirit of grace", category: echo }
+      - title: "The end and eternal life"
+        note: "Judgment, the return of the Son of Man, and the life that has already begun."
+        refs:
+          - ref: "John 3:14-18"
+            label: "God so loved the world"
+            note: "As Moses lifted up the serpent, so the Son of Man must be lifted up"
+            links:
+              - { to: "Num 21:8-9", topic: "The bronze serpent", category: background }
+              - { to: "Rom 5:8", topic: "While we were still sinners", category: echo }
+              - { to: "1 John 4:9-10", topic: "This is love", category: echo }
+              - { to: "John 3:36", topic: "Whoever believes in the Son has eternal life", category: jesus }
+          - ref: "John 5:24-29"
+            label: "The hour is coming"
+            note: "Whoever hears My word has crossed over from death to life"
+            links:
+              - { to: "Dan 12:2", topic: "Some to everlasting life, some to shame", category: background }
+              - { to: "1 Thess 4:16-17", topic: "The dead in Christ will rise", category: echo }
+              - { to: "Rev 20:12-13", topic: "Judged according to their deeds", category: echo }
+          - ref: "Matt 24:1-14"
+            label: "The beginning of birth pains"
+            note: "This gospel of the kingdom will be preached in all the world, and then the end will come"
+            links:
+              - { to: "Mark 13:1-13", topic: "Not one stone left on another", category: parallel }
+              - { to: "Luke 21:5-19", topic: "Not one stone left on another", category: parallel }
+              - { to: "Dan 9:26-27", topic: "The city and the sanctuary destroyed", category: background }
+              - { to: "2 Tim 3:1-5", topic: "Terrible times in the last days", category: echo }
+          - ref: "Matt 24:36-44"
+            label: "No one knows the day or hour"
+            note: "As it was in the days of Noah; keep watch"
+            links:
+              - { to: "Mark 13:32-37", topic: "Keep watch", category: parallel }
+              - { to: "Gen 6:11-13", topic: "The days of Noah", category: background }
+              - { to: "1 Thess 5:1-6", topic: "Like a thief in the night", category: echo }
+              - { to: "2 Pet 3:10", topic: "The day of the Lord will come like a thief", category: echo }
+          - ref: "Matt 25:31-46"
+            label: "The sheep and the goats"
+            note: "Whatever you did for one of the least of these, you did for Me"
+            links:
+              - { to: "Dan 7:13-14", topic: "The Son of Man on His throne", category: background }
+              - { to: "Ezek 34:17-22", topic: "Judging between sheep and goats", category: background }
+              - { to: "Rev 20:11-15", topic: "The great white throne", category: echo }
+              - { to: "Jas 2:14-17", topic: "Faith without works", category: echo }
+          - ref: "John 14:1-3"
+            label: "I go to prepare a place for you"
+            note: "I will come back and take you to be with Me"
+            links:
+              - { to: "1 Thess 4:13-18", topic: "We will be with the Lord forever", category: echo }
+              - { to: "Rev 21:1-4", topic: "God will dwell with them", category: echo }
+              - { to: "Heb 9:24-28", topic: "He will appear a second time", category: echo }
+          - ref: "Luke 20:27-40"
+            label: "The God of the living"
+            note: "He is not the God of the dead, but of the living"
+            links:
+              - { to: "Exod 3:6", topic: "The God of Abraham, Isaac and Jacob", category: background }
+              - { to: "Matt 22:23-33", topic: "The Sadducees' question", category: parallel }
+              - { to: "1 Cor 15:35-49", topic: "The resurrection body", category: echo }
+          - ref: "Luke 13:22-30"
+            label: "The narrow door"
+            note: "People will come from east and west and recline at the table in the kingdom"
+            links:
+              - { to: "Matt 7:13-14", topic: "The narrow gate", category: parallel }
+              - { to: "Isa 55:6-7", topic: "Seek the LORD while He may be found", category: background }
+              - { to: "Isa 25:6", topic: "The feast on the mountain", category: background }
+              - { to: "Heb 12:14-17", topic: "Esau found no place for repentance", category: echo }
+          - ref: "John 17:1-5"
+            label: "This is eternal life: to know You"
+            note: "Glorify Your Son, that Your Son may glorify You"
+            links:
+              - { to: "Jer 9:23-24", topic: "Let him boast that he knows Me", category: background }
+              - { to: "Hab 2:14", topic: "The knowledge of the glory of the LORD", category: background }
+              - { to: "1 John 5:11-13, 20", topic: "This is the true God and eternal life", category: echo }
+          - ref: "Matt 10:28"
+            label: "Fear Him who can destroy both soul and body"
+            note: "Do not fear those who kill the body"
+            links:
+              - { to: "Luke 12:4-5", topic: "Whom to fear", category: parallel }
+              - { to: "Eccl 12:13-14", topic: "Fear God and keep His commandments", category: background }
+              - { to: "Isa 8:12-13", topic: "The LORD is the one you are to fear", category: background }
+              - { to: "Heb 10:31", topic: "A dreadful thing", category: echo }
+  - title: "By Gospel"
+    note: "Where each saying is recorded."
+    auto: book
+  - title: "By kind of connection"
+    note: "Roots, parallels, Jesus elsewhere, and the apostles."
+    auto: category
+  - title: "Jesus and the rest"
+    note: "Every saying is Jesus's; this shows how much of the linked material is too."
+    auto: jesus

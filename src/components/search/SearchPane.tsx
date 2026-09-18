@@ -90,6 +90,10 @@ export default function SearchPane() {
             <div className="font-medium">How the Bible is laid out</div>
             <div className="text-xs text-ink-2">The 66 books by kind, drawn to size</div>
           </Link>
+          <Link to="/compare" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
+            <div className="font-medium">Compare two people</div>
+            <div className="text-xs text-ink-2">What two lives share, side by side</div>
+          </Link>
           <div className="kicker mt-6 mb-2">Try</div>
           <div className="flex flex-wrap gap-1.5">
             {SUGGESTIONS.map((s) => (

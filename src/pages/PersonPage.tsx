@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { useParams } from 'react-router'
 import CanonStrip from '@/components/viz/CanonStrip'
 import Timeline, { type TimelineBand, type TimelineBin, type TimelineItem } from '@/components/viz/Timeline'
@@ -116,6 +116,11 @@ export default function PersonPage() {
             {person.verseCount.toLocaleString()} verse{person.verseCount === 1 ? '' : 's'} in {books} book{books === 1 ? '' : 's'}
             {person.aka.length > 0 && <span> · also called {person.aka.join(', ')}</span>}
           </>
+        }
+        right={
+          <Link to={`/compare?a=${person.id}`} className="btn">
+            Compare with…
+          </Link>
         }
       />
       <CanonStrip canon={canon} ranges={ranges} color={COLOR} caption={`Where ${person.title} appears`} />

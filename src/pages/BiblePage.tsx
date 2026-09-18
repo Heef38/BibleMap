@@ -2,6 +2,8 @@ import * as d3 from 'd3'
 import { useMemo, useRef, useState, type PointerEvent } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { VizTooltip, type TipState } from '@/components/viz/Tooltip'
+import BookChord, { type XrefMatrix } from '@/components/viz/BookChord'
+import { fetchJson } from '@/data/loaders'
 import { Loading, PageHeader, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadCanon } from '@/data/loaders'
@@ -37,6 +39,7 @@ const fillFor = (t: 'OT' | 'NT', hovered: boolean) => (hovered ? `var(--series-$
 
 export default function BiblePage() {
   const { data: canon } = useData('canon', loadCanon)
+  const { data: matrix } = useData('xref-matrix', () => fetchJson<XrefMatrix>('xrefs/matrix.json'))
   const wrapRef = useRef<HTMLDivElement>(null)
   const width = useWidth(wrapRef)
   const navigate = useNavigate()
@@ -161,6 +164,13 @@ export default function BiblePage() {
         )}
       </div>
       <p className="text-xs text-muted mt-1">Hover a block for its size; click it to open the book with its chapters and outline.</p>
+
+      <Section title="How the books talk to each other">
+        <p className="text-sm text-ink-2 max-w-prose mb-3">
+          Every ribbon is a bundle of cross references from one part of the Bible to another, built from the 344,799 links readers have voted on at OpenBible.info. The Old Testament feeds the New, and the Psalms and the Prophets feed almost everything.
+        </p>
+        {matrix ? <BookChord canon={canon} matrix={matrix} /> : <Loading />}
+      </Section>
 
       <Section title="The ten kinds of writing">
         <div className="space-y-5">

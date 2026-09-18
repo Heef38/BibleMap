@@ -94,9 +94,13 @@ Links declared on a passage in one view are shared by the same passage in every 
 
 Every person page has a timeline: their lifespan when the text gives it, the lifespans of parents, spouses and children, the events they took part in, and a histogram of the verses that mention them by year of the story. The `/timeline` page shows all 450 dated events, with the longer periods (kingdoms, journeys, patriarchs' lifetimes) as bands. Years follow the traditional chronology in the Theographic data and are approximate.
 
+## Comparing two people
+
+`/compare?a=<person>&b=<person>` puts two people on one map: bridges between them for the verses they share, the people both know, the places both appear in and the events they share, with each person's own people, places and events fanning out on their side. Below it, a shared timeline and a canon strip in two colors. Every person page has a "Compare with…" button.
+
 ## Orientation pages
 
-`/bible` draws the 66 books as blocks sized by length, grouped by testament and kind of writing, and each book page (`/book/Rom`) shows where the book sits, its traditional writer, its chapters, and an outline built from the section headings of the current translation.
+`/bible` draws the 66 books as blocks sized by length, grouped by testament and kind of writing, followed by a chord diagram of the cross references between the parts of the Bible (by kind of writing or by book), and each book page (`/book/Rom`) shows where the book sits, its traditional writer, its chapters, and an outline built from the section headings of the current translation.
 
 ## Keyboard
 

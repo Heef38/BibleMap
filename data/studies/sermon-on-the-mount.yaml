@@ -1,0 +1,374 @@
+# The Sermon on the Mount, section by section. Every saying links to the Law Jesus cites
+# ("You have heard that it was said"), the Old Testament behind it, Luke's parallel,
+# Jesus's own words elsewhere, and where the apostles take it up (James most of all).
+id: sermon-on-the-mount
+title: "The Sermon on the Mount"
+subtitle: "Matthew 5–7 section by section, with the Law Jesus cites, Luke's parallels, and the echoes in the apostles"
+kind: connections
+chart: map
+summary: >-
+  Jesus went up the mountain, sat down, and taught: the character of the kingdom's people,
+  the true depth of the Law, the secret life of giving, prayer and fasting, and the two
+  roads. This study walks through Matthew 5 to 7 in order. Zoom into a saying to see the
+  text Jesus was answering, where Luke records the same teaching, and how James, Peter,
+  Paul and John repeat it.
+tags: [sermon on the mount, jesus, matthew, ethics]
+categories:
+  quoted:
+    title: "The Law Jesus cites"
+    note: "The Old Testament text Jesus quotes or answers."
+  background:
+    title: "Old Testament background"
+    note: "The promise, psalm or prophet behind the saying."
+  parallel:
+    title: "Luke's parallel"
+    note: "The Sermon on the Plain (Luke 6) and other parallels."
+  jesus:
+    title: "Jesus elsewhere"
+    note: "Where Jesus says it again, or fills it out."
+  echo:
+    title: "Echoed by the apostles"
+    note: "Where James, Peter, Paul and John take the saying up."
+views:
+  - title: "By section"
+    note: "Seven movements of the Sermon, in the order Jesus gave them."
+    groups:
+      - title: "The Beatitudes"
+        note: "Matthew 5:1–12. Who the blessed are, and what they are promised."
+        refs:
+          - ref: "Matt 5:1-2"
+            label: "Up the mountain"
+            note: "Jesus goes up the mountain and sits down to teach, as Moses went up to receive the Law"
+            links:
+              - { to: "Exod 19:3-6", topic: "Moses on the mountain", category: background }
+              - { to: "Exod 24:12", topic: "Moses on the mountain", category: background }
+              - { to: "Deut 18:15-18", topic: "The prophet like Moses", category: background }
+              - { to: "Luke 6:17-19", topic: "The Sermon on the Plain", category: parallel }
+          - ref: "Matt 5:3"
+            label: "The poor in spirit"
+            note: "Theirs is the kingdom of heaven"
+            links:
+              - { to: "Isa 57:15", topic: "God dwells with the contrite", category: background }
+              - { to: "Isa 66:1-2", topic: "God dwells with the contrite", category: background }
+              - { to: "Ps 34:18", topic: "God dwells with the contrite", category: background }
+              - { to: "Luke 6:20", topic: "The Sermon on the Plain", category: parallel }
+          - ref: "Matt 5:4"
+            label: "Those who mourn"
+            note: "They will be comforted"
+            links:
+              - { to: "Isa 61:1-3", topic: "Comfort for those who mourn", category: background }
+              - { to: "Luke 6:21", topic: "The Sermon on the Plain", category: parallel }
+              - { to: "2 Cor 7:9-10", topic: "Godly sorrow", category: echo }
+              - { to: "Rev 21:4", topic: "Comfort for those who mourn", category: echo }
+          - ref: "Matt 5:5"
+            label: "The meek"
+            note: "They will inherit the earth"
+            links:
+              - { to: "Ps 37:9-11", topic: "The meek inherit the land", category: quoted }
+              - { to: "Matt 11:29", topic: "Jesus, gentle and humble", category: jesus }
+              - { to: "1 Pet 3:4", topic: "A gentle and quiet spirit", category: echo }
+          - ref: "Matt 5:6"
+            label: "Those who hunger and thirst for righteousness"
+            note: "They will be filled"
+            links:
+              - { to: "Isa 55:1-2", topic: "Come, buy and eat", category: background }
+              - { to: "Ps 42:1-2", topic: "Thirst for God", category: background }
+              - { to: "Luke 6:21", topic: "The Sermon on the Plain", category: parallel }
+              - { to: "John 6:35", topic: "Never hunger, never thirst", category: jesus }
+          - ref: "Matt 5:7"
+            label: "The merciful"
+            note: "They will be shown mercy"
+            links:
+              - { to: "Mic 6:8", topic: "Love mercy", category: background }
+              - { to: "Luke 6:36", topic: "The Sermon on the Plain", category: parallel }
+              - { to: "Matt 18:33", topic: "The unforgiving servant", category: jesus }
+              - { to: "Jas 2:13", topic: "Mercy triumphs over judgment", category: echo }
+          - ref: "Matt 5:8"
+            label: "The pure in heart"
+            note: "They will see God"
+            links:
+              - { to: "Ps 24:3-4", topic: "Clean hands and a pure heart", category: background }
+              - { to: "Ps 73:1", topic: "Clean hands and a pure heart", category: background }
+              - { to: "1 John 3:2-3", topic: "We will see Him as He is", category: echo }
+              - { to: "Heb 12:14", topic: "Without holiness no one will see the Lord", category: echo }
+          - ref: "Matt 5:9"
+            label: "The peacemakers"
+            note: "They will be called sons of God"
+            links:
+              - { to: "Ps 34:14", topic: "Seek peace and pursue it", category: background }
+              - { to: "Jas 3:17-18", topic: "The harvest of righteousness sown in peace", category: echo }
+              - { to: "Rom 12:18", topic: "Live at peace with everyone", category: echo }
+          - ref: "Matt 5:10-12"
+            label: "The persecuted"
+            note: "Rejoice and be glad; so they persecuted the prophets before you"
+            links:
+              - { to: "2 Chr 36:15-16", topic: "The prophets persecuted", category: background }
+              - { to: "Luke 6:22-23", topic: "The Sermon on the Plain", category: parallel }
+              - { to: "1 Pet 3:13-14", topic: "Blessed if you suffer for righteousness", category: echo }
+              - { to: "1 Pet 4:12-14", topic: "Blessed if you suffer for righteousness", category: echo }
+              - { to: "Jas 1:2-4", topic: "Count it all joy", category: echo }
+              - { to: "Acts 5:41", topic: "Rejoicing in dishonor for the Name", category: echo }
+      - title: "Salt, light and the Law"
+        note: "Matthew 5:13–20. What the disciples are for, and what Jesus came to do with the Law."
+        refs:
+          - ref: "Matt 5:13-16"
+            label: "Salt and light"
+            note: "A city on a hill cannot be hidden"
+            links:
+              - { to: "Mark 9:50", topic: "Salt", category: jesus }
+              - { to: "Luke 14:34-35", topic: "Salt", category: parallel }
+              - { to: "Isa 60:1-3", topic: "Nations come to your light", category: background }
+              - { to: "Phil 2:14-16", topic: "Shine like stars", category: echo }
+              - { to: "1 Pet 2:11-12", topic: "Good deeds that glorify God", category: echo }
+          - ref: "Matt 5:17-20"
+            label: "Not to abolish but to fulfill"
+            note: "Not the smallest letter will pass from the Law until all is accomplished"
+            links:
+              - { to: "Luke 16:17", topic: "Not one stroke of a pen", category: parallel }
+              - { to: "Rom 3:31", topic: "The Law upheld", category: echo }
+              - { to: "Rom 8:3-4", topic: "The Law fulfilled in us", category: echo }
+              - { to: "Rom 10:4", topic: "Christ the end of the Law", category: echo }
+              - { to: "Matt 22:37-40", topic: "The Law summed up", category: jesus }
+              - { to: "Jer 31:33", topic: "The Law written on hearts", category: background }
+      - title: "You have heard that it was said"
+        note: "Matthew 5:21–48. Six times Jesus quotes the Law and reaches for its heart."
+        refs:
+          - ref: "Matt 5:21-26"
+            label: "Murder and anger"
+            note: "Anyone who is angry with his brother is subject to judgment; be reconciled first"
+            links:
+              - { to: "Exod 20:13", topic: "You shall not murder", category: quoted }
+              - { to: "Gen 4:3-8", topic: "Cain's anger", category: background }
+              - { to: "1 John 3:15", topic: "Hatred is murder", category: echo }
+              - { to: "Eph 4:26-27", topic: "Do not let the sun go down on your anger", category: echo }
+              - { to: "Matt 18:15", topic: "Go and be reconciled", category: jesus }
+          - ref: "Matt 5:27-30"
+            label: "Adultery and the heart"
+            note: "Anyone who looks at a woman to lust has already committed adultery in his heart"
+            links:
+              - { to: "Exod 20:14", topic: "You shall not commit adultery", category: quoted }
+              - { to: "Job 31:1", topic: "A covenant with my eyes", category: background }
+              - { to: "Jas 1:14-15", topic: "Desire conceives sin", category: echo }
+              - { to: "Mark 9:43-48", topic: "Cut it off", category: parallel }
+          - ref: "Matt 5:31-32"
+            label: "Divorce"
+            note: "Whoever divorces his wife, except for sexual immorality, causes her to commit adultery"
+            links:
+              - { to: "Deut 24:1-4", topic: "The certificate of divorce", category: quoted }
+              - { to: "Mal 2:14-16", topic: "The wife of your youth", category: background }
+              - { to: "Matt 19:3-9", topic: "What God has joined together", category: jesus }
+              - { to: "1 Cor 7:10-11", topic: "The Lord's command on divorce", category: echo }
+          - ref: "Matt 5:33-37"
+            label: "Oaths"
+            note: "Let your Yes be Yes and your No, No"
+            links:
+              - { to: "Lev 19:12", topic: "Do not swear falsely", category: quoted }
+              - { to: "Num 30:2", topic: "Keep your vows", category: quoted }
+              - { to: "Deut 23:21-23", topic: "Keep your vows", category: quoted }
+              - { to: "Jas 5:12", topic: "Let your Yes be Yes", category: echo }
+              - { to: "Matt 23:16-22", topic: "Swearing by the temple", category: jesus }
+          - ref: "Matt 5:38-42"
+            label: "Eye for eye"
+            note: "Do not resist an evil person; turn the other cheek; go the second mile"
+            links:
+              - { to: "Exod 21:23-25", topic: "Eye for eye", category: quoted }
+              - { to: "Lev 24:19-20", topic: "Eye for eye", category: quoted }
+              - { to: "Lam 3:28-30", topic: "Offer the cheek", category: background }
+              - { to: "Luke 6:29-30", topic: "The Sermon on the Plain", category: parallel }
+              - { to: "Rom 12:17-21", topic: "Do not repay evil for evil", category: echo }
+              - { to: "1 Pet 2:21-23", topic: "He did not retaliate", category: echo }
+          - ref: "Matt 5:43-48"
+            label: "Love your enemies"
+            note: "Be perfect, as your heavenly Father is perfect"
+            links:
+              - { to: "Lev 19:18", topic: "Love your neighbor", category: quoted }
+              - { to: "Exod 23:4-5", topic: "Your enemy's donkey", category: background }
+              - { to: "Prov 25:21-22", topic: "Feed your enemy", category: background }
+              - { to: "Lev 19:2", topic: "Be holy as I am holy", category: background }
+              - { to: "Luke 6:27-36", topic: "The Sermon on the Plain", category: parallel }
+              - { to: "Rom 5:8-10", topic: "Loved while enemies", category: echo }
+              - { to: "Rom 12:20", topic: "Feed your enemy", category: echo }
+              - { to: "1 Pet 3:9", topic: "Bless, do not curse", category: echo }
+      - title: "Giving, prayer and fasting"
+        note: "Matthew 6:1–18. Righteousness done in secret before the Father who sees."
+        refs:
+          - ref: "Matt 6:1-4"
+            label: "Giving in secret"
+            note: "Do not let your left hand know what your right hand is doing"
+            links:
+              - { to: "Deut 15:7-11", topic: "Open your hand to the poor", category: background }
+              - { to: "Prov 19:17", topic: "Lending to the LORD", category: background }
+              - { to: "2 Cor 9:6-7", topic: "A cheerful giver", category: echo }
+          - ref: "Matt 6:5-8"
+            label: "Praying in secret"
+            note: "Your Father knows what you need before you ask"
+            links:
+              - { to: "1 Kgs 18:26-29", topic: "The prophets of Baal babble", category: background }
+              - { to: "Eccl 5:1-2", topic: "Let your words be few", category: background }
+              - { to: "Isa 65:24", topic: "Before they call, I will answer", category: background }
+              - { to: "Rom 8:26-27", topic: "The Spirit helps us pray", category: echo }
+          - ref: "Matt 6:9-13"
+            label: "The Lord's Prayer"
+            note: "Our Father in heaven, hallowed be Your name"
+            links:
+              - { to: "Luke 11:1-4", topic: "Luke's Lord's Prayer", category: parallel }
+              - { to: "Isa 63:15-16", topic: "Our Father", category: background }
+              - { to: "Ezek 36:22-23", topic: "Hallowed be Your name", category: background }
+              - { to: "1 Chr 29:10-13", topic: "The kingdom, the power and the glory", category: background }
+              - { to: "Prov 30:7-9", topic: "Our daily bread", category: background }
+              - { to: "Exod 16:4", topic: "Our daily bread", category: background }
+              - { to: "Matt 18:21-35", topic: "Forgive us as we forgive", category: jesus }
+              - { to: "Jas 1:13-14", topic: "Lead us not into temptation", category: echo }
+              - { to: "John 17:15", topic: "Deliver us from the evil one", category: jesus }
+          - ref: "Matt 6:14-15"
+            label: "Forgive, and you will be forgiven"
+            note: "If you do not forgive others, your Father will not forgive you"
+            links:
+              - { to: "Mark 11:25", topic: "Forgive when you pray", category: jesus }
+              - { to: "Col 3:13", topic: "Forgive as the Lord forgave you", category: echo }
+              - { to: "Eph 4:32", topic: "Forgive as the Lord forgave you", category: echo }
+          - ref: "Matt 6:16-18"
+            label: "Fasting in secret"
+            note: "Anoint your head and wash your face"
+            links:
+              - { to: "Isa 58:3-9", topic: "The fast God chooses", category: background }
+              - { to: "Joel 2:12-13", topic: "Rend your heart, not your garments", category: background }
+              - { to: "Zech 7:5-6", topic: "Was it really for Me that you fasted?", category: background }
+              - { to: "Luke 18:11-12", topic: "The Pharisee's fasting", category: jesus }
+              - { to: "Matt 9:14-15", topic: "The bridegroom's guests", category: jesus }
+      - title: "Treasure and trust"
+        note: "Matthew 6:19–34. Where your treasure is, and why not to worry."
+        refs:
+          - ref: "Matt 6:19-21"
+            label: "Treasures in heaven"
+            note: "Where your treasure is, there your heart will be also"
+            links:
+              - { to: "Luke 12:33-34", topic: "Purses that do not wear out", category: parallel }
+              - { to: "Prov 23:4-5", topic: "Riches fly away", category: background }
+              - { to: "1 Tim 6:17-19", topic: "Rich in good works", category: echo }
+              - { to: "Col 3:1-2", topic: "Set your minds on things above", category: echo }
+              - { to: "Jas 5:2-3", topic: "Your gold and silver are corroded", category: echo }
+          - ref: "Matt 6:22-23"
+            label: "The eye is the lamp of the body"
+            note: "If your eye is bad, your whole body will be full of darkness"
+            links:
+              - { to: "Luke 11:34-36", topic: "The lamp of the body", category: parallel }
+              - { to: "Deut 15:9", topic: "The evil eye of stinginess", category: background }
+              - { to: "Prov 22:9", topic: "The generous eye", category: background }
+          - ref: "Matt 6:24"
+            label: "God or money"
+            note: "No one can serve two masters"
+            links:
+              - { to: "Luke 16:13", topic: "Two masters", category: parallel }
+              - { to: "Josh 24:14-15", topic: "Choose whom you will serve", category: background }
+              - { to: "1 Tim 6:9-10", topic: "The love of money", category: echo }
+              - { to: "Jas 4:4", topic: "Friendship with the world", category: echo }
+          - ref: "Matt 6:25-34"
+            label: "Do not worry"
+            note: "Look at the birds of the air; consider the lilies of the field"
+            links:
+              - { to: "Luke 12:22-31", topic: "The ravens and the lilies", category: parallel }
+              - { to: "Ps 55:22", topic: "Cast your burden on the LORD", category: background }
+              - { to: "1 Kgs 17:2-6", topic: "Fed by ravens", category: background }
+              - { to: "Ps 104:27-28", topic: "God feeds His creatures", category: background }
+              - { to: "Phil 4:6-7", topic: "Be anxious for nothing", category: echo }
+              - { to: "1 Pet 5:7", topic: "Cast all your anxiety on Him", category: echo }
+              - { to: "Matt 10:29-31", topic: "Worth more than many sparrows", category: jesus }
+      - title: "Judging, asking, the narrow gate"
+        note: "Matthew 7:1–14. How to treat others, how to ask the Father, which road to take."
+        refs:
+          - ref: "Matt 7:1-5"
+            label: "Judge not"
+            note: "First take the beam out of your own eye"
+            links:
+              - { to: "Luke 6:37-42", topic: "The speck and the beam", category: parallel }
+              - { to: "Rom 2:1-3", topic: "You who judge do the same things", category: echo }
+              - { to: "Rom 14:10-13", topic: "Why do you judge your brother?", category: echo }
+              - { to: "Jas 4:11-12", topic: "There is one Judge", category: echo }
+              - { to: "John 7:24", topic: "Judge with right judgment", category: jesus }
+          - ref: "Matt 7:6"
+            label: "Pearls before swine"
+            note: "Do not give dogs what is holy"
+            links:
+              - { to: "Prov 9:7-8", topic: "Do not rebuke a mocker", category: background }
+              - { to: "Prov 23:9", topic: "Do not speak to a fool", category: background }
+              - { to: "Matt 10:14", topic: "Shake the dust off your feet", category: jesus }
+          - ref: "Matt 7:7-11"
+            label: "Ask, seek, knock"
+            note: "How much more will your Father give good things to those who ask"
+            links:
+              - { to: "Luke 11:9-13", topic: "The Father gives the Spirit", category: parallel }
+              - { to: "Jer 29:12-13", topic: "You will seek Me and find Me", category: background }
+              - { to: "Jas 1:5-6", topic: "Ask in faith", category: echo }
+              - { to: "1 John 5:14-15", topic: "Confidence in asking", category: echo }
+              - { to: "John 16:23-24", topic: "Ask in My name", category: jesus }
+          - ref: "Matt 7:12"
+            label: "The golden rule"
+            note: "This is the Law and the Prophets"
+            links:
+              - { to: "Lev 19:18", topic: "Love your neighbor as yourself", category: quoted }
+              - { to: "Luke 6:31", topic: "The Sermon on the Plain", category: parallel }
+              - { to: "Rom 13:8-10", topic: "Love fulfills the Law", category: echo }
+              - { to: "Gal 5:14", topic: "Love fulfills the Law", category: echo }
+              - { to: "Matt 22:37-40", topic: "The Law summed up", category: jesus }
+          - ref: "Matt 7:13-14"
+            label: "The narrow gate"
+            note: "Small is the gate and narrow the way that leads to life"
+            links:
+              - { to: "Luke 13:23-24", topic: "The narrow door", category: parallel }
+              - { to: "Deut 30:15-19", topic: "Life and death set before you", category: background }
+              - { to: "Jer 21:8", topic: "The way of life and the way of death", category: background }
+              - { to: "Ps 1:6", topic: "The two ways", category: background }
+              - { to: "John 10:7-9", topic: "I am the gate", category: jesus }
+              - { to: "John 14:6", topic: "I am the way", category: jesus }
+      - title: "Fruit, foundations and authority"
+        note: "Matthew 7:15–29. How to tell true from false, and how the Sermon ends."
+        refs:
+          - ref: "Matt 7:15-20"
+            label: "By their fruit"
+            note: "Wolves in sheep's clothing; a good tree cannot bear bad fruit"
+            links:
+              - { to: "Deut 13:1-5", topic: "Testing the prophet", category: background }
+              - { to: "Jer 23:16", topic: "Prophets who speak visions of their own minds", category: background }
+              - { to: "Ezek 22:27", topic: "Wolves tearing their prey", category: background }
+              - { to: "Luke 6:43-45", topic: "A tree and its fruit", category: parallel }
+              - { to: "Matt 12:33-35", topic: "A tree and its fruit", category: jesus }
+              - { to: "2 Pet 2:1-3", topic: "False teachers", category: echo }
+              - { to: "1 John 4:1", topic: "Test the spirits", category: echo }
+              - { to: "Acts 20:29-30", topic: "Savage wolves", category: echo }
+              - { to: "Gal 5:22-23", topic: "The fruit of the Spirit", category: echo }
+          - ref: "Matt 7:21-23"
+            label: "Lord, Lord"
+            note: "I never knew you; depart from Me, you workers of lawlessness"
+            links:
+              - { to: "Ps 6:8", topic: "Depart from me, all you workers of iniquity", category: quoted }
+              - { to: "Luke 6:46", topic: "Why do you call Me Lord, Lord?", category: parallel }
+              - { to: "Luke 13:25-27", topic: "I do not know where you come from", category: jesus }
+              - { to: "Rom 2:13", topic: "Doers of the law", category: echo }
+              - { to: "Jas 1:22", topic: "Be doers of the word", category: echo }
+              - { to: "2 Tim 2:19", topic: "The Lord knows those who are His", category: echo }
+              - { to: "1 John 2:3-6", topic: "How we know that we know Him", category: echo }
+          - ref: "Matt 7:24-27"
+            label: "The two builders"
+            note: "A wise man who built his house on the rock"
+            links:
+              - { to: "Luke 6:47-49", topic: "The two builders", category: parallel }
+              - { to: "Jas 1:22-25", topic: "Hearing and doing", category: echo }
+              - { to: "Isa 28:16-17", topic: "A sure foundation", category: background }
+              - { to: "Prov 10:25", topic: "The righteous stand firm", category: background }
+              - { to: "Ezek 13:10-16", topic: "The whitewashed wall in the storm", category: background }
+          - ref: "Matt 7:28-29"
+            label: "As one who had authority"
+            note: "The crowds were astonished at His teaching"
+            links:
+              - { to: "Mark 1:22", topic: "Astonished at His authority", category: parallel }
+              - { to: "Luke 4:32", topic: "Astonished at His authority", category: parallel }
+              - { to: "John 7:46", topic: "No one ever spoke like this man", category: echo }
+              - { to: "Deut 18:18-19", topic: "My words in his mouth", category: background }
+              - { to: "Matt 28:18", topic: "All authority", category: jesus }
+  - title: "By kind of connection"
+    note: "The Law cited, the background, the parallels, Jesus elsewhere, the apostles."
+    auto: category
+  - title: "Jesus and the rest"
+    note: "Every saying is Jesus's; this shows how much of the linked material is too."
+    auto: jesus

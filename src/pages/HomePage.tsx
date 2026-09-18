@@ -54,6 +54,10 @@ export default function HomePage() {
             <div className="font-semibold text-base">How the Bible is laid out</div>
             <div className="text-ink-2 text-sm mt-0.5">The 66 books by kind of writing, drawn to size, with an outline of each.</div>
           </Link>
+          <Link to="/compare?a=david_994&b=saul_2478" className="block rounded-xl border border-line bg-surface p-4 hover:border-line-strong hover:no-underline text-ink">
+            <div className="font-semibold text-base">Compare two people</div>
+            <div className="text-ink-2 text-sm mt-0.5">Two lives on one map: the people, places and events they share, and what is theirs alone.</div>
+          </Link>
         </div>
       </Section>
 
