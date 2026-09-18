@@ -11,6 +11,7 @@ import SearchPage from '@/pages/SearchPage'
 import StudyPage from '@/pages/StudyPage'
 import TopicPage from '@/pages/TopicPage'
 import TimelinePage from '@/pages/TimelinePage'
+import BiblePage from '@/pages/BiblePage'
 import BookPage from '@/pages/BookPage'
 import { FONT_SIZES, useSettings } from '@/store/settings'
 
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/study/:id" element={<StudyPage />} />
         <Route path="/book/:osis" element={<BookPage />} />
         <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/bible" element={<BiblePage />} />
         <Route path="/credits" element={<CreditsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

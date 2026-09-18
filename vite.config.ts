@@ -28,7 +28,7 @@ export default defineConfig({
   server: {
     port: 5173,
     // The project lives on a Windows mount under WSL, where native file events do not fire.
-    watch: { usePolling: true, interval: 600, ignored: ['**/data/raw/**', '**/public/data/**', '**/.screenshots/**', '**/dist/**'] },
+    watch: { usePolling: true, interval: 600, ignored: ['**/data/raw/**', '**/.screenshots/**', '**/dist/**'] },
   },
   build: { target: 'es2022', sourcemap: false, chunkSizeWarningLimit: 900 },
 })

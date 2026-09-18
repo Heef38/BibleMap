@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
-import { IconMoon, IconPanelLeft, IconPanelRight, IconSettings, IconSun, Logo } from '@/components/common/icons'
+import { IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun, Logo } from '@/components/common/icons'
+import { useSession } from '@/store/session'
 import { useSettings, type FontSize, type Theme } from '@/store/settings'
 import { useData } from '@/data/useData'
 import { loadBibleIndex } from '@/data/loaders'
@@ -98,6 +99,7 @@ export default function Header() {
   const showLeft = useSettings((s) => s.showLeft)
   const showRight = useSettings((s) => s.showRight)
   const set = useSettings((s) => s.set)
+  const focusSearch = useSession((s) => s.focusSearch)
   const [open, setOpen] = useState(false)
   return (
     <header className="h-12 shrink-0 flex items-center gap-3 px-3 border-b border-line bg-surface relative z-20">
@@ -107,10 +109,23 @@ export default function Header() {
       </Link>
       <span className="text-muted text-xs max-[900px]:hidden">see how the story connects</span>
       <div className="ml-auto flex items-center gap-1">
-        <button type="button" className="btn btn-ghost max-[900px]:hidden" aria-pressed={showLeft} onClick={() => set({ showLeft: !showLeft })} title="Toggle the search pane">
+        {!showLeft && (
+          <button
+            type="button"
+            className="btn btn-ghost max-[900px]:hidden"
+            onClick={() => {
+              set({ showLeft: true })
+              focusSearch()
+            }}
+            title="Search ( / )"
+          >
+            <IconSearch />
+          </button>
+        )}
+        <button type="button" className="btn btn-ghost max-[900px]:hidden" aria-pressed={showLeft} onClick={() => set({ showLeft: !showLeft })} title={showLeft ? 'Hide the search pane ( [ )' : 'Show the search pane ( [ )'}>
           <IconPanelLeft />
         </button>
-        <button type="button" className="btn btn-ghost max-[900px]:hidden" aria-pressed={showRight} onClick={() => set({ showRight: !showRight })} title="Toggle the reading pane">
+        <button type="button" className="btn btn-ghost max-[900px]:hidden" aria-pressed={showRight} onClick={() => set({ showRight: !showRight })} title={showRight ? 'Hide the reading pane ( ] )' : 'Show the reading pane ( ] )'}>
           <IconPanelRight />
         </button>
         <ThemeButton />

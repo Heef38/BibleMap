@@ -17,6 +17,9 @@ interface Session {
   focus: number | null
   highlights: Highlight[]
   mobilePane: MobilePane
+  /** bumped whenever something asks the search box to take focus */
+  searchNonce: number
+  focusSearch: () => void
   /** Show this verse in the reader (and focus it). */
   goTo: (ordinal: number, opts?: { focus?: boolean; pane?: boolean }) => void
   setFocus: (ordinal: number | null) => void
@@ -29,6 +32,8 @@ export const useSession = create<Session>()((set) => ({
   focus: null,
   highlights: [],
   mobilePane: 'map',
+  searchNonce: 0,
+  focusSearch: () => set((s) => ({ searchNonce: s.searchNonce + 1, mobilePane: 'explore' })),
   goTo: (ordinal, opts) =>
     set((s) => ({
       readerOrdinal: ordinal,

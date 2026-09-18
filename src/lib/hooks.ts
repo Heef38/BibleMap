@@ -24,16 +24,22 @@ export function useMediaQuery(query: string): boolean {
 /** The rendered width of an element, kept up to date by a ResizeObserver. */
 export function useWidth(ref: RefObject<HTMLElement | null>): number {
   const [width, setWidth] = useState(0)
+  const observed = useRef<{ el: HTMLElement; ro: ResizeObserver } | null>(null)
+  // No dependency list on purpose: the element may appear after data loads.
   useLayoutEffect(() => {
     const el = ref.current
+    if (observed.current?.el === el) return
+    observed.current?.ro.disconnect()
+    observed.current = null
     if (!el) return
     setWidth(el.clientWidth)
     const ro = new ResizeObserver((entries) => {
       for (const e of entries) setWidth(Math.round(e.contentRect.width))
     })
     ro.observe(el)
-    return () => ro.disconnect()
-  }, [ref])
+    observed.current = { el, ro }
+  })
+  useEffect(() => () => observed.current?.ro.disconnect(), [])
   return width
 }
 

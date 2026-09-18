@@ -1,4 +1,4 @@
-import { useMemo, useState, type FormEvent } from 'react'
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { IconSearch } from '@/components/common/icons'
 import { Highlight } from '@/components/common/Highlight'
@@ -18,6 +18,11 @@ export default function SearchPane() {
   const dq = useDebounce(q, 150)
   const navigate = useNavigate()
   const goTo = useSession((s) => s.goTo)
+  const searchNonce = useSession((s) => s.searchNonce)
+  const inputRef = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    if (searchNonce > 0) inputRef.current?.focus()
+  }, [searchNonce])
   const translation = useSettings((s) => s.translation)
   const { data: index } = useData('search-index', buildSearchIndex)
   const { data: canon } = useData('canon', loadCanon)
@@ -48,6 +53,7 @@ export default function SearchPane() {
       <form onSubmit={submit} role="search" className="relative">
         <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
         <input
+          ref={inputRef}
           className="field pl-9"
           placeholder="Person, place, theme, or John 3:16"
           value={q}
@@ -79,6 +85,10 @@ export default function SearchPane() {
           <Link to="/timeline" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
             <div className="font-medium">The story in time</div>
             <div className="text-xs text-ink-2">All dated events on one timeline</div>
+          </Link>
+          <Link to="/bible" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
+            <div className="font-medium">How the Bible is laid out</div>
+            <div className="text-xs text-ink-2">The 66 books by kind, drawn to size</div>
           </Link>
           <div className="kicker mt-6 mb-2">Try</div>
           <div className="flex flex-wrap gap-1.5">

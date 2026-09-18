@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router'
-import ArcDiagram, { categoryColor } from '@/components/viz/ArcDiagram'
+import ArcDiagram, { categoryColor, type ArcPair } from '@/components/viz/ArcDiagram'
+import StudyMap from '@/components/viz/StudyMap'
 import CanonStrip from '@/components/viz/CanonStrip'
 import Sunburst, { groupColor, refFill } from '@/components/viz/Sunburst'
 import { ErrorBlock, Loading, PageHeader, RefLink, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadBible, loadCanon, loadStudy } from '@/data/loaders'
-import type { StudyRef } from '@/data/types'
 import { truncate } from '@/lib/format'
 import { useSettings } from '@/store/settings'
 import { useSession } from '@/store/session'
@@ -21,17 +21,17 @@ export default function StudyPage() {
   const setHighlights = useSession((s) => s.setHighlights)
   const goTo = useSession((s) => s.goTo)
   const [selected, setSelected] = useState<string | null>(null)
-  const [selectedRef, setSelectedRef] = useState<StudyRef | null>(null)
+  const [selectedPair, setSelectedPair] = useState<ArcPair | null>(null)
   const [hiddenCats, setHiddenCats] = useState<Set<string>>(() => new Set())
 
   const isConnections = study?.kind === 'connections'
   const viewId = params.get('view')
   const view = useMemo(() => study?.views.find((v) => v.id === viewId) ?? study?.views[0], [study, viewId])
-  const chart = params.get('chart') ?? (isConnections ? 'arcs' : 'sunburst')
+  const chart = params.get('chart') ?? study?.chart ?? (isConnections ? 'arcs' : 'sunburst')
 
   useEffect(() => {
     setSelected(null)
-    setSelectedRef(null)
+    setSelectedPair(null)
   }, [view?.id])
 
   useEffect(() => {
@@ -53,7 +53,12 @@ export default function StudyPage() {
   const groupsShown = selectedGroup ? [selectedGroup] : view.groups
   const totalWeight = view.groups.reduce((s, g) => s + g.weight, 0)
   const catCounts = new Map<string, number>()
-  for (const g of view.groups) for (const r of g.refs) if (r.category) catCounts.set(r.category, (catCounts.get(r.category) ?? 0) + 1)
+  for (const g of view.groups)
+    for (const r of g.refs) {
+      if (r.links?.length) for (const l of r.links) if (l.category ?? r.category) catCounts.set(l.category ?? r.category!, (catCounts.get(l.category ?? r.category!) ?? 0) + 1)
+      else if (r.category) catCounts.set(r.category, (catCounts.get(r.category) ?? 0) + 1)
+    }
+  const charts: [string, string][] = [...(isConnections ? [['arcs', 'Arcs'] as [string, string]] : []), ['map', 'Map'], ['sunburst', 'Sunburst']]
   const toggleCat = (cid: string) =>
     setHiddenCats((s) => {
       const n = new Set(s)
@@ -84,17 +89,15 @@ export default function StudyPage() {
       {study.summary && <p className="text-ink-2 max-w-prose -mt-2 mb-5 leading-relaxed">{study.summary}</p>}
       {view.note && <p className="text-sm text-ink-2 max-w-prose mb-4">{view.note}</p>}
 
-      {isConnections && (
-        <div className="flex flex-wrap items-center gap-2 mb-3">
-          <div className="seg" role="group" aria-label="Chart">
-            <button type="button" aria-pressed={chart === 'arcs'} onClick={() => setParam('chart', 'arcs')}>
-              Arcs
+      <div className="flex flex-wrap items-center gap-2 mb-3">
+        <div className="seg" role="group" aria-label="Chart">
+          {charts.map(([id, label]) => (
+            <button key={id} type="button" aria-pressed={chart === id} onClick={() => setParam('chart', id)}>
+              {label}
             </button>
-            <button type="button" aria-pressed={chart === 'sunburst'} onClick={() => setParam('chart', 'sunburst')}>
-              Sunburst
-            </button>
-          </div>
-          {study.categories && (
+          ))}
+        </div>
+        {isConnections && chart === 'arcs' && study.categories && (
             <div className="flex flex-wrap items-center gap-1.5 ml-2" role="group" aria-label="Filter by kind">
               {study.categories.map((c) => {
                 const off = hiddenCats.has(c.id)
@@ -106,31 +109,35 @@ export default function StudyPage() {
                 )
               })}
             </div>
-          )}
-        </div>
-      )}
+        )}
+      </div>
 
-      {isConnections && chart === 'arcs' ? (
+      {chart === 'map' ? (
+        <StudyMap study={study} view={view} canon={canon} bible={bible} />
+      ) : isConnections && chart === 'arcs' ? (
         <div>
-          <ArcDiagram study={study} view={view} canon={canon} bible={bible} selectedGroup={selected} hiddenCategories={hiddenCats} selectedRef={selectedRef} onSelect={setSelectedRef} />
+          <ArcDiagram study={study} view={view} canon={canon} bible={bible} selectedGroup={selected} hiddenCategories={hiddenCats} selected={selectedPair} onSelect={setSelectedPair} />
           <p className="text-xs text-muted mt-1">Each arc joins an Old Testament passage to where the New Testament takes it up, colored by kind. Hover to read, click to pin a pair; pick a group below to focus on it.</p>
-          {selectedRef && (
+          {selectedPair && (
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               {[
-                { label: selectedRef.label, range: selectedRef.ranges[0] },
-                { label: selectedRef.toLabel ?? '', range: selectedRef.to?.[0] },
-              ]
-                .filter((x) => x.range)
-                .map((x) => (
-                  <button key={x.label} type="button" className="text-left rounded-xl border border-line bg-surface p-3 hover:border-line-strong" onClick={() => goTo(x.range![0])}>
-                    <div className="text-sm font-medium flex items-center gap-2">
-                      <span className="swatch" style={{ background: categoryColor(study.categories, selectedRef.category) }} />
-                      {x.label}
-                    </div>
-                    <div className="scripture !text-[15px] !leading-snug mt-1">{snippet(x.range![0], 260)}</div>
-                  </button>
-                ))}
-              {selectedRef.note && <p className="text-sm text-ink-2 md:col-span-2">{selectedRef.note}</p>}
+                { label: selectedPair.ref.label, range: selectedPair.ref.ranges[0] },
+                { label: selectedPair.target.label, range: selectedPair.target.ranges[0] },
+              ].map((x) => (
+                <button key={x.label} type="button" className="text-left rounded-xl border border-line bg-surface p-3 hover:border-line-strong" onClick={() => goTo(x.range[0])}>
+                  <div className="text-sm font-medium flex items-center gap-2">
+                    <span className="swatch" style={{ background: categoryColor(study.categories, selectedPair.target.category) }} />
+                    {x.label}
+                  </div>
+                  <div className="scripture !text-[15px] !leading-snug mt-1">{snippet(x.range[0], 260)}</div>
+                </button>
+              ))}
+              {(selectedPair.target.note ?? selectedPair.ref.note) && (
+                <p className="text-sm text-ink-2 md:col-span-2">
+                  {selectedPair.target.topic ? <span className="font-medium">{selectedPair.target.topic}. </span> : null}
+                  {selectedPair.target.note ?? selectedPair.ref.note}
+                </p>
+              )}
             </div>
           )}
           <div className="mt-4 flex flex-wrap gap-1.5">
@@ -199,14 +206,14 @@ export default function StudyPage() {
               <ul className="divide-y divide-line">
                 {g.refs.map((r, i) => (
                   <li key={i} className="py-1.5 flex gap-3 items-baseline text-sm">
-                    <span className="w-40 shrink-0 flex flex-wrap gap-1">
+                    <span className="w-56 shrink-0 flex flex-wrap gap-1">
                       <RefLink range={r.ranges[0]} canon={canon} label={r.label} color={refFill(gi, r.jesus)} />
-                      {r.to && r.toLabel && (
-                        <span className="inline-flex items-center gap-1">
+                      {(r.links ?? []).map((l, j) => (
+                        <span key={j} className="inline-flex items-center gap-1">
                           <span className="text-muted">→</span>
-                          <RefLink range={r.to[0]} canon={canon} label={r.toLabel} />
+                          <RefLink range={l.ranges[0]} canon={canon} label={l.label} />
                         </span>
-                      )}
+                      ))}
                     </span>
                     <span className="text-ink-2 min-w-0 flex-1">
                       {r.category && study.categories && (

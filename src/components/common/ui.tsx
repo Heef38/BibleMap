@@ -5,7 +5,7 @@ import type { Range } from '@/lib/refs'
 import { parseRefs } from '@/lib/refs'
 import type { Canon } from '@/lib/canon'
 
-export function PageHeader({ kicker, title, subtitle, right }: { kicker?: string; title: ReactNode; subtitle?: ReactNode; right?: ReactNode }) {
+export function PageHeader({ kicker, title, subtitle, right }: { kicker?: ReactNode; title: ReactNode; subtitle?: ReactNode; right?: ReactNode }) {
   return (
     <div className="flex flex-wrap items-start gap-x-6 gap-y-2 mb-5">
       <div className="min-w-0 flex-1">

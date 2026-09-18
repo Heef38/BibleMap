@@ -1,0 +1,1807 @@
+# The Psalms, sorted four ways. Notes are the BSB section headings; the New Testament
+# quotations are attached as links so the map can branch from a psalm to where it is cited.
+# Authorship follows the Hebrew superscriptions; the type of each psalm is one common
+# classification and is meant as a reading aid, since many psalms mix kinds.
+id: psalms
+title: The Psalms
+subtitle: All 150 psalms by type, author, book and collection, with the ones the New Testament quotes
+kind: connections
+chart: map
+summary: >-
+  The Psalms are Israel's prayer book and hymnal, and the book the New Testament quotes
+  more than any other. This study lets you see the whole collection at once: what kind of
+  song each psalm is, who wrote it, which of the five books it belongs to, and which
+  psalms the apostles and Jesus Himself took up as speaking of Christ.
+tags: [psalms, poetry, prayer, worship]
+categories:
+  quoted:
+    title: Quoted in the New Testament
+    note: The psalm is cited in the New Testament; the link shows where.
+views:
+  - title: By type
+    note: Eight kinds of psalm. Many psalms mix kinds; each is placed where its main movement lies.
+    groups:
+      - title: "Hymns of praise"
+        note: "Songs that call the whole creation to praise the LORD for who He is and what He has done."
+        refs:
+          - ref: Ps 8
+            label: Psalm 8
+            note: "How Majestic Is Your Name!"
+            links:
+              - { to: "Matt 21:16", topic: Quoted in the New Testament, category: quoted, label: "Ps 8:2 in Matt 21:16", note: "Praise from the mouths of children" }
+              - { to: "Heb 2:6-8; 1 Cor 15:27", topic: Quoted in the New Testament, category: quoted, label: "Ps 8:4-6 in Heb 2:6-8; 1 Cor 15:27", note: "Everything under His feet" }
+          - ref: Ps 19
+            label: Psalm 19
+            note: "The Heavens Declare the Glory of God"
+            links:
+              - { to: "Rom 10:18", topic: Quoted in the New Testament, category: quoted, label: "Ps 19:4 in Rom 10:18", note: "Their voice has gone out into all the earth" }
+          - ref: Ps 29
+            label: Psalm 29
+            note: "Ascribe Glory to the LORD"
+          - ref: Ps 33
+            label: Psalm 33
+            note: "Praise to the Creator"
+          - ref: Ps 47
+            label: Psalm 47
+            note: "Clap Your Hands, All You Peoples"
+          - ref: Ps 65
+            label: Psalm 65
+            note: "Praise Awaits God in Zion"
+          - ref: Ps 67
+            label: Psalm 67
+            note: "May God Cause His Face to Shine upon Us"
+          - ref: Ps 68
+            label: Psalm 68
+            note: "God’s Enemies Are Scattered"
+            links:
+              - { to: "Eph 4:8", topic: Quoted in the New Testament, category: quoted, label: "Ps 68:18 in Eph 4:8", note: "He ascended on high and gave gifts" }
+          - ref: Ps 93
+            label: Psalm 93
+            note: "The LORD Reigns!"
+          - ref: Ps 95
+            label: Psalm 95
+            note: "Do Not Harden Your Hearts"
+            links:
+              - { to: "Heb 3:7-11", topic: Quoted in the New Testament, category: quoted, label: "Ps 95:7-11 in Heb 3:7-11", note: "Today, if you hear His voice" }
+          - ref: Ps 96
+            label: Psalm 96
+            note: "Sing to the LORD, All the Earth"
+          - ref: Ps 97
+            label: Psalm 97
+            note: "Let the Earth Rejoice"
+            links:
+              - { to: "Heb 1:6", topic: Quoted in the New Testament, category: quoted, label: "Ps 97:7 in Heb 1:6", note: "Let all the angels worship Him" }
+          - ref: Ps 98
+            label: Psalm 98
+            note: "Sing to the LORD a New Song"
+          - ref: Ps 99
+            label: Psalm 99
+            note: "The LORD Reigns!"
+          - ref: Ps 100
+            label: Psalm 100
+            note: "Make a Joyful Noise"
+          - ref: Ps 103
+            label: Psalm 103
+            note: "Bless the LORD, O My Soul"
+          - ref: Ps 104
+            label: Psalm 104
+            note: "How Many Are Your Works, O LORD!"
+            links:
+              - { to: "Heb 1:7", topic: Quoted in the New Testament, category: quoted, label: "Ps 104:4 in Heb 1:7", note: "He makes His angels winds" }
+          - ref: Ps 105
+            label: Psalm 105
+            note: "Tell of His Wonders"
+          - ref: Ps 111
+            label: Psalm 111
+            note: "Majestic Is His Work"
+          - ref: Ps 113
+            label: Psalm 113
+            note: "The LORD Exalts the Humble"
+          - ref: Ps 114
+            label: Psalm 114
+            note: "A Psalm of Exodus"
+          - ref: Ps 117
+            label: Psalm 117
+            note: "Extol Him, All You Peoples"
+            links:
+              - { to: "Rom 15:11", topic: Quoted in the New Testament, category: quoted, label: "Ps 117:1 in Rom 15:11", note: "Praise the Lord, all you Gentiles" }
+          - ref: Ps 135
+            label: Psalm 135
+            note: "Give Praise, O Servants of the LORD"
+          - ref: Ps 136
+            label: Psalm 136
+            note: "His Loving Devotion Endures Forever"
+          - ref: Ps 145
+            label: Psalm 145
+            note: "I Will Exalt You, My God and King"
+          - ref: Ps 146
+            label: Psalm 146
+            note: "Praise the LORD, O My Soul"
+          - ref: Ps 147
+            label: Psalm 147
+            note: "It Is Good to Sing Praises"
+          - ref: Ps 148
+            label: Psalm 148
+            note: "Praise the LORD from the Heavens"
+          - ref: Ps 149
+            label: Psalm 149
+            note: "Sing to the LORD a New Song"
+          - ref: Ps 150
+            label: Psalm 150
+            note: "Let Everything That Has Breath Praise the LORD"
+      - title: "Laments of one person"
+        note: "A single voice crying out from trouble, sickness, guilt or enemies, and almost always turning to trust."
+        refs:
+          - ref: Ps 3
+            label: Psalm 3
+            note: "Deliver Me, O LORD!"
+          - ref: Ps 5
+            label: Psalm 5
+            note: "Give Ear to My Words"
+            links:
+              - { to: "Rom 3:13", topic: Quoted in the New Testament, category: quoted, label: "Ps 5:9 in Rom 3:13", note: "Their throat is an open grave" }
+          - ref: Ps 6
+            label: Psalm 6
+            note: "Do Not Rebuke Me in Your Anger"
+          - ref: Ps 7
+            label: Psalm 7
+            note: "I Take Refuge in You"
+          - ref: Ps 10
+            label: Psalm 10
+            note: "The Perils of the Pilgrim"
+            links:
+              - { to: "Rom 3:14", topic: Quoted in the New Testament, category: quoted, label: "Ps 10:7 in Rom 3:14", note: "Mouths full of cursing" }
+          - ref: Ps 13
+            label: Psalm 13
+            note: "How Long, O LORD?"
+          - ref: Ps 17
+            label: Psalm 17
+            note: "Hear My Righteous Plea"
+          - ref: Ps 22
+            label: Psalm 22
+            note: "The Psalm of the Cross"
+            links:
+              - { to: "Matt 27:46", topic: Quoted in the New Testament, category: quoted, label: "Ps 22:1 in Matt 27:46", note: "My God, my God, why have You forsaken me?" }
+              - { to: "John 19:24", topic: Quoted in the New Testament, category: quoted, label: "Ps 22:18 in John 19:24", note: "They divided My garments" }
+              - { to: "Heb 2:12", topic: Quoted in the New Testament, category: quoted, label: "Ps 22:22 in Heb 2:12", note: "I will declare Your name to my brothers" }
+          - ref: Ps 25
+            label: Psalm 25
+            note: "To You I Lift Up My Soul"
+          - ref: Ps 26
+            label: Psalm 26
+            note: "Vindicate Me, O LORD"
+          - ref: Ps 28
+            label: Psalm 28
+            note: "The LORD Is My Strength"
+          - ref: Ps 31
+            label: Psalm 31
+            note: "Into Your Hands I Commit My Spirit"
+            links:
+              - { to: "Luke 23:46", topic: Quoted in the New Testament, category: quoted, label: "Ps 31:5 in Luke 23:46", note: "Into Your hands I commit my spirit" }
+          - ref: Ps 35
+            label: Psalm 35
+            note: "Contend with My Opponents, O LORD"
+            links:
+              - { to: "John 15:25", topic: Quoted in the New Testament, category: quoted, label: "Ps 35:19 in John 15:25", note: "They hated Me without reason" }
+          - ref: Ps 36
+            label: Psalm 36
+            note: "The Transgression of the Wicked"
+            links:
+              - { to: "Rom 3:18", topic: Quoted in the New Testament, category: quoted, label: "Ps 36:1 in Rom 3:18", note: "No fear of God before their eyes" }
+          - ref: Ps 38
+            label: Psalm 38
+            note: "Do Not Rebuke Me in Your Anger"
+          - ref: Ps 39
+            label: Psalm 39
+            note: "I Will Watch My Ways"
+          - ref: Ps 41
+            label: Psalm 41
+            note: "Victory over Betrayal"
+            links:
+              - { to: "John 13:18", topic: Quoted in the New Testament, category: quoted, label: "Ps 41:9 in John 13:18", note: "He who shared My bread has lifted his heel" }
+          - ref: Ps 42
+            label: Psalm 42
+            note: "BOOK II · As the Deer Pants for the Water"
+          - ref: Ps 43
+            label: Psalm 43
+            note: "Send Out Your Light"
+          - ref: Ps 51
+            label: Psalm 51
+            note: "Create in Me a Clean Heart, O God"
+            links:
+              - { to: "Rom 3:4", topic: Quoted in the New Testament, category: quoted, label: "Ps 51:4 in Rom 3:4", note: "That You may be justified when You speak" }
+          - ref: Ps 52
+            label: Psalm 52
+            note: "Why Do You Boast of Evil?"
+          - ref: Ps 54
+            label: Psalm 54
+            note: "Save Me by Your Name"
+          - ref: Ps 55
+            label: Psalm 55
+            note: "Cast Your Burden upon the LORD"
+          - ref: Ps 56
+            label: Psalm 56
+            note: "Be Merciful to Me, O God"
+          - ref: Ps 57
+            label: Psalm 57
+            note: "In You My Soul Takes Refuge"
+          - ref: Ps 59
+            label: Psalm 59
+            note: "Deliver Me from My Enemies"
+          - ref: Ps 61
+            label: Psalm 61
+            note: "You Have Heard My Vows"
+          - ref: Ps 64
+            label: Psalm 64
+            note: "The Hurtful Tongue"
+          - ref: Ps 69
+            label: Psalm 69
+            note: "The Waters Are up to My Neck"
+            links:
+              - { to: "John 2:17; Rom 15:3", topic: Quoted in the New Testament, category: quoted, label: "Ps 69:9 in John 2:17; Rom 15:3", note: "Zeal for Your house consumes Me" }
+              - { to: "Rom 11:9-10", topic: Quoted in the New Testament, category: quoted, label: "Ps 69:22-23 in Rom 11:9-10", note: "Let their table become a snare" }
+              - { to: "Acts 1:20", topic: Quoted in the New Testament, category: quoted, label: "Ps 69:25 in Acts 1:20", note: "May his place be deserted" }
+          - ref: Ps 70
+            label: Psalm 70
+            note: "Hurry, O LORD, to Help Me!"
+          - ref: Ps 71
+            label: Psalm 71
+            note: "Be My Rock of Refuge"
+          - ref: Ps 77
+            label: Psalm 77
+            note: "In the Day of Trouble I Sought the Lord"
+          - ref: Ps 86
+            label: Psalm 86
+            note: "Tried but Trusting"
+          - ref: Ps 88
+            label: Psalm 88
+            note: "I Cry Out before You"
+          - ref: Ps 102
+            label: Psalm 102
+            note: "The Prayer of the Afflicted"
+            links:
+              - { to: "Heb 1:10-12", topic: Quoted in the New Testament, category: quoted, label: "Ps 102:25-27 in Heb 1:10-12", note: "You laid the foundations of the earth" }
+          - ref: Ps 109
+            label: Psalm 109
+            note: "The Song of the Slandered"
+            links:
+              - { to: "Acts 1:20", topic: Quoted in the New Testament, category: quoted, label: "Ps 109:8 in Acts 1:20", note: "Let another take his office" }
+          - ref: Ps 120
+            label: Psalm 120
+            note: "In My Distress I Cried to the LORD"
+          - ref: Ps 130
+            label: Psalm 130
+            note: "Out of the Depths"
+          - ref: Ps 140
+            label: Psalm 140
+            note: "Rescue Me from Evil Men"
+            links:
+              - { to: "Rom 3:13", topic: Quoted in the New Testament, category: quoted, label: "Ps 140:3 in Rom 3:13", note: "The poison of vipers is on their lips" }
+          - ref: Ps 141
+            label: Psalm 141
+            note: "Come Quickly to Me"
+          - ref: Ps 142
+            label: Psalm 142
+            note: "I Lift My Voice to the LORD"
+          - ref: Ps 143
+            label: Psalm 143
+            note: "I Stretch Out My Hands to You"
+            links:
+              - { to: "Rom 3:20; Gal 2:16", topic: Quoted in the New Testament, category: quoted, label: "Ps 143:2 in Rom 3:20; Gal 2:16", note: "No one living is righteous before You" }
+      - title: "Laments of the people"
+        note: "The nation in distress: defeat, exile, drought, or the long silence of God."
+        refs:
+          - ref: Ps 12
+            label: Psalm 12
+            note: "The Godly Are No More"
+          - ref: Ps 44
+            label: Psalm 44
+            note: "Redeem Us, O God"
+            links:
+              - { to: "Rom 8:36", topic: Quoted in the New Testament, category: quoted, label: "Ps 44:22 in Rom 8:36", note: "For Your sake we face death all day long" }
+          - ref: Ps 58
+            label: Psalm 58
+            note: "God Judges the Earth"
+          - ref: Ps 60
+            label: Psalm 60
+            note: "Victory with God"
+          - ref: Ps 74
+            label: Psalm 74
+            note: "Why Have You Rejected Us Forever?"
+          - ref: Ps 79
+            label: Psalm 79
+            note: "A Prayer for Deliverance"
+          - ref: Ps 80
+            label: Psalm 80
+            note: "Hear Us, O Shepherd of Israel"
+          - ref: Ps 83
+            label: Psalm 83
+            note: "O God, Be Not Silent"
+          - ref: Ps 85
+            label: Psalm 85
+            note: "You Showed Favor to Your Land"
+          - ref: Ps 90
+            label: Psalm 90
+            note: "BOOK IV · From Everlasting to Everlasting"
+          - ref: Ps 94
+            label: Psalm 94
+            note: "The LORD Will Not Forget His People"
+            links:
+              - { to: "1 Cor 3:20", topic: Quoted in the New Testament, category: quoted, label: "Ps 94:11 in 1 Cor 3:20", note: "The Lord knows the thoughts of the wise" }
+          - ref: Ps 106
+            label: Psalm 106
+            note: "Give Thanks to the LORD, for He Is Good"
+          - ref: Ps 123
+            label: Psalm 123
+            note: "I Lift Up My Eyes to You"
+          - ref: Ps 126
+            label: Psalm 126
+            note: "Zion’s Captives Restored"
+          - ref: Ps 137
+            label: Psalm 137
+            note: "By the Rivers of Babylon"
+      - title: "Songs of thanksgiving"
+        note: "Thanks for a specific rescue, often telling the story of the trouble and the deliverance."
+        refs:
+          - ref: Ps 9
+            label: Psalm 9
+            note: "I Will Give Thanks to the LORD"
+          - ref: Ps 30
+            label: Psalm 30
+            note: "You Turned My Mourning into Dancing"
+          - ref: Ps 32
+            label: Psalm 32
+            note: "The Joy of Forgiveness"
+            links:
+              - { to: "Rom 4:7-8", topic: Quoted in the New Testament, category: quoted, label: "Ps 32:1-2 in Rom 4:7-8", note: "Blessed are those whose sins are covered" }
+          - ref: Ps 34
+            label: Psalm 34
+            note: "Taste and See That the LORD Is Good"
+            links:
+              - { to: "1 Pet 3:10-12", topic: Quoted in the New Testament, category: quoted, label: "Ps 34:12-16 in 1 Pet 3:10-12", note: "Turn from evil and do good" }
+              - { to: "John 19:36", topic: Quoted in the New Testament, category: quoted, label: "Ps 34:20 in John 19:36", note: "Not one of His bones will be broken" }
+          - ref: Ps 40
+            label: Psalm 40
+            note: "I Waited Patiently for the LORD"
+            links:
+              - { to: "Heb 10:5-7", topic: Quoted in the New Testament, category: quoted, label: "Ps 40:6-8 in Heb 10:5-7", note: "A body You prepared for Me" }
+          - ref: Ps 66
+            label: Psalm 66
+            note: "Make a Joyful Noise"
+          - ref: Ps 75
+            label: Psalm 75
+            note: "God’s Righteous Judgment"
+          - ref: Ps 92
+            label: Psalm 92
+            note: "How Great Are Your Works!"
+          - ref: Ps 107
+            label: Psalm 107
+            note: "BOOK V · Thanksgiving for Deliverance"
+          - ref: Ps 108
+            label: Psalm 108
+            note: "Israel’s Kingdom Blessing"
+          - ref: Ps 116
+            label: Psalm 116
+            note: "The LORD Has Heard My Voice"
+            links:
+              - { to: "2 Cor 4:13", topic: Quoted in the New Testament, category: quoted, label: "Ps 116:10 in 2 Cor 4:13", note: "I believed, therefore I spoke" }
+          - ref: Ps 118
+            label: Psalm 118
+            note: "The LORD Is on My Side"
+            links:
+              - { to: "Heb 13:6", topic: Quoted in the New Testament, category: quoted, label: "Ps 118:6 in Heb 13:6", note: "The Lord is my helper; I will not be afraid" }
+              - { to: "Matt 21:42; Acts 4:11; 1 Pet 2:7", topic: Quoted in the New Testament, category: quoted, label: "Ps 118:22-23 in Matt 21:42; Acts 4:11; 1 Pet 2:7", note: "The stone the builders rejected" }
+              - { to: "Matt 21:9", topic: Quoted in the New Testament, category: quoted, label: "Ps 118:26 in Matt 21:9", note: "Blessed is He who comes in the name of the Lord" }
+          - ref: Ps 124
+            label: Psalm 124
+            note: "Our Help Is in the Name of the LORD"
+          - ref: Ps 129
+            label: Psalm 129
+            note: "The Cords of the Wicked"
+          - ref: Ps 138
+            label: Psalm 138
+            note: "A Thankful Heart"
+      - title: "Royal and messianic psalms"
+        note: "Psalms about the king of Israel, which the New Testament reads as psalms about the Messiah."
+        refs:
+          - ref: Ps 2
+            label: Psalm 2
+            note: "The Triumphant Messiah"
+            links:
+              - { to: "Acts 4:25-26", topic: Quoted in the New Testament, category: quoted, label: "Ps 2:1-2 in Acts 4:25-26", note: "The rulers gather against the Lord and His Anointed" }
+              - { to: "Acts 13:33; Heb 1:5", topic: Quoted in the New Testament, category: quoted, label: "Ps 2:7 in Acts 13:33; Heb 1:5", note: "You are My Son" }
+          - ref: Ps 18
+            label: Psalm 18
+            note: "The LORD Is My Rock"
+            links:
+              - { to: "Rom 15:9", topic: Quoted in the New Testament, category: quoted, label: "Ps 18:49 in Rom 15:9", note: "Praise among the Gentiles" }
+          - ref: Ps 20
+            label: Psalm 20
+            note: "The Day of Trouble"
+          - ref: Ps 21
+            label: Psalm 21
+            note: "After the Battle"
+          - ref: Ps 45
+            label: Psalm 45
+            note: "My Heart Is Stirred by a Noble Theme"
+            links:
+              - { to: "Heb 1:8-9", topic: Quoted in the New Testament, category: quoted, label: "Ps 45:6-7 in Heb 1:8-9", note: "Your throne, O God, endures forever" }
+          - ref: Ps 72
+            label: Psalm 72
+            note: "Endow the King with Your Justice"
+          - ref: Ps 89
+            label: Psalm 89
+            note: "I Will Sing of His Love Forever"
+            links:
+              - { to: "Acts 13:22", topic: Quoted in the New Testament, category: quoted, label: "Ps 89:20 in Acts 13:22", note: "I have found David My servant" }
+          - ref: Ps 101
+            label: Psalm 101
+            note: "I Will Set No Worthless Thing before My Eyes"
+          - ref: Ps 110
+            label: Psalm 110
+            note: "God’s Faithful Messiah"
+            links:
+              - { to: "Matt 22:44; Acts 2:34-35; Heb 1:13", topic: Quoted in the New Testament, category: quoted, label: "Ps 110:1 in Matt 22:44; Acts 2:34-35; Heb 1:13", note: "Sit at My right hand" }
+              - { to: "Heb 5:6; Heb 7:17", topic: Quoted in the New Testament, category: quoted, label: "Ps 110:4 in Heb 5:6; Heb 7:17", note: "A priest forever in the order of Melchizedek" }
+          - ref: Ps 132
+            label: Psalm 132
+            note: "The LORD Has Chosen Zion"
+            links:
+              - { to: "Acts 2:30", topic: Quoted in the New Testament, category: quoted, label: "Ps 132:11 in Acts 2:30", note: "One of his descendants on his throne" }
+          - ref: Ps 144
+            label: Psalm 144
+            note: "Blessed Be the LORD, My Rock"
+      - title: "Wisdom and Torah psalms"
+        note: "Instruction on the two ways, the fear of the LORD and the delight of His law."
+        refs:
+          - ref: Ps 1
+            label: Psalm 1
+            note: "BOOK I · The Two Paths"
+          - ref: Ps 14
+            label: Psalm 14
+            note: "The Fool Says There Is No God"
+            links:
+              - { to: "Rom 3:10-12", topic: Quoted in the New Testament, category: quoted, label: "Ps 14:1-3 in Rom 3:10-12", note: "There is no one righteous" }
+          - ref: Ps 37
+            label: Psalm 37
+            note: "Delight Yourself in the LORD"
+          - ref: Ps 49
+            label: Psalm 49
+            note: "The Evanescence of Wealth"
+          - ref: Ps 50
+            label: Psalm 50
+            note: "The Mighty One Calls"
+          - ref: Ps 53
+            label: Psalm 53
+            note: "The Fool Says There Is No God"
+            links:
+              - { to: "Rom 3:10-12", topic: Quoted in the New Testament, category: quoted, label: "Ps 53:1-3 in Rom 3:10-12", note: "There is no one righteous" }
+          - ref: Ps 73
+            label: Psalm 73
+            note: "BOOK III · Surely God Is Good to Israel"
+          - ref: Ps 78
+            label: Psalm 78
+            note: "I Will Open My Mouth in Parables"
+            links:
+              - { to: "Matt 13:35", topic: Quoted in the New Testament, category: quoted, label: "Ps 78:2 in Matt 13:35", note: "I will open My mouth in parables" }
+              - { to: "John 6:31", topic: Quoted in the New Testament, category: quoted, label: "Ps 78:24 in John 6:31", note: "He gave them bread from heaven" }
+          - ref: Ps 112
+            label: Psalm 112
+            note: "The Blessed Fear of the LORD"
+            links:
+              - { to: "2 Cor 9:9", topic: Quoted in the New Testament, category: quoted, label: "Ps 112:9 in 2 Cor 9:9", note: "He has scattered abroad His gifts to the poor" }
+          - ref: Ps 119
+            label: Psalm 119
+            note: "Your Word Is a Lamp to My Feet"
+          - ref: Ps 127
+            label: Psalm 127
+            note: "Children Are a Heritage from the LORD"
+          - ref: Ps 128
+            label: Psalm 128
+            note: "The Blessed Fear of the LORD"
+          - ref: Ps 133
+            label: Psalm 133
+            note: "How Pleasant to Live in Harmony!"
+          - ref: Ps 139
+            label: Psalm 139
+            note: "You Have Searched Me and Known Me"
+      - title: "Psalms of trust"
+        note: "Quiet confidence in God as shepherd, refuge and rock."
+        refs:
+          - ref: Ps 4
+            label: Psalm 4
+            note: "Answer Me When I Call!"
+          - ref: Ps 11
+            label: Psalm 11
+            note: "In the LORD I Take Refuge"
+          - ref: Ps 16
+            label: Psalm 16
+            note: "The Presence of the LORD"
+            links:
+              - { to: "Acts 2:25-28", topic: Quoted in the New Testament, category: quoted, label: "Ps 16:8-11 in Acts 2:25-28", note: "You will not abandon my soul to Hades" }
+          - ref: Ps 23
+            label: Psalm 23
+            note: "The LORD Is My Shepherd"
+          - ref: Ps 27
+            label: Psalm 27
+            note: "The LORD Is My Salvation"
+          - ref: Ps 62
+            label: Psalm 62
+            note: "Waiting on God"
+            links:
+              - { to: "Rom 2:6", topic: Quoted in the New Testament, category: quoted, label: "Ps 62:12 in Rom 2:6", note: "He will repay each according to his deeds" }
+          - ref: Ps 63
+            label: Psalm 63
+            note: "Thirsting for God"
+          - ref: Ps 91
+            label: Psalm 91
+            note: "You Are My Refuge and My Fortress"
+            links:
+              - { to: "Matt 4:6", topic: Quoted in the New Testament, category: quoted, label: "Ps 91:11-12 in Matt 4:6", note: "He will command His angels concerning You" }
+          - ref: Ps 115
+            label: Psalm 115
+            note: "To Your Name Be the Glory"
+          - ref: Ps 121
+            label: Psalm 121
+            note: "I Lift Up My Eyes to the Hills"
+          - ref: Ps 125
+            label: Psalm 125
+            note: "The LORD Surrounds His People"
+          - ref: Ps 131
+            label: Psalm 131
+            note: "I Have Stilled My Soul"
+      - title: "Zion, worship and pilgrimage"
+        note: "Songs of the temple, the holy city and the journey up to worship."
+        refs:
+          - ref: Ps 15
+            label: Psalm 15
+            note: "Who May Dwell on Your Holy Mountain?"
+          - ref: Ps 24
+            label: Psalm 24
+            note: "The Earth Is the LORD’s"
+            links:
+              - { to: "1 Cor 10:26", topic: Quoted in the New Testament, category: quoted, label: "Ps 24:1 in 1 Cor 10:26", note: "The earth is the Lord's" }
+          - ref: Ps 46
+            label: Psalm 46
+            note: "God Is Our Refuge and Strength"
+          - ref: Ps 48
+            label: Psalm 48
+            note: "Broken Bondage"
+          - ref: Ps 76
+            label: Psalm 76
+            note: "God’s Name Is Great in Israel"
+          - ref: Ps 81
+            label: Psalm 81
+            note: "Sing for Joy to God Our Strength"
+          - ref: Ps 82
+            label: Psalm 82
+            note: "God Presides in the Divine Assembly"
+            links:
+              - { to: "John 10:34", topic: Quoted in the New Testament, category: quoted, label: "Ps 82:6 in John 10:34", note: "I have said you are gods" }
+          - ref: Ps 84
+            label: Psalm 84
+            note: "Better Is One Day in Your Courts"
+          - ref: Ps 87
+            label: Psalm 87
+            note: "The LORD Loves the Gates of Zion"
+          - ref: Ps 122
+            label: Psalm 122
+            note: "Pray for the Peace of Jerusalem"
+          - ref: Ps 134
+            label: Psalm 134
+            note: "Bless the LORD, All You Servants"
+  - title: By author
+    note: As the superscriptions name them.
+    groups:
+      - title: "David"
+        note: "Seventy-three psalms carry David's name, from the shepherd-king who \"sang the songs of Israel\" (2 Samuel 23:1)."
+        refs:
+          - ref: Ps 3
+            label: Psalm 3
+            note: "Deliver Me, O LORD!"
+          - ref: Ps 4
+            label: Psalm 4
+            note: "Answer Me When I Call!"
+          - ref: Ps 5
+            label: Psalm 5
+            note: "Give Ear to My Words"
+          - ref: Ps 6
+            label: Psalm 6
+            note: "Do Not Rebuke Me in Your Anger"
+          - ref: Ps 7
+            label: Psalm 7
+            note: "I Take Refuge in You"
+          - ref: Ps 8
+            label: Psalm 8
+            note: "How Majestic Is Your Name!"
+          - ref: Ps 9
+            label: Psalm 9
+            note: "I Will Give Thanks to the LORD"
+          - ref: Ps 11
+            label: Psalm 11
+            note: "In the LORD I Take Refuge"
+          - ref: Ps 12
+            label: Psalm 12
+            note: "The Godly Are No More"
+          - ref: Ps 13
+            label: Psalm 13
+            note: "How Long, O LORD?"
+          - ref: Ps 14
+            label: Psalm 14
+            note: "The Fool Says There Is No God"
+          - ref: Ps 15
+            label: Psalm 15
+            note: "Who May Dwell on Your Holy Mountain?"
+          - ref: Ps 16
+            label: Psalm 16
+            note: "The Presence of the LORD"
+          - ref: Ps 17
+            label: Psalm 17
+            note: "Hear My Righteous Plea"
+          - ref: Ps 18
+            label: Psalm 18
+            note: "The LORD Is My Rock"
+          - ref: Ps 19
+            label: Psalm 19
+            note: "The Heavens Declare the Glory of God"
+          - ref: Ps 20
+            label: Psalm 20
+            note: "The Day of Trouble"
+          - ref: Ps 21
+            label: Psalm 21
+            note: "After the Battle"
+          - ref: Ps 22
+            label: Psalm 22
+            note: "The Psalm of the Cross"
+          - ref: Ps 23
+            label: Psalm 23
+            note: "The LORD Is My Shepherd"
+          - ref: Ps 24
+            label: Psalm 24
+            note: "The Earth Is the LORD’s"
+          - ref: Ps 25
+            label: Psalm 25
+            note: "To You I Lift Up My Soul"
+          - ref: Ps 26
+            label: Psalm 26
+            note: "Vindicate Me, O LORD"
+          - ref: Ps 27
+            label: Psalm 27
+            note: "The LORD Is My Salvation"
+          - ref: Ps 28
+            label: Psalm 28
+            note: "The LORD Is My Strength"
+          - ref: Ps 29
+            label: Psalm 29
+            note: "Ascribe Glory to the LORD"
+          - ref: Ps 30
+            label: Psalm 30
+            note: "You Turned My Mourning into Dancing"
+          - ref: Ps 31
+            label: Psalm 31
+            note: "Into Your Hands I Commit My Spirit"
+          - ref: Ps 32
+            label: Psalm 32
+            note: "The Joy of Forgiveness"
+          - ref: Ps 34
+            label: Psalm 34
+            note: "Taste and See That the LORD Is Good"
+          - ref: Ps 35
+            label: Psalm 35
+            note: "Contend with My Opponents, O LORD"
+          - ref: Ps 36
+            label: Psalm 36
+            note: "The Transgression of the Wicked"
+          - ref: Ps 37
+            label: Psalm 37
+            note: "Delight Yourself in the LORD"
+          - ref: Ps 38
+            label: Psalm 38
+            note: "Do Not Rebuke Me in Your Anger"
+          - ref: Ps 39
+            label: Psalm 39
+            note: "I Will Watch My Ways"
+          - ref: Ps 40
+            label: Psalm 40
+            note: "I Waited Patiently for the LORD"
+          - ref: Ps 41
+            label: Psalm 41
+            note: "Victory over Betrayal"
+          - ref: Ps 51
+            label: Psalm 51
+            note: "Create in Me a Clean Heart, O God"
+          - ref: Ps 52
+            label: Psalm 52
+            note: "Why Do You Boast of Evil?"
+          - ref: Ps 53
+            label: Psalm 53
+            note: "The Fool Says There Is No God"
+          - ref: Ps 54
+            label: Psalm 54
+            note: "Save Me by Your Name"
+          - ref: Ps 55
+            label: Psalm 55
+            note: "Cast Your Burden upon the LORD"
+          - ref: Ps 56
+            label: Psalm 56
+            note: "Be Merciful to Me, O God"
+          - ref: Ps 57
+            label: Psalm 57
+            note: "In You My Soul Takes Refuge"
+          - ref: Ps 58
+            label: Psalm 58
+            note: "God Judges the Earth"
+          - ref: Ps 59
+            label: Psalm 59
+            note: "Deliver Me from My Enemies"
+          - ref: Ps 60
+            label: Psalm 60
+            note: "Victory with God"
+          - ref: Ps 61
+            label: Psalm 61
+            note: "You Have Heard My Vows"
+          - ref: Ps 62
+            label: Psalm 62
+            note: "Waiting on God"
+          - ref: Ps 63
+            label: Psalm 63
+            note: "Thirsting for God"
+          - ref: Ps 64
+            label: Psalm 64
+            note: "The Hurtful Tongue"
+          - ref: Ps 65
+            label: Psalm 65
+            note: "Praise Awaits God in Zion"
+          - ref: Ps 68
+            label: Psalm 68
+            note: "God’s Enemies Are Scattered"
+          - ref: Ps 69
+            label: Psalm 69
+            note: "The Waters Are up to My Neck"
+          - ref: Ps 70
+            label: Psalm 70
+            note: "Hurry, O LORD, to Help Me!"
+          - ref: Ps 86
+            label: Psalm 86
+            note: "Tried but Trusting"
+          - ref: Ps 101
+            label: Psalm 101
+            note: "I Will Set No Worthless Thing before My Eyes"
+          - ref: Ps 103
+            label: Psalm 103
+            note: "Bless the LORD, O My Soul"
+          - ref: Ps 108
+            label: Psalm 108
+            note: "Israel’s Kingdom Blessing"
+          - ref: Ps 109
+            label: Psalm 109
+            note: "The Song of the Slandered"
+          - ref: Ps 110
+            label: Psalm 110
+            note: "God’s Faithful Messiah"
+          - ref: Ps 122
+            label: Psalm 122
+            note: "Pray for the Peace of Jerusalem"
+          - ref: Ps 124
+            label: Psalm 124
+            note: "Our Help Is in the Name of the LORD"
+          - ref: Ps 131
+            label: Psalm 131
+            note: "I Have Stilled My Soul"
+          - ref: Ps 133
+            label: Psalm 133
+            note: "How Pleasant to Live in Harmony!"
+          - ref: Ps 138
+            label: Psalm 138
+            note: "A Thankful Heart"
+          - ref: Ps 139
+            label: Psalm 139
+            note: "You Have Searched Me and Known Me"
+          - ref: Ps 140
+            label: Psalm 140
+            note: "Rescue Me from Evil Men"
+          - ref: Ps 141
+            label: Psalm 141
+            note: "Come Quickly to Me"
+          - ref: Ps 142
+            label: Psalm 142
+            note: "I Lift My Voice to the LORD"
+          - ref: Ps 143
+            label: Psalm 143
+            note: "I Stretch Out My Hands to You"
+          - ref: Ps 144
+            label: Psalm 144
+            note: "Blessed Be the LORD, My Rock"
+          - ref: Ps 145
+            label: Psalm 145
+            note: "I Will Exalt You, My God and King"
+      - title: "Asaph"
+        note: "Asaph was David's chief musician (1 Chronicles 16:4-5); his collection is Psalm 50 and Psalms 73 to 83."
+        refs:
+          - ref: Ps 50
+            label: Psalm 50
+            note: "The Mighty One Calls"
+          - ref: Ps 73
+            label: Psalm 73
+            note: "BOOK III · Surely God Is Good to Israel"
+          - ref: Ps 74
+            label: Psalm 74
+            note: "Why Have You Rejected Us Forever?"
+          - ref: Ps 75
+            label: Psalm 75
+            note: "God’s Righteous Judgment"
+          - ref: Ps 76
+            label: Psalm 76
+            note: "God’s Name Is Great in Israel"
+          - ref: Ps 77
+            label: Psalm 77
+            note: "In the Day of Trouble I Sought the Lord"
+          - ref: Ps 78
+            label: Psalm 78
+            note: "I Will Open My Mouth in Parables"
+          - ref: Ps 79
+            label: Psalm 79
+            note: "A Prayer for Deliverance"
+          - ref: Ps 80
+            label: Psalm 80
+            note: "Hear Us, O Shepherd of Israel"
+          - ref: Ps 81
+            label: Psalm 81
+            note: "Sing for Joy to God Our Strength"
+          - ref: Ps 82
+            label: Psalm 82
+            note: "God Presides in the Divine Assembly"
+          - ref: Ps 83
+            label: Psalm 83
+            note: "O God, Be Not Silent"
+      - title: "The sons of Korah"
+        note: "A Levite guild of temple singers (2 Chronicles 20:19). Psalm 88 also names Heman the Ezrahite."
+        refs:
+          - ref: Ps 42
+            label: Psalm 42
+            note: "BOOK II · As the Deer Pants for the Water"
+          - ref: Ps 44
+            label: Psalm 44
+            note: "Redeem Us, O God"
+          - ref: Ps 45
+            label: Psalm 45
+            note: "My Heart Is Stirred by a Noble Theme"
+          - ref: Ps 46
+            label: Psalm 46
+            note: "God Is Our Refuge and Strength"
+          - ref: Ps 47
+            label: Psalm 47
+            note: "Clap Your Hands, All You Peoples"
+          - ref: Ps 48
+            label: Psalm 48
+            note: "Broken Bondage"
+          - ref: Ps 49
+            label: Psalm 49
+            note: "The Evanescence of Wealth"
+          - ref: Ps 84
+            label: Psalm 84
+            note: "Better Is One Day in Your Courts"
+          - ref: Ps 85
+            label: Psalm 85
+            note: "You Showed Favor to Your Land"
+          - ref: Ps 87
+            label: Psalm 87
+            note: "The LORD Loves the Gates of Zion"
+          - ref: Ps 88
+            label: Psalm 88
+            note: "I Cry Out before You"
+      - title: "Solomon"
+        note: "Two psalms: a prayer for the king, and a song about building and keeping a house."
+        refs:
+          - ref: Ps 72
+            label: Psalm 72
+            note: "Endow the King with Your Justice"
+          - ref: Ps 127
+            label: Psalm 127
+            note: "Children Are a Heritage from the LORD"
+      - title: "Moses"
+        note: "The oldest psalm, a prayer from the wilderness."
+        refs:
+          - ref: Ps 90
+            label: Psalm 90
+            note: "BOOK IV · From Everlasting to Everlasting"
+      - title: "Ethan the Ezrahite"
+        note: "One long psalm on the covenant with David and its apparent failure."
+        refs:
+          - ref: Ps 89
+            label: Psalm 89
+            note: "I Will Sing of His Love Forever"
+      - title: "Without a name"
+        note: "Fifty psalms name no author. The New Testament attributes Psalms 2 and 95 to David (Acts 4:25, Hebrews 4:7)."
+        refs:
+          - ref: Ps 1
+            label: Psalm 1
+            note: "BOOK I · The Two Paths"
+          - ref: Ps 2
+            label: Psalm 2
+            note: "The Triumphant Messiah"
+          - ref: Ps 10
+            label: Psalm 10
+            note: "The Perils of the Pilgrim"
+          - ref: Ps 33
+            label: Psalm 33
+            note: "Praise to the Creator"
+          - ref: Ps 43
+            label: Psalm 43
+            note: "Send Out Your Light"
+          - ref: Ps 66
+            label: Psalm 66
+            note: "Make a Joyful Noise"
+          - ref: Ps 67
+            label: Psalm 67
+            note: "May God Cause His Face to Shine upon Us"
+          - ref: Ps 71
+            label: Psalm 71
+            note: "Be My Rock of Refuge"
+          - ref: Ps 91
+            label: Psalm 91
+            note: "You Are My Refuge and My Fortress"
+          - ref: Ps 92
+            label: Psalm 92
+            note: "How Great Are Your Works!"
+          - ref: Ps 93
+            label: Psalm 93
+            note: "The LORD Reigns!"
+          - ref: Ps 94
+            label: Psalm 94
+            note: "The LORD Will Not Forget His People"
+          - ref: Ps 95
+            label: Psalm 95
+            note: "Do Not Harden Your Hearts"
+          - ref: Ps 96
+            label: Psalm 96
+            note: "Sing to the LORD, All the Earth"
+          - ref: Ps 97
+            label: Psalm 97
+            note: "Let the Earth Rejoice"
+          - ref: Ps 98
+            label: Psalm 98
+            note: "Sing to the LORD a New Song"
+          - ref: Ps 99
+            label: Psalm 99
+            note: "The LORD Reigns!"
+          - ref: Ps 100
+            label: Psalm 100
+            note: "Make a Joyful Noise"
+          - ref: Ps 102
+            label: Psalm 102
+            note: "The Prayer of the Afflicted"
+          - ref: Ps 104
+            label: Psalm 104
+            note: "How Many Are Your Works, O LORD!"
+          - ref: Ps 105
+            label: Psalm 105
+            note: "Tell of His Wonders"
+          - ref: Ps 106
+            label: Psalm 106
+            note: "Give Thanks to the LORD, for He Is Good"
+          - ref: Ps 107
+            label: Psalm 107
+            note: "BOOK V · Thanksgiving for Deliverance"
+          - ref: Ps 111
+            label: Psalm 111
+            note: "Majestic Is His Work"
+          - ref: Ps 112
+            label: Psalm 112
+            note: "The Blessed Fear of the LORD"
+          - ref: Ps 113
+            label: Psalm 113
+            note: "The LORD Exalts the Humble"
+          - ref: Ps 114
+            label: Psalm 114
+            note: "A Psalm of Exodus"
+          - ref: Ps 115
+            label: Psalm 115
+            note: "To Your Name Be the Glory"
+          - ref: Ps 116
+            label: Psalm 116
+            note: "The LORD Has Heard My Voice"
+          - ref: Ps 117
+            label: Psalm 117
+            note: "Extol Him, All You Peoples"
+          - ref: Ps 118
+            label: Psalm 118
+            note: "The LORD Is on My Side"
+          - ref: Ps 119
+            label: Psalm 119
+            note: "Your Word Is a Lamp to My Feet"
+          - ref: Ps 120
+            label: Psalm 120
+            note: "In My Distress I Cried to the LORD"
+          - ref: Ps 121
+            label: Psalm 121
+            note: "I Lift Up My Eyes to the Hills"
+          - ref: Ps 123
+            label: Psalm 123
+            note: "I Lift Up My Eyes to You"
+          - ref: Ps 125
+            label: Psalm 125
+            note: "The LORD Surrounds His People"
+          - ref: Ps 126
+            label: Psalm 126
+            note: "Zion’s Captives Restored"
+          - ref: Ps 128
+            label: Psalm 128
+            note: "The Blessed Fear of the LORD"
+          - ref: Ps 129
+            label: Psalm 129
+            note: "The Cords of the Wicked"
+          - ref: Ps 130
+            label: Psalm 130
+            note: "Out of the Depths"
+          - ref: Ps 132
+            label: Psalm 132
+            note: "The LORD Has Chosen Zion"
+          - ref: Ps 134
+            label: Psalm 134
+            note: "Bless the LORD, All You Servants"
+          - ref: Ps 135
+            label: Psalm 135
+            note: "Give Praise, O Servants of the LORD"
+          - ref: Ps 136
+            label: Psalm 136
+            note: "His Loving Devotion Endures Forever"
+          - ref: Ps 137
+            label: Psalm 137
+            note: "By the Rivers of Babylon"
+          - ref: Ps 146
+            label: Psalm 146
+            note: "Praise the LORD, O My Soul"
+          - ref: Ps 147
+            label: Psalm 147
+            note: "It Is Good to Sing Praises"
+          - ref: Ps 148
+            label: Psalm 148
+            note: "Praise the LORD from the Heavens"
+          - ref: Ps 149
+            label: Psalm 149
+            note: "Sing to the LORD a New Song"
+          - ref: Ps 150
+            label: Psalm 150
+            note: "Let Everything That Has Breath Praise the LORD"
+  - title: By book
+    note: The Psalter is five books, each closing with a doxology, an echo of the five books of Moses.
+    groups:
+      - title: "Book I (1–41)"
+        note: "Mostly David; ends \"Blessed be the LORD, the God of Israel, from everlasting to everlasting. Amen and Amen.\""
+        refs:
+          - ref: Ps 1
+            label: Psalm 1
+            note: "BOOK I · The Two Paths"
+          - ref: Ps 2
+            label: Psalm 2
+            note: "The Triumphant Messiah"
+          - ref: Ps 3
+            label: Psalm 3
+            note: "Deliver Me, O LORD!"
+          - ref: Ps 4
+            label: Psalm 4
+            note: "Answer Me When I Call!"
+          - ref: Ps 5
+            label: Psalm 5
+            note: "Give Ear to My Words"
+          - ref: Ps 6
+            label: Psalm 6
+            note: "Do Not Rebuke Me in Your Anger"
+          - ref: Ps 7
+            label: Psalm 7
+            note: "I Take Refuge in You"
+          - ref: Ps 8
+            label: Psalm 8
+            note: "How Majestic Is Your Name!"
+          - ref: Ps 9
+            label: Psalm 9
+            note: "I Will Give Thanks to the LORD"
+          - ref: Ps 10
+            label: Psalm 10
+            note: "The Perils of the Pilgrim"
+          - ref: Ps 11
+            label: Psalm 11
+            note: "In the LORD I Take Refuge"
+          - ref: Ps 12
+            label: Psalm 12
+            note: "The Godly Are No More"
+          - ref: Ps 13
+            label: Psalm 13
+            note: "How Long, O LORD?"
+          - ref: Ps 14
+            label: Psalm 14
+            note: "The Fool Says There Is No God"
+          - ref: Ps 15
+            label: Psalm 15
+            note: "Who May Dwell on Your Holy Mountain?"
+          - ref: Ps 16
+            label: Psalm 16
+            note: "The Presence of the LORD"
+          - ref: Ps 17
+            label: Psalm 17
+            note: "Hear My Righteous Plea"
+          - ref: Ps 18
+            label: Psalm 18
+            note: "The LORD Is My Rock"
+          - ref: Ps 19
+            label: Psalm 19
+            note: "The Heavens Declare the Glory of God"
+          - ref: Ps 20
+            label: Psalm 20
+            note: "The Day of Trouble"
+          - ref: Ps 21
+            label: Psalm 21
+            note: "After the Battle"
+          - ref: Ps 22
+            label: Psalm 22
+            note: "The Psalm of the Cross"
+          - ref: Ps 23
+            label: Psalm 23
+            note: "The LORD Is My Shepherd"
+          - ref: Ps 24
+            label: Psalm 24
+            note: "The Earth Is the LORD’s"
+          - ref: Ps 25
+            label: Psalm 25
+            note: "To You I Lift Up My Soul"
+          - ref: Ps 26
+            label: Psalm 26
+            note: "Vindicate Me, O LORD"
+          - ref: Ps 27
+            label: Psalm 27
+            note: "The LORD Is My Salvation"
+          - ref: Ps 28
+            label: Psalm 28
+            note: "The LORD Is My Strength"
+          - ref: Ps 29
+            label: Psalm 29
+            note: "Ascribe Glory to the LORD"
+          - ref: Ps 30
+            label: Psalm 30
+            note: "You Turned My Mourning into Dancing"
+          - ref: Ps 31
+            label: Psalm 31
+            note: "Into Your Hands I Commit My Spirit"
+          - ref: Ps 32
+            label: Psalm 32
+            note: "The Joy of Forgiveness"
+          - ref: Ps 33
+            label: Psalm 33
+            note: "Praise to the Creator"
+          - ref: Ps 34
+            label: Psalm 34
+            note: "Taste and See That the LORD Is Good"
+          - ref: Ps 35
+            label: Psalm 35
+            note: "Contend with My Opponents, O LORD"
+          - ref: Ps 36
+            label: Psalm 36
+            note: "The Transgression of the Wicked"
+          - ref: Ps 37
+            label: Psalm 37
+            note: "Delight Yourself in the LORD"
+          - ref: Ps 38
+            label: Psalm 38
+            note: "Do Not Rebuke Me in Your Anger"
+          - ref: Ps 39
+            label: Psalm 39
+            note: "I Will Watch My Ways"
+          - ref: Ps 40
+            label: Psalm 40
+            note: "I Waited Patiently for the LORD"
+          - ref: Ps 41
+            label: Psalm 41
+            note: "Victory over Betrayal"
+      - title: "Book II (42–72)"
+        note: "Korah, David and Solomon; ends \"The prayers of David son of Jesse are ended.\""
+        refs:
+          - ref: Ps 42
+            label: Psalm 42
+            note: "BOOK II · As the Deer Pants for the Water"
+          - ref: Ps 43
+            label: Psalm 43
+            note: "Send Out Your Light"
+          - ref: Ps 44
+            label: Psalm 44
+            note: "Redeem Us, O God"
+          - ref: Ps 45
+            label: Psalm 45
+            note: "My Heart Is Stirred by a Noble Theme"
+          - ref: Ps 46
+            label: Psalm 46
+            note: "God Is Our Refuge and Strength"
+          - ref: Ps 47
+            label: Psalm 47
+            note: "Clap Your Hands, All You Peoples"
+          - ref: Ps 48
+            label: Psalm 48
+            note: "Broken Bondage"
+          - ref: Ps 49
+            label: Psalm 49
+            note: "The Evanescence of Wealth"
+          - ref: Ps 50
+            label: Psalm 50
+            note: "The Mighty One Calls"
+          - ref: Ps 51
+            label: Psalm 51
+            note: "Create in Me a Clean Heart, O God"
+          - ref: Ps 52
+            label: Psalm 52
+            note: "Why Do You Boast of Evil?"
+          - ref: Ps 53
+            label: Psalm 53
+            note: "The Fool Says There Is No God"
+          - ref: Ps 54
+            label: Psalm 54
+            note: "Save Me by Your Name"
+          - ref: Ps 55
+            label: Psalm 55
+            note: "Cast Your Burden upon the LORD"
+          - ref: Ps 56
+            label: Psalm 56
+            note: "Be Merciful to Me, O God"
+          - ref: Ps 57
+            label: Psalm 57
+            note: "In You My Soul Takes Refuge"
+          - ref: Ps 58
+            label: Psalm 58
+            note: "God Judges the Earth"
+          - ref: Ps 59
+            label: Psalm 59
+            note: "Deliver Me from My Enemies"
+          - ref: Ps 60
+            label: Psalm 60
+            note: "Victory with God"
+          - ref: Ps 61
+            label: Psalm 61
+            note: "You Have Heard My Vows"
+          - ref: Ps 62
+            label: Psalm 62
+            note: "Waiting on God"
+          - ref: Ps 63
+            label: Psalm 63
+            note: "Thirsting for God"
+          - ref: Ps 64
+            label: Psalm 64
+            note: "The Hurtful Tongue"
+          - ref: Ps 65
+            label: Psalm 65
+            note: "Praise Awaits God in Zion"
+          - ref: Ps 66
+            label: Psalm 66
+            note: "Make a Joyful Noise"
+          - ref: Ps 67
+            label: Psalm 67
+            note: "May God Cause His Face to Shine upon Us"
+          - ref: Ps 68
+            label: Psalm 68
+            note: "God’s Enemies Are Scattered"
+          - ref: Ps 69
+            label: Psalm 69
+            note: "The Waters Are up to My Neck"
+          - ref: Ps 70
+            label: Psalm 70
+            note: "Hurry, O LORD, to Help Me!"
+          - ref: Ps 71
+            label: Psalm 71
+            note: "Be My Rock of Refuge"
+          - ref: Ps 72
+            label: Psalm 72
+            note: "Endow the King with Your Justice"
+      - title: "Book III (73–89)"
+        note: "Asaph and Korah; the darkest book, ending with the covenant in question."
+        refs:
+          - ref: Ps 73
+            label: Psalm 73
+            note: "BOOK III · Surely God Is Good to Israel"
+          - ref: Ps 74
+            label: Psalm 74
+            note: "Why Have You Rejected Us Forever?"
+          - ref: Ps 75
+            label: Psalm 75
+            note: "God’s Righteous Judgment"
+          - ref: Ps 76
+            label: Psalm 76
+            note: "God’s Name Is Great in Israel"
+          - ref: Ps 77
+            label: Psalm 77
+            note: "In the Day of Trouble I Sought the Lord"
+          - ref: Ps 78
+            label: Psalm 78
+            note: "I Will Open My Mouth in Parables"
+          - ref: Ps 79
+            label: Psalm 79
+            note: "A Prayer for Deliverance"
+          - ref: Ps 80
+            label: Psalm 80
+            note: "Hear Us, O Shepherd of Israel"
+          - ref: Ps 81
+            label: Psalm 81
+            note: "Sing for Joy to God Our Strength"
+          - ref: Ps 82
+            label: Psalm 82
+            note: "God Presides in the Divine Assembly"
+          - ref: Ps 83
+            label: Psalm 83
+            note: "O God, Be Not Silent"
+          - ref: Ps 84
+            label: Psalm 84
+            note: "Better Is One Day in Your Courts"
+          - ref: Ps 85
+            label: Psalm 85
+            note: "You Showed Favor to Your Land"
+          - ref: Ps 86
+            label: Psalm 86
+            note: "Tried but Trusting"
+          - ref: Ps 87
+            label: Psalm 87
+            note: "The LORD Loves the Gates of Zion"
+          - ref: Ps 88
+            label: Psalm 88
+            note: "I Cry Out before You"
+          - ref: Ps 89
+            label: Psalm 89
+            note: "I Will Sing of His Love Forever"
+      - title: "Book IV (90–106)"
+        note: "Moses, and the great \"The LORD reigns\" psalms; the answer to Book III."
+        refs:
+          - ref: Ps 90
+            label: Psalm 90
+            note: "BOOK IV · From Everlasting to Everlasting"
+          - ref: Ps 91
+            label: Psalm 91
+            note: "You Are My Refuge and My Fortress"
+          - ref: Ps 92
+            label: Psalm 92
+            note: "How Great Are Your Works!"
+          - ref: Ps 93
+            label: Psalm 93
+            note: "The LORD Reigns!"
+          - ref: Ps 94
+            label: Psalm 94
+            note: "The LORD Will Not Forget His People"
+          - ref: Ps 95
+            label: Psalm 95
+            note: "Do Not Harden Your Hearts"
+          - ref: Ps 96
+            label: Psalm 96
+            note: "Sing to the LORD, All the Earth"
+          - ref: Ps 97
+            label: Psalm 97
+            note: "Let the Earth Rejoice"
+          - ref: Ps 98
+            label: Psalm 98
+            note: "Sing to the LORD a New Song"
+          - ref: Ps 99
+            label: Psalm 99
+            note: "The LORD Reigns!"
+          - ref: Ps 100
+            label: Psalm 100
+            note: "Make a Joyful Noise"
+          - ref: Ps 101
+            label: Psalm 101
+            note: "I Will Set No Worthless Thing before My Eyes"
+          - ref: Ps 102
+            label: Psalm 102
+            note: "The Prayer of the Afflicted"
+          - ref: Ps 103
+            label: Psalm 103
+            note: "Bless the LORD, O My Soul"
+          - ref: Ps 104
+            label: Psalm 104
+            note: "How Many Are Your Works, O LORD!"
+          - ref: Ps 105
+            label: Psalm 105
+            note: "Tell of His Wonders"
+          - ref: Ps 106
+            label: Psalm 106
+            note: "Give Thanks to the LORD, for He Is Good"
+      - title: "Book V (107–150)"
+        note: "Thanksgiving, the Hallel, the songs of ascents, and five final hallelujahs."
+        refs:
+          - ref: Ps 107
+            label: Psalm 107
+            note: "BOOK V · Thanksgiving for Deliverance"
+          - ref: Ps 108
+            label: Psalm 108
+            note: "Israel’s Kingdom Blessing"
+          - ref: Ps 109
+            label: Psalm 109
+            note: "The Song of the Slandered"
+          - ref: Ps 110
+            label: Psalm 110
+            note: "God’s Faithful Messiah"
+          - ref: Ps 111
+            label: Psalm 111
+            note: "Majestic Is His Work"
+          - ref: Ps 112
+            label: Psalm 112
+            note: "The Blessed Fear of the LORD"
+          - ref: Ps 113
+            label: Psalm 113
+            note: "The LORD Exalts the Humble"
+          - ref: Ps 114
+            label: Psalm 114
+            note: "A Psalm of Exodus"
+          - ref: Ps 115
+            label: Psalm 115
+            note: "To Your Name Be the Glory"
+          - ref: Ps 116
+            label: Psalm 116
+            note: "The LORD Has Heard My Voice"
+          - ref: Ps 117
+            label: Psalm 117
+            note: "Extol Him, All You Peoples"
+          - ref: Ps 118
+            label: Psalm 118
+            note: "The LORD Is on My Side"
+          - ref: Ps 119
+            label: Psalm 119
+            note: "Your Word Is a Lamp to My Feet"
+          - ref: Ps 120
+            label: Psalm 120
+            note: "In My Distress I Cried to the LORD"
+          - ref: Ps 121
+            label: Psalm 121
+            note: "I Lift Up My Eyes to the Hills"
+          - ref: Ps 122
+            label: Psalm 122
+            note: "Pray for the Peace of Jerusalem"
+          - ref: Ps 123
+            label: Psalm 123
+            note: "I Lift Up My Eyes to You"
+          - ref: Ps 124
+            label: Psalm 124
+            note: "Our Help Is in the Name of the LORD"
+          - ref: Ps 125
+            label: Psalm 125
+            note: "The LORD Surrounds His People"
+          - ref: Ps 126
+            label: Psalm 126
+            note: "Zion’s Captives Restored"
+          - ref: Ps 127
+            label: Psalm 127
+            note: "Children Are a Heritage from the LORD"
+          - ref: Ps 128
+            label: Psalm 128
+            note: "The Blessed Fear of the LORD"
+          - ref: Ps 129
+            label: Psalm 129
+            note: "The Cords of the Wicked"
+          - ref: Ps 130
+            label: Psalm 130
+            note: "Out of the Depths"
+          - ref: Ps 131
+            label: Psalm 131
+            note: "I Have Stilled My Soul"
+          - ref: Ps 132
+            label: Psalm 132
+            note: "The LORD Has Chosen Zion"
+          - ref: Ps 133
+            label: Psalm 133
+            note: "How Pleasant to Live in Harmony!"
+          - ref: Ps 134
+            label: Psalm 134
+            note: "Bless the LORD, All You Servants"
+          - ref: Ps 135
+            label: Psalm 135
+            note: "Give Praise, O Servants of the LORD"
+          - ref: Ps 136
+            label: Psalm 136
+            note: "His Loving Devotion Endures Forever"
+          - ref: Ps 137
+            label: Psalm 137
+            note: "By the Rivers of Babylon"
+          - ref: Ps 138
+            label: Psalm 138
+            note: "A Thankful Heart"
+          - ref: Ps 139
+            label: Psalm 139
+            note: "You Have Searched Me and Known Me"
+          - ref: Ps 140
+            label: Psalm 140
+            note: "Rescue Me from Evil Men"
+          - ref: Ps 141
+            label: Psalm 141
+            note: "Come Quickly to Me"
+          - ref: Ps 142
+            label: Psalm 142
+            note: "I Lift My Voice to the LORD"
+          - ref: Ps 143
+            label: Psalm 143
+            note: "I Stretch Out My Hands to You"
+          - ref: Ps 144
+            label: Psalm 144
+            note: "Blessed Be the LORD, My Rock"
+          - ref: Ps 145
+            label: Psalm 145
+            note: "I Will Exalt You, My God and King"
+          - ref: Ps 146
+            label: Psalm 146
+            note: "Praise the LORD, O My Soul"
+          - ref: Ps 147
+            label: Psalm 147
+            note: "It Is Good to Sing Praises"
+          - ref: Ps 148
+            label: Psalm 148
+            note: "Praise the LORD from the Heavens"
+          - ref: Ps 149
+            label: Psalm 149
+            note: "Sing to the LORD a New Song"
+          - ref: Ps 150
+            label: Psalm 150
+            note: "Let Everything That Has Breath Praise the LORD"
+  - title: By collection
+    note: Groupings that cut across the books. A psalm can belong to more than one.
+    groups:
+      - title: "Songs of ascents"
+        note: "Fifteen short psalms sung on the way up to Jerusalem for the feasts."
+        refs:
+          - ref: Ps 120
+            label: Psalm 120
+            note: "In My Distress I Cried to the LORD"
+          - ref: Ps 121
+            label: Psalm 121
+            note: "I Lift Up My Eyes to the Hills"
+          - ref: Ps 122
+            label: Psalm 122
+            note: "Pray for the Peace of Jerusalem"
+          - ref: Ps 123
+            label: Psalm 123
+            note: "I Lift Up My Eyes to You"
+          - ref: Ps 124
+            label: Psalm 124
+            note: "Our Help Is in the Name of the LORD"
+          - ref: Ps 125
+            label: Psalm 125
+            note: "The LORD Surrounds His People"
+          - ref: Ps 126
+            label: Psalm 126
+            note: "Zion’s Captives Restored"
+          - ref: Ps 127
+            label: Psalm 127
+            note: "Children Are a Heritage from the LORD"
+          - ref: Ps 128
+            label: Psalm 128
+            note: "The Blessed Fear of the LORD"
+          - ref: Ps 129
+            label: Psalm 129
+            note: "The Cords of the Wicked"
+          - ref: Ps 130
+            label: Psalm 130
+            note: "Out of the Depths"
+          - ref: Ps 131
+            label: Psalm 131
+            note: "I Have Stilled My Soul"
+          - ref: Ps 132
+            label: Psalm 132
+            note: "The LORD Has Chosen Zion"
+          - ref: Ps 133
+            label: Psalm 133
+            note: "How Pleasant to Live in Harmony!"
+          - ref: Ps 134
+            label: Psalm 134
+            note: "Bless the LORD, All You Servants"
+      - title: "The Egyptian Hallel"
+        note: "Sung at Passover; the hymn Jesus and the disciples sang before Gethsemane (Matthew 26:30) was probably from these."
+        refs:
+          - ref: Ps 113
+            label: Psalm 113
+            note: "The LORD Exalts the Humble"
+          - ref: Ps 114
+            label: Psalm 114
+            note: "A Psalm of Exodus"
+          - ref: Ps 115
+            label: Psalm 115
+            note: "To Your Name Be the Glory"
+          - ref: Ps 116
+            label: Psalm 116
+            note: "The LORD Has Heard My Voice"
+          - ref: Ps 117
+            label: Psalm 117
+            note: "Extol Him, All You Peoples"
+          - ref: Ps 118
+            label: Psalm 118
+            note: "The LORD Is on My Side"
+      - title: "Hallelujah psalms"
+        note: "Psalms that open or close with \"Hallelujah\", praise the LORD."
+        refs:
+          - ref: Ps 104
+            label: Psalm 104
+            note: "How Many Are Your Works, O LORD!"
+          - ref: Ps 105
+            label: Psalm 105
+            note: "Tell of His Wonders"
+          - ref: Ps 106
+            label: Psalm 106
+            note: "Give Thanks to the LORD, for He Is Good"
+          - ref: Ps 111
+            label: Psalm 111
+            note: "Majestic Is His Work"
+          - ref: Ps 112
+            label: Psalm 112
+            note: "The Blessed Fear of the LORD"
+          - ref: Ps 113
+            label: Psalm 113
+            note: "The LORD Exalts the Humble"
+          - ref: Ps 115
+            label: Psalm 115
+            note: "To Your Name Be the Glory"
+          - ref: Ps 116
+            label: Psalm 116
+            note: "The LORD Has Heard My Voice"
+          - ref: Ps 117
+            label: Psalm 117
+            note: "Extol Him, All You Peoples"
+          - ref: Ps 135
+            label: Psalm 135
+            note: "Give Praise, O Servants of the LORD"
+          - ref: Ps 146
+            label: Psalm 146
+            note: "Praise the LORD, O My Soul"
+          - ref: Ps 147
+            label: Psalm 147
+            note: "It Is Good to Sing Praises"
+          - ref: Ps 148
+            label: Psalm 148
+            note: "Praise the LORD from the Heavens"
+          - ref: Ps 149
+            label: Psalm 149
+            note: "Sing to the LORD a New Song"
+          - ref: Ps 150
+            label: Psalm 150
+            note: "Let Everything That Has Breath Praise the LORD"
+      - title: "Penitential psalms"
+        note: "The seven psalms the church has long prayed in repentance."
+        refs:
+          - ref: Ps 6
+            label: Psalm 6
+            note: "Do Not Rebuke Me in Your Anger"
+          - ref: Ps 32
+            label: Psalm 32
+            note: "The Joy of Forgiveness"
+          - ref: Ps 38
+            label: Psalm 38
+            note: "Do Not Rebuke Me in Your Anger"
+          - ref: Ps 51
+            label: Psalm 51
+            note: "Create in Me a Clean Heart, O God"
+          - ref: Ps 102
+            label: Psalm 102
+            note: "The Prayer of the Afflicted"
+          - ref: Ps 130
+            label: Psalm 130
+            note: "Out of the Depths"
+          - ref: Ps 143
+            label: Psalm 143
+            note: "I Stretch Out My Hands to You"
+      - title: "Acrostic psalms"
+        note: "Psalms built on the Hebrew alphabet, one letter per line or stanza."
+        refs:
+          - ref: Ps 9
+            label: Psalm 9
+            note: "I Will Give Thanks to the LORD"
+          - ref: Ps 10
+            label: Psalm 10
+            note: "The Perils of the Pilgrim"
+          - ref: Ps 25
+            label: Psalm 25
+            note: "To You I Lift Up My Soul"
+          - ref: Ps 34
+            label: Psalm 34
+            note: "Taste and See That the LORD Is Good"
+          - ref: Ps 37
+            label: Psalm 37
+            note: "Delight Yourself in the LORD"
+          - ref: Ps 111
+            label: Psalm 111
+            note: "Majestic Is His Work"
+          - ref: Ps 112
+            label: Psalm 112
+            note: "The Blessed Fear of the LORD"
+          - ref: Ps 119
+            label: Psalm 119
+            note: "Your Word Is a Lamp to My Feet"
+          - ref: Ps 145
+            label: Psalm 145
+            note: "I Will Exalt You, My God and King"
+      - title: "Imprecatory psalms"
+        note: "Psalms that call down judgment on the wicked, and hand vengeance to God."
+        refs:
+          - ref: Ps 35
+            label: Psalm 35
+            note: "Contend with My Opponents, O LORD"
+          - ref: Ps 58
+            label: Psalm 58
+            note: "God Judges the Earth"
+          - ref: Ps 69
+            label: Psalm 69
+            note: "The Waters Are up to My Neck"
+          - ref: Ps 83
+            label: Psalm 83
+            note: "O God, Be Not Silent"
+          - ref: Ps 109
+            label: Psalm 109
+            note: "The Song of the Slandered"
+          - ref: Ps 137
+            label: Psalm 137
+            note: "By the Rivers of Babylon"
+      - title: "Psalms of Asaph"
+        note: "The collection of David's chief musician."
+        refs:
+          - ref: Ps 50
+            label: Psalm 50
+            note: "The Mighty One Calls"
+          - ref: Ps 73
+            label: Psalm 73
+            note: "BOOK III · Surely God Is Good to Israel"
+          - ref: Ps 74
+            label: Psalm 74
+            note: "Why Have You Rejected Us Forever?"
+          - ref: Ps 75
+            label: Psalm 75
+            note: "God’s Righteous Judgment"
+          - ref: Ps 76
+            label: Psalm 76
+            note: "God’s Name Is Great in Israel"
+          - ref: Ps 77
+            label: Psalm 77
+            note: "In the Day of Trouble I Sought the Lord"
+          - ref: Ps 78
+            label: Psalm 78
+            note: "I Will Open My Mouth in Parables"
+          - ref: Ps 79
+            label: Psalm 79
+            note: "A Prayer for Deliverance"
+          - ref: Ps 80
+            label: Psalm 80
+            note: "Hear Us, O Shepherd of Israel"
+          - ref: Ps 81
+            label: Psalm 81
+            note: "Sing for Joy to God Our Strength"
+          - ref: Ps 82
+            label: Psalm 82
+            note: "God Presides in the Divine Assembly"
+          - ref: Ps 83
+            label: Psalm 83
+            note: "O God, Be Not Silent"
+      - title: "Psalms of the sons of Korah"
+        note: "The Levite singers' collection, in Books II and III."
+        refs:
+          - ref: Ps 42
+            label: Psalm 42
+            note: "BOOK II · As the Deer Pants for the Water"
+          - ref: Ps 44
+            label: Psalm 44
+            note: "Redeem Us, O God"
+          - ref: Ps 45
+            label: Psalm 45
+            note: "My Heart Is Stirred by a Noble Theme"
+          - ref: Ps 46
+            label: Psalm 46
+            note: "God Is Our Refuge and Strength"
+          - ref: Ps 47
+            label: Psalm 47
+            note: "Clap Your Hands, All You Peoples"
+          - ref: Ps 48
+            label: Psalm 48
+            note: "Broken Bondage"
+          - ref: Ps 49
+            label: Psalm 49
+            note: "The Evanescence of Wealth"
+          - ref: Ps 84
+            label: Psalm 84
+            note: "Better Is One Day in Your Courts"
+          - ref: Ps 85
+            label: Psalm 85
+            note: "You Showed Favor to Your Land"
+          - ref: Ps 87
+            label: Psalm 87
+            note: "The LORD Loves the Gates of Zion"
+          - ref: Ps 88
+            label: Psalm 88
+            note: "I Cry Out before You"
+  - title: Jesus and the rest
+    note: Psalms that Jesus Himself quoted weigh three times as much.
+    auto: jesus

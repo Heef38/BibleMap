@@ -9,6 +9,10 @@ export interface BookJson {
   testament: 'OT' | 'NT'
   division: string
   chapters: number[]
+  /** traditional writers, as person ids */
+  writers: string[]
+  peopleCount: number
+  placeCount: number
 }
 export interface BooksJson {
   total: number
@@ -138,6 +142,15 @@ export interface Topic {
   entries: { text: string; refs: Range[] }[]
 }
 
+export interface StudyLink {
+  ranges: Range[]
+  label: string
+  /** the theme this link belongs to; links sharing a topic form one branch on the map */
+  topic?: string
+  note?: string
+  category?: string
+  jesus: boolean
+}
 export interface StudyRef {
   label: string
   ranges: Range[]
@@ -149,6 +162,8 @@ export interface StudyRef {
   to?: Range[]
   toLabel?: string
   category?: string
+  /** every passage this reference is linked to, including `to` */
+  links?: StudyLink[]
 }
 export interface StudyCategory {
   id: string
@@ -177,6 +192,8 @@ export interface Study {
   tags: string[]
   /** "connections" when references link two passages (drawn as arcs) */
   kind?: string
+  /** which chart to open with: map, arcs or sunburst */
+  chart?: string
   categories?: StudyCategory[]
   views: StudyView[]
   ranges: Range[]
@@ -189,6 +206,7 @@ export interface StudyIndexEntry {
   subtitle?: string
   tags: string[]
   kind?: string
+  chart?: string
   refCount: number
   verseCount: number
 }

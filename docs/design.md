@@ -30,3 +30,11 @@ Sixty-six books drawn to the length of their text, in two rows (Old and New Test
 ## The theme map
 
 A zoomable sunburst. The inner ring is the study's groups, the outer ring its references, sized by weight. Words of Jesus are drawn solid; other references in a lighter tint of their group. Clicking a group zooms into it; clicking a reference opens it in the reader. The legend and the reference table beside it carry every value, so nothing depends on hover or color alone.
+
+## The connection map
+
+A radial "dandelion": the focus at the center, straight branches at even angles, one dot per connection spaced along each branch (offset alternately when a branch is dense), branch labels at the tips. Dots are sized by weight and drawn solid for the words of Jesus. Zooming into a dot rebuilds the map around it; a breadcrumb trail and the center circle lead back. Automatic branches (cross references, people, places) are drawn in muted gray so authored connections stay primary.
+
+## The Bible layout
+
+A squarified treemap (d3.treemap) of the 66 books by verse count, nested testament, division, book. Only two hues are used, one per testament; divisions are separated by layout and labels rather than by color, which keeps the chart within the categorical palette rules.

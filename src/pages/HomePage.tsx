@@ -50,6 +50,10 @@ export default function HomePage() {
             <div className="font-semibold text-base">The story in time</div>
             <div className="text-ink-2 text-sm mt-0.5">Every dated event from creation to the apostles on one zoomable timeline.</div>
           </Link>
+          <Link to="/bible" className="block rounded-xl border border-line bg-surface p-4 hover:border-line-strong hover:no-underline text-ink">
+            <div className="font-semibold text-base">How the Bible is laid out</div>
+            <div className="text-ink-2 text-sm mt-0.5">The 66 books by kind of writing, drawn to size, with an outline of each.</div>
+          </Link>
         </div>
       </Section>
 

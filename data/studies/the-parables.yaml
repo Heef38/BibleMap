@@ -1,0 +1,827 @@
+# The parables of Jesus. Each parable links to the Scripture it draws on and the
+# passages that carry its themes further; every link names its theme (`topic`),
+# which becomes a branch on the connection map. Links are typed by `category`.
+id: the-parables
+title: The Parables of Jesus
+subtitle: Every parable in the Gospels, with the Scriptures each one draws on and the themes it opens
+kind: connections
+chart: map
+summary: >-
+  Jesus taught in parables: stories and pictures that reveal the kingdom to those who
+  listen and hide it from those who will not. This study gathers the parables of the
+  Synoptic Gospels and the great figures of John, grouped by their subject. Zoom into a
+  parable to see the Old Testament images it builds on, where the same theme surfaces
+  elsewhere in the New Testament, and the passages where Jesus explains Himself.
+tags: [parables, jesus, gospels, kingdom]
+categories:
+  parallel:
+    title: Parallel account
+    note: The same parable told in another Gospel.
+  background:
+    title: Old Testament background
+    note: The image, law or promise the parable builds on.
+  theme:
+    title: Theme elsewhere
+    note: Where the rest of the New Testament takes the parable's theme further.
+  explained:
+    title: Jesus explains
+    note: Where Jesus Himself interprets the parable or states its point.
+views:
+  - title: By subject
+    note: Seven subjects the parables keep returning to.
+    groups:
+      - title: The seed and the soil
+        note: "How the kingdom grows: hidden, small, slow, and unstoppable."
+        refs:
+          - ref: Matt 13:1-9, 18-23
+            label: The sower
+            note: Four soils; the word and the hearts that receive it
+            links:
+              - to: "Mark 4:1-20"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Luke 8:4-15"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Matt 13:10-17"
+                topic: "Why parables"
+                category: "explained"
+                note: "The secrets of the kingdom are given to those who listen"
+              - to: "Isa 55:10-11"
+                topic: "The word that does not return empty"
+                category: "background"
+              - to: "Isa 6:9-10"
+                topic: "Ears that do not hear"
+                category: "background"
+              - to: "Jas 1:21-25"
+                topic: "Hearing and doing"
+                category: "theme"
+              - to: "1 Pet 1:23-25"
+                topic: "The imperishable seed"
+                category: "theme"
+          - ref: Matt 13:24-30, 36-43
+            label: The weeds among the wheat
+            note: Wheat and weeds grow together until the harvest
+            links:
+              - to: "Matt 13:36-43"
+                topic: "Jesus explains"
+                category: "explained"
+                note: "The Son of Man sows; the harvest is the end of the age"
+              - to: "Matt 3:11-12"
+                topic: "The harvest and the fire"
+                category: "theme"
+              - to: "Dan 12:2-3"
+                topic: "The righteous will shine"
+                category: "background"
+              - to: "Rev 14:14-16"
+                topic: "The harvest of the earth"
+                category: "theme"
+              - to: "Matt 25:31-46"
+                topic: "The final separation"
+                category: "theme"
+          - ref: Matt 13:31-32
+            label: The mustard seed
+            note: The smallest seed becomes a tree the birds nest in
+            links:
+              - to: "Mark 4:30-32"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Luke 13:18-19"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Ezek 17:22-24"
+                topic: "The tree that shelters the birds"
+                category: "background"
+              - to: "Dan 4:10-12"
+                topic: "The tree that shelters the birds"
+                category: "background"
+              - to: "Matt 17:20"
+                topic: "Faith like a mustard seed"
+                category: "theme"
+          - ref: Matt 13:33
+            label: The leaven
+            note: A little leaven works through the whole batch
+            links:
+              - to: "Luke 13:20-21"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Matt 16:6-12"
+                topic: "Leaven as influence"
+                category: "theme"
+                note: "The leaven of the Pharisees, an influence for ill"
+              - to: "1 Cor 5:6-8"
+                topic: "Leaven as influence"
+                category: "theme"
+          - ref: Matt 13:44
+            label: The hidden treasure
+            note: Worth selling everything for
+            links:
+              - to: "Matt 6:19-21"
+                topic: "Treasure in heaven"
+                category: "theme"
+              - to: "Phil 3:7-8"
+                topic: "Counting everything loss"
+                category: "theme"
+              - to: "Prov 2:1-5"
+                topic: "Searching as for hidden treasure"
+                category: "background"
+          - ref: Matt 13:45-46
+            label: The pearl of great price
+            note: One pearl worth all the merchant had
+            links:
+              - to: "Matt 19:21"
+                topic: "Sell all you have"
+                category: "theme"
+              - to: "Phil 3:7-8"
+                topic: "Counting everything loss"
+                category: "theme"
+              - to: "Job 28:12-19"
+                topic: "Wisdom beyond pearls"
+                category: "background"
+          - ref: Matt 13:47-50
+            label: The net
+            note: Every kind of fish, sorted at the shore
+            links:
+              - to: "Matt 13:40-43"
+                topic: "The final separation"
+                category: "explained"
+              - to: "Hab 1:14-17"
+                topic: "The dragnet"
+                category: "background"
+              - to: "Matt 4:18-19"
+                topic: "Fishers of men"
+                category: "theme"
+          - ref: Mark 4:26-29
+            label: The growing seed
+            note: The farmer sleeps and the seed grows, he knows not how
+            links:
+              - to: "Joel 3:13"
+                topic: "Put in the sickle"
+                category: "background"
+              - to: "1 Cor 3:6-7"
+                topic: "God gives the growth"
+                category: "theme"
+              - to: "Jas 5:7-8"
+                topic: "The farmer's patience"
+                category: "theme"
+          - ref: Matt 13:51-52
+            label: The homeowner's storeroom
+            note: Treasures old and new
+            links:
+              - to: "Matt 5:17-18"
+                topic: "Old and new"
+                category: "theme"
+              - to: "2 Tim 3:14-17"
+                topic: "Scribes discipled for the kingdom"
+                category: "theme"
+      - title: Lost and found
+        note: The joy of God over one sinner who repents, and the grace that offends the dutiful.
+        refs:
+          - ref: Luke 15:1-7
+            label: The lost sheep
+            note: Ninety-nine left on the hills for the one
+            links:
+              - to: "Matt 18:12-14"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Ezek 34:11-16"
+                topic: "The shepherd who seeks"
+                category: "background"
+              - to: "Isa 53:6"
+                topic: "All we like sheep"
+                category: "background"
+              - to: "John 10:11-16"
+                topic: "The good shepherd"
+                category: "theme"
+              - to: "1 Pet 2:25"
+                topic: "Returned to the Shepherd"
+                category: "theme"
+          - ref: Luke 15:8-10
+            label: The lost coin
+            note: A lamp, a broom, and a party for one coin
+            links:
+              - to: "Luke 19:10"
+                topic: "To seek and to save the lost"
+                category: "theme"
+              - to: "Zeph 3:17"
+                topic: "God rejoices over His people"
+                category: "background"
+          - ref: Luke 15:11-32
+            label: The prodigal son
+            note: Two sons, one father who runs
+            links:
+              - to: "Hos 11:1-4, 8-9"
+                topic: "The Father's compassion"
+                category: "background"
+              - to: "Deut 21:18-21"
+                topic: "What the law said about a rebellious son"
+                category: "background"
+              - to: "Luke 5:29-32"
+                topic: "Eating with sinners"
+                category: "theme"
+              - to: "Rom 5:6-8"
+                topic: "While we were still sinners"
+                category: "theme"
+              - to: "Eph 2:1-7"
+                topic: "Dead, then alive"
+                category: "theme"
+          - ref: Luke 7:40-47
+            label: The two debtors
+            note: The one forgiven more loves more
+            links:
+              - to: "Luke 7:36-39, 48-50"
+                topic: "The woman who loved much"
+                category: "explained"
+              - to: "Matt 18:21-35"
+                topic: "Forgiven much"
+                category: "theme"
+              - to: "Eph 4:32"
+                topic: "Forgive as God forgave you"
+                category: "theme"
+          - ref: Luke 18:9-14
+            label: The Pharisee and the tax collector
+            note: The one who would not lift his eyes went home justified
+            links:
+              - to: "Luke 14:11"
+                topic: "Humbled and exalted"
+                category: "explained"
+              - to: "Isa 57:15"
+                topic: "The contrite heart"
+                category: "background"
+              - to: "Ps 51:16-17"
+                topic: "The contrite heart"
+                category: "background"
+              - to: "Rom 3:27-28"
+                topic: "No boasting"
+                category: "theme"
+          - ref: Matt 20:1-16
+            label: The workers in the vineyard
+            note: The last hired, paid the same
+            links:
+              - to: "Matt 19:27-30"
+                topic: "The first will be last"
+                category: "explained"
+              - to: "Rom 9:14-16"
+                topic: "God's freedom to show mercy"
+                category: "theme"
+              - to: "Eph 2:8-9"
+                topic: "Grace, not wages"
+                category: "theme"
+          - ref: Matt 18:23-35
+            label: The unforgiving servant
+            note: Forgiven a fortune, he seized a man for pennies
+            links:
+              - to: "Matt 18:21-22"
+                topic: "Seventy times seven"
+                category: "explained"
+              - to: "Matt 6:12-15"
+                topic: "Forgive us as we forgive"
+                category: "theme"
+              - to: "Col 3:12-13"
+                topic: "Forgive as the Lord forgave you"
+                category: "theme"
+              - to: "Jas 2:12-13"
+                topic: "Judgment without mercy"
+                category: "theme"
+      - title: Neighbors, riches and mercy
+        note: Money, tables and the people at the gate.
+        refs:
+          - ref: Luke 10:25-37
+            label: The good Samaritan
+            note: Who is my neighbor? Go and do likewise
+            links:
+              - to: "Lev 19:18"
+                topic: "Love your neighbor"
+                category: "background"
+              - to: "Deut 6:4-5"
+                topic: "Love the LORD your God"
+                category: "background"
+              - to: "1 John 3:16-18"
+                topic: "Love in deed and truth"
+                category: "theme"
+              - to: "Jas 2:14-17"
+                topic: "Faith without works"
+                category: "theme"
+              - to: "Matt 25:35-40"
+                topic: "What you did for the least"
+                category: "theme"
+          - ref: Luke 12:13-21
+            label: The rich fool
+            note: Bigger barns, and a soul required that night
+            links:
+              - to: "Luke 12:22-34"
+                topic: "Treasure in heaven"
+                category: "explained"
+              - to: "Eccl 2:18-21"
+                topic: "Leaving it all to another"
+                category: "background"
+              - to: "1 Tim 6:17-19"
+                topic: "Rich toward God"
+                category: "theme"
+              - to: "Jas 4:13-15"
+                topic: "You do not know about tomorrow"
+                category: "theme"
+          - ref: Luke 16:19-31
+            label: The rich man and Lazarus
+            note: A great chasm, and Moses and the Prophets
+            links:
+              - to: "Luke 16:13-15"
+                topic: "God and money"
+                category: "explained"
+              - to: "Deut 15:7-11"
+                topic: "Open your hand to the poor"
+                category: "background"
+              - to: "Isa 58:6-7"
+                topic: "Share your bread with the hungry"
+                category: "background"
+              - to: "Luke 6:20-26"
+                topic: "Blessings and woes"
+                category: "theme"
+              - to: "John 5:45-47"
+                topic: "If they do not believe Moses"
+                category: "theme"
+          - ref: Luke 14:15-24
+            label: The great banquet
+            note: The invited made excuses; the poor filled the house
+            links:
+              - to: "Isa 25:6-9"
+                topic: "The feast on the mountain"
+                category: "background"
+              - to: "Matt 22:1-14"
+                topic: "The wedding banquet"
+                category: "parallel"
+              - to: "Luke 13:28-30"
+                topic: "From east and west"
+                category: "theme"
+              - to: "Rev 19:6-9"
+                topic: "The marriage supper of the Lamb"
+                category: "theme"
+          - ref: Luke 14:7-14
+            label: Places at the table
+            note: Take the lowest place; invite those who cannot repay
+            links:
+              - to: "Prov 25:6-7"
+                topic: "Do not exalt yourself before the king"
+                category: "background"
+              - to: "Matt 23:5-12"
+                topic: "The greatest is the servant"
+                category: "theme"
+              - to: "Phil 2:3-8"
+                topic: "The humility of Christ"
+                category: "theme"
+          - ref: Luke 16:1-13
+            label: The shrewd manager
+            note: Use worldly wealth to gain friends for eternity
+            links:
+              - to: "Matt 6:24"
+                topic: "God and money"
+                category: "theme"
+              - to: "1 Tim 6:9-10"
+                topic: "The love of money"
+                category: "theme"
+              - to: "Luke 12:33"
+                topic: "Purses that do not wear out"
+                category: "theme"
+              - to: "Matt 25:14-30"
+                topic: "Faithful with little"
+                category: "theme"
+          - ref: Luke 17:7-10
+            label: The unprofitable servants
+            note: We have only done our duty
+            links:
+              - to: "Rom 11:33-36"
+                topic: "Who has given to God first?"
+                category: "theme"
+              - to: "1 Cor 9:16"
+                topic: "Duty, not boast"
+                category: "theme"
+              - to: "Luke 12:35-38"
+                topic: "The master who serves"
+                category: "theme"
+      - title: Prayer and persistence
+        note: Keep asking; the Father is better than any friend or judge.
+        refs:
+          - ref: Luke 11:5-13
+            label: The friend at midnight
+            note: Three loaves, and a friend who will not stop knocking
+            links:
+              - to: "Matt 7:7-11"
+                topic: "Ask, seek, knock"
+                category: "parallel"
+              - to: "Jas 1:5-6"
+                topic: "Ask in faith"
+                category: "theme"
+              - to: "Heb 4:14-16"
+                topic: "Approach the throne with confidence"
+                category: "theme"
+              - to: "Luke 18:1-8"
+                topic: "Persistence"
+                category: "theme"
+          - ref: Luke 18:1-8
+            label: The persistent widow
+            note: An unjust judge gives in; how much more the just God
+            links:
+              - to: "Exod 22:22-24"
+                topic: "God hears the widow"
+                category: "background"
+              - to: "Luke 11:5-13"
+                topic: "Persistence"
+                category: "theme"
+              - to: "Rom 12:12"
+                topic: "Persistent in prayer"
+                category: "theme"
+              - to: "Rev 6:9-11"
+                topic: "How long, O Lord?"
+                category: "theme"
+          - ref: Matt 21:28-32
+            label: The two sons
+            note: One said no and went; one said yes and did not
+            links:
+              - to: "Matt 7:21-23"
+                topic: "Doing the Father's will"
+                category: "theme"
+              - to: "Luke 7:29-30"
+                topic: "Tax collectors believed John"
+                category: "theme"
+              - to: "1 John 3:18"
+                topic: "Love in deed and truth"
+                category: "theme"
+      - title: Watchfulness and the end
+        note: The Master is coming; be found ready, faithful and awake.
+        refs:
+          - ref: Matt 25:1-13
+            label: The ten virgins
+            note: Lamps, oil, and a door that shuts
+            links:
+              - to: "Matt 24:42-44"
+                topic: "Keep watch"
+                category: "explained"
+              - to: "Isa 62:4-5"
+                topic: "The bridegroom"
+                category: "background"
+              - to: "Rev 19:7-9"
+                topic: "The wedding of the Lamb"
+                category: "theme"
+              - to: "1 Thess 5:1-8"
+                topic: "Children of the day"
+                category: "theme"
+          - ref: Matt 25:14-30
+            label: The talents
+            note: Well done, good and faithful servant
+            links:
+              - to: "Luke 19:11-27"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "1 Pet 4:10-11"
+                topic: "Stewards of God's grace"
+                category: "theme"
+              - to: "1 Cor 4:1-2"
+                topic: "Faithful stewards"
+                category: "theme"
+              - to: "Matt 13:12"
+                topic: "To the one who has, more will be given"
+                category: "theme"
+          - ref: Luke 19:11-27
+            label: The ten minas
+            note: A nobleman goes to receive a kingdom; his city does not want him
+            links:
+              - to: "Matt 25:14-30"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Luke 19:41-44"
+                topic: "The city that did not want its King"
+                category: "theme"
+              - to: "Ps 2:1-6"
+                topic: "The kings against the LORD's Anointed"
+                category: "background"
+          - ref: Matt 24:45-51
+            label: The faithful and wise servant
+            note: Feeding the household until the master returns
+            links:
+              - to: "Luke 12:42-48"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "1 Cor 4:1-2"
+                topic: "Faithful stewards"
+                category: "theme"
+              - to: "2 Pet 3:8-13"
+                topic: "The day will come like a thief"
+                category: "theme"
+              - to: "Luke 12:47-48"
+                topic: "Much given, much required"
+                category: "theme"
+          - ref: Luke 12:35-40
+            label: The watchful servants
+            note: Dressed and ready, lamps burning, for the master's return
+            links:
+              - to: "Mark 13:33-37"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Matt 24:42-44"
+                topic: "Keep watch"
+                category: "theme"
+              - to: "Rev 3:20"
+                topic: "I stand at the door and knock"
+                category: "theme"
+              - to: "Rev 16:15"
+                topic: "Blessed is the one who stays awake"
+                category: "theme"
+          - ref: Matt 25:31-46
+            label: The sheep and the goats
+            note: Whatever you did for the least of these
+            links:
+              - to: "Ezek 34:17-22"
+                topic: "I will judge between sheep and goats"
+                category: "background"
+              - to: "Dan 7:13-14"
+                topic: "The Son of Man on His throne"
+                category: "background"
+              - to: "Matt 10:40-42"
+                topic: "A cup of cold water"
+                category: "theme"
+              - to: "Jas 2:14-17"
+                topic: "Faith without works"
+                category: "theme"
+              - to: "Heb 13:1-3"
+                topic: "Remember the prisoners"
+                category: "theme"
+          - ref: Matt 24:32-35
+            label: The lesson of the fig tree
+            note: When the branch is tender, summer is near
+            links:
+              - to: "Mark 13:28-31"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Luke 21:29-33"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Matt 16:2-3"
+                topic: "Reading the signs"
+                category: "theme"
+              - to: "Luke 12:54-56"
+                topic: "Reading the signs"
+                category: "theme"
+          - ref: Luke 13:6-9
+            label: The barren fig tree
+            note: One more year, and then
+            links:
+              - to: "Hos 9:10"
+                topic: "Israel as the fig tree"
+                category: "background"
+              - to: "Isa 5:1-7"
+                topic: "The vineyard that bore wild grapes"
+                category: "background"
+              - to: "Matt 21:18-22"
+                topic: "The fig tree withered"
+                category: "theme"
+              - to: "2 Pet 3:9"
+                topic: "The Lord's patience"
+                category: "theme"
+              - to: "John 15:1-8"
+                topic: "Fruit"
+                category: "theme"
+      - title: Israel, the leaders and the Son
+        note: Parables told against the leaders, and pictures of the new thing God is doing.
+        refs:
+          - ref: Matt 21:33-46
+            label: The wicked tenants
+            note: They killed the son; the stone the builders rejected
+            links:
+              - to: "Mark 12:1-12"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Luke 20:9-19"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Isa 5:1-7"
+                topic: "The song of the vineyard"
+                category: "background"
+              - to: "Ps 118:22-23"
+                topic: "The rejected stone"
+                category: "background"
+              - to: "Acts 4:10-12"
+                topic: "The cornerstone"
+                category: "theme"
+              - to: "Heb 1:1-2"
+                topic: "The Son sent last"
+                category: "theme"
+          - ref: Matt 22:1-14
+            label: The wedding banquet
+            note: The guests refused; the streets were invited; one came unclothed
+            links:
+              - to: "Luke 14:15-24"
+                topic: "The great banquet"
+                category: "parallel"
+              - to: "Zeph 1:7-8"
+                topic: "The sacrifice and the guests' clothing"
+                category: "background"
+              - to: "Isa 61:10"
+                topic: "Clothed with garments of salvation"
+                category: "background"
+              - to: "Matt 8:11-12"
+                topic: "From east and west"
+                category: "theme"
+              - to: "Rev 19:7-9"
+                topic: "The marriage supper of the Lamb"
+                category: "theme"
+          - ref: Matt 11:16-19
+            label: The children in the marketplace
+            note: We played the flute and you did not dance
+            links:
+              - to: "Luke 7:31-35"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Luke 7:29-30"
+                topic: "The purpose of God rejected"
+                category: "theme"
+              - to: "Matt 9:14-15"
+                topic: "The bridegroom's guests do not fast"
+                category: "theme"
+          - ref: Matt 7:24-27
+            label: The two builders
+            note: Rock or sand; hearing and doing
+            links:
+              - to: "Luke 6:46-49"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Jas 1:22-25"
+                topic: "Hearing and doing"
+                category: "theme"
+              - to: "Isa 28:16-17"
+                topic: "A sure foundation"
+                category: "background"
+              - to: "1 Cor 3:10-15"
+                topic: "Building on the foundation"
+                category: "theme"
+              - to: "Prov 10:25"
+                topic: "The righteous stand firm"
+                category: "background"
+          - ref: Mark 2:21-22
+            label: New cloth and new wineskins
+            note: New wine needs new skins
+            links:
+              - to: "Matt 9:16-17"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Luke 5:36-39"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Jer 31:31-33"
+                topic: "A new covenant"
+                category: "background"
+              - to: "Heb 8:13"
+                topic: "The old is obsolete"
+                category: "theme"
+              - to: "2 Cor 5:17"
+                topic: "The new creation"
+                category: "theme"
+          - ref: Mark 3:23-27
+            label: The strong man
+            note: No one plunders the strong man's house unless he first binds him
+            links:
+              - to: "Matt 12:25-29"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Luke 11:17-22"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Isa 49:24-25"
+                topic: "Captives taken from the mighty"
+                category: "background"
+              - to: "Col 2:15"
+                topic: "Disarmed the powers"
+                category: "theme"
+              - to: "1 John 3:8"
+                topic: "To destroy the devil's work"
+                category: "theme"
+          - ref: Mark 4:21-25
+            label: The lamp on a stand
+            note: Nothing hidden that will not be disclosed
+            links:
+              - to: "Luke 8:16-18"
+                topic: "Parallel accounts"
+                category: "parallel"
+              - to: "Matt 5:14-16"
+                topic: "Let your light shine"
+                category: "theme"
+              - to: "Luke 11:33-36"
+                topic: "The eye is the lamp of the body"
+                category: "theme"
+              - to: "Phil 2:14-16"
+                topic: "Shine like stars"
+                category: "theme"
+          - ref: Matt 5:13-16
+            label: Salt and light
+            note: Salt of the earth, light of the world, a city on a hill
+            links:
+              - to: "Mark 9:50"
+                topic: "Have salt in yourselves"
+                category: "parallel"
+              - to: "Col 4:5-6"
+                topic: "Speech seasoned with salt"
+                category: "theme"
+              - to: "Isa 60:1-3"
+                topic: "Nations come to your light"
+                category: "background"
+              - to: "John 8:12"
+                topic: "I am the light of the world"
+                category: "theme"
+          - ref: Luke 14:25-33
+            label: Counting the cost
+            note: The tower and the king going to war
+            links:
+              - to: "Luke 9:57-62"
+                topic: "The cost of following"
+                category: "theme"
+              - to: "Matt 16:24-26"
+                topic: "Take up the cross"
+                category: "theme"
+              - to: "Prov 24:27"
+                topic: "Prepare your work outside"
+                category: "background"
+      - title: Figures in John
+        note: John records no parables in the Synoptic sense, but his "I am" pictures do the same work.
+        refs:
+          - ref: John 10:1-18
+            label: The good shepherd
+            note: The shepherd lays down His life for the sheep
+            links:
+              - to: "Ezek 34:1-16, 23-24"
+                topic: "The shepherds of Israel and the one Shepherd"
+                category: "background"
+              - to: "Ps 23"
+                topic: "The LORD is my shepherd"
+                category: "background"
+              - to: "Luke 15:1-7"
+                topic: "The lost sheep"
+                category: "theme"
+              - to: "Heb 13:20-21"
+                topic: "The great Shepherd of the sheep"
+                category: "theme"
+              - to: "1 Pet 5:1-4"
+                topic: "The Chief Shepherd"
+                category: "theme"
+          - ref: John 15:1-8
+            label: The vine and the branches
+            note: Remain in Me, and you will bear much fruit
+            links:
+              - to: "Isa 5:1-7"
+                topic: "The song of the vineyard"
+                category: "background"
+              - to: "Ps 80:8-16"
+                topic: "The vine brought out of Egypt"
+                category: "background"
+              - to: "Gal 5:22-23"
+                topic: "The fruit of the Spirit"
+                category: "theme"
+              - to: "Col 1:9-10"
+                topic: "Bearing fruit in every good work"
+                category: "theme"
+          - ref: John 12:23-26
+            label: The grain of wheat
+            note: Unless it falls into the ground and dies
+            links:
+              - to: "1 Cor 15:35-38"
+                topic: "What you sow does not come to life unless it dies"
+                category: "theme"
+              - to: "Matt 16:24-26"
+                topic: "Take up the cross"
+                category: "theme"
+              - to: "Rom 6:4-5"
+                topic: "United with Him in death and resurrection"
+                category: "theme"
+          - ref: John 6:32-40, 47-51
+            label: The bread of life
+            note: Whoever comes to Me will never hunger
+            links:
+              - to: "Exod 16:4, 14-15"
+                topic: "The manna"
+                category: "background"
+              - to: "1 Cor 10:16-17"
+                topic: "One bread, one body"
+                category: "theme"
+              - to: "Luke 22:19"
+                topic: "This is My body"
+                category: "theme"
+          - ref: John 4:10-14; John 7:37-39
+            label: Living water
+            note: A spring welling up to eternal life
+            links:
+              - to: "Isa 55:1"
+                topic: "Come, all who are thirsty"
+                category: "background"
+              - to: "Jer 2:13"
+                topic: "The fountain of living water forsaken"
+                category: "background"
+              - to: "Ezek 47:1-9"
+                topic: "The river from the temple"
+                category: "background"
+              - to: "Rev 22:17"
+                topic: "Let the thirsty come"
+                category: "theme"
+  - title: By Gospel
+    note: Where each parable is recorded (parallels are listed under the first Gospel that carries them).
+    auto: book
+  - title: Jesus and the rest
+    note: Every parable is in Jesus's own words; this view shows how much of the linked material is too.
+    auto: jesus

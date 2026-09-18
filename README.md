@@ -75,9 +75,32 @@ views:
     auto: category
 ```
 
+### Studies on the connection map
+
+Every study can be shown as a **map**: the study at the center, one branch per group, a dot per reference. Click a dot to zoom into it; its branches become the topics it connects to (from `links`), plus automatic branches for cross references, people and places, so you can keep exploring outward. Click a line or a branch label for a popup with the group's theme. The `chart` field in a study picks the default chart (`map`, `arcs` or `sunburst`).
+
+```yaml
+- ref: Matt 13:1-9, 18-23
+  label: The sower
+  links:
+    - to: Isa 55:10-11
+      topic: The word that does not return empty
+      category: background
+```
+
+Links declared on a passage in one view are shared by the same passage in every other view.
+
 ## Timelines
 
 Every person page has a timeline: their lifespan when the text gives it, the lifespans of parents, spouses and children, the events they took part in, and a histogram of the verses that mention them by year of the story. The `/timeline` page shows all 450 dated events, with the longer periods (kingdoms, journeys, patriarchs' lifetimes) as bands. Years follow the traditional chronology in the Theographic data and are approximate.
+
+## Orientation pages
+
+`/bible` draws the 66 books as blocks sized by length, grouped by testament and kind of writing, and each book page (`/book/Rom`) shows where the book sits, its traditional writer, its chapters, and an outline built from the section headings of the current translation.
+
+## Keyboard
+
+`/` focuses the search box, `[` hides or shows the search pane, `]` hides or shows the reading pane. Both panes also have edge handles.
 
 ## Data sources
 

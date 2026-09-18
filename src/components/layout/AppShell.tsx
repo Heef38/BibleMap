@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router'
 import Header from './Header'
 import SearchPane from '@/components/search/SearchPane'
 import ReaderPane from '@/components/reader/ReaderPane'
-import { IconBook, IconMap, IconSearch } from '@/components/common/icons'
+import { IconBook, IconChevronLeft, IconChevronRight, IconMap, IconSearch } from '@/components/common/icons'
 import { useSettings } from '@/store/settings'
 import { useSession, type MobilePane } from '@/store/session'
 import { useData } from '@/data/useData'
@@ -55,13 +55,53 @@ const TABS: { id: MobilePane; label: string; icon: typeof IconMap }[] = [
   { id: 'read', label: 'Read', icon: IconBook },
 ]
 
+/** [ and ] toggle the panes, / jumps to the search box. */
+function useShortcuts() {
+  const set = useSettings((s) => s.set)
+  const focusSearch = useSession((s) => s.focusSearch)
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return
+      const t = e.target as HTMLElement | null
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return
+      if (e.key === '[') set({ showLeft: !useSettings.getState().showLeft })
+      else if (e.key === ']') set({ showRight: !useSettings.getState().showRight })
+      else if (e.key === '/') {
+        e.preventDefault()
+        set({ showLeft: true })
+        focusSearch()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [set, focusSearch])
+}
+
+function PaneHandle({ side, open, onClick }: { side: 'left' | 'right'; open: boolean; onClick: () => void }) {
+  const label = side === 'left' ? (open ? 'Hide the search pane' : 'Show the search pane') : open ? 'Hide the reading pane' : 'Show the reading pane'
+  const pointsLeft = side === 'left' ? open : !open
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      title={`${label} ( ${side === 'left' ? '[' : ']'} )`}
+      aria-label={label}
+      className={`pointer-events-auto absolute top-0 ${side === 'left' ? 'left-0 rounded-r-md border-l-0' : 'right-0 rounded-l-md border-r-0'} h-7 w-5 flex items-center justify-center border border-line bg-surface text-muted hover:text-ink hover:bg-surface-2`}
+    >
+      {pointsLeft ? <IconChevronLeft width={14} height={14} /> : <IconChevronRight width={14} height={14} />}
+    </button>
+  )
+}
+
 export default function AppShell({ children }: { children: ReactNode }) {
   const showLeft = useSettings((s) => s.showLeft)
   const showRight = useSettings((s) => s.showRight)
+  const set = useSettings((s) => s.set)
   const mobile = useMediaQuery('(max-width: 900px)')
   const pane = useSession((s) => s.mobilePane)
   const setPane = useSession((s) => s.setMobilePane)
   useReaderUrlSync()
+  useShortcuts()
 
   if (mobile) {
     return (
@@ -104,7 +144,13 @@ export default function AppShell({ children }: { children: ReactNode }) {
             <SearchPane />
           </aside>
         )}
-        <main className="min-w-0 min-h-0 overflow-y-auto">{children}</main>
+        <main className="min-w-0 min-h-0 overflow-y-auto relative">
+          <div className="sticky top-3 z-10 h-0 pointer-events-none">
+            <PaneHandle side="left" open={showLeft} onClick={() => set({ showLeft: !showLeft })} />
+            <PaneHandle side="right" open={showRight} onClick={() => set({ showRight: !showRight })} />
+          </div>
+          {children}
+        </main>
         {showRight && (
           <aside className="pane border-l border-line min-h-0 flex flex-col">
             <ReaderPane />

@@ -105,6 +105,12 @@ for (const r of tVerses) {
 const ordsOf = (f: Record<string, unknown>, k: string): number[] =>
   uniq(arr(f, k).map((id) => recToOrd.get(id)).filter((o): o is number => o !== undefined)).sort((a, b) => a - b)
 
+const bookExtras = new Map<string, { writers: string[]; peopleCount: number; placeCount: number }>()
+for (const r of readJson<Rec[]>(path.join(RAW, 'theographic', 'books.json'))) {
+  const osis = str(r.fields, 'osisName')
+  if (!osis) continue
+  bookExtras.set(osis, { writers: arr(r.fields, 'writers'), peopleCount: num(r.fields, 'peopleCount') ?? 0, placeCount: num(r.fields, 'placeCount') ?? 0 })
+}
 writeJson('books.json', {
   total: canon.total,
   books: canon.books.map((b) => ({
@@ -116,6 +122,9 @@ writeJson('books.json', {
     testament: b.testament,
     division: b.division,
     chapters: b.chapters,
+    writers: bookExtras.get(b.osis)?.writers ?? [],
+    peopleCount: bookExtras.get(b.osis)?.peopleCount ?? 0,
+    placeCount: bookExtras.get(b.osis)?.placeCount ?? 0,
   })),
 })
 
@@ -688,6 +697,13 @@ function loadBsbPlainText(): Map<number, string> {
 // ---------------------------------------------------------------------------
 // 7. Studies: hand-authored YAML -> resolved JSON, weighted by who is speaking.
 // ---------------------------------------------------------------------------
+interface StudyLinkYaml {
+  to: string
+  topic?: string
+  note?: string
+  category?: string
+  label?: string
+}
 interface StudyRefYaml {
   ref: string
   note?: string
@@ -696,6 +712,8 @@ interface StudyRefYaml {
   /** connection studies: the passage this reference points to */
   to?: string
   category?: string
+  /** further passages this reference connects to, each with the theme of the connection */
+  links?: StudyLinkYaml[]
 }
 interface StudyGroupYaml {
   id?: string
@@ -723,8 +741,17 @@ interface StudyYaml {
   summary?: string
   tags?: string[]
   kind?: string
+  chart?: string
   categories?: Record<string, StudyCategoryYaml>
   views: StudyViewYaml[]
+}
+interface StudyLink {
+  ranges: Range[]
+  label: string
+  topic?: string
+  note?: string
+  category?: string
+  jesus: boolean
 }
 interface StudyRef {
   label: string
@@ -736,6 +763,7 @@ interface StudyRef {
   to?: Range[]
   toLabel?: string
   category?: string
+  links?: StudyLink[]
 }
 interface StudyGroup {
   id: string
@@ -758,6 +786,7 @@ interface StudyJson {
   summary?: string
   tags: string[]
   kind?: string
+  chart?: string
   categories?: { id: string; title: string; note?: string }[]
   views: StudyView[]
   ranges: Range[]
@@ -793,10 +822,26 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
             to = parsedTo.ranges
           }
           if (r.category && doc.categories && !doc.categories[r.category]) throw new Error(`${file} › ${g.title}: unknown category "${r.category}"`)
-          const jesus = jesusSpeaksIn(ranges) || (to ? jesusSpeaksIn(to) : false)
+          const links: StudyLink[] = []
+          if (to) links.push({ ranges: to, label: to.map((x) => canon.rangeLabel(x[0], x[1])).join('; '), category: r.category, jesus: jesusSpeaksIn(to) })
+          for (const l of r.links ?? []) {
+            const parsedL = parseRefs(l.to, canon)
+            for (const err of parsedL.errors) warn(`${file} › ${g.title} › ${r.ref}: ${err}`)
+            if (!parsedL.ranges.length) throw new Error(`${file} › ${g.title} › ${r.ref}: could not parse link "${l.to}"`)
+            if (l.category && doc.categories && !doc.categories[l.category]) throw new Error(`${file} › ${g.title} › ${r.ref}: unknown link category "${l.category}"`)
+            links.push({
+              ranges: parsedL.ranges,
+              label: l.label ?? parsedL.ranges.map((x) => canon.rangeLabel(x[0], x[1])).join('; '),
+              topic: l.topic,
+              note: l.note,
+              category: l.category,
+              jesus: jesusSpeaksIn(parsedL.ranges),
+            })
+          }
+          const jesus = jesusSpeaksIn(ranges) || links.some((l) => l.jesus)
           const weight = r.weight ?? g.weight ?? (jesus ? 3 : 1)
           all.push(...ranges)
-          if (to) all.push(...to)
+          for (const l of links) all.push(...l.ranges)
           refCount++
           return {
             label: r.label ?? ranges.map((x) => canon.rangeLabel(x[0], x[1])).join('; '),
@@ -808,6 +853,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
             to,
             toLabel: to ? to.map((x) => canon.rangeLabel(x[0], x[1])).join('; ') : undefined,
             category: r.category,
+            links: links.length ? links : undefined,
           }
         })
         return {
@@ -822,11 +868,37 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
       const authored: StudyView[] = doc.views
         .filter((v) => !v.auto)
         .map((v) => ({ id: v.id ?? slugify(v.title), title: v.title, note: v.note, groups: (v.groups ?? []).map(compileGroup) }))
+      // A passage that appears in several views shares its links (and note) everywhere.
+      const linksByKey = new Map<string, StudyLink[]>()
+      const noteByKey = new Map<string, string>()
+      for (const v of authored) for (const g of v.groups) for (const r of g.refs) {
+        const k = JSON.stringify(r.ranges)
+        const list = linksByKey.get(k) ?? linksByKey.set(k, []).get(k)!
+        for (const l of r.links ?? []) if (!list.some((x) => x.label === l.label && x.topic === l.topic)) list.push(l)
+        if (r.note && !noteByKey.has(k)) noteByKey.set(k, r.note)
+      }
+      for (const v of authored) for (const g of v.groups) for (const r of g.refs) {
+        const k = JSON.stringify(r.ranges)
+        const list = linksByKey.get(k)
+        if (list?.length) {
+          r.links = list
+          if (list.some((l) => l.jesus) && !r.jesus) {
+            r.jesus = true
+            r.weight = Math.max(r.weight, 3)
+          }
+        }
+        if (!r.note && noteByKey.has(k)) r.note = noteByKey.get(k)
+        for (const l of r.links ?? []) all.push(...l.ranges)
+      }
+      for (const v of authored) for (const g of v.groups) {
+        g.weight = g.refs.reduce((s, r) => s + r.weight, 0)
+        g.verses = countVerses(mergeRanges(g.refs.flatMap((r) => r.ranges)))
+      }
       // Every distinct reference across the authored views, in canonical order.
       const distinct = new Map<string, StudyRef>()
       for (const v of authored) for (const g of v.groups) for (const r of g.refs) {
         const k = JSON.stringify(r.ranges)
-        if (!distinct.has(k)) distinct.set(k, { ...r, note: undefined })
+        if (!distinct.has(k)) distinct.set(k, { ...r })
       }
       const allRefs = [...distinct.values()].sort((a, b) => a.ranges[0][0] - b.ranges[0][0])
       const bucket = (title: string, refs: StudyRef[]): StudyGroup => ({
@@ -870,6 +942,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
         summary: doc.summary,
         tags: doc.tags ?? [],
         kind: doc.kind,
+        chart: doc.chart,
         categories: doc.categories ? Object.entries(doc.categories).map(([id, c]) => ({ id, title: c.title, note: c.note })) : undefined,
         views,
         ranges: merged,
@@ -883,7 +956,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
   }
   writeJson(
     'studies/index.json',
-    studies.map((s) => ({ id: s.id, title: s.title, subtitle: s.subtitle, tags: s.tags, kind: s.kind, refCount: s.refCount, verseCount: s.verseCount })),
+    studies.map((s) => ({ id: s.id, title: s.title, subtitle: s.subtitle, tags: s.tags, kind: s.kind, chart: s.chart, refCount: s.refCount, verseCount: s.verseCount })),
   )
 }
 

@@ -3,6 +3,7 @@ import { layoutRow } from './CanonStrip'
 import { VizTooltip, type TipState } from './Tooltip'
 import type { Bible, Study, StudyRef, StudyView } from '@/data/types'
 import type { Canon, CanonBook } from '@/lib/canon'
+import type { Range } from '@/lib/refs'
 import { useWidth } from '@/lib/hooks'
 import { truncate } from '@/lib/format'
 
@@ -12,13 +13,26 @@ export function categoryColor(categories: { id: string }[] | undefined, id: stri
   return i >= 0 && i < 8 ? `var(--series-${i + 1})` : 'var(--muted)'
 }
 
+export interface ArcTarget {
+  ranges: Range[]
+  label: string
+  category?: string
+  note?: string
+  topic?: string
+}
+export interface ArcPair {
+  ref: StudyRef
+  target: ArcTarget
+}
 interface Link {
   ref: StudyRef
+  target: ArcTarget
   groupId: string
   groupTitle: string
   x1: number
   x2: number
-  fromTop: boolean
+  row1: number
+  row2: number
 }
 
 const ROW_H = 16
@@ -33,7 +47,7 @@ export default function ArcDiagram({
   bible,
   selectedGroup,
   hiddenCategories,
-  selectedRef,
+  selected,
   onSelect,
 }: {
   study: Study
@@ -42,8 +56,8 @@ export default function ArcDiagram({
   bible?: Bible
   selectedGroup: string | null
   hiddenCategories: Set<string>
-  selectedRef: StudyRef | null
-  onSelect: (ref: StudyRef | null) => void
+  selected: ArcPair | null
+  onSelect: (pair: ArcPair | null) => void
 }) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const width = useWidth(wrapRef)
@@ -74,20 +88,22 @@ export default function ArcDiagram({
     const out: Link[] = []
     for (const g of view.groups)
       for (const r of g.refs) {
-        if (!r.to?.length) continue
-        const a = xOf(r.ranges[0][0])
-        const b = xOf(r.to[0][0])
-        out.push({ ref: r, groupId: g.id, groupTitle: g.title, x1: a.x, x2: b.x, fromTop: a.row === 0 })
+        const targets: ArcTarget[] = r.links?.length ? r.links.map((l) => ({ ranges: l.ranges, label: l.label, category: l.category ?? r.category, note: l.note, topic: l.topic })) : r.to?.length ? [{ ranges: r.to, label: r.toLabel ?? '', category: r.category }] : []
+        for (const t of targets) {
+          const a = xOf(r.ranges[0][0])
+          const b = xOf(t.ranges[0][0])
+          out.push({ ref: r, target: t, groupId: g.id, groupTitle: g.title, x1: a.x, x2: b.x, row1: a.row, row2: b.row })
+        }
       }
     return out
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view, width, pos])
 
   const showTip = (e: PointerEvent, content: TipState['content']) => setTip({ x: e.clientX, y: e.clientY, content })
-  const keyOf = (l: Link) => `${l.groupId}:${l.ref.label}:${l.ref.toLabel}`
-  const selectedKey = selectedRef ? links.find((l) => l.ref === selectedRef) : null
+  const keyOf = (l: Link) => `${l.groupId}:${l.ref.label}:${l.target.label}:${l.target.topic ?? ''}`
+  const selectedKey = selected ? links.find((l) => l.ref === selected.ref && l.target.label === selected.target.label && l.target.topic === selected.target.topic) : null
 
-  const visible = (l: Link) => !(l.ref.category && hiddenCategories.has(l.ref.category))
+  const visible = (l: Link) => !(l.target.category && hiddenCategories.has(l.target.category))
   const active = (l: Link) => !selectedGroup || l.groupId === selectedGroup
 
   return (
@@ -101,12 +117,20 @@ export default function ArcDiagram({
               const isHover = hover === k
               const isSel = selectedKey ? keyOf(selectedKey) === k : false
               const on = active(l)
-              const y1 = l.fromTop ? topY + ROW_H : bottomY
-              const y2 = l.fromTop ? bottomY : topY + ROW_H
-              const cy1 = l.fromTop ? y1 + ARC_H * 0.55 : y1 - ARC_H * 0.55
-              const cy2 = l.fromTop ? y2 - ARC_H * 0.55 : y2 + ARC_H * 0.55
-              const d = `M${l.x1},${y1} C${l.x1},${cy1} ${l.x2},${cy2} ${l.x2},${y2}`
-              const color = categoryColor(study.categories, l.ref.category)
+              const edgeY = (row: number) => (row === 0 ? topY + ROW_H : bottomY)
+              const y1 = edgeY(l.row1)
+              const y2 = edgeY(l.row2)
+              let d: string
+              if (l.row1 === l.row2) {
+                // both passages in the same Testament: bow into the middle band
+                const bow = l.row1 === 0 ? ARC_H * 0.5 : -ARC_H * 0.5
+                d = `M${l.x1},${y1} C${l.x1},${y1 + bow} ${l.x2},${y2 + bow} ${l.x2},${y2}`
+              } else {
+                const cy1 = l.row1 === 0 ? y1 + ARC_H * 0.55 : y1 - ARC_H * 0.55
+                const cy2 = l.row2 === 0 ? y2 + ARC_H * 0.55 : y2 - ARC_H * 0.55
+                d = `M${l.x1},${y1} C${l.x1},${cy1} ${l.x2},${cy2} ${l.x2},${y2}`
+              }
+              const color = categoryColor(study.categories, l.target.category)
               const emphasized = isHover || isSel
               return (
                 <g key={k}>
@@ -119,22 +143,22 @@ export default function ArcDiagram({
                     style={{ cursor: 'pointer' }}
                     role="button"
                     tabIndex={0}
-                    aria-label={`${l.ref.label} to ${l.ref.toLabel}${l.ref.category ? `, ${l.ref.category}` : ''}`}
-                    onClick={() => onSelect(isSel ? null : l.ref)}
-                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onSelect(isSel ? null : l.ref)}
+                    aria-label={`${l.ref.label} to ${l.target.label}${l.target.category ? `, ${l.target.category}` : ''}`}
+                    onClick={() => onSelect(isSel ? null : { ref: l.ref, target: l.target })}
+                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onSelect(isSel ? null : { ref: l.ref, target: l.target })}
                     onPointerMove={(e) => {
                       setHover(k)
                       showTip(
                         e,
                         <>
                           <div className="v">
-                            {l.ref.label} → {l.ref.toLabel}
+                            {l.ref.label} → {l.target.label}
                           </div>
                           <div className="k">
-                            {study.categories?.find((c) => c.id === l.ref.category)?.title ?? l.ref.category} · {l.groupTitle}
+                            {[study.categories?.find((c) => c.id === l.target.category)?.title ?? l.target.category, l.target.topic, l.groupTitle].filter(Boolean).join(' · ')}
                             {l.ref.jesus ? ' · words of Jesus' : ''}
                           </div>
-                          {l.ref.note && <div className="k mt-1">{l.ref.note}</div>}
+                          {(l.target.note ?? l.ref.note) && <div className="k mt-1">{l.target.note ?? l.ref.note}</div>}
                           {bible && <div className="mt-1 font-serif">{truncate(bible.verses[l.ref.ranges[0][0]], 120)}</div>}
                         </>,
                       )
@@ -176,13 +200,12 @@ export default function ArcDiagram({
           {links.filter(visible).map((l) => {
             const k = keyOf(l)
             const on = active(l)
-            const color = categoryColor(study.categories, l.ref.category)
-            const yTop = topY + ROW_H / 2
-            const yBot = bottomY + ROW_H / 2
+            const color = categoryColor(study.categories, l.target.category)
+            const yOf = (row: number) => (row === 0 ? topY + ROW_H / 2 : bottomY + ROW_H / 2)
             return (
               <g key={`e-${k}`} pointerEvents="none" opacity={on ? 1 : 0.15}>
-                <circle cx={l.fromTop ? l.x1 : l.x2} cy={yTop} r={2.2} fill={color} />
-                <circle cx={l.fromTop ? l.x2 : l.x1} cy={yBot} r={2.2} fill={color} />
+                <circle cx={l.x1} cy={yOf(l.row1)} r={2.2} fill={color} />
+                <circle cx={l.x2} cy={yOf(l.row2)} r={2.2} fill={color} />
               </g>
             )
           })}
