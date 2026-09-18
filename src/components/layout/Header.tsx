@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router'
-import { IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun, Logo } from '@/components/common/icons'
+import { Link, NavLink } from 'react-router'
+import { IconHeart, IconInfo, IconMessage, IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun, Logo } from '@/components/common/icons'
+import { SITE } from '@/config/site'
 import { useSession } from '@/store/session'
 import { useSettings, type FontSize, type Theme } from '@/store/settings'
 import { useData } from '@/data/useData'
@@ -86,6 +87,14 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
           Verse numbers
         </label>
         <div className="mt-3 pt-3 border-t border-line text-xs text-ink-2">
+          <Link to="/about" onClick={onClose}>
+            About
+          </Link>
+          {' · '}
+          <Link to="/feedback" onClick={onClose}>
+            Feedback
+          </Link>
+          {' · '}
           <Link to="/credits" onClick={onClose}>
             Data sources and licenses
           </Link>
@@ -108,7 +117,24 @@ export default function Header() {
         BibleMap
       </Link>
       <span className="text-muted text-xs max-[900px]:hidden">see how the story connects</span>
-      <div className="ml-auto flex items-center gap-1">
+      <nav className="ml-auto flex items-center gap-1" aria-label="Site">
+        <NavLink to="/about" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="About BibleMap">
+          <IconInfo />
+          <span className="max-[900px]:hidden">About</span>
+        </NavLink>
+        <NavLink to="/feedback" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="Ideas and feedback">
+          <IconMessage />
+          <span className="max-[900px]:hidden">Feedback</span>
+        </NavLink>
+        {SITE.donateUrl && (
+          <a href={SITE.donateUrl} target="_blank" rel="noopener noreferrer" className="btn hover:no-underline" style={{ color: 'var(--ink)' }} title="Support BibleMap">
+            <IconHeart className="text-wj" />
+            <span className="max-[480px]:hidden">Donate</span>
+          </a>
+        )}
+      </nav>
+      <span className="w-px h-5 bg-line" aria-hidden />
+      <div className="flex items-center gap-1">
         {!showLeft && (
           <button
             type="button"

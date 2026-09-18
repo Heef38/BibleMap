@@ -3,6 +3,7 @@ import CanonStrip from '@/components/viz/CanonStrip'
 import { Loading, PageHeader, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadCanon, loadManifest, loadStudiesIndex } from '@/data/loaders'
+import { SITE } from '@/config/site'
 
 const STARTERS: { label: string; to: string }[] = [
   { label: 'David', to: '/search?q=David' },
@@ -79,6 +80,20 @@ export default function HomePage() {
           </p>
         </Section>
       )}
+
+      <p className="mt-7 text-sm text-ink-2 max-w-prose">
+        BibleMap is built by {SITE.author}. <Link to="/about">About the project</Link>
+        {' · '}
+        <Link to="/feedback">Share an idea</Link>
+        {SITE.donateUrl && (
+          <>
+            {' · '}
+            <a href={SITE.donateUrl} target="_blank" rel="noopener noreferrer">
+              Donate
+            </a>
+          </>
+        )}
+      </p>
     </div>
   )
 }

@@ -6,3 +6,6 @@ data/raw/
 .DS_Store
 Thumbs.db
 .screenshots/
+.env
+.env*.local
+.vercel/

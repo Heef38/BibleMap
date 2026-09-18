@@ -13,9 +13,28 @@ pnpm data:build     # compiles them into public/data (about 12 seconds)
 pnpm dev            # http://localhost:5173
 ```
 
-`pnpm build` produces a deployable `dist/` for any static host. The app uses client-side routing; `public/_redirects` handles that on Netlify and Cloudflare Pages, and the build writes a `404.html` copy for GitHub Pages. To host under a sub-path (a GitHub Pages project site), build with `BASE_PATH=/repo-name/`. The workflow in `.github/workflows/deploy.yml` does this automatically on every push to `main` once Pages is enabled with "GitHub Actions" as the source.
+`pnpm build` produces the static site in `dist/`. `pnpm dev` also serves the feedback board's functions (`api/`), keeping posts in memory until you restart it.
 
-`pnpm test` runs the reference-parser and USFM-parser tests. `pnpm typecheck` runs TypeScript.
+`pnpm test` runs the reference-parser, USFM-parser and feedback-board tests. `pnpm typecheck` runs TypeScript.
+
+## Deploying
+
+The site runs on [Vercel](https://vercel.com): the static app, plus three small functions in `api/` for the feedback board, which store posts in Upstash Redis.
+
+1. In Vercel, **Add New → Project** and import this GitHub repository. Vercel detects Vite; `vercel.json` adds the client-side routing and caching rules. Deploy.
+2. In the project, open **Storage → Create Database → Upstash for Redis** (the free plan is plenty) and connect it to the project. That sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`.
+3. In **Settings → Environment Variables**, add `ADMIN_TOKEN`: a long random string, for example the output of `openssl rand -hex 24`. Keep it private; it is the only key to moderation.
+4. Redeploy (**Deployments → ⋯ → Redeploy**) so the functions see the new variables.
+
+After that, every push to `main` deploys to production and other branches get preview URLs. `.github/workflows/ci.yml` runs the tests and a build on every push.
+
+To moderate, open `/feedback?admin` on the live site and enter the `ADMIN_TOKEN`. You can then see hidden posts, set a status (planned, in progress, done, not planned), reply publicly, hide, and delete. The key stays in that browser until you press Lock.
+
+To use the real database while developing, run `vercel env pull .env.local` (Vercel CLI); `pnpm dev` picks it up. Without it, `pnpm dev` uses an in-memory store.
+
+The About page, the owner's name on replies, and the Donate button are set in `src/config/site.ts`. The Donate buttons appear once `donateUrl` is filled in.
+
+Any other static host still serves everything except the feedback board: `public/_redirects` covers Netlify and Cloudflare Pages, the build writes a `404.html` for GitHub Pages, and `BASE_PATH=/repo-name/` builds for a sub-path.
 
 ## Where things live
 
@@ -30,6 +49,8 @@ pnpm dev            # http://localhost:5173
 | `src/components/viz/` | Visualizations: the canon strip, the theme-map sunburst, the zoomable timeline, and the arc diagram for connection studies. |
 | `src/pages/` | One page per kind of thing: person, place, topic, event, study, search. |
 | `public/data/` | Compiled data the app fetches. Committed so the site deploys without a data build. |
+| `api/`, `server/feedback.js` | The feedback board's Vercel Functions and the logic behind them (plain JavaScript with JSDoc types). |
+| `src/config/site.ts` | Owner name, About text, donation link. |
 
 ## Writing a study
 

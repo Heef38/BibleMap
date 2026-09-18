@@ -13,9 +13,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
     "allowImportingTsExtensions": true,
     "types": ["node", "vite/client"],
     "paths": { "@/*": ["./src/*"] }
   },
-  "include": ["src", "scripts", "vite.config.ts", "vitest.config.ts"]
+  "include": ["src", "scripts", "api", "server", "vite.config.ts", "vitest.config.ts"]
 }
