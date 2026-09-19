@@ -14,6 +14,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'holy-spirit-gifts',
+    date: '2026-09-19',
+    title: 'The gifts of the Spirit, and how they go with the fruit',
+    body: 'The Holy Spirit study now covers the gifts: the four lists, the nine in 1 Corinthians 12 at work, how every list is wrapped in love, the fruit each gift needs, and gifts without fruit.',
+    link: { to: '/study/holy-spirit?view=the-gifts-of-the-spirit', label: 'Open the gifts' },
+  },
+  {
     id: 'study-holy-spirit',
     date: '2026-09-19',
     title: 'New study: The Holy Spirit',

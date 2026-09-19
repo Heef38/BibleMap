@@ -67,6 +67,8 @@ export default function FacetTally({ study, canon, bible }: { study: Study; cano
       <div className="grid gap-3 md:grid-cols-2">
         {facets.map((f) => {
           const counted = inScope.filter((e) => e.ref.facets?.[f.id]?.length)
+          // A facet that only tags passages outside the chosen group has nothing to show.
+          if (!counted.length) return null
           const counts = f.values.map((v) => counted.filter((e) => e.ref.facets![f.id].includes(v.id)).length)
           const max = Math.max(1, ...counts)
           const multi = counted.some((e) => e.ref.facets![f.id].length > 1)

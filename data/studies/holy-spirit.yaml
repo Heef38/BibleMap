@@ -4,7 +4,7 @@
 # the Patterns chart can count them. Tags follow the words of the text; notes flag judgment calls.
 id: holy-spirit
 title: "The Holy Spirit"
-subtitle: "Who he is, how he moves, what he does in us, and the fruit he grows"
+subtitle: "Who he is, how he moves, what he does in us, the gifts he gives, and the fruit he grows"
 kind: connections
 chart: map
 summary: >-
@@ -13,7 +13,9 @@ summary: >-
   rests on Jesus, and is poured out at Pentecost on sons and daughters alike. He is not a force
   but a person who speaks, teaches, grieves and prays, and he is God himself. This study follows
   who he is, the many ways he moves (the Patterns chart counts how he came and what followed),
-  what he does in those he lives in, and the fruit he grows in them.
+  what he does in those he lives in, the gifts he gives, and the fruit he grows. Every list of
+  gifts in the New Testament sits inside a call to love, and the gifts view follows how Scripture
+  ties each gift to the fruit it must be used with.
 tags: [holy spirit, fruit of the spirit, gifts, pentecost, prayer, discipleship]
 added: "2026-09-19"
 categories:
@@ -29,6 +31,9 @@ categories:
   us:
     title: "Taught to us"
     note: "Where the letters teach it to believers."
+  fruit:
+    title: "The fruit it calls for"
+    note: "Where a gift passage points to the fruit of the Spirit it must be used with."
 facets:
   came:
     title: "How he came"
@@ -63,6 +68,19 @@ facets:
       calling: { title: "A calling or commissioning", note: "Someone being set apart, anointed or sent." }
       word: { title: "The word read, preached or spoken" }
       everyday: { title: "Everyday life", note: "A greeting, a family day, a walk, a road." }
+  fruit:
+    title: "Fruit named with the gifts"
+    note: "In the passages that set gifts and fruit side by side, which fruit the text names in its own words."
+    values:
+      love: { title: "Love" }
+      joy: { title: "Joy", note: "Joy, joyful, rejoice." }
+      peace: { title: "Peace", note: "Peace, peace-loving." }
+      patience: { title: "Patience", note: "Patience, patient." }
+      kindness: { title: "Kindness", note: "Kind, kindness." }
+      goodness: { title: "Goodness", note: "Good, as a quality of life." }
+      faithfulness: { title: "Faithfulness", note: "Faithful." }
+      gentleness: { title: "Gentleness", note: "Gentle, gentleness, gently." }
+      selfcontrol: { title: "Self-control" }
 views:
   - title: "Who he is"
     note: "A person, not a force; God himself; the names Scripture gives him; and the pictures it uses."
@@ -444,20 +462,6 @@ views:
             label: "The Spirit of your Father speaking through you"
           - ref: "1 Cor 2:1-5"
             label: "A demonstration of the Spirit's power"
-      - title: "Gifts for the body"
-        refs:
-          - ref: "1 Cor 12:4-11"
-            label: "Different gifts, the same Spirit"
-          - ref: "Rom 12:4-8"
-            label: "Gifts that differ by grace"
-          - ref: "1 Pet 4:10-11"
-            label: "Good stewards of the manifold grace of God"
-          - ref: "Eph 4:7-13"
-            label: "To build up the body of Christ"
-          - ref: "1 Cor 14:1-5"
-            label: "Pursue love and desire spiritual gifts"
-          - ref: "1 Cor 13:1-3"
-            label: "Without love, a clanging cymbal"
       - title: "Sealed for the day"
         refs:
           - ref: "Eph 4:30"
@@ -466,6 +470,215 @@ views:
             label: "A pledge of what is to come"
           - ref: "Rom 8:22-25"
             label: "The firstfruits of the Spirit"
+
+  - title: "The gifts of the Spirit"
+    note: "The gifts the Spirit gives to build up the church, and how Scripture ties them to the fruit. Every list of gifts in the New Testament sits inside a call to love."
+    groups:
+      - title: "One Spirit, many gifts"
+        note: "The four lists in the letters. They overlap, and none claims to be complete."
+        refs:
+          - ref: "1 Cor 12:4-11"
+            label: "Nine manifestations of the Spirit"
+            note: "Each given for the common good, as the Spirit determines"
+          - ref: "1 Cor 12:27-31"
+            label: "Apostles, prophets, teachers, helping, administration"
+            note: "Are all apostles? Do all speak in tongues? Then: the most excellent way"
+          - ref: "Rom 12:4-8"
+            label: "Prophecy, serving, teaching, encouraging, giving, leading, mercy"
+            note: "Each with its manner: give generously, lead with diligence, show mercy cheerfully"
+          - ref: "Eph 4:7-13"
+            label: "Apostles, prophets, evangelists, pastors and teachers"
+            note: "To equip the saints for works of ministry and to build up the body of Christ"
+          - ref: "1 Pet 4:10-11"
+            label: "Gifts of speaking and of serving"
+            note: "Good stewards of the manifold grace of God"
+      - title: "The nine in 1 Corinthians 12"
+        note: "Each with a place Scripture shows it at work. Christians differ on what some of these look like today; these are the examples commonly given."
+        refs:
+          - ref: "Acts 6:8-10"
+            label: "The message of wisdom"
+            note: "They could not stand up to Stephen's wisdom or the Spirit by whom he spoke"
+            links:
+              - { to: "Luke 21:14-15", topic: "I will give you speech and wisdom", category: jesus }
+              - { to: "1 Kgs 3:16-28", topic: "The wisdom of God to administer justice", category: ot }
+              - { to: "Jas 1:5", topic: "Ask God, who gives generously", category: us }
+          - ref: "John 4:16-19"
+            label: "The message of knowledge"
+            note: "Jesus knew the woman's life: \"I see that You are a prophet.\" Some read this gift as knowledge given by revelation, others as teaching what God has revealed"
+            links:
+              - { to: "Acts 5:1-4", topic: "Peter knew what Ananias had hidden", category: church }
+          - ref: "Acts 27:21-26"
+            label: "Faith"
+            note: "In the storm: \"I believe God that it will happen just as He told me\""
+            links:
+              - { to: "Mark 11:22-24", topic: "Have faith in God", category: jesus }
+              - { to: "1 Cor 13:2", topic: "Faith to move mountains, but without love", category: us }
+          - ref: "Acts 3:1-10"
+            label: "Gifts of healing"
+            links:
+              - { to: "Matt 10:7-8", topic: "Heal the sick; freely you have received", category: jesus }
+              - { to: "Acts 28:8-9", topic: "Paul prayed and laid his hands on him", category: church }
+              - { to: "Jas 5:14-16", topic: "The prayer of faith", category: us }
+          - ref: "Acts 19:11-12"
+            label: "The working of miracles"
+            links:
+              - { to: "Acts 9:36-42", topic: "Tabitha raised", category: church }
+              - { to: "Gal 3:5", topic: "He works miracles among you", category: us }
+          - ref: "Acts 11:27-30"
+            label: "Prophecy"
+            note: "Agabus foretold a famine, and the disciples sent relief, each according to his ability"
+            links:
+              - { to: "Joel 2:28-29", topic: "Your sons and daughters will prophesy", category: ot }
+              - { to: "1 Cor 14:3", topic: "For edification, encouragement, and comfort", category: us }
+              - { to: "1 Thess 5:20-21", topic: "Do not treat prophecies with contempt, but test all things", category: us }
+          - ref: "Acts 16:16-18"
+            label: "Distinguishing between spirits"
+            note: "The girl's words were true, but Paul discerned the spirit behind them"
+            links:
+              - { to: "Matt 16:15-17, 21-23", topic: "Revealed by the Father, then \"Get behind Me, Satan\"", category: jesus }
+              - { to: "1 John 4:1-3", topic: "Test the spirits", category: us }
+          - ref: "Acts 2:5-11"
+            label: "Speaking in various tongues"
+            note: "Each one heard them speaking his own language"
+            links:
+              - { to: "Acts 10:46", topic: "Speaking in tongues and exalting God", category: church }
+              - { to: "1 Cor 14:2", topic: "He speaks to God", category: us }
+          - ref: "1 Cor 14:13-17"
+            label: "The interpretation of tongues"
+            note: "Pray that he may interpret, so that others can say Amen"
+            links:
+              - { to: "1 Cor 14:5", topic: "So that the church may be edified", category: us }
+      - title: "Every list is wrapped in love"
+        note: "1 Corinthians 12 and 14 surround the love chapter; Romans 12, Ephesians 4 and 1 Peter 4 set the same gifts inside love, humility and patience."
+        refs:
+          - ref: "1 Cor 13:1-3"
+            label: "Tongues, prophecy, knowledge and faith, without love"
+            note: "\"I am nothing\""
+            facets: { fruit: [love] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+          - ref: "1 Cor 13:8-13"
+            label: "Love never fails; the gifts are partial"
+            facets: { fruit: [love] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+          - ref: "1 Cor 14:1-5"
+            label: "Pursue love and eagerly desire spiritual gifts"
+            note: "Especially prophecy, which builds up the church"
+            facets: { fruit: [love] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+          - ref: "Rom 12:9-13"
+            label: "Right after the gifts: love must be sincere"
+            facets: { fruit: [love, joy, patience, goodness] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+              - { to: "Rom 14:17", topic: "Joy", category: fruit }
+              - { to: "Col 1:9-12", topic: "Patience", category: fruit }
+              - { to: "Eph 5:8-10", topic: "Goodness", category: fruit }
+          - ref: "Eph 4:1-6"
+            label: "Before the gifts: humility, gentleness, patience, love, peace"
+            facets: { fruit: [love, peace, patience, gentleness] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+              - { to: "Col 1:9-12", topic: "Patience", category: fruit }
+              - { to: "Matt 11:28-30", topic: "Gentleness", category: fruit }
+              - { to: "Rom 8:6", topic: "Peace", category: fruit }
+          - ref: "Eph 4:14-16"
+            label: "After the gifts: speaking the truth in love"
+            facets: { fruit: [love] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+          - ref: "1 Pet 4:7-9"
+            label: "Before the gifts: above all, love one another deeply"
+            facets: { fruit: [love] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+      - title: "The fruit each gift needs"
+        note: "Passages that name the character a gift has to be used with."
+        refs:
+          - ref: "1 Cor 8:1-3"
+            label: "Knowledge needs love"
+            note: "Knowledge puffs up, but love builds up"
+            facets: { fruit: [love] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+          - ref: "Jas 3:13-18"
+            label: "Wisdom needs peace, gentleness and goodness"
+            note: "The wisdom from above is pure, peace-loving, gentle, full of mercy and good fruit"
+            facets: { fruit: [peace, goodness, gentleness] }
+            links:
+              - { to: "Rom 8:6", topic: "Peace", category: fruit }
+              - { to: "Matt 11:28-30", topic: "Gentleness", category: fruit }
+              - { to: "Eph 5:8-10", topic: "Goodness", category: fruit }
+          - ref: "Phil 1:9-11"
+            label: "Discernment grows out of love"
+            note: "That your love may abound in knowledge and depth of insight, so that you may test and prove what is best"
+            facets: { fruit: [love] }
+            links:
+              - { to: "1 Cor 13:4-7", topic: "Love", category: fruit }
+          - ref: "Luke 10:17-20"
+            label: "Authority over spirits needs joy in the right place"
+            note: "Do not rejoice that the spirits submit to you, but that your names are written in heaven"
+            facets: { fruit: [joy] }
+            links:
+              - { to: "Rom 14:17", topic: "Joy", category: fruit }
+          - ref: "1 Cor 14:26-33"
+            label: "Tongues and prophecy need self-control and peace"
+            note: "Speak in turn; the spirits of prophets are subject to prophets, for God is a God of peace"
+            facets: { fruit: [peace] }
+            links:
+              - { to: "Titus 2:11-14", topic: "Self-control", category: fruit }
+              - { to: "Rom 8:6", topic: "Peace", category: fruit }
+          - ref: "2 Tim 2:23-26"
+            label: "Teaching needs kindness, patience and gentleness"
+            note: "Kind to everyone, able to teach, forbearing, gently reproving"
+            facets: { fruit: [kindness, gentleness] }
+            links:
+              - { to: "Eph 4:30-32", topic: "Kindness", category: fruit }
+              - { to: "Col 1:9-12", topic: "Patience", category: fruit }
+              - { to: "Matt 11:28-30", topic: "Gentleness", category: fruit }
+          - ref: "Gal 6:1-2"
+            label: "Restoring others needs gentleness"
+            note: "You who are spiritual should restore him with a spirit of gentleness"
+            facets: { fruit: [gentleness] }
+            links:
+              - { to: "Matt 11:28-30", topic: "Gentleness", category: fruit }
+          - ref: "Matt 14:13-14"
+            label: "Healing flows from compassion"
+            note: "He had compassion on them and healed their sick"
+            links:
+              - { to: "Eph 4:30-32", topic: "Kindness", category: fruit }
+          - ref: "1 Cor 4:1-2"
+            label: "Every gift needs faithfulness"
+            note: "It is required of stewards that they be found faithful"
+            facets: { fruit: [faithfulness] }
+            links:
+              - { to: "Luke 16:10", topic: "Faithfulness", category: fruit }
+          - ref: "Acts 3:11-16"
+            label: "Miracles need humility"
+            note: "\"Why do you stare at us as if by our own power or godliness we had made this man walk?\""
+            links:
+              - { to: "Matt 11:28-30", topic: "Gentleness", category: fruit }
+      - title: "Gifts without fruit"
+        note: "A gift can work in someone whose life does not show the fruit. Jesus says the fruit is how to tell."
+        refs:
+          - ref: "Matt 7:15-23"
+            label: "By their fruit you will recognize them"
+            note: "\"Did we not prophesy in Your name?\" \"I never knew you\""
+          - ref: "1 Cor 3:1-3"
+            label: "Corinth: lacking no gift, yet worldly"
+            note: "Enriched in all speech and knowledge, yet full of jealousy and dissension"
+            links:
+              - { to: "1 Cor 1:4-7", topic: "You do not lack any spiritual gift", category: us }
+          - ref: "Judg 16:17-21"
+            label: "Samson: strength without self-control"
+            note: "He did not know that the LORD had departed from him"
+            links:
+              - { to: "Titus 2:11-14", topic: "Self-control", category: fruit }
+          - ref: "1 Sam 19:18-24"
+            label: "Saul prophesied while hunting David"
+            note: "The Spirit of God came upon even Saul"
 
   - title: "The fruit of the Spirit"
     note: "Galatians 5 lists one fruit with nine parts. The groups of three follow a common way of teaching them, not the text itself."
@@ -566,6 +779,10 @@ views:
           - ref: "Matt 12:31-32"
             label: "Blasphemy against the Spirit"
 
+  - title: "Gifts and the fruit they name"
+    note: "The passages that set gifts and fruit side by side, grouped by the fruit each one names in its own words."
+    auto: facet
+    facet: fruit
   - title: "What followed"
     note: "The accounts in \"How the Spirit moves\", grouped by what the text says happened when the Spirit came."
     auto: facet
