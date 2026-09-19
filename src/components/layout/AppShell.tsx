@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 import Header from './Header'
 import SearchPane from '@/components/search/SearchPane'
@@ -119,6 +119,47 @@ function PaneHandle({ side, open, onClick }: { side: 'left' | 'right'; open: boo
   )
 }
 
+/** The bar between the page and the docked Bible on a phone: drag it, or use the arrow keys. */
+function SplitHandle({ box, split, onDrag, onCommit }: { box: RefObject<HTMLDivElement | null>; split: number; onDrag: (v: number | null) => void; onCommit: (v: number) => void }) {
+  const clamp = (v: number) => Math.min(0.8, Math.max(0.2, v))
+  const at = (clientY: number) => {
+    const r = box.current!.getBoundingClientRect()
+    return clamp((r.bottom - clientY) / r.height)
+  }
+  return (
+    <div
+      role="separator"
+      aria-orientation="horizontal"
+      aria-label="Resize the Bible"
+      aria-valuemin={20}
+      aria-valuemax={80}
+      aria-valuenow={Math.round(split * 100)}
+      tabIndex={0}
+      className="h-6 shrink-0 flex items-center justify-center border-t border-line bg-surface cursor-row-resize touch-none select-none"
+      onPointerDown={(e) => {
+        e.currentTarget.setPointerCapture(e.pointerId)
+        onDrag(at(e.clientY))
+      }}
+      onPointerMove={(e) => {
+        if (e.currentTarget.hasPointerCapture(e.pointerId)) onDrag(at(e.clientY))
+      }}
+      onPointerUp={(e) => {
+        if (!e.currentTarget.hasPointerCapture(e.pointerId)) return
+        onCommit(at(e.clientY))
+        onDrag(null)
+      }}
+      onPointerCancel={() => onDrag(null)}
+      onKeyDown={(e) => {
+        if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return
+        e.preventDefault()
+        onCommit(clamp(split + (e.key === 'ArrowUp' ? 0.05 : -0.05)))
+      }}
+    >
+      <span className="w-10 h-1 rounded-full bg-line-strong" aria-hidden />
+    </div>
+  )
+}
+
 export default function AppShell({ children }: { children: ReactNode }) {
   const showLeft = useSettings((s) => s.showLeft)
   const showRight = useSettings((s) => s.showRight)
@@ -126,35 +167,60 @@ export default function AppShell({ children }: { children: ReactNode }) {
   const mobile = useMediaQuery('(max-width: 900px)')
   const pane = useSession((s) => s.mobilePane)
   const setPane = useSession((s) => s.setMobilePane)
+  const mobileBible = useSettings((s) => s.mobileBible)
+  const mobileSplit = useSettings((s) => s.mobileSplit)
+  const [drag, setDrag] = useState<number | null>(null)
+  const splitBox = useRef<HTMLDivElement>(null)
   useReaderHistory()
   useShortcuts()
 
   if (mobile) {
+    // With the Bible docked, the top shows Explore or the page and the Bible stays open below it.
+    const top: MobilePane = pane === 'explore' ? 'explore' : 'map'
+    const shown = (id: MobilePane) => (mobileBible ? top === id : pane === id)
+    const tabs = mobileBible ? TABS.filter((t) => t.id !== 'read') : TABS
+    const split = drag ?? mobileSplit
     return (
       <div className="h-full flex flex-col">
         <Header />
-        <div className="flex-1 min-h-0 relative">
-          <aside className={`pane absolute inset-0 overflow-y-auto ${pane === 'explore' ? '' : 'hidden'}`}>
-            <SearchPane />
-          </aside>
-          <main className={`absolute inset-0 overflow-y-auto ${pane === 'map' ? '' : 'hidden'}`}>{children}</main>
-          <aside className={`pane absolute inset-0 flex flex-col ${pane === 'read' ? '' : 'hidden'}`}>
-            <ReaderPane />
-          </aside>
+        <div ref={splitBox} className="flex-1 min-h-0 flex flex-col">
+          <div className="relative min-h-0" style={{ flex: mobileBible ? `${1 - split} 1 0` : '1 1 0' }}>
+            <aside className={`pane absolute inset-0 overflow-y-auto ${shown('explore') ? '' : 'hidden'}`}>
+              <SearchPane />
+            </aside>
+            <main className={`absolute inset-0 overflow-y-auto ${shown('map') ? '' : 'hidden'}`}>{children}</main>
+            {!mobileBible && (
+              <aside className={`pane absolute inset-0 flex flex-col ${pane === 'read' ? '' : 'hidden'}`}>
+                <ReaderPane />
+              </aside>
+            )}
+          </div>
+          {mobileBible && (
+            <>
+              <SplitHandle box={splitBox} split={split} onDrag={setDrag} onCommit={(v) => set({ mobileSplit: v })} />
+              <aside className="pane flex flex-col min-h-0" style={{ flex: `${split} 1 0` }} aria-label="Bible">
+                <ReaderPane />
+              </aside>
+            </>
+          )}
         </div>
         <nav className="flex border-t border-line bg-surface shrink-0" aria-label="Sections">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              className={`flex-1 flex flex-col items-center gap-0.5 py-2 text-xs ${pane === t.id ? 'text-accent font-medium' : 'text-ink-2'}`}
-              aria-pressed={pane === t.id}
-              onClick={() => setPane(t.id)}
-            >
-              <t.icon width={18} height={18} />
-              {t.label}
-            </button>
-          ))}
+          {tabs.map((t) => {
+            const on = shown(t.id)
+            return (
+              <button
+                key={t.id}
+                type="button"
+                className={`flex-1 flex flex-col items-center gap-0.5 py-2 text-xs ${on ? 'font-medium' : ''}`}
+                style={{ color: on ? 'var(--accent)' : 'var(--ink-2)' }}
+                aria-pressed={on}
+                onClick={() => setPane(t.id)}
+              >
+                <t.icon width={18} height={18} />
+                {t.label}
+              </button>
+            )
+          })}
         </nav>
       </div>
     )

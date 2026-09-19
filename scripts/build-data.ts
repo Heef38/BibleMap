@@ -869,6 +869,8 @@ interface StudyYaml {
   subtitle?: string
   summary?: string
   tags?: string[]
+  /** the day the study was published (YYYY-MM-DD); it is marked New for a while after */
+  added?: string
   kind?: string
   chart?: string
   timeline?: { from?: number; to?: number; note?: string }
@@ -921,6 +923,7 @@ interface StudyJson {
   subtitle?: string
   summary?: string
   tags: string[]
+  added?: string
   kind?: string
   chart?: string
   timeline?: { from?: number; to?: number; note?: string }
@@ -943,6 +946,9 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
     for (const file of fs.readdirSync(STUDIES_DIR).filter((f) => /\.ya?ml$/.test(f)).sort()) {
       const doc = loadYaml(readText(path.join(STUDIES_DIR, file))) as StudyYaml
       if (!doc?.id || !doc.title || !Array.isArray(doc.views)) throw new Error(`${file}: needs id, title and views`)
+      // js-yaml reads an unquoted date as a Date; keep it as the plain day either way.
+      const added = (doc.added as unknown) instanceof Date ? (doc.added as unknown as Date).toISOString().slice(0, 10) : doc.added
+      if (added !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(added)) throw new Error(`${file}: added must be a date like 2026-09-19`)
       const all: Range[] = []
       let refCount = 0
       const compileGroup = (g: StudyGroupYaml): StudyGroup => {
@@ -1122,6 +1128,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
         subtitle: doc.subtitle,
         summary: doc.summary,
         tags: doc.tags ?? [],
+        added,
         kind: doc.kind,
         chart: doc.chart,
         timeline: doc.timeline,
@@ -1141,7 +1148,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
   }
   writeJson(
     'studies/index.json',
-    studies.map((s) => ({ id: s.id, title: s.title, subtitle: s.subtitle, tags: s.tags, kind: s.kind, chart: s.chart, refCount: s.refCount, verseCount: s.verseCount })),
+    studies.map((s) => ({ id: s.id, title: s.title, subtitle: s.subtitle, tags: s.tags, added: s.added, kind: s.kind, chart: s.chart, refCount: s.refCount, verseCount: s.verseCount })),
   )
 }
 

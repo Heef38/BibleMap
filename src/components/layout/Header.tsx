@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
+import { UpdateList } from '@/components/common/Updates'
+import { UPDATES } from '@/config/updates'
+import { isUnseen, useUnseen, useUpdates } from '@/store/updates'
 import { Link, NavLink, useLocation, useNavigate, useNavigationType } from 'react-router'
-import { IconArrowLeft, IconArrowRight, IconHeart, IconInfo, IconMessage, IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun, Logo } from '@/components/common/icons'
+import { IconArrowLeft, IconArrowRight, IconBook, IconHeart, IconInfo, IconMessage, IconSparkle, IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun, Logo } from '@/components/common/icons'
 import { SITE } from '@/config/site'
 import { useSession } from '@/store/session'
 import { useSettings, type FontSize, type Theme } from '@/store/settings'
@@ -14,7 +17,7 @@ function ThemeButton() {
   const osDark = useMediaQuery('(prefers-color-scheme: dark)')
   const dark = theme === 'dark' || (theme === 'system' && osDark)
   return (
-    <button type="button" className="btn btn-ghost" onClick={() => set({ theme: dark ? 'light' : 'dark' })} title={dark ? 'Switch to light' : 'Switch to dark'}>
+    <button type="button" className="btn btn-ghost max-[480px]:hidden" onClick={() => set({ theme: dark ? 'light' : 'dark' })} title={dark ? 'Switch to light' : 'Switch to dark'}>
       {dark ? <IconSun /> : <IconMoon />}
     </button>
   )
@@ -104,6 +107,59 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
   )
 }
 
+/** What's new: a dot while there are updates this browser has not opened, and the list of them. */
+function WhatsNew() {
+  const [open, setOpen] = useState(false)
+  const [fresh, setFresh] = useState<Set<string>>(() => new Set())
+  const unseen = useUnseen()
+  const markSeen = useUpdates((s) => s.markSeen)
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+  const toggle = () => {
+    if (!open) {
+      // Keep the New markers on screen while the panel is open, then count them as seen.
+      const seen = useUpdates.getState().seen
+      setFresh(new Set(UPDATES.filter((u) => isUnseen(u, seen)).map((u) => u.id)))
+      markSeen()
+    }
+    setOpen(!open)
+  }
+  const label = unseen.length ? `What's new (${unseen.length} new)` : "What's new"
+  return (
+    <div className="relative">
+      <button type="button" className="btn btn-ghost relative" style={{ color: 'var(--accent)' }} aria-expanded={open} aria-haspopup="dialog" onClick={toggle} title={label} aria-label={label}>
+        <IconSparkle />
+        <span className="max-[900px]:hidden">What's new</span>
+        {unseen.length > 0 && <span className="absolute top-1 left-[22px] w-2 h-2 rounded-full bg-accent ring-2 ring-[var(--surface)]" aria-hidden />}
+      </button>
+      {open && (
+        <>
+          <div className="fixed inset-0 z-30" onClick={() => setOpen(false)} aria-hidden />
+          <div
+            className="absolute right-0 top-full mt-1 z-40 w-80 max-h-[70vh] overflow-y-auto rounded-xl border border-line bg-surface p-4 text-sm max-[480px]:fixed max-[480px]:left-2 max-[480px]:right-2 max-[480px]:top-12 max-[480px]:w-auto"
+            style={{ boxShadow: 'var(--shadow)' }}
+            role="dialog"
+            aria-label="What's new"
+          >
+            <div className="kicker mb-3">What's new</div>
+            <UpdateList items={UPDATES} fresh={fresh} onNavigate={() => setOpen(false)} />
+            <div className="mt-3 pt-3 border-t border-line text-xs text-ink-2">
+              Have an idea?{' '}
+              <Link to="/feedback" onClick={() => setOpen(false)}>
+                Share it on the feedback board
+              </Link>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+
 /**
  * Back and Forward through this visit, reader jumps included. Back stops at the first page of the
  * visit instead of leaving the site; Forward is on when a Back step can be undone.
@@ -144,6 +200,7 @@ function HistoryButtons() {
 export default function Header() {
   const showLeft = useSettings((s) => s.showLeft)
   const showRight = useSettings((s) => s.showRight)
+  const mobileBible = useSettings((s) => s.mobileBible)
   const set = useSettings((s) => s.set)
   const focusSearch = useSession((s) => s.focusSearch)
   const [open, setOpen] = useState(false)
@@ -164,6 +221,7 @@ export default function Header() {
           <IconMessage />
           <span className="max-[900px]:hidden">Feedback</span>
         </NavLink>
+        <WhatsNew />
         {SITE.donateUrl && (
           <a href={SITE.donateUrl} target="_blank" rel="noopener noreferrer" className="btn hover:no-underline" style={{ color: 'var(--ink)' }} title="Support BibleMap">
             <IconHeart className="text-wj" />
@@ -173,6 +231,16 @@ export default function Header() {
       </nav>
       <span className="w-px h-5 bg-line" aria-hidden />
       <div className="flex items-center gap-1">
+        <button
+          type="button"
+          className="btn btn-ghost min-[901px]:hidden"
+          aria-pressed={mobileBible}
+          onClick={() => set({ mobileBible: !mobileBible })}
+          title={mobileBible ? 'Hide the Bible' : 'Show the Bible under the page'}
+          aria-label={mobileBible ? 'Hide the Bible' : 'Show the Bible under the page'}
+        >
+          <IconBook />
+        </button>
         {!showLeft && (
           <button
             type="button"

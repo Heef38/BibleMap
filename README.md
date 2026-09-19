@@ -157,6 +157,14 @@ Every person page has a timeline: their lifespan when the text gives it, the lif
 
 `/` focuses the search box, `[` hides or shows the search pane, `]` hides or shows the reading pane. Both panes also have edge handles.
 
+## Announcing what's new
+
+When a study or feature ships, add an entry at the top of `src/config/updates.ts` (an id that never changes, the date, a title, a sentence, and an optional link). Readers see a dot on **What's new** in the header until they open it, and the three latest entries sit on the home page. A first-time visitor only gets the dot for entries from the last two weeks. For a new study, also add `added: "YYYY-MM-DD"` to its YAML: it is tagged **New** and listed first for 30 days.
+
+## Phones
+
+Below 900px the panes become tabs (Explore, Map, Read). The book button in the header docks the Bible under the page instead, so a study and the text it points to are on screen together; drag the bar between them (or focus it and use the arrow keys) to resize. Both choices are remembered.
+
 ## Back and Forward
 
 Every jump in the reader (a reference, a cross reference, the book or chapter picker) is a step in the browser history, recorded in the URL as `?p=`, so Back returns to where you were reading. Turning a chapter or clicking a verse updates the current step instead of adding one. The arrows in the header, the browser's own buttons, Alt+← and Alt+→, and a phone's back gesture all do the same; on a phone, Back also returns to the tab (Explore, Map, Read) you were on. Back stops at the first page of the visit rather than leaving the site.

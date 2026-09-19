@@ -86,6 +86,12 @@ export const IconArrowRight = (p: SVGProps<SVGSVGElement>) => (
     <path d="M5 12h14m-6-6 6 6-6 6" />
   </svg>
 )
+export const IconSparkle = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M12 3.5 13.8 9l5.7 1.8-5.7 1.8L12 18.2l-1.8-5.6L4.5 10.8 10.2 9Z" />
+    <path d="M19 3v4m-2-2h4" />
+  </svg>
+)
 export const IconHeart = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}>
     <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />

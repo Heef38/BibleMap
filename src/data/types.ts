@@ -215,6 +215,8 @@ export interface Study {
   subtitle?: string
   summary?: string
   tags: string[]
+  /** the day the study was published (YYYY-MM-DD) */
+  added?: string
   /** "connections" when references link two passages (drawn as arcs) */
   kind?: string
   /** which chart to open with: map, arcs, sunburst or timeline */
@@ -234,6 +236,7 @@ export interface StudyIndexEntry {
   title: string
   subtitle?: string
   tags: string[]
+  added?: string
   kind?: string
   chart?: string
   refCount: number

@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router'
 import { IconSearch } from '@/components/common/icons'
 import { Highlight } from '@/components/common/Highlight'
 import { useData } from '@/data/useData'
+import { NewTag } from '@/components/common/Updates'
+import { isNewStudy } from '@/store/updates'
 import { loadBible, loadCanon, loadStudiesIndex } from '@/data/loaders'
 import { buildSearchIndex, entityHref, searchEntities, searchVerses, TYPE_LABELS, TYPE_ORDER, type EntityHit } from '@/data/search'
 import { parseRefs } from '@/lib/refs'
@@ -69,10 +71,12 @@ export default function SearchPane() {
           <div className="kicker mb-2">Studies</div>
           {studies?.length ? (
             <ul className="space-y-1">
-              {studies.map((s) => (
+              {[...studies].sort((a, b) => Number(isNewStudy(b.added)) - Number(isNewStudy(a.added))).map((s) => (
                 <li key={s.id}>
                   <Link to={`/study/${s.id}`} className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
-                    <div className="font-medium">{s.title}</div>
+                    <div className="font-medium">
+                      {s.title} {isNewStudy(s.added) && <NewTag />}
+                    </div>
                     {s.subtitle && <div className="text-xs text-ink-2">{s.subtitle}</div>}
                   </Link>
                 </li>

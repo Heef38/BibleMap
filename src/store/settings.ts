@@ -13,6 +13,10 @@ export interface Settings {
   showNumbers: boolean
   showLeft: boolean
   showRight: boolean
+  /** phones: keep the Bible open under the other pane instead of on its own tab */
+  mobileBible: boolean
+  /** phones: the share of the height the docked Bible takes */
+  mobileSplit: number
   set: (patch: Partial<Omit<Settings, 'set'>>) => void
 }
 
@@ -27,6 +31,8 @@ export const useSettings = create<Settings>()(
       showNumbers: true,
       showLeft: true,
       showRight: true,
+      mobileBible: false,
+      mobileSplit: 0.45,
       set: (patch) => set(patch),
     }),
     {
@@ -40,6 +46,8 @@ export const useSettings = create<Settings>()(
         showNumbers: s.showNumbers,
         showLeft: s.showLeft,
         showRight: s.showRight,
+        mobileBible: s.mobileBible,
+        mobileSplit: s.mobileSplit,
       }),
     },
   ),

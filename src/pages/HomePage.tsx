@@ -4,6 +4,9 @@ import { Loading, PageHeader, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadCanon, loadManifest, loadStudiesIndex } from '@/data/loaders'
 import { SITE } from '@/config/site'
+import { UPDATES } from '@/config/updates'
+import { NewTag, UpdateList } from '@/components/common/Updates'
+import { isNewStudy, isUnseen, useUpdates } from '@/store/updates'
 
 const STARTERS: { label: string; to: string }[] = [
   { label: 'David', to: '/search?q=David' },
@@ -18,6 +21,8 @@ export default function HomePage() {
   const { data: canon } = useData('canon', loadCanon)
   const { data: studies } = useData('studies-index', loadStudiesIndex)
   const { data: manifest } = useData('manifest', loadManifest)
+  const seen = useUpdates((s) => s.seen)
+  const recent = UPDATES.slice(0, 3)
   return (
     <div className="p-6 max-w-4xl">
       <PageHeader
@@ -27,12 +32,20 @@ export default function HomePage() {
       />
       {canon ? <CanonStrip canon={canon} ranges={[]} caption="The Bible as a strip: 66 books, each drawn to the length of its text. Every map in BibleMap sits on this strip." /> : <Loading />}
 
+      <Section title="What's new">
+        <div className="rounded-xl border border-line bg-surface p-4 max-w-2xl">
+          <UpdateList items={recent} fresh={new Set(recent.filter((u) => isUnseen(u, seen)).map((u) => u.id))} />
+        </div>
+      </Section>
+
       <Section title="Studies" count={studies?.length}>
         {studies?.length ? (
           <div className="grid gap-3 sm:grid-cols-2">
-            {studies.map((s) => (
+            {[...studies].sort((a, b) => Number(isNewStudy(b.added)) - Number(isNewStudy(a.added))).map((s) => (
               <Link key={s.id} to={`/study/${s.id}`} className="block rounded-xl border border-line bg-surface p-4 hover:border-line-strong hover:no-underline text-ink">
-                <div className="font-semibold text-base">{s.title}</div>
+                <div className="font-semibold text-base">
+                  {s.title} {isNewStudy(s.added) && <NewTag />}
+                </div>
                 {s.subtitle && <div className="text-ink-2 text-sm mt-0.5">{s.subtitle}</div>}
                 <div className="text-xs text-muted mt-2">
                   {s.refCount} references · {s.verseCount.toLocaleString()} verses

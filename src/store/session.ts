@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import type { Range } from '@/lib/refs'
+import { useSettings } from './settings'
 
 export interface Highlight {
   ranges: Range[]
@@ -52,7 +53,8 @@ export const useSession = create<Session>()((set) => ({
     set((s) => ({
       readerOrdinal: ordinal,
       focus: opts?.focus === false ? null : ordinal,
-      mobilePane: opts?.pane === false ? s.mobilePane : 'read',
+      // With the Bible docked under the page (phones), it is already in view.
+      mobilePane: opts?.pane === false || useSettings.getState().mobileBible ? s.mobilePane : 'read',
       before: { ordinal: s.readerOrdinal, focus: s.focus, pane: s.mobilePane },
       history: opts?.history ?? 'push',
     })),
