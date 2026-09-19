@@ -154,7 +154,7 @@ export default function Sunburst({
   return (
     <div ref={wrapRef} className="w-full flex justify-center">
       {width > 0 && (
-        <svg width={size} height={size} viewBox={`${-size / 2} ${-size / 2} ${size} ${size}`} role="img" aria-label={`${study.title}: references grouped ${view.title.toLowerCase()}, sized by weight`} className="block select-none">
+        <svg width={size} height={size} viewBox={`${-size / 2} ${-size / 2} ${size} ${size}`} role="img" aria-label={`${study.title}: references grouped ${view.title.toLowerCase()}, sized by weight`} className="block select-none mx-auto">
           {nodes.map((n) => {
             const a0 = ang(n.x0)
             const a1 = ang(n.x1)

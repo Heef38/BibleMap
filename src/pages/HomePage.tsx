@@ -24,7 +24,7 @@ export default function HomePage() {
   const seen = useUpdates((s) => s.seen)
   const recent = UPDATES.slice(0, 3)
   return (
-    <div className="p-6 max-w-4xl">
+    <div className="p-6 @container">
       <PageHeader
         kicker="BibleMap"
         title="See how the story connects."
@@ -40,7 +40,7 @@ export default function HomePage() {
 
       <Section title="Studies" count={studies?.length}>
         {studies?.length ? (
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 @xl:grid-cols-2 @5xl:grid-cols-3">
             {[...studies].sort((a, b) => Number(isNewStudy(b.added)) - Number(isNewStudy(a.added))).map((s) => (
               <Link key={s.id} to={`/study/${s.id}`} className="block rounded-xl border border-line bg-surface p-4 hover:border-line-strong hover:no-underline text-ink">
                 <div className="font-semibold text-base">
@@ -59,7 +59,7 @@ export default function HomePage() {
       </Section>
 
       <Section title="Explore">
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 @xl:grid-cols-2 @5xl:grid-cols-3">
           <Link to="/timeline" className="block rounded-xl border border-line bg-surface p-4 hover:border-line-strong hover:no-underline text-ink">
             <div className="font-semibold text-base">The story in time</div>
             <div className="text-ink-2 text-sm mt-0.5">Every dated event from creation to the apostles on one zoomable timeline.</div>

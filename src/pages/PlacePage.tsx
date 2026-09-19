@@ -33,7 +33,7 @@ export default function PlacePage() {
 
   const books = new Set(place.verses.map((o) => canon.locate(o).b)).size
   return (
-    <div className="p-6 max-w-4xl">
+    <div className="p-6">
       <PageHeader
         kicker={place.type ? `Place · ${place.type}` : 'Place'}
         title={place.name}

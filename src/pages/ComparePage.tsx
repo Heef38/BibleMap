@@ -235,7 +235,7 @@ export default function ComparePage() {
   if (err) return <div className="p-6 text-ink-2">Could not load one of the people: {err.message}</div>
 
   return (
-    <div className="p-6 max-w-5xl">
+    <div className="p-6">
       <PageHeader kicker="Compare" title={a && b ? `${a.title} and ${b.title}` : 'Compare two people'} subtitle="Two people on one map: what they share between them, and what belongs to each alone." />
       <div className="grid gap-3 sm:grid-cols-2 mb-4">
         <PersonPicker value={aId} label="First person" onPick={(id) => setPair('a', id)} />

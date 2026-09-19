@@ -39,7 +39,14 @@ export function useWidth(ref: RefObject<HTMLElement | null>): number {
     ro.observe(el)
     observed.current = { el, ro }
   })
-  useEffect(() => () => observed.current?.ro.disconnect(), [])
+  // Forget the observer when it is disconnected, so a remount (React's strict mode does one) observes again.
+  useEffect(
+    () => () => {
+      observed.current?.ro.disconnect()
+      observed.current = null
+    },
+    [],
+  )
   return width
 }
 

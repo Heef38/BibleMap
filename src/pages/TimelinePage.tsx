@@ -57,7 +57,7 @@ export default function TimelinePage() {
   if (!canon || !events) return <div className="p-6"><Loading /></div>
 
   return (
-    <div className="p-6 max-w-6xl">
+    <div className="p-6">
       <PageHeader
         kicker="Timeline"
         title="The story in time"

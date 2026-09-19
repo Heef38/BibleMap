@@ -96,7 +96,7 @@ export default function FeedbackPage() {
   }
 
   return (
-    <div className="p-6 max-w-3xl">
+    <div className="p-6 max-w-3xl mx-auto">
       <PageHeader
         kicker="Feedback"
         title="Ideas and feedback"

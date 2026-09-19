@@ -36,7 +36,7 @@ export default function SearchPage() {
   if (!canon || !bible) return <div className="p-6"><Loading /></div>
 
   return (
-    <div className="p-6 max-w-4xl">
+    <div className="p-6">
       <PageHeader kicker="Search" title={q ? <>“{q}”</> : 'Search'} subtitle={q ? `${hits.length.toLocaleString()} verses in the ${bible.abbrev} contain ${hits.length === 1 ? 'it' : 'these words'}.` : 'Type something in the search box.'} />
       {q && <CanonStrip canon={canon} ranges={ranges} color="var(--series-2)" />}
 

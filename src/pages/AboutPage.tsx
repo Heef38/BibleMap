@@ -11,7 +11,7 @@ export default function AboutPage() {
   }, [hash])
 
   return (
-    <div className="p-6 max-w-3xl">
+    <div className="p-6 max-w-3xl mx-auto">
       <PageHeader kicker="About" title="About BibleMap" subtitle="A free, interactive map of the Bible: its people, places and themes, and how they connect." />
 
       <Section title="Who is building it">

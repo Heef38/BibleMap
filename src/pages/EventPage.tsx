@@ -33,7 +33,7 @@ export default function EventPage() {
   if (!event) return <div className="p-6 text-ink-2">No event with id “{id}”.</div>
 
   return (
-    <div className="p-6 max-w-4xl">
+    <div className="p-6">
       <PageHeader
         kicker="Event"
         title={event.title}
@@ -100,7 +100,7 @@ export default function EventPage() {
       )}
       {event.notes && (
         <Section title="Notes">
-          <p className="text-sm text-ink-2 whitespace-pre-line">{event.notes}</p>
+          <p className="text-sm text-ink-2 whitespace-pre-line max-w-prose">{event.notes}</p>
         </Section>
       )}
     </div>

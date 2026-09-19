@@ -12,7 +12,7 @@ export function PageHeader({ kicker, title, subtitle, right }: { kicker?: ReactN
       <div className="min-w-[18rem] flex-1">
         {kicker && <div className="kicker mb-1">{kicker}</div>}
         <h1 className="text-2xl font-semibold leading-tight tracking-tight">{title}</h1>
-        {subtitle && <div className="text-ink-2 mt-1">{subtitle}</div>}
+        {subtitle && <div className="text-ink-2 mt-1 max-w-prose">{subtitle}</div>}
       </div>
       {right && <div className="flex items-center gap-2">{right}</div>}
     </div>

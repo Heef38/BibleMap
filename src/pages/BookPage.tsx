@@ -35,7 +35,7 @@ export default function BookPage() {
   const chapters = book.chapters.length
 
   return (
-    <div className="p-6 max-w-4xl">
+    <div className="p-6">
       <PageHeader
         kicker={
           <>

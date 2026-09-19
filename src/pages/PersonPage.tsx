@@ -105,7 +105,7 @@ export default function PersonPage() {
   const hasFamily = family.some(([, ids]) => ids.length)
 
   return (
-    <div className="p-6 max-w-4xl">
+    <div className="p-6">
       <PageHeader
         kicker="Person"
         title={person.title}

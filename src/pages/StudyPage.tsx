@@ -85,7 +85,7 @@ export default function StudyPage() {
   const snippet = (o: number, n: number) => (bible ? truncate(bible.verses[o], n) : '')
 
   return (
-    <div className="p-6 max-w-5xl">
+    <div className="p-6">
       <PageHeader
         kicker={isConnections ? 'Study · connections' : 'Study'}
         title={study.title}

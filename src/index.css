@@ -247,6 +247,7 @@ svg [role="button"]:focus:not(:focus-visible) {
   color: var(--muted);
 }
 .prose-dict {
+  max-width: 75ch;
   color: var(--ink-2);
   font-size: 13.5px;
   line-height: 1.6;

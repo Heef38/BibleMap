@@ -6,7 +6,7 @@ export default function CreditsPage() {
   const { data: manifest } = useData('manifest', loadManifest)
   if (!manifest) return <div className="p-6"><Loading /></div>
   return (
-    <div className="p-6 max-w-3xl">
+    <div className="p-6 max-w-3xl mx-auto">
       <PageHeader kicker="About" title="Sources and licenses" subtitle={`Data compiled ${manifest.generatedAt}. BibleMap is built entirely on open data; each source keeps its own license.`} />
       <Section title="Sources">
         <ul className="divide-y divide-line text-sm">

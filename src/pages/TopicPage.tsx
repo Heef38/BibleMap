@@ -26,7 +26,7 @@ export default function TopicPage() {
 
   const source = topic.source === 'nave' ? "Nave's Topical Bible (1896)" : "Torrey's New Topical Textbook (1897)"
   return (
-    <div className="p-6 max-w-4xl">
+    <div className="p-6">
       <PageHeader
         kicker={`Topic · ${source}`}
         title={topic.title}

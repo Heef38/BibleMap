@@ -76,7 +76,7 @@ export default function BiblePage() {
   const showTip = (e: PointerEvent, content: TipState['content']) => setTip({ x: e.clientX, y: e.clientY, content })
 
   return (
-    <div className="p-6 max-w-5xl">
+    <div className="p-6">
       <PageHeader
         kicker="Orientation"
         title="How the Bible is laid out"

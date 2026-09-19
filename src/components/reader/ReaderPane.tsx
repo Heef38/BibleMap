@@ -39,6 +39,7 @@ export default function ReaderPane() {
   const goTo = useSession((s) => s.goTo)
   const setFocus = useSession((s) => s.setFocus)
   const scrollRef = useRef<HTMLDivElement>(null)
+  const shownChapter = useRef<number | null>(null)
 
   const loc = canon ? canon.locate(readerOrdinal) : null
   const book = canon && loc ? canon.book(loc.b) : null
@@ -60,15 +61,18 @@ export default function ReaderPane() {
   useEffect(() => {
     const el = scrollRef.current
     if (!el || !bible) return
+    const newChapter = shownChapter.current !== start
+    shownChapter.current = start
     if (focus !== null && focus >= start && focus <= end) {
       const v = el.querySelector<HTMLElement>(`[data-o="${focus}"]`)
       if (v) {
         const top = v.offsetTop - el.clientHeight * 0.3
         el.scrollTo({ top: Math.max(0, top) })
       }
-    } else {
+    } else if (newChapter) {
       el.scrollTop = 0
     }
+    // Letting go of a verse (closing its connections) leaves the reader where it is.
   }, [focus, start, end, bible])
 
   if (error) return <div className="p-4 text-sm text-ink-2">Could not load this translation: {error.message}</div>
