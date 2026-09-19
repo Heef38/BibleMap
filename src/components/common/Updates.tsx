@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import type { Update } from '@/config/updates'
+import { UPCOMING, type Update } from '@/config/updates'
 import { formatDay } from '@/store/updates'
 
 /** A list of updates; the ones in `fresh` get a New marker. */
@@ -36,4 +36,21 @@ export function UpdateList({ items, fresh, onNavigate }: { items: Update[]; fres
 /** A small New tag for studies and features. */
 export function NewTag() {
   return <span className="chip !py-0 !px-1.5 !text-[10.5px] font-semibold uppercase tracking-wide bg-accent-soft border-accent text-ink">New</span>
+}
+
+/** The planned features, for the Coming soon tab. */
+export function UpcomingList() {
+  return (
+    <div>
+      <ul className="space-y-2.5">
+        {UPCOMING.map((u) => (
+          <li key={u.title}>
+            <div className="font-medium leading-snug">{u.title}</div>
+            <p className="text-ink-2 text-[13px] leading-snug mt-0.5">{u.body}</p>
+          </li>
+        ))}
+      </ul>
+      <p className="text-xs text-muted mt-3">Planned, not yet scheduled.</p>
+    </div>
+  )
 }

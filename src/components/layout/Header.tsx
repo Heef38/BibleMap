@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { UpdateList } from '@/components/common/Updates'
+import { UpcomingList, UpdateList } from '@/components/common/Updates'
 import { UPDATES } from '@/config/updates'
 import { isUnseen, useUnseen, useUpdates } from '@/store/updates'
 import { Link, NavLink, useLocation, useNavigate, useNavigationType } from 'react-router'
@@ -110,6 +110,7 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
 /** What's new: a dot while there are updates this browser has not opened, and the list of them. */
 function WhatsNew() {
   const [open, setOpen] = useState(false)
+  const [tab, setTab] = useState<'new' | 'soon'>('new')
   const [fresh, setFresh] = useState<Set<string>>(() => new Set())
   const unseen = useUnseen()
   const markSeen = useUpdates((s) => s.markSeen)
@@ -145,10 +146,17 @@ function WhatsNew() {
             role="dialog"
             aria-label="What's new"
           >
-            <div className="kicker mb-3">What's new</div>
-            <UpdateList items={UPDATES} fresh={fresh} onNavigate={() => setOpen(false)} />
+            <div className="seg mb-3 text-[13px]" role="group" aria-label="Show">
+              <button type="button" aria-pressed={tab === 'new'} onClick={() => setTab('new')}>
+                What's new
+              </button>
+              <button type="button" aria-pressed={tab === 'soon'} onClick={() => setTab('soon')}>
+                Coming soon
+              </button>
+            </div>
+            {tab === 'new' ? <UpdateList items={UPDATES} fresh={fresh} onNavigate={() => setOpen(false)} /> : <UpcomingList />}
             <div className="mt-3 pt-3 border-t border-line text-xs text-ink-2">
-              Have an idea?{' '}
+              {tab === 'soon' ? 'What would you use most?' : 'Have an idea?'}{' '}
               <Link to="/feedback" onClick={() => setOpen(false)}>
                 Share it on the feedback board
               </Link>

@@ -14,6 +14,12 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'coming-soon',
+    date: '2026-09-19',
+    title: 'See what is coming',
+    body: 'What’s new now has a Coming soon tab: the features planned next, from studies beside the text to reading together with your group.',
+  },
+  {
     id: 'holy-spirit-gifts',
     date: '2026-09-19',
     title: 'The gifts of the Spirit, and how they go with the fruit',
@@ -60,4 +66,17 @@ export const UPDATES: Update[] = [
     body: 'Post an idea, a problem or a correction without an account, and upvote the ones you want most.',
     link: { to: '/feedback', label: 'Open the feedback board' },
   },
+]
+
+/**
+ * Planned features, shown on the Coming soon tab of What's new. Keep each to a sentence, and
+ * promise no dates. The fuller picture lives in the "BibleMap: Future Features" doc.
+ */
+export const UPCOMING: { title: string; body: string }[] = [
+  { title: 'Studies beside the text', body: 'While you read, see every study that includes the verse in front of you.' },
+  { title: 'Conversations on every verse', body: 'Share encouragement, questions and honest struggles on any verse, and read what others have written.' },
+  { title: 'Groups', body: 'Read and talk with your small group, family or friends in a private circle.' },
+  { title: 'A safe, kind community', body: 'Every post is checked against a community standard before it appears, so the conversation stays honest and kind.' },
+  { title: 'Reading together', body: 'Follow a reading plan with your group and see who is reading along with you.' },
+  { title: 'Accounts only if you want one', body: 'Reading stays free without an account. You will only need one to post or join a group.' },
 ]
