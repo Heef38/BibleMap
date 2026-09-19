@@ -131,6 +131,10 @@ Every person page has a timeline: their lifespan when the text gives it, the lif
 
 `/` focuses the search box, `[` hides or shows the search pane, `]` hides or shows the reading pane. Both panes also have edge handles.
 
+## Back and Forward
+
+Every jump in the reader (a reference, a cross reference, the book or chapter picker) is a step in the browser history, recorded in the URL as `?p=`, so Back returns to where you were reading. Turning a chapter or clicking a verse updates the current step instead of adding one. The arrows in the header, the browser's own buttons, Alt+← and Alt+→, and a phone's back gesture all do the same; on a phone, Back also returns to the tab (Explore, Map, Read) you were on. Back stops at the first page of the visit rather than leaving the site.
+
 ## Name meanings
 
 Every person and place page shows what the name means, with the Hebrew and Greek forms, transliteration and Strong's number where the BibleData labels have them, and Hitchcock's 1869 gloss as a second opinion. The meaning also appears in search results and on map dots.

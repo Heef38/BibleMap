@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react'
-import { useSearchParams } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import Header from './Header'
 import SearchPane from '@/components/search/SearchPane'
 import ReaderPane from '@/components/reader/ReaderPane'
@@ -11,42 +11,68 @@ import { loadCanon } from '@/data/loaders'
 import { parseRefs } from '@/lib/refs'
 import { useMediaQuery } from '@/lib/hooks'
 
-/** Keep the reader's position in the URL (?p=John.3.16) so any view is a shareable link. */
-function useReaderUrlSync() {
+/**
+ * Keep the reader's position in the URL (?p=John.3.16) so any view is a shareable link, and make it
+ * part of the browser history: a jump in the reader is a Back step, and Back or Forward put the
+ * reader (and, on a phone, the pane) back where that step had them.
+ */
+function useReaderHistory() {
   const { data: canon } = useData('canon', loadCanon)
-  const [params, setParams] = useSearchParams()
+  const location = useLocation()
+  const navigate = useNavigate()
   const readerOrdinal = useSession((s) => s.readerOrdinal)
   const focus = useSession((s) => s.focus)
-  const goTo = useSession((s) => s.goTo)
-  const applied = useRef(false)
+  const pane = useSession((s) => s.mobilePane)
+  const seen = useRef<string | null>(null)
   const touched = useRef(false)
 
   useEffect(() => {
-    if (!canon || applied.current) return
-    applied.current = true
-    const p = params.get('p')
-    if (!p) return
-    const parsed = parseRefs(p, canon)
-    if (parsed.ranges.length) {
-      touched.current = true
-      goTo(parsed.ranges[0][0], { focus: /\.\d+\.\d+$/.test(p), pane: false })
-    }
-  }, [canon, params, goTo])
+    if (!canon) return
+    const s = useSession.getState()
+    const osisOf = (o: number, f: number | null) => (f !== null ? canon.osis(f) : canon.osis(o).replace(/\.\d+$/, ''))
+    const params = new URLSearchParams(location.search)
+    const urlP = params.get('p')
+    const saved = (location.state ?? {}) as { pane?: MobilePane }
+    const arrived = seen.current !== location.key
+    seen.current = location.key
 
-  useEffect(() => {
-    if (!canon || !applied.current) return
-    if (!touched.current) {
-      if (readerOrdinal === 0 && focus === null) return
-      touched.current = true
+    if (arrived) {
+      // A link, Back, Forward, a reload or a shared URL: the entry says where things were.
+      // Any store change below runs this again, and then the URL and the store agree.
+      let restored = false
+      if (saved.pane && saved.pane !== s.mobilePane) {
+        s.setMobilePane(saved.pane)
+        restored = true
+      }
+      if (urlP && urlP !== osisOf(s.readerOrdinal, s.focus)) {
+        const parsed = parseRefs(urlP, canon)
+        if (parsed.ranges.length) {
+          touched.current = true
+          s.restore(parsed.ranges[0][0], /\.\d+\.\d+$/.test(urlP))
+          restored = true
+        }
+      }
+      if (restored) return
     }
-    const o = focus ?? readerOrdinal
-    const osis = focus !== null ? canon.osis(o) : canon.osis(o).replace(/\.\d+$/, '')
-    if (params.get('p') === osis) return
-    const next = new URLSearchParams(params)
-    next.set('p', osis)
-    setParams(next, { replace: true })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [canon, readerOrdinal, focus])
+
+    const readerP = osisOf(s.readerOrdinal, s.focus)
+    if (readerP !== osisOf(0, null)) touched.current = true
+    // Until the reader has moved, leave ?p off so plain links stay plain.
+    const wantP = touched.current ? readerP : urlP
+    const nowPane = s.mobilePane
+    if (urlP === wantP && saved.pane === nowPane) return
+    if (wantP && wantP !== urlP) params.set('p', wantP)
+    const to = { pathname: location.pathname, search: wantP !== urlP ? `?${params}` : location.search, hash: location.hash }
+    if (!arrived && s.history === 'push' && urlP !== wantP) {
+      // Record where this entry was before the jump, then add the jump as a new entry.
+      const back = new URLSearchParams(location.search)
+      back.set('p', osisOf(s.before.ordinal, s.before.focus))
+      navigate({ pathname: location.pathname, search: `?${back}`, hash: location.hash }, { replace: true, state: { ...saved, pane: s.before.pane } })
+      navigate(to, { state: { pane: nowPane } })
+    } else {
+      navigate(to, { replace: true, state: { ...saved, pane: nowPane } })
+    }
+  }, [canon, location, readerOrdinal, focus, pane, navigate])
 }
 
 const TABS: { id: MobilePane; label: string; icon: typeof IconMap }[] = [
@@ -100,7 +126,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
   const mobile = useMediaQuery('(max-width: 900px)')
   const pane = useSession((s) => s.mobilePane)
   const setPane = useSession((s) => s.setMobilePane)
-  useReaderUrlSync()
+  useReaderHistory()
   useShortcuts()
 
   if (mobile) {

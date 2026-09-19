@@ -180,6 +180,11 @@ svg [role="button"]:focus:not(:focus-visible) {
 .btn:hover {
   background: var(--surface-2);
 }
+.btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background: transparent;
+}
 .btn[aria-pressed="true"], .btn.active {
   background: var(--accent-soft);
   border-color: var(--accent);

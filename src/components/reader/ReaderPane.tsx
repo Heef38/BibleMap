@@ -117,10 +117,10 @@ export default function ReaderPane() {
           ))}
         </select>
         <div className="ml-auto flex gap-1">
-          <button type="button" className="btn btn-ghost" disabled={prev === null} onClick={() => prev !== null && goTo(prev, { focus: false, pane: false })} title="Previous chapter">
+          <button type="button" className="btn btn-ghost" disabled={prev === null} onClick={() => prev !== null && goTo(prev, { focus: false, pane: false, history: 'replace' })} title="Previous chapter">
             <IconChevronLeft />
           </button>
-          <button type="button" className="btn btn-ghost" disabled={next === null} onClick={() => next !== null && goTo(next, { focus: false, pane: false })} title="Next chapter">
+          <button type="button" className="btn btn-ghost" disabled={next === null} onClick={() => next !== null && goTo(next, { focus: false, pane: false, history: 'replace' })} title="Next chapter">
             <IconChevronRight />
           </button>
         </div>
@@ -166,14 +166,14 @@ export default function ReaderPane() {
             })}
             <div className="flex justify-between mt-8 font-sans text-sm">
               {prev !== null ? (
-                <button type="button" className="btn btn-ghost" onClick={() => goTo(prev, { focus: false, pane: false })}>
+                <button type="button" className="btn btn-ghost" onClick={() => goTo(prev, { focus: false, pane: false, history: 'replace' })}>
                   <IconChevronLeft /> {canon.rangeLabel(canon.chapterStart(canon.locate(prev).b, canon.locate(prev).c), prev, 'short')}
                 </button>
               ) : (
                 <span />
               )}
               {next !== null && (
-                <button type="button" className="btn btn-ghost" onClick={() => goTo(next, { focus: false, pane: false })}>
+                <button type="button" className="btn btn-ghost" onClick={() => goTo(next, { focus: false, pane: false, history: 'replace' })}>
                   {canon.rangeLabel(next, canon.chapterEnd(canon.locate(next).b, canon.locate(next).c), 'short')} <IconChevronRight />
                 </button>
               )}

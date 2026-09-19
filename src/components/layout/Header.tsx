@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router'
-import { IconHeart, IconInfo, IconMessage, IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun, Logo } from '@/components/common/icons'
+import { Link, NavLink, useLocation, useNavigate, useNavigationType } from 'react-router'
+import { IconArrowLeft, IconArrowRight, IconHeart, IconInfo, IconMessage, IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun, Logo } from '@/components/common/icons'
 import { SITE } from '@/config/site'
 import { useSession } from '@/store/session'
 import { useSettings, type FontSize, type Theme } from '@/store/settings'
@@ -104,6 +104,43 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
   )
 }
 
+/**
+ * Back and Forward through this visit, reader jumps included. Back stops at the first page of the
+ * visit instead of leaving the site; Forward is on when a Back step can be undone.
+ */
+function HistoryButtons() {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const navType = useNavigationType()
+  const [pos, setPos] = useState({ idx: 0, max: 0 })
+  useEffect(() => {
+    const idx = (window.history.state as { idx?: number } | null)?.idx ?? 0
+    let max = idx
+    try {
+      max = Math.max(idx, Number(sessionStorage.getItem('biblemap.historyMax')) || 0)
+    } catch {
+      /* no storage: Forward only knows this page load */
+    }
+    if (navType === 'PUSH') max = idx
+    try {
+      sessionStorage.setItem('biblemap.historyMax', String(max))
+    } catch {
+      /* fine */
+    }
+    setPos({ idx, max })
+  }, [location.key, navType])
+  return (
+    <div className="flex items-center" role="group" aria-label="History">
+      <button type="button" className="btn btn-ghost !px-2" disabled={pos.idx <= 0} onClick={() => navigate(-1)} title="Back (Alt+←)" aria-label="Back">
+        <IconArrowLeft />
+      </button>
+      <button type="button" className="btn btn-ghost !px-2" disabled={pos.idx >= pos.max} onClick={() => navigate(1)} title="Forward (Alt+→)" aria-label="Forward">
+        <IconArrowRight />
+      </button>
+    </div>
+  )
+}
+
 export default function Header() {
   const showLeft = useSettings((s) => s.showLeft)
   const showRight = useSettings((s) => s.showRight)
@@ -111,11 +148,12 @@ export default function Header() {
   const focusSearch = useSession((s) => s.focusSearch)
   const [open, setOpen] = useState(false)
   return (
-    <header className="h-12 shrink-0 flex items-center gap-3 px-3 border-b border-line bg-surface relative z-20">
-      <Link to="/" className="flex items-center gap-2 font-semibold text-ink hover:no-underline">
+    <header className="h-12 shrink-0 flex items-center gap-3 max-[480px]:gap-1.5 px-3 max-[480px]:px-2 border-b border-line bg-surface relative z-20">
+      <Link to="/" className="flex items-center gap-2 font-semibold text-ink hover:no-underline" title="BibleMap home">
         <Logo />
-        BibleMap
+        <span className="max-[480px]:hidden">BibleMap</span>
       </Link>
+      <HistoryButtons />
       <span className="text-muted text-xs max-[900px]:hidden">see how the story connects</span>
       <nav className="ml-auto flex items-center gap-1" aria-label="Site">
         <NavLink to="/about" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="About BibleMap">
