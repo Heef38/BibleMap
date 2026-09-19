@@ -4,16 +4,22 @@ import { groupColor } from '@/components/viz/Sunburst'
 import type { Bible, Study, StudyRef } from '@/data/types'
 import type { Canon } from '@/lib/canon'
 
-/** Every tagged passage once, with the groups of the study's first view it belongs to. */
+/** The first view with tagged passages: its groups become the filter above the charts. */
+function scopeView(study: Study) {
+  return study.views.find((v) => v.groups.some((g) => g.refs.some((r) => r.facets)))
+}
+
+/** Every tagged passage once, with the groups of the scope view it belongs to. */
 function tagged(study: Study) {
+  const scope = scopeView(study)
   const byKey = new Map<string, { ref: StudyRef; groups: Set<string> }>()
-  for (const [vi, v] of study.views.entries())
+  for (const v of study.views)
     for (const g of v.groups)
       for (const r of g.refs) {
         if (!r.facets) continue
         const k = JSON.stringify(r.ranges)
         const e = byKey.get(k) ?? byKey.set(k, { ref: r, groups: new Set() }).get(k)!
-        if (vi === 0) e.groups.add(g.id)
+        if (v === scope) e.groups.add(g.id)
       }
   return [...byKey.values()]
 }
@@ -25,8 +31,8 @@ function tagged(study: Study) {
 export default function FacetTally({ study, canon, bible }: { study: Study; canon: Canon; bible?: Bible }) {
   const facets = study.facets ?? []
   const events = useMemo(() => tagged(study), [study])
-  // Narrow the counts to one group of the first view (for miracles: healings, spirits, raisings, nature).
-  const scopes = study.views[0].groups.filter((g) => events.some((e) => e.groups.has(g.id)))
+  // Narrow the counts to one group of the scope view (for miracles: healings, spirits, raisings, nature).
+  const scopes = (scopeView(study)?.groups ?? []).filter((g) => events.some((e) => e.groups.has(g.id)))
   const [scope, setScope] = useState<string>('all')
   const [picked, setPicked] = useState<{ facet: string; value: string } | null>(null)
   const list = useRef<HTMLElement>(null)

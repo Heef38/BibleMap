@@ -1,0 +1,572 @@
+# The Holy Spirit: who he is, how he moves, what he does in believers, and the fruit he grows.
+# "How the Spirit moves" gathers the accounts where the Spirit comes on people, from creation to
+# Revelation, and tags each on three facets (how he came, what followed, what was happening) so
+# the Patterns chart can count them. Tags follow the words of the text; notes flag judgment calls.
+id: holy-spirit
+title: "The Holy Spirit"
+subtitle: "Who he is, how he moves, what he does in us, and the fruit he grows"
+kind: connections
+chart: map
+summary: >-
+  "When the Spirit of truth comes, He will guide you into all truth" (John 16:13). The Spirit
+  hovers over the waters at creation, rushes on judges and kings, fills craftsmen and prophets,
+  rests on Jesus, and is poured out at Pentecost on sons and daughters alike. He is not a force
+  but a person who speaks, teaches, grieves and prays, and he is God himself. This study follows
+  who he is, the many ways he moves (the Patterns chart counts how he came and what followed),
+  what he does in those he lives in, and the fruit he grows in them.
+tags: [holy spirit, fruit of the spirit, gifts, pentecost, prayer, discipleship]
+added: "2026-09-19"
+categories:
+  jesus:
+    title: "In Jesus"
+    note: "Where the Spirit is on Jesus, or Jesus shows the same thing."
+  ot:
+    title: "In the Old Testament"
+    note: "Promises, pictures and earlier moments of the same work."
+  church:
+    title: "In the early church"
+    note: "Where the book of Acts shows it happening."
+  us:
+    title: "Taught to us"
+    note: "Where the letters teach it to believers."
+facets:
+  came:
+    title: "How he came"
+    note: "The words the text uses for the Spirit's coming. One account can use more than one."
+    values:
+      upon: { title: "Came on them or into them", note: "Came upon, rushed upon, rested on, descended on, entered." }
+      filled: { title: "Filled them", note: "Filled with the Spirit, or full of the Spirit." }
+      poured: { title: "Poured out or fell on them" }
+      hands: { title: "Through hands laid on them" }
+      breath: { title: "As breath or wind" }
+      overshadow: { title: "Hovered or overshadowed" }
+      spoke: { title: "Spoke, led or carried them", note: "The Spirit said, led, sent, prevented, compelled, carried away." }
+  followed:
+    title: "What followed"
+    note: "What the text says happened next. One account can have more than one."
+    values:
+      speech: { title: "Prophecy, praise or tongues", note: "They prophesied, praised God, or spoke in other tongues." }
+      bold: { title: "Bold witness or rebuke", note: "Preaching, testimony before rulers, or a word of rebuke." }
+      strength: { title: "Strength and leadership", note: "Judges, kings and prophets empowered to lead and deliver." }
+      skill: { title: "Wisdom and skill" }
+      life: { title: "Life and new creation", note: "Creation, conception, dry bones living again." }
+      guidance: { title: "Guidance and sending" }
+      sight: { title: "Visions and revelation", note: "Something seen or revealed: heaven opened, the glory of God." }
+      joy: { title: "Joy" }
+      unrecorded: { title: "Not described", note: "The text says they received the Spirit, but not what followed." }
+  setting:
+    title: "What was happening"
+    note: "The situation the Spirit came into, where the text makes it plain."
+    values:
+      prayer: { title: "Prayer, fasting or worship" }
+      danger: { title: "Danger or opposition", note: "Enemies, threats, trials, persecution, exile." }
+      calling: { title: "A calling or commissioning", note: "Someone being set apart, anointed or sent." }
+      word: { title: "The word read, preached or spoken" }
+      everyday: { title: "Everyday life", note: "A greeting, a family day, a walk, a road." }
+views:
+  - title: "Who he is"
+    note: "A person, not a force; God himself; the names Scripture gives him; and the pictures it uses."
+    groups:
+      - title: "A person, not a force"
+        note: "He speaks, teaches, decides, loves, prays and can be grieved."
+        refs:
+          - ref: "Acts 13:2"
+            label: "He speaks"
+            note: "\"Set apart for Me Barnabas and Saul\""
+            links:
+              - { to: "Rev 2:7", topic: "Hear what the Spirit says to the churches", category: us }
+              - { to: "Heb 3:7-8", topic: "As the Holy Spirit says", category: us }
+          - ref: "John 14:26"
+            label: "He teaches and reminds"
+            links:
+              - { to: "1 Cor 2:13", topic: "Words taught by the Spirit", category: us }
+          - ref: "Rom 8:26-27"
+            label: "He prays for us, and has a mind"
+            note: "The Spirit intercedes for us with groans too deep for words"
+            links:
+              - { to: "Heb 7:25", topic: "He always lives to intercede", category: jesus }
+          - ref: "1 Cor 12:11"
+            label: "He decides"
+            note: "He apportions gifts to each one as He determines"
+          - ref: "Acts 15:28"
+            label: "It seemed good to the Holy Spirit and to us"
+          - ref: "Rom 15:30"
+            label: "The love of the Spirit"
+          - ref: "Eph 4:30"
+            label: "He can be grieved"
+            links:
+              - { to: "Isa 63:10", topic: "They rebelled and grieved His Holy Spirit", category: ot }
+      - title: "God himself"
+        refs:
+          - ref: "Acts 5:1-4"
+            label: "Lying to the Spirit is lying to God"
+          - ref: "1 Cor 2:10-11"
+            label: "He searches the deep things of God"
+          - ref: "Ps 139:7-10"
+            label: "Where can I go to escape Your Spirit?"
+          - ref: "Heb 9:14"
+            label: "The eternal Spirit"
+            links:
+              - { to: "Heb 9:11-12", topic: "Christ entered the Most Holy Place once for all", category: jesus }
+          - ref: "Job 33:4"
+            label: "The Spirit of God has made me"
+            links:
+              - { to: "Gen 1:1-2", topic: "Hovering over the waters", category: ot }
+              - { to: "Ps 104:29-30", topic: "When You send Your Spirit, they are created", category: ot }
+          - ref: "Matt 28:19-20"
+            label: "One name: Father, Son and Holy Spirit"
+            links:
+              - { to: "2 Cor 13:14", topic: "The grace, the love, the fellowship", category: us }
+              - { to: "1 Pet 1:1-2", topic: "Father, Spirit and Jesus Christ", category: us }
+          - ref: "2 Cor 3:17-18"
+            label: "The Lord is the Spirit"
+            note: "Where the Spirit of the Lord is, there is freedom"
+      - title: "His names"
+        refs:
+          - ref: "John 14:16-17"
+            label: "Another Advocate, the Spirit of truth"
+            links:
+              - { to: "John 15:26", topic: "The Advocate testifies about me", category: jesus }
+              - { to: "John 16:7", topic: "It is for your benefit that I am going away", category: jesus }
+          - ref: "Isa 11:1-3"
+            label: "The Spirit of wisdom and understanding, counsel and strength"
+            note: "And the Spirit of knowledge and fear of the LORD, resting on the coming King"
+            links:
+              - { to: "Luke 2:40", topic: "Filled with wisdom, the grace of God upon him", category: jesus }
+          - ref: "Rom 8:14-16"
+            label: "The Spirit of adoption"
+            note: "By whom we cry, \"Abba! Father!\""
+            links:
+              - { to: "Gal 4:6-7", topic: "The Spirit of His Son in our hearts", category: us }
+          - ref: "Rom 8:1-2"
+            label: "The Spirit of life"
+          - ref: "Heb 10:29"
+            label: "The Spirit of grace"
+            links:
+              - { to: "Zech 12:10", topic: "A spirit of grace and prayer poured out", category: ot }
+          - ref: "1 Pet 4:14"
+            label: "The Spirit of glory"
+          - ref: "Rom 8:9"
+            label: "The Spirit of God, the Spirit of Christ"
+            links:
+              - { to: "Phil 1:19", topic: "The Spirit of Jesus Christ", category: us }
+          - ref: "Eph 1:13-14"
+            label: "The promised Holy Spirit"
+            note: "A seal, and the pledge of our inheritance"
+      - title: "Pictures of the Spirit"
+        note: "In Hebrew and in Greek one word means spirit, wind and breath."
+        refs:
+          - ref: "John 3:5-8"
+            label: "Wind"
+            note: "The wind blows where it wishes. So it is with everyone born of the Spirit"
+            links:
+              - { to: "Ezek 37:9-10", topic: "Come from the four winds, O breath", category: ot }
+              - { to: "Acts 2:1-2", topic: "A sound like a mighty rushing wind", category: church }
+          - ref: "Matt 3:11-12"
+            label: "Fire"
+            note: "He will baptize you with the Holy Spirit and with fire"
+            links:
+              - { to: "Acts 2:3", topic: "Tongues like flames of fire", category: church }
+              - { to: "1 Thess 5:19", topic: "Do not extinguish the Spirit", category: us }
+          - ref: "John 7:37-39"
+            label: "Living water"
+            links:
+              - { to: "Isa 44:3", topic: "I will pour out My Spirit on your descendants", category: ot }
+              - { to: "Ezek 47:1-9", topic: "The river from the temple", category: ot }
+              - { to: "1 Cor 12:13", topic: "All given one Spirit to drink", category: us }
+          - ref: "Matt 3:16-17"
+            label: "A dove"
+            links:
+              - { to: "Gen 1:1-2", topic: "Hovering over the waters", category: ot }
+          - ref: "1 John 2:20-27"
+            label: "Anointing oil"
+            note: "You have an anointing from the Holy One"
+            links:
+              - { to: "1 Sam 16:13", topic: "Oil, and the Spirit rushed upon David", category: ot }
+              - { to: "Acts 10:38", topic: "Anointed with the Holy Spirit and power", category: jesus }
+          - ref: "2 Cor 1:21-22"
+            label: "A seal and a pledge"
+            links:
+              - { to: "2 Cor 5:5", topic: "The Spirit as a pledge of what is to come", category: us }
+
+  - title: "How the Spirit moves"
+    note: "The accounts where the Spirit comes on people, in the order of the story. The Patterns chart counts how he came, what followed, and what was happening."
+    groups:
+      - title: "At creation and in life"
+        refs:
+          - ref: "Gen 1:1-2"
+            label: "Hovering over the waters"
+            facets: { came: overshadow, followed: life }
+            links:
+              - { to: "2 Cor 5:17", topic: "A new creation", category: us }
+          - ref: "Ps 104:29-30"
+            label: "When You send Your Spirit, they are created"
+          - ref: "Ezek 37:1-14"
+            label: "Breath in the dry bones"
+            note: "\"I will put My Spirit in you and you will live\""
+            facets: { came: [breath, spoke], followed: [life, sight], setting: word }
+            links:
+              - { to: "John 20:22", topic: "He breathed on them", category: jesus }
+              - { to: "Rom 8:11", topic: "He will give life to your mortal bodies", category: us }
+      - title: "On leaders and craftsmen"
+        refs:
+          - ref: "Exod 31:1-5"
+            label: "Bezalel, filled for craftsmanship"
+            note: "Filled with the Spirit of God, with skill, ability and knowledge"
+            facets: { came: filled, followed: skill, setting: calling }
+            links:
+              - { to: "1 Cor 12:4-7", topic: "Gifts given for the common good", category: us }
+          - ref: "Num 11:16-17, 24-29"
+            label: "The Spirit rests on the seventy elders"
+            note: "They prophesied. Moses: \"I wish that all the LORD's people were prophets\""
+            facets: { came: upon, followed: [speech, strength], setting: calling }
+            links:
+              - { to: "Acts 2:16-18", topic: "Poured out on all people", category: church }
+          - ref: "Judg 3:9-11"
+            label: "Othniel"
+            facets: { came: upon, followed: strength, setting: danger }
+            links:
+              - { to: "Zech 4:6", topic: "Not by might nor by power, but by My Spirit", category: ot }
+          - ref: "Judg 6:33-35"
+            label: "Gideon"
+            facets: { came: upon, followed: strength, setting: danger }
+          - ref: "Judg 14:5-6"
+            label: "Samson and the lion"
+            facets: { came: upon, followed: strength, setting: danger }
+      - title: "On kings and prophets"
+        refs:
+          - ref: "1 Sam 10:6-11"
+            label: "Saul prophesies"
+            note: "\"You will be transformed into a different person\""
+            facets: { came: upon, followed: speech, setting: calling }
+          - ref: "1 Sam 16:13-14"
+            label: "David anointed"
+            note: "The Spirit rushed upon David from that day forward, and departed from Saul"
+            facets: { came: upon, followed: strength, setting: calling }
+            links:
+              - { to: "Ps 51:10-12", topic: "Take not Your Holy Spirit from me", category: ot }
+              - { to: "Luke 4:18", topic: "He has anointed me", category: jesus }
+          - ref: "2 Kgs 2:9-15"
+            label: "A double portion for Elisha"
+            note: "The text speaks of \"the spirit of Elijah\" resting on Elisha; Luke 1:17 speaks of the spirit and power of Elijah"
+            facets: { came: upon, followed: strength, setting: calling }
+          - ref: "2 Chr 20:14-17"
+            label: "Jahaziel in the assembly"
+            note: "\"The battle does not belong to you, but to God\""
+            facets: { came: upon, followed: speech, setting: [prayer, danger] }
+          - ref: "2 Chr 24:20-22"
+            label: "Zechariah son of Jehoiada"
+            note: "He rebuked the people, and they stoned him"
+            facets: { came: upon, followed: bold }
+            links:
+              - { to: "Luke 11:50-51", topic: "Killed between the altar and the sanctuary", category: jesus }
+          - ref: "Ezek 2:1-3"
+            label: "The Spirit entered me and set me on my feet"
+            facets: { came: upon, followed: guidance, setting: calling }
+          - ref: "Mic 3:8"
+            label: "Filled with power by the Spirit of the LORD"
+            note: "To declare to Jacob his transgression"
+            facets: { came: filled, followed: bold }
+            links:
+              - { to: "Acts 1:8", topic: "You will receive power", category: church }
+      - title: "At the coming of Christ"
+        refs:
+          - ref: "Luke 1:13-17"
+            label: "John, filled from his mother's womb"
+            facets: { came: filled, followed: bold, setting: calling }
+          - ref: "Luke 1:35-38"
+            label: "Mary"
+            note: "The Holy Spirit will come upon you, and the power of the Most High will overshadow you"
+            facets: { came: [upon, overshadow], followed: life, setting: calling }
+            links:
+              - { to: "Matt 1:18-20", topic: "Conceived by the Holy Spirit", category: jesus }
+          - ref: "Luke 1:39-45"
+            label: "Elizabeth"
+            facets: { came: filled, followed: speech, setting: everyday }
+          - ref: "Luke 1:67-79"
+            label: "Zechariah prophesies"
+            facets: { came: filled, followed: speech, setting: everyday }
+          - ref: "Luke 2:25-35"
+            label: "Simeon"
+            note: "The Spirit was upon him, revealed Christ to him, and led him into the temple courts"
+            facets: { came: [upon, spoke], followed: [sight, guidance, speech], setting: everyday }
+      - title: "On Jesus"
+        refs:
+          - ref: "Luke 3:21-22"
+            label: "While he was praying, the Spirit descended"
+            facets: { came: upon, followed: sight, setting: prayer }
+            links:
+              - { to: "Isa 42:1", topic: "I will put My Spirit on Him", category: ot }
+          - ref: "Luke 4:1-2"
+            label: "Full of the Spirit, led into the wilderness"
+            facets: { came: [filled, spoke], followed: guidance }
+          - ref: "Luke 4:14-21"
+            label: "In the power of the Spirit"
+            note: "\"The Spirit of the Lord is on Me\""
+            facets: { came: upon, followed: [strength, bold], setting: word }
+            links:
+              - { to: "Isa 61:1-2", topic: "The Spirit of the Lord GOD is on Me", category: ot }
+          - ref: "Luke 10:21"
+            label: "He rejoiced in the Holy Spirit"
+            facets: { followed: [joy, speech] }
+      - title: "Pentecost and Jerusalem"
+        refs:
+          - ref: "John 20:19-23"
+            label: "Receive the Holy Spirit"
+            note: "Behind locked doors, he breathed on them and sent them"
+            facets: { came: breath, followed: guidance, setting: [danger, calling] }
+            links:
+              - { to: "Gen 2:7", topic: "The breath of life", category: ot }
+          - ref: "Acts 2:1-13"
+            label: "Pentecost"
+            note: "Wind, fire, and other tongues. They had been devoting themselves to prayer (Acts 1:14)"
+            facets: { came: [filled, poured, breath], followed: speech, setting: prayer }
+            links:
+              - { to: "Joel 2:28-29", topic: "I will pour out My Spirit on all people", category: ot }
+              - { to: "Acts 2:32-33", topic: "Exalted, he has poured out what you now see and hear", category: jesus }
+          - ref: "Acts 4:5-12"
+            label: "Peter before the council"
+            facets: { came: filled, followed: bold, setting: danger }
+            links:
+              - { to: "Matt 10:19-20", topic: "The Spirit of your Father speaking through you", category: jesus }
+          - ref: "Acts 4:23-31"
+            label: "The place was shaken"
+            note: "After they had prayed, they were all filled and spoke the word of God boldly"
+            facets: { came: filled, followed: bold, setting: [prayer, danger] }
+          - ref: "Acts 7:54-60"
+            label: "Stephen sees the glory of God"
+            facets: { came: filled, followed: [sight, bold], setting: danger }
+      - title: "To Samaria, the Gentiles and beyond"
+        refs:
+          - ref: "Acts 8:14-17"
+            label: "Samaria"
+            note: "Peter and John prayed for them and laid their hands on them"
+            facets: { came: hands, followed: unrecorded, setting: prayer }
+          - ref: "Acts 9:17-20"
+            label: "Saul"
+            note: "Ananias laid his hands on him; soon he was proclaiming Jesus"
+            facets: { came: [hands, filled], followed: bold, setting: calling }
+          - ref: "Acts 10:44-48"
+            label: "Cornelius's household"
+            note: "While Peter was still speaking, the Spirit fell on all who heard"
+            facets: { came: poured, followed: speech, setting: word }
+            links:
+              - { to: "Acts 11:15-17", topic: "Just as He had fallen upon us at the beginning", category: church }
+          - ref: "Acts 13:6-12"
+            label: "Paul and Elymas"
+            facets: { came: filled, followed: bold, setting: danger }
+          - ref: "Acts 13:50-52"
+            label: "Filled with joy and the Holy Spirit"
+            note: "Driven out of the region, and full of joy"
+            facets: { came: filled, followed: joy, setting: danger }
+          - ref: "Acts 19:1-7"
+            label: "The disciples at Ephesus"
+            facets: { came: [hands, upon], followed: speech, setting: word }
+      - title: "Leading and sending"
+        refs:
+          - ref: "Acts 8:26-40"
+            label: "Philip on the desert road"
+            note: "\"Go over to that chariot.\" Afterward the Spirit carried Philip away"
+            facets: { came: spoke, followed: guidance, setting: everyday }
+          - ref: "Acts 13:1-4"
+            label: "Barnabas and Saul set apart"
+            note: "While they were worshiping the Lord and fasting"
+            facets: { came: spoke, followed: guidance, setting: [prayer, calling] }
+            links:
+              - { to: "Rom 8:14", topic: "All who are led by the Spirit of God", category: us }
+          - ref: "Acts 16:6-10"
+            label: "Not Asia, not Bithynia"
+            note: "The Spirit prevented them, and the way opened to Macedonia"
+            facets: { came: spoke, followed: guidance, setting: everyday }
+            links:
+              - { to: "Isa 30:21", topic: "This is the way. Walk in it", category: ot }
+          - ref: "Acts 20:22-24"
+            label: "Compelled by the Spirit to Jerusalem"
+            facets: { came: spoke, followed: guidance, setting: calling }
+          - ref: "Rev 1:9-11"
+            label: "In the Spirit on the Lord's day"
+            note: "John, on Patmos because of the word of God"
+            facets: { followed: sight, setting: danger }
+
+  - title: "What he does in us"
+    groups:
+      - title: "Born of the Spirit"
+        refs:
+          - ref: "Titus 3:4-7"
+            label: "The washing of new birth and renewal by the Holy Spirit"
+            links:
+              - { to: "John 3:3-6", topic: "Born of water and the Spirit", category: jesus }
+          - ref: "Ezek 36:25-27"
+            label: "A new heart, and My Spirit within you"
+          - ref: "1 Cor 6:9-11"
+            label: "Washed, sanctified, justified by the Spirit of our God"
+      - title: "He lives in us"
+        refs:
+          - ref: "Rom 8:9-11"
+            label: "The Spirit of God lives in you"
+          - ref: "1 Cor 6:19-20"
+            label: "Your body is a temple of the Holy Spirit"
+          - ref: "Gal 4:6-7"
+            label: "The Spirit of His Son in our hearts"
+          - ref: "1 John 4:13"
+            label: "He has given us of His Spirit"
+      - title: "He teaches and guides"
+        refs:
+          - ref: "John 16:12-15"
+            label: "He will guide you into all truth"
+          - ref: "1 Cor 2:12-16"
+            label: "That we may understand what God has freely given us"
+          - ref: "Rom 8:14"
+            label: "Led by the Spirit of God"
+      - title: "He convicts and makes holy"
+        refs:
+          - ref: "John 16:7-11"
+            label: "He will convict the world"
+          - ref: "2 Thess 2:13"
+            label: "Saved by the sanctification of the Spirit"
+          - ref: "Rom 8:12-13"
+            label: "By the Spirit, put to death the deeds of the body"
+      - title: "He helps us pray"
+        refs:
+          - ref: "Eph 6:18"
+            label: "Pray in the Spirit at all times"
+          - ref: "Jude 20-21"
+            label: "Praying in the Holy Spirit"
+          - ref: "Zech 12:10"
+            label: "A spirit of grace and prayer"
+      - title: "Power to be witnesses"
+        refs:
+          - ref: "Acts 1:8"
+            label: "You will receive power"
+            links:
+              - { to: "Luke 24:49", topic: "Clothed with power from on high", category: jesus }
+          - ref: "Matt 10:19-20"
+            label: "The Spirit of your Father speaking through you"
+          - ref: "1 Cor 2:1-5"
+            label: "A demonstration of the Spirit's power"
+      - title: "Gifts for the body"
+        refs:
+          - ref: "1 Cor 12:4-11"
+            label: "Different gifts, the same Spirit"
+          - ref: "Rom 12:4-8"
+            label: "Gifts that differ by grace"
+          - ref: "1 Pet 4:10-11"
+            label: "Good stewards of the manifold grace of God"
+          - ref: "Eph 4:7-13"
+            label: "To build up the body of Christ"
+          - ref: "1 Cor 14:1-5"
+            label: "Pursue love and desire spiritual gifts"
+          - ref: "1 Cor 13:1-3"
+            label: "Without love, a clanging cymbal"
+      - title: "Sealed for the day"
+        refs:
+          - ref: "Eph 4:30"
+            label: "Sealed for the day of redemption"
+          - ref: "2 Cor 5:5"
+            label: "A pledge of what is to come"
+          - ref: "Rom 8:22-25"
+            label: "The firstfruits of the Spirit"
+
+  - title: "The fruit of the Spirit"
+    note: "Galatians 5 lists one fruit with nine parts. The groups of three follow a common way of teaching them, not the text itself."
+    groups:
+      - title: "The walk that bears fruit"
+        refs:
+          - ref: "Gal 5:16-26"
+            label: "Walk by the Spirit"
+            note: "The works of the flesh, the fruit of the Spirit, and walking in step with the Spirit"
+          - ref: "John 15:1-8"
+            label: "Remain in me and you will bear much fruit"
+          - ref: "Matt 7:16-20"
+            label: "By their fruit you will recognize them"
+            links:
+              - { to: "Ps 1:1-3", topic: "A tree that yields its fruit in season", category: ot }
+      - title: "Love, joy, peace"
+        refs:
+          - ref: "1 Cor 13:4-7"
+            label: "Love"
+            note: "Love is patient, love is kind"
+            links:
+              - { to: "Rom 5:5", topic: "God's love poured into our hearts through the Spirit", category: us }
+              - { to: "John 13:34-35", topic: "As I have loved you", category: jesus }
+              - { to: "Col 3:14", topic: "Over all these virtues put on love", category: us }
+          - ref: "Rom 14:17"
+            label: "Joy"
+            note: "Righteousness, peace, and joy in the Holy Spirit"
+            links:
+              - { to: "Luke 10:21", topic: "He rejoiced in the Holy Spirit", category: jesus }
+              - { to: "1 Thess 1:6", topic: "The joy of the Holy Spirit in great suffering", category: church }
+              - { to: "Neh 8:10", topic: "The joy of the LORD is your strength", category: ot }
+          - ref: "Rom 8:6"
+            label: "Peace"
+            note: "The mind of the Spirit is life and peace"
+            links:
+              - { to: "John 14:26-27", topic: "My peace I give to you", category: jesus }
+              - { to: "Phil 4:6-7", topic: "The peace of God, which surpasses all understanding", category: us }
+              - { to: "Isa 26:3", topic: "Perfect peace", category: ot }
+      - title: "Patience, kindness, goodness"
+        refs:
+          - ref: "Col 1:9-12"
+            label: "Patience"
+            note: "Strengthened with all power so that you may have full endurance and patience"
+            links:
+              - { to: "Exod 34:6", topic: "Slow to anger", category: ot }
+              - { to: "1 Tim 1:16", topic: "His perfect patience", category: jesus }
+              - { to: "Jas 5:7-8", topic: "Patient as the farmer waits", category: us }
+          - ref: "Eph 4:30-32"
+            label: "Kindness"
+            note: "Do not grieve the Spirit; be kind and tenderhearted to one another"
+            links:
+              - { to: "Titus 3:4-5", topic: "The kindness of God our Savior appeared", category: jesus }
+              - { to: "Luke 6:35-36", topic: "He is kind to the ungrateful", category: jesus }
+              - { to: "Col 3:12", topic: "Clothe yourselves with kindness", category: us }
+          - ref: "Eph 5:8-10"
+            label: "Goodness"
+            note: "The fruit of the light consists in all goodness, righteousness, and truth"
+            links:
+              - { to: "Acts 10:38", topic: "He went around doing good", category: jesus }
+              - { to: "Acts 11:22-24", topic: "Barnabas, a good man, full of the Holy Spirit", category: church }
+              - { to: "Ps 23:6", topic: "Goodness and mercy will follow me", category: ot }
+      - title: "Faithfulness, gentleness, self-control"
+        refs:
+          - ref: "Luke 16:10"
+            label: "Faithfulness"
+            note: "Whoever is faithful with very little will also be faithful with much"
+            links:
+              - { to: "Lam 3:22-23", topic: "Great is Your faithfulness", category: ot }
+              - { to: "Heb 3:5-6", topic: "Christ is faithful as the Son", category: jesus }
+              - { to: "Rev 2:10", topic: "Be faithful even unto death", category: us }
+          - ref: "Matt 11:28-30"
+            label: "Gentleness"
+            note: "\"I am gentle and humble in heart\""
+            links:
+              - { to: "Gal 6:1", topic: "Restore him with a spirit of gentleness", category: us }
+              - { to: "Phil 4:5", topic: "Let your gentleness be apparent to all", category: us }
+              - { to: "Num 12:3", topic: "Moses was a very humble man", category: ot }
+          - ref: "Titus 2:11-14"
+            label: "Self-control"
+            note: "Grace teaches us to live sensible, upright, and godly lives"
+            links:
+              - { to: "2 Tim 1:7", topic: "A spirit of power, love, and self-control", category: us }
+              - { to: "Prov 25:28", topic: "Like a city whose walls are broken down", category: ot }
+              - { to: "1 Cor 9:24-27", topic: "Training with strict discipline", category: us }
+              - { to: "Luke 4:1-4", topic: "Full of the Spirit, he refused the tempter", category: jesus }
+      - title: "Keeping in step with him"
+        refs:
+          - ref: "Eph 5:18-20"
+            label: "Be filled with the Spirit"
+            note: "Not drunk on wine: singing, making music, giving thanks"
+          - ref: "1 Thess 5:16-22"
+            label: "Do not extinguish the Spirit"
+            note: "Rejoice, pray, give thanks; do not despise prophecies, but test all things"
+          - ref: "Luke 11:9-13"
+            label: "How much more will your Father give the Holy Spirit"
+          - ref: "Acts 7:51"
+            label: "You always resist the Holy Spirit"
+          - ref: "Matt 12:31-32"
+            label: "Blasphemy against the Spirit"
+
+  - title: "What followed"
+    note: "The accounts in \"How the Spirit moves\", grouped by what the text says happened when the Spirit came."
+    auto: facet
+    facet: followed

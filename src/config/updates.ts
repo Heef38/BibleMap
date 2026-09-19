@@ -14,6 +14,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'study-holy-spirit',
+    date: '2026-09-19',
+    title: 'New study: The Holy Spirit',
+    body: 'Who he is, how he moves, what he does in us, and the fruit he grows. The Patterns chart counts 39 accounts of the Spirit coming on people: how he came, what followed, and what was happening.',
+    link: { to: '/study/holy-spirit', label: 'Open the study' },
+  },
+  {
     id: 'mobile-bible-split',
     date: '2026-09-19',
     title: 'Read and study side by side on a phone',
