@@ -78,5 +78,7 @@ export const UPCOMING: { title: string; body: string }[] = [
   { title: 'Groups', body: 'Read and talk with your small group, family or friends in a private circle.' },
   { title: 'A safe, kind community', body: 'Every post is checked against a community standard before it appears, so the conversation stays honest and kind.' },
   { title: 'Reading together', body: 'Follow a reading plan with your group and see who is reading along with you.' },
+  { title: 'Teachings from trusted authors', body: 'Teachings on verses and chapters from invited authors, shown beside the text as you read.' },
+  { title: 'Voices from church history', body: 'A resources page of writings by Christian men and women of the past, linked to the passages they wrote about.' },
   { title: 'Accounts only if you want one', body: 'Reading stays free without an account. You will only need one to post or join a group.' },
 ]
