@@ -1,0 +1,423 @@
+# The miracles and healings of Jesus, one entry per event (the fullest account first, the other
+# Gospels as links), each tagged on five facets so the Patterns chart can count how he did it:
+# who made the first move, what he spoke to, whether he touched, whose faith is named, and what
+# moved him. Tags follow the words of the text; where the Gospels differ, the tag takes what any
+# account says and the note names the difference. Crowd summaries carry no tags, so the counts
+# are of individual events.
+id: miracles-of-jesus
+title: "The Miracles and Healings of Jesus"
+subtitle: "Thirty-five miracles and how they happened: who came to whom, what Jesus spoke to, when he touched, and whose faith is named"
+kind: connections
+chart: patterns
+summary: >-
+  "God anointed Jesus of Nazareth with the Holy Spirit and with power, and he went around doing
+  good and healing all who were oppressed by the devil, because God was with him" (Acts 10:38).
+  This study looks closely at the ordinary details of each miracle: whether the sick came, were
+  carried, or were sought out; whether Jesus spoke to the sickness or to the person; when he
+  touched and when he only spoke; and whose faith the text names. The Patterns chart counts
+  them. The last view follows the same works into the lives of his followers.
+tags: [miracles, healing, deliverance, gospels, discipleship]
+categories:
+  parallel:
+    title: "The same event, told again"
+    note: "Another Gospel's account of the same miracle."
+  echo:
+    title: "Foreshadowed"
+    note: "An Old Testament promise or pattern the miracle answers to."
+  followers:
+    title: "Done again by his followers"
+    note: "Where the apostles and the church did the same kind of work in his name."
+facets:
+  initiative:
+    title: "Who started it"
+    note: "Whether Jesus went to them, or someone else made the first move."
+    values:
+      jesus: { title: "Jesus went to them", note: "No one asked. Jesus saw the need and acted first." }
+      came: { title: "They came or cried out", note: "The person in need came, called out, or reached for him." }
+      brought: { title: "Others brought them", note: "Friends, family or neighbors carried or led them to Jesus." }
+      asked: { title: "Someone asked for them", note: "A parent, a master, sisters or friends asked on their behalf." }
+  addressed:
+    title: "What he spoke to"
+    note: "Jesus's words at the moment of the miracle. One event can have more than one."
+    values:
+      condition: { title: "The sickness, spirit or storm", note: "He rebuked a fever, ordered a spirit out, or spoke to wind, sea or tree." }
+      declared: { title: "The person, declaring it done", note: "Be clean. Be opened. Your faith has healed you. Your son will live." }
+      command: { title: "The person, telling them to act", note: "Get up. Stretch out your hand. Go and wash. Fill the jars." }
+      father: { title: "The Father, in prayer or thanks", note: "He gave thanks or prayed aloud before the miracle." }
+      none: { title: "No healing words recorded", note: "The text records no words to the sick person, the sickness or the Father." }
+  means:
+    title: "How it happened"
+    note: "The physical side of the miracle. One event can have more than one."
+    values:
+      touch: { title: "He touched them", note: "Took a hand, laid on hands, touched eyes, ears, tongue or a coffin." }
+      touched: { title: "They touched him", note: "Power went out from him when they touched him." }
+      word: { title: "His word alone", note: "Spoken, with no touch in any account." }
+      distance: { title: "From a distance", note: "The one healed was somewhere else." }
+      physical: { title: "Saliva, mud or water", note: "Spit, clay, or washing in a pool." }
+      obedience: { title: "An instruction to obey", note: "It happened as they did what he said: stretch out, go, fill, let down the nets." }
+      unrecorded: { title: "Not described", note: "The text says he healed them but not how." }
+  faith:
+    title: "Whose faith is named"
+    note: "Only where the text itself speaks of faith or belief."
+    values:
+      own: { title: "Their own faith", note: "Your faith has healed you." }
+      others: { title: "The faith of those who came for them", note: "Parents, masters and friends who believed on someone else's behalf." }
+      disciples: { title: "The disciples' faith, or lack of it", note: "Where Jesus used the miracle to teach his disciples about faith." }
+      none: { title: "Faith not mentioned" }
+  heart:
+    title: "What moved him"
+    note: "Where the text names what Jesus felt."
+    values:
+      compassion: { title: "Compassion", note: "Moved with compassion; his heart went out to them." }
+      deep: { title: "Sorrow, anger or a deep sigh", note: "Anger and sorrow at hard hearts, a deep sigh, tears." }
+      unstated: { title: "Not stated" }
+views:
+  - title: "By kind"
+    note: "Every miracle once, under what happened. The fullest account comes first; the other Gospels are linked."
+    groups:
+      - title: "Healings"
+        note: "Seventeen healings of one person or a few, told in detail."
+        refs:
+          - ref: "John 4:46-54"
+            label: "The official's son"
+            note: "Healed at Capernaum at the very hour Jesus spoke in Cana"
+            facets: { initiative: asked, addressed: declared, means: [word, distance], faith: others, heart: unstated }
+            links:
+              - { to: "Ps 107:19-20", topic: "He sent out His word and healed them", category: echo }
+          - ref: "Mark 1:29-31"
+            label: "Peter's mother-in-law"
+            note: "Mark: he took her hand and raised her up. Luke: he stood over her and rebuked the fever"
+            facets: { initiative: asked, addressed: condition, means: touch, faith: none, heart: unstated }
+            links:
+              - { to: "Matt 8:14-15", topic: "The same event", category: parallel }
+              - { to: "Luke 4:38-39", topic: "The same event", category: parallel }
+          - ref: "Mark 1:40-45"
+            label: "A man with leprosy"
+            note: "He touched the man while he was still unclean: \"I am willing. Be clean!\""
+            facets: { initiative: came, addressed: declared, means: touch, faith: none, heart: compassion }
+            links:
+              - { to: "Matt 8:1-4", topic: "The same event", category: parallel }
+              - { to: "Luke 5:12-16", topic: "The same event", category: parallel }
+              - { to: "2 Kgs 5:9-14", topic: "Naaman, cleansed in the Jordan", category: echo }
+          - ref: "Mark 2:1-12"
+            label: "The paralyzed man let down through the roof"
+            note: "Jesus saw their faith, forgave the man's sins, then told him to get up and walk"
+            facets: { initiative: brought, addressed: [declared, command], means: word, faith: others, heart: unstated }
+            links:
+              - { to: "Matt 9:1-8", topic: "The same event", category: parallel }
+              - { to: "Luke 5:17-26", topic: "The same event", category: parallel }
+              - { to: "Acts 9:32-35", topic: "Get up: Aeneas", category: followers }
+          - ref: "John 5:1-15"
+            label: "The man at the pool of Bethesda"
+            note: "Jesus picked one man out of a crowd of invalids: \"Do you want to get well?\" The man did not know who he was"
+            facets: { initiative: jesus, addressed: command, means: word, faith: none, heart: unstated }
+            links:
+              - { to: "Acts 3:1-10", topic: "Get up and walk: the man at the temple gate", category: followers }
+          - ref: "Mark 3:1-6"
+            label: "The man with the withered hand"
+            note: "On the Sabbath, in front of his critics, with anger and sorrow at their hardness of heart: \"Stretch out your hand\""
+            facets: { initiative: jesus, addressed: command, means: [word, obedience], faith: none, heart: deep }
+            links:
+              - { to: "Matt 12:9-14", topic: "The same event", category: parallel }
+              - { to: "Luke 6:6-11", topic: "The same event", category: parallel }
+          - ref: "Matt 8:5-13"
+            label: "The centurion's servant"
+            note: "\"Just say the word.\" Jesus marveled at the man's faith and healed from a distance"
+            facets: { initiative: asked, addressed: declared, means: [word, distance], faith: others, heart: unstated }
+            links:
+              - { to: "Luke 7:1-10", topic: "The same event", category: parallel }
+              - { to: "Ps 107:19-20", topic: "He sent out His word and healed them", category: echo }
+          - ref: "Mark 5:25-34"
+            label: "The woman who touched his cloak"
+            note: "She touched him and was healed; he felt the power go out, then called her \"Daughter\""
+            facets: { initiative: came, addressed: declared, means: touched, faith: own, heart: unstated }
+            links:
+              - { to: "Matt 9:20-22", topic: "The same event", category: parallel }
+              - { to: "Luke 8:43-48", topic: "The same event", category: parallel }
+          - ref: "Matt 9:27-31"
+            label: "Two blind men who followed him"
+            note: "\"Do you believe that I am able to do this?\" Then he touched their eyes"
+            facets: { initiative: came, addressed: declared, means: touch, faith: own, heart: unstated }
+            links:
+              - { to: "Isa 35:4-6", topic: "The eyes of the blind opened", category: echo }
+          - ref: "Mark 7:31-37"
+            label: "A deaf man who could hardly speak"
+            note: "Taken aside, fingers in his ears, spit, a touch on the tongue, a look to heaven and a deep sigh: \"Ephphatha!\""
+            facets: { initiative: brought, addressed: declared, means: [touch, physical], faith: none, heart: deep }
+            links:
+              - { to: "Isa 35:4-6", topic: "The ears of the deaf unstopped", category: echo }
+          - ref: "Mark 8:22-26"
+            label: "The blind man at Bethsaida"
+            note: "Led out of the village, spit on his eyes, hands laid on him twice: healed in two stages"
+            facets: { initiative: brought, addressed: none, means: [touch, physical], faith: none, heart: unstated }
+          - ref: "John 9:1-12"
+            label: "The man born blind"
+            note: "Jesus made mud with saliva, put it on his eyes, and sent him to wash in Siloam. He came to faith afterward"
+            facets: { initiative: jesus, addressed: command, means: [touch, physical, obedience], faith: none, heart: unstated }
+          - ref: "Luke 13:10-17"
+            label: "The woman bent over for eighteen years"
+            note: "Disabled by a spirit, yet Jesus spoke to her, not to it (\"Woman, you are set free\"), and laid his hands on her"
+            facets: { initiative: jesus, addressed: declared, means: touch, faith: none, heart: unstated }
+          - ref: "Luke 14:1-6"
+            label: "A man with dropsy"
+            note: "On the Sabbath at a Pharisee's house: Jesus took hold of him, healed him and sent him on his way"
+            facets: { initiative: jesus, addressed: none, means: touch, faith: none, heart: unstated }
+          - ref: "Luke 17:11-19"
+            label: "Ten men with leprosy"
+            note: "Healed on the way, as they went to show themselves to the priests. One came back"
+            facets: { initiative: came, addressed: command, means: [distance, obedience], faith: own, heart: unstated }
+            links:
+              - { to: "Lev 14:1-4", topic: "The law for a cleansed leper", category: echo }
+          - ref: "Mark 10:46-52"
+            label: "Blind Bartimaeus"
+            note: "He kept shouting until Jesus stopped: \"What do you want Me to do for you?\" Matthew adds that Jesus touched their eyes"
+            facets: { initiative: came, addressed: declared, means: touch, faith: own, heart: compassion }
+            links:
+              - { to: "Matt 20:29-34", topic: "The same event", category: parallel }
+              - { to: "Luke 18:35-43", topic: "The same event", category: parallel }
+          - ref: "Luke 22:49-51"
+            label: "The servant's ear in Gethsemane"
+            note: "Only Luke tells the healing: at his arrest Jesus touched the ear of a man who came to seize him"
+            facets: { initiative: jesus, addressed: none, means: touch, faith: none, heart: unstated }
+            links:
+              - { to: "John 18:10-11", topic: "The same event", category: parallel }
+              - { to: "Matt 26:51-52", topic: "The same event", category: parallel }
+              - { to: "Mark 14:47", topic: "The same event", category: parallel }
+
+      - title: "Freed from spirits"
+        note: "Six deliverances. With spirits Jesus spoke to the spirit; with the sick he usually spoke to the person."
+        refs:
+          - ref: "Mark 1:21-28"
+            label: "A man in the synagogue at Capernaum"
+            note: "The spirit cried out while Jesus taught; he rebuked it: \"Be silent! Come out of him!\""
+            facets: { initiative: came, addressed: condition, means: word, faith: none, heart: unstated }
+            links:
+              - { to: "Luke 4:31-37", topic: "The same event", category: parallel }
+          - ref: "Mark 5:1-20"
+            label: "The man among the tombs"
+            note: "He ran to Jesus. Jesus ordered the spirit out, asked its name, and sent the man home to tell his family"
+            facets: { initiative: came, addressed: condition, means: word, faith: none, heart: unstated }
+            links:
+              - { to: "Matt 8:28-34", topic: "The same event", category: parallel }
+              - { to: "Luke 8:26-39", topic: "The same event", category: parallel }
+          - ref: "Matt 9:32-34"
+            label: "A man who could not speak"
+            note: "Brought to Jesus; when the demon was driven out he spoke. No words of Jesus are recorded"
+            facets: { initiative: brought, addressed: none, means: unrecorded, faith: none, heart: unstated }
+          - ref: "Matt 12:22-23"
+            label: "A man blind and mute"
+            note: "Brought to Jesus and healed, so that he could both speak and see"
+            facets: { initiative: brought, addressed: none, means: unrecorded, faith: none, heart: unstated }
+            links:
+              - { to: "Luke 11:14", topic: "The same event", category: parallel }
+          - ref: "Mark 7:24-30"
+            label: "The Syrophoenician woman's daughter"
+            note: "A Gentile mother would not take no for an answer; her daughter was freed at home"
+            facets: { initiative: asked, addressed: declared, means: [word, distance], faith: others, heart: unstated }
+            links:
+              - { to: "Matt 15:21-28", topic: "The same event", category: parallel }
+          - ref: "Mark 9:14-29"
+            label: "The boy the disciples could not free"
+            note: "\"I do believe; help my unbelief!\" Jesus rebuked the spirit, then took the boy by the hand and raised him"
+            facets: { initiative: brought, addressed: condition, means: touch, faith: [others, disciples], heart: unstated }
+            links:
+              - { to: "Matt 17:14-20", topic: "The same event", category: parallel }
+              - { to: "Luke 9:37-43", topic: "The same event", category: parallel }
+              - { to: "Acts 16:16-18", topic: "A spirit ordered out in his name", category: followers }
+
+      - title: "Raised from the dead"
+        refs:
+          - ref: "Luke 7:11-17"
+            label: "The widow's son at Nain"
+            note: "No one asked. Jesus saw a widow burying her only son, had compassion, touched the coffin and spoke to the dead"
+            facets: { initiative: jesus, addressed: command, means: touch, faith: none, heart: compassion }
+            links:
+              - { to: "1 Kgs 17:17-24", topic: "Elijah and the widow's son", category: echo }
+          - ref: "Mark 5:21-24, 35-43"
+            label: "Jairus's daughter"
+            note: "\"Do not be afraid; just believe.\" He put the mourners out and took her hand: \"Talitha koum!\""
+            facets: { initiative: asked, addressed: command, means: touch, faith: others, heart: unstated }
+            links:
+              - { to: "Matt 9:18-19, 23-26", topic: "The same event", category: parallel }
+              - { to: "Luke 8:40-42, 49-56", topic: "The same event", category: parallel }
+              - { to: "2 Kgs 4:32-37", topic: "Elisha and the Shunammite's son", category: echo }
+              - { to: "Acts 9:36-42", topic: "Everyone sent out, then \"Get up\": Tabitha", category: followers }
+          - ref: "John 11:1-44"
+            label: "Lazarus"
+            note: "Sent for by the sisters, Jesus waited, wept, thanked the Father aloud, and called Lazarus by name"
+            facets: { initiative: asked, addressed: [father, command], means: word, faith: others, heart: deep }
+
+      - title: "Nature and provision"
+        note: "Wine, bread, fish, wind and waves. Here the instruction to obey is the usual pattern."
+        refs:
+          - ref: "John 2:1-11"
+            label: "Water into wine at Cana"
+            note: "His mother told him the wine was gone; the servants filled the jars and drew from them"
+            facets: { initiative: asked, addressed: command, means: obedience, faith: disciples, heart: unstated }
+          - ref: "Luke 5:1-11"
+            label: "The first great catch of fish"
+            note: "\"Because You say so, I will let down the nets\""
+            facets: { initiative: jesus, addressed: command, means: obedience, faith: none, heart: unstated }
+          - ref: "Mark 4:35-41"
+            label: "Calming the storm"
+            note: "He rebuked the wind and said to the sea, \"Silence! Be still!\" Then: \"Do you still have no faith?\""
+            facets: { initiative: asked, addressed: condition, means: word, faith: disciples, heart: unstated }
+            links:
+              - { to: "Matt 8:23-27", topic: "The same event", category: parallel }
+              - { to: "Luke 8:22-25", topic: "The same event", category: parallel }
+              - { to: "Ps 107:28-30", topic: "He stilled the storm to a whisper", category: echo }
+          - ref: "Mark 6:30-44"
+            label: "Feeding the five thousand"
+            note: "Moved with compassion, he had them sit in groups, looked up to heaven, blessed and broke the loaves. In John, Jesus raises the question of bread himself"
+            facets: { initiative: jesus, addressed: [father, command], means: obedience, faith: none, heart: compassion }
+            links:
+              - { to: "Matt 14:13-21", topic: "The same event", category: parallel }
+              - { to: "Luke 9:10-17", topic: "The same event", category: parallel }
+              - { to: "John 6:1-14", topic: "The same event", category: parallel }
+              - { to: "2 Kgs 4:42-44", topic: "Elisha feeds a hundred men", category: echo }
+          - ref: "Matt 14:22-33"
+            label: "Walking on the water"
+            note: "He came to them on the sea and called Peter to come. \"You of little faith, why did you doubt?\""
+            facets: { initiative: jesus, addressed: command, faith: disciples, heart: unstated }
+            links:
+              - { to: "Mark 6:45-52", topic: "The same event", category: parallel }
+              - { to: "John 6:16-21", topic: "The same event", category: parallel }
+              - { to: "Job 9:8", topic: "He treads on the waves of the sea", category: echo }
+          - ref: "Mark 8:1-10"
+            label: "Feeding the four thousand"
+            note: "\"I have compassion for this crowd.\" He gave thanks, broke the bread and fed them"
+            facets: { initiative: jesus, addressed: [father, command], means: obedience, faith: none, heart: compassion }
+            links:
+              - { to: "Matt 15:32-39", topic: "The same event", category: parallel }
+          - ref: "Matt 17:24-27"
+            label: "The coin in the fish's mouth"
+            note: "\"Go to the sea, cast a hook, and take the first fish you catch\""
+            facets: { initiative: jesus, addressed: command, means: obedience, faith: none, heart: unstated }
+          - ref: "Mark 11:12-14, 20-25"
+            label: "The fig tree"
+            note: "Jesus spoke to the tree, then taught: whoever tells this mountain to be thrown into the sea and does not doubt"
+            facets: { initiative: jesus, addressed: condition, means: word, faith: disciples, heart: unstated }
+            links:
+              - { to: "Matt 21:18-22", topic: "The same event", category: parallel }
+          - ref: "John 21:1-14"
+            label: "The catch after the resurrection"
+            note: "\"Cast the net on the right side of the boat\""
+            facets: { initiative: jesus, addressed: command, means: obedience, faith: none, heart: unstated }
+
+      - title: "Crowds healed"
+        note: "Summaries of many healed at once. They are not tagged, so the counts cover single events only."
+        refs:
+          - ref: "Mark 1:32-34"
+            label: "Sundown at Capernaum"
+            note: "The whole town at the door. Luke: he laid his hands on each one. Matthew: he drove out the spirits with a word"
+            links:
+              - { to: "Luke 4:40-41", topic: "The same evening", category: parallel }
+              - { to: "Matt 8:16-17", topic: "The same evening", category: parallel }
+              - { to: "Isa 53:4", topic: "He took up our infirmities", category: echo }
+          - ref: "Matt 4:23-25"
+            label: "Healing every disease in Galilee"
+          - ref: "Luke 6:17-19"
+            label: "Power went out from him"
+            note: "The entire crowd was trying to touch him, because power was coming from him and healing them all"
+            links:
+              - { to: "Mark 3:7-12", topic: "The same event", category: parallel }
+          - ref: "Mark 6:1-6"
+            label: "Little done at Nazareth"
+            note: "He could not perform any miracles there, except to lay his hands on a few of the sick and heal them; he marveled at their unbelief"
+            links:
+              - { to: "Matt 13:53-58", topic: "The same event", category: parallel }
+          - ref: "Mark 6:53-56"
+            label: "Touching the fringe of his cloak"
+            links:
+              - { to: "Matt 14:34-36", topic: "The same event", category: parallel }
+          - ref: "Matt 15:29-31"
+            label: "The lame, blind, crippled and mute laid at his feet"
+          - ref: "Matt 21:14"
+            label: "The blind and the lame in the temple"
+
+  - title: "Who started it"
+    auto: facet
+    facet: initiative
+  - title: "What he spoke to"
+    auto: facet
+    facet: addressed
+  - title: "How it happened"
+    auto: facet
+    facet: means
+  - title: "Whose faith"
+    auto: facet
+    facet: faith
+
+  - title: "Walk as he walked"
+    note: "Where Jesus's power came from, what he taught about it, and how his followers did the same works."
+    groups:
+      - title: "Where the power came from"
+        refs:
+          - ref: "Luke 4:14-21"
+            label: "The Spirit of the Lord is on me"
+            note: "He came back from the wilderness in the power of the Spirit and read his own commission"
+            links:
+              - { to: "Isa 61:1-2", topic: "The anointed one sent to heal", category: echo }
+          - ref: "Acts 10:38"
+            label: "Anointed with the Holy Spirit and power"
+            note: "He went about doing good and healing, because God was with him"
+          - ref: "Luke 5:17"
+            label: "The power of the Lord was present to heal"
+          - ref: "John 5:19-20"
+            label: "Only what he sees the Father doing"
+          - ref: "John 14:10-12"
+            label: "The Father who lives in me does his works"
+            note: "And whoever believes in me will do the works I do, and greater"
+          - ref: "Luke 11:20"
+            label: "By the finger of God"
+            links:
+              - { to: "Matt 12:28", topic: "By the Spirit of God", category: parallel }
+      - title: "What he taught about it"
+        refs:
+          - ref: "Mark 11:22-24"
+            label: "Say to this mountain"
+            note: "Have faith in God; believe that you have received it"
+          - ref: "Matt 17:19-20"
+            label: "Faith like a mustard seed"
+          - ref: "Mark 9:28-29"
+            label: "This kind comes out only by prayer"
+          - ref: "Luke 10:17-20"
+            label: "Rejoice that your names are written in heaven"
+            note: "Even the spirits submitted to them, but that was not the thing to rejoice over"
+          - ref: "Matt 9:35-38"
+            label: "Moved with compassion for the crowds"
+            note: "He saw them harassed and helpless, and told his disciples to pray for workers"
+      - title: "He sent them to do the same"
+        refs:
+          - ref: "Matt 10:1, 5-8"
+            label: "The Twelve sent out"
+            note: "Heal the sick, raise the dead, cleanse lepers, drive out demons. Freely you have received; freely give"
+            links:
+              - { to: "Luke 9:1-6", topic: "The same sending", category: parallel }
+          - ref: "Mark 6:7, 12-13"
+            label: "They anointed many sick with oil"
+          - ref: "Luke 10:1-9"
+            label: "The seventy-two sent ahead"
+            note: "Heal the sick there and tell them, \"The kingdom of God is near you\""
+          - ref: "Mark 16:15-20"
+            label: "They will lay hands on the sick"
+            note: "This ending of Mark is missing from the earliest manuscripts; Acts shows the same works in practice"
+      - title: "His followers did the same"
+        refs:
+          - ref: "Acts 3:1-10"
+            label: "Peter and John at the temple gate"
+            note: "\"In the name of Jesus Christ of Nazareth, get up and walk!\" Then Peter took him by the right hand"
+          - ref: "Acts 5:12-16"
+            label: "The sick carried into the streets"
+          - ref: "Acts 9:32-35"
+            label: "Aeneas: \"Jesus Christ heals you! Get up\""
+          - ref: "Acts 9:36-42"
+            label: "Tabitha: Peter sent them all out, prayed, and said \"Tabitha, get up!\""
+          - ref: "Acts 14:8-10"
+            label: "Paul saw that he had faith to be healed"
+          - ref: "Acts 16:16-18"
+            label: "Paul ordered a spirit out in Jesus's name"
+          - ref: "Acts 28:7-9"
+            label: "Paul prayed and laid hands on Publius's father"
+          - ref: "Jas 5:13-16"
+            label: "Call the elders; the prayer of faith"

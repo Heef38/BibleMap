@@ -4,6 +4,7 @@ import ArcDiagram, { categoryColor, type ArcPair } from '@/components/viz/ArcDia
 import StudyMap from '@/components/viz/StudyMap'
 import StudyTimeline from '@/components/viz/StudyTimeline'
 import RefOverview from '@/components/study/RefOverview'
+import FacetTally from '@/components/study/FacetTally'
 import CanonStrip from '@/components/viz/CanonStrip'
 import Sunburst, { groupColor, refFill } from '@/components/viz/Sunburst'
 import { ErrorBlock, Loading, PageHeader, RefLink, Section } from '@/components/common/ui'
@@ -31,7 +32,8 @@ export default function StudyPage() {
   const isConnections = study?.kind === 'connections'
   const viewId = params.get('view')
   const view = useMemo(() => study?.views.find((v) => v.id === viewId) ?? study?.views[0], [study, viewId])
-  const chart = params.get('chart') ?? study?.chart ?? (isConnections ? 'arcs' : 'sunburst')
+  const hasFacets = !!study?.facets?.length
+  const chart = params.get('chart') ?? (study?.chart === 'patterns' && !hasFacets ? undefined : study?.chart) ?? (isConnections ? 'arcs' : 'sunburst')
 
   useEffect(() => {
     setSelected(null)
@@ -63,7 +65,12 @@ export default function StudyPage() {
       if (r.links?.length) for (const l of r.links) if (l.category ?? r.category) catCounts.set(l.category ?? r.category!, (catCounts.get(l.category ?? r.category!) ?? 0) + 1)
       else if (r.category) catCounts.set(r.category, (catCounts.get(r.category) ?? 0) + 1)
     }
-  const charts: [string, string][] = [...(isConnections ? [['arcs', 'Arcs'] as [string, string]] : []), ['map', 'Map'], ['sunburst', 'Sunburst'], ['timeline', 'Timeline']]
+  const charts: [string, string][] = [...(hasFacets ? [['patterns', 'Patterns'] as [string, string]] : []), ...(isConnections ? [['arcs', 'Arcs'] as [string, string]] : []), ['map', 'Map'], ['sunburst', 'Sunburst'], ['timeline', 'Timeline']]
+  const facetLine = (r: StudyRef) =>
+    (study.facets ?? [])
+      .filter((f) => r.facets?.[f.id])
+      .map((f) => r.facets![f.id].map((vid) => f.values.find((v) => v.id === vid)?.title ?? vid).join(', '))
+      .join(' · ')
   const openRef = (ref: StudyRef, group: StudyGroup) => {
     setFocusRef({ ref, group })
     goTo(ref.ranges[0][0], { pane: false })
@@ -85,7 +92,7 @@ export default function StudyPage() {
         subtitle={study.subtitle}
         right={
           study.views.length > 1 ? (
-            <div className="seg" role="group" aria-label="Ways to view this study">
+            <div className="seg flex-wrap" role="group" aria-label="Ways to view this study">
               {study.views.map((v) => (
                 <button key={v.id} type="button" aria-pressed={v.id === view.id} onClick={() => setParam('view', v.id)}>
                   {v.title}
@@ -121,7 +128,9 @@ export default function StudyPage() {
         )}
       </div>
 
-      {chart === 'map' ? (
+      {chart === 'patterns' && hasFacets ? (
+        <FacetTally study={study} canon={canon} bible={bible} />
+      ) : chart === 'map' ? (
         <StudyMap study={study} view={view} canon={canon} bible={bible} />
       ) : chart === 'timeline' ? (
         <div className="@container">
@@ -246,6 +255,7 @@ export default function StudyPage() {
                       )}
                       {r.note && <span>{r.note} </span>}
                       {bible && <span className="font-serif text-ink">{snippet(r.ranges[0][0], r.note ? 90 : 140)}</span>}
+                      {r.facets && <span className="block text-xs text-muted mt-0.5">{facetLine(r)}</span>}
                     </span>
                     <span className="text-xs text-muted shrink-0 tabular-nums">×{r.weight}</span>
                   </li>

@@ -1,0 +1,389 @@
+# The presence of God from Eden to the new creation: what it is like when he draws near, how
+# his people sought it, how Jesus lived in it, and how it is given to us. Each passage links to
+# where Jesus embodies it, where the New Testament gives it to believers, and where the rest of
+# Scripture echoes it.
+id: presence-of-god
+title: "The Presence of God"
+subtitle: "What his presence is like, how his people sought it, how Jesus walked in it, and how it comes to live in us"
+kind: connections
+chart: map
+summary: >-
+  "You will fill me with joy in Your presence" (Psalm 16:11). Scripture begins with God walking in a
+  garden with the people he made, and ends with his dwelling among them and his face in view. In
+  between it is a story of distance and nearness: a bush that burns, a cloud and a fire, a tent
+  and a temple filled with glory, a whisper on a mountain. Then the Word becomes flesh and lives
+  among us, walking every day in the Father's presence, and the Spirit is given so that his
+  people become his temple. The second view follows how Jesus himself walked with the Father.
+tags: [presence, glory, prayer, holy spirit, worship, discipleship]
+categories:
+  jesus:
+    title: "In Jesus"
+    note: "Where Jesus embodies the presence of God, or walks in it."
+  us:
+    title: "For us"
+    note: "Where the New Testament gives the same presence to believers and the church."
+  echo:
+    title: "Echoed in Scripture"
+    note: "Where the Law, the Psalms and the Prophets say the same thing again."
+views:
+  - title: "By theme"
+    note: "Eight themes, from the promise of his presence to its fulfillment."
+    groups:
+      - title: "I will be with you"
+        note: "The promise God keeps making to the people he sends."
+        refs:
+          - ref: "Gen 28:10-17"
+            label: "Jacob at Bethel"
+            note: "\"Surely the LORD is in this place, and I was unaware of it\""
+            links:
+              - { to: "John 1:51", topic: "Heaven opened over the Son of Man", category: jesus }
+          - ref: "Exod 33:12-17"
+            label: "My Presence will go with you"
+            note: "Moses would not go on without it: \"If Your Presence does not go with us, do not lead us up from here\""
+            links:
+              - { to: "Matt 11:28-30", topic: "I will give you rest", category: jesus }
+              - { to: "Heb 13:5-6", topic: "I will never leave you", category: us }
+          - ref: "Josh 1:5-9"
+            label: "As I was with Moses, so will I be with you"
+            links:
+              - { to: "Deut 31:6-8", topic: "He will never leave you nor forsake you", category: echo }
+              - { to: "Heb 13:5-6", topic: "I will never leave you", category: us }
+          - ref: "Isa 43:1-3"
+            label: "When you pass through the waters, I will be with you"
+            links:
+              - { to: "Isa 41:10", topic: "Do not fear, for I am with you", category: echo }
+              - { to: "Ps 23:4", topic: "You are with me", category: echo }
+              - { to: "Matt 28:18-20", topic: "I am with you always", category: jesus }
+          - ref: "Ps 139:7-12"
+            label: "Where can I flee from Your presence?"
+            links:
+              - { to: "Jer 23:23-24", topic: "Do I not fill the heavens and the earth?", category: echo }
+              - { to: "Acts 17:26-28", topic: "Not far from each one of us", category: us }
+
+      - title: "What his presence is like"
+        note: "Fire, cloud, glory, trembling, and a quiet voice."
+        refs:
+          - ref: "Exod 3:1-6"
+            label: "The bush that burned"
+            note: "\"Take off your sandals, for the place where you are standing is holy ground\""
+            links:
+              - { to: "Acts 7:30-34", topic: "Stephen retells the bush", category: echo }
+          - ref: "Exod 13:21-22"
+            label: "The pillar of cloud and fire"
+            note: "He went ahead of them by day and by night"
+            links:
+              - { to: "Num 9:15-23", topic: "When the cloud lifted, they set out", category: echo }
+              - { to: "John 8:12", topic: "The light of the world: whoever follows me", category: jesus }
+          - ref: "Exod 19:16-20"
+            label: "Thunder, fire and trembling at Sinai"
+            links:
+              - { to: "Heb 12:18-24", topic: "You have not come to a mountain that can be touched", category: us }
+          - ref: "Exod 40:34-38"
+            label: "Glory filled the tabernacle"
+            note: "Moses could not enter the Tent of Meeting"
+            links:
+              - { to: "1 Kgs 8:10-11", topic: "Glory filled the temple", category: echo }
+              - { to: "2 Chr 5:13-14", topic: "As they praised, the cloud filled the house", category: echo }
+              - { to: "John 1:14", topic: "The Word made His dwelling among us; we have seen His glory", category: jesus }
+          - ref: "1 Kgs 19:9-13"
+            label: "Not in the wind, the earthquake or the fire"
+            note: "After the fire came a still, small voice"
+            links:
+              - { to: "John 10:27", topic: "My sheep listen to My voice", category: jesus }
+              - { to: "Isa 30:21", topic: "This is the way; walk in it", category: echo }
+          - ref: "Isa 6:1-8"
+            label: "Holy, holy, holy"
+            note: "Undone, cleansed, then sent"
+            links:
+              - { to: "John 12:41", topic: "Isaiah saw his glory", category: jesus }
+              - { to: "Rev 4:8", topic: "Holy, holy, holy around the throne", category: echo }
+          - ref: "Ps 16:8-11"
+            label: "You will fill me with joy in Your presence"
+            links:
+              - { to: "Acts 2:25-28", topic: "Peter reads it of the risen Christ", category: jesus }
+              - { to: "Jude 24-25", topic: "Presented in His glorious presence with great joy", category: us }
+
+      - title: "Face to face"
+        note: "Friends of God, and faces that shone."
+        refs:
+          - ref: "Exod 33:7-11"
+            label: "As a man speaks to his friend"
+            note: "Joshua would not leave the tent"
+            links:
+              - { to: "Num 12:6-8", topic: "I speak with him face to face", category: echo }
+              - { to: "John 15:14-15", topic: "I have called you friends", category: jesus }
+              - { to: "Jas 2:23", topic: "Abraham was called a friend of God", category: echo }
+          - ref: "Exod 33:18-23"
+            label: "Show me Your glory"
+            links:
+              - { to: "John 1:18", topic: "The one and only Son has made Him known", category: jesus }
+              - { to: "2 Cor 4:6", topic: "Glory in the face of Christ", category: jesus }
+          - ref: "Exod 34:29-35"
+            label: "Moses' face was radiant"
+            links:
+              - { to: "Matt 17:1-2", topic: "His face shone like the sun", category: jesus }
+              - { to: "2 Cor 3:12-18", topic: "With unveiled faces, being transformed", category: us }
+          - ref: "Ps 27:4-8"
+            label: "One thing I have asked: to gaze on the beauty of the LORD"
+            note: "My heart said, \"Seek His face.\" Your face, O LORD, I will seek"
+            links:
+              - { to: "Luke 10:38-42", topic: "Mary sat at his feet: only one thing is necessary", category: jesus }
+              - { to: "Ps 84:1-4", topic: "How lovely is Your dwelling place", category: echo }
+              - { to: "Phil 3:8-10", topic: "To know him", category: us }
+
+      - title: "Holy ground"
+        note: "The nearness of a holy God, and who can stand in it."
+        refs:
+          - ref: "Lev 10:1-3"
+            label: "To those who come near Me I will show My holiness"
+            links:
+              - { to: "Heb 12:28-29", topic: "Our God is a consuming fire", category: us }
+          - ref: "2 Sam 6:6-12"
+            label: "Uzzah, and the blessing on Obed-edom's house"
+            note: "The ark struck one man down and blessed another household"
+            links:
+              - { to: "1 Chr 15:12-15", topic: "Carried the way God commanded", category: echo }
+          - ref: "Ps 24:3-6"
+            label: "Clean hands and a pure heart"
+            links:
+              - { to: "Ps 15:1-2", topic: "Who may dwell on Your holy mountain?", category: echo }
+              - { to: "Matt 5:8", topic: "The pure in heart will see God", category: jesus }
+              - { to: "Heb 12:14", topic: "Holiness, without which no one will see the Lord", category: us }
+          - ref: "Isa 57:15"
+            label: "With the oppressed and humble in spirit"
+            links:
+              - { to: "Ps 34:18", topic: "Near to the brokenhearted", category: echo }
+              - { to: "Matt 5:3", topic: "Blessed are the poor in spirit", category: jesus }
+          - ref: "Ps 51:10-12"
+            label: "Cast me not away from Your presence"
+            links:
+              - { to: "Luke 15:20-24", topic: "The father ran to his son", category: jesus }
+              - { to: "1 John 1:7-9", topic: "Walking in the light, cleansed", category: us }
+
+      - title: "Drawing near"
+        note: "How his people seek his presence: praise, thanks, stillness, a whole heart."
+        refs:
+          - ref: "Ps 100:1-5"
+            label: "Come into His presence with joyful songs"
+            note: "Enter his gates with thanksgiving and his courts with praise"
+            links:
+              - { to: "Ps 95:1-7", topic: "Let us enter His presence with thanksgiving", category: echo }
+              - { to: "Heb 13:15", topic: "A sacrifice of praise", category: us }
+          - ref: "Ps 22:3"
+            label: "Enthroned on the praises of Israel"
+            links:
+              - { to: "2 Chr 20:20-22", topic: "When they began to sing, the LORD moved", category: echo }
+              - { to: "Acts 16:25-26", topic: "Singing at midnight, and the prison shook", category: us }
+          - ref: "Jer 29:12-14"
+            label: "You will seek Me and find Me"
+            note: "When you search for me with all your heart"
+            links:
+              - { to: "Deut 4:29", topic: "With all your heart and soul", category: echo }
+              - { to: "Matt 7:7-8", topic: "Seek and you will find", category: jesus }
+              - { to: "Jas 4:8", topic: "Draw near to God, and he will draw near to you", category: us }
+          - ref: "Ps 46:10"
+            label: "Be still and know that I am God"
+            links:
+              - { to: "Isa 30:15", topic: "Your strength would lie in quiet confidence", category: echo }
+              - { to: "Mark 6:31", topic: "Come with Me to a solitary place and rest", category: jesus }
+          - ref: "Ps 91:1-2"
+            label: "Dwelling in the shelter of the Most High"
+            links:
+              - { to: "John 15:4-7", topic: "Remain in me", category: jesus }
+              - { to: "Col 3:1-3", topic: "Your life is hidden with Christ in God", category: us }
+          - ref: "Matt 6:6"
+            label: "Your Father, who is unseen"
+            note: "Go into your inner room, shut your door, and pray"
+            links:
+              - { to: "Heb 4:14-16", topic: "Approach the throne of grace with confidence", category: us }
+
+      - title: "God with us"
+        note: "In Jesus, the presence of God walks the earth."
+        refs:
+          - ref: "Isa 7:14"
+            label: "Immanuel"
+            links:
+              - { to: "Matt 1:22-23", topic: "God with us", category: jesus }
+          - ref: "John 1:14"
+            label: "The Word became flesh and made His dwelling among us"
+            links:
+              - { to: "Col 2:9", topic: "All the fullness of the Deity dwells in bodily form", category: jesus }
+              - { to: "Exod 25:8", topic: "A sanctuary for Me, so that I may dwell among them", category: echo }
+          - ref: "John 14:8-11"
+            label: "Anyone who has seen Me has seen the Father"
+            links:
+              - { to: "Heb 1:1-3", topic: "The radiance of God's glory", category: jesus }
+          - ref: "Matt 27:50-51"
+            label: "The veil torn from top to bottom"
+            links:
+              - { to: "Heb 10:19-22", topic: "A new and living way through the curtain", category: us }
+              - { to: "Exod 26:31-33", topic: "The veil before the Most Holy Place", category: echo }
+
+      - title: "God in us"
+        note: "The Spirit is given, and his people become his dwelling."
+        refs:
+          - ref: "John 14:15-23"
+            label: "We will come to him and make our home with him"
+            links:
+              - { to: "Ezek 36:26-27", topic: "I will put My Spirit within you", category: echo }
+              - { to: "Rom 8:9-11", topic: "The Spirit of God lives in you", category: us }
+          - ref: "Acts 2:1-4"
+            label: "Wind and fire at Pentecost"
+            links:
+              - { to: "Joel 2:28-29", topic: "I will pour out My Spirit", category: echo }
+              - { to: "Acts 4:31", topic: "Their meeting place was shaken, and they were all filled", category: us }
+          - ref: "1 Cor 3:16-17"
+            label: "You are God's temple"
+            links:
+              - { to: "1 Kgs 8:27", topic: "The highest heavens cannot contain You, much less this temple", category: echo }
+              - { to: "1 Cor 6:19-20", topic: "Your body is a temple of the Holy Spirit", category: us }
+              - { to: "Eph 2:19-22", topic: "A dwelling place for God in His Spirit", category: us }
+          - ref: "Col 1:27"
+            label: "Christ in you, the hope of glory"
+            links:
+              - { to: "Gal 2:20", topic: "Christ lives in me", category: us }
+              - { to: "John 17:22-23", topic: "I in them and you in me", category: jesus }
+          - ref: "Matt 18:19-20"
+            label: "Where two or three gather together in My name"
+            links:
+              - { to: "Matt 28:18-20", topic: "I am with you always", category: jesus }
+          - ref: "Gal 5:16-25"
+            label: "Walk by the Spirit"
+            note: "The fruit of his presence: love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control"
+            links:
+              - { to: "Gen 5:21-24", topic: "Enoch walked with God", category: echo }
+              - { to: "Rom 8:14-16", topic: "Led by the Spirit, crying Abba", category: us }
+          - ref: "Acts 3:19-20"
+            label: "Times of refreshing from the presence of the Lord"
+
+      - title: "From Eden to the new creation"
+        note: "Presence lost, withdrawn, returned, and made complete."
+        refs:
+          - ref: "Gen 3:8-10"
+            label: "The LORD God walking in the garden"
+            note: "The first home was his presence, and hiding from it was the first sign of the fall"
+            links:
+              - { to: "Gen 3:22-24", topic: "Sent out of the garden", category: echo }
+              - { to: "Isa 59:1-2", topic: "Your iniquities have built barriers between you and your God", category: echo }
+              - { to: "Eph 2:13", topic: "Brought near through the blood of Christ", category: us }
+          - ref: "Ezek 10:18-19"
+            label: "The glory leaves the temple"
+            links:
+              - { to: "1 Sam 4:21-22", topic: "Ichabod: the glory has departed", category: echo }
+          - ref: "Ezek 43:1-5"
+            label: "The glory returns"
+            links:
+              - { to: "Hag 2:6-9", topic: "The latter glory of this house will be greater", category: echo }
+              - { to: "Luke 2:25-32", topic: "Simeon holds the glory of Israel in the temple", category: jesus }
+          - ref: "Rev 21:1-4"
+            label: "The dwelling place of God is with man"
+            links:
+              - { to: "Lev 26:11-12", topic: "I will walk among you and be your God", category: echo }
+              - { to: "John 14:1-3", topic: "I will come back and welcome you into My presence", category: jesus }
+          - ref: "Rev 22:1-5"
+            label: "They will see his face"
+            links:
+              - { to: "Num 6:24-26", topic: "The LORD cause His face to shine upon you", category: echo }
+              - { to: "1 Cor 13:12", topic: "Then we shall see face to face", category: us }
+              - { to: "1 John 3:2", topic: "We will see Him as He is", category: us }
+
+  - title: "How Jesus walked with the Father"
+    note: "Jesus lived every day in his Father's presence: filled with the Spirit, often alone in prayer, doing what he saw the Father do."
+    groups:
+      - title: "Filled with the Spirit"
+        refs:
+          - ref: "Luke 3:21-22"
+            label: "While he was praying, heaven opened"
+            note: "The Holy Spirit descended on him in a bodily form like a dove"
+            links:
+              - { to: "Matt 3:16-17", topic: "The same event", category: jesus }
+          - ref: "John 1:32-34"
+            label: "The Spirit descended and rested on him"
+          - ref: "Luke 4:1-2"
+            label: "Full of the Spirit, led into the wilderness"
+          - ref: "Luke 4:14-19"
+            label: "In the power of the Spirit"
+            note: "The Spirit of the Lord is on me"
+            links:
+              - { to: "Isa 61:1-2", topic: "The Spirit of the Lord GOD is on Me", category: echo }
+          - ref: "Acts 10:38"
+            label: "God was with him"
+            note: "Anointed with the Holy Spirit and power, he went about doing good and healing"
+      - title: "Alone with the Father"
+        refs:
+          - ref: "Mark 1:35-38"
+            label: "Early, in a solitary place"
+          - ref: "Luke 5:15-16"
+            label: "He frequently withdrew to the wilderness to pray"
+          - ref: "Luke 6:12-13"
+            label: "All night in prayer before choosing the Twelve"
+          - ref: "Matt 14:23"
+            label: "Alone on the mountain to pray"
+          - ref: "Luke 22:39-44"
+            label: "To the Mount of Olives, as usual"
+            note: "\"Not My will, but Yours be done\""
+      - title: "Only what he saw the Father doing"
+        refs:
+          - ref: "John 5:19-20"
+            label: "The Son can do nothing by himself"
+          - ref: "John 5:30"
+            label: "I do not seek My own will"
+          - ref: "John 8:28-29"
+            label: "He has not left me alone"
+            note: "\"Because I always do what pleases Him\""
+          - ref: "John 12:49-50"
+            label: "The Father commanded Me what to say"
+          - ref: "John 14:10-11"
+            label: "The Father dwelling in Me, performing His works"
+      - title: "The power of the Lord was present"
+        refs:
+          - ref: "Luke 5:17"
+            label: "Present for him to heal the sick"
+          - ref: "Luke 6:19"
+            label: "Power was coming from him"
+          - ref: "Mark 5:30"
+            label: "Aware that power had gone out from him"
+          - ref: "Matt 12:28"
+            label: "By the Spirit of God"
+      - title: "The Father's voice"
+        refs:
+          - ref: "Matt 3:16-17"
+            label: "This is My beloved Son"
+          - ref: "Matt 17:1-8"
+            label: "The bright cloud on the mountain"
+            note: "\"Listen to Him!\""
+            links:
+              - { to: "2 Pet 1:16-18", topic: "We heard this voice", category: us }
+          - ref: "John 12:27-30"
+            label: "Father, glorify Your name"
+          - ref: "John 11:41-42"
+            label: "I knew that You always hear Me"
+      - title: "Joy and oneness"
+        refs:
+          - ref: "Luke 10:21"
+            label: "He rejoiced in the Holy Spirit"
+          - ref: "Mark 14:36"
+            label: "Abba, Father"
+            links:
+              - { to: "Rom 8:15", topic: "The Spirit by whom we cry Abba", category: us }
+          - ref: "John 17:20-26"
+            label: "That they may be one as We are one"
+            note: "\"That the love You have for Me may be in them, and I in them\""
+      - title: "Never alone, even at the cross"
+        refs:
+          - ref: "John 16:32"
+            label: "Yet I am not alone"
+            note: "\"Because the Father is with Me\""
+          - ref: "Mark 15:33-34"
+            label: "My God, My God, why have You forsaken Me?"
+            links:
+              - { to: "Ps 22:1-5", topic: "The psalm he prayed", category: echo }
+          - ref: "Luke 23:46"
+            label: "Father, into Your hands I commit My spirit"
+            links:
+              - { to: "Ps 31:5", topic: "Into Your hands I commit my spirit", category: echo }
+
+  - title: "By kind of connection"
+    auto: category
+  - title: "Jesus and the rest"
+    auto: jesus

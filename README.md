@@ -115,6 +115,32 @@ Links declared on a passage in one view are shared by the same passage in every 
 
 Every study also has a **Timeline** chart: one row per group (theme), each reference placed by the traditional year of its verses, so the story reads left to right and the themes top to bottom. Events from the timeline data that fall inside the study's passages appear in a muted row underneath. Set `chart: timeline` to open a study on it, and `timeline: { from, to, note }` to choose the years it opens on when the automatic choice is not right (the Exodus study opens on 1650 to 1415 BC and leaves the apostles' retellings a "fit all" away). Clicking a reference on the timeline or on the sunburst opens its overview: note, text, and every passage it links to, grouped by topic.
 
+### Facets and the Patterns chart
+
+A study can also sort the same passages several ways at once and count them. Declare `facets`, each with a fixed list of values, tag passages with them, and add `auto: facet` views:
+
+```yaml
+chart: patterns
+facets:
+  initiative:
+    title: Who started it
+    values:
+      jesus: { title: Jesus went to them }
+      brought: { title: Others brought them }
+views:
+  - title: By kind
+    groups:
+      - title: Healings
+        refs:
+          - ref: Mark 2:1-12
+            facets: { initiative: brought, addressed: [declared, command] }
+  - title: Who started it
+    auto: facet
+    facet: initiative
+```
+
+A passage can carry several values of one facet, or none (then it is left out of that count). The **Patterns** chart draws one small bar chart per facet, counting passages (one per event, not verses), filtered by the groups of the study's first view; click a bar to list its passages. The miracles study uses this to count who came to whom, what Jesus spoke to, and when he touched.
+
 ## Timelines
 
 Every person page has a timeline: their lifespan when the text gives it, the lifespans of parents, spouses and children, the events they took part in, and a histogram of the verses that mention them by year of the story. The `/timeline` page shows all 450 dated events, with the longer periods (kingdoms, journeys, patriarchs' lifetimes) as bands. Years follow the traditional chronology in the Theographic data and are approximate.

@@ -52,6 +52,18 @@ export default function RefOverview({ study, view, group, item, canon, bible, on
         <span className="chip !py-0">weight {item.weight}</span>
       </div>
       {item.note && <p className="text-ink-2 mt-2 leading-snug">{item.note}</p>}
+      {item.facets && study.facets && (
+        <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 text-xs">
+          {study.facets
+            .filter((f) => item.facets![f.id])
+            .map((f) => (
+              <div key={f.id} className="contents">
+                <dt className="text-muted">{f.title}</dt>
+                <dd>{item.facets![f.id].map((vid) => f.values.find((v) => v.id === vid)?.title ?? vid).join(', ')}</dd>
+              </div>
+            ))}
+        </dl>
+      )}
       {text && <p className="scripture !text-[14.5px] !leading-snug mt-2">{text}</p>}
       {topics.length > 0 && (
         <div className="mt-3 space-y-1.5">

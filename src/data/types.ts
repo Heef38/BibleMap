@@ -181,11 +181,19 @@ export interface StudyRef {
   category?: string
   /** every passage this reference is linked to, including `to` */
   links?: StudyLink[]
+  /** facet id -> the values this passage carries (see Study.facets) */
+  facets?: Record<string, string[]>
 }
 export interface StudyCategory {
   id: string
   title: string
   note?: string
+}
+export interface StudyFacet {
+  id: string
+  title: string
+  note?: string
+  values: StudyCategory[]
 }
 export interface StudyGroup {
   id: string
@@ -214,6 +222,8 @@ export interface Study {
   /** the years the timeline opens on, when the automatic choice is not right */
   timeline?: { from?: number; to?: number; note?: string }
   categories?: StudyCategory[]
+  /** ways to sort the same passages, counted on the Patterns chart */
+  facets?: StudyFacet[]
   views: StudyView[]
   ranges: Range[]
   refCount: number

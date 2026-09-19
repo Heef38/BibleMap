@@ -834,6 +834,8 @@ interface StudyRefYaml {
   category?: string
   /** further passages this reference connects to, each with the theme of the connection */
   links?: StudyLinkYaml[]
+  /** tags on the study's facets, e.g. { initiative: brought, means: [touch, word] } */
+  facets?: Record<string, string | string[]>
 }
 interface StudyGroupYaml {
   id?: string
@@ -848,7 +850,14 @@ interface StudyViewYaml {
   note?: string
   groups?: StudyGroupYaml[]
   /** Derive the groups from every reference in the authored views. */
-  auto?: 'book' | 'testament' | 'jesus' | 'category'
+  auto?: 'book' | 'testament' | 'jesus' | 'category' | 'facet'
+  /** with auto: facet, the facet whose values become the groups */
+  facet?: string
+}
+interface StudyFacetYaml {
+  title: string
+  note?: string
+  values: Record<string, StudyCategoryYaml>
 }
 interface StudyCategoryYaml {
   title: string
@@ -864,6 +873,8 @@ interface StudyYaml {
   chart?: string
   timeline?: { from?: number; to?: number; note?: string }
   categories?: Record<string, StudyCategoryYaml>
+  /** Ways to sort the same passages (who started it, how it was done), counted on the Patterns chart. */
+  facets?: Record<string, StudyFacetYaml>
   views: StudyViewYaml[]
 }
 interface StudyLink {
@@ -888,6 +899,7 @@ interface StudyRef {
   toLabel?: string
   category?: string
   links?: StudyLink[]
+  facets?: Record<string, string[]>
 }
 interface StudyGroup {
   id: string
@@ -913,6 +925,7 @@ interface StudyJson {
   chart?: string
   timeline?: { from?: number; to?: number; note?: string }
   categories?: { id: string; title: string; note?: string }[]
+  facets?: { id: string; title: string; note?: string; values: { id: string; title: string; note?: string }[] }[]
   views: StudyView[]
   ranges: Range[]
   refCount: number
@@ -963,6 +976,14 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
               jesus: jesusSpeaksIn(parsedL.ranges),
             })
           }
+          let facets: Record<string, string[]> | undefined
+          for (const [fid, raw] of Object.entries(r.facets ?? {})) {
+            const facet = doc.facets?.[fid]
+            if (!facet) throw new Error(`${file} › ${g.title} › ${r.ref}: unknown facet "${fid}"`)
+            const vals = (Array.isArray(raw) ? raw : [raw]).map(String)
+            for (const v of vals) if (!facet.values[v]) throw new Error(`${file} › ${g.title} › ${r.ref}: facet "${fid}" has no value "${v}"`)
+            ;(facets ??= {})[fid] = vals
+          }
           const jesusOwn = jesusSpeaksIn(ranges)
           const jesus = jesusOwn || links.some((l) => l.jesus)
           const weight = r.weight ?? g.weight ?? (jesus ? 3 : 1)
@@ -981,6 +1002,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
             toLabel: to ? to.map((x) => canon.rangeLabel(x[0], x[1])).join('; ') : undefined,
             category: r.category,
             links: links.length ? links : undefined,
+            facets,
           }
         })
         return {
@@ -998,11 +1020,13 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
       // A passage that appears in several views shares its links (and note) everywhere.
       const linksByKey = new Map<string, StudyLink[]>()
       const noteByKey = new Map<string, string>()
+      const facetsByKey = new Map<string, Record<string, string[]>>()
       for (const v of authored) for (const g of v.groups) for (const r of g.refs) {
         const k = JSON.stringify(r.ranges)
         const list = linksByKey.get(k) ?? linksByKey.set(k, []).get(k)!
         for (const l of r.links ?? []) if (!list.some((x) => x.label === l.label && x.topic === l.topic)) list.push(l)
         if (r.note && !noteByKey.has(k)) noteByKey.set(k, r.note)
+        if (r.facets) facetsByKey.set(k, { ...r.facets, ...facetsByKey.get(k) })
       }
       for (const v of authored) for (const g of v.groups) for (const r of g.refs) {
         const k = JSON.stringify(r.ranges)
@@ -1015,6 +1039,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
           }
         }
         if (!r.note && noteByKey.has(k)) r.note = noteByKey.get(k)
+        if (facetsByKey.has(k)) r.facets = facetsByKey.get(k)
         for (const l of r.links ?? []) all.push(...l.ranges)
       }
       for (const v of authored) for (const g of v.groups) {
@@ -1028,9 +1053,10 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
         if (!distinct.has(k)) distinct.set(k, { ...r })
       }
       const allRefs = [...distinct.values()].sort((a, b) => a.ranges[0][0] - b.ranges[0][0])
-      const bucket = (title: string, refs: StudyRef[]): StudyGroup => ({
+      const bucket = (title: string, refs: StudyRef[], note?: string): StudyGroup => ({
         id: slugify(title),
         title,
+        note,
         refs,
         weight: refs.reduce((s, r) => s + r.weight, 0),
         verses: countVerses(mergeRanges(refs.flatMap((r) => r.ranges))),
@@ -1076,6 +1102,13 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
             const rest = allRefs.filter((r) => !r.category || !doc.categories?.[r.category])
             if (rest.length) groups.push(bucket('Uncategorized', rest))
           }
+        } else if (v.auto === 'facet') {
+          // One group per value; a passage with several values sits in each of them.
+          const facet = v.facet ? doc.facets?.[v.facet] : undefined
+          if (!facet) throw new Error(`${file} › ${v.title}: auto facet needs a known facet, got "${v.facet}"`)
+          groups = Object.entries(facet.values)
+            .map(([id, val]) => bucket(val.title, allRefs.filter((r) => r.facets?.[v.facet!]?.includes(id)), val.note))
+            .filter((g) => g.refs.length)
         } else if (v.auto === 'jesus') {
           groups = [bucket("In Jesus's own words", allRefs.filter((r) => r.jesus)), bucket('In the rest of Scripture', allRefs.filter((r) => !r.jesus))].filter((g) => g.refs.length)
         }
@@ -1093,6 +1126,9 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
         chart: doc.chart,
         timeline: doc.timeline,
         categories: doc.categories ? Object.entries(doc.categories).map(([id, c]) => ({ id, title: c.title, note: c.note })) : undefined,
+        facets: doc.facets
+          ? Object.entries(doc.facets).map(([id, f]) => ({ id, title: f.title, note: f.note, values: Object.entries(f.values).map(([vid, val]) => ({ id: vid, title: val.title, note: val.note })) }))
+          : undefined,
         views,
         ranges: merged,
         refCount,
