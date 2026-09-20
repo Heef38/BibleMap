@@ -25,11 +25,15 @@ function tagged(study: Study) {
 }
 
 /**
- * The Patterns chart: for each facet, how many events carry each value, as a small bar chart.
- * Counts are of passages (one per event), not of verses. Click a bar to list its events.
+ * The Patterns chart: for each facet, how many tagged passages carry each value, as a small bar
+ * chart. Counts are of passages, not of verses. Click a bar to list them.
  */
 export default function FacetTally({ study, canon, bible }: { study: Study; canon: Canon; bible?: Bible }) {
   const facets = study.facets ?? []
+  // What one tagged passage is called here: events, accounts, promises.
+  const unit = study.facetUnit ?? 'events'
+  const one = unit.replace(/s$/, '')
+  const count = (n: number) => `${n} ${n === 1 ? one : unit}`
   const events = useMemo(() => tagged(study), [study])
   // Narrow the counts to one group of the scope view (for miracles: healings, spirits, raisings, nature).
   const scopes = (scopeView(study)?.groups ?? []).filter((g) => events.some((e) => e.groups.has(g.id)))
@@ -51,7 +55,7 @@ export default function FacetTally({ study, canon, bible }: { study: Study; cano
       {scopes.length > 1 && (
         <div className="flex flex-wrap items-center gap-2 mb-3">
           <span className="text-sm text-ink-2">Count</span>
-          <div className="seg flex-wrap" role="group" aria-label="Which events to count">
+          <div className="seg flex-wrap" role="group" aria-label={`Which ${unit} to count`}>
             <button type="button" aria-pressed={scope === 'all'} onClick={() => setScope('all')}>
               All <span className="text-muted tabular-nums">{events.length}</span>
             </button>
@@ -77,8 +81,8 @@ export default function FacetTally({ study, canon, bible }: { study: Study; cano
               <h3 className="font-medium">{f.title}</h3>
               {f.note && <p className="text-xs text-ink-2 mt-0.5">{f.note}</p>}
               <p className="text-xs text-muted mt-1">
-                {counted.length === 1 ? '1 event' : `${counted.length} events`}
-                {multi ? '; an event can count in more than one row' : ''}
+                {count(counted.length)}
+                {multi ? `; one ${one} can count in more than one row` : ''}
               </p>
               <ul className="mt-3 space-y-0.5">
                 {f.values.map((v, i) => {
@@ -92,7 +96,7 @@ export default function FacetTally({ study, canon, bible }: { study: Study; cano
                         disabled={n === 0}
                         aria-pressed={on}
                         onClick={() => setPicked(on ? null : { facet: f.id, value: v.id })}
-                        title={`${v.title}: ${n} of ${counted.length} events (${share}%)${v.note ? `. ${v.note}` : ''}`}
+                        title={`${v.title}: ${n} of ${count(counted.length)} (${share}%)${v.note ? `. ${v.note}` : ''}`}
                         className={`w-full text-left rounded-lg px-2 py-1.5 -mx-2 ${on ? 'bg-accent-soft' : 'hover:bg-surface-2'} disabled:cursor-default disabled:hover:bg-transparent`}
                       >
                         <span className={`block text-sm leading-tight ${n === 0 ? 'text-muted' : ''}`}>{v.title}</span>
@@ -117,7 +121,7 @@ export default function FacetTally({ study, canon, bible }: { study: Study; cano
           <div className="flex flex-wrap items-baseline gap-2">
             <span className="kicker">{pickedFacet.title}</span>
             <h3 className="font-medium">{pickedValue.title}</h3>
-            <span className="text-xs text-muted">{pickedEvents.length === 1 ? '1 event' : `${pickedEvents.length} events`}</span>
+            <span className="text-xs text-muted">{count(pickedEvents.length)}</span>
             <button type="button" className="btn btn-ghost ml-auto text-xs" onClick={() => setPicked(null)}>
               Close
             </button>

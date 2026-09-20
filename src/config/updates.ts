@@ -14,6 +14,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'study-promises',
+    date: '2026-09-19',
+    title: 'New study: The Promises of God',
+    body: 'Eighty-two promises by what they promise, with the covenants behind them. Each is tagged with who it was made to, whether a condition is attached, and when it is kept, and the Patterns chart counts them.',
+    link: { to: '/study/promises-of-god', label: 'Open the study' },
+  },
+  {
     id: 'coming-soon',
     date: '2026-09-19',
     title: 'See what is coming',

@@ -877,6 +877,8 @@ interface StudyYaml {
   categories?: Record<string, StudyCategoryYaml>
   /** Ways to sort the same passages (who started it, how it was done), counted on the Patterns chart. */
   facets?: Record<string, StudyFacetYaml>
+  /** What the Patterns chart calls one tagged passage, in the plural: events, accounts, promises. */
+  facetUnit?: string
   views: StudyViewYaml[]
 }
 interface StudyLink {
@@ -929,6 +931,7 @@ interface StudyJson {
   timeline?: { from?: number; to?: number; note?: string }
   categories?: { id: string; title: string; note?: string }[]
   facets?: { id: string; title: string; note?: string; values: { id: string; title: string; note?: string }[] }[]
+  facetUnit?: string
   views: StudyView[]
   ranges: Range[]
   refCount: number
@@ -1136,6 +1139,7 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
         facets: doc.facets
           ? Object.entries(doc.facets).map(([id, f]) => ({ id, title: f.title, note: f.note, values: Object.entries(f.values).map(([vid, val]) => ({ id: vid, title: val.title, note: val.note })) }))
           : undefined,
+        facetUnit: doc.facetUnit,
         views,
         ranges: merged,
         refCount,

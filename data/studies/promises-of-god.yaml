@@ -1,0 +1,414 @@
+# The promises of God: what he promises, who he promised it to, whether a condition is attached,
+# and when it is kept (already in the story, in Christ, in us now, or still to come). Every promise
+# carries those three tags so the Patterns chart can count them. Not every promise in Scripture is
+# here; these are the ones the rest lean on.
+id: promises-of-god
+title: "The Promises of God"
+subtitle: "What he promises, who to, on what condition, and when it is kept: already, in Christ, in us now, or still to come"
+kind: connections
+chart: map
+added: "2026-09-19"
+summary: >-
+  "For all the promises of God are 'Yes' in Christ" (2 Corinthians 1:20). This study gathers the
+  promises by what they promise, from his presence to the resurrection, and puts the great
+  covenants behind them: to Noah, to Abraham, to Israel at Sinai, to David, and the new covenant.
+  Each promise is tagged with who it was made to, whether it comes with a condition, and when it
+  is kept, so the Patterns chart can count how many are already fulfilled, how many are being kept
+  in us now, and how many are still to come. Tags follow the words of the text; notes say where a
+  promise made to Israel is taken up for the church.
+tags: [promises, covenant, faithfulness, hope, assurance]
+categories:
+  christ:
+    title: "Fulfilled in Christ"
+    note: "Where the New Testament says Jesus keeps the promise."
+  kept:
+    title: "Kept in the story"
+    note: "Where Scripture records the promise coming true."
+  us:
+    title: "Taken up for us"
+    note: "Where the letters apply the promise to believers."
+  echo:
+    title: "Said again"
+    note: "Where Scripture repeats or enlarges the promise."
+facetUnit: promises
+facets:
+  to:
+    title: "Who it was made to"
+    note: "The people the promise is spoken to in its own setting."
+    values:
+      person: { title: "One person", note: "Abraham, Joshua, David and others, by name." }
+      israel: { title: "Israel" }
+      believers: { title: "Everyone who believes" }
+      all: { title: "All people and creation" }
+  kept:
+    title: "When it is kept"
+    note: "One promise can be kept in more than one way: begun in Christ, worked out in us now, finished when he comes."
+    values:
+      already: { title: "Already, in the story", note: "Kept within the Old Testament account itself." }
+      christ: { title: "Fulfilled in Christ" }
+      now: { title: "Kept in us now" }
+      notyet: { title: "Still to come" }
+  condition:
+    title: "Is a condition attached?"
+    note: "Whether the passage itself attaches an if: faith, obedience, asking, repentance, waiting."
+    values:
+      ifthen: { title: "Comes with an if" }
+      given: { title: "Given with no condition" }
+views:
+  - title: "By what is promised"
+    note: "Eight things God promises, from his presence to the life of the age to come."
+    groups:
+      - title: "His presence and help"
+        refs:
+          - ref: "Gen 28:13-15"
+            label: "I am with you and will watch over you"
+            note: "To Jacob, running from home"
+            facets: { to: person, kept: already, condition: given }
+          - ref: "Exod 33:14"
+            label: "My Presence will go with you, and I will give you rest"
+            facets: { to: person, kept: already, condition: given }
+          - ref: "Josh 1:5-9"
+            label: "I will never leave you nor forsake you"
+            facets: { to: person, kept: already, condition: given }
+            links:
+              - { to: "Heb 13:5-6", topic: "The same words, said to us", category: us }
+          - ref: "Isa 41:10"
+            label: "Do not fear, for I am with you"
+            facets: { to: israel, kept: now, condition: given }
+          - ref: "Matt 28:18-20"
+            label: "I am with you always, to the end of the age"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "John 14:16-18"
+            label: "Another Advocate, to be with you forever"
+            note: "\"I will not leave you as orphans\""
+            facets: { to: believers, kept: [christ, now], condition: given }
+          - ref: "Deut 31:6-8"
+            label: "The LORD goes with you; He will never leave you"
+            facets: { to: israel, kept: already, condition: given }
+
+      - title: "Forgiveness and a new heart"
+        refs:
+          - ref: "Isa 1:18-19"
+            label: "Though your sins are like scarlet, they will be as white as snow"
+            facets: { to: israel, kept: now, condition: ifthen }
+          - ref: "Isa 43:25"
+            label: "I will blot out your transgressions for My own sake"
+            facets: { to: israel, kept: now, condition: given }
+          - ref: "Mic 7:18-19"
+            label: "You will cast all our sins into the depths of the sea"
+            facets: { to: israel, kept: now, condition: given }
+          - ref: "Ps 103:8-14"
+            label: "As far as the east is from the west"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "Ezek 36:25-27"
+            label: "A new heart, and My Spirit within you"
+            facets: { to: israel, kept: [christ, now], condition: given }
+          - ref: "1 John 1:9"
+            label: "If we confess our sins, He is faithful and just to forgive"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "Acts 2:38-39"
+            label: "The promise is for you and your children"
+            note: "Repent and be baptized, and receive the gift of the Holy Spirit"
+            facets: { to: all, kept: now, condition: ifthen }
+          - ref: "Rom 8:1-2"
+            label: "No condemnation for those who are in Christ Jesus"
+            facets: { to: believers, kept: [christ, now], condition: given }
+
+      - title: "Provision and care"
+        refs:
+          - ref: "Ps 23:1-6"
+            label: "The LORD is my shepherd; I shall not want"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "Ps 34:8-10"
+            label: "Those who seek the LORD lack no good thing"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "Matt 6:31-33"
+            label: "Seek first the kingdom, and all these things will be added"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "Luke 12:32"
+            label: "Your Father is pleased to give you the kingdom"
+            facets: { to: believers, kept: [now, notyet], condition: given }
+          - ref: "Phil 4:19"
+            label: "My God will supply all your needs"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "2 Cor 9:8"
+            label: "God is able to make all grace abound to you"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "Mal 3:10"
+            label: "Test Me in this, and see if I will not open the floodgates"
+            note: "Spoken to Israel about the tithe, under the covenant at Sinai"
+            facets: { to: israel, kept: already, condition: ifthen }
+
+      - title: "Protection and deliverance"
+        refs:
+          - ref: "Ps 91:1-16"
+            label: "He who dwells in the shelter of the Most High"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "Ps 34:17-19"
+            label: "The righteous cry out, and the LORD delivers them"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "Ps 121:1-8"
+            label: "The LORD will keep you from all harm"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "Isa 43:1-3"
+            label: "When you pass through the waters, I will be with you"
+            facets: { to: israel, kept: now, condition: given }
+          - ref: "1 Cor 10:13"
+            label: "He will provide a way out"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "John 10:27-29"
+            label: "No one can snatch them out of My hand"
+            facets: { to: believers, kept: [now, notyet], condition: given }
+          - ref: "Rom 8:31-39"
+            label: "Nothing can separate us from the love of God"
+            facets: { to: believers, kept: [now, notyet], condition: given }
+
+      - title: "Guidance, wisdom and answered prayer"
+        refs:
+          - ref: "Prov 3:5-6"
+            label: "He will make your paths straight"
+            facets: { to: all, kept: now, condition: ifthen }
+          - ref: "Ps 32:8"
+            label: "I will instruct you and teach you the way you should go"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "Isa 30:21"
+            label: "This is the way. Walk in it"
+            facets: { to: israel, kept: now, condition: given }
+          - ref: "Isa 58:9-11"
+            label: "The LORD will always guide you"
+            note: "Promised to those who spend themselves for the hungry"
+            facets: { to: israel, kept: now, condition: ifthen }
+          - ref: "Jer 33:3"
+            label: "Call to Me, and I will answer"
+            facets: { to: person, kept: now, condition: ifthen }
+          - ref: "Matt 7:7-11"
+            label: "Ask, and it will be given to you"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "John 15:7"
+            label: "If you remain in Me, ask whatever you wish"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "Jas 1:5-6"
+            label: "If any of you lacks wisdom, he should ask God"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "John 16:13"
+            label: "He will guide you into all truth"
+            facets: { to: believers, kept: [christ, now], condition: given }
+
+      - title: "Rest and peace"
+        refs:
+          - ref: "Matt 11:28-30"
+            label: "Come to Me, and I will give you rest"
+            facets: { to: all, kept: now, condition: ifthen }
+          - ref: "John 14:27"
+            label: "My peace I give to you"
+            facets: { to: believers, kept: now, condition: given }
+          - ref: "Isa 26:3"
+            label: "Perfect peace for the steadfast of mind"
+            facets: { to: israel, kept: now, condition: ifthen }
+          - ref: "Phil 4:6-7"
+            label: "The peace of God will guard your hearts"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "Isa 40:28-31"
+            label: "Those who wait upon the LORD will renew their strength"
+            facets: { to: israel, kept: now, condition: ifthen }
+          - ref: "Ps 29:11"
+            label: "The LORD blesses His people with peace"
+            facets: { to: israel, kept: now, condition: given }
+          - ref: "Heb 4:9-11"
+            label: "A Sabbath rest remains for the people of God"
+            facets: { to: believers, kept: [now, notyet], condition: given }
+
+      - title: "An inheritance and a home"
+        refs:
+          - ref: "Gen 12:1-3"
+            label: "All the families of the earth will be blessed through you"
+            facets: { to: person, kept: [already, christ], condition: given }
+            links:
+              - { to: "Gal 3:7-9", topic: "The gospel announced to Abraham", category: christ }
+          - ref: "Gen 17:7-8"
+            label: "An everlasting covenant, and the land"
+            facets: { to: person, kept: already, condition: given }
+          - ref: "Matt 5:5"
+            label: "The meek will inherit the earth"
+            facets: { to: believers, kept: notyet, condition: ifthen }
+          - ref: "Rom 8:16-17"
+            label: "Heirs of God and co-heirs with Christ"
+            facets: { to: believers, kept: [now, notyet], condition: given }
+          - ref: "Eph 1:13-14"
+            label: "The Spirit, the pledge of our inheritance"
+            facets: { to: believers, kept: [now, notyet], condition: given }
+          - ref: "1 Pet 1:3-5"
+            label: "An inheritance kept in heaven for you"
+            facets: { to: believers, kept: notyet, condition: given }
+          - ref: "Heb 11:13-16"
+            label: "A better country, a heavenly one"
+            facets: { to: believers, kept: notyet, condition: given }
+          - ref: "John 14:1-3"
+            label: "I will come back and welcome you into My presence"
+            facets: { to: believers, kept: notyet, condition: given }
+          - ref: "Rev 21:1-7"
+            label: "He will wipe away every tear"
+            facets: { to: all, kept: notyet, condition: given }
+
+      - title: "Life and resurrection"
+        refs:
+          - ref: "John 3:16-17"
+            label: "Whoever believes in Him shall not perish but have eternal life"
+            facets: { to: all, kept: [now, notyet], condition: ifthen }
+          - ref: "John 5:24"
+            label: "He has crossed over from death to life"
+            facets: { to: believers, kept: now, condition: ifthen }
+          - ref: "John 6:39-40"
+            label: "I will raise him up on the last day"
+            facets: { to: believers, kept: notyet, condition: ifthen }
+          - ref: "John 11:25-26"
+            label: "Whoever believes in Me will live, even though he dies"
+            facets: { to: believers, kept: notyet, condition: ifthen }
+          - ref: "Rom 6:23"
+            label: "The gift of God is eternal life"
+            facets: { to: believers, kept: [now, notyet], condition: given }
+          - ref: "1 Cor 15:20-23"
+            label: "Christ the firstfruits, then those who belong to Him"
+            facets: { to: believers, kept: [christ, notyet], condition: given }
+          - ref: "1 Thess 4:13-18"
+            label: "The dead in Christ will rise first"
+            facets: { to: believers, kept: notyet, condition: given }
+          - ref: "Titus 1:1-2"
+            label: "Eternal life, promised before time began by God, who cannot lie"
+            facets: { to: believers, kept: notyet, condition: given }
+          - ref: "1 John 2:25"
+            label: "And this is the promise that He Himself made to us: eternal life"
+            facets: { to: believers, kept: notyet, condition: given }
+
+  - title: "The great covenants"
+    note: "The promises the rest hang on, in the order they were given, and the God who keeps his word."
+    groups:
+      - title: "To Noah: never again"
+        refs:
+          - ref: "Gen 8:20-22"
+            label: "Seedtime and harvest will never cease"
+            facets: { to: all, kept: [already, now], condition: given }
+          - ref: "Gen 9:8-17"
+            label: "The rainbow: never again a flood to destroy the earth"
+            facets: { to: all, kept: [already, now], condition: given }
+            links:
+              - { to: "Isa 54:9-10", topic: "As I swore to Noah, so I swear to you", category: echo }
+
+      - title: "To Abraham: offspring, land and blessing"
+        refs:
+          - ref: "Gen 15:1-6"
+            label: "Count the stars: so shall your offspring be"
+            facets: { to: person, kept: already, condition: given }
+            links:
+              - { to: "Rom 4:18-22", topic: "Against all hope, Abraham believed", category: us }
+          - ref: "Gen 15:12-21"
+            label: "God alone passes between the pieces"
+            note: "Abraham sleeps; God binds himself to the covenant by himself"
+            facets: { to: person, kept: already, condition: given }
+          - ref: "Gen 21:1-3"
+            label: "The LORD did for Sarah what He had promised"
+            facets: { to: person, kept: already, condition: given }
+          - ref: "Gen 22:15-18"
+            label: "By Myself I have sworn"
+            facets: { to: person, kept: [already, christ], condition: given }
+            links:
+              - { to: "Heb 6:13-20", topic: "Two unchangeable things: his promise and his oath", category: us }
+              - { to: "Gal 3:16", topic: "The seed is Christ", category: christ }
+              - { to: "Gal 3:29", topic: "If you belong to Christ, you are Abraham's heirs", category: us }
+
+      - title: "To Israel at Sinai: if you obey"
+        note: "The one great covenant hung on a condition, and the one Israel broke."
+        refs:
+          - ref: "Exod 19:3-6"
+            label: "If you will indeed obey My voice, you will be My treasured possession"
+            facets: { to: israel, kept: already, condition: ifthen }
+            links:
+              - { to: "1 Pet 2:9-10", topic: "A chosen people, a royal priesthood", category: us }
+          - ref: "Lev 26:3-13"
+            label: "If you follow My statutes: rain, harvest, peace, My dwelling among you"
+            facets: { to: israel, kept: already, condition: ifthen }
+          - ref: "Deut 28:1-14"
+            label: "All these blessings will come upon you and overtake you"
+            facets: { to: israel, kept: already, condition: ifthen }
+          - ref: "Deut 30:1-10"
+            label: "The LORD will circumcise your heart"
+            note: "Beyond the exile: return, and a heart able to love him"
+            facets: { to: israel, kept: [already, christ], condition: ifthen }
+
+      - title: "To David: a throne that lasts"
+        refs:
+          - ref: "2 Sam 7:8-16"
+            label: "Your throne will be established forever"
+            facets: { to: person, kept: [already, christ], condition: given }
+            links:
+              - { to: "Luke 1:30-33", topic: "The throne of his father David", category: christ }
+              - { to: "Acts 2:29-36", topic: "Peter: God swore to seat one of David's descendants", category: christ }
+          - ref: "Ps 89:3-4, 28-37"
+            label: "I will not violate My covenant"
+            facets: { to: person, kept: [already, christ], condition: given }
+          - ref: "Ps 132:11-12"
+            label: "If your sons keep My covenant"
+            facets: { to: person, kept: already, condition: ifthen }
+          - ref: "Isa 9:6-7"
+            label: "Of the increase of His government and peace there will be no end"
+            facets: { to: israel, kept: [christ, notyet], condition: given }
+            links:
+              - { to: "Rev 22:16", topic: "The Root and the Offspring of David", category: christ }
+
+      - title: "The new covenant"
+        refs:
+          - ref: "Jer 31:31-34"
+            label: "I will write My law on their hearts and remember their sins no more"
+            facets: { to: israel, kept: [christ, now], condition: given }
+            links:
+              - { to: "Heb 8:6-13", topic: "A better covenant, on better promises", category: christ }
+              - { to: "Heb 10:15-18", topic: "Their sins remembered no more", category: us }
+          - ref: "Ezek 37:26-27"
+            label: "An everlasting covenant of peace; My dwelling place with them"
+            facets: { to: israel, kept: [christ, notyet], condition: given }
+          - ref: "Joel 2:28-29"
+            label: "I will pour out My Spirit on all people"
+            facets: { to: all, kept: christ, condition: given }
+            links:
+              - { to: "Acts 2:16-18", topic: "This is what was spoken by the prophet Joel", category: kept }
+          - ref: "Luke 22:19-20"
+            label: "This cup is the new covenant in My blood"
+            facets: { to: believers, kept: christ, condition: given }
+          - ref: "2 Cor 3:4-6"
+            label: "Ministers of a new covenant, of the Spirit"
+            facets: { to: believers, kept: now, condition: given }
+
+      - title: "The God who keeps his word"
+        note: "Not promises themselves, but why the promises hold. These carry no tags, so the counts stay to the promises."
+        refs:
+          - ref: "Num 23:19"
+            label: "God is not a man, that He should lie"
+          - ref: "Josh 21:43-45"
+            label: "Not one of all the LORD's good promises failed"
+          - ref: "1 Kgs 8:54-56"
+            label: "Not one word has failed of all His good promises"
+          - ref: "Isa 55:10-11"
+            label: "My word will not return to Me empty"
+          - ref: "Ps 145:13"
+            label: "The LORD is faithful in all His words"
+          - ref: "Rom 4:20-21"
+            label: "Fully persuaded that God was able to do what He had promised"
+          - ref: "2 Cor 1:20-22"
+            label: "For all the promises of God are Yes in Christ"
+          - ref: "Heb 10:23"
+            label: "He who promised is faithful"
+          - ref: "1 Thess 5:23-24"
+            label: "The One who calls you is faithful, and He will do it"
+          - ref: "2 Pet 3:8-9"
+            label: "The Lord is not slow in keeping His promise"
+
+  - title: "When it is kept"
+    note: "Every promise above, grouped by when it is kept. Many are kept in more than one way, so they appear more than once."
+    auto: facet
+    facet: kept
+  - title: "Who it is for"
+    auto: facet
+    facet: to
+  - title: "With or without an if"
+    auto: facet
+    facet: condition

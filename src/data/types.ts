@@ -226,6 +226,8 @@ export interface Study {
   categories?: StudyCategory[]
   /** ways to sort the same passages, counted on the Patterns chart */
   facets?: StudyFacet[]
+  /** what the Patterns chart calls one tagged passage, in the plural (default: events) */
+  facetUnit?: string
   views: StudyView[]
   ranges: Range[]
   refCount: number
