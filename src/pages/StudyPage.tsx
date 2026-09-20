@@ -85,7 +85,7 @@ export default function StudyPage() {
   const snippet = (o: number, n: number) => (bible ? truncate(bible.verses[o], n) : '')
 
   return (
-    <div className="p-6">
+    <div className="p-6 @container">
       <PageHeader
         kicker={isConnections ? 'Study · connections' : 'Study'}
         title={study.title}
@@ -237,13 +237,14 @@ export default function StudyPage() {
               {g.note && <p className="text-sm text-ink-2 mb-2 max-w-prose">{g.note}</p>}
               <ul className="divide-y divide-line">
                 {g.refs.map((r, i) => (
-                  <li key={i} className="py-1.5 flex gap-3 items-baseline text-sm">
-                    <span className="w-56 shrink-0 flex flex-wrap gap-1">
-                      <RefLink range={r.ranges[0]} canon={canon} label={r.label} color={refFill(gi, r.jesus)} />
+                  <li key={i} className="py-1.5 flex flex-col gap-1 @2xl:flex-row @2xl:gap-3 @2xl:items-baseline text-sm">
+                    {/* Labels can be a sentence long, so these chips wrap inside the column instead of spilling over the text. */}
+                    <span className="w-full @2xl:w-56 min-w-0 shrink-0 flex flex-wrap gap-1">
+                      <RefLink range={r.ranges[0]} canon={canon} label={r.label} color={refFill(gi, r.jesus)} className="chip chip-link max-w-full whitespace-normal text-left items-start rounded-lg" />
                       {(r.links ?? []).map((l, j) => (
-                        <span key={j} className="inline-flex items-center gap-1">
+                        <span key={j} className="inline-flex items-start gap-1 max-w-full">
                           <span className="text-muted">→</span>
-                          <RefLink range={l.ranges[0]} canon={canon} label={l.label} />
+                          <RefLink range={l.ranges[0]} canon={canon} label={l.label} className="chip chip-link max-w-full whitespace-normal text-left items-start rounded-lg" />
                         </span>
                       ))}
                     </span>
@@ -254,10 +255,10 @@ export default function StudyPage() {
                         </span>
                       )}
                       {r.note && <span>{r.note} </span>}
-                      {bible && <span className="font-serif text-ink">{snippet(r.ranges[0][0], r.note ? 90 : 140)}</span>}
+                      {bible && <span className={`font-serif text-ink${r.note ? ' block mt-0.5' : ''}`}>{snippet(r.ranges[0][0], r.note ? 120 : 140)}</span>}
                       {r.facets && <span className="block text-xs text-muted mt-0.5">{facetLine(r)}</span>}
                     </span>
-                    <span className="text-xs text-muted shrink-0 tabular-nums">×{r.weight}</span>
+                    <span className="hidden @2xl:inline text-xs text-muted shrink-0 tabular-nums">×{r.weight}</span>
                   </li>
                 ))}
               </ul>
