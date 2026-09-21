@@ -148,13 +148,3 @@ export const IconNote = (p: SVGProps<SVGSVGElement>) => (
     <path d="M5 4h10l4 4v12H5zM15 4v4h4M8 12h8M8 16h5" />
   </svg>
 )
-export const Logo = (p: SVGProps<SVGSVGElement>) => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden {...p}>
-    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.6" />
-    <circle cx="12" cy="12" r="2.2" fill="currentColor" />
-    <circle cx="6.5" cy="9" r="1.6" fill="var(--series-1)" />
-    <circle cx="17" cy="8" r="1.6" fill="var(--series-2)" />
-    <circle cx="16" cy="16.5" r="1.6" fill="var(--series-3)" />
-    <path d="M8 9.8 10.4 11m3.1-1.2L15.6 9m-2.5 4.4 1.8 2.2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-  </svg>
-)
