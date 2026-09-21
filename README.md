@@ -2,7 +2,7 @@
 
 Visualize the connections of the Bible: people, places, themes, and the story that runs through them.
 
-BibleMap is a static web app. A search pane on the left finds people, places, topics, events and verses; the center shows a visualization; the right pane is a read-along Bible in several public-domain translations. Every view is a URL.
+BibleMap is a static web app. The left pane finds people, places, topics, events and verses, with a notebook under it; the Bible sits in the center in several public-domain translations; the right pane shows the visualizations beside it. Every view is a URL.
 
 ## Running it
 
@@ -51,6 +51,7 @@ Any other static host still serves everything except the feedback board: `public
 | `public/data/` | Compiled data the app fetches. Committed so the site deploys without a data build. |
 | `api/`, `server/feedback.js` | The feedback board's Vercel Functions and the logic behind them (plain JavaScript with JSDoc types). |
 | `src/config/site.ts` | Owner name, About text, donation link. |
+| `src/config/studies.ts` | The shelves on the Studies page. A study not on a shelf lands under "More studies". |
 
 ## Writing a study
 
@@ -153,21 +154,31 @@ Every person page has a timeline: their lifespan when the text gives it, the lif
 
 `/bible` draws the 66 books as blocks sized by length, grouped by testament and kind of writing, followed by a chord diagram of the cross references between the parts of the Bible (by kind of writing or by book), and each book page (`/book/Rom`) shows where the book sits, its traditional writer, its chapters, and an outline built from the section headings of the current translation.
 
+## The panes
+
+On a desktop: search and notes on the left, the Bible in the center, and the right pane beside it.
+
+- The right pane shows the page you open (a study, a person, a place, the timeline). At rest it shows **This chapter** (`/`), which follows the reader: the chapter's outline, a connection map of the chapters its cross references land in (one branch per part of the Bible), its most connected verses, who and what it names, its events, the studies that pass through it, and its reach on the canon strip.
+- Clicking a verse in the Bible opens its **verse map** over the right pane: the verse, the people and places in it, the studies it is in, a map of its cross references by part of the Bible (strongest nearest the center), and the full list. A dot's popup reads the passage or moves the map to it. The page underneath stays as it was; the bar's back arrow, the ✕, or a second click on the verse returns to it. Jumps the page itself makes (clicking a reference in a study) move the Bible but do not open a verse map.
+- The bar between the Bible and the right pane drags to share the width (double-click resets it). The widen button in the right pane's bar spreads it over the Bible for wide charts; asking to read something brings the Bible back.
+- Notes sit under the search pane: separate notes, each remembering where it was started ("Kingdom of Heaven · Matthew 13"), with the references written in them turned into links, and a button that writes the selected verse (or the chapter) into the note. They are kept in this browser only; the download button saves them all as one Markdown file. The bar above them resizes them, and the arrow folds them away.
+- `/studies` shelves every study by theme, each card with a strip showing where its passages fall.
+
 ## Keyboard
 
-`/` focuses the search box, `[` hides or shows the search pane, `]` hides or shows the reading pane. Both panes also have edge handles.
+`/` focuses the search box, `[` hides or shows the search pane, `]` hides or shows the right pane. Both also have edge handles on the Bible.
 
 ## Announcing what's new
 
-When a study or feature ships, add an entry at the top of `src/config/updates.ts` (an id that never changes, the date, a title, a sentence, and an optional link). Readers see a dot on **What's new** in the header until they open it, and the three latest entries sit on the home page. A first-time visitor only gets the dot for entries from the last two weeks. For a new study, also add `added: "YYYY-MM-DD"` to its YAML: it is tagged **New** and listed first for 30 days.
+When a study or feature ships, add an entry at the top of `src/config/updates.ts` (an id that never changes, the date, a title, a sentence, and an optional link). Readers see a dot on **What's new** in the header until they open it. A first-time visitor only gets the dot for entries from the last two weeks. For a new study, also add `added: "YYYY-MM-DD"` to its YAML: it is tagged **New** and listed first for 30 days.
 
 ## Phones
 
-Below 900px the panes become tabs (Explore, Map, Read). The book button in the header docks the Bible under the page instead, so a study and the text it points to are on screen together; drag the bar between them (or focus it and use the arrow keys) to resize. Both choices are remembered.
+Below 900px the panes become tabs (Explore, Read, Map), in the order of the desktop panes; the notes sit under Explore. Tapping a verse lists its connections under the text, with a Map button that opens the verse map on the Map tab. The book button in the header docks the Bible under the page instead, so a study and the text it points to are on screen together; drag the bar between them (or focus it and use the arrow keys) to resize. Both choices are remembered.
 
 ## Back and Forward
 
-Every jump in the reader (a reference, a cross reference, the book or chapter picker) is a step in the browser history, recorded in the URL as `?p=`, so Back returns to where you were reading. Turning a chapter or clicking a verse updates the current step instead of adding one. The arrows in the header, the browser's own buttons, Alt+← and Alt+→, and a phone's back gesture all do the same; on a phone, Back also returns to the tab (Explore, Map, Read) you were on. Back stops at the first page of the visit rather than leaving the site.
+Every jump in the reader (a reference, a cross reference, the book or chapter picker) is a step in the browser history, recorded in the URL as `?p=`, so Back returns to where you were reading. Turning a chapter updates the current step instead of adding one. Opening or closing a verse map is a step too, recorded as `?v=`, so Back closes the map you just opened (and Forward opens it again). The arrows in the header, the browser's own buttons, Alt+← and Alt+→, and a phone's back gesture all do the same; on a phone, Back also returns to the tab (Explore, Map, Read) you were on. Back stops at the first page of the visit rather than leaving the site.
 
 ## Name meanings
 

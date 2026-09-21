@@ -7,7 +7,7 @@ import { loadCanon, loadEvents, loadPeopleIndex, loadPlacesIndex } from '@/data/
 import type { BibleEvent } from '@/data/types'
 import { durationYears, formatDuration, formatYear } from '@/lib/format'
 import { ordinalsToRanges } from '@/lib/refs'
-import { useSession } from '@/store/session'
+import { usePageTitle, useSession } from '@/store/session'
 
 const PERIOD_COLORS = ['var(--series-7)', 'var(--series-3)', 'var(--series-4)', 'var(--series-5)', 'var(--series-6)', 'var(--series-2)', 'var(--series-8)', 'var(--series-1)']
 
@@ -54,6 +54,7 @@ export default function TimelinePage() {
     return [lo - pad, hi + pad]
   }, [filter, items])
 
+  usePageTitle('The story in time')
   if (!canon || !events) return <div className="p-6"><Loading /></div>
 
   return (

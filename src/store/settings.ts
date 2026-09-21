@@ -12,7 +12,15 @@ export interface Settings {
   showHeadings: boolean
   showNumbers: boolean
   showLeft: boolean
+  /** the right pane, where studies, pages and maps open */
   showRight: boolean
+  /** the share of the Bible and the right pane together that the Bible takes */
+  bibleSplit: number
+  notesOpen: boolean
+  /** the share of the left pane's height the notes take */
+  notesSplit: number
+  /** the welcome card on the chapter view was put away */
+  welcomed: boolean
   /** phones: keep the Bible open under the other pane instead of on its own tab */
   mobileBible: boolean
   /** phones: the share of the height the docked Bible takes */
@@ -31,12 +39,22 @@ export const useSettings = create<Settings>()(
       showNumbers: true,
       showLeft: true,
       showRight: true,
+      bibleSplit: 0.46,
+      notesOpen: true,
+      notesSplit: 0.36,
+      welcomed: false,
       mobileBible: false,
       mobileSplit: 0.45,
       set: (patch) => set(patch),
     }),
     {
       name: 'biblemap.settings',
+      // v1: the right pane stopped being the Bible, so a hidden reading pane no longer hides it.
+      version: 1,
+      migrate: (old, version) => {
+        const s = (old ?? {}) as Partial<Settings>
+        return (version < 1 ? { ...s, showRight: true } : s) as Settings
+      },
       partialize: (s) => ({
         translation: s.translation,
         theme: s.theme,
@@ -46,6 +64,10 @@ export const useSettings = create<Settings>()(
         showNumbers: s.showNumbers,
         showLeft: s.showLeft,
         showRight: s.showRight,
+        bibleSplit: s.bibleSplit,
+        notesOpen: s.notesOpen,
+        notesSplit: s.notesSplit,
+        welcomed: s.welcomed,
         mobileBible: s.mobileBible,
         mobileSplit: s.mobileSplit,
       }),

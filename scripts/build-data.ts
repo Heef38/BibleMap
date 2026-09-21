@@ -1152,7 +1152,8 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
   }
   writeJson(
     'studies/index.json',
-    studies.map((s) => ({ id: s.id, title: s.title, subtitle: s.subtitle, tags: s.tags, added: s.added, kind: s.kind, chart: s.chart, refCount: s.refCount, verseCount: s.verseCount })),
+    // ranges: every passage the study touches, so a chapter or a verse can list its studies without loading them all
+    studies.map((s) => ({ id: s.id, title: s.title, subtitle: s.subtitle, tags: s.tags, added: s.added, kind: s.kind, chart: s.chart, refCount: s.refCount, verseCount: s.verseCount, ranges: s.ranges })),
   )
 }
 

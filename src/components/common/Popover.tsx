@@ -6,6 +6,8 @@ export interface PopoverState {
   title: string
   body?: ReactNode
   action?: { label: string; run: () => void }
+  /** a second, quieter action */
+  extra?: { label: string; run: () => void }
 }
 
 /** A small card pinned near a click point; closes on Escape or an outside click. */
@@ -37,6 +39,11 @@ export function Popover({ state, onClose }: { state: PopoverState | null; onClos
         {state.action && (
           <button type="button" className="btn btn-primary !py-1" onClick={state.action.run}>
             {state.action.label}
+          </button>
+        )}
+        {state.extra && (
+          <button type="button" className="btn !py-1" onClick={state.extra.run}>
+            {state.extra.label}
           </button>
         )}
         <button type="button" className="btn btn-ghost !py-1 ml-auto" onClick={onClose}>

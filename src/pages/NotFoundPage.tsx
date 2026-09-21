@@ -1,6 +1,8 @@
 import { Link } from 'react-router'
+import { usePageTitle } from '@/store/session'
 
 export default function NotFoundPage() {
+  usePageTitle('Not found')
   return (
     <div className="p-6">
       <h1 className="text-xl font-semibold">Nothing here.</h1>

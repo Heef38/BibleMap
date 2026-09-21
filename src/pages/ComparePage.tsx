@@ -12,7 +12,7 @@ import { durationYears, formatYear, formatYearRange, truncate } from '@/lib/form
 import { useDebounce } from '@/lib/hooks'
 import { ordinalsToRanges } from '@/lib/refs'
 import { useSettings } from '@/store/settings'
-import { useSession } from '@/store/session'
+import { usePageTitle, useSession } from '@/store/session'
 
 const COLOR_A = 'var(--series-1)'
 const COLOR_B = 'var(--series-2)'
@@ -232,6 +232,7 @@ export default function ComparePage() {
   }
 
   const err = errA ?? errB
+  usePageTitle(a && b ? `${a.title} and ${b.title}` : 'Compare two people')
   if (err) return <div className="p-6 text-ink-2">Could not load one of the people: {err.message}</div>
 
   return (

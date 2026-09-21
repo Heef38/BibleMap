@@ -35,16 +35,20 @@ interface Props {
   center: MapCenter
   branches: MapBranch[]
   canBack: boolean
-  onDot: (dot: MapDot, branch: MapBranch) => void
+  /** `at` is where the dot was clicked, for a popup */
+  onDot: (dot: MapDot, branch: MapBranch, at: { x: number; y: number }) => void
   onBranch: (branch: MapBranch, at: { x: number; y: number }) => void
   onCenter: () => void
   height?: number
+  /** the line above the map, and the last line of a dot's tooltip */
+  hint?: string
+  dotHint?: string
 }
 
 const CENTER_R = 34
 const TAU = Math.PI * 2
 
-export default function ConnectionMap({ center, branches, canBack, onDot, onBranch, onCenter, height = 560 }: Props) {
+export default function ConnectionMap({ center, branches, canBack, onDot, onBranch, onCenter, height = 560, hint = 'Click a dot to zoom into it, a line for its theme.', dotHint = 'click to zoom in' }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null)
@@ -61,7 +65,12 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
       const angle = -Math.PI / 2 + (TAU * i) / N
       const n = b.dots.length
       const desired = n <= 3 ? 40 + 60 * n : 56 + 16 * n
-      const len = Math.max(96, Math.min(Math.max(R, 120), desired))
+      // Stop short of the edge so the label past the tip stays in view (it matters on phones).
+      const cos = Math.abs(Math.cos(angle))
+      const sin = Math.abs(Math.sin(angle))
+      const labelW = (Math.min(24, b.title.length) + 3) * 6.6
+      const room = Math.min(cos > 0.2 ? (width / 2 - 16 - labelW) / cos : Infinity, sin > 0.2 ? (h / 2 - 24) / sin : Infinity)
+      const len = Math.max(CENTER_R + 36, Math.min(Math.max(96, Math.min(Math.max(R, 120), desired)), room))
       const spacing = (len - CENTER_R - 10) / (n + 1)
       const crowded = spacing < 11
       const dots = b.dots.map((d, k) => {
@@ -69,7 +78,9 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
         const perp = crowded ? (k % 2 ? 6 : -6) : 0
         return { dot: d, x: Math.cos(angle) * t - Math.sin(angle) * perp, y: Math.sin(angle) * t + Math.cos(angle) * perp, r: crowded ? Math.min(d.r, 3.5) : d.r, side: k % 2 ? 1 : -1 }
       })
-      return { branch: b, angle, len, tip: { x: Math.cos(angle) * len, y: Math.sin(angle) * len }, dots, labelDots: spacing >= 34 }
+      // A label beside its tip gets the characters that fit before the edge (the tooltip has it whole).
+      const labelChars = cos > 0.2 ? Math.max(6, Math.min(24, Math.floor((width / 2 - 28 - cos * len) / 6.6) - 3)) : 24
+      return { branch: b, angle, len, tip: { x: Math.cos(angle) * len, y: Math.sin(angle) * len }, dots, labelDots: spacing >= 34, labelChars }
     })
   }, [branches, width, h])
 
@@ -113,9 +124,10 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
 
   return (
     <div ref={wrapRef} className="w-full">
-      <div className="flex items-center gap-2 mb-1.5 text-[11px] text-muted">
-        <span>Click a dot to zoom into it, a line for its theme.</span>
-        <span className="ml-auto">drag to pan · ctrl + scroll to zoom</span>
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1.5 text-[11px] text-muted">
+        <span className="flex-1 basis-56 min-w-0">{hint}</span>
+        <div className="ml-auto flex items-center gap-2 shrink-0">
+        <span>drag to pan · ctrl + scroll to zoom</span>
         <div className="seg">
           <button type="button" onClick={() => zoomBy(1.5)} title="Zoom in" aria-label="Zoom in">
             +
@@ -127,12 +139,13 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
             reset
           </button>
         </div>
+        </div>
       </div>
       {width > 0 && (
         <svg ref={svgRef} width={width} height={h} viewBox={`${-width / 2} ${-h / 2} ${width} ${h}`} className="block select-none touch-none rounded-xl border border-line bg-surface" role="img" aria-label={`Connection map of ${center.label}`} style={{ cursor: 'grab' }}>
           <g transform={transform.toString()}>
             {/* branch lines */}
-            {layout.map(({ branch: b, tip: t, angle }) => {
+            {layout.map(({ branch: b, tip: t, angle, labelChars }) => {
               const hovered = hover === `b:${b.id}`
               const color = b.muted ? 'var(--line-strong)' : b.color
               const cos = Math.cos(angle)
@@ -191,7 +204,7 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
                     style={{ cursor: 'pointer', paintOrder: 'stroke', stroke: 'var(--surface)', strokeWidth: 3, strokeLinejoin: 'round' }}
                     onClick={(e) => onBranch(b, { x: e.clientX, y: e.clientY })}
                   >
-                    {truncate(b.title, 24)}
+                    {truncate(b.title, labelChars)}
                     <tspan fill="var(--muted)" fontWeight={400}>
                       {' '}
                       {b.dots.length}
@@ -220,11 +233,12 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
                       role="button"
                       tabIndex={0}
                       aria-label={d.label}
-                      onClick={() => onDot(d, b)}
+                      onClick={(e) => onDot(d, b, { x: e.clientX, y: e.clientY })}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault()
-                          onDot(d, b)
+                          const r = (e.target as SVGElement).getBoundingClientRect()
+                          onDot(d, b, { x: r.x + r.width / 2, y: r.y + r.height / 2 })
                         }
                       }}
                       onPointerMove={(e) => {
@@ -236,7 +250,7 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
                             {d.sub && <div className="k">{d.sub}</div>}
                             {d.note && <div className="k mt-1">{truncate(d.note, 140)}</div>}
                             {d.snippet && <div className="mt-1 font-serif">{truncate(d.snippet, 140)}</div>}
-                            <div className="k mt-1">click to zoom in</div>
+                            <div className="k mt-1">{dotHint}</div>
                           </>,
                         )
                       }}

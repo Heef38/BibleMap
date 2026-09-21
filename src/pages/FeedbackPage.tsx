@@ -4,6 +4,7 @@ import { EmptyState, Loading, PageHeader } from '@/components/common/ui'
 import { IconUp } from '@/components/common/icons'
 import { SITE } from '@/config/site'
 import { KIND_LABELS, LIMITS, STATUS_LABELS, adminKey, feedbackApi, loadVoted, saveVoted, type FeedbackItem, type FeedbackKind, type FeedbackStatus } from '@/lib/feedback'
+import { usePageTitle } from '@/store/session'
 
 type Sort = 'top' | 'new'
 type Filter = 'all' | FeedbackKind
@@ -36,6 +37,7 @@ function when(iso: string): string {
 }
 
 export default function FeedbackPage() {
+  usePageTitle('Ideas and feedback')
   const [params] = useSearchParams()
   const ownerMode = params.has('admin')
   const [items, setItems] = useState<FeedbackItem[] | null>(null)

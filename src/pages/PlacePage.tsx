@@ -7,7 +7,7 @@ import { useData } from '@/data/useData'
 import { loadCanon, loadEvents, loadPeopleIndex, loadPlace } from '@/data/loaders'
 import { formatYear } from '@/lib/format'
 import { ordinalsToRanges } from '@/lib/refs'
-import { useSession } from '@/store/session'
+import { usePageTitle, useSession } from '@/store/session'
 
 const COLOR = 'var(--series-3)'
 
@@ -28,6 +28,7 @@ export default function PlacePage() {
   const personName = useMemo(() => new Map(people?.map((p) => [p.id, p.title]) ?? []), [people])
   const here = useMemo(() => (events ?? []).filter((e) => e.locations.includes(id)), [events, id])
 
+  usePageTitle(place?.name)
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !place) return <div className="p-6"><Loading /></div>
 

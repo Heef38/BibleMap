@@ -2,7 +2,9 @@
 
 ## Layout
 
-Three panes: search and navigation (left), the visualization (center), the reader (right). Below 900px the panes become tabs. The reader's position is mirrored into the URL as `?p=John.3.16`, so every view is a link.
+Three panes: search, navigation and notes (left), the reader (center), the visualization (right). The Bible is the constant; the right pane is what changes beside it, and it rests on the chapter being read. A verse picked in the reader lays its connection map over the right pane without unmounting the page beneath, so returning to a study finds it as it was. Below 900px the panes become tabs in the same order. The reader's position is mirrored into the URL as `?p=John.3.16`, and an open verse map as `?v=`, so every view is a link.
+
+Connection maps of a verse or a chapter branch by part of the Bible (Law, History, Poetry & Wisdom, Prophets, Gospels, Acts, Letters, Revelation), one categorical hue each in canon order, so the same part always has the same color.
 
 ## Type
 

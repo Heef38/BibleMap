@@ -9,6 +9,7 @@ import { useData } from '@/data/useData'
 import { loadCanon } from '@/data/loaders'
 import type { CanonBook } from '@/lib/canon'
 import { useWidth } from '@/lib/hooks'
+import { usePageTitle } from '@/store/session'
 
 interface DivisionInfo {
   id: string
@@ -38,6 +39,7 @@ interface TNode {
 const fillFor = (t: 'OT' | 'NT', hovered: boolean) => (hovered ? `var(--series-${t === 'OT' ? 1 : 2})` : `color-mix(in oklab, var(--series-${t === 'OT' ? 1 : 2}) 68%, var(--surface))`)
 
 export default function BiblePage() {
+  usePageTitle('How the Bible is laid out')
   const { data: canon } = useData('canon', loadCanon)
   const { data: matrix } = useData('xref-matrix', () => fetchJson<XrefMatrix>('xrefs/matrix.json'))
   const wrapRef = useRef<HTMLDivElement>(null)

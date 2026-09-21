@@ -3,7 +3,8 @@ import { Route, Routes } from 'react-router'
 import AppShell from '@/components/layout/AppShell'
 import CreditsPage from '@/pages/CreditsPage'
 import EventPage from '@/pages/EventPage'
-import HomePage from '@/pages/HomePage'
+import ChapterPage from '@/pages/ChapterPage'
+import StudiesPage from '@/pages/StudiesPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import PersonPage from '@/pages/PersonPage'
 import PlacePage from '@/pages/PlacePage'
@@ -35,7 +36,8 @@ export default function App() {
   return (
     <AppShell>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<ChapterPage />} />
+        <Route path="/studies" element={<StudiesPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/person/:id" element={<PersonPage />} />
         <Route path="/place/:id" element={<PlacePage />} />

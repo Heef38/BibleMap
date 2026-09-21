@@ -113,6 +113,41 @@ export const IconUp = (p: SVGProps<SVGSVGElement>) => (
     <path d="m6 15 6-6 6 6" />
   </svg>
 )
+export const IconDown = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+)
+export const IconExpand = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+  </svg>
+)
+export const IconShrink = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />
+  </svg>
+)
+export const IconPlus = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M12 5v14M5 12h14" />
+  </svg>
+)
+export const IconDownload = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M12 4v11m-5-5 5 5 5-5M5 20h14" />
+  </svg>
+)
+export const IconTrash = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
+  </svg>
+)
+export const IconNote = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M5 4h10l4 4v12H5zM15 4v4h4M8 12h8M8 16h5" />
+  </svg>
+)
 export const Logo = (p: SVGProps<SVGSVGElement>) => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden {...p}>
     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.6" />

@@ -9,7 +9,7 @@ import { useData } from '@/data/useData'
 import { loadCanon, loadEvents, loadPeopleIndex, loadPerson, loadPlacesIndex, loadYears } from '@/data/loaders'
 import { durationYears, formatDuration, formatYear, formatYearRange } from '@/lib/format'
 import { ordinalsToRanges } from '@/lib/refs'
-import { useSession } from '@/store/session'
+import { usePageTitle, useSession } from '@/store/session'
 
 const COLOR = 'var(--series-1)'
 
@@ -90,6 +90,7 @@ export default function PersonPage() {
   }, [person, bins, items])
   const eventById = useMemo(() => new Map(myEvents.map((e) => [e.id, e])), [myEvents])
 
+  usePageTitle(person?.title)
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !person) return <div className="p-6"><Loading /></div>
 

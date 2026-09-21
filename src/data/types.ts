@@ -243,6 +243,8 @@ export interface StudyIndexEntry {
   chart?: string
   refCount: number
   verseCount: number
+  /** every passage the study touches, merged */
+  ranges: Range[]
 }
 
 export interface Manifest {

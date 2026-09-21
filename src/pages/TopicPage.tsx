@@ -5,7 +5,7 @@ import { ErrorBlock, Loading, PageHeader, RefLink, Section } from '@/components/
 import { useData } from '@/data/useData'
 import { loadCanon, loadTopic } from '@/data/loaders'
 import { countVerses, mergeRanges } from '@/lib/refs'
-import { useSession } from '@/store/session'
+import { usePageTitle, useSession } from '@/store/session'
 
 const COLOR = 'var(--series-7)'
 
@@ -21,6 +21,7 @@ export default function TopicPage() {
     return () => setHighlights([])
   }, [topic, ranges, setHighlights])
 
+  usePageTitle(topic?.title)
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !topic) return <div className="p-6"><Loading /></div>
 

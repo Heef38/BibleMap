@@ -1,8 +1,10 @@
 import { Loading, PageHeader, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadManifest } from '@/data/loaders'
+import { usePageTitle } from '@/store/session'
 
 export default function CreditsPage() {
+  usePageTitle('Sources and licenses')
   const { data: manifest } = useData('manifest', loadManifest)
   if (!manifest) return <div className="p-6"><Loading /></div>
   return (

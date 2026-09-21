@@ -3,8 +3,10 @@ import { Link, useLocation } from 'react-router'
 import { PageHeader, Section } from '@/components/common/ui'
 import { IconHeart } from '@/components/common/icons'
 import { SITE } from '@/config/site'
+import { usePageTitle } from '@/store/session'
 
 export default function AboutPage() {
+  usePageTitle('About BibleMap')
   const { hash } = useLocation()
   useEffect(() => {
     if (hash) document.getElementById(hash.slice(1))?.scrollIntoView()

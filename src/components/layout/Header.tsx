@@ -265,7 +265,7 @@ export default function Header() {
         <button type="button" className="btn btn-ghost max-[900px]:hidden" aria-pressed={showLeft} onClick={() => set({ showLeft: !showLeft })} title={showLeft ? 'Hide the search pane ( [ )' : 'Show the search pane ( [ )'}>
           <IconPanelLeft />
         </button>
-        <button type="button" className="btn btn-ghost max-[900px]:hidden" aria-pressed={showRight} onClick={() => set({ showRight: !showRight })} title={showRight ? 'Hide the reading pane ( ] )' : 'Show the reading pane ( ] )'}>
+        <button type="button" className="btn btn-ghost max-[900px]:hidden" aria-pressed={showRight} onClick={() => set({ showRight: !showRight })} title={showRight ? 'Hide the map pane ( ] )' : 'Show the map pane ( ] )'}>
           <IconPanelRight />
         </button>
         <ThemeButton />

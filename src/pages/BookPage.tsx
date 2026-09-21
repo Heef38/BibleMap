@@ -5,7 +5,7 @@ import { EntityLink, Loading, PageHeader, Section } from '@/components/common/ui
 import { useData } from '@/data/useData'
 import { loadBible, loadBooks, loadCanon, loadPeopleIndex } from '@/data/loaders'
 import { useSettings } from '@/store/settings'
-import { useSession } from '@/store/session'
+import { usePageTitle, useSession } from '@/store/session'
 
 export default function BookPage() {
   const { osis = '' } = useParams()
@@ -30,6 +30,7 @@ export default function BookPage() {
       .sort((a, b) => a[0] - b[0])
   }, [canon, book, headingsSource])
 
+  usePageTitle(book?.name)
   if (!canon) return <div className="p-6"><Loading /></div>
   if (!book) return <div className="p-6 text-ink-2">No book called “{osis}”.</div>
   const chapters = book.chapters.length

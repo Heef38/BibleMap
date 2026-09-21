@@ -137,7 +137,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
-button, input, select {
+button, input, select, textarea {
   font: inherit;
   color: inherit;
 }
@@ -163,6 +163,49 @@ svg [role="button"]:focus:not(:focus-visible) {
 .pane {
   background: var(--surface);
   border-color: var(--line);
+}
+/* The bar between two panes: a hairline that thickens under the pointer. */
+.splitter-col {
+  width: 7px;
+  margin: 0 -3px;
+  cursor: col-resize;
+}
+.splitter-row {
+  height: 7px;
+  margin: -3px 0;
+  cursor: row-resize;
+}
+.splitter::after {
+  content: '';
+  position: absolute;
+  background: var(--line);
+  transition: background-color 120ms ease;
+}
+.splitter-col::after {
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 1px;
+}
+.splitter-row::after {
+  left: 0;
+  right: 0;
+  top: 3px;
+  height: 1px;
+}
+.splitter:hover::after, .splitter:focus-visible::after, .splitter:active::after {
+  background: var(--accent);
+}
+.splitter-col:hover::after, .splitter-col:focus-visible::after, .splitter-col:active::after {
+  left: 2px;
+  width: 3px;
+}
+.splitter-row:hover::after, .splitter-row:focus-visible::after, .splitter-row:active::after {
+  top: 2px;
+  height: 3px;
+}
+.splitter:focus-visible {
+  outline: none;
 }
 .btn {
   display: inline-flex;
@@ -285,6 +328,9 @@ svg [role="button"]:focus:not(:focus-visible) {
   font-size: var(--reader-size, 17px);
   line-height: 1.65;
   color: var(--ink);
+  /* a readable line when the Bible has the whole width */
+  max-width: 44rem;
+  margin-inline: auto;
 }
 .scripture .heading {
   font-family: var(--font-sans);

@@ -8,7 +8,7 @@ import { loadBible, loadCanon } from '@/data/loaders'
 import { buildSearchIndex, entityHref, searchEntities, searchVerses, TYPE_LABELS, TYPE_ORDER } from '@/data/search'
 import { ordinalsToRanges } from '@/lib/refs'
 import { useSettings } from '@/store/settings'
-import { useSession } from '@/store/session'
+import { usePageTitle, useSession } from '@/store/session'
 
 export default function SearchPage() {
   const [params] = useSearchParams()
@@ -33,6 +33,7 @@ export default function SearchPage() {
     return () => setHighlights([])
   }, [ranges, q, setHighlights])
 
+  usePageTitle(q ? `Search: ${q}` : 'Search')
   if (!canon || !bible) return <div className="p-6"><Loading /></div>
 
   return (

@@ -13,7 +13,7 @@ import { loadBible, loadCanon, loadStudy } from '@/data/loaders'
 import type { StudyGroup, StudyRef } from '@/data/types'
 import { truncate } from '@/lib/format'
 import { useSettings } from '@/store/settings'
-import { useSession } from '@/store/session'
+import { usePageTitle, useSession } from '@/store/session'
 
 export default function StudyPage() {
   const { id = '' } = useParams()
@@ -47,6 +47,7 @@ export default function StudyPage() {
     return () => setHighlights([])
   }, [view, setHighlights])
 
+  usePageTitle(study?.title)
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !study || !view) return <div className="p-6"><Loading /></div>
 

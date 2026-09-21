@@ -116,6 +116,21 @@ function renderInline(p: string, canon: Canon): ReactNode[] {
 
 const BARE_REF = /\b((?:[1-3]\s?)?[A-Z][a-z]{1,14}\.?\s?\d{1,3}(?::\d{1,3}(?:\s?[-–]\s?\d{1,3}(?::\d{1,3})?)?)?)\b/g
 
+/** The references written in plain text ("Rom 5:8", "1 Samuel 16:12"), in order, without repeats. */
+export function refsIn(text: string, canon: Canon): { label: string; range: Range }[] {
+  const out: { label: string; range: Range }[] = []
+  const seen = new Set<string>()
+  for (const m of text.matchAll(BARE_REF)) {
+    const parsed = parseRefs(m[1], canon)
+    if (!parsed.ranges.length || parsed.errors.length) continue
+    const key = parsed.ranges[0].join('-')
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push({ label: canon.rangeLabel(parsed.ranges[0][0], parsed.ranges[0][1], 'short'), range: parsed.ranges[0] })
+  }
+  return out
+}
+
 /** Turn "1 Samuel 16:12" style references inside plain text into links. */
 function linkBareRefs(text: string, canon: Canon, keyPrefix: string): ReactNode[] {
   const out: ReactNode[] = []

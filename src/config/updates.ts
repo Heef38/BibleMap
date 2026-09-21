@@ -14,6 +14,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'layout-bible-center',
+    date: '2026-09-21',
+    title: 'The Bible in the middle, with maps beside it',
+    body: 'The Bible now sits in the center and everything else opens beside it. Click any verse to see a map of where it connects across the Bible. At rest, the right pane maps the chapter you are reading. Studies have their own page, sorted by theme, and there is a place for notes under the search.',
+    link: { to: '/studies', label: 'Browse the studies' },
+  },
+  {
     id: 'study-promises',
     date: '2026-09-19',
     title: 'New study: The Promises of God',

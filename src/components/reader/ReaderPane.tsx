@@ -24,7 +24,16 @@ function VerseText({ text, spans }: { text: string; spans?: [number, number][] }
   return <>{parts}</>
 }
 
-export default function ReaderPane() {
+interface Props {
+  /** show a picked verse's connections under the text (phones, or no right pane to map them in) */
+  inlineConnections?: boolean
+  /** offered on that list, to see the connections as a map instead */
+  onMap?: (ordinal: number) => void
+  /** controls pinned to the pane's edges at the top of the text */
+  edge?: ReactNode
+}
+
+export default function ReaderPane({ inlineConnections = false, onMap, edge }: Props) {
   const translation = useSettings((s) => s.translation)
   const redLetter = useSettings((s) => s.redLetter)
   const showHeadings = useSettings((s) => s.showHeadings)
@@ -35,9 +44,10 @@ export default function ReaderPane() {
   const { data: bible, error } = useData(`bible:${translation}`, () => loadBible(translation))
   const readerOrdinal = useSession((s) => s.readerOrdinal)
   const focus = useSession((s) => s.focus)
+  const mapVerse = useSession((s) => s.mapVerse)
   const highlights = useSession((s) => s.highlights)
   const goTo = useSession((s) => s.goTo)
-  const setFocus = useSession((s) => s.setFocus)
+  const selectVerse = useSession((s) => s.selectVerse)
   const scrollRef = useRef<HTMLDivElement>(null)
   const shownChapter = useRef<number | null>(null)
 
@@ -89,7 +99,7 @@ export default function ReaderPane() {
 
   return (
     <div className="flex flex-col h-full min-h-0">
-      <div className="flex items-center gap-1.5 px-3 py-2 border-b border-line shrink-0 flex-wrap">
+      <div className="flex items-center gap-1.5 px-3 py-2 min-h-12 border-b border-line shrink-0 flex-wrap">
         <select className="field !w-auto !py-1 !px-2 text-sm" value={translation} onChange={(e) => set({ translation: e.target.value })} aria-label="Translation">
           {(bibles ?? [{ id: translation, abbrev: translation.toUpperCase(), name: '', redLetter: false, headings: false }]).map((b) => (
             <option key={b.id} value={b.id}>
@@ -131,6 +141,7 @@ export default function ReaderPane() {
       </div>
 
       <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-5 py-4">
+        {edge && <div className="sticky top-3 z-10 h-0 -mx-5 pointer-events-none">{edge}</div>}
         {!bible ? (
           <Loading label={`Loading ${translation.toUpperCase()}…`} />
         ) : (
@@ -144,6 +155,8 @@ export default function ReaderPane() {
               const v = o - start + 1
               const hl = hlMap.get(o)
               const isFocus = focus === o
+              // A second click lets the verse go; a click on a verse the map is not on moves the map to it.
+              const pick = () => selectVerse(isFocus && mapVerse === o ? null : o)
               return (
                 <div key={o}>
                   {heading && <div className="heading">{heading}</div>}
@@ -151,13 +164,13 @@ export default function ReaderPane() {
                     data-o={o}
                     className={`verse${hl ? ' hl' : ''}${isFocus ? ' focus' : ''}`}
                     style={hl ? ({ '--hl-color': hl } as React.CSSProperties) : undefined}
-                    onClick={() => setFocus(isFocus ? null : o)}
+                    onClick={pick}
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault()
-                        setFocus(isFocus ? null : o)
+                        pick()
                       }
                     }}
                     aria-label={`${canon.label(o)}`}
@@ -187,7 +200,9 @@ export default function ReaderPane() {
         )}
       </div>
 
-      {focus !== null && focus >= start && focus <= end && bible && <VerseConnections ordinal={focus} canon={canon} bible={bible} onClose={() => setFocus(null)} />}
+      {inlineConnections && focus !== null && focus >= start && focus <= end && bible && (
+        <VerseConnections ordinal={focus} canon={canon} bible={bible} onClose={() => selectVerse(null)} onMap={onMap && (() => onMap(focus))} />
+      )}
     </div>
   )
 }
