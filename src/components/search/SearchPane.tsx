@@ -49,7 +49,8 @@ export default function SearchPane() {
   }
 
   const hasQuery = dq.trim().length > 0
-  const fresh = (studies ?? []).filter((s) => isNewStudy(s.added)).slice(0, 3)
+  // While a study is new, the Studies link carries a New tag.
+  const hasNewStudy = (studies ?? []).some((s) => isNewStudy(s.added))
 
   return (
     <div className="p-3">
@@ -69,26 +70,13 @@ export default function SearchPane() {
 
       {!hasQuery && (
         <div className="mt-5">
-          <div className="kicker mb-2">Studies</div>
-          <ul className="space-y-1">
-            {fresh.map((s) => (
-              <li key={s.id}>
-                <Link to={`/study/${s.id}`} className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
-                  <div className="font-medium">
-                    {s.title} <NewTag />
-                  </div>
-                  {s.subtitle && <div className="text-xs text-ink-2">{s.subtitle}</div>}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link to="/studies" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
-                <div className="font-medium">{fresh.length ? 'All the studies' : 'Browse the studies'} →</div>
-                <div className="text-xs text-ink-2">{studies?.length ? `${studies.length} themes, each drawn as maps and timelines` : 'Themes drawn as maps and timelines'}</div>
-              </Link>
-            </li>
-          </ul>
-          <div className="kicker mt-6 mb-2">Explore</div>
+          <div className="kicker mb-2">Explore</div>
+          <Link to="/studies" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
+            <div className="font-medium">
+              Studies {hasNewStudy && <NewTag />}
+            </div>
+            <div className="text-xs text-ink-2">{studies?.length ? `${studies.length} themes, each drawn as maps and timelines` : 'Themes drawn as maps and timelines'}</div>
+          </Link>
           <Link to="/" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
             <div className="font-medium">This chapter</div>
             <div className="text-xs text-ink-2">Where the chapter you are reading connects</div>
