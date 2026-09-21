@@ -49,6 +49,11 @@ function useReaderHistory() {
       if (saved.pane && saved.pane !== s.mobilePane) {
         s.setMobilePane(saved.pane)
         restored = true
+      } else if (!saved.pane && s.mobilePane === 'explore') {
+        // A new page opened from Explore (a study, a person, a search): show it on the Map tab.
+        // Back returns to Explore, which the entry we left remembers.
+        s.setMobilePane('map')
+        restored = true
       }
       if (urlP && urlP !== osisOf(s.readerOrdinal, s.focus)) {
         const parsed = parseRefs(urlP, canon)

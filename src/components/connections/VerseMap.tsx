@@ -1,15 +1,13 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import ConnectionMap, { type MapBranch } from '@/components/viz/ConnectionMap'
-import { Popover, type PopoverState } from '@/components/common/Popover'
-import { Loading, RefLink, Section } from '@/components/common/ui'
+import { Loading, Section } from '@/components/common/ui'
 import { VerseEntities, XrefList } from '@/components/reader/VerseConnections'
 import { useData } from '@/data/useData'
 import { loadBible, loadCanon, loadStudiesIndex, loadXrefs } from '@/data/loaders'
 import type { Bible } from '@/data/types'
 import type { Canon } from '@/lib/canon'
 import { PARTS, partColor, partOf, studiesTouching } from '@/lib/connections'
-import { truncate } from '@/lib/format'
 import { useSettings } from '@/store/settings'
 import { useSession } from '@/store/session'
 
@@ -25,39 +23,77 @@ export default function VerseMap({ ordinal }: { ordinal: number }) {
   return <VerseMapBody ordinal={ordinal} canon={canon} bible={bible} />
 }
 
+/** Where the map is looking: the whole verse, or one part of the Bible spread out by book. */
+type Zoom = number | null
+
 function VerseMapBody({ ordinal, canon, bible }: { ordinal: number; canon: Canon; bible: Bible }) {
   const book = canon.book(canon.locate(ordinal).b)
   const { data: xrefs } = useData(`xrefs:${book.osis}`, () => loadXrefs(book.osis))
   const { data: studyIndex } = useData('studies-index', loadStudiesIndex)
   const goTo = useSession((s) => s.goTo)
   const centerMap = useSession((s) => s.centerMap)
-  const [popover, setPopover] = useState<PopoverState | null>(null)
+  const [zoom, setZoom] = useState<Zoom>(null)
+  // The verses followed from dot to dot, so the center can step back along them.
+  const [trail, setTrail] = useState<number[]>([ordinal])
+  const nextTrail = useRef<number[] | null>(null)
+
+  useEffect(() => {
+    setZoom(null)
+    const planned = nextTrail.current
+    nextTrail.current = null
+    setTrail((t) => {
+      if (planned && planned[planned.length - 1] === ordinal) return planned
+      if (t[t.length - 1] === ordinal) return t
+      if (t[t.length - 2] === ordinal) return t.slice(0, -1) // the browser's Back
+      return [ordinal]
+    })
+  }, [ordinal])
+
+  const follow = (to: number, path: number[]) => {
+    nextTrail.current = path
+    centerMap(to)
+  }
 
   const refs = useMemo(() => xrefs?.[ordinal] ?? [], [xrefs, ordinal])
   const studies = useMemo(() => (studyIndex ? studiesTouching(studyIndex, ordinal, ordinal) : []), [studyIndex, ordinal])
 
-  const { branches, byPart } = useMemo(() => {
+  const branches = useMemo(() => {
+    const max = Math.max(1, refs[0]?.[2] ?? 1)
+    const dot = ([s, e, votes]: [number, number, number], color: string) => ({
+      id: `${s}-${e}`,
+      label: canon.rangeLabel(s, e, 'short'),
+      color,
+      r: 3 + 5 * Math.sqrt(Math.max(votes, 0) / max),
+      solid: votes >= max / 3,
+      snippet: bible.verses[s],
+    })
     const byPart = PARTS.map(() => [] as [number, number, number][])
     for (const r of refs) byPart[partOf(canon, r[0])].push(r)
-    const max = Math.max(1, refs[0]?.[2] ?? 1)
-    const branches: MapBranch[] = PARTS.map((p, i) => ({
-      id: p.id,
-      title: p.title,
-      color: partColor(i),
-      // strongest nearest the center
-      dots: byPart[i].slice(0, PER_BRANCH).map(([s, e, votes]) => ({
-        id: `${s}-${e}`,
-        label: canon.rangeLabel(s, e, 'short'),
-        color: partColor(i),
-        r: 3 + 5 * Math.sqrt(Math.max(votes, 0) / max),
-        solid: votes >= max / 3,
-        snippet: bible.verses[s],
-      })),
-    })).filter((b) => b.dots.length)
-    return { branches, byPart }
-  }, [refs, canon, bible])
+    if (zoom === null)
+      return PARTS.map(
+        (p, i): MapBranch => ({
+          id: p.id,
+          title: p.title,
+          color: partColor(i),
+          focusable: true,
+          count: byPart[i].length,
+          // strongest nearest the center
+          dots: byPart[i].slice(0, PER_BRANCH).map((r) => dot(r, partColor(i))),
+        }),
+      ).filter((b) => b.dots.length)
+    // One part, a branch per book, every link drawn.
+    const byBook = new Map<number, [number, number, number][]>()
+    for (const r of byPart[zoom]) {
+      const b = canon.locate(r[0]).b
+      ;(byBook.get(b) ?? byBook.set(b, []).get(b)!).push(r)
+    }
+    return [...byBook].map(
+      ([b, list]): MapBranch => ({ id: `book:${b}`, title: canon.book(b).name, color: partColor(zoom), dots: list.slice(0, 20).map((r) => dot(r, partColor(zoom))), count: list.length }),
+    )
+  }, [refs, canon, bible, zoom])
 
   const label = canon.label(ordinal)
+  const short = canon.label(ordinal, 'short')
 
   return (
     <div className="p-6 @container">
@@ -85,53 +121,39 @@ function VerseMapBody({ ordinal, canon, bible }: { ordinal: number; canon: Canon
       ) : (
         <>
           <Section title="Where it connects" count={refs.length}>
+            {trail.length > 1 && (
+              <div className="flex flex-wrap items-center gap-1 mb-2" aria-label="Verses followed">
+                {trail.map((o, i) => {
+                  const here = i === trail.length - 1
+                  return (
+                    <button key={i} type="button" className={`chip ${here ? '' : 'chip-link'}`} aria-current={here ? 'true' : undefined} disabled={here} onClick={() => follow(o, trail.slice(0, i + 1))}>
+                      {canon.label(o, 'short')}
+                    </button>
+                  )
+                })}
+              </div>
+            )}
             <ConnectionMap
-              center={{ label: canon.label(ordinal, 'short') }}
+              center={zoom === null ? { label: short, sub: `${refs.length} cross references` } : { label: PARTS[zoom].title, sub: `from ${short}` }}
               branches={branches}
-              canBack={false}
+              canBack={zoom !== null || trail.length > 1}
               height={520}
-              hint="Each line is a part of the Bible; the strongest links sit nearest the center. Click a dot to read it."
-              dotHint="click to read it, or center the map on it"
-              onDot={(d, _b, at) => {
-                const [s, e] = d.id.split('-').map(Number)
-                setPopover({
-                  x: at.x,
-                  y: at.y,
-                  title: canon.rangeLabel(s, e),
-                  body: <span className="font-serif">{truncate(bible.verses.slice(s, Math.min(e, s + 3) + 1).join(' '), 260)}</span>,
-                  action: {
-                    label: 'Read it',
-                    run: () => {
-                      setPopover(null)
-                      goTo(s)
-                    },
-                  },
-                  extra: {
-                    label: 'Center the map here',
-                    run: () => {
-                      setPopover(null)
-                      centerMap(s)
-                    },
-                  },
-                })
+              hint={
+                zoom === null
+                  ? 'Each line is a part of the Bible, strongest links nearest the center. Click a dot to follow it; click a line to spread that part out by book.'
+                  : `The links from ${short} into ${PARTS[zoom].title}, by book. Click a dot to follow it; click the center to step back.`
+              }
+              dotHint="click to follow it: the Bible and this map move there"
+              branchHint="click to spread these out by book"
+              onDot={(d) => {
+                const s = Number(d.id.split('-')[0])
+                if (s !== ordinal) follow(s, [...trail, s])
               }}
-              onBranch={(b, at) => {
-                const all = byPart[PARTS.findIndex((p) => p.id === b.id)] ?? []
-                setPopover({
-                  x: at.x,
-                  y: at.y,
-                  title: `${b.title}: ${all.length} cross reference${all.length === 1 ? '' : 's'}`,
-                  body: (
-                    <span className="flex flex-wrap gap-1 mt-1">
-                      {all.slice(0, 16).map(([s, e], i) => (
-                        <RefLink key={i} range={[s, e]} canon={canon} />
-                      ))}
-                      {all.length > 16 && <span className="text-xs text-muted self-center">and {all.length - 16} more below</span>}
-                    </span>
-                  ),
-                })
+              onBranch={(b) => setZoom(PARTS.findIndex((p) => p.id === b.id))}
+              onCenter={() => {
+                if (zoom !== null) setZoom(null)
+                else if (trail.length > 1) follow(trail[trail.length - 2], trail.slice(0, -1))
               }}
-              onCenter={() => goTo(ordinal)}
             />
           </Section>
           <Section title="Cross references" count={refs.length}>
@@ -139,10 +161,9 @@ function VerseMapBody({ ordinal, canon, bible }: { ordinal: number; canon: Canon
               <XrefList refs={refs} canon={canon} bible={bible} first={10} onPick={(s) => goTo(s)} />
             </div>
           </Section>
-          <p className="mt-4 text-xs text-muted max-w-prose">Cross references are from OpenBible.info; the bars show how many readers voted for each link.</p>
+          <p className="mt-4 text-xs text-muted max-w-prose">Cross references are from OpenBible.info; the bars show how many readers voted for each link. Clicking one in this list reads it without moving the map.</p>
         </>
       )}
-      <Popover state={popover} onClose={() => setPopover(null)} />
     </div>
   )
 }

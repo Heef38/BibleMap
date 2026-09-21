@@ -1,5 +1,5 @@
 import * as d3 from 'd3'
-import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react'
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type MouseEvent as ReactMouseEvent, type PointerEvent } from 'react'
 import { VizTooltip, type TipState } from './Tooltip'
 import { useWidth } from '@/lib/hooks'
 import { truncate } from '@/lib/format'
@@ -23,8 +23,10 @@ export interface MapBranch {
   dots: MapDot[]
   /** automatic connections are drawn quieter than authored ones */
   muted?: boolean
-  /** the popup offers to zoom into this branch */
+  /** clicking the branch (its line or its label) zooms into it */
   focusable?: boolean
+  /** how many it holds, when that is more than the dots drawn */
+  count?: number
 }
 export interface MapCenter {
   label: string
@@ -40,15 +42,33 @@ interface Props {
   onBranch: (branch: MapBranch, at: { x: number; y: number }) => void
   onCenter: () => void
   height?: number
-  /** the line above the map, and the last line of a dot's tooltip */
+  /** the line above the map, and the last line of a dot's, a branch's and the center's tooltips */
   hint?: string
   dotHint?: string
+  branchHint?: string
+  centerHint?: string
 }
 
 const CENTER_R = 34
 const TAU = Math.PI * 2
 
-export default function ConnectionMap({ center, branches, canBack, onDot, onBranch, onCenter, height = 560, hint = 'Click a dot to zoom into it, a line for its theme.', dotHint = 'click to zoom in' }: Props) {
+/**
+ * A center with branches of dots. Everything shows what it is on hover, and a click goes straight
+ * where it leads: a dot or a focusable branch zooms in, the center steps back.
+ */
+export default function ConnectionMap({
+  center,
+  branches,
+  canBack,
+  onDot,
+  onBranch,
+  onCenter,
+  height = 560,
+  hint = 'Click a dot or a branch to zoom into it; click the center to step back.',
+  dotHint = 'click to zoom in',
+  branchHint = 'click to zoom in',
+  centerHint,
+}: Props) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null)
@@ -68,7 +88,9 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
       // Stop short of the edge so the label past the tip stays in view (it matters on phones).
       const cos = Math.abs(Math.cos(angle))
       const sin = Math.abs(Math.sin(angle))
-      const labelW = (Math.min(24, b.title.length) + 3) * 6.6
+      // Bold 11.5px labels run about 6px a character; the count after the title adds a few.
+      const countChars = String(b.count ?? b.dots.length).length + 1
+      const labelW = (Math.min(24, b.title.length) + countChars) * 6
       const room = Math.min(cos > 0.2 ? (width / 2 - 16 - labelW) / cos : Infinity, sin > 0.2 ? (h / 2 - 24) / sin : Infinity)
       const len = Math.max(CENTER_R + 36, Math.min(Math.max(96, Math.min(Math.max(R, 120), desired)), room))
       const spacing = (len - CENTER_R - 10) / (n + 1)
@@ -79,7 +101,7 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
         return { dot: d, x: Math.cos(angle) * t - Math.sin(angle) * perp, y: Math.sin(angle) * t + Math.cos(angle) * perp, r: crowded ? Math.min(d.r, 3.5) : d.r, side: k % 2 ? 1 : -1 }
       })
       // A label beside its tip gets the characters that fit before the edge (the tooltip has it whole).
-      const labelChars = cos > 0.2 ? Math.max(6, Math.min(24, Math.floor((width / 2 - 28 - cos * len) / 6.6) - 3)) : 24
+      const labelChars = cos > 0.2 ? Math.max(6, Math.min(24, Math.floor((width / 2 - 20 - cos * len) / 6) - countChars)) : 24
       return { branch: b, angle, len, tip: { x: Math.cos(angle) * len, y: Math.sin(angle) * len }, dots, labelDots: spacing >= 34, labelChars }
     })
   }, [branches, width, h])
@@ -120,6 +142,46 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
   }
 
   const showTip = (e: PointerEvent, content: TipState['content']) => setTip({ x: e.clientX, y: e.clientY, content })
+  const hideTip = () => {
+    setHover(null)
+    setTip(null)
+  }
+  /** Hover shows what a branch is; a click zooms into it when it can (the line and the label alike). */
+  const branchHandlers = (b: MapBranch, focusTarget = true) => {
+    const n = b.count ?? b.dots.length
+    const go = (at: { x: number; y: number }) => {
+      hideTip()
+      onBranch(b, at)
+    }
+    return {
+      role: b.focusable && focusTarget ? 'button' : undefined,
+      tabIndex: b.focusable && focusTarget ? 0 : undefined,
+      onClick: b.focusable ? (e: ReactMouseEvent) => go({ x: e.clientX, y: e.clientY }) : undefined,
+      onKeyDown: b.focusable
+        ? (e: ReactKeyboardEvent) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return
+            e.preventDefault()
+            const r = (e.target as SVGElement).getBoundingClientRect()
+            go({ x: r.x + r.width / 2, y: r.y + r.height / 2 })
+          }
+        : undefined,
+      onPointerMove: (e: PointerEvent) => {
+        setHover(`b:${b.id}`)
+        showTip(
+          e,
+          <>
+            <div className="v">{b.title}</div>
+            <div className="k">
+              {n} connection{n === 1 ? '' : 's'}
+            </div>
+            {b.note && <div className="k mt-1">{truncate(b.note, 160)}</div>}
+            {b.focusable && <div className="k mt-1">{branchHint}</div>}
+          </>,
+        )
+      },
+      onPointerLeave: hideTip,
+    }
+  }
   const centerLines = wrap(center.label, 13)
 
   return (
@@ -157,43 +219,7 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
               return (
                 <g key={b.id}>
                   <line x1={0} y1={0} x2={t.x} y2={t.y} stroke={color} strokeWidth={hovered ? 2.5 : b.muted ? 1.25 : 1.75} strokeLinecap="round" opacity={b.muted ? 0.8 : 0.9} />
-                  <line
-                    x1={0}
-                    y1={0}
-                    x2={t.x}
-                    y2={t.y}
-                    stroke="transparent"
-                    strokeWidth={16}
-                    style={{ cursor: 'pointer' }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`${b.title}: ${b.dots.length} connections`}
-                    onClick={(e) => onBranch(b, { x: e.clientX, y: e.clientY })}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault()
-                        const r = (e.target as SVGElement).getBoundingClientRect()
-                        onBranch(b, { x: r.x + r.width / 2, y: r.y + r.height / 2 })
-                      }
-                    }}
-                    onPointerMove={(e) => {
-                      setHover(`b:${b.id}`)
-                      showTip(
-                        e,
-                        <>
-                          <div className="v">{b.title}</div>
-                          <div className="k">
-                            {b.dots.length} connection{b.dots.length === 1 ? '' : 's'}
-                            {b.note ? ` · click for the theme` : ''}
-                          </div>
-                        </>,
-                      )
-                    }}
-                    onPointerLeave={() => {
-                      setHover(null)
-                      setTip(null)
-                    }}
-                  />
+                  <line x1={0} y1={0} x2={t.x} y2={t.y} stroke="transparent" strokeWidth={16} style={{ cursor: b.focusable ? 'pointer' : 'default' }} {...branchHandlers(b)} aria-label={`${b.title}: ${b.count ?? b.dots.length} connections`} />
                   <text
                     x={lx}
                     y={ly + dy}
@@ -201,13 +227,13 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
                     fontSize={11.5}
                     fontWeight={600}
                     fill={b.muted ? 'var(--muted)' : 'var(--ink)'}
-                    style={{ cursor: 'pointer', paintOrder: 'stroke', stroke: 'var(--surface)', strokeWidth: 3, strokeLinejoin: 'round' }}
-                    onClick={(e) => onBranch(b, { x: e.clientX, y: e.clientY })}
+                    style={{ cursor: b.focusable ? 'pointer' : 'default', paintOrder: 'stroke', stroke: 'var(--surface)', strokeWidth: 3, strokeLinejoin: 'round' }}
+                    {...branchHandlers(b, false)}
                   >
                     {truncate(b.title, labelChars)}
                     <tspan fill="var(--muted)" fontWeight={400}>
                       {' '}
-                      {b.dots.length}
+                      {b.count ?? b.dots.length}
                     </tspan>
                   </text>
                 </g>
@@ -233,7 +259,10 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
                       role="button"
                       tabIndex={0}
                       aria-label={d.label}
-                      onClick={(e) => onDot(d, b, { x: e.clientX, y: e.clientY })}
+                      onClick={(e) => {
+                        hideTip()
+                        onDot(d, b, { x: e.clientX, y: e.clientY })
+                      }}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault()
@@ -277,12 +306,27 @@ export default function ConnectionMap({ center, branches, canBack, onDot, onBran
             )}
             {/* center */}
             <g
-              role="button"
-              tabIndex={0}
+              role={canBack ? 'button' : undefined}
+              tabIndex={canBack ? 0 : undefined}
               aria-label={canBack ? `${center.label}. Go back` : center.label}
               style={{ cursor: canBack ? 'pointer' : 'default' }}
-              onClick={onCenter}
-              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onCenter()}
+              onClick={() => {
+                if (!canBack) return
+                hideTip()
+                onCenter()
+              }}
+              onKeyDown={(e) => canBack && (e.key === 'Enter' || e.key === ' ') && onCenter()}
+              onPointerMove={(e) =>
+                showTip(
+                  e,
+                  <>
+                    <div className="v">{center.label}</div>
+                    {center.sub && <div className="k">{center.sub}</div>}
+                    {(canBack || centerHint) && <div className="k mt-1">{canBack ? 'click to step back' : centerHint}</div>}
+                  </>,
+                )
+              }
+              onPointerLeave={hideTip}
             >
               <circle r={CENTER_R + 4} fill="var(--surface)" />
               <circle r={CENTER_R} fill="var(--accent-soft)" stroke="var(--accent)" strokeWidth={2} />

@@ -14,6 +14,19 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'study-isaiah',
+    date: '2026-09-21',
+    title: 'New study: The Book of Isaiah',
+    body: 'The book in its eight movements and by its great themes, with every passage tagged by who it was spoken to and when it comes true (in Isaiah\'s day, in the return from Babylon, in Christ, in the church, or still to come), and linked to where the rest of the Bible picks it up.',
+    link: { to: '/study/isaiah', label: 'Open the study' },
+  },
+  {
+    id: 'map-clicks',
+    date: '2026-09-21',
+    title: 'Maps that go where you click',
+    body: 'Hover anything on a map to see what it is; click it and it goes straight there. A branch zooms in, a dot follows its link, and the center steps back. On a phone, links in Explore now open on the Map tab.',
+  },
+  {
     id: 'layout-bible-center',
     date: '2026-09-21',
     title: 'The Bible in the middle, with maps beside it',

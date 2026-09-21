@@ -99,7 +99,7 @@ views:
 
 ### Studies on the connection map
 
-Every study can be shown as a **map**: the study at the center, one branch per group, a dot per reference. Click a dot to zoom into it; its branches become the topics it connects to (from `links`), plus automatic branches for cross references, people and places, so you can keep exploring outward. Click a line or a branch label for a popup with the group's theme. The `chart` field in a study picks the default chart (`map`, `arcs` or `sunburst`).
+Every study can be shown as a **map**: the study at the center, one branch per group, a dot per reference. Click a dot to zoom into it; its branches become the topics it connects to (from `links`), plus automatic branches for cross references, people and places, so you can keep exploring outward. Every map follows one rule: hovering anything shows what it is and what a click will do, and a click goes straight there with no menu in between. A group's branch (its line or its label) zooms into the group, a dot zooms into its passage, and the center steps back. On the verse and chapter maps a dot follows its link (the Bible and the map move to it) and a branch spreads that part of the Bible out by book. The `chart` field in a study picks the default chart (`map`, `arcs` or `sunburst`).
 
 ```yaml
 - ref: Matt 13:1-9, 18-23

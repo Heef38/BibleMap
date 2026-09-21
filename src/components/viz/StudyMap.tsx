@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 import ConnectionMap, { type MapBranch, type MapDot } from './ConnectionMap'
 import { categoryColor } from './ArcDiagram'
 import { groupColor } from './Sunburst'
-import { Popover, type PopoverState } from '@/components/common/Popover'
 import { RefLink } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadEntities, loadEvents, loadPeopleIndex, loadPerson, loadPlace, loadPlacesIndex, loadXrefs } from '@/data/loaders'
@@ -32,7 +31,6 @@ function overlaps(a: Range[], b: Range[]): boolean {
 export default function StudyMap({ study, view, canon, bible }: { study: Study; view: StudyView; canon: Canon; bible?: Bible }) {
   const [trail, setTrail] = useState<Focus[]>([{ kind: 'study' }])
   const [showAuto, setShowAuto] = useState(true)
-  const [popover, setPopover] = useState<PopoverState | null>(null)
   const goTo = useSession((s) => s.goTo)
   const focus = trail[trail.length - 1]
 
@@ -325,7 +323,6 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
   }
 
   const push = (f: Focus) => {
-    setPopover(null)
     setTrail((t) => [...t, f])
     if (f.kind === 'ref') {
       const r = refOf(f)
@@ -333,7 +330,6 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
     } else if (f.kind === 'passage') goTo(f.ranges[0][0], { pane: false })
   }
   const back = () => {
-    setPopover(null)
     setTrail((t) => (t.length > 1 ? t.slice(0, -1) : t))
   }
 
@@ -354,15 +350,9 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
             const t = targets.get(d.id)
             if (t) push(t)
           }}
-          onBranch={(b, at) => {
+          onBranch={(b) => {
             const t = branchTargets.get(b.id)
-            setPopover({
-              x: at.x,
-              y: at.y,
-              title: b.title,
-              body: b.note ?? `${b.dots.length} connection${b.dots.length === 1 ? '' : 's'}`,
-              action: t ? { label: 'Zoom in', run: () => push(t) } : undefined,
-            })
+            if (t) push(t)
           }}
           onCenter={back}
         />
@@ -422,7 +412,6 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
           </label>
         </div>
       </div>
-      <Popover state={popover} onClose={() => setPopover(null)} />
     </div>
   )
 }

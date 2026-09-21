@@ -20,12 +20,17 @@ export default function RightPane({ children, mobile }: { children: ReactNode; m
   const selectVerse = useSession((s) => s.selectVerse)
   const { pathname } = useLocation()
   const pageRef = useRef<HTMLElement>(null)
+  const mapRef = useRef<HTMLDivElement>(null)
   const mapOpen = mapVerse !== null
 
   // A new page opens at its top.
   useEffect(() => {
     pageRef.current?.scrollTo(0, 0)
   }, [pathname])
+  // A verse map moved to another verse starts at its top too.
+  useEffect(() => {
+    mapRef.current?.scrollTo(0, 0)
+  }, [mapVerse])
 
   return (
     <div className="h-full flex flex-col min-h-0">
@@ -69,7 +74,7 @@ export default function RightPane({ children, mobile }: { children: ReactNode; m
           {children}
         </main>
         {mapOpen && (
-          <div key={mapVerse} className="absolute inset-0 overflow-y-auto" style={{ background: 'var(--page)' }} role="region" aria-label={`Connections of ${canon?.label(mapVerse) ?? 'the verse'}`}>
+          <div ref={mapRef} className="absolute inset-0 overflow-y-auto" style={{ background: 'var(--page)' }} role="region" aria-label={`Connections of ${canon?.label(mapVerse) ?? 'the verse'}`}>
             <VerseMap ordinal={mapVerse} />
           </div>
         )}
