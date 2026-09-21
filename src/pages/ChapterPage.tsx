@@ -1,8 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router'
 import ConnectionMap, { type MapBranch } from '@/components/viz/ConnectionMap'
 import CanonStrip from '@/components/viz/CanonStrip'
-import { Popover, type PopoverState } from '@/components/common/Popover'
 import { EntityLink, Loading, PageHeader, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadBible, loadCanon, loadEntities, loadEvents, loadPeopleIndex, loadPlacesIndex, loadStudiesIndex, loadXrefs } from '@/data/loaders'
@@ -49,14 +48,16 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
   const { data: studyIndex } = useData('studies-index', loadStudiesIndex)
   const goTo = useSession((s) => s.goTo)
   const selectVerse = useSession((s) => s.selectVerse)
-  const [popover, setPopover] = useState<PopoverState | null>(null)
+  // One part of the Bible spread out by book, or null for the whole map.
+  const [zoom, setZoom] = useState<number | null>(null)
+  useEffect(() => setZoom(null), [start])
   const welcomed = useSettings((s) => s.welcomed)
   const set = useSettings((s) => s.set)
 
   const links = useMemo(() => (xrefs ? xrefsFrom(xrefs, start, end) : []), [xrefs, start, end])
 
   // Links grouped by the chapter they land in, then by part of the Bible.
-  const { branches, targets, byPart } = useMemo(() => {
+  const { branches, targets } = useMemo(() => {
     const byChapter = new Map<number, Target>()
     for (const l of links) {
       const at = canon.locate(l.start)
@@ -71,21 +72,40 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
     for (const t of byChapter.values()) byPart[partOf(canon, t.start)].push(t)
     for (const list of byPart) list.sort((x, y) => y.weight - x.weight)
     const max = Math.max(1, ...byPart.map((l) => l[0]?.weight ?? 0))
-    const branches: MapBranch[] = PARTS.map((p, i) => ({
-      id: p.id,
-      title: p.title,
-      color: partColor(i),
-      dots: byPart[i].slice(0, PER_BRANCH).map((t) => ({
+    const dot = (t: Target, color: string) => {
+      const top = t.links.reduce((a, b) => (b.votes > a.votes ? b : a))
+      return {
         id: String(t.start),
         label: canon.rangeLabel(t.start, t.end, 'short'),
-        color: partColor(i),
+        color,
         r: 3 + 6 * Math.sqrt(t.weight / max),
         solid: t.weight >= max / 3,
         sub: `${t.links.length} link${t.links.length === 1 ? '' : 's'} from ${title}`,
-      })),
-    })).filter((br) => br.dots.length)
-    return { branches, targets: byChapter, byPart }
-  }, [links, canon, start, title])
+        note: `Strongest: ${canon.label(top.from, 'short')} → ${canon.rangeLabel(top.start, top.end, 'short')}`,
+        snippet: bible.verses[top.start],
+      }
+    }
+    let branches: MapBranch[]
+    if (zoom === null) {
+      branches = PARTS.map((p, i) => ({
+        id: p.id,
+        title: p.title,
+        color: partColor(i),
+        focusable: true,
+        count: byPart[i].length,
+        dots: byPart[i].slice(0, PER_BRANCH).map((t) => dot(t, partColor(i))),
+      })).filter((br) => br.dots.length)
+    } else {
+      // One part, a branch per book, every chapter drawn.
+      const byBook = new Map<number, Target[]>()
+      for (const t of byPart[zoom]) {
+        const b = canon.locate(t.start).b
+        ;(byBook.get(b) ?? byBook.set(b, []).get(b)!).push(t)
+      }
+      branches = [...byBook].map(([b, list]) => ({ id: `book:${b}`, title: canon.book(b).name, color: partColor(zoom), count: list.length, dots: list.slice(0, 20).map((t) => dot(t, partColor(zoom))) }))
+    }
+    return { branches, targets: byChapter }
+  }, [links, canon, bible, start, title, zoom])
 
   // The verses here with the most links out.
   const busiest = useMemo(() => {
@@ -159,59 +179,25 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
       ) : branches.length > 0 ? (
         <Section title="Where it connects" count={targets.size}>
           <ConnectionMap
-            center={{ label: title }}
+            center={zoom === null ? { label: title, sub: `${targets.size} chapters linked` } : { label: PARTS[zoom].title, sub: `from ${title}` }}
             branches={branches}
-            canBack={false}
+            canBack={zoom !== null}
             height={520}
-            hint="Each line is a part of the Bible, each dot a chapter this one links to; bigger dots have more links. Click one to see them."
-            dotHint="click to see the links"
-            onDot={(d, _b, at) => {
+            hint={
+              zoom === null
+                ? 'Each line is a part of the Bible, each dot a chapter this one links to; bigger dots have more links. Click a dot to go there; click a line to spread that part out by book.'
+                : `The chapters of ${PARTS[zoom].title} that ${title} links to, by book. Click a dot to go there; click the center to step back.`
+            }
+            dotHint="click to go there: the Bible opens at the strongest link, and this map follows"
+            branchHint="click to spread these out by book"
+            onDot={(d) => {
               const t = targets.get(Number(d.id))
               if (!t) return
-              const top = [...t.links].sort((x, y) => y.votes - x.votes)
-              setPopover({
-                x: at.x,
-                y: at.y,
-                title: `${canon.rangeLabel(t.start, t.end)}: ${t.links.length} link${t.links.length === 1 ? '' : 's'}`,
-                body: (
-                  <span className="block mt-1 space-y-1 max-h-56 overflow-y-auto">
-                    {top.slice(0, 8).map((l, i) => (
-                      <button key={i} type="button" className="block w-full text-left rounded px-1 -mx-1 hover:bg-surface-2" onClick={() => goTo(l.start)}>
-                        <span className="text-xs text-muted">{canon.label(l.from, 'short')} → </span>
-                        <span className="text-xs font-medium text-ink">{canon.rangeLabel(l.start, l.end, 'short')}</span>
-                        <span className="block text-xs leading-snug font-serif">{truncate(bible.verses[l.start], 90)}</span>
-                      </button>
-                    ))}
-                  </span>
-                ),
-                action: {
-                  label: `Read ${canon.rangeLabel(top[0].start, top[0].end, 'short')}`,
-                  run: () => {
-                    setPopover(null)
-                    goTo(top[0].start)
-                  },
-                },
-              })
+              const top = t.links.reduce((a, b) => (b.votes > a.votes ? b : a))
+              goTo(top.start, { pane: false })
             }}
-            onBranch={(br, at) => {
-              const list = byPart[PARTS.findIndex((p) => p.id === br.id)] ?? []
-              const n = list.reduce((s, t) => s + t.links.length, 0)
-              setPopover({
-                x: at.x,
-                y: at.y,
-                title: `${br.title}: ${n} link${n === 1 ? '' : 's'} to ${list.length} chapter${list.length === 1 ? '' : 's'}`,
-                body: (
-                  <span className="flex flex-wrap gap-1 mt-1">
-                    {list.slice(0, 18).map((t) => (
-                      <button key={t.start} type="button" className="chip chip-link" onClick={() => goTo(t.start, { focus: false })}>
-                        {canon.rangeLabel(t.start, t.end, 'short')}
-                      </button>
-                    ))}
-                  </span>
-                ),
-              })
-            }}
-            onCenter={() => {}}
+            onBranch={(br) => setZoom(PARTS.findIndex((p) => p.id === br.id))}
+            onCenter={() => setZoom(null)}
           />
         </Section>
       ) : (
@@ -286,7 +272,6 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
           <CanonStrip canon={canon} ranges={reach} caption={`Every verse ${title} links to, on the 66 books. Click a book to open it up.`} />
         </Section>
       )}
-      <Popover state={popover} onClose={() => setPopover(null)} />
     </div>
   )
 }

@@ -1,0 +1,643 @@
+# The book of Isaiah: how it is built, who each prophecy was spoken to, and where its promises lead.
+# Every passage carries three tags (who it was spoken to, when it comes true, what kind of word it is)
+# so the Patterns chart can count them, and links to where the rest of the Bible picks it up.
+# Quotations follow the Berean Standard Bible.
+id: isaiah
+title: "The Book of Isaiah"
+subtitle: "Who each prophecy was spoken to, the great themes, and where its promises lead: to the return from Babylon, to Christ, and to the new creation"
+kind: connections
+chart: map
+added: "2026-09-21"
+summary: >-
+  Isaiah son of Amoz preached in Jerusalem for about forty years, from the year King Uzziah died
+  (about 740 BC) into the reign of Hezekiah. His world was ruled by Assyria, which swallowed the
+  northern kingdom of Israel in 722 BC and nearly took Jerusalem in 701. The book moves in three
+  parts. Chapters 1–39 speak to Judah in Isaiah's own day: judgment on a proud and unjust people,
+  and hope in a coming King. Chapters 40–55 speak comfort to the exiles in Babylon more than a
+  century later: their God is the only God, he will send Cyrus to set them free, and his Servant
+  will carry their sin. Chapters 56–66 speak to the people back home, still waiting, and end with
+  new heavens and a new earth. Many scholars think later prophets in Isaiah's line wrote the second
+  and third parts; Jewish and Christian tradition, and the New Testament, which quotes both halves
+  under Isaiah's name (John 12:38–41), receive the book as his. Either way it asks to be read as
+  one: "the Holy One of Israel," Isaiah's own name for God, appears 12 times in chapters 1–39 and
+  14 times in chapters 40–66. Isaiah is the prophet the New Testament quotes most. Every passage
+  here is tagged with who it was spoken to, when it comes true, and what kind of word it is, and
+  linked to where the rest of the Bible picks it up.
+tags: [isaiah, prophecy, messiah, servant, exile, new creation]
+categories:
+  christ:
+    title: "Fulfilled in Christ"
+    note: "Where the New Testament says Jesus fulfills it."
+  jesus:
+    title: "In Jesus's own words"
+    note: "Where Jesus quotes Isaiah or takes up its words."
+  church:
+    title: "Taken up for the church"
+    note: "Where the apostles apply it to believers and the nations."
+  end:
+    title: "Still to come"
+    note: "Where Revelation and the letters look to its final fulfillment."
+  kept:
+    title: "Came true in Israel's story"
+    note: "Where the history books record it happening."
+  history:
+    title: "The same events in the histories"
+    note: "Where Kings and Chronicles tell what was happening when Isaiah spoke."
+facetUnit: passages
+facets:
+  to:
+    title: "Who it was spoken to"
+    note: "The people the word is addressed to in its own setting."
+    values:
+      judah: { title: "Judah and Jerusalem" }
+      israel: { title: "Israel, the northern kingdom", note: "Also called Ephraim or Samaria; it fell to Assyria in 722 BC." }
+      king: { title: "A king", note: "Ahaz, Hezekiah, or Cyrus, by name." }
+      nations: { title: "The nations around", note: "Assyria, Babylon, Egypt, Edom and the rest." }
+      exiles: { title: "The exiles in Babylon" }
+      returned: { title: "The people back from exile" }
+      all: { title: "All the earth" }
+  when:
+    title: "When it comes true"
+    note: "Many prophecies come true more than once: a near fulfillment in Isaiah's world, a fuller one in Christ, and a last one at the end."
+    values:
+      soon: { title: "In Isaiah's own day", note: "Assyria's rise and fall, and the kings he spoke to." }
+      exile: { title: "The exile and return", note: "Babylon, Cyrus, and the way home (605 to 538 BC)." }
+      christ: { title: "In Christ's first coming" }
+      church: { title: "In the church, among the nations" }
+      end: { title: "Still to come" }
+  kind:
+    title: "What kind of word"
+    values:
+      judgment: { title: "Judgment and woe" }
+      comfort: { title: "Comfort and promise" }
+      call: { title: "A call to turn or to trust" }
+      story: { title: "A story from Isaiah's day" }
+views:
+  - title: "The book in order"
+    note: "Eight movements, from the case against Judah to the new heavens and the new earth."
+    groups:
+      - title: "The case against Judah (1–5)"
+        note: "The book opens like a courtroom: God brings charges against his own people, and offers to wash them clean."
+        refs:
+          - ref: "Isa 1:1"
+            label: "The vision of Isaiah son of Amoz"
+            note: "Seen “during the reigns of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah”: about 740 to 686 BC."
+            facets: { to: judah, kind: story }
+            links:
+              - { to: "2 Chr 26:22", topic: "Isaiah in the histories", category: history, note: "Isaiah also wrote the acts of King Uzziah." }
+          - ref: "Isa 1:2-20"
+            label: "“Come now, let us reason together”"
+            note: "Heaven and earth are called as witnesses. God is sick of sacrifices offered by hands full of blood: “Though your sins are like scarlet, they will be as white as snow.”"
+            facets: { to: judah, kind: [judgment, call] }
+            links:
+              - { to: "Rom 9:29", topic: "Paul on the few survivors", category: church, note: "“Unless the Lord of Hosts had left us descendants” (1:9)." }
+          - ref: "Isa 2:1-5"
+            label: "The mountain of the LORD's house"
+            note: "“In the last days” all nations stream to Zion to learn God's ways, and beat their swords into plowshares."
+            facets: { to: judah, when: end, kind: comfort }
+          - ref: "Isa 4:2-6"
+            label: "The Branch of the LORD, and a people called holy"
+            note: "After the judgment, the survivors left in Zion are washed clean and sheltered by the cloud and fire of the exodus."
+            facets: { to: judah, when: [exile, end], kind: comfort }
+          - ref: "Isa 5:1-7"
+            label: "The song of the vineyard"
+            note: "God planted Israel like a choice vine: “He looked for justice, but saw bloodshed; for righteousness, but heard a cry of distress.”"
+            facets: { to: judah, kind: judgment }
+            links:
+              - { to: "Matt 21:33-43", topic: "Jesus retells the vineyard", category: jesus }
+          - ref: "Isa 5:8-24"
+            label: "Six woes"
+            note: "Woe to those who add house to house, who call evil good and good evil, who are wise in their own eyes."
+            facets: { to: judah, when: soon, kind: judgment }
+
+      - title: "The call, and the Immanuel book (6–12)"
+        note: "Isaiah sees the King, and is sent to a people who will not listen. Then Assyria's shadow falls, and a child is promised."
+        refs:
+          - ref: "Isa 6:1-8"
+            label: "“Holy, Holy, Holy”: Isaiah's call"
+            note: "In the year King Uzziah died Isaiah sees the Lord on his throne. A coal from the altar touches his lips: “Here am I. Send me!”"
+            facets: { kind: story }
+            links:
+              - { to: "John 12:41", topic: "Whose glory Isaiah saw", category: christ, note: "“Isaiah said these things because he saw Jesus' glory and spoke about Him.”" }
+              - { to: "Rev 4:8", topic: "The same song in heaven", category: end }
+          - ref: "Isa 6:9-13"
+            label: "Ever hearing, never understanding"
+            note: "Isaiah's message will harden a people who refuse it, until the land is emptied. Yet a stump is left: “the holy seed will be a stump in the land.”"
+            facets: { to: judah, when: [exile, christ], kind: judgment }
+            links:
+              - { to: "Matt 13:13-15", topic: "Why Jesus spoke in parables", category: jesus }
+              - { to: "John 12:39-40", topic: "Why they did not believe", category: christ }
+              - { to: "Acts 28:25-28", topic: "Paul's last word in Rome", category: church }
+          - ref: "Isa 7:1-17"
+            label: "A sign for Ahaz: Immanuel"
+            note: "About 734 BC Aram and Israel march on Jerusalem, and King Ahaz will not trust God. The sign: “the virgin will be with child and give birth to a son, and will call Him Immanuel.” Before the boy is grown, both enemy kings will be gone."
+            facets: { to: king, when: [soon, christ], kind: [call, comfort] }
+            links:
+              - { to: "Matt 1:22-23", topic: "Born of the virgin: God with us", category: christ }
+              - { to: "2 Kgs 16:5-9", topic: "Ahaz buys Assyria's help instead", category: history, note: "He sends the temple's silver and gold to Assyria, which takes Damascus and kills Rezin." }
+              - { to: "2 Kgs 15:29-30", topic: "Both kings fall", category: kept, note: "Assyria takes Galilee, and Pekah of Israel is assassinated." }
+          - ref: "Isa 8:11-15"
+            label: "A sanctuary, and a stone of stumbling"
+            note: "Do not fear what this people fears. The LORD himself will be a sanctuary, and to both houses of Israel “a stone of stumbling and a rock of offense.”"
+            facets: { to: [judah, israel], when: christ, kind: [call, judgment] }
+            links:
+              - { to: "1 Pet 2:7-8", topic: "The stone the builders rejected", category: christ }
+          - ref: "Isa 8:16-18"
+            label: "“Here am I, and the children the LORD has given me”"
+            note: "Isaiah and his sons, whose names are messages, wait for the LORD while he hides his face."
+            facets: { to: judah, when: christ, kind: comfort }
+            links:
+              - { to: "Heb 2:13", topic: "Spoken by Christ of his brothers", category: christ }
+          - ref: "Isa 9:1-7"
+            label: "“For unto us a child is born”"
+            note: "Zebulun and Naphtali, the first land to fall to Assyria, will see a great light. The child will be called “Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace,” and reign on David's throne with no end."
+            facets: { to: [judah, israel], when: christ, kind: comfort }
+            links:
+              - { to: "Matt 4:13-16", topic: "Jesus begins in Galilee", category: christ }
+              - { to: "Luke 1:32-33", topic: "The throne of his father David", category: christ }
+          - ref: "Isa 10:5-19"
+            label: "Assyria, the rod of My anger"
+            note: "God uses Assyria to discipline his people, then judges its pride: “Does an axe raise itself above the one who swings it?”"
+            facets: { to: nations, when: soon, kind: judgment }
+            links:
+              - { to: "2 Kgs 17:5-6", topic: "Samaria falls to Assyria, 722 BC", category: kept }
+          - ref: "Isa 10:20-23"
+            label: "A remnant will return"
+            note: "Isaiah's son was named Shear-jashub, “a remnant will return” (7:3). The survivors will rely on the LORD, “the Holy One of Israel.”"
+            facets: { to: [israel, judah], when: [exile, church], kind: comfort }
+            links:
+              - { to: "Rom 9:27-28", topic: "Paul on the remnant", category: church }
+          - ref: "Isa 11:1-10"
+            label: "A shoot from the stump of Jesse"
+            note: "From David's cut-down family tree a Branch grows. The Spirit of the LORD rests on him; he judges the poor with justice; the wolf lives with the lamb; the nations seek him."
+            facets: { to: judah, when: [christ, end], kind: comfort }
+            links:
+              - { to: "Rom 15:12", topic: "The Root of Jesse, hope of the nations", category: christ }
+              - { to: "Rev 22:16", topic: "“I am the Root and the Offspring of David”", category: jesus }
+              - { to: "2 Thess 2:8", topic: "The breath of his mouth", category: end }
+          - ref: "Isa 11:11-16"
+            label: "A second exodus"
+            note: "“The Lord will extend His hand a second time to recover the remnant of His people,” from Assyria, Egypt and the islands of the sea."
+            facets: { to: judah, when: [exile, end], kind: comfort }
+          - ref: "Isa 12:1-6"
+            label: "Songs of salvation"
+            note: "“With joy you will draw water from the springs of salvation.”"
+            facets: { to: judah, kind: comfort }
+
+      - title: "Oracles against the nations (13–23)"
+        note: "Burdens against every power around Judah. The point for Judah: do not trust them, and do not fear them. The LORD rules them all."
+        refs:
+          - ref: "Isa 13:1-22"
+            label: "Babylon: the day of the LORD"
+            note: "Babylon, not yet the great power of the day, will fall to the Medes and be left a ruin."
+            facets: { to: nations, when: exile, kind: judgment }
+            links:
+              - { to: "Dan 5:30-31", topic: "Babylon falls to Darius the Mede, 539 BC", category: kept }
+          - ref: "Isa 14:3-23"
+            label: "“How you have fallen from heaven, O day star”"
+            note: "A taunt over the king of Babylon, who said in his heart “I will ascend to the heavens.” Many readers have also heard in it the fall of Satan; Jesus uses its words of Capernaum."
+            facets: { to: nations, when: exile, kind: judgment }
+            links:
+              - { to: "Matt 11:23", topic: "“Brought down to Hades”", category: jesus }
+          - ref: "Isa 14:24-27"
+            label: "“I will break Assyria in My land”"
+            note: "“As I have planned, so will it be.” Fulfilled when Assyria's army died outside Jerusalem."
+            facets: { to: nations, when: soon, kind: judgment }
+            links:
+              - { to: "2 Kgs 19:35-37", topic: "Sennacherib's army struck down", category: kept }
+          - ref: "Isa 16:4-5"
+            label: "A throne in the tent of David"
+            note: "Even inside the oracle against Moab: “in loving devotion a throne will be established in the tent of David,” and a judge seeking justice will sit on it."
+            facets: { to: nations, when: christ, kind: comfort }
+          - ref: "Isa 17:1-3"
+            label: "Damascus a heap of ruins"
+            note: "Aram's capital, Ahaz's enemy in chapter 7, “is no longer a city.”"
+            facets: { to: nations, when: soon, kind: judgment }
+            links:
+              - { to: "2 Kgs 16:9", topic: "Assyria takes Damascus", category: kept }
+          - ref: "Isa 19:18-25"
+            label: "“Blessed be Egypt My people, Assyria My handiwork”"
+            note: "The book's most surprising promise: Israel's two great enemies will worship the LORD together with her, joined by a highway. “Blessed be Egypt My people, Assyria My handiwork, and Israel My inheritance.”"
+            facets: { to: nations, when: [church, end], kind: comfort }
+            links:
+              - { to: "Rev 7:9-10", topic: "Every nation before the throne", category: end }
+          - ref: "Isa 20:1-6"
+            label: "Isaiah walks barefoot"
+            note: "For three years Isaiah goes stripped and barefoot as a sign that Egypt and Cush, the allies Judah was counting on, will be led away by Assyria."
+            facets: { to: judah, when: soon, kind: [story, call] }
+          - ref: "Isa 21:1-10"
+            label: "“Fallen, fallen is Babylon!”"
+            note: "The watchman's cry over Babylon, heard again over the last Babylon in Revelation."
+            facets: { to: nations, when: [exile, end], kind: judgment }
+            links:
+              - { to: "Rev 14:8", topic: "The same cry at the end", category: end }
+              - { to: "Rev 18:2", topic: "The same cry at the end", category: end }
+          - ref: "Isa 22:15-25"
+            label: "The key to the house of David"
+            note: "Proud steward Shebna is replaced by Eliakim: “What he opens no one can shut, and what he shuts no one can open.”"
+            facets: { to: judah, when: [soon, christ], kind: [judgment, comfort] }
+            links:
+              - { to: "Rev 3:7", topic: "He who holds the key of David", category: christ }
+
+      - title: "The whole earth, and the feast to come (24–35)"
+        note: "The view widens to the whole world: the earth judged, death swallowed up, and warnings to Jerusalem's leaders who trust Egypt instead of God."
+        refs:
+          - ref: "Isa 24:1-6"
+            label: "The earth laid waste"
+            note: "“The earth is defiled by its people; they have … broken the everlasting covenant.” The judgment is on the whole world."
+            facets: { to: all, when: end, kind: judgment }
+          - ref: "Isa 25:6-9"
+            label: "A feast for all peoples, and death swallowed up"
+            note: "“On this mountain the LORD of Hosts will prepare a lavish banquet for all the peoples.” He will swallow up death forever and wipe away the tears from every face."
+            facets: { to: all, when: end, kind: comfort }
+            links:
+              - { to: "1 Cor 15:54", topic: "“Death has been swallowed up in victory”", category: end }
+              - { to: "Rev 21:4", topic: "“He will wipe away every tear”", category: end }
+              - { to: "Matt 8:11", topic: "The banquet Jesus promised", category: jesus }
+          - ref: "Isa 26:19"
+            label: "“Your dead will live; their bodies will rise”"
+            note: "One of the Old Testament's clearest words of resurrection."
+            facets: { to: judah, when: end, kind: comfort }
+            links:
+              - { to: "John 5:28-29", topic: "All in the graves will hear his voice", category: jesus }
+          - ref: "Isa 28:14-16"
+            label: "A cornerstone in Zion"
+            note: "Jerusalem's rulers boast of a “covenant with death” (a treaty with Egypt). God lays in Zion a tested, precious cornerstone instead."
+            facets: { to: judah, when: christ, kind: [judgment, call] }
+            links:
+              - { to: "1 Pet 2:6", topic: "“A chosen and precious cornerstone”", category: christ }
+              - { to: "Rom 9:32-33", topic: "The stone they stumbled over", category: christ }
+              - { to: "Rom 10:11", topic: "“Anyone who believes in Him will never be put to shame”", category: church }
+          - ref: "Isa 29:13-14"
+            label: "Honoring Me with their lips"
+            note: "“Their hearts are far from Me. Their worship of Me is but rules taught by men.”"
+            facets: { to: judah, when: christ, kind: judgment }
+            links:
+              - { to: "Matt 15:7-9", topic: "Jesus to the Pharisees", category: jesus }
+              - { to: "1 Cor 1:19", topic: "The wisdom of the wise destroyed", category: church }
+          - ref: "Isa 30:15-18"
+            label: "“By repentance and rest you would be saved”"
+            note: "Judah runs to Egypt for horses. “Your strength would lie in quiet confidence—but you were not willing.” Still, “the LORD longs to be gracious to you.”"
+            facets: { to: judah, when: soon, kind: call }
+          - ref: "Isa 32:1-4"
+            label: "“A king will reign in righteousness”"
+            note: "Each ruler will be like a shelter from the wind, and the eyes of those who see will no longer be closed."
+            facets: { to: judah, when: [christ, end], kind: comfort }
+          - ref: "Isa 35:1-10"
+            label: "The desert will bloom"
+            note: "“Then the eyes of the blind will be opened and the ears of the deaf unstopped. Then the lame will leap like a deer.” The ransomed return to Zion on a highway called the Way of Holiness."
+            facets: { to: judah, when: [exile, christ, end], kind: comfort }
+            links:
+              - { to: "Matt 11:4-5", topic: "“Report to John what you hear and see”", category: jesus }
+              - { to: "Heb 12:12", topic: "“Strengthen your limp hands”", category: church }
+
+      - title: "Hezekiah: from Assyria to Babylon (36–39)"
+        note: "The hinge of the book: Assyria is turned back from Jerusalem in 701 BC, and then Isaiah foretells Babylon. The rest of the book speaks into that exile."
+        refs:
+          - ref: "Isa 36:1-37:20"
+            label: "Sennacherib's threat and Hezekiah's prayer"
+            note: "Assyria takes Judah's fortified cities and mocks the LORD at Jerusalem's wall. Hezekiah spreads the letter out before the LORD and prays."
+            facets: { to: king, kind: story }
+            links:
+              - { to: "2 Kgs 18:13-19:19", topic: "The same account in Kings", category: history }
+          - ref: "Isa 37:21-38"
+            label: "The LORD answers: Assyria turned back"
+            note: "“He will not enter this city or shoot an arrow into it.” That night the angel of the LORD strikes the Assyrian camp, and Sennacherib goes home to Nineveh."
+            facets: { to: king, when: soon, kind: [comfort, story] }
+            links:
+              - { to: "2 Chr 32:20-22", topic: "Hezekiah and Isaiah cried out to heaven", category: history }
+          - ref: "Isa 38:1-8"
+            label: "Hezekiah healed: fifteen more years"
+            note: "“I have heard your prayer; I have seen your tears.”"
+            facets: { to: king, when: soon, kind: [comfort, story] }
+          - ref: "Isa 39:1-8"
+            label: "Babylon's envoys, and a word of exile"
+            note: "Hezekiah shows the envoys from Babylon all his treasures. Everything in his palace, and some of his own descendants, will be carried off to Babylon."
+            facets: { to: king, when: exile, kind: [judgment, story] }
+            links:
+              - { to: "2 Kgs 24:13", topic: "The treasures carried off, 597 BC", category: kept }
+              - { to: "Dan 1:1-3", topic: "Young men of the royal family taken to Babylon", category: kept }
+
+      - title: "Comfort, My people (40–48)"
+        note: "Now the voice speaks to exiles in Babylon: the punishment is over, their God is the only God, and he will bring them home through Cyrus."
+        refs:
+          - ref: "Isa 40:1-11"
+            label: "“Comfort, comfort My people”"
+            note: "Her iniquity is pardoned. A voice calls: prepare the way for the LORD in the wilderness. “The word of our God stands forever.” He tends his flock like a shepherd."
+            facets: { to: exiles, when: [exile, christ], kind: comfort }
+            links:
+              - { to: "Luke 3:3-6", topic: "John the Baptist, the voice in the wilderness", category: christ }
+              - { to: "John 1:23", topic: "“I am a voice of one calling”", category: christ }
+              - { to: "1 Pet 1:24-25", topic: "The word that stands forever", category: church }
+          - ref: "Isa 40:12-31"
+            label: "“To whom will you compare Me?”"
+            note: "The Creator who measures the waters in his hand does not grow tired: “Those who wait upon the LORD will renew their strength; they will mount up with wings like eagles.”"
+            facets: { to: exiles, kind: [comfort, call] }
+            links:
+              - { to: "Rom 11:34", topic: "“Who has known the mind of the Lord?”", category: church }
+          - ref: "Isa 41:8-14"
+            label: "“Israel, My servant … do not fear”"
+            note: "“Do not fear, for I am with you.” Here the servant is Israel; later the Servant will be one person."
+            facets: { to: exiles, kind: comfort }
+          - ref: "Isa 42:1-9"
+            label: "“Here is My Servant”: the first Servant song"
+            note: "Chosen, upheld, filled with the Spirit, he brings justice to the nations gently: “A bruised reed He will not break.” A light to the nations, opening blind eyes."
+            facets: { to: exiles, when: christ, kind: comfort }
+            links:
+              - { to: "Matt 12:17-21", topic: "Quoted of Jesus' quiet healing", category: christ }
+              - { to: "Matt 3:17", topic: "“In whom I am well pleased” at his baptism", category: christ }
+          - ref: "Isa 43:1-7"
+            label: "“When you pass through the waters”"
+            note: "“I have called you by your name; you are Mine!”"
+            facets: { to: exiles, kind: comfort }
+          - ref: "Isa 43:16-21"
+            label: "“I am about to do something new”"
+            note: "The God who made a path through the sea will make a way in the wilderness: a new exodus, from Babylon."
+            facets: { to: exiles, when: exile, kind: comfort }
+          - ref: "Isa 44:6-20"
+            label: "“I am the first and I am the last”"
+            note: "There is no God but the LORD. Then a biting satire: a man burns half a log to roast his meat, and from the rest makes a god and bows down to it."
+            facets: { to: exiles, kind: call }
+            links:
+              - { to: "Rev 1:17", topic: "Jesus: “I am the First and the Last”", category: jesus }
+              - { to: "Rev 22:13", topic: "“The Alpha and the Omega”", category: jesus }
+          - ref: "Isa 44:24-45:7"
+            label: "Cyrus, My shepherd"
+            note: "The LORD names Cyrus of Persia, “His anointed,” who will say of Jerusalem “She will be rebuilt.” Cyrus took Babylon in 539 BC and sent the exiles home."
+            facets: { to: [king, exiles], when: exile, kind: comfort }
+            links:
+              - { to: "Ezra 1:1-4", topic: "Cyrus's decree to rebuild the temple", category: kept, note: "Ezra credits the timing to Jeremiah's word; the decree does what Isaiah 44:28 said Cyrus would do." }
+              - { to: "2 Chr 36:22-23", topic: "The last words of the Hebrew Bible", category: kept }
+          - ref: "Isa 45:18-25"
+            label: "“Turn to Me and be saved, all the ends of the earth”"
+            note: "“Every knee will bow before Me, every tongue will swear allegiance.”"
+            facets: { to: all, when: [church, end], kind: call }
+            links:
+              - { to: "Phil 2:9-11", topic: "Every knee bows at the name of Jesus", category: christ }
+              - { to: "Rom 14:10-12", topic: "Every tongue will confess to God", category: church }
+          - ref: "Isa 46:8-11"
+            label: "“I declare the end from the beginning”"
+            note: "The idols have to be carried; the LORD carries his people, and his purpose will stand."
+            facets: { to: exiles, kind: call }
+          - ref: "Isa 47:1-15"
+            label: "Babylon brought down"
+            note: "The proud city who said “I will be queen forever … I am, and there is none besides me” will lose everything in a single day."
+            facets: { to: nations, when: [exile, end], kind: judgment }
+            links:
+              - { to: "Dan 5:25-31", topic: "The writing on the wall, 539 BC", category: kept }
+              - { to: "Rev 18:7-8", topic: "“I sit as queen”: the last Babylon", category: end }
+          - ref: "Isa 48:17-22"
+            label: "“Leave Babylon!”"
+            note: "“Declare it with a shout of joy … The LORD has redeemed His servant Jacob!” And a warning: “There is no peace,” says the LORD, “for the wicked.”"
+            facets: { to: exiles, when: [exile, end], kind: call }
+            links:
+              - { to: "Ezra 1:5", topic: "The exiles go up to rebuild", category: kept }
+              - { to: "Rev 18:4", topic: "“Come out of her, My people”", category: end }
+
+      - title: "The Servant and the new exodus (49–55)"
+        note: "The Servant who will do what Israel could not: bring the nations light, and carry the sin of many. Then an open invitation to everyone who is thirsty."
+        refs:
+          - ref: "Isa 49:1-7"
+            label: "A light for the nations: the second Servant song"
+            note: "“It is not enough for You to be My Servant, to raise up the tribes of Jacob … I will also make You a light for the nations, to bring My salvation to the ends of the earth.”"
+            facets: { to: all, when: [christ, church], kind: comfort }
+            links:
+              - { to: "Luke 2:30-32", topic: "Simeon holds the child", category: christ }
+              - { to: "Acts 13:46-47", topic: "Paul and Barnabas turn to the Gentiles", category: church }
+          - ref: "Isa 49:8-16"
+            label: "“Can a woman forget her nursing child?”"
+            note: "“Even if she could forget, I will not forget you!” The day of salvation, and a people led beside springs of water."
+            facets: { to: exiles, when: [exile, church, end], kind: comfort }
+            links:
+              - { to: "2 Cor 6:1-2", topic: "“Now is the day of salvation”", category: church }
+              - { to: "Rev 7:16-17", topic: "Never again hungry or thirsty", category: end }
+          - ref: "Isa 50:4-9"
+            label: "“I offered My back to those who struck Me”: the third Servant song"
+            note: "Taught by God morning by morning, the Servant does not hide his face from scorn and spittle, and sets his face like flint."
+            facets: { to: exiles, when: christ, kind: comfort }
+            links:
+              - { to: "Matt 26:67-68", topic: "They spit in his face and struck him", category: christ }
+              - { to: "Luke 9:51", topic: "He resolutely set out for Jerusalem", category: christ }
+              - { to: "Rom 8:33-34", topic: "“Who is there to condemn us?”", category: church }
+          - ref: "Isa 51:9-11"
+            label: "“Awake, awake, O arm of the LORD”"
+            note: "The arm that dried up the sea will bring the redeemed home: “sorrow and sighing will flee.”"
+            facets: { to: exiles, when: exile, kind: comfort }
+          - ref: "Isa 52:7-10"
+            label: "“How beautiful on the mountains”"
+            note: "The messenger runs to Zion with good news: “Your God reigns!”"
+            facets: { to: exiles, when: [exile, church], kind: comfort }
+            links:
+              - { to: "Rom 10:14-15", topic: "Sent to preach the good news", category: church }
+          - ref: "Isa 52:13-53:12"
+            label: "The suffering Servant: the fourth Servant song"
+            note: "Despised and rejected, “pierced for our transgressions … crushed for our iniquities,” silent like a lamb led to the slaughter. “The LORD has laid upon Him the iniquity of us all.” After his suffering he will see the light of life and justify many."
+            facets: { to: [exiles, all], when: christ, kind: comfort }
+            links:
+              - { to: "Acts 8:30-35", topic: "Philip tells the eunuch who it is about", category: christ }
+              - { to: "Matt 8:16-17", topic: "“He took up our infirmities”", category: christ }
+              - { to: "Luke 22:37", topic: "“Numbered with the transgressors”", category: jesus }
+              - { to: "John 12:37-38", topic: "“Who has believed our message?”", category: christ }
+              - { to: "Matt 27:57-60", topic: "With a rich man in his death", category: christ }
+              - { to: "1 Pet 2:21-25", topic: "“By His stripes you are healed”", category: church }
+              - { to: "Heb 9:28", topic: "Offered once to bear the sins of many", category: church }
+          - ref: "Isa 54:1-10"
+            label: "“Shout for joy, O barren woman”"
+            note: "The deserted wife will have more children than ever: “My loving devotion will not depart from you.”"
+            facets: { to: exiles, when: [exile, church], kind: comfort }
+            links:
+              - { to: "Gal 4:26-27", topic: "The Jerusalem above, our mother", category: church }
+          - ref: "Isa 55:1-13"
+            label: "“Come, all you who are thirsty”"
+            note: "Buy wine and milk without money. An everlasting covenant, “My loving devotion promised to David.” “My thoughts are not your thoughts,” and the word that will not return empty."
+            facets: { to: all, when: [christ, church], kind: call }
+            links:
+              - { to: "Acts 13:34", topic: "The sure blessings of David, in the risen Jesus", category: christ }
+              - { to: "John 7:37-38", topic: "“If anyone is thirsty, let him come to Me”", category: jesus }
+              - { to: "Rev 22:17", topic: "“Let the one who is thirsty come”", category: end }
+
+      - title: "Your light has come (56–66)"
+        note: "Back from exile, the people wait, fast, and fail again. God promises his own arm will save, a Spirit-anointed messenger, and at last new heavens and a new earth."
+        refs:
+          - ref: "Isa 56:1-8"
+            label: "A house of prayer for all the nations"
+            note: "Foreigners and eunuchs who hold fast to God's covenant are welcomed: “My house will be called a house of prayer for all the nations.”"
+            facets: { to: returned, when: [christ, church], kind: call }
+            links:
+              - { to: "Mark 11:15-17", topic: "Jesus clears the temple", category: jesus }
+              - { to: "Acts 8:35-39", topic: "A eunuch from Ethiopia baptized", category: church, note: "He was reading Isaiah 53 when Philip met him." }
+          - ref: "Isa 57:14-21"
+            label: "“I dwell in a high and holy place, and with the humble”"
+            note: "The One “whose name is Holy” lives with the lowly to revive them. But “there is no peace,” says my God, “for the wicked.”"
+            facets: { to: returned, kind: [comfort, call] }
+          - ref: "Isa 58:1-12"
+            label: "The fast I have chosen"
+            note: "They fast while they quarrel and exploit their workers. The fast God wants: “to set the oppressed free … to share your bread with the hungry.” Then “your light will break forth like the dawn.”"
+            facets: { to: returned, kind: call }
+            links:
+              - { to: "Luke 4:18", topic: "Jesus joins “release the oppressed” to Isaiah 61", category: jesus }
+          - ref: "Isa 59:1-21"
+            label: "Sin's barrier, and the Redeemer who comes"
+            note: "“Your iniquities have built barriers between you and your God.” No one intervenes, so the LORD puts on righteousness like a breastplate and salvation like a helmet: “The Redeemer will come to Zion.”"
+            facets: { to: returned, when: [christ, end], kind: [judgment, comfort] }
+            links:
+              - { to: "Rom 3:15-17", topic: "Paul: all have sinned", category: church }
+              - { to: "Eph 6:14-17", topic: "The armor of God", category: church }
+              - { to: "Rom 11:26-27", topic: "“The Deliverer will come from Zion”", category: end }
+          - ref: "Isa 60:1-22"
+            label: "“Arise, shine, for your light has come”"
+            note: "Nations come to the light, bringing gold and frankincense. “The LORD will be your everlasting light.”"
+            facets: { to: returned, when: [christ, end], kind: comfort }
+            links:
+              - { to: "Matt 2:11", topic: "Gold and frankincense for the child", category: christ }
+              - { to: "Rev 21:23-26", topic: "The city needs no sun", category: end }
+          - ref: "Isa 61:1-11"
+            label: "“The Spirit of the Lord GOD is on Me”"
+            note: "Good news to the poor, liberty to the captives, “the year of the LORD's favor and the day of our God's vengeance.” In Nazareth Jesus read it and stopped before the day of vengeance: “Today this Scripture is fulfilled in your hearing.”"
+            facets: { to: returned, when: [christ, end], kind: comfort }
+            links:
+              - { to: "Luke 4:16-21", topic: "Jesus reads it in Nazareth", category: jesus }
+              - { to: "Matt 5:3-4", topic: "Blessed are the poor and those who mourn", category: jesus }
+          - ref: "Isa 62:1-5"
+            label: "A new name"
+            note: "No longer “Forsaken” or “Desolate”: “as a bridegroom rejoices over his bride, so your God will rejoice over you.”"
+            facets: { to: returned, when: end, kind: comfort }
+            links:
+              - { to: "Rev 21:2", topic: "A bride adorned for her husband", category: end }
+          - ref: "Isa 63:1-6"
+            label: "The one who treads the winepress"
+            note: "A warrior comes from Edom with garments stained red: “I have trodden the winepress alone.”"
+            facets: { to: nations, when: end, kind: judgment }
+            links:
+              - { to: "Rev 19:13-15", topic: "He treads the winepress", category: end }
+          - ref: "Isa 64:1-9"
+            label: "“If only You would rend the heavens and come down”"
+            note: "“All our righteous acts are like filthy rags … we are the clay, and You are the potter.” No eye has seen any God but this one, “who acts on behalf of those who wait for Him.”"
+            facets: { to: returned, when: christ, kind: call }
+            links:
+              - { to: "Mark 1:10", topic: "The heavens torn open at his baptism", category: christ }
+              - { to: "1 Cor 2:9", topic: "“No eye has seen”", category: church }
+          - ref: "Isa 65:17-25"
+            label: "New heavens and a new earth"
+            note: "The former things forgotten, no more weeping, and “the wolf and the lamb will feed together.”"
+            facets: { to: returned, when: end, kind: comfort }
+            links:
+              - { to: "Rev 21:1-5", topic: "“Behold, I make all things new”", category: end }
+              - { to: "2 Pet 3:13", topic: "Where righteousness dwells", category: end }
+          - ref: "Isa 66:1-2"
+            label: "“Heaven is My throne”"
+            note: "No house can hold him. “This is the one I will esteem: he who is humble and contrite in spirit, who trembles at My word.”"
+            facets: { to: returned, kind: call }
+            links:
+              - { to: "Acts 7:48-50", topic: "Stephen before the council", category: church }
+          - ref: "Isa 66:18-24"
+            label: "All nations will see My glory"
+            note: "God gathers all nations and tongues, sends messengers to far coasts, and chooses priests and Levites from those he gathers. The book ends with the new heavens and earth, and a stark warning."
+            facets: { to: all, when: [church, end], kind: [comfort, judgment] }
+            links:
+              - { to: "Rom 15:16", topic: "The nations as an offering to God", category: church }
+              - { to: "Mark 9:47-48", topic: "“Their worm never dies”", category: jesus }
+
+  - title: "By theme"
+    note: "The same passages gathered by the threads that run through the whole book."
+    groups:
+      - title: "The Holy One, and no other god"
+        note: "Isaiah's name for God, the Holy One of Israel, runs through both halves of the book. Beside him the idols are wood."
+        refs:
+          - { ref: "Isa 6:1-8", label: "“Holy, Holy, Holy”: Isaiah's call" }
+          - { ref: "Isa 40:12-31", label: "“To whom will you compare Me?”" }
+          - { ref: "Isa 44:6-20", label: "“I am the first and I am the last”" }
+          - { ref: "Isa 46:8-11", label: "“I declare the end from the beginning”" }
+          - { ref: "Isa 57:14-21", label: "“I dwell in a high and holy place, and with the humble”" }
+          - { ref: "Isa 64:1-9", label: "“If only You would rend the heavens and come down”" }
+          - { ref: "Isa 66:1-2", label: "“Heaven is My throne”" }
+      - title: "Sin and judgment"
+        note: "Empty worship, injustice and pride, in Judah and in the nations, and the judgment that falls on them."
+        refs:
+          - { ref: "Isa 1:2-20", label: "“Come now, let us reason together”" }
+          - { ref: "Isa 5:1-7", label: "The song of the vineyard" }
+          - { ref: "Isa 5:8-24", label: "Six woes" }
+          - { ref: "Isa 10:5-19", label: "Assyria, the rod of My anger" }
+          - { ref: "Isa 13:1-22", label: "Babylon: the day of the LORD" }
+          - { ref: "Isa 14:3-23", label: "“How you have fallen from heaven, O day star”" }
+          - { ref: "Isa 21:1-10", label: "“Fallen, fallen is Babylon!”" }
+          - { ref: "Isa 29:13-14", label: "Honoring Me with their lips" }
+          - { ref: "Isa 47:1-15", label: "Babylon brought down" }
+          - { ref: "Isa 58:1-12", label: "The fast I have chosen" }
+          - { ref: "Isa 59:1-21", label: "Sin's barrier, and the Redeemer who comes" }
+          - { ref: "Isa 63:1-6", label: "The one who treads the winepress" }
+      - title: "A remnant will return"
+        note: "Judgment is never the last word. A stump is left, and from it God regrows his people."
+        refs:
+          - { ref: "Isa 4:2-6", label: "The Branch of the LORD, and a people called holy" }
+          - { ref: "Isa 6:9-13", label: "Ever hearing, never understanding" }
+          - { ref: "Isa 10:20-23", label: "A remnant will return" }
+          - { ref: "Isa 11:11-16", label: "A second exodus" }
+          - { ref: "Isa 37:21-38", label: "The LORD answers: Assyria turned back" }
+          - { ref: "Isa 39:1-8", label: "Babylon's envoys, and a word of exile" }
+          - { ref: "Isa 48:17-22", label: "“Leave Babylon!”" }
+      - title: "The coming King"
+        note: "Immanuel, the child on David's throne, the shoot from Jesse's stump, the cornerstone: a King from David's line who will reign in justice."
+        refs:
+          - { ref: "Isa 7:1-17", label: "A sign for Ahaz: Immanuel" }
+          - { ref: "Isa 8:11-15", label: "A sanctuary, and a stone of stumbling" }
+          - { ref: "Isa 8:16-18", label: "“Here am I, and the children the LORD has given me”" }
+          - { ref: "Isa 9:1-7", label: "“For unto us a child is born”" }
+          - { ref: "Isa 11:1-10", label: "A shoot from the stump of Jesse" }
+          - { ref: "Isa 16:4-5", label: "A throne in the tent of David" }
+          - { ref: "Isa 22:15-25", label: "The key to the house of David" }
+          - { ref: "Isa 28:14-16", label: "A cornerstone in Zion" }
+          - { ref: "Isa 32:1-4", label: "“A king will reign in righteousness”" }
+          - { ref: "Isa 55:1-13", label: "“Come, all you who are thirsty”" }
+      - title: "The Servant of the LORD"
+        note: "First Israel is the servant; then one Servant does what Israel could not, suffering for the many. The four Servant songs are 42, 49, 50 and 52–53."
+        refs:
+          - { ref: "Isa 41:8-14", label: "“Israel, My servant … do not fear”" }
+          - { ref: "Isa 42:1-9", label: "“Here is My Servant”: the first Servant song" }
+          - { ref: "Isa 49:1-7", label: "A light for the nations: the second Servant song" }
+          - { ref: "Isa 50:4-9", label: "“I offered My back to those who struck Me”: the third Servant song" }
+          - { ref: "Isa 52:13-53:12", label: "The suffering Servant: the fourth Servant song" }
+          - { ref: "Isa 61:1-11", label: "“The Spirit of the Lord GOD is on Me”" }
+      - title: "Comfort and a new exodus"
+        note: "The God who brought Israel out of Egypt will bring them out of Babylon: a way through the wilderness, water in the desert, songs on the road home."
+        refs:
+          - { ref: "Isa 12:1-6", label: "Songs of salvation" }
+          - { ref: "Isa 30:15-18", label: "“By repentance and rest you would be saved”" }
+          - { ref: "Isa 35:1-10", label: "The desert will bloom" }
+          - { ref: "Isa 40:1-11", label: "“Comfort, comfort My people”" }
+          - { ref: "Isa 43:1-7", label: "“When you pass through the waters”" }
+          - { ref: "Isa 43:16-21", label: "“I am about to do something new”" }
+          - { ref: "Isa 44:24-45:7", label: "Cyrus, My shepherd" }
+          - { ref: "Isa 49:8-16", label: "“Can a woman forget her nursing child?”" }
+          - { ref: "Isa 51:9-11", label: "“Awake, awake, O arm of the LORD”" }
+          - { ref: "Isa 52:7-10", label: "“How beautiful on the mountains”" }
+          - { ref: "Isa 54:1-10", label: "“Shout for joy, O barren woman”" }
+      - title: "The nations drawn in"
+        note: "From the first chapters to the last, the nations are not only judged: they stream to Zion, worship beside Israel, and are gathered as an offering."
+        refs:
+          - { ref: "Isa 2:1-5", label: "The mountain of the LORD's house" }
+          - { ref: "Isa 19:18-25", label: "“Blessed be Egypt My people, Assyria My handiwork”" }
+          - { ref: "Isa 45:18-25", label: "“Turn to Me and be saved, all the ends of the earth”" }
+          - { ref: "Isa 56:1-8", label: "A house of prayer for all the nations" }
+          - { ref: "Isa 60:1-22", label: "“Arise, shine, for your light has come”" }
+          - { ref: "Isa 66:18-24", label: "All nations will see My glory" }
+      - title: "New heavens and a new earth"
+        note: "Where the book is going: the whole earth judged and remade, death swallowed up, the dead raised, and God's people given a new name."
+        refs:
+          - { ref: "Isa 24:1-6", label: "The earth laid waste" }
+          - { ref: "Isa 25:6-9", label: "A feast for all peoples, and death swallowed up" }
+          - { ref: "Isa 26:19", label: "“Your dead will live; their bodies will rise”" }
+          - { ref: "Isa 62:1-5", label: "A new name" }
+          - { ref: "Isa 65:17-25", label: "New heavens and a new earth" }
+
+  - title: "Who it was spoken to"
+    note: "Every passage by the people it was first addressed to. Some speak to more than one."
+    auto: facet
+    facet: to
+  - title: "When it comes true"
+    note: "A prophecy can come true more than once, so a passage can sit in several of these."
+    auto: facet
+    facet: when
+  - title: "Where it leads"
+    note: "The passages by where the rest of the Bible picks them up."
+    auto: category

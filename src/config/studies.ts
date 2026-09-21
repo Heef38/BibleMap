@@ -15,8 +15,13 @@ export const SHELVES: { title: string; note: string; ids: string[] }[] = [
   },
   {
     title: 'God with his people',
-    note: 'His presence, his Spirit, his promises, and the prayers of his people.',
-    ids: ['presence-of-god', 'holy-spirit', 'promises-of-god', 'psalms'],
+    note: 'His presence, his Spirit, and his promises.',
+    ids: ['presence-of-god', 'holy-spirit', 'promises-of-god'],
+  },
+  {
+    title: 'Books of the Bible',
+    note: 'One book at a time: how it is built, who it was written to, and where it leads.',
+    ids: ['isaiah', 'psalms'],
   },
 ]
 
