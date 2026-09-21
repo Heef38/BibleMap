@@ -169,10 +169,11 @@ function WhatsNew() {
 }
 
 /**
- * Back and Forward through this visit, reader jumps included. Back stops at the first page of the
- * visit instead of leaving the site; Forward is on when a Back step can be undone.
+ * Back and Forward through this visit, reader jumps included, as a bar under the header: its left
+ * half goes back, its right half forward. Back stops at the first page of the visit instead of
+ * leaving the site; Forward is on when a Back step can be undone.
  */
-function HistoryButtons() {
+export function HistoryBar() {
   const navigate = useNavigate()
   const location = useLocation()
   const navType = useNavigationType()
@@ -194,14 +195,16 @@ function HistoryButtons() {
     setPos({ idx, max })
   }, [location.key, navType])
   return (
-    <div className="flex items-center" role="group" aria-label="History">
-      <button type="button" className="btn btn-ghost !px-2" disabled={pos.idx <= 0} onClick={() => navigate(-1)} title="Back (Alt+←)" aria-label="Back">
-        <IconArrowLeft />
+    <nav className="history-bar flex h-7 shrink-0 border-b border-line bg-surface text-xs text-ink-2" aria-label="History">
+      <button type="button" className="history-half flex-1 flex items-center gap-1.5 pl-3" disabled={pos.idx <= 0} onClick={() => navigate(-1)} title="Back (Alt+←)">
+        <IconArrowLeft width={14} height={14} />
+        Back
       </button>
-      <button type="button" className="btn btn-ghost !px-2" disabled={pos.idx >= pos.max} onClick={() => navigate(1)} title="Forward (Alt+→)" aria-label="Forward">
-        <IconArrowRight />
+      <button type="button" className="history-half flex-1 flex items-center justify-end gap-1.5 pr-3" disabled={pos.idx >= pos.max} onClick={() => navigate(1)} title="Forward (Alt+→)">
+        Forward
+        <IconArrowRight width={14} height={14} />
       </button>
-    </div>
+    </nav>
   )
 }
 
@@ -218,7 +221,6 @@ export default function Header() {
         <Logo />
         <span className="max-[480px]:hidden">BibleMap</span>
       </Link>
-      <HistoryButtons />
       <span className="text-muted text-xs max-[900px]:hidden">see how the story connects</span>
       <nav className="ml-auto flex items-center gap-1" aria-label="Site">
         <NavLink to="/about" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="About BibleMap">

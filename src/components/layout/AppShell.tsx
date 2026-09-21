@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
 import { useLocation, useNavigate } from 'react-router'
-import Header from './Header'
+import Header, { HistoryBar } from './Header'
 import RightPane from './RightPane'
 import Splitter from './Splitter'
 import SearchPane from '@/components/search/SearchPane'
@@ -238,6 +238,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
     return (
       <div className="h-full flex flex-col">
         <Header />
+        <HistoryBar />
         <div ref={splitBox} className="flex-1 min-h-0 flex flex-col">
           <div className="relative min-h-0" style={{ flex: mobileBible ? `${1 - split} 1 0` : '1 1 0' }}>
             <aside className={`pane absolute inset-0 overflow-y-auto ${shown('explore') ? '' : 'hidden'}`}>
@@ -293,6 +294,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="h-full flex flex-col">
       <Header />
+      <HistoryBar />
       <div className="flex-1 min-h-0 flex">
         {showLeft && (
           <aside className="pane border-r border-line w-[300px] shrink-0 min-h-0" aria-label="Search and notes">
