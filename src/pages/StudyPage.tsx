@@ -3,6 +3,7 @@ import { useParams, useSearchParams } from 'react-router'
 import ArcDiagram, { categoryColor, type ArcPair } from '@/components/viz/ArcDiagram'
 import StudyMap from '@/components/viz/StudyMap'
 import StudyTimeline from '@/components/viz/StudyTimeline'
+import TriangleChart from '@/components/viz/TriangleChart'
 import RefOverview from '@/components/study/RefOverview'
 import FacetTally from '@/components/study/FacetTally'
 import CanonStrip from '@/components/viz/CanonStrip'
@@ -66,7 +67,7 @@ export default function StudyPage() {
       if (r.links?.length) for (const l of r.links) if (l.category ?? r.category) catCounts.set(l.category ?? r.category!, (catCounts.get(l.category ?? r.category!) ?? 0) + 1)
       else if (r.category) catCounts.set(r.category, (catCounts.get(r.category) ?? 0) + 1)
     }
-  const charts: [string, string][] = [...(hasFacets ? [['patterns', 'Patterns'] as [string, string]] : []), ...(isConnections ? [['arcs', 'Arcs'] as [string, string]] : []), ['map', 'Map'], ['sunburst', 'Sunburst'], ['timeline', 'Timeline']]
+  const charts: [string, string][] = [...(study.triangle ? [['triangle', 'Triangle'] as [string, string]] : []), ...(hasFacets ? [['patterns', 'Patterns'] as [string, string]] : []), ...(isConnections ? [['arcs', 'Arcs'] as [string, string]] : []), ['map', 'Map'], ['sunburst', 'Sunburst'], ['timeline', 'Timeline']]
   const facetLine = (r: StudyRef) =>
     (study.facets ?? [])
       .filter((f) => r.facets?.[f.id])
@@ -107,7 +108,7 @@ export default function StudyPage() {
       {view.note && <p className="text-sm text-ink-2 max-w-prose mb-4">{view.note}</p>}
 
       <div className="flex flex-wrap items-center gap-2 mb-3">
-        <div className="seg" role="group" aria-label="Chart">
+        <div className="seg flex-wrap" role="group" aria-label="Chart">
           {charts.map(([id, label]) => (
             <button key={id} type="button" aria-pressed={chart === id} onClick={() => setParam('chart', id)}>
               {label}
@@ -129,7 +130,16 @@ export default function StudyPage() {
         )}
       </div>
 
-      {chart === 'patterns' && hasFacets ? (
+      {chart === 'triangle' && study.triangle ? (
+        <div>
+          <TriangleChart study={study} view={view} canon={canon} bible={bible} selected={focusRef?.ref ?? null} onRef={openRef} />
+          {focusRef && (
+            <div className="mt-4 max-w-2xl">
+              <RefOverview study={study} view={view} group={focusRef.group} item={focusRef.ref} canon={canon} bible={bible} onClose={() => setFocusRef(null)} />
+            </div>
+          )}
+        </div>
+      ) : chart === 'patterns' && hasFacets ? (
         <FacetTally study={study} canon={canon} bible={bible} />
       ) : chart === 'map' ? (
         <StudyMap study={study} view={view} canon={canon} bible={bible} />

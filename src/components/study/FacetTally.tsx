@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { RefLink } from '@/components/common/ui'
 import { groupColor } from '@/components/viz/Sunburst'
+import { triangleColor } from '@/components/viz/TriangleChart'
 import type { Bible, Study, StudyRef } from '@/data/types'
 import type { Canon } from '@/lib/canon'
 
@@ -102,7 +103,7 @@ export default function FacetTally({ study, canon, bible }: { study: Study; cano
                         <span className={`block text-sm leading-tight ${n === 0 ? 'text-muted' : ''}`}>{v.title}</span>
                         <span className="flex items-center gap-2 mt-1" aria-hidden>
                           <span className="flex-1 flex items-center min-w-0">
-                            <span className="h-2.5 rounded-r-[4px] shrink-0" style={{ width: `${(88 * n) / max}%`, minWidth: n ? 3 : 0, background: groupColor(i) }} />
+                            <span className="h-2.5 rounded-r-[4px] shrink-0" style={{ width: `${(88 * n) / max}%`, minWidth: n ? 3 : 0, background: triangleColor(study, f.id, v) ?? groupColor(i) }} />
                             <span className="ml-2 text-xs tabular-nums text-ink-2">{n}</span>
                           </span>
                         </span>

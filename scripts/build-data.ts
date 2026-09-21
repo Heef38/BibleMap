@@ -862,6 +862,17 @@ interface StudyFacetYaml {
 interface StudyCategoryYaml {
   title: string
   note?: string
+  /** on the triangle's facet: where the value sits, at a corner id, 'center' (God is one) or 'all' (all three together) ... */
+  at?: string
+  /** ... or on the side between two corners, drawn from one toward the other */
+  from?: string
+  to?: string
+}
+interface TriangleYaml {
+  /** the facet whose values place each passage on the triangle */
+  facet: string
+  corners: { id: string; title: string; short?: string; note?: string }[]
+  center: { title: string; short?: string; note?: string }
 }
 interface StudyYaml {
   id: string
@@ -879,6 +890,8 @@ interface StudyYaml {
   facets?: Record<string, StudyFacetYaml>
   /** What the Patterns chart calls one tagged passage, in the plural: events, accounts, promises. */
   facetUnit?: string
+  /** Draw the study as a triangle of three corners with a center (the Trinity study). */
+  triangle?: TriangleYaml
   views: StudyViewYaml[]
 }
 interface StudyLink {
@@ -930,8 +943,9 @@ interface StudyJson {
   chart?: string
   timeline?: { from?: number; to?: number; note?: string }
   categories?: { id: string; title: string; note?: string }[]
-  facets?: { id: string; title: string; note?: string; values: { id: string; title: string; note?: string }[] }[]
+  facets?: { id: string; title: string; note?: string; values: { id: string; title: string; note?: string; at?: string; from?: string; to?: string }[] }[]
   facetUnit?: string
+  triangle?: TriangleYaml
   views: StudyView[]
   ranges: Range[]
   refCount: number
@@ -952,6 +966,17 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
       // js-yaml reads an unquoted date as a Date; keep it as the plain day either way.
       const added = (doc.added as unknown) instanceof Date ? (doc.added as unknown as Date).toISOString().slice(0, 10) : doc.added
       if (added !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(added)) throw new Error(`${file}: added must be a date like 2026-09-19`)
+      if (doc.triangle) {
+        const t = doc.triangle
+        const facet = doc.facets?.[t.facet]
+        if (!facet) throw new Error(`${file}: triangle.facet "${t.facet}" is not a facet`)
+        if (t.corners?.length !== 3) throw new Error(`${file}: a triangle needs three corners`)
+        const ids = new Set(t.corners.map((c) => c.id))
+        for (const [vid, v] of Object.entries(facet.values)) {
+          const placed = v.at !== undefined ? ids.has(v.at) || v.at === 'center' || v.at === 'all' : !!v.from && !!v.to && ids.has(v.from) && ids.has(v.to) && v.from !== v.to
+          if (!placed) throw new Error(`${file}: triangle value "${vid}" needs at (a corner, center or all) or from/to (two corners)`)
+        }
+      }
       const all: Range[] = []
       let refCount = 0
       const compileGroup = (g: StudyGroupYaml): StudyGroup => {
@@ -1137,9 +1162,15 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
         timeline: doc.timeline,
         categories: doc.categories ? Object.entries(doc.categories).map(([id, c]) => ({ id, title: c.title, note: c.note })) : undefined,
         facets: doc.facets
-          ? Object.entries(doc.facets).map(([id, f]) => ({ id, title: f.title, note: f.note, values: Object.entries(f.values).map(([vid, val]) => ({ id: vid, title: val.title, note: val.note })) }))
+          ? Object.entries(doc.facets).map(([id, f]) => ({
+              id,
+              title: f.title,
+              note: f.note,
+              values: Object.entries(f.values).map(([vid, val]) => ({ id: vid, title: val.title, note: val.note, at: val.at, from: val.from, to: val.to })),
+            }))
           : undefined,
         facetUnit: doc.facetUnit,
+        triangle: doc.triangle,
         views,
         ranges: merged,
         refCount,

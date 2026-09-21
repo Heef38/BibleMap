@@ -189,11 +189,31 @@ export interface StudyCategory {
   title: string
   note?: string
 }
+export interface StudyFacetValue extends StudyCategory {
+  /** on the triangle's facet: the corner id the value sits at, 'center' (God is one) or 'all' (all three together) ... */
+  at?: string
+  /** ... or the side it sits on, drawn from one corner toward another */
+  from?: string
+  to?: string
+}
 export interface StudyFacet {
   id: string
   title: string
   note?: string
-  values: StudyCategory[]
+  values: StudyFacetValue[]
+}
+export interface TriangleCorner {
+  id: string
+  title: string
+  /** the name inside the corner's circle */
+  short?: string
+  note?: string
+}
+/** A study drawn as a triangle: three corners, a center, and passages on the sides between them. */
+export interface StudyTriangle {
+  facet: string
+  corners: TriangleCorner[]
+  center: { title: string; short?: string; note?: string }
 }
 export interface StudyGroup {
   id: string
@@ -228,6 +248,7 @@ export interface Study {
   facets?: StudyFacet[]
   /** what the Patterns chart calls one tagged passage, in the plural (default: events) */
   facetUnit?: string
+  triangle?: StudyTriangle
   views: StudyView[]
   ranges: Range[]
   refCount: number

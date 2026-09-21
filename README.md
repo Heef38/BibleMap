@@ -116,6 +116,31 @@ Links declared on a passage in one view are shared by the same passage in every 
 
 Every study also has a **Timeline** chart: one row per group (theme), each reference placed by the traditional year of its verses, so the story reads left to right and the themes top to bottom. Events from the timeline data that fall inside the study's passages appear in a muted row underneath. Set `chart: timeline` to open a study on it, and `timeline: { from, to, note }` to choose the years it opens on when the automatic choice is not right (the Exodus study opens on 1650 to 1415 BC and leaves the apostles' retellings a "fit all" away). Clicking a reference on the timeline or on the sunburst opens its overview: note, text, and every passage it links to, grouped by topic.
 
+### The triangle chart
+
+A study can be drawn as a triangle (the Trinity study is): three corners, a center, a spoke from each corner to the center, and on each side a line each way. One facet places the passages; each of its values says where it sits:
+
+```yaml
+chart: triangle
+triangle:
+  facet: bond
+  corners:
+    - { id: father, title: "The Father", short: "Father" }
+    - { id: son, title: "The Son", short: "Son" }
+    - { id: spirit, title: "The Holy Spirit", short: "Spirit" }
+  center: { title: "One God", short: "God" }
+facets:
+  bond:
+    title: "Who relates to whom"
+    values:
+      one: { title: "God is one", at: center }          # around the center, in ink
+      all: { title: "All three together", at: all }     # around the center, in all three colors
+      son: { title: "The Son is God", at: son }         # on the Son's spoke
+      f-s: { title: "The Father to the Son", from: father, to: son }   # on the side, the Father's line
+```
+
+A passage tagged with several values appears in each place. Hover anything to see it; click a passage to open it (with the Bible beside it), and a corner, a line or the center to list just those passages. The chips under the chart do the same, for touch screens and keyboards.
+
 ### Facets and the Patterns chart
 
 A study can also sort the same passages several ways at once and count them. Declare `facets`, each with a fixed list of values, tag passages with them, and add `auto: facet` views:
