@@ -114,7 +114,7 @@ views:
         note: "Isaiah sees the King, and is sent to a people who will not listen. Then Assyria's shadow falls, and a child is promised."
         refs:
           - ref: "Isa 6:1-8"
-            label: "“Holy, Holy, Holy”: Isaiah's call"
+            label: "“Holy, holy, holy”: Isaiah's call"
             note: "In the year King Uzziah died Isaiah sees the Lord on his throne. A coal from the altar touches his lips: “Here am I. Send me!”"
             facets: { kind: story }
             links:
@@ -544,7 +544,7 @@ views:
       - title: "The Holy One, and no other god"
         note: "Isaiah's name for God, the Holy One of Israel, runs through both halves of the book. Beside him the idols are wood."
         refs:
-          - { ref: "Isa 6:1-8", label: "“Holy, Holy, Holy”: Isaiah's call" }
+          - { ref: "Isa 6:1-8", label: "“Holy, holy, holy”: Isaiah's call" }
           - { ref: "Isa 40:12-31", label: "“To whom will you compare Me?”" }
           - { ref: "Isa 44:6-20", label: "“I am the first and I am the last”" }
           - { ref: "Isa 46:8-11", label: "“I declare the end from the beginning”" }

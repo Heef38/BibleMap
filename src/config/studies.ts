@@ -14,9 +14,9 @@ export const SHELVES: { title: string; note: string; ids: string[] }[] = [
     ids: ['christ-in-the-old-testament', 'tabernacle-and-temple', 'materials-and-meanings', 'exodus-and-the-christian-life'],
   },
   {
-    title: 'God with his people',
-    note: 'His presence, his Spirit, and his promises.',
-    ids: ['presence-of-god', 'holy-spirit', 'promises-of-god'],
+    title: 'Who God is',
+    note: 'The Father, the Son and the Spirit: his presence, his Spirit, and his promises.',
+    ids: ['trinity', 'presence-of-god', 'holy-spirit', 'promises-of-god'],
   },
   {
     title: 'Books of the Bible',

@@ -14,6 +14,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'study-trinity',
+    date: '2026-09-21',
+    title: 'New study: The Trinity, with a triangle chart',
+    body: 'One God, and the Father, the Son and the Holy Spirit. A new triangle chart draws how each relates to the others: who sends, gives, loves, glorifies and prays to whom, with the passages where all three act at once around the center.',
+    link: { to: '/study/trinity', label: 'Open the study' },
+  },
+  {
     id: 'study-isaiah',
     date: '2026-09-21',
     title: 'New study: The Book of Isaiah',

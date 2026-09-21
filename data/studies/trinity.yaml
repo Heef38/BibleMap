@@ -1,0 +1,641 @@
+# The Trinity: one God, and the Father, the Son and the Holy Spirit, each God, each distinct, and how
+# each relates to the others. Every passage is placed on the triangle chart by the `bond` facet (a
+# corner's spoke for "this person is God", a side for what one person does toward another, the center
+# for God is one or all three together) and tagged with what they do (`act`) for the Patterns chart.
+# Quotations follow the Berean Standard Bible.
+id: trinity
+title: "The Trinity"
+subtitle: "One God: the Father, the Son and the Holy Spirit, and what each does toward the others, from the first page of Scripture to the last"
+chart: triangle
+added: "2026-09-21"
+summary: >-
+  The word "Trinity" is not in the Bible, but what it names is there on almost every page. Scripture
+  says plainly that God is one: "Hear, O Israel: The LORD our God, the LORD is One." It also calls
+  three persons God: the Father, the Son, and the Holy Spirit. They are not three names for one
+  person, because they speak to one another, send one another, love and glorify one another; and
+  they are not three gods, because God is one. Christians were using the word "Trinity" by
+  about AD 200 to hold those truths together, and the Nicene Creed (325, enlarged in 381) put them in
+  the words most churches still confess. This study gathers the passages behind it. The triangle
+  chart draws them the way medieval Christians drew the Shield of the Trinity: the three persons at
+  the corners, God at the center, a spoke from each corner for the passages that call that person
+  God, and on each side a line each way for what one does toward the other: the Father sends the
+  Son, the Son prays to the Father, the Son sends the Spirit, the Spirit glorifies the Son. The
+  passages where all three act at once, from Jesus's baptism to the blessing that ends 2 Corinthians,
+  ring the center.
+tags: [trinity, god, father, son, holy spirit, doctrine]
+triangle:
+  facet: bond
+  corners:
+    - { id: father, title: "The Father", short: "Father", note: "The first person of the Trinity, to whom Jesus prayed as “Abba.”" }
+    - { id: son, title: "The Son", short: "Son", note: "The Word made flesh: Jesus Christ." }
+    - { id: spirit, title: "The Holy Spirit", short: "Spirit", note: "The Spirit of God and the Spirit of Christ, sent to live in God's people." }
+  center: { title: "One God", short: "God", note: "“The LORD our God, the LORD is One.”" }
+facetUnit: passages
+facets:
+  bond:
+    title: "Who relates to whom"
+    note: "Where each passage sits on the triangle. One passage can sit in several places."
+    values:
+      one: { title: "God is one", at: center }
+      all: { title: "All three together", at: all, note: "Passages where the Father, the Son and the Spirit all act at once." }
+      father: { title: "The Father is God", at: father }
+      son: { title: "The Son is God", at: son }
+      spirit: { title: "The Spirit is God, and a person", at: spirit, note: "The Spirit speaks, wills, teaches, can be lied to and grieved: not a force but a person." }
+      f-s: { title: "The Father to the Son", from: father, to: son }
+      s-f: { title: "The Son to the Father", from: son, to: father }
+      s-h: { title: "The Son to the Spirit", from: son, to: spirit }
+      h-s: { title: "The Spirit to the Son", from: spirit, to: son }
+      h-f: { title: "The Spirit to the Father", from: spirit, to: father }
+      f-h: { title: "The Father to the Spirit", from: father, to: spirit }
+  act:
+    title: "What they do"
+    note: "The verbs of the relationships. A passage can carry several."
+    values:
+      gives: { title: "Sends and gives" }
+      loves: { title: "Loves and glorifies" }
+      knows: { title: "Knows and makes known" }
+      obeys: { title: "Does the will of" }
+      prays: { title: "Prays and intercedes" }
+      empowers: { title: "Anoints, empowers, raises" }
+      dwells: { title: "Dwells in, is one with" }
+      creates: { title: "Creates" }
+views:
+  - title: "How they relate"
+    note: "One God, each person God, each pair of persons, and all three together."
+    groups:
+      - title: "God is one"
+        note: "The ground floor of the doctrine: there is one God and no other. The New Testament never gives this up; it places Jesus inside it."
+        refs:
+          - ref: "Deut 6:4-5"
+            label: "“The LORD our God, the LORD is One”"
+            note: "The Shema, Israel's daily confession."
+            facets: { bond: one }
+            links:
+              - { to: "Mark 12:28-30", topic: "Jesus calls it the first commandment" }
+              - { to: "1 Cor 8:4-6", topic: "Paul reads Jesus into it" }
+          - ref: "Isa 45:5-6"
+            label: "“I am the LORD, and there is no other”"
+            note: "“There is no God but Me.”"
+            facets: { bond: one }
+          - ref: "Gen 1:26-27"
+            label: "“Let Us make man in Our image”"
+            note: "God speaks in the plural, then creates man “in His own image” in the singular. Early Christians heard in the “Us” a first hint of more than one person in the one God."
+            facets: { bond: one, act: creates }
+          - ref: "Mark 12:28-30"
+            label: "Jesus: “the Lord is One”"
+            note: "Asked for the greatest commandment, Jesus answers with the Shema."
+            facets: { bond: one }
+          - ref: "1 Cor 8:4-6"
+            label: "One God, the Father, and one Lord, Jesus Christ"
+            note: "“There is no God but one.” Then Paul splits the Shema's two words between them: “one God, the Father, from whom all things came … one Lord, Jesus Christ, through whom all things came.”"
+            facets: { bond: [one, father, son], act: creates }
+          - ref: "1 Tim 2:5"
+            label: "One God, and one mediator"
+            note: "“There is one God, and there is one mediator between God and men, the man Christ Jesus.”"
+            facets: { bond: [one, s-f], act: prays }
+
+      - title: "The Father is God"
+        note: "Rarely in doubt: Jesus prays to him and teaches us to. Scripture calls him the Father of Jesus, of Israel, and of all who believe."
+        refs:
+          - ref: "Mal 2:10"
+            label: "“Do we not all have one Father?”"
+            note: "“Did not one God create us?” Already in the prophets God is Father to his people."
+            facets: { bond: father, act: creates }
+          - ref: "Matt 6:9"
+            label: "“Our Father in heaven”"
+            note: "Jesus teaches his disciples to pray to his Father as their own."
+            facets: { bond: father }
+          - ref: "John 6:27"
+            label: "“On Him God the Father has placed His seal”"
+            note: "The Father sets his seal of approval on the Son of Man."
+            facets: { bond: [father, f-s], act: loves }
+          - ref: "John 20:17"
+            label: "“My Father and your Father, My God and your God”"
+            note: "Risen, Jesus calls the disciples his brothers and shares his Father with them."
+            facets: { bond: [father, s-f] }
+          - ref: "Jas 1:17"
+            label: "“The Father of the heavenly lights”"
+            note: "Every good and perfect gift comes down from him, “with whom there is no change or shifting shadow.”"
+            facets: { bond: father, act: gives }
+
+      - title: "The Son is God"
+        note: "The Son is called God, worshiped, and credited with creating the world, yet he is not the Father: he is with God, at the Father's side, sent by him."
+        refs:
+          - ref: "Isa 9:6-7"
+            label: "“Mighty God”"
+            note: "The child born to us will be called “Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.”"
+            facets: { bond: son }
+            links:
+              - { to: "Luke 1:32-33", topic: "The throne of his father David" }
+          - ref: "John 1:1-3"
+            label: "“The Word was with God, and the Word was God”"
+            note: "With God, so distinct from the Father; God, so not less than him. “Through Him all things were made.”"
+            facets: { bond: son, act: creates }
+            links:
+              - { to: "Gen 1:1-2", topic: "The same first words" }
+          - ref: "John 1:14"
+            label: "“The Word became flesh”"
+            note: "“We have seen His glory, the glory of the one and only Son from the Father.”"
+            facets: { bond: [son, f-s], act: loves }
+          - ref: "John 1:18"
+            label: "“The one and only Son, who is Himself God”"
+            note: "“No one has ever seen God, but the one and only Son, who is Himself God and is at the Father's side, has made Him known.”"
+            facets: { bond: [son, s-f], act: knows }
+          - ref: "John 5:18"
+            label: "“Making Himself equal with God”"
+            note: "His opponents understood what calling God “His own Father” meant."
+            facets: { bond: [son, s-f] }
+          - ref: "John 8:58"
+            label: "“Before Abraham was born, I am!”"
+            note: "Echoing the name God gave Moses at the burning bush (Exodus 3:14). His hearers picked up stones."
+            facets: { bond: son }
+          - ref: "John 10:30-33"
+            label: "“I and the Father are one”"
+            note: "One, yet “I and the Father,” two. They answer: “You, who are a man, make Yourself out to be God.”"
+            facets: { bond: [son, one], act: dwells }
+          - ref: "John 20:28"
+            label: "“My Lord and my God!”"
+            note: "Thomas, touching the wounds; Jesus accepts the worship."
+            facets: { bond: son }
+          - ref: "Phil 2:5-11"
+            label: "In the form of God, obedient to death"
+            note: "“Existing in the form of God,” he emptied himself and “became obedient to death.” So the Father exalted him, and every tongue confesses him Lord “to the glory of God the Father.”"
+            facets: { bond: [son, s-f, f-s], act: [obeys, loves] }
+          - ref: "Col 1:15-20"
+            label: "“The image of the invisible God”"
+            note: "“All things were created through Him and for Him … For God was pleased to have all His fullness dwell in Him.”"
+            facets: { bond: [son, f-s], act: [creates, dwells] }
+          - ref: "Col 2:9"
+            label: "“All the fullness of the Deity dwells in bodily form”"
+            facets: { bond: son, act: dwells }
+          - ref: "Rom 9:5"
+            label: "“Christ, who is God over all”"
+            note: "“Forever worthy of praise! Amen.”"
+            facets: { bond: son }
+          - ref: "Titus 2:13"
+            label: "“Our great God and Savior Jesus Christ”"
+            facets: { bond: son }
+          - ref: "Heb 1:1-3"
+            label: "“The exact representation of His nature”"
+            note: "God has spoken by his Son, “through whom He made the universe”; the Son is “the radiance of God's glory.”"
+            facets: { bond: [son, f-s], act: [creates, gives] }
+          - ref: "Heb 1:8-9"
+            label: "“Your throne, O God, endures forever”"
+            note: "The Father speaks to the Son and calls him God, then says “God, Your God, has anointed You.”"
+            facets: { bond: [son, f-s], act: empowers }
+
+      - title: "The Holy Spirit is God, and a person"
+        note: "The Spirit is everywhere God is, knows what only God knows, and is called God. He also speaks, decides, teaches, and can be lied to and grieved: he, not it."
+        refs:
+          - ref: "Ps 139:7-10"
+            label: "“Where can I go to escape Your Spirit?”"
+            note: "The Spirit is as present everywhere as God himself."
+            facets: { bond: spirit }
+          - ref: "Isa 63:9-10"
+            label: "“They rebelled and grieved His Holy Spirit”"
+            note: "Even here the Spirit is someone who can be grieved. The passage names the LORD, “the Angel of His Presence,” and “His Holy Spirit” together."
+            facets: { bond: spirit }
+            links:
+              - { to: "Eph 4:30", topic: "“Do not grieve the Holy Spirit of God”" }
+          - ref: "Matt 12:31-32"
+            label: "Blasphemy against the Spirit"
+            note: "Jesus speaks of sinning against the Spirit as worse than speaking against the Son of Man."
+            facets: { bond: spirit }
+          - ref: "Acts 5:3-4"
+            label: "“You have not lied to men, but to God!”"
+            note: "Peter says Ananias lied “to the Holy Spirit,” then that he lied to God."
+            facets: { bond: spirit }
+          - ref: "Acts 13:2"
+            label: "“The Holy Spirit said, ‘Set apart for Me Barnabas and Saul’”"
+            note: "The Spirit speaks, and calls people to himself."
+            facets: { bond: spirit }
+          - ref: "1 Cor 2:10-12"
+            label: "The Spirit searches the deep things of God"
+            note: "“No one knows the thoughts of God except the Spirit of God.” We have received “the Spirit who is from God.”"
+            facets: { bond: [spirit, h-f, f-h], act: [knows, gives] }
+          - ref: "1 Cor 3:16"
+            label: "“You yourselves are God's temple”"
+            note: "The temple is God's because “God's Spirit dwells in you.”"
+            facets: { bond: spirit, act: dwells }
+          - ref: "1 Cor 12:11"
+            label: "“As He determines”"
+            note: "The Spirit gives each believer gifts by his own will."
+            facets: { bond: spirit, act: gives }
+          - ref: "2 Cor 3:17-18"
+            label: "“Now the Lord is the Spirit”"
+            note: "“Where the Spirit of the Lord is, there is freedom.”"
+            facets: { bond: spirit }
+          - ref: "Eph 4:30"
+            label: "“Do not grieve the Holy Spirit of God”"
+            note: "The seal on every believer until the day of redemption."
+            facets: { bond: spirit }
+
+      - title: "The Father and the Son"
+        note: "The Father loves, sends, gives, shows and glorifies; the Son obeys, reveals, prays and glorifies in return. The richest side of the triangle, and most of it in Jesus's own words."
+        refs:
+          - ref: "Ps 2:7-8"
+            label: "“You are My Son; today I have become Your Father”"
+            note: "The LORD speaks to his anointed king. The apostles heard the Father speaking to Jesus."
+            facets: { bond: f-s, act: gives }
+            links:
+              - { to: "Acts 13:33", topic: "Fulfilled by raising up Jesus" }
+              - { to: "Heb 1:5", topic: "Said to no angel" }
+          - ref: "Ps 110:1"
+            label: "“The LORD said to my Lord”"
+            note: "Jesus asked how David, speaking “in the Spirit,” could call his own descendant Lord: the LORD, David's Lord, and the Spirit in one verse."
+            facets: { bond: f-s, act: loves }
+            links:
+              - { to: "Matt 22:41-45", topic: "Jesus asks whose son the Christ is" }
+              - { to: "Heb 1:13", topic: "“Sit at My right hand”" }
+          - ref: "Dan 7:13-14"
+            label: "One like a Son of Man before the Ancient of Days"
+            note: "He is given dominion, glory and a kingdom that will never be destroyed. At his trial Jesus took this vision for himself."
+            facets: { bond: f-s, act: gives }
+            links:
+              - { to: "Matt 26:63-64", topic: "Jesus before the high priest" }
+          - ref: "John 3:16-17"
+            label: "“God so loved the world that He gave His one and only Son”"
+            note: "The Father's love for the world is measured by what the Son is to him."
+            facets: { bond: f-s, act: [loves, gives] }
+          - ref: "John 5:19-27"
+            label: "“The Father loves the Son and shows Him all He does”"
+            note: "The Son does only what he sees the Father doing; the Father has given him all judgment and “granted the Son to have life in Himself,” so that all may honor the Son just as they honor the Father."
+            facets: { bond: [f-s, s-f], act: [loves, knows, gives, obeys, empowers] }
+          - ref: "John 6:38"
+            label: "“Not to do My own will, but the will of Him who sent Me”"
+            facets: { bond: [s-f, f-s], act: [obeys, gives] }
+          - ref: "John 14:6-11"
+            label: "“Anyone who has seen Me has seen the Father”"
+            note: "“No one comes to the Father except through Me … I am in the Father and the Father is in Me.”"
+            facets: { bond: [s-f, one], act: [knows, dwells] }
+          - ref: "John 14:28"
+            label: "“The Father is greater than I”"
+            note: "Christians have read this of the Son as sent and made man, since the same Gospel opens by calling him God (1:1), and near its end Thomas calls him “My Lord and my God” (20:28)."
+            facets: { bond: s-f, act: loves }
+          - ref: "John 14:31"
+            label: "“I do exactly what the Father has commanded Me … I love the Father”"
+            note: "The only place Jesus says in so many words that he loves the Father."
+            facets: { bond: s-f, act: [loves, obeys] }
+          - ref: "John 17:1-5"
+            label: "“Father, the hour has come. Glorify Your Son”"
+            note: "Jesus prays: “that Your Son may glorify You … glorify Me in Your presence with the glory I had with You before the world existed.” Eternal life is to know “the only true God, and Jesus Christ, whom You have sent.”"
+            facets: { bond: [s-f, f-s, father], act: [prays, loves, gives] }
+          - ref: "John 17:20-26"
+            label: "“As You, Father, are in Me, and I am in You”"
+            note: "He prays that his people may be one as they are one, and share the love the Father had for him “before the foundation of the world.”"
+            facets: { bond: [s-f, f-s], act: [prays, loves, dwells] }
+          - ref: "Matt 17:5"
+            label: "“This is My beloved Son … Listen to Him!”"
+            note: "The Father's voice again, on the mountain of transfiguration."
+            facets: { bond: f-s, act: loves }
+          - ref: "Matt 26:39"
+            label: "“Not as I will, but as You will”"
+            note: "In Gethsemane the Son asks, and yields."
+            facets: { bond: s-f, act: [prays, obeys] }
+          - ref: "Luke 23:46"
+            label: "“Father, into Your hands I commit My Spirit”"
+            note: "His last words from the cross are a prayer to the Father."
+            facets: { bond: s-f, act: [prays, gives] }
+          - ref: "Rom 8:32"
+            label: "“He who did not spare His own Son”"
+            note: "“But gave Him up for us all, how will He not also, along with Him, freely give us all things?”"
+            facets: { bond: f-s, act: gives }
+          - ref: "1 John 2:1-2"
+            label: "“An advocate before the Father”"
+            note: "The risen Son speaks to the Father for us. “Advocate” is the word Jesus used when he promised the Spirit as “another Advocate.”"
+            facets: { bond: s-f, act: prays }
+          - ref: "1 John 4:9-10"
+            label: "“God sent His one and only Son into the world”"
+            note: "“Not that we loved God, but that He loved us and sent His Son as the atoning sacrifice for our sins.”"
+            facets: { bond: f-s, act: [gives, loves] }
+          - ref: "1 Cor 15:24-28"
+            label: "He hands over the kingdom to God the Father"
+            note: "At the end the Son hands the kingdom to the Father, “so that God may be all in all.”"
+            facets: { bond: [s-f, f-s], act: [gives, obeys] }
+
+      - title: "The Son and the Spirit"
+        note: "The Spirit conceives, anoints, leads, empowers and raises the Son; the Son pours out the Spirit; the Spirit glorifies the Son."
+        refs:
+          - ref: "John 1:32-34"
+            label: "The Spirit descends and rests on Him"
+            note: "John the Baptist is told that the one on whom the Spirit rests “is He who will baptize with the Holy Spirit.”"
+            facets: { bond: [h-s, s-h], act: [empowers, gives] }
+          - ref: "Luke 4:1-2, 14"
+            label: "Full of the Spirit, led by the Spirit"
+            note: "Into the wilderness to be tempted, then back to Galilee “in the power of the Spirit.”"
+            facets: { bond: h-s, act: empowers }
+          - ref: "Luke 4:16-21"
+            label: "“The Spirit of the Lord is on Me”"
+            note: "In Nazareth Jesus reads Isaiah 61 and says “Today this Scripture is fulfilled in your hearing.”"
+            facets: { bond: [h-s, f-s], act: [empowers, gives] }
+            links:
+              - { to: "Isa 61:1-2", topic: "The scroll he read" }
+          - ref: "Matt 12:28"
+            label: "“If I drive out demons by the Spirit of God”"
+            note: "“Then the kingdom of God has come upon you.” The Son's works are done in the Spirit's power."
+            facets: { bond: h-s, act: empowers }
+          - ref: "John 7:37-39"
+            label: "Streams of living water"
+            note: "“He was speaking about the Spirit … the Spirit had not yet been given, because Jesus had not yet been glorified.”"
+            facets: { bond: s-h, act: gives }
+          - ref: "John 16:7-11"
+            label: "“If I go, I will send Him to you”"
+            note: "The Son's going away is for their good: then he sends the Advocate, who convicts the world."
+            facets: { bond: s-h, act: gives }
+          - ref: "Rom 1:3-4"
+            label: "“Through the Spirit of holiness … declared with power to be the Son of God”"
+            note: "By his resurrection from the dead."
+            facets: { bond: h-s, act: empowers }
+          - ref: "1 Pet 3:18"
+            label: "“Put to death in the body but made alive in the Spirit”"
+            facets: { bond: h-s, act: empowers }
+          - ref: "1 Cor 12:3"
+            label: "“No one can say, ‘Jesus is Lord,’ except by the Holy Spirit”"
+            note: "Every true confession of the Son is the Spirit's work."
+            facets: { bond: h-s, act: loves }
+
+      - title: "The Father and the Spirit"
+        note: "The Spirit is the Father's own Spirit, sent and given by him, who searches the Father's mind and prays according to his will."
+        refs:
+          - ref: "Gen 1:1-2"
+            label: "“The Spirit of God was hovering over the surface of the waters”"
+            note: "At creation, before God speaks."
+            facets: { bond: f-h, act: creates }
+            links:
+              - { to: "John 1:1-3", topic: "“In the beginning was the Word”" }
+          - ref: "Ps 104:30"
+            label: "“When You send Your Spirit, they are created”"
+            facets: { bond: f-h, act: [gives, creates] }
+          - ref: "Ezek 36:26-27"
+            label: "“I will put My Spirit within you”"
+            note: "A new heart, and God's own Spirit moving his people to walk in his ways."
+            facets: { bond: f-h, act: [gives, dwells] }
+          - ref: "Joel 2:28-29"
+            label: "“I will pour out My Spirit on all people”"
+            facets: { bond: f-h, act: gives }
+            links:
+              - { to: "Acts 2:16-18", topic: "Peter: this is what Joel spoke of" }
+          - ref: "Luke 11:13"
+            label: "“How much more will your Father in heaven give the Holy Spirit”"
+            note: "“To those who ask Him!”"
+            facets: { bond: f-h, act: gives }
+          - ref: "Rom 8:26-27"
+            label: "The Spirit intercedes “according to the will of God”"
+            note: "He prays for us “with groans too deep for words,” and the Father who searches hearts “knows the mind of the Spirit.”"
+            facets: { bond: [h-f, f-h], act: [prays, knows] }
+
+      - title: "All three together"
+        note: "The passages where the Father, the Son and the Spirit act at once: at the Son's conception and baptism, in his last teaching, at Pentecost, and in every part of a Christian's life."
+        refs:
+          - ref: "Isa 6:1-10"
+            label: "“Holy, holy, holy”: whose glory, and whose voice?"
+            note: "Isaiah sees the Lord, the seraphim cry “holy” three times, and God asks “Who will go for Us?” John says Isaiah saw Jesus' glory; Paul says the Holy Spirit spoke these words."
+            facets: { bond: [all, one] }
+            links:
+              - { to: "John 12:41", topic: "“He saw Jesus' glory”" }
+              - { to: "Acts 28:25-26", topic: "“The Holy Spirit was right when He spoke”" }
+          - ref: "Isa 48:16"
+            label: "“The Lord GOD has sent me, accompanied by His Spirit”"
+            note: "A speaker sent by the Lord GOD, with his Spirit."
+            facets: { bond: [all, f-s, f-h], act: gives }
+          - ref: "Isa 61:1-2"
+            label: "“The Spirit of the Lord GOD is on Me, because the LORD has anointed Me”"
+            note: "The Spirit, the LORD who anoints, and the one anointed: the scroll Jesus read in Nazareth."
+            facets: { bond: [all, h-s, f-s], act: [empowers, gives] }
+            links:
+              - { to: "Luke 4:17-21", topic: "“Today this Scripture is fulfilled”" }
+          - ref: "Luke 1:35"
+            label: "“The Holy Spirit will come upon you”"
+            note: "“And the power of the Most High will overshadow you. So the Holy One to be born will be called the Son of God.”"
+            facets: { bond: [all, h-s], act: empowers }
+          - ref: "Matt 3:16-17"
+            label: "The baptism of Jesus"
+            note: "The Son comes up out of the water, the Spirit descends like a dove and rests on him, and the Father's voice says “This is My beloved Son, in whom I am well pleased!”"
+            facets: { bond: [all, f-s, h-s], act: [loves, empowers] }
+          - ref: "John 3:34-35"
+            label: "“God gives the Spirit without limit”"
+            note: "The one God sent speaks God's words, “for God gives the Spirit without limit. The Father loves the Son and has placed all things in His hands.”"
+            facets: { bond: [all, f-s], act: [gives, loves] }
+          - ref: "Luke 10:21-22"
+            label: "“Jesus rejoiced in the Holy Spirit”"
+            note: "Rejoicing in the Spirit, the Son praises the Father: “All things have been entrusted to Me by My Father. No one knows who the Son is except the Father, and no one knows who the Father is except the Son.”"
+            facets: { bond: [all, s-f, f-s], act: [prays, gives, knows] }
+          - ref: "Acts 10:38"
+            label: "“God anointed Jesus of Nazareth with the Holy Spirit and with power”"
+            note: "Peter's summary of Jesus's whole ministry, “because God was with Him.”"
+            facets: { bond: [all, f-s, h-s], act: empowers }
+          - ref: "John 14:16-26"
+            label: "“I will ask the Father, and He will give you another Advocate”"
+            note: "The Son asks, the Father gives, the Spirit comes “in My name” to teach. “My Father will love him, and We will come to him and make Our home with him.”"
+            facets: { bond: [all, s-f, f-h], act: [prays, gives, dwells] }
+          - ref: "John 15:26"
+            label: "“The Spirit of truth who proceeds from the Father”"
+            note: "The Son sends the Spirit “from the Father,” and the Spirit testifies about the Son. The Nicene Creed takes “proceeds from the Father” from this verse; Western churches later added “and the Son,” a difference still discussed between East and West."
+            facets: { bond: [all, s-h, f-h, h-s], act: [gives, knows] }
+          - ref: "John 16:13-15"
+            label: "“He will glorify Me”"
+            note: "The Spirit takes what is the Son's and makes it known; “Everything that belongs to the Father is Mine.”"
+            facets: { bond: [all, h-s, f-s], act: [loves, knows, gives] }
+          - ref: "John 20:21-22"
+            label: "“As the Father has sent Me, so also I am sending you”"
+            note: "Then he breathed on them: “Receive the Holy Spirit.”"
+            facets: { bond: [all, f-s, s-h], act: gives }
+          - ref: "Matt 28:18-20"
+            label: "“In the name of the Father and of the Son and of the Holy Spirit”"
+            note: "One name, three persons. The Didache, one of the earliest Christian writings outside the Bible, baptizes in the same words."
+            facets: { bond: [all, f-s], act: gives }
+          - ref: "Acts 1:4-5"
+            label: "“Wait for the gift the Father promised”"
+            note: "The Son tells them to wait for the Father's promise: baptism with the Holy Spirit."
+            facets: { bond: [all, f-h], act: gives }
+          - ref: "Acts 2:32-33"
+            label: "Raised, exalted, and pouring out the Spirit"
+            note: "“God has raised this Jesus to life … He has received from the Father the promised Holy Spirit and has poured out what you now see and hear.” Pentecost is all three at once."
+            facets: { bond: [all, f-s, s-h], act: [empowers, gives] }
+          - ref: "Heb 9:14"
+            label: "“Through the eternal Spirit offered Himself unblemished to God”"
+            note: "The cross itself: the Son offers himself to the Father through the Spirit."
+            facets: { bond: [all, s-f, h-s], act: gives }
+          - ref: "Rom 8:9-11"
+            label: "The Spirit of God, the Spirit of Christ"
+            note: "One Spirit called by both names; the Spirit of him who raised Jesus will give life to our mortal bodies."
+            facets: { bond: [all, f-s], act: [dwells, empowers] }
+          - ref: "Rom 8:14-17"
+            label: "“By whom we cry, ‘Abba! Father!’”"
+            note: "The Spirit of adoption makes us God's children and co-heirs with Christ."
+            facets: { bond: [all, h-f], act: [prays, knows] }
+          - ref: "Gal 4:4-6"
+            label: "God sent His Son, and the Spirit of His Son"
+            note: "“God sent His Son … God sent the Spirit of His Son into our hearts, crying out, ‘Abba, Father!’”"
+            facets: { bond: [all, f-s, f-h, h-f], act: [gives, prays] }
+          - ref: "1 Cor 12:4-6"
+            label: "The same Spirit, the same Lord, the same God"
+            note: "Gifts, ministries and ways of working, each traced to one of the three."
+            facets: { bond: all, act: gives }
+          - ref: "2 Cor 13:14"
+            label: "The grace, the love, and the fellowship"
+            note: "“The grace of the Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with all of you.”"
+            facets: { bond: all, act: loves }
+          - ref: "Eph 1:3-14"
+            label: "Chosen, redeemed, sealed"
+            note: "The Father chose us “before the foundation of the world,” in the Son “we have redemption through His blood,” and we were “sealed with the promised Holy Spirit.”"
+            facets: { bond: all, act: [loves, gives] }
+          - ref: "Eph 2:18"
+            label: "“Access to the Father by one Spirit”"
+            note: "“Through Him,” the Son. Christian prayer runs through all three."
+            facets: { bond: [all, h-f], act: prays }
+          - ref: "Eph 4:4-6"
+            label: "One Spirit, one Lord, one God and Father of all"
+            facets: { bond: [all, one] }
+          - ref: "2 Thess 2:13-14"
+            label: "Loved by the Lord, chosen by God, sanctified by the Spirit"
+            facets: { bond: all, act: loves }
+          - ref: "Titus 3:4-6"
+            label: "“Renewal by the Holy Spirit … poured out on us through Jesus Christ”"
+            note: "God our Savior saved us, the Spirit renews us, and the Son is the one through whom the Spirit is poured out."
+            facets: { bond: [all, s-h], act: [gives, empowers] }
+          - ref: "1 Pet 1:1-2"
+            label: "Chosen by the Father, sanctified by the Spirit, for Jesus Christ"
+            note: "“According to the foreknowledge of God the Father and sanctified by the Spirit for obedience to Jesus Christ.”"
+            facets: { bond: all }
+          - ref: "1 John 4:13-14"
+            label: "“He has given us of His Spirit”"
+            note: "“And we have seen and testify that the Father has sent His Son to be the Savior of the world.”"
+            facets: { bond: [all, f-s], act: gives }
+          - ref: "Jude 20-21"
+            label: "Praying in the Spirit, kept in God's love, awaiting Christ's mercy"
+            facets: { bond: all, act: prays }
+
+  - title: "Through the story"
+    note: "The same passages from the first page to the last: glimpses in the Old Testament, the Son's coming, his last teaching, and the life of the church."
+    groups:
+      - title: "Glimpses in the Old Testament"
+        note: "Before the Son came, Israel already confessed one God, and already met his Word, his Spirit, and a Son the LORD would enthrone."
+        refs:
+          - { ref: "Gen 1:1-2", label: "“The Spirit of God was hovering over the surface of the waters”" }
+          - { ref: "Gen 1:26-27", label: "“Let Us make man in Our image”" }
+          - { ref: "Deut 6:4-5", label: "“The LORD our God, the LORD is One”" }
+          - { ref: "Ps 2:7-8", label: "“You are My Son; today I have become Your Father”" }
+          - { ref: "Ps 104:30", label: "“When You send Your Spirit, they are created”" }
+          - { ref: "Ps 110:1", label: "“The LORD said to my Lord”" }
+          - { ref: "Ps 139:7-10", label: "“Where can I go to escape Your Spirit?”" }
+          - { ref: "Isa 6:1-10", label: "“Holy, holy, holy”: whose glory, and whose voice?" }
+          - { ref: "Isa 9:6-7", label: "“Mighty God”" }
+          - { ref: "Isa 45:5-6", label: "“I am the LORD, and there is no other”" }
+          - { ref: "Isa 48:16", label: "“The Lord GOD has sent me, accompanied by His Spirit”" }
+          - { ref: "Isa 61:1-2", label: "“The Spirit of the Lord GOD is on Me, because the LORD has anointed Me”" }
+          - { ref: "Isa 63:9-10", label: "“They rebelled and grieved His Holy Spirit”" }
+          - { ref: "Ezek 36:26-27", label: "“I will put My Spirit within you”" }
+          - { ref: "Dan 7:13-14", label: "One like a Son of Man before the Ancient of Days" }
+          - { ref: "Joel 2:28-29", label: "“I will pour out My Spirit on all people”" }
+          - { ref: "Mal 2:10", label: "“Do we not all have one Father?”" }
+      - title: "The Son comes"
+        note: "The eternal Word, sent by the Father and conceived by the Spirit."
+        refs:
+          - { ref: "John 1:1-3", label: "“The Word was with God, and the Word was God”" }
+          - { ref: "John 1:14", label: "“The Word became flesh”" }
+          - { ref: "John 1:18", label: "“The one and only Son, who is Himself God”" }
+          - { ref: "Luke 1:35", label: "“The Holy Spirit will come upon you”" }
+          - { ref: "John 3:16-17", label: "“God so loved the world that He gave His one and only Son”" }
+          - { ref: "1 John 4:9-10", label: "“God sent His one and only Son into the world”" }
+          - { ref: "Phil 2:5-11", label: "In the form of God, obedient to death" }
+          - { ref: "Col 1:15-20", label: "“The image of the invisible God”" }
+          - { ref: "Heb 1:1-3", label: "“The exact representation of His nature”" }
+      - title: "The baptism and the ministry"
+        note: "At the Jordan all three appear at once. From then on the Son works in the Spirit's power and speaks of the Father at every turn."
+        refs:
+          - { ref: "Matt 3:16-17", label: "The baptism of Jesus" }
+          - { ref: "John 1:32-34", label: "The Spirit descends and rests on Him" }
+          - { ref: "Luke 4:1-2, 14", label: "Full of the Spirit, led by the Spirit" }
+          - { ref: "Luke 4:16-21", label: "“The Spirit of the Lord is on Me”" }
+          - { ref: "Matt 6:9", label: "“Our Father in heaven”" }
+          - { ref: "Matt 12:28", label: "“If I drive out demons by the Spirit of God”" }
+          - { ref: "Matt 12:31-32", label: "Blasphemy against the Spirit" }
+          - { ref: "Matt 17:5", label: "“This is My beloved Son … Listen to Him!”" }
+          - { ref: "Luke 10:21-22", label: "“Jesus rejoiced in the Holy Spirit”" }
+          - { ref: "Luke 11:13", label: "“How much more will your Father in heaven give the Holy Spirit”" }
+          - { ref: "Mark 12:28-30", label: "Jesus: “the Lord is One”" }
+          - { ref: "John 3:34-35", label: "“God gives the Spirit without limit”" }
+          - { ref: "John 5:18", label: "“Making Himself equal with God”" }
+          - { ref: "John 5:19-27", label: "“The Father loves the Son and shows Him all He does”" }
+          - { ref: "John 6:27", label: "“On Him God the Father has placed His seal”" }
+          - { ref: "John 6:38", label: "“Not to do My own will, but the will of Him who sent Me”" }
+          - { ref: "John 7:37-39", label: "Streams of living water" }
+          - { ref: "John 8:58", label: "“Before Abraham was born, I am!”" }
+          - { ref: "John 10:30-33", label: "“I and the Father are one”" }
+          - { ref: "Acts 10:38", label: "“God anointed Jesus of Nazareth with the Holy Spirit and with power”" }
+      - title: "The Upper Room (John 14–17)"
+        note: "On the night before he died Jesus taught more about the Father and the Spirit than anywhere else, and then prayed to his Father aloud."
+        refs:
+          - { ref: "John 14:6-11", label: "“Anyone who has seen Me has seen the Father”" }
+          - { ref: "John 14:16-26", label: "“I will ask the Father, and He will give you another Advocate”" }
+          - { ref: "John 14:28", label: "“The Father is greater than I”" }
+          - { ref: "John 14:31", label: "“I do exactly what the Father has commanded Me … I love the Father”" }
+          - { ref: "John 15:26", label: "“The Spirit of truth who proceeds from the Father”" }
+          - { ref: "John 16:7-11", label: "“If I go, I will send Him to you”" }
+          - { ref: "John 16:13-15", label: "“He will glorify Me”" }
+          - { ref: "John 17:1-5", label: "“Father, the hour has come. Glorify Your Son”" }
+          - { ref: "John 17:20-26", label: "“As You, Father, are in Me, and I am in You”" }
+      - title: "The cross, the resurrection, and Pentecost"
+        note: "The Son offers himself through the Spirit, is raised, sends the disciples as the Father sent him, and pours out the Spirit from the Father."
+        refs:
+          - { ref: "Matt 26:39", label: "“Not as I will, but as You will”" }
+          - { ref: "Luke 23:46", label: "“Father, into Your hands I commit My Spirit”" }
+          - { ref: "Heb 9:14", label: "“Through the eternal Spirit offered Himself unblemished to God”" }
+          - { ref: "Rom 1:3-4", label: "“Through the Spirit of holiness … declared with power to be the Son of God”" }
+          - { ref: "1 Pet 3:18", label: "“Put to death in the body but made alive in the Spirit”" }
+          - { ref: "John 20:17", label: "“My Father and your Father, My God and your God”" }
+          - { ref: "John 20:21-22", label: "“As the Father has sent Me, so also I am sending you”" }
+          - { ref: "John 20:28", label: "“My Lord and my God!”" }
+          - { ref: "Matt 28:18-20", label: "“In the name of the Father and of the Son and of the Holy Spirit”" }
+          - { ref: "Acts 1:4-5", label: "“Wait for the gift the Father promised”" }
+          - { ref: "Acts 2:32-33", label: "Raised, exalted, and pouring out the Spirit" }
+      - title: "What the apostles said of God"
+        note: "Writing to the churches, the apostles call the Son God, call the Spirit God, and still confess one God."
+        refs:
+          - { ref: "Acts 5:3-4", label: "“You have not lied to men, but to God!”" }
+          - { ref: "Acts 13:2", label: "“The Holy Spirit said, ‘Set apart for Me Barnabas and Saul’”" }
+          - { ref: "1 Cor 8:4-6", label: "One God, the Father, and one Lord, Jesus Christ" }
+          - { ref: "1 Cor 2:10-12", label: "The Spirit searches the deep things of God" }
+          - { ref: "1 Cor 3:16", label: "“You yourselves are God's temple”" }
+          - { ref: "2 Cor 3:17-18", label: "“Now the Lord is the Spirit”" }
+          - { ref: "Rom 9:5", label: "“Christ, who is God over all”" }
+          - { ref: "Col 2:9", label: "“All the fullness of the Deity dwells in bodily form”" }
+          - { ref: "1 Tim 2:5", label: "One God, and one mediator" }
+          - { ref: "Titus 2:13", label: "“Our great God and Savior Jesus Christ”" }
+          - { ref: "Heb 1:8-9", label: "“Your throne, O God, endures forever”" }
+          - { ref: "Jas 1:17", label: "“The Father of the heavenly lights”" }
+      - title: "God at work in us"
+        note: "Salvation, adoption and prayer are the work of all three: chosen by the Father, redeemed by the Son, sealed and moved by the Spirit."
+        refs:
+          - { ref: "Rom 8:9-11", label: "The Spirit of God, the Spirit of Christ" }
+          - { ref: "Rom 8:14-17", label: "“By whom we cry, ‘Abba! Father!’”" }
+          - { ref: "Rom 8:26-27", label: "The Spirit intercedes “according to the will of God”" }
+          - { ref: "Rom 8:32", label: "“He who did not spare His own Son”" }
+          - { ref: "Gal 4:4-6", label: "God sent His Son, and the Spirit of His Son" }
+          - { ref: "Eph 1:3-14", label: "Chosen, redeemed, sealed" }
+          - { ref: "Eph 2:18", label: "“Access to the Father by one Spirit”" }
+          - { ref: "Eph 4:30", label: "“Do not grieve the Holy Spirit of God”" }
+          - { ref: "2 Thess 2:13-14", label: "Loved by the Lord, chosen by God, sanctified by the Spirit" }
+          - { ref: "Titus 3:4-6", label: "“Renewal by the Holy Spirit … poured out on us through Jesus Christ”" }
+          - { ref: "1 Pet 1:1-2", label: "Chosen by the Father, sanctified by the Spirit, for Jesus Christ" }
+          - { ref: "1 John 2:1-2", label: "“An advocate before the Father”" }
+          - { ref: "1 John 4:13-14", label: "“He has given us of His Spirit”" }
+          - { ref: "Jude 20-21", label: "Praying in the Spirit, kept in God's love, awaiting Christ's mercy" }
+      - title: "The church's worship, and the end"
+        note: "The church's gifts, its unity and its blessing are all three-fold, and at the end the Son hands the kingdom to the Father."
+        refs:
+          - { ref: "1 Cor 12:3", label: "“No one can say, ‘Jesus is Lord,’ except by the Holy Spirit”" }
+          - { ref: "1 Cor 12:4-6", label: "The same Spirit, the same Lord, the same God" }
+          - { ref: "1 Cor 12:11", label: "“As He determines”" }
+          - { ref: "Eph 4:4-6", label: "One Spirit, one Lord, one God and Father of all" }
+          - { ref: "2 Cor 13:14", label: "The grace, the love, and the fellowship" }
+          - { ref: "1 Cor 15:24-28", label: "He hands over the kingdom to God the Father" }
+
+  - title: "What they do"
+    note: "Every passage by the verbs of the relationships: who sends, gives, loves, glorifies, prays."
+    auto: facet
+    facet: act
+  - title: "In Jesus's own words"
+    note: "How much of this Jesus taught himself, in red letters."
+    auto: jesus
