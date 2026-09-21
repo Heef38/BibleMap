@@ -5,8 +5,8 @@
 export const SHELVES: { title: string; note: string; ids: string[] }[] = [
   {
     title: 'The life and words of Jesus',
-    note: 'What he taught, the stories he told, and what he did.',
-    ids: ['teachings-of-jesus', 'sermon-on-the-mount', 'the-parables', 'miracles-of-jesus', 'kingdom-of-heaven'],
+    note: 'What he taught, the stories he told, what he did, and how he rose.',
+    ids: ['resurrection-of-jesus', 'teachings-of-jesus', 'sermon-on-the-mount', 'the-parables', 'miracles-of-jesus', 'kingdom-of-heaven'],
   },
   {
     title: 'Christ in the Old Testament',

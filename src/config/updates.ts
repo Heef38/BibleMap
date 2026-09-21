@@ -14,6 +14,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'study-resurrection',
+    date: '2026-09-21',
+    title: 'New study: The Resurrection of Jesus',
+    body: 'Every place that points to it, from Isaac on the mountain and Jonah in the fish to the empty tomb, the people who saw him, and what it means for us. It opens on the connection map, and each Old Testament hint is marked by how plainly it points ahead.',
+    link: { to: '/study/resurrection-of-jesus', label: 'Open the study' },
+  },
+  {
     id: 'study-trinity',
     date: '2026-09-21',
     title: 'New study: The Trinity, with a triangle chart',

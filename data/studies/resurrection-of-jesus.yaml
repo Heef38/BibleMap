@@ -1,0 +1,511 @@
+# The resurrection of Jesus: every place that points to it, from the faintest hints in the Old
+# Testament to the empty tomb, the people who saw him, the apostles' preaching, and what it means.
+# Old Testament passages carry `clarity` (how plainly the New Testament ties them to the resurrection)
+# and `motif` (the shape of the hint); appearance accounts carry `saw`. Links run from each hint to
+# where it is picked up. Quotations follow the Berean Standard Bible.
+id: resurrection-of-jesus
+title: "The Resurrection of Jesus"
+subtitle: "Every place that points to it, from Isaac on the mountain and Jonah in the fish to the empty tomb, the people who saw him, and what it means for us"
+kind: connections
+chart: map
+added: "2026-09-21"
+summary: >-
+  "Christ died for our sins according to the Scriptures, He was buried, He was raised on the third
+  day according to the Scriptures" (1 Corinthians 15:3–4). Paul calls this the message "of first
+  importance," and he says the Scriptures pointed to it. On the road to Emmaus Jesus himself,
+  "beginning with Moses and all the Prophets," explained what was written about him. This study
+  follows that thread: pictures in Israel's stories (Isaac received back, Joseph alive, Jonah given
+  back by the sea, the third day again and again), hope in the Psalms and Prophets that God would
+  not leave his Holy One in the grave, the people raised before Easter who all died again, Jesus's
+  own predictions, the empty tomb, the people who saw him, the apostles' preaching, and what his
+  rising means for everyone who belongs to him. Each Old Testament passage is marked by how plainly
+  it points ahead: some the New Testament quotes outright, some the early church read this way,
+  and some are patterns many readers see. Start on the map: click a branch to zoom into it, and a
+  dot to see where it leads.
+tags: [resurrection, easter, jesus, hope, prophecy, typology]
+categories:
+  said:
+    title: "The New Testament says so"
+    note: "Where an apostle ties the passage to the resurrection."
+  jesus:
+    title: "Jesus said so"
+    note: "Where Jesus himself makes the connection."
+  kept:
+    title: "Came true"
+    note: "Where a prediction is kept, or the story tells it happening."
+  echo:
+    title: "An echo"
+    note: "Where the New Testament uses the same words or pattern without saying so outright."
+  hope:
+    title: "Our resurrection"
+    note: "Where his rising becomes the promise of ours."
+facetUnit: passages
+facets:
+  clarity:
+    title: "How plainly it points ahead"
+    note: "For the Old Testament passages only."
+    values:
+      said: { title: "The New Testament says so", note: "Quoted or applied to the resurrection by Jesus or an apostle." }
+      read: { title: "Read this way from early on", note: "Not quoted of the resurrection, but read as pointing to it by the early church." }
+      pattern: { title: "A pattern many see", note: "A shape in the story that matches Easter; the New Testament does not say so." }
+  motif:
+    title: "The shape of the hint"
+    values:
+      thirdday: { title: "On the third day" }
+      fromdeath: { title: "Given back from death" }
+      grave: { title: "Not left in the grave" }
+      newlife: { title: "New life from what was dead" }
+      stone: { title: "The stone" }
+      throne: { title: "Raised and enthroned" }
+      victory: { title: "Death defeated" }
+  saw:
+    title: "Who saw him"
+    note: "The appearances of the risen Jesus, by who saw him."
+    values:
+      women: { title: "Mary Magdalene and the women" }
+      emmaus: { title: "Two on the road to Emmaus" }
+      peter: { title: "Peter" }
+      disciples: { title: "The disciples together" }
+      thomas: { title: "Thomas" }
+      many: { title: "More than five hundred at once" }
+      james: { title: "James" }
+      after: { title: "After he ascended: Stephen, Paul, John" }
+views:
+  - title: "From the first hints to the empty tomb"
+    note: "Eight movements: pictures, hopes, earlier raisings, Jesus's own words, the tomb, the witnesses, the preaching, and what it means."
+    groups:
+      - title: "Pictures and patterns"
+        note: "Stories in which someone is as good as dead and given back, often on the third day. Hebrews reads Isaac this way outright; others are patterns the church has long seen."
+        refs:
+          - ref: "Gen 22:1-14"
+            label: "Isaac on the mountain"
+            note: "“On the third day” Abraham sees the place, and tells his servants “we will return to you.” A ram is offered in Isaac's place."
+            facets: { clarity: said, motif: [thirdday, fromdeath] }
+            links:
+              - { to: "Heb 11:17-19", topic: "“He did receive Isaac back from death”", category: said }
+          - ref: "Gen 8:15-19"
+            label: "Noah comes out of the ark"
+            note: "Eight people brought through the water into a new world."
+            facets: { clarity: said, motif: newlife }
+            links:
+              - { to: "1 Pet 3:20-21", topic: "Saved through water, “through the resurrection of Jesus Christ”", category: said }
+          - ref: "Gen 42:17-18"
+            label: "“On the third day … do this and you will live”"
+            note: "Joseph holds his brothers three days, then offers them life."
+            facets: { clarity: pattern, motif: thirdday }
+          - ref: "Gen 45:25-28"
+            label: "“Joseph is still alive!”"
+            note: "The son Jacob mourned as dead is alive and ruling Egypt, and “the spirit of their father Jacob was revived.”"
+            facets: { clarity: pattern, motif: [fromdeath, throne] }
+            links:
+              - { to: "Acts 7:9-10", topic: "Stephen tells the story of the rejected brother God raised up", category: echo }
+          - ref: "Exod 19:10-11, 16"
+            label: "The LORD comes down on the third day"
+            note: "“Be prepared by the third day, for on the third day the LORD will come down on Mount Sinai.”"
+            facets: { clarity: pattern, motif: thirdday }
+          - ref: "Lev 23:9-14"
+            label: "The firstfruits, waved “on the day after the Sabbath”"
+            note: "The first sheaf of the harvest, offered the day after the Sabbath: the day Jesus rose."
+            facets: { clarity: said, motif: newlife }
+            links:
+              - { to: "1 Cor 15:20-23", topic: "“Christ the firstfruits”", category: said }
+          - ref: "Num 17:1-10"
+            label: "Aaron's staff that budded"
+            note: "A dead stick left overnight before the LORD is found “sprouted, put forth buds, blossomed, and produced almonds.”"
+            facets: { clarity: read, motif: newlife }
+          - ref: "Esth 4:15-5:2"
+            label: "“If I perish, I perish!”"
+            note: "After three days of fasting, “on the third day” Esther goes before the king under sentence of death, and he holds out the scepter: she lives, and her people are saved."
+            facets: { clarity: pattern, motif: [thirdday, fromdeath] }
+          - ref: "Dan 6:16-23"
+            label: "Daniel and the sealed stone"
+            note: "A stone is placed over the den and sealed with the king's ring. At first light the king runs to it, and Daniel is alive."
+            facets: { clarity: pattern, motif: [stone, fromdeath] }
+            links:
+              - { to: "Matt 27:66", topic: "They sealed the stone and posted the guard", category: echo }
+          - ref: "Jonah 1:17-2:10"
+            label: "Three days and three nights in the fish"
+            note: "“You raised my life from the pit, O LORD my God!” The sea gives Jonah back onto dry land."
+            facets: { clarity: said, motif: [thirdday, fromdeath] }
+            links:
+              - { to: "Matt 12:38-40", topic: "“The sign of the prophet Jonah”", category: jesus }
+
+      - title: "Hope in the Law, the Psalms and the Prophets"
+        note: "Israel's Scriptures say God gives life to the dead, will not leave his Holy One in the grave, and will one day swallow up death itself."
+        refs:
+          - ref: "Exod 3:6"
+            label: "“I am the God of Abraham, the God of Isaac, and the God of Jacob”"
+            note: "Spoken at the bush, long after all three had died."
+            facets: { clarity: said, motif: grave }
+            links:
+              - { to: "Matt 22:31-32", topic: "“He is not the God of the dead, but of the living”", category: jesus }
+          - ref: "Deut 32:39"
+            label: "“I bring death and I give life”"
+            facets: { clarity: read, motif: fromdeath }
+          - ref: "1 Sam 2:6"
+            label: "“He brings down to Sheol and raises up”"
+            note: "Hannah's song."
+            facets: { clarity: read, motif: grave }
+          - ref: "Job 19:25-27"
+            label: "“I know that my Redeemer lives”"
+            note: "“Even after my skin has been destroyed, yet in my flesh I will see God.”"
+            facets: { clarity: read, motif: grave }
+          - ref: "Ps 16:8-11"
+            label: "“Nor will You let Your Holy One see decay”"
+            note: "David's hope of not being abandoned to Sheol. David himself died and was buried; Peter and Paul say he was speaking of the Christ."
+            facets: { clarity: said, motif: grave }
+            links:
+              - { to: "Acts 2:29-32", topic: "Peter at Pentecost: David foresaw the resurrection", category: said }
+              - { to: "Acts 13:35-37", topic: "Paul: “the One whom God raised from the dead did not see decay”", category: said }
+          - ref: "Ps 22:22-31"
+            label: "After the forsaking, praise in the assembly"
+            note: "The psalm that begins “My God, my God, why have You forsaken me?” ends with the sufferer alive and praising among his brothers."
+            facets: { clarity: said, motif: fromdeath }
+            links:
+              - { to: "Heb 2:11-12", topic: "Jesus says it: “I will proclaim Your name to My brothers”", category: said }
+          - ref: "Ps 49:15"
+            label: "“God will redeem my life from Sheol”"
+            facets: { clarity: read, motif: grave }
+          - ref: "Ps 118:17-24"
+            label: "“I will not die, but I will live”"
+            note: "“The stone the builders rejected has become the cornerstone … This is the day that the LORD has made.”"
+            facets: { clarity: said, motif: [stone, fromdeath] }
+            links:
+              - { to: "Acts 4:10-11", topic: "“Whom God raised from the dead … the stone you builders rejected”", category: said }
+              - { to: "Matt 21:42", topic: "Jesus applies it to himself", category: jesus }
+          - ref: "Ps 2:7-8"
+            label: "“You are My Son; today I have become Your Father”"
+            facets: { clarity: said, motif: throne }
+            links:
+              - { to: "Acts 13:32-33", topic: "Fulfilled “by raising up Jesus”", category: said }
+          - ref: "Ps 110:1"
+            label: "“Sit at My right hand”"
+            facets: { clarity: said, motif: throne }
+            links:
+              - { to: "Acts 2:32-35", topic: "Raised and exalted to the right hand of God", category: said }
+          - ref: "Isa 25:6-9"
+            label: "“He will swallow up death forever”"
+            facets: { clarity: said, motif: victory }
+            links:
+              - { to: "1 Cor 15:54", topic: "“Death has been swallowed up in victory”", category: said }
+          - ref: "Isa 26:19"
+            label: "“Your dead will live; their bodies will rise”"
+            facets: { clarity: read, motif: newlife }
+            links:
+              - { to: "John 5:28-29", topic: "“All who are in their graves will hear His voice”", category: echo }
+          - ref: "Isa 53:10-12"
+            label: "The Servant “will see the light of life”"
+            note: "Crushed and made a guilt offering, the Servant still “will see His offspring, He will prolong His days … After the anguish of His soul, He will see the light of life.”"
+            facets: { clarity: read, motif: fromdeath }
+            links:
+              - { to: "Rom 4:24-25", topic: "“Delivered over to death … raised to life for our justification”", category: echo }
+          - ref: "Isa 55:3"
+            label: "“My loving devotion promised to David”"
+            facets: { clarity: said, motif: grave }
+            links:
+              - { to: "Acts 13:34", topic: "“God raised Him from the dead, never to see decay”", category: said }
+          - ref: "Ezek 37:1-14"
+            label: "The valley of dry bones"
+            note: "“I will open your graves and bring you up from them … I will put My Spirit in you and you will live.” A picture of Israel restored, told in the language of resurrection."
+            facets: { clarity: read, motif: newlife }
+            links:
+              - { to: "Rev 11:11", topic: "“The breath of life from God entered them”", category: echo }
+          - ref: "Dan 12:2-3"
+            label: "“Many who sleep in the dust of the earth will awake”"
+            note: "The Old Testament's plainest word on the resurrection of the dead, “some to everlasting life, but others to shame.”"
+            facets: { clarity: read, motif: newlife }
+            links:
+              - { to: "John 5:28-29", topic: "The resurrection of life and of judgment", category: hope }
+          - ref: "Hos 6:1-2"
+            label: "“On the third day He will raise us up”"
+            note: "Spoken of Israel. Paul says Christ was raised “on the third day according to the Scriptures” without naming which; this and Jonah are the passages most often suggested."
+            facets: { clarity: read, motif: thirdday }
+            links:
+              - { to: "1 Cor 15:3-4", topic: "“On the third day according to the Scriptures”", category: echo }
+          - ref: "Hos 13:14"
+            label: "“Where, O Death, are your plagues? Where, O Sheol, is your sting?”"
+            facets: { clarity: said, motif: victory }
+            links:
+              - { to: "1 Cor 15:55-57", topic: "“Where, O Death, is your sting?”", category: said }
+          - ref: "Zech 12:10"
+            label: "“They will look on Me, the One they have pierced”"
+            note: "To look on the pierced one, he must be seen alive."
+            facets: { clarity: said, motif: fromdeath }
+            links:
+              - { to: "John 19:37", topic: "At the cross", category: said }
+              - { to: "Rev 1:7", topic: "“Every eye will see Him, even those who pierced Him”", category: said }
+
+      - title: "The dead raised before Easter"
+        note: "Elijah, Elisha, and Jesus himself raised the dead. Every one of them died again. Jesus rose never to die: “death no longer has dominion over Him.”"
+        refs:
+          - ref: "1 Kgs 17:17-24"
+            label: "Elijah and the widow's son"
+            note: "“The child's life returned to him, and he lived.”"
+            facets: { motif: fromdeath }
+            links:
+              - { to: "Luke 7:11-17", topic: "Jesus at Nain: “A great prophet has appeared”", category: echo }
+          - ref: "2 Kgs 4:32-37"
+            label: "Elisha and the Shunammite's son"
+            facets: { motif: fromdeath }
+          - ref: "2 Kgs 13:20-21"
+            label: "A dead man touches Elisha's bones"
+            note: "Thrown into Elisha's tomb, he “was revived and stood up on his feet.”"
+            facets: { motif: fromdeath }
+          - ref: "Luke 7:11-17"
+            label: "The widow's son at Nain"
+            note: "“Young man, I tell you, get up!” Jesus gives him back to his mother, as Elijah did."
+            facets: { motif: fromdeath }
+          - ref: "Mark 5:35-43"
+            label: "“Talitha koum!”"
+            note: "Jairus's twelve-year-old daughter: “Little girl, I say to you, get up!”"
+            facets: { motif: fromdeath }
+          - ref: "John 11:38-44"
+            label: "“Lazarus, come out!”"
+            note: "Four days in the tomb. He comes out still bound in grave clothes; Jesus's own grave clothes would be left lying in the tomb."
+            facets: { motif: fromdeath }
+            links:
+              - { to: "Rom 6:9", topic: "Raised never to die again", category: said }
+              - { to: "John 20:5-7", topic: "The grave clothes left behind", category: echo }
+          - ref: "Matt 27:50-53"
+            label: "The tombs broke open"
+            note: "At his death many saints were raised, and after his resurrection “they entered the holy city.”"
+            facets: { motif: newlife }
+
+      - title: "Jesus foretold it"
+        note: "Again and again Jesus said he would be killed and rise after three days. The disciples did not understand until it happened."
+        refs:
+          - ref: "Matt 12:38-40"
+            label: "The sign of the prophet Jonah"
+            note: "“So the Son of Man will be three days and three nights in the heart of the earth.”"
+            facets: { motif: thirdday }
+          - ref: "John 2:18-22"
+            label: "“Destroy this temple, and in three days I will raise it up”"
+            note: "“He was speaking about the temple of His body. After He was raised from the dead, His disciples remembered.”"
+            facets: { motif: thirdday }
+            links:
+              - { to: "Matt 27:39-40", topic: "Thrown back at him on the cross", category: echo }
+          - ref: "Mark 8:31-32"
+            label: "“After three days rise again”"
+            note: "The first time he said it plainly; Peter rebuked him."
+            facets: { motif: thirdday }
+            links:
+              - { to: "Luke 24:6-8", topic: "“Then they remembered His words”", category: kept }
+          - ref: "Mark 9:9-10, 31-32"
+            label: "“Discussing what it meant to rise from the dead”"
+            note: "Coming down from the mountain, and again on the road: “they did not understand this statement.”"
+            facets: { motif: thirdday }
+          - ref: "Mark 10:32-34"
+            label: "“And after three days He will rise again”"
+            note: "The third and fullest prediction, on the way up to Jerusalem."
+            facets: { motif: thirdday }
+            links:
+              - { to: "Mark 16:6", topic: "“He has risen! He is not here!”", category: kept }
+          - ref: "John 10:17-18"
+            label: "“Authority to take it up again”"
+            note: "“No one takes it from Me, but I lay it down of My own accord.”"
+          - ref: "John 11:23-27"
+            label: "“I am the resurrection and the life”"
+            note: "Said to Martha at her brother's tomb, before he called Lazarus out."
+            links:
+              - { to: "1 Thess 4:13-14", topic: "Those who have fallen asleep in him", category: hope }
+          - ref: "Mark 14:27-28"
+            label: "“After I have risen, I will go ahead of you into Galilee”"
+            links:
+              - { to: "Matt 28:16-17", topic: "On the mountain in Galilee", category: kept }
+          - ref: "John 16:16-22"
+            label: "“Your grief will turn to joy”"
+            note: "“In a little while you will see Me no more, and then after a little while you will see Me.”"
+            links:
+              - { to: "John 20:19-20", topic: "“The disciples rejoiced when they saw the Lord”", category: kept }
+
+      - title: "The empty tomb"
+        note: "A sealed and guarded tomb, found open and empty on the first day of the week, first by women, then by Peter and John."
+        refs:
+          - ref: "Matt 27:62-66"
+            label: "The guard and the seal"
+            note: "His enemies remembered what his friends forgot: “After three days I will rise again.”"
+            facets: { motif: stone }
+          - ref: "Matt 28:1-8"
+            label: "“He is not here; He has risen, just as He said!”"
+            note: "An earthquake, an angel who rolls away the stone and sits on it, and guards who become like dead men."
+            facets: { motif: stone }
+          - ref: "Mark 16:1-8"
+            label: "“Who will roll away the stone?”"
+            note: "Three women come with spices at sunrise and find the stone already rolled back."
+            facets: { motif: stone }
+          - ref: "Luke 24:1-12"
+            label: "“Why do you look for the living among the dead?”"
+            note: "The women are told to remember his words; the apostles think it nonsense; Peter runs to see the linen cloths."
+          - ref: "John 20:1-10"
+            label: "The linen cloths lying there"
+            note: "Peter and the other disciple run to the tomb; the head cloth is rolled up by itself. “He saw and believed. For they still did not understand from the Scripture that Jesus had to rise from the dead.”"
+            links:
+              - { to: "Ps 16:10", topic: "The Scripture they had not yet understood", category: echo }
+          - ref: "Matt 28:11-15"
+            label: "“His disciples came by night and stole Him away”"
+            note: "The guards are paid to tell it, which admits that the tomb was empty."
+
+      - title: "He appeared"
+        note: "Not a vision in the dark: he was seen by women and men, alone and in groups, indoors and outdoors, eating, touched, over forty days."
+        refs:
+          - ref: "Matt 28:9-10"
+            label: "“They came to Him, grasped His feet, and worshiped Him”"
+            facets: { saw: women }
+          - ref: "John 20:11-18"
+            label: "Mary Magdalene: “I have seen the Lord!”"
+            note: "She thinks he is the gardener until he says her name."
+            facets: { saw: women }
+          - ref: "Luke 24:13-35"
+            label: "The road to Emmaus"
+            note: "“Beginning with Moses and all the Prophets, He explained to them what was written in all the Scriptures about Himself,” and they knew him when he broke the bread. Back in Jerusalem: “The Lord has indeed risen and has appeared to Simon!”"
+            facets: { saw: [emmaus, peter] }
+          - ref: "Luke 24:36-49"
+            label: "“Touch Me and see”"
+            note: "“A spirit does not have flesh and bones, as you see I have.” He eats fish in front of them, then opens their minds: “The Christ will suffer and rise from the dead on the third day.”"
+            facets: { saw: disciples }
+          - ref: "John 20:19-23"
+            label: "Through locked doors: “Peace be with you!”"
+            note: "He shows them his hands and his side."
+            facets: { saw: disciples }
+          - ref: "John 20:24-29"
+            label: "Thomas: “My Lord and my God!”"
+            note: "“Put your finger here and look at My hands.”"
+            facets: { saw: [thomas, disciples] }
+          - ref: "John 21:1-14"
+            label: "Breakfast on the shore"
+            note: "“This was now the third time that Jesus appeared to the disciples after He was raised from the dead.”"
+            facets: { saw: [disciples, peter] }
+          - ref: "Matt 28:16-20"
+            label: "On the mountain in Galilee"
+            note: "“They worshiped Him, but some doubted.” Then the Great Commission."
+            facets: { saw: disciples }
+          - ref: "Acts 1:3"
+            label: "“Many convincing proofs that He was alive”"
+            note: "Over forty days, speaking about the kingdom of God."
+            facets: { saw: disciples }
+          - ref: "1 Cor 15:3-8"
+            label: "Cephas, the Twelve, five hundred, James, and last of all Paul"
+            note: "Written about twenty years after, while “most of whom are still living” could be asked."
+            facets: { saw: [peter, disciples, many, james, after] }
+          - ref: "Acts 7:55-56"
+            label: "Stephen: “I see heaven open”"
+            note: "“And the Son of Man standing at the right hand of God.”"
+            facets: { saw: after }
+          - ref: "Acts 9:3-6"
+            label: "Paul on the Damascus road"
+            note: "“I am Jesus, whom you are persecuting.”"
+            facets: { saw: after }
+          - ref: "Rev 1:12-18"
+            label: "“I was dead, and behold, now I am alive forever and ever!”"
+            note: "To John on Patmos: “I hold the keys of Death and of Hades.”"
+            facets: { saw: after }
+
+      - title: "The apostles preached it"
+        note: "From the first sermon on, the resurrection is the center of the message, argued from the Scriptures and from eyewitnesses."
+        refs:
+          - ref: "Acts 2:22-36"
+            label: "Peter at Pentecost"
+            note: "“God raised Him from the dead, releasing Him from the agony of death, because it was impossible for death to keep Him in its grip.”"
+          - ref: "Acts 3:13-15"
+            label: "“You killed the Author of life, but God raised Him”"
+            note: "“And we are witnesses of this fact.”"
+          - ref: "Acts 4:8-12"
+            label: "The rejected stone, raised"
+            note: "Peter before the council: healed “by the name of Jesus Christ of Nazareth, whom you crucified but whom God raised from the dead.”"
+            facets: { motif: stone }
+          - ref: "Acts 4:33"
+            label: "“Their testimony about the resurrection of the Lord Jesus”"
+          - ref: "Acts 10:39-43"
+            label: "“Who ate and drank with Him after He rose”"
+            note: "“God raised Him up on the third day and caused Him to be seen.”"
+            facets: { motif: thirdday }
+          - ref: "Acts 13:26-39"
+            label: "Paul at Pisidian Antioch"
+            note: "The resurrection proclaimed from Psalm 2, Isaiah 55 and Psalm 16."
+          - ref: "Acts 17:18, 30-32"
+            label: "In Athens: “Jesus and the resurrection”"
+            note: "God “has given proof of this to everyone by raising Him from the dead.” Some mocked; others wanted to hear more."
+          - ref: "Acts 26:6-8, 22-23"
+            label: "“Why would any of you consider it incredible that God raises the dead?”"
+            note: "Before King Agrippa: nothing “beyond what the prophets and Moses said would happen.”"
+            links:
+              - { to: "Luke 24:44-47", topic: "What is written in the Law, the Prophets and the Psalms", category: echo }
+
+      - title: "What it means, now and at the end"
+        note: "His rising declares who he is, puts us right with God, gives us new life now, and promises bodies raised like his."
+        refs:
+          - ref: "Rom 1:3-4"
+            label: "Declared the Son of God with power"
+            note: "“By His resurrection from the dead.”"
+          - ref: "Rom 4:24-25"
+            label: "“Raised to life for our justification”"
+          - ref: "Rom 6:4-11"
+            label: "Newness of life"
+            note: "Buried with him in baptism, raised to walk in newness of life. “Christ … cannot die again; death no longer has dominion over Him.”"
+            links:
+              - { to: "Col 2:12", topic: "Buried with him, raised with him", category: echo }
+          - ref: "Rom 8:11"
+            label: "The Spirit will give life to your mortal bodies"
+            links:
+              - { to: "Ezek 37:14", topic: "“I will put My Spirit in you and you will live”", category: echo }
+          - ref: "Rom 10:9"
+            label: "“Believe in your heart that God raised Him from the dead”"
+            note: "“And you will be saved.”"
+          - ref: "1 Cor 15:12-20"
+            label: "“If Christ has not been raised”"
+            note: "“Our preaching is worthless, and so is your faith … you are still in your sins.” But “Christ has indeed been raised.”"
+          - ref: "1 Cor 15:35-49"
+            label: "Sown perishable, raised imperishable"
+            note: "Like a seed and the plant that grows from it: “It is sown a natural body; it is raised a spiritual body.”"
+            facets: { motif: newlife }
+          - ref: "1 Cor 15:50-58"
+            label: "“We will all be changed”"
+            note: "“In the twinkling of an eye, at the last trumpet … Death has been swallowed up in victory.”"
+            facets: { motif: victory }
+          - ref: "2 Cor 4:14"
+            label: "“Will also raise us with Jesus”"
+            links:
+              - { to: "1 Thess 4:14", topic: "“God will bring with Jesus those who have fallen asleep”", category: hope }
+          - ref: "Eph 1:18-23"
+            label: "The power that raised him, at work in us"
+            note: "“Which He exerted in Christ when He raised Him from the dead and seated Him at His right hand.”"
+            facets: { motif: throne }
+          - ref: "Phil 3:10-11, 20-21"
+            label: "“The power of His resurrection”"
+            note: "He “will transform our lowly bodies to be like His glorious body.”"
+          - ref: "Col 3:1-4"
+            label: "“Since you have been raised with Christ”"
+            note: "“Strive for the things above, where Christ is seated at the right hand of God.”"
+            facets: { motif: throne }
+          - ref: "1 Thess 4:13-18"
+            label: "“The dead in Christ will be the first to rise”"
+            note: "“So that you will not grieve like the rest, who are without hope.”"
+          - ref: "Heb 7:23-25"
+            label: "“He always lives to intercede for them”"
+            note: "Priests died and were replaced; “because Jesus lives forever, He has a permanent priesthood.”"
+          - ref: "1 Pet 1:3-5"
+            label: "“A living hope through the resurrection of Jesus Christ”"
+          - ref: "John 5:25-29"
+            label: "“The dead will hear the voice of the Son of God”"
+            note: "“All who are in their graves will hear His voice and come out.”"
+            facets: { motif: newlife }
+          - ref: "John 6:39-40"
+            label: "“I will raise him up at the last day”"
+          - ref: "Rev 21:1-5"
+            label: "“There will be no more death”"
+            note: "“Behold, I make all things new.”"
+            facets: { motif: victory }
+            links:
+              - { to: "Isa 25:8", topic: "“He will swallow up death forever”", category: echo }
+
+  - title: "The shape of the hint"
+    note: "The same passages by the shape of the hint: the third day, given back from death, not left in the grave, and the rest."
+    auto: facet
+    facet: motif
+  - title: "Who saw him"
+    note: "The appearances by who saw him. One account can name several."
+    auto: facet
+    facet: saw
+  - title: "In Jesus's own words"
+    note: "What Jesus said about his own rising, and the passages he tied to it."
+    auto: jesus
