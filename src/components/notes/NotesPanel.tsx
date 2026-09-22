@@ -102,7 +102,7 @@ export default function NotesPanel() {
                 title="Save all notes to a file"
                 aria-label="Save all notes to a file"
                 disabled={!notes.length}
-                onClick={() => download(`biblemap-notes-${new Date().toISOString().slice(0, 10)}.md`, notesMarkdown(notes))}
+                onClick={() => download(`bible-map-notes-${new Date().toISOString().slice(0, 10)}.md`, notesMarkdown(notes))}
               >
                 <IconDownload />
               </button>

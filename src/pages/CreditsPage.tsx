@@ -4,12 +4,12 @@ import { loadManifest } from '@/data/loaders'
 import { usePageTitle } from '@/store/session'
 
 export default function CreditsPage() {
-  usePageTitle('Sources and licenses')
+  usePageTitle('Sources and licenses', { description: 'The open data behind Bible-Map: public-domain Bible translations, cross references, people and places, and topical dictionaries, each with its license.' })
   const { data: manifest } = useData('manifest', loadManifest)
   if (!manifest) return <div className="p-6"><Loading /></div>
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <PageHeader kicker="About" title="Sources and licenses" subtitle={`Data compiled ${manifest.generatedAt}. BibleMap is built entirely on open data; each source keeps its own license.`} />
+      <PageHeader kicker="About" title="Sources and licenses" subtitle={`Data compiled ${manifest.generatedAt}. Bible-Map is built entirely on open data; each source keeps its own license.`} />
       <Section title="Sources">
         <ul className="divide-y divide-line text-sm">
           {manifest.sources.map((s) => (

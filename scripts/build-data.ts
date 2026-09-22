@@ -10,6 +10,7 @@ import { load as loadYaml } from 'js-yaml'
 import { BOOKS, Canon, findBookMeta } from '../src/lib/canon'
 import { countVerses, mergeRanges, parseRefs, type Range } from '../src/lib/refs'
 import { parseUsfm, type UsfmBook } from './lib/usfm'
+import { SITE } from '../src/config/site'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const RAW = path.join(ROOT, 'data', 'raw')
@@ -1189,7 +1190,41 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
 }
 
 // ---------------------------------------------------------------------------
-// 8. Manifest.
+// 8. Sitemap and robots.txt, so search engines find every page. They sit at the site's root
+//    (public/), and use the address in src/config/site.ts.
+// ---------------------------------------------------------------------------
+{
+  const studyIndex = JSON.parse(fs.readFileSync(path.join(OUT, 'studies', 'index.json'), 'utf8')) as { id: string; added?: string }[]
+  const pages: { path: string; lastmod?: string }[] = [
+    { path: '/' },
+    { path: '/studies' },
+    ...studyIndex.map((st) => ({ path: `/study/${st.id}`, lastmod: st.added })),
+    { path: '/timeline' },
+    { path: '/bible' },
+    { path: '/compare' },
+    { path: '/about' },
+    { path: '/feedback' },
+    { path: '/credits' },
+    ...canon.books.map((b) => ({ path: `/book/${b.osis}` })),
+    ...people.map((pp) => ({ path: `/person/${encodeURIComponent(pp.id)}` })),
+    ...places.map((pl) => ({ path: `/place/${encodeURIComponent(pl.id)}` })),
+    ...events.map((ev) => ({ path: `/event/${encodeURIComponent(ev.id)}` })),
+  ]
+  const xmlEscape = (v: string) => v.replace(/&/g, '&amp;').replace(/</g, '&lt;')
+  const sitemap = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...pages.map((pg) => `  <url><loc>${xmlEscape(SITE.url + pg.path)}</loc>${pg.lastmod ? `<lastmod>${pg.lastmod}</lastmod>` : ''}</url>`),
+    '</urlset>',
+    '',
+  ].join('\n')
+  fs.writeFileSync(path.join(ROOT, 'public', 'sitemap.xml'), sitemap)
+  fs.writeFileSync(path.join(ROOT, 'public', 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE.url}/sitemap.xml\n`)
+  log(`sitemap: ${pages.length} pages at ${SITE.url}`)
+}
+
+// ---------------------------------------------------------------------------
+// 9. Manifest.
 // ---------------------------------------------------------------------------
 writeJson('manifest.json', {
   generatedAt: new Date().toISOString().slice(0, 10),

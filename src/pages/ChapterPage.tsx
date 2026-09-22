@@ -10,6 +10,7 @@ import type { Canon } from '@/lib/canon'
 import { PARTS, partColor, partOf, studiesTouching, xrefsFrom, type Xref } from '@/lib/connections'
 import { truncate } from '@/lib/format'
 import { useSettings } from '@/store/settings'
+import { SITE } from '@/config/site'
 import { usePageTitle, useSession } from '@/store/session'
 
 /** How many chapters one branch of the map draws. */
@@ -25,7 +26,7 @@ interface Target {
 
 /** The right pane's resting view: the chapter open in the reader, and how it connects to the rest of the Bible. */
 export default function ChapterPage() {
-  usePageTitle('This chapter')
+  usePageTitle('This chapter', { docTitle: `${SITE.name}: ${SITE.tagline}` })
   const { data: canon } = useData('canon', loadCanon)
   const translation = useSettings((s) => s.translation)
   const { data: bible } = useData(`bible:${translation}`, () => loadBible(translation))

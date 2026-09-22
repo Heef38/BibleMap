@@ -28,7 +28,7 @@ export default function EventPage() {
   const placeName = useMemo(() => new Map(places?.map((p) => [p.id, p.name]) ?? []), [places])
   const byId = useMemo(() => new Map(events?.map((e) => [e.id, e]) ?? []), [events])
 
-  usePageTitle(event?.title)
+  usePageTitle(event?.title, event ? { description: `${event.title} in the Bible: the passages that tell it, the people who took part and the places it happened.` } : undefined)
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !events) return <div className="p-6"><Loading /></div>
   if (!event) return <div className="p-6 text-ink-2">No event with id “{id}”.</div>

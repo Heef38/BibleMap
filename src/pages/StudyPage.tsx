@@ -48,7 +48,7 @@ export default function StudyPage() {
     return () => setHighlights([])
   }, [view, setHighlights])
 
-  usePageTitle(study?.title)
+  usePageTitle(study?.title, study ? { description: study.subtitle ?? study.summary?.slice(0, 160) } : undefined)
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !study || !view) return <div className="p-6"><Loading /></div>
 

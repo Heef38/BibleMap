@@ -33,7 +33,7 @@ export default function SearchPage() {
     return () => setHighlights([])
   }, [ranges, q, setHighlights])
 
-  usePageTitle(q ? `Search: ${q}` : 'Search')
+  usePageTitle(q ? `Search: ${q}` : 'Search', { noindex: true })
   if (!canon || !bible) return <div className="p-6"><Loading /></div>
 
   return (

@@ -7,7 +7,7 @@ import { SITE } from '@/config/site'
 import { usePageTitle } from '@/store/session'
 
 export default function AboutPage() {
-  usePageTitle('About BibleMap')
+  usePageTitle('About Bible-Map', { docTitle: 'About Bible-Map', description: 'Who builds Bible-Map, why, and how it is made: a free, interactive map of the Bible with no account needed.' })
   const { hash } = useLocation()
   useEffect(() => {
     if (hash) document.getElementById(hash.slice(1))?.scrollIntoView()
@@ -16,7 +16,7 @@ export default function AboutPage() {
   return (
     <div className="p-6 max-w-3xl mx-auto">
       <BrandLogo variant="stacked" className="h-28 mb-6" />
-      <PageHeader kicker="About" title="About BibleMap" subtitle="A free, interactive map of the Bible: its people, places and themes, and how they connect." />
+      <PageHeader kicker="About" title="About Bible-Map" subtitle="A free, interactive map of the Bible: its people, places and themes, and how they connect." />
 
       <Section title="Who is building it">
         <div className="space-y-3 max-w-prose text-[15px] leading-relaxed">
@@ -36,16 +36,16 @@ export default function AboutPage() {
       </Section>
 
       <div id="support" className="scroll-mt-4">
-        <Section title="Support BibleMap">
+        <Section title="Support Bible-Map">
           <div className="rounded-xl border border-line bg-surface p-4 max-w-prose space-y-3">
-            <p>BibleMap is free to use, and you never need an account. Donations let me spend more time on it, and depending on how it goes, they will pay for more studies and features.</p>
+            <p>Bible-Map is free to use, and you never need an account. Donations let me spend more time on it, and depending on how it goes, they will pay for more studies and features.</p>
             {SITE.donateUrl && (
               <a href={SITE.donateUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary hover:no-underline">
                 <IconHeart />
                 Donate
               </a>
             )}
-            <p className="text-sm text-ink-2">Sharing BibleMap with a friend and posting ideas on the feedback board help too.</p>
+            <p className="text-sm text-ink-2">Sharing Bible-Map with a friend and posting ideas on the feedback board help too.</p>
           </div>
         </Section>
       </div>

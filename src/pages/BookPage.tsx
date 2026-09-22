@@ -30,7 +30,7 @@ export default function BookPage() {
       .sort((a, b) => a[0] - b[0])
   }, [canon, book, headingsSource])
 
-  usePageTitle(book?.name)
+  usePageTitle(book?.name, book ? { description: `The book of ${book.name}: where it sits in the Bible, who wrote it, its ${book.chapters.length} chapter${book.chapters.length === 1 ? '' : 's'} and an outline of each, with the text open beside it.` } : undefined)
   if (!canon) return <div className="p-6"><Loading /></div>
   if (!book) return <div className="p-6 text-ink-2">No book called “{osis}”.</div>
   const chapters = book.chapters.length

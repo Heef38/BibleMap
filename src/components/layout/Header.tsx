@@ -218,14 +218,14 @@ export default function Header() {
   const [open, setOpen] = useState(false)
   return (
     <header className="h-12 shrink-0 flex items-center gap-3 max-[480px]:gap-1.5 px-3 max-[480px]:px-2 border-b border-line bg-surface relative z-20">
-      <Link to="/" className="flex items-center shrink-0 hover:no-underline" title="BibleMap home">
+      <Link to="/" className="flex items-center shrink-0 hover:no-underline" title="Bible-Map home">
         {/* The book alone on a phone, the full name where there is room. */}
         <BrandLogo variant="wide" className="h-6 max-[480px]:hidden" />
         <BrandLogo variant="mark" className="h-7 min-[481px]:hidden" />
       </Link>
       <span className="text-muted text-xs max-[900px]:hidden">see how the story connects</span>
       <nav className="ml-auto flex items-center gap-1" aria-label="Site">
-        <NavLink to="/about" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="About BibleMap">
+        <NavLink to="/about" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="About Bible-Map">
           <IconInfo />
           <span className="max-[900px]:hidden">About</span>
         </NavLink>
@@ -235,7 +235,7 @@ export default function Header() {
         </NavLink>
         <WhatsNew />
         {SITE.donateUrl && (
-          <a href={SITE.donateUrl} target="_blank" rel="noopener noreferrer" className="btn hover:no-underline" style={{ color: 'var(--ink)' }} title="Support BibleMap">
+          <a href={SITE.donateUrl} target="_blank" rel="noopener noreferrer" className="btn hover:no-underline" style={{ color: 'var(--ink)' }} title="Support Bible-Map">
             <IconHeart className="text-wj" />
             <span className="max-[480px]:hidden">Donate</span>
           </a>

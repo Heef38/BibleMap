@@ -21,7 +21,7 @@ export function useDarkTheme(): boolean {
  * The BIBLE-MAP logo: `wide` for the header, `stacked` for pages, `mark` (the book alone) where
  * there is no room for the name. Size it with a height class; the width follows.
  */
-export default function BrandLogo({ variant, className, alt = 'BibleMap' }: { variant: keyof typeof SIZES; className?: string; alt?: string }) {
+export default function BrandLogo({ variant, className, alt = 'Bible-Map' }: { variant: keyof typeof SIZES; className?: string; alt?: string }) {
   const dark = useDarkTheme()
   const { w, h } = SIZES[variant]
   return <img src={`${BASE}${variant}-${dark ? 'dark' : 'light'}.png`} width={w} height={h} alt={alt} className={`w-auto ${className ?? ''}`} draggable={false} />

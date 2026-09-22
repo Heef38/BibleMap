@@ -14,6 +14,12 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'bible-map-name',
+    date: '2026-09-21',
+    title: 'A new look: Bible-Map',
+    body: 'A new logo, and the name to go with it. Also, clicking a verse while you read no longer scrolls the Bible: the page stays where your eyes are.',
+  },
+  {
     id: 'study-resurrection',
     date: '2026-09-21',
     title: 'New study: The Resurrection of Jesus',

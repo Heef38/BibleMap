@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <title>BibleMap</title>
-    <meta name="description" content="Visualize the connections of the Bible: people, places, themes and the story that runs through them." />
+    <!-- The title, description, share cards and structured data come from src/config/site.ts (siteMeta in vite.config.ts). -->
+    <title>Bible-Map</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-light-32.png" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-dark-32.png" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/png" sizes="192x192" href="/brand/icon-light-192.png" />
@@ -23,6 +23,10 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>Bible-Map</h1>
+      <p>A free, interactive map of the Bible: search any person, place or theme and see every reference across Scripture, with guided studies, timelines and connection maps. Bible-Map needs JavaScript turned on.</p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

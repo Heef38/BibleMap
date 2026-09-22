@@ -21,7 +21,7 @@ export default function TopicPage() {
     return () => setHighlights([])
   }, [topic, ranges, setHighlights])
 
-  usePageTitle(topic?.title)
+  usePageTitle(topic?.title, topic ? { description: `${topic.title} in the Bible: every reference from the classic topical Bibles, grouped by what they say and shown across the whole of Scripture.` } : undefined)
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !topic) return <div className="p-6"><Loading /></div>
 

@@ -19,7 +19,7 @@ const FILTERS: [Filter, string][] = [
   ['other', 'Other'],
 ]
 const PLACEHOLDERS: Record<FeedbackKind, string> = {
-  idea: 'What would make BibleMap more useful to you?',
+  idea: 'What would make Bible-Map more useful to you?',
   problem: 'What went wrong, and on which page?',
   content: 'Which verse, person, place or study, and what should change?',
   other: 'Anything else on your mind.',
@@ -37,7 +37,7 @@ function when(iso: string): string {
 }
 
 export default function FeedbackPage() {
-  usePageTitle('Ideas and feedback')
+  usePageTitle('Ideas and feedback', { description: 'Suggest a feature, report a problem, or point out a mistake in the Bible data, and upvote the ideas you agree with. No account needed.' })
   const [params] = useSearchParams()
   const ownerMode = params.has('admin')
   const [items, setItems] = useState<FeedbackItem[] | null>(null)

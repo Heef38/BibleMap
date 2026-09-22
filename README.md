@@ -189,6 +189,15 @@ On a desktop: search and notes on the left, the Bible in the center, and the rig
 - Notes sit under the search pane: separate notes, each remembering where it was started ("Kingdom of Heaven · Matthew 13"), with the references written in them turned into links, and a button that writes the selected verse (or the chapter) into the note. They are kept in this browser only; the download button saves them all as one Markdown file. The bar above them resizes them, and the arrow folds them away.
 - `/studies` shelves every study by theme, each card with a strip showing where its passages fall.
 
+## Search engines and link previews
+
+The site's name, address, tagline and description live in `src/config/site.ts`. From them:
+
+- `siteMeta()` in `vite.config.ts` writes the page head at build time: the title and description, Open Graph and Twitter cards with `public/brand/og-image.png`, and a schema.org `WebSite` with the site search, so Google can offer a search box for the site.
+- Every page calls `usePageTitle(title, { description })`, which sets the tab title, the description, and the canonical address (the path alone, so `?p=` and `?v=` never count as separate pages). Search results and the not-found page ask not to be indexed.
+- `pnpm data:build` writes `public/sitemap.xml` (every study, book, person, place and event) and `public/robots.txt`. Run it again after changing `SITE.url`, for example for a custom domain.
+- To confirm ownership in Google Search Console or Bing Webmaster Tools, choose the "HTML tag" method and put the code in `SITE.verification`; then submit `sitemap.xml` there.
+
 ## Keyboard
 
 `/` focuses the search box, `[` hides or shows the search pane, `]` hides or shows the right pane. Both also have edge handles on the Bible.

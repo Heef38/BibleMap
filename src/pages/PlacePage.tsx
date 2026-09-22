@@ -28,7 +28,12 @@ export default function PlacePage() {
   const personName = useMemo(() => new Map(people?.map((p) => [p.id, p.title]) ?? []), [people])
   const here = useMemo(() => (events ?? []).filter((e) => e.locations.includes(id)), [events, id])
 
-  usePageTitle(place?.name)
+  usePageTitle(
+    place?.name,
+    place
+      ? { description: `${place.name} in the Bible${place.name_meaning?.meaning ? ` (the name means “${place.name_meaning.meaning}”)` : ''}: all ${place.verseCount.toLocaleString()} verse${place.verseCount === 1 ? '' : 's'} that mention it, the events that happened there, and the people born or buried there.` }
+      : undefined,
+  )
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !place) return <div className="p-6"><Loading /></div>
 

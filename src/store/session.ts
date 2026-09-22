@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
+import { useLocation } from 'react-router'
 import { create } from 'zustand'
 import type { Range } from '@/lib/refs'
 import { useSettings } from './settings'
+import { SITE } from '@/config/site'
 
 export interface Highlight {
   ranges: Range[]
@@ -112,12 +114,57 @@ export const useSession = create<Session>()((set) => ({
   setMobilePane: (mobilePane) => set({ mobilePane }),
 }))
 
-/** Name what the right pane shows: its bar, new notes and the browser tab use it. */
-export function usePageTitle(title: string | undefined) {
+/** Set a <meta> tag (by name or by property), adding it if the page does not have it yet. */
+function setMeta(attr: 'name' | 'property', key: string, content: string) {
+  let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`)
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute(attr, key)
+    document.head.appendChild(el)
+  }
+  el.content = content
+}
+
+function setCanonical(href: string) {
+  let el = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+  if (!el) {
+    el = document.createElement('link')
+    el.rel = 'canonical'
+    document.head.appendChild(el)
+  }
+  el.href = href
+}
+
+export interface PageMeta {
+  /** what search results and link previews say about this page (the site's description by default) */
+  description?: string
+  /** the browser tab's title when it should differ from the pane's ("This chapter" on the home page) */
+  docTitle?: string
+  /** keep this page out of search results (the not-found page) */
+  noindex?: boolean
+}
+
+/**
+ * Name what the right pane shows: its bar, new notes and the browser tab use it. It also tells
+ * search engines about the page: its title and description, and its canonical address, which is
+ * the path alone, so the reader's position (?p=) and the verse map (?v=) never count as other pages.
+ */
+export function usePageTitle(title: string | undefined, meta?: PageMeta) {
   const setPageTitle = useSession((s) => s.setPageTitle)
+  const { pathname } = useLocation()
+  const description = meta?.description ?? SITE.description
+  const docTitle = meta?.docTitle
+  const noindex = !!meta?.noindex
   useEffect(() => {
     if (!title) return
     setPageTitle(title)
-    document.title = `${title} · BibleMap`
-  }, [title, setPageTitle])
+    const full = docTitle ?? `${title} · ${SITE.name}`
+    document.title = full
+    setMeta('name', 'description', description)
+    setMeta('property', 'og:title', full)
+    setMeta('property', 'og:description', description)
+    setMeta('property', 'og:url', `${SITE.url}${pathname}`)
+    setMeta('name', 'robots', noindex ? 'noindex' : 'index, follow')
+    setCanonical(`${SITE.url}${pathname}`)
+  }, [title, docTitle, description, noindex, pathname, setPageTitle])
 }

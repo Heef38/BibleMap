@@ -232,7 +232,9 @@ export default function ComparePage() {
   }
 
   const err = errA ?? errB
-  usePageTitle(a && b ? `${a.title} and ${b.title}` : 'Compare two people')
+  usePageTitle(a && b ? `${a.title} and ${b.title}` : 'Compare two people', {
+    description: a && b ? `${a.title} and ${b.title} in the Bible, side by side: the verses, people, places and events they share, and what belongs to each alone.` : 'Put two people from the Bible side by side: the verses, people, places and events they share.',
+  })
   if (err) return <div className="p-6 text-ink-2">Could not load one of the people: {err.message}</div>
 
   return (

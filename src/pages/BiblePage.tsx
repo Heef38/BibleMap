@@ -39,7 +39,7 @@ interface TNode {
 const fillFor = (t: 'OT' | 'NT', hovered: boolean) => (hovered ? `var(--series-${t === 'OT' ? 1 : 2})` : `color-mix(in oklab, var(--series-${t === 'OT' ? 1 : 2}) 68%, var(--surface))`)
 
 export default function BiblePage() {
-  usePageTitle('How the Bible is laid out')
+  usePageTitle('How the Bible is laid out', { description: 'The 66 books of the Bible by testament and kind of writing, drawn to the length of their text, with how the books cross-reference one another.' })
   const { data: canon } = useData('canon', loadCanon)
   const { data: matrix } = useData('xref-matrix', () => fetchJson<XrefMatrix>('xrefs/matrix.json'))
   const wrapRef = useRef<HTMLDivElement>(null)

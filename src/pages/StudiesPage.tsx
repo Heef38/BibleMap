@@ -12,7 +12,7 @@ import { usePageTitle } from '@/store/session'
 
 /** Every study, on shelves by what it is about. */
 export default function StudiesPage() {
-  usePageTitle('Studies')
+  usePageTitle('Studies', { description: 'Guided Bible studies drawn as connection maps, arcs and timelines: the Trinity, the resurrection, the book of Isaiah, the parables, the promises of God, Christ in the Old Testament and more.' })
   const { data: canon } = useData('canon', loadCanon)
   const { data: studies } = useData('studies-index', loadStudiesIndex)
 
@@ -30,7 +30,7 @@ export default function StudiesPage() {
   return (
     <div className="p-6 @container">
       <PageHeader
-        kicker="BibleMap"
+        kicker="Bible-Map"
         title="Studies"
         subtitle="Each study gathers the passages on one theme and draws them as maps, arcs and timelines. Open one and it sits here beside the Bible; click any passage in it to read it."
       />

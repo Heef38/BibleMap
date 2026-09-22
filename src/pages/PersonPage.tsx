@@ -90,7 +90,13 @@ export default function PersonPage() {
   }, [person, bins, items])
   const eventById = useMemo(() => new Map(myEvents.map((e) => [e.id, e])), [myEvents])
 
-  usePageTitle(person?.title)
+  const pronoun = person?.gender?.toLowerCase() === 'female' ? 'her' : person?.gender?.toLowerCase() === 'male' ? 'him' : 'them'
+  usePageTitle(
+    person?.title,
+    person
+      ? { description: `${person.title} in the Bible${person.name_meaning?.meaning ? ` (the name means “${person.name_meaning.meaning}”)` : ''}: all ${person.verseCount.toLocaleString()} verse${person.verseCount === 1 ? '' : 's'} that mention ${pronoun}, family, a timeline, and the people, places and events around ${pronoun}.` }
+      : undefined,
+  )
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !person) return <div className="p-6"><Loading /></div>
 

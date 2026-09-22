@@ -54,7 +54,7 @@ export default function TimelinePage() {
     return [lo - pad, hi + pad]
   }, [filter, items])
 
-  usePageTitle('The story in time')
+  usePageTitle('The story in time', { description: 'Every dated event in the Bible, from creation to the apostles, on one zoomable timeline, with the passages that tell each one.' })
   if (!canon || !events) return <div className="p-6"><Loading /></div>
 
   return (

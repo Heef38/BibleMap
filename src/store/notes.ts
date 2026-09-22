@@ -53,7 +53,7 @@ export function noteTitle(n: Note): string {
 /** Every note as one Markdown file, newest first. */
 export function notesMarkdown(notes: Note[]): string {
   const day = (t: number) => new Date(t).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
-  const parts = ['# BibleMap notes', '']
+  const parts = ['# Bible-Map notes', '']
   for (const n of notes) {
     parts.push(`## ${noteTitle(n)}`, '', `_${[n.context, day(n.updated)].filter(Boolean).join(' · ')}_`, '', n.text.trim(), '')
   }
