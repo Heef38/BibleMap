@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://biblemap-mauve.vercel.app/sitemap.xml
+Sitemap: https://www.bible-map.com/sitemap.xml

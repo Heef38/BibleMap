@@ -196,6 +196,7 @@ The site's name, address, tagline and description live in `src/config/site.ts`. 
 - `siteMeta()` in `vite.config.ts` writes the page head at build time: the title and description, Open Graph and Twitter cards with `public/brand/og-image.png`, and a schema.org `WebSite` with the site search, so Google can offer a search box for the site.
 - Every page calls `usePageTitle(title, { description })`, which sets the tab title, the description, and the canonical address (the path alone, so `?p=` and `?v=` never count as separate pages). Search results and the not-found page ask not to be indexed.
 - `pnpm data:build` writes `public/sitemap.xml` (every study, book, person, place and event) and `public/robots.txt`. Run it again after changing `SITE.url`, for example for a custom domain.
+- The site lives at www.bible-map.com (bible-map.com forwards there in Vercel's domain settings). Addresses it used to live at are listed in `SITE.movedFrom`: opening one forwards to the same page on the main address, carrying the reader's settings, notes and votes along in the link's fragment (browsers keep them per address), and `vercel.json` sends `X-Robots-Tag: noindex` there so search engines list only the main address.
 - To confirm ownership in Google Search Console or Bing Webmaster Tools, choose the "HTML tag" method and put the code in `SITE.verification`; then submit `sitemap.xml` there.
 
 ## Keyboard
