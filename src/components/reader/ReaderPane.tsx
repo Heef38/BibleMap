@@ -75,9 +75,13 @@ export default function ReaderPane({ inlineConnections = false, onMap, edge }: P
     shownChapter.current = start
     if (focus !== null && focus >= start && focus <= end) {
       const v = el.querySelector<HTMLElement>(`[data-o="${focus}"]`)
+      // A verse already on screen (the one just clicked, say) stays put, so reading verse by verse
+      // does not jump; one off screen, after a jump from elsewhere, comes a third of the way down.
       if (v) {
-        const top = v.offsetTop - el.clientHeight * 0.3
-        el.scrollTo({ top: Math.max(0, top) })
+        const box = el.getBoundingClientRect()
+        const r = v.getBoundingClientRect()
+        const onScreen = !newChapter && r.top >= box.top && r.bottom <= box.bottom
+        if (!onScreen) el.scrollTo({ top: Math.max(0, el.scrollTop + (r.top - box.top) - el.clientHeight * 0.3) })
       }
     } else if (newChapter) {
       el.scrollTop = 0
