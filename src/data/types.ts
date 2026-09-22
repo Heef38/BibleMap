@@ -268,6 +268,28 @@ export interface StudyIndexEntry {
   ranges: Range[]
 }
 
+/** A piece of writing: an answer to a question, a teaching, an essay. */
+export interface WritingIndexEntry {
+  id: string
+  title: string
+  summary?: string
+  author: string
+  date: string
+}
+export interface Writing extends WritingIndexEntry {
+  /** the question it answers, when it answers one */
+  question?: string
+  /** who or what the author is ("Anthropic's AI model") */
+  authorNote?: string
+  askedBy?: string
+  /** a line under the text: which translation the quotations follow, how it was checked */
+  note?: string
+  /** the passages behind it, each checked and labeled */
+  passages: { label: string; ref: string; ranges: Range[] }[]
+  /** the text, one string per paragraph */
+  body: string[]
+}
+
 export interface Manifest {
   generatedAt: string
   verses: number

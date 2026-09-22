@@ -145,6 +145,14 @@ button, input, select, textarea {
 .btn-primary {
   color: var(--accent-ink);
 }
+/* A reference inside running text (a writing, a dictionary entry): a button that reads like a link. */
+.ref-link {
+  color: var(--accent);
+  cursor: pointer;
+}
+.ref-link:hover {
+  text-decoration: underline;
+}
 /* The Back and Forward halves of the bar under the header (unlayered for the same reason). */
 .history-half {
   cursor: pointer;

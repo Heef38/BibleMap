@@ -16,9 +16,8 @@ export interface Settings {
   showRight: boolean
   /** the share of the Bible and the right pane together that the Bible takes */
   bibleSplit: number
-  notesOpen: boolean
-  /** the share of the left pane's height the notes take */
-  notesSplit: number
+  /** the writings list at the foot of the left pane is open */
+  writingsOpen: boolean
   /** the welcome card on the chapter view was put away */
   welcomed: boolean
   /** phones: keep the Bible open under the other pane instead of on its own tab */
@@ -40,8 +39,7 @@ export const useSettings = create<Settings>()(
       showLeft: true,
       showRight: true,
       bibleSplit: 0.46,
-      notesOpen: true,
-      notesSplit: 0.36,
+      writingsOpen: true,
       welcomed: false,
       mobileBible: false,
       mobileSplit: 0.45,
@@ -65,8 +63,7 @@ export const useSettings = create<Settings>()(
         showLeft: s.showLeft,
         showRight: s.showRight,
         bibleSplit: s.bibleSplit,
-        notesOpen: s.notesOpen,
-        notesSplit: s.notesSplit,
+        writingsOpen: s.writingsOpen,
         welcomed: s.welcomed,
         mobileBible: s.mobileBible,
         mobileSplit: s.mobileSplit,

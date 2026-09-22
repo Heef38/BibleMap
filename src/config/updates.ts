@@ -14,6 +14,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'writings',
+    date: '2026-09-21',
+    title: 'Writings, and the first one: how King Solomon handled his wealth',
+    body: 'A new list under the search: writings on questions about the Bible, each opening beside the text with its references as links and the passages behind it listed and checked. The first traces Solomon\'s wealth from gift to gold shields to the kingdom torn in two.',
+    link: { to: '/writing/solomon-and-wealth', label: 'Read it' },
+  },
+  {
     id: 'bible-map-name',
     date: '2026-09-21',
     title: 'A new look: Bible-Map',
@@ -50,7 +57,7 @@ export const UPDATES: Update[] = [
     id: 'layout-bible-center',
     date: '2026-09-21',
     title: 'The Bible in the middle, with maps beside it',
-    body: 'The Bible now sits in the center and everything else opens beside it. Click any verse to see a map of where it connects across the Bible. At rest, the right pane maps the chapter you are reading. Studies have their own page, sorted by theme, and there is a place for notes under the search.',
+    body: 'The Bible now sits in the center and everything else opens beside it. Click any verse to see a map of where it connects across the Bible. At rest, the right pane maps the chapter you are reading. Studies have their own page, sorted by theme.',
     link: { to: '/studies', label: 'Browse the studies' },
   },
   {

@@ -5,7 +5,7 @@ import RightPane from './RightPane'
 import Splitter from './Splitter'
 import SearchPane from '@/components/search/SearchPane'
 import ReaderPane from '@/components/reader/ReaderPane'
-import NotesPanel from '@/components/notes/NotesPanel'
+import WritingsPanel from '@/components/writings/WritingsPanel'
 import { IconBook, IconChevronLeft, IconChevronRight, IconMap, IconSearch } from '@/components/common/icons'
 import { useSettings } from '@/store/settings'
 import { useSession, type MobilePane } from '@/store/session'
@@ -98,7 +98,7 @@ function useReaderHistory() {
   }, [canon, location, readerOrdinal, focus, mapVerse, pane, navigate])
 }
 
-// In the order of the desktop panes: search and notes, the Bible, the right pane.
+// In the order of the desktop panes: search and writings, the Bible, the right pane.
 const TABS: { id: MobilePane; label: string; icon: typeof IconMap }[] = [
   { id: 'explore', label: 'Explore', icon: IconSearch },
   { id: 'read', label: 'Read', icon: IconBook },
@@ -184,26 +184,15 @@ function SplitHandle({ box, split, onDrag, onCommit }: { box: RefObject<HTMLDivE
   )
 }
 
-/** Search on top, notes below, with a bar between them to share the height. */
+/** Search on top, and the writings at the foot (up to a little under half the height). */
 function LeftPane() {
-  const notesOpen = useSettings((s) => s.notesOpen)
-  const notesSplit = useSettings((s) => s.notesSplit)
-  const set = useSettings((s) => s.set)
-  const [drag, setDrag] = useState<number | null>(null)
-  const box = useRef<HTMLDivElement>(null)
-  const split = drag ?? notesSplit
   return (
-    <div ref={box} className="h-full flex flex-col min-h-0">
-      <div className="min-h-0 overflow-y-auto" style={{ flex: notesOpen ? `${1 - split} 1 0` : '1 1 0' }}>
+    <div className="h-full flex flex-col min-h-0">
+      <div className="flex-1 min-h-0 overflow-y-auto">
         <SearchPane />
       </div>
-      {notesOpen ? (
-        <Splitter box={box} dir="row" value={split} min={0.15} max={0.8} label="Resize the notes" onDrag={setDrag} onCommit={(v) => set({ notesSplit: v })} reset={0.36} />
-      ) : (
-        <div className="border-t border-line" />
-      )}
-      <div className="min-h-0 flex flex-col" style={notesOpen ? { flex: `${split} 1 0` } : undefined}>
-        <NotesPanel />
+      <div className="border-t border-line shrink-0 max-h-[45%] min-h-0 flex flex-col">
+        <WritingsPanel />
       </div>
     </div>
   )
@@ -248,8 +237,8 @@ export default function AppShell({ children }: { children: ReactNode }) {
           <div className="relative min-h-0" style={{ flex: mobileBible ? `${1 - split} 1 0` : '1 1 0' }}>
             <aside className={`pane absolute inset-0 overflow-y-auto ${shown('explore') ? '' : 'hidden'}`}>
               <SearchPane />
-              <div className="border-t border-line flex flex-col min-h-[22rem] mt-2">
-                <NotesPanel />
+              <div className="border-t border-line flex flex-col mt-2">
+                <WritingsPanel />
               </div>
             </aside>
             <div className={`absolute inset-0 ${shown('map') ? '' : 'hidden'}`}>
@@ -292,7 +281,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
     )
   }
 
-  // Desktop: search and notes | the Bible | the right pane. A widened right pane covers the Bible;
+  // Desktop: search and writings | the Bible | the right pane. A widened right pane covers the Bible;
   // with the right pane hidden, the Bible has the room whether or not it was widened.
   const bibleShown = !(wide && showRight)
   const share = colDrag ?? bibleSplit
@@ -302,7 +291,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
       <HistoryBar />
       <div className="flex-1 min-h-0 flex">
         {showLeft && (
-          <aside className="pane border-r border-line w-[300px] shrink-0 min-h-0" aria-label="Search and notes">
+          <aside className="pane border-r border-line w-[300px] shrink-0 min-h-0" aria-label="Search and writings">
             <LeftPane />
           </aside>
         )}

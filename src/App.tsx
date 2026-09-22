@@ -5,6 +5,8 @@ import CreditsPage from '@/pages/CreditsPage'
 import EventPage from '@/pages/EventPage'
 import ChapterPage from '@/pages/ChapterPage'
 import StudiesPage from '@/pages/StudiesPage'
+import WritingPage from '@/pages/WritingPage'
+import WritingsPage from '@/pages/WritingsPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import PersonPage from '@/pages/PersonPage'
 import PlacePage from '@/pages/PlacePage'
@@ -38,6 +40,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<ChapterPage />} />
         <Route path="/studies" element={<StudiesPage />} />
+        <Route path="/writings" element={<WritingsPage />} />
+        <Route path="/writing/:id" element={<WritingPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/person/:id" element={<PersonPage />} />
         <Route path="/place/:id" element={<PlacePage />} />

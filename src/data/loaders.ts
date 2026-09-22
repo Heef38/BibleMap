@@ -14,6 +14,8 @@ import type {
   Topic,
   TopicIndexEntry,
   VerseEntities,
+  Writing,
+  WritingIndexEntry,
   XrefTable,
 } from './types'
 
@@ -72,3 +74,5 @@ export const loadTopic = (id: string) =>
 export const loadStudiesIndex = () => fetchJson<StudyIndexEntry[]>('studies/index.json')
 export const loadStudy = (id: string) => fetchJson<Study>(`studies/${id}.json`)
 export const loadManifest = () => fetchJson<Manifest>('manifest.json')
+export const loadWritingsIndex = () => fetchJson<WritingIndexEntry[]>('writings/index.json')
+export const loadWriting = (id: string) => fetchJson<Writing>(`writings/${id}.json`)

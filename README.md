@@ -53,6 +53,28 @@ Any other static host still serves everything except the feedback board: `public
 | `src/config/site.ts` | Owner name, About text, donation link. |
 | `src/config/studies.ts` | The shelves on the Studies page. A study not on a shelf lands under "More studies". |
 
+## Adding a writing
+
+A writing is a Markdown file in `data/writings/`, named for its address (`solomon-and-wealth.md` opens at `/writing/solomon-and-wealth`). A YAML header between two lines of dashes comes first, then the text, one paragraph per blank line:
+
+```markdown
+---
+title: "How King Solomon Handled His Wealth"
+question: "How did King Solomon handle his wealth?"
+author: "Claude"
+authorNote: "Anthropic's AI model"
+askedBy: "Heath"
+date: "2026-09-21"
+summary: "One or two sentences for the list and for search results."
+note: "Quotations in the text follow the King James Version."
+passages:
+  - { ref: "1 Kgs 3:5-14", label: "He asks for wisdom, and is given riches and honor too" }
+---
+In the Bible's telling, it's a rise-and-fall story. ...
+```
+
+References in the text ("1 Kings 3", "Deuteronomy 17", "1 Kings 10–11") become links that open the passage in the Bible. The passages in the header are listed under the text, marked in the Bible while the writing is open, and checked when `pnpm data:build` runs (a reference that does not parse stops the build). Writings are listed newest first, and each is added to the sitemap.
+
 ## Writing a study
 
 A study is a YAML file with an id, a title and one or more views. Each view groups references:
@@ -186,7 +208,7 @@ On a desktop: search and notes on the left, the Bible in the center, and the rig
 - The right pane shows the page you open (a study, a person, a place, the timeline). At rest it shows **This chapter** (`/`), which follows the reader: the chapter's outline, a connection map of the chapters its cross references land in (one branch per part of the Bible), its most connected verses, who and what it names, its events, the studies that pass through it, and its reach on the canon strip.
 - Clicking a verse in the Bible opens its **verse map** over the right pane: the verse, the people and places in it, the studies it is in, a map of its cross references by part of the Bible (strongest nearest the center), and the full list. A dot's popup reads the passage or moves the map to it. The page underneath stays as it was; the bar's back arrow, the ✕, or a second click on the verse returns to it. Jumps the page itself makes (clicking a reference in a study) move the Bible but do not open a verse map.
 - The bar between the Bible and the right pane drags to share the width (double-click resets it). The widen button in the right pane's bar spreads it over the Bible for wide charts; asking to read something brings the Bible back.
-- Notes sit under the search pane: separate notes, each remembering where it was started ("Kingdom of Heaven · Matthew 13"), with the references written in them turned into links, and a button that writes the selected verse (or the chapter) into the note. They are kept in this browser only; the download button saves them all as one Markdown file. The bar above them resizes them, and the arrow folds them away.
+- Writings sit under the search pane (the arrow folds them away); each opens beside the Bible at `/writing/<id>`, and `/writings` lists them all.
 - `/studies` shelves every study by theme, each card with a strip showing where its passages fall.
 
 ## Search engines and link previews

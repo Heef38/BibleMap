@@ -1190,6 +1190,46 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
 }
 
 // ---------------------------------------------------------------------------
+// 7b. Writings: data/writings/*.md, a YAML header between two lines of dashes and the text after it,
+//     one paragraph per blank line. The passages in the header are checked and turned into ranges.
+// ---------------------------------------------------------------------------
+const WRITINGS_DIR = path.join(ROOT, 'data', 'writings')
+interface WritingYaml {
+  title: string
+  question?: string
+  author: string
+  authorNote?: string
+  askedBy?: string
+  date: string
+  summary?: string
+  note?: string
+  passages?: { ref: string; label: string }[]
+}
+const writings: { id: string; title: string; summary?: string; author: string; date: string }[] = []
+if (fs.existsSync(WRITINGS_DIR)) {
+  for (const file of fs.readdirSync(WRITINGS_DIR).filter((f) => f.endsWith('.md')).sort()) {
+    const id = file.replace(/\.md$/, '')
+    const raw = readText(path.join(WRITINGS_DIR, file)).replace(/\r\n/g, '\n')
+    const m = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/.exec(raw)
+    if (!m) throw new Error(`${file}: needs a YAML header between two lines of ---`)
+    const head = loadYaml(m[1]) as WritingYaml
+    if (!head?.title || !head.author || !head.date) throw new Error(`${file}: needs title, author and date`)
+    const date = (head.date as unknown) instanceof Date ? (head.date as unknown as Date).toISOString().slice(0, 10) : String(head.date)
+    const passages = (head.passages ?? []).map((pg) => {
+      const parsed = parseRefs(pg.ref, canon)
+      if (!parsed.ranges.length || parsed.errors.length) throw new Error(`${file}: could not parse passage "${pg.ref}"`)
+      return { label: pg.label, ref: parsed.ranges.map(([a, z]) => canon.rangeLabel(a, z)).join('; '), ranges: parsed.ranges }
+    })
+    const body = m[2].split(/\n\s*\n/).map((pgh) => pgh.replace(/\s*\n\s*/g, ' ').trim()).filter(Boolean)
+    writeJson(`writings/${id}.json`, { id, ...head, date, passages, body })
+    writings.push({ id, title: head.title, summary: head.summary, author: head.author, date })
+    log(`writing ${id}: ${body.length} paragraphs, ${passages.length} passages`)
+  }
+}
+writings.sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title))
+writeJson('writings/index.json', writings)
+
+// ---------------------------------------------------------------------------
 // 8. Sitemap and robots.txt, so search engines find every page. They sit at the site's root
 //    (public/), and use the address in src/config/site.ts.
 // ---------------------------------------------------------------------------
@@ -1205,6 +1245,8 @@ const jesusSpeaksIn = (ranges: Range[]): boolean => {
     { path: '/about' },
     { path: '/feedback' },
     { path: '/credits' },
+    { path: '/writings' },
+    ...writings.map((w) => ({ path: `/writing/${w.id}`, lastmod: w.date })),
     ...canon.books.map((b) => ({ path: `/book/${b.osis}` })),
     ...people.map((pp) => ({ path: `/person/${encodeURIComponent(pp.id)}` })),
     ...places.map((pl) => ({ path: `/place/${encodeURIComponent(pl.id)}` })),
