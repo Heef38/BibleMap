@@ -3,6 +3,7 @@ import { useMemo, useRef, useState, type PointerEvent } from 'react'
 import { VizTooltip, type TipState } from './Tooltip'
 import type { Canon } from '@/lib/canon'
 import { useWidth } from '@/lib/hooks'
+import { EDITION } from '@edition/config'
 
 export interface XrefMatrix {
   books: string[]
@@ -11,10 +12,23 @@ export interface XrefMatrix {
 
 type Mode = 'division' | 'book'
 
-const testamentColor = (t: 'OT' | 'NT', strong = false) => (strong ? `var(--series-${t === 'OT' ? 1 : 2})` : `color-mix(in oklab, var(--series-${t === 'OT' ? 1 : 2}) 70%, var(--surface))`)
+/** The color of a book's group: the first group (the Old Testament) blue, the second orange. */
+export const groupSeries = (group: string) => `var(--series-${EDITION.groups.findIndex((g) => g.id === group) === 0 ? 1 : 2})`
+const tone = (color: string, strong = false) => (strong ? color : `color-mix(in oklab, ${color} 70%, var(--surface))`)
 
-/** A chord diagram of which parts of the Bible point to which, from the cross-reference data. */
-export default function BookChord({ canon, matrix }: { canon: Canon; matrix: XrefMatrix }) {
+/** A chord diagram of which parts of the scripture point to which, from the cross-reference data. */
+export default function BookChord({
+  canon,
+  matrix,
+  divisionsLabel = 'Kinds of writing',
+  legend = (g) => `from the ${g.name}`,
+}: {
+  canon: Canon
+  matrix: XrefMatrix
+  /** what the divisions of this scripture are called, on the switch */
+  divisionsLabel?: string
+  legend?: (group: { id: string; name: string }) => string
+}) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const width = useWidth(wrapRef)
   const [mode, setMode] = useState<Mode>('division')
@@ -22,13 +36,21 @@ export default function BookChord({ canon, matrix }: { canon: Canon; matrix: Xre
   const [hover, setHover] = useState<number | null>(null)
 
   const groups = useMemo(() => {
-    if (mode === 'book') return canon.books.map((b) => ({ id: b.osis, label: b.short, full: b.name, testament: b.testament, members: [b.n - 1] }))
+    if (mode === 'book') return canon.books.map((b) => ({ id: b.osis, label: b.short, full: b.name, color: groupSeries(b.group), members: [b.n - 1] }))
     const order = [...new Set(canon.books.map((b) => b.division))]
-    return order.map((d) => {
-      const members = canon.books.filter((b) => b.division === d)
-      return { id: d, label: d, full: d, testament: members[0].testament, members: members.map((b) => b.n - 1) }
-    })
+    const parts = order.map((d) => canon.books.filter((b) => b.division === d))
+    // A division inside one group (the Bible's Law, Gospels ...) takes that group's color. Where
+    // divisions mix the groups (the Quran's seven parts hold Meccan and Medinan surahs), each gets its own.
+    const pure = parts.every((members) => members.every((b) => b.group === members[0].group))
+    return parts.map((members, i) => ({
+      id: order[i],
+      label: order[i],
+      full: order[i],
+      color: pure ? groupSeries(members[0].group) : `var(--series-${((i + 2) % 8) + 1})`,
+      members: members.map((b) => b.n - 1),
+    }))
   }, [canon, mode])
+  const byGroup = mode === 'book' || groups.every((g) => EDITION.groups.some((e) => groupSeries(e.id) === g.color))
 
   const m = useMemo(() => {
     const n = groups.length
@@ -63,18 +85,18 @@ export default function BookChord({ canon, matrix }: { canon: Canon; matrix: Xre
       <div className="flex flex-wrap items-center gap-3 mb-2">
         <div className="seg" role="group" aria-label="Group by">
           <button type="button" aria-pressed={mode === 'division'} onClick={() => setMode('division')}>
-            Kinds of writing
+            {divisionsLabel}
           </button>
           <button type="button" aria-pressed={mode === 'book'} onClick={() => setMode('book')}>
-            Books
+            {EDITION.words.books.replace(/^./, (c) => c.toUpperCase())}
           </button>
         </div>
-        <span className="text-xs text-muted">{total.toLocaleString()} cross references between different books. Hover a group to see its links.</span>
+        <span className="text-xs text-muted">{total.toLocaleString()} {EDITION.words.xrefs} between different {EDITION.words.books}. Hover a group to see its links.</span>
       </div>
       <div className="@container">
         <div className="grid gap-6 @3xl:grid-cols-[minmax(0,1fr)_260px] items-start">
           {width > 0 && (
-            <svg width={size} height={size} viewBox={`${-size / 2} ${-size / 2} ${size} ${size}`} className="block select-none mx-auto" role="img" aria-label="Chord diagram of cross references between the parts of the Bible">
+            <svg width={size} height={size} viewBox={`${-size / 2} ${-size / 2} ${size} ${size}`} className="block select-none mx-auto" role="img" aria-label={`Chord diagram of ${EDITION.words.xrefs} between the parts of ${EDITION.words.scripture}`}>
               <g>
                 {chords.map((c, k) => {
                   const on = hover === null || c.source.index === hover || c.target.index === hover
@@ -84,7 +106,7 @@ export default function BookChord({ canon, matrix }: { canon: Canon; matrix: Xre
                     <path
                       key={k}
                       d={ribbon(c) ?? ''}
-                      fill={testamentColor(src.testament, true)}
+                      fill={src.color}
                       opacity={on ? (hover === null ? 0.35 : 0.75) : 0.05}
                       stroke="var(--surface)"
                       strokeWidth={0.5}
@@ -140,7 +162,7 @@ export default function BookChord({ canon, matrix }: { canon: Canon; matrix: Xre
                       onFocus={() => setHover(g.index)}
                       onBlur={() => setHover(null)}
                     >
-                      <path d={arc(g) ?? ''} fill={testamentColor(grp.testament, hover === g.index)} stroke="var(--surface)" strokeWidth={1} />
+                      <path d={arc(g) ?? ''} fill={tone(grp.color, hover === g.index)} stroke="var(--surface)" strokeWidth={1} />
                       <text
                         transform={`rotate(${deg}) translate(${outerR + 6},0) ${flip ? 'rotate(180)' : ''}`}
                         textAnchor={flip ? 'end' : 'start'}
@@ -162,7 +184,7 @@ export default function BookChord({ canon, matrix }: { canon: Canon; matrix: Xre
             <ol className="divide-y divide-line">
               {topPairs.map((p) => (
                 <li key={`${p.i}-${p.j}`} className="py-1.5 flex items-baseline gap-2">
-                  <span className="swatch" style={{ background: testamentColor(groups[p.i].testament, true) }} />
+                  <span className="swatch" style={{ background: groups[p.i].color }} />
                   <span className="min-w-0 truncate">
                     {groups[p.i].full} <span className="text-muted">→</span> {groups[p.j].full}
                   </span>
@@ -170,14 +192,15 @@ export default function BookChord({ canon, matrix }: { canon: Canon; matrix: Xre
                 </li>
               ))}
             </ol>
-            <div className="flex items-center gap-3 mt-3 text-xs text-ink-2">
-              <span className="flex items-center gap-1.5">
-                <span className="swatch" style={{ background: testamentColor('OT', true) }} /> from the Old Testament
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="swatch" style={{ background: testamentColor('NT', true) }} /> from the New Testament
-              </span>
-            </div>
+            {byGroup && (
+              <div className="flex items-center gap-3 mt-3 text-xs text-ink-2">
+                {EDITION.groups.map((g) => (
+                  <span key={g.id} className="flex items-center gap-1.5">
+                    <span className="swatch" style={{ background: groupSeries(g.id) }} /> {legend(g)}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

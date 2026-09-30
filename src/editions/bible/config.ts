@@ -1,0 +1,90 @@
+import type { Edition } from '../types'
+import { BOOKS } from './books'
+import { SITE } from './site'
+
+/** The Bible edition: the 66 books, the two Testaments, and the words the app uses for them. */
+export const EDITION: Edition = {
+  id: 'bible',
+  storage: SITE.storage,
+  books: BOOKS,
+  translation: 'bsb',
+  groups: [
+    { id: 'OT', name: 'Old Testament', short: 'OT' },
+    { id: 'NT', name: 'New Testament', short: 'NT' },
+  ],
+  parts: [
+    { id: 'law', title: 'Law', divisions: ['Law'] },
+    { id: 'history', title: 'History', divisions: ['History'] },
+    { id: 'wisdom', title: 'Poetry & Wisdom', divisions: ['Poetry & Wisdom'] },
+    { id: 'prophets', title: 'Prophets', divisions: ['Major Prophets', 'Minor Prophets'] },
+    { id: 'gospels', title: 'Gospels', divisions: ['Gospels'] },
+    { id: 'acts', title: 'Acts', divisions: ['Acts'] },
+    { id: 'letters', title: 'Letters', divisions: ['Pauline Epistles', 'General Epistles'] },
+    { id: 'revelation', title: 'Revelation', divisions: ['Revelation'] },
+  ],
+  redLetter: true,
+  features: { feedback: true, compare: true },
+  logoArt: true,
+  layoutPath: '/bible',
+  words: {
+    scripture: 'the Bible',
+    name: 'Bible',
+    book: 'book',
+    books: 'books',
+    chapter: 'chapter',
+    chapters: 'chapters',
+    xrefs: 'cross references',
+  },
+  verseTime: {
+    unit: 'year',
+    caption: 'Each row is a theme of the study; each dot is a reference placed by the traditional year of its verses, so the story reads left to right and the themes top to bottom.',
+    mentions: 'in each year of the story',
+    events: true,
+  },
+  xrefs: {
+    source: 'Cross references are from OpenBible.info; the bars show how many readers voted for each link.',
+    branch: 'The passages readers most often connect with this one, from the OpenBible.info cross-reference votes.',
+    weight: (n) => `${n} votes`,
+  },
+  topicSources: { nave: "Nave's Topical Bible (1896)", torrey: "Torrey's New Topical Textbook (1897)" },
+  dictTitle: "Easton's Bible Dictionary",
+  search: {
+    placeholder: 'Person, place, theme, or John 3:16',
+    label: 'Search the Bible',
+    suggestions: ['David', 'Jerusalem', 'Kingdom of heaven', 'Abraham', 'Covenant', 'Passover', 'Faith', 'Paul'],
+    example: 'Ps 23',
+    explore: {
+      chapter: { to: '/', title: 'This chapter', sub: 'Where the chapter you are reading connects' },
+      timeline: { to: '/timeline', title: 'The story in time', sub: 'All dated events on one timeline' },
+      layout: { to: '/bible', title: 'How the Bible is laid out', sub: 'The 66 books by kind, drawn to size' },
+      compare: { to: '/compare', title: 'Compare two people', sub: 'What two lives share, side by side' },
+    },
+  },
+  comparePairs: [
+    ['david_994', 'saul_2478', 'David and Saul'],
+    ['david_994', 'jonathan_1692', 'David and Jonathan'],
+    ['moses_2108', 'aaron_1', 'Moses and Aaron'],
+    ['elijah_1131', 'elisha_1153', 'Elijah and Elisha'],
+    ['paul_2479', 'jesus_905', 'Paul and Jesus'],
+  ],
+  text: {
+    welcomeTitle: 'See how the story connects.',
+    welcome: 'This pane follows the Bible as you read. Pick any verse to see where it connects across the whole Bible. Search a person, a place or a theme, or open a study, and it opens here while you keep reading.',
+    chapterHint: 'This pane follows the Bible. Pick any verse there to map where it connects.',
+    studiesDescription: 'Guided Bible studies drawn as connection maps, arcs and timelines: the Trinity, the resurrection, the book of Isaiah, the parables, the promises of God, Christ in the Old Testament and more.',
+    studiesIntro: 'Each study gathers the passages on one theme and draws them as maps, arcs and timelines. Open one and it sits here beside the Bible; click any passage in it to read it.',
+    timelineTitle: 'The story in time',
+    timelineDescription: 'Every dated event in the Bible, from creation to the apostles, on one zoomable timeline, with the passages that tell each one.',
+    timelineIntro: (events) => `${events} dated events from creation to the apostles, on traditional chronology. Zoom in to see the labels; click an event to read it.`,
+    writingsDescription: 'Writings on the Bible: answers to questions, with every passage behind them linked and checked against the text.',
+    writingsIntro: 'Answers to questions about the Bible, each with the passages behind it. Open one and it sits here beside the Bible; its references are links.',
+    credits: [
+      'Years attached to verses, people and events follow the traditional (Ussher-style) chronology used by the Theographic dataset. They are approximate and are shown to order the story, not to settle it.',
+      'Cross-reference weights are the community votes recorded by OpenBible.info; a higher bar means more readers found the link helpful.',
+      'Studies (the theme maps) are hand-authored in this project and carry the judgement of their author. The words of Jesus are taken from the red-letter markup of the Berean Standard Bible.',
+      'Theographic Bible Metadata is shared under CC BY-SA 4.0; derived entity data in this app is shared under the same terms.',
+    ],
+    creditsDescription: 'The open data behind Bible-Map: public-domain Bible translations, cross references, people and places, and topical dictionaries, each with its license.',
+    creditsIntro: 'Bible-Map is built entirely on open data; each source keeps its own license.',
+  },
+}

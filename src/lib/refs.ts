@@ -15,9 +15,11 @@ const PIECE =
  * Parse a human or OSIS reference list into ordinal ranges.
  * Handles "John 3:16", "Matt 13:24-30, 36-43; 6:9", "Ps 2", "Jude 3", "Gen.1.1-Gen.2.3",
  * "Prov.8.22-Prov.8.30" and "1 Cor 15:20–28". Semicolons reset the chapter context;
- * commas keep it. Out-of-range verses are clamped and reported.
+ * commas keep it. Out-of-range verses are clamped and reported. A scripture with its own way of
+ * writing references (the Quran's "2:255") parses them itself.
  */
 export function parseRefs(input: string, canon: Canon): ParseResult {
+  if (canon.scheme) return canon.scheme.parse(input, canon)
   const ranges: Range[] = []
   const errors: string[] = []
   let ctxBook: CanonBook | undefined

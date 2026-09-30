@@ -1,0 +1,239 @@
+# Muhammad in the Quran: what the Quran itself says of the man through whom it came. The Quran
+# tells almost nothing of his life in order; that comes from the biographies and sayings written
+# down a century and more later, and the notes say where tradition fills in what a verse leaves
+# open. Quotations follow Talal Itani's translation.
+id: muhammad
+title: "Muhammad in the Quran"
+subtitle: "The call, the visions and the night journey; a man, not a miracle-worker; what his opponents said; his place as example and lawgiver; and where God corrects him"
+kind: connections
+added: "2026-09-30"
+summary: >-
+  The Quran names Muhammad only four times, and once more as Ahmad; far more often it speaks to
+  him as “you,” “O Prophet” or “O Messenger,” and tells him what to “say.” It does not tell his
+  life story. Everything Muslims know of his birth in Mecca around 570, his first revelation at
+  forty in a cave on Mount Hira, his flight to Medina in 622 and his death in 632 comes from the
+  biographies and collected sayings (hadith), written down from the eighth century on. What the
+  Quran itself says is still a lot. He is “only a human being like you,” who works no miracles
+  and does not know the future; his sign is the Quran. His opponents call him a poet, a
+  soothsayer, a madman, a man taught by a foreigner; the Quran answers each charge. He is a
+  mercy to the worlds, “an excellent example,” and to obey him is to obey God. God also corrects
+  him, more sharply than any other prophet in the Quran: for frowning at a blind man, for
+  excusing men from battle, for fearing people over God, and He tells him to ask forgiveness for
+  his sin. The groups follow those themes.
+tags: [muhammad, prophet, messenger, revelation, night journey, sunnah, obedience]
+categories:
+  retold:
+    title: "Said again"
+    note: "The same point in another surah."
+views:
+  - title: "What the Quran says of him"
+    groups:
+      - title: "His name"
+        note: "The four verses that name him, and the one that names Ahmad."
+        refs:
+          - ref: "3:144"
+            label: "“Muhammad is no more than a messenger”"
+            note: "“Messengers have passed on before him. If he dies or gets killed, will you turn on your heels?” By tradition Abu Bakr recited it on the day Muhammad died."
+          - ref: "33:40"
+            label: "“Not the father of any of your men … the seal of the prophets”"
+            note: "Said after he married the divorced wife of his adopted son Zayd (33:37). “Seal” is read as the last of the prophets."
+          - ref: "47:2"
+            label: "“What was sent down to Muhammad—and it is the truth”"
+          - ref: "48:29"
+            label: "“Muhammad is the Messenger of God”"
+            note: "The second half of the Muslim creed. His followers are “stern against the disbelievers, yet compassionate amongst themselves,” and described in the Gospel as “a plant that sprouts, becomes strong … impressing the farmers.” Jesus' parables of the growing seed and the mustard seed are the nearest the Gospels come."
+            bible: "Mark 4:26-32"
+          - ref: "61:6"
+            label: "Ahmad, foretold by Jesus"
+            note: "“Announcing good news of a messenger who will come after me, whose name is Ahmad.” See the study of Jesus and Mary."
+            bible: "John 14:16-17"
+
+      - title: "The call"
+        note: "Tradition places the first revelation in 610, when Muhammad was about forty, in a cave on Mount Hira near Mecca, where the angel Gabriel told him, “Read!”"
+        refs:
+          - ref: "96:1-5"
+            label: "“Read: In the Name of your Lord who created”"
+            note: "By most accounts the first words revealed. The command can also be translated “Recite!” Tradition has Muhammad answer, “I cannot read.” Muslim writers point to Isaiah, where a scroll is given to one who says, “I cannot read.”"
+            bible: "Isa 29:11-12"
+          - ref: "74:1-7"
+            label: "“O you Enrobed one. Arise and warn”"
+            note: "Tradition says he came home shaking and asked to be wrapped in a cloak."
+          - ref: "73:1-8"
+            label: "“O you Enwrapped one. Stay up the night”"
+            note: "“We are about to give you a heavy message.”"
+          - ref: "53:1-18"
+            label: "“Within two bows' length, or closer”"
+            note: "Two visions: one “at the highest horizon,” one “at the Lotus Tree of the Extremity.” “The heart did not lie about what it saw.” Commentators say he saw Gabriel; some said God."
+            links:
+              - { to: "81:19-25", category: retold, topic: "“He saw him on the luminous horizon”" }
+          - ref: "93"
+            label: "“Your Lord did not abandon you”"
+            note: "By tradition, after a pause in the revelation: “Did He not find you orphaned, and sheltered you? And found you wandering, and guided you?”"
+          - ref: "94"
+            label: "“Did We not soothe your heart?”"
+            note: "“With hardship comes ease,” said twice."
+
+      - title: "The night journey"
+        refs:
+          - ref: "17:1"
+            label: "“From the Sacred Mosque, to the Farthest Mosque”"
+            note: "The only verse that tells of it. Tradition fills it out: Muhammad rode the winged Buraq to Jerusalem, led the prophets in prayer, and rose through the seven heavens to God, where the five daily prayers were set (bargained down from fifty on Moses' advice). The Quran names neither Jerusalem nor the ascent."
+          - ref: "17:60"
+            label: "“The vision We showed you … a test for the people”"
+            note: "Commentators link it to the night journey, which some who heard it mocked."
+
+      - title: "Only a man"
+        note: "The Quran insists on it, against those who wanted an angel or a miracle."
+        refs:
+          - ref: "18:110"
+            label: "“I am only a human being like you”"
+            note: "“… being inspired that your god is One God.” The same words at 41:6."
+            links:
+              - { to: "41:6", category: retold, topic: "The same words" }
+          - ref: "17:90-96"
+            label: "“Am I anything but a human messenger?”"
+            note: "They demand a spring from the ground, a garden, the sky falling, a house of gold, an ascent into the sky with a book: “Glory be to my Lord. Am I anything but a human messenger?”"
+          - ref: "29:50-51"
+            label: "“Miracles are only with God”"
+            note: "“Does it not suffice them that We revealed to you the Scripture?” The Quran credits Muhammad with no miracle but itself; the biographies and hadith tell of many."
+          - ref: "54:1-2"
+            label: "“The Hour has drawn near, and the moon has split”"
+            note: "Tradition reads this as a miracle the Meccans saw; others read it of the moon splitting at the end of the world."
+          - ref: "6:50"
+            label: "“I do not say to you that I possess the treasuries of God, nor do I know the future”"
+            note: "Also 7:188: “I have no control over any benefit or harm to myself.”"
+          - ref: "25:7-8"
+            label: "“What sort of messenger is this, who eats food, and walks in the marketplaces?”"
+          - ref: "10:15-16"
+            label: "“I have lived among you for a lifetime before it”"
+            note: "Asked to bring another Quran, or change it: “It is not for me to change it of my own accord.”"
+          - ref: "39:30"
+            label: "“You will die, and they will die”"
+
+      - title: "The unlettered prophet"
+        refs:
+          - ref: "7:157-158"
+            label: "“The Messenger, the Unlettered Prophet”"
+            note: "The word (ummi) is taken by Muslims to mean he could not read or write, which makes the Quran the greater sign; some scholars take it to mean “of the gentiles,” a prophet from a people without scripture. “Whom they find mentioned in the Torah and the Gospel.”"
+            bible: "Deut 18:15-19"
+          - ref: "29:48"
+            label: "“You did not read any scripture before this, nor did you write it”"
+          - ref: "62:2"
+            label: "“A messenger from themselves” among the unlettered"
+
+      - title: "What his opponents said"
+        note: "The Meccans' charges, and the Quran's answers."
+        refs:
+          - ref: "52:29-34"
+            label: "“Neither a soothsayer, nor a madman”"
+            note: "“Or do they say, ‘A poet’? … Or do they say, ‘He made it up’? … So let them produce a discourse like it.”"
+          - ref: "69:40-47"
+            label: "“Not the speech of a poet … Nor … of a soothsayer”"
+            note: "“Had he falsely attributed some statements to Us, We would have seized him by the right arm, then slashed his lifeline.”"
+          - ref: "68:1-4"
+            label: "“You are not insane … you are of a great moral character”"
+          - ref: "21:5"
+            label: "“A jumble of dreams … He is a poet”"
+            note: "Also 37:36: “Are we to abandon our gods for a mad poet?”"
+          - ref: "25:4-6"
+            label: "“Tales of the ancients … dictated to him morning and evening”"
+          - ref: "16:103"
+            label: "“It is a human being who is teaching him”"
+            note: "“But the tongue of him they allude to is foreign, while this is a clear Arabic tongue.” Tradition names several foreigners in Mecca, among them Christian slaves."
+          - ref: "108"
+            label: "“He who hates you is the loser”"
+            note: "By tradition, answering an enemy who mocked him as “cut off,” without a son."
+          - ref: "111"
+            label: "Abu Lahab"
+            note: "His own uncle and enemy, and his wife, “the firewood carrier”: the only opponent of Muhammad named in the Quran."
+
+      - title: "His place"
+        note: "Mercy to the worlds, example, witness and warner, and the one to be obeyed. On these verses rests the authority of his sayings and practice (the Sunnah) beside the Quran in Islamic law."
+        refs:
+          - ref: "21:107"
+            label: "“We did not send you except as mercy to mankind”"
+            note: "The Arabic says “to the worlds.”"
+          - ref: "34:28"
+            label: "“Universally to all people”"
+          - ref: "33:45-46"
+            label: "“A witness, and a bearer of good news, and a warner … an illuminating beacon”"
+          - ref: "33:21"
+            label: "“You have an excellent example in the Messenger of God”"
+          - ref: "4:80"
+            label: "“Whoever obeys the Messenger is obeying God”"
+            note: "“Obey God and obey the Messenger” is repeated some twenty times in the Medinan surahs (4:59, 3:32 …). Jesus: “Whoever receives Me receives the One who sent Me.”"
+            bible: "Matt 10:40; John 13:20"
+          - ref: "4:65"
+            label: "“They will not believe until they call you to arbitrate”"
+            note: "“… and then find within themselves no resentment regarding your decisions.”"
+          - ref: "33:36"
+            label: "No choice when God and His Messenger have decided"
+            note: "By tradition, said when Zaynab and her family objected to her marriage to Zayd."
+          - ref: "59:7"
+            label: "“Whatever the Messenger gives you, accept it; and whatever he forbids you, abstain from it”"
+            note: "Said of the spoils of the Banu Nadir, and cited ever since for the authority of his sayings."
+          - ref: "3:31"
+            label: "“If you love God, then follow me”"
+          - ref: "33:56"
+            label: "“God and His angels give blessings to the Prophet”"
+            note: "The reason Muslims say “peace be upon him” after his name."
+          - ref: "33:6"
+            label: "“His wives are mothers to them”"
+            note: "“The Prophet is more caring of the believers than they are of themselves.” His widows could not remarry (33:53)."
+          - ref: "49:1-5"
+            label: "“Do not raise your voices above the voice of the Prophet”"
+          - ref: "3:159"
+            label: "“Had you been harsh, hardhearted, they would have dispersed”"
+            note: "“So pardon them, and ask forgiveness for them, and consult them in the conduct of affairs.”"
+          - ref: "9:128"
+            label: "“Towards the believers, he is compassionate and merciful”"
+            note: "Two of God's names, given here to the Prophet."
+
+      - title: "Corrected by God"
+        note: "The Quran records God correcting Muhammad more than once. Later doctrine held that prophets were kept from sin, and read these as small lapses or as lessons for others."
+        refs:
+          - ref: "80:1-10"
+            label: "“He frowned and turned away, when the blind man approached him”"
+            note: "By tradition he was speaking to leading men of Quraysh when a poor blind believer interrupted. “But how do you know? Perhaps he was seeking to purify himself.”"
+          - ref: "9:43"
+            label: "“May God pardon you! Why did you give them permission?”"
+            note: "For excusing men from the campaign before it was clear who was truthful."
+          - ref: "8:67-68"
+            label: "“You desire the materials of this world”"
+            note: "The prisoners of Badr, taken for ransom."
+          - ref: "17:73-75"
+            label: "“They almost lured you away from what We have revealed to you”"
+            note: "“Had We not given you stability, you might have inclined towards them a little.” Some early biographers tie this to the story of verses in praise of the Meccan goddesses, later withdrawn (see 22:52 and 53:19-23); many Muslim scholars reject that story."
+          - ref: "33:37"
+            label: "“You feared the people, but it was God you were supposed to fear”"
+            note: "Over the marriage of Zaynab, the divorced wife of his adopted son Zayd, which the verse says God arranged “that there may be no restriction for believers regarding the wives of their adopted sons.” Zayd is the only one of Muhammad's companions the Quran names."
+          - ref: "66:1"
+            label: "“Why do you prohibit what God has permitted for you, seeking to please your wives?”"
+          - ref: "18:23-24"
+            label: "“Never say about anything, ‘I will do that tomorrow,’ without saying, ‘If God wills’”"
+            note: "By tradition, after he promised an answer the next day and the revelation was delayed."
+          - ref: "9:113"
+            label: "Not to ask forgiveness for idolaters, “even if they are near relatives”"
+            note: "Tradition connects it to his uncle Abu Talib, who raised and protected him but died without accepting Islam."
+          - ref: "47:19"
+            label: "“Ask forgiveness for your sin”"
+            note: "Also 48:2: “that God may forgive you your sin, past and to come.”"
+
+      - title: "The last years"
+        refs:
+          - ref: "9:40"
+            label: "“The second of two in the cave”"
+            note: "The flight from Mecca in 622, hiding in a cave with his friend, whom tradition names as Abu Bakr: “Do not worry, God is with us.”"
+          - ref: "48:1-2"
+            label: "“We have granted you a conspicuous victory”"
+            note: "By tradition the truce of Hudaybiya (628), which opened the way to Mecca."
+          - ref: "110"
+            label: "“When there comes God's victory, and conquest”"
+            note: "“And you see the people entering God's religion in multitudes.” Tradition reads it as the conquest of Mecca (630) and a sign that his death was near."
+          - ref: "5:3"
+            label: "“Today I have perfected your religion for you”"
+            note: "By tradition revealed at his farewell pilgrimage in 632, months before he died; it stands in the middle of a list of forbidden foods."
+
+  - title: "Mecca and Medina"
+    auto: place
+    note: "At Mecca he is the warner, mocked and consoled. At Medina he is the Prophet, the Messenger to be obeyed, with a household and an army."

@@ -4,7 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 import { copyFileSync } from 'node:fs'
 import type { HtmlTagDescriptor, Plugin } from 'vite'
-import { SITE } from './src/config/site'
+import { SITE as BIBLE } from './src/editions/bible/site.ts'
+import { SITE as QURAN } from './src/editions/quran/site.ts'
+import type { Site } from './src/editions/types.ts'
+
+/** The editions this project can be built as: `vite --mode quran`, or EDITION=quran in the environment. */
+const SITES: Record<string, Site> = { bible: BIBLE, quran: QURAN }
 
 /** GitHub Pages serves 404.html for unknown paths; a copy of index.html makes client-side routes work there. */
 function spaFallback(): Plugin {
@@ -65,10 +70,11 @@ function devApi(): Plugin {
 /**
  * What search engines and link previews read before any script runs: the title, the description,
  * Open Graph and Twitter cards, ownership codes for Google and Bing, and a schema.org WebSite with
- * the site search, all from src/config/site.ts. Each page then sets its own title, description and
- * canonical address as it opens (usePageTitle).
+ * the site search, all from the edition's site.ts. Each page then sets its own title, description and
+ * canonical address as it opens (usePageTitle). A site that is not listed says so here, to every
+ * crawler, and offers none of the rest.
  */
-function siteMeta(): Plugin {
+function siteMeta(SITE: Site): Plugin {
   const esc = (v: string) => v.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
   return {
     name: 'site-meta',
@@ -92,7 +98,7 @@ function siteMeta(): Plugin {
       // On an old address, forward to the new one with what this browser saved there (in the
       // fragment, which never reaches a server); on the new one, take it in and tidy the address.
       // It runs before the theme is read, so a carried-over theme applies at once.
-      const KEYS = ['biblemap.settings', 'biblemap.notes', 'biblemap.updates', 'biblemap.voter', 'biblemap.voted']
+      const KEYS = ['settings', 'notes', 'updates', 'voter', 'voted'].map((k) => `${SITE.storage}.${k}`)
       const move = `(function () {
   var KEYS = ${JSON.stringify(KEYS)};
   var OLD = ${JSON.stringify(SITE.movedFrom.map((u) => new URL(u).host))};
@@ -110,7 +116,7 @@ function siteMeta(): Plugin {
     KEYS.forEach(function (k) {
       if (!got[k]) return;
       var mine = localStorage.getItem(k);
-      if (k === 'biblemap.notes' && mine) {
+      if (k === ${JSON.stringify(`${SITE.storage}.notes`)} && mine) {
         var a = JSON.parse(mine), b = JSON.parse(got[k]), ids = {};
         a.state.notes.forEach(function (n) { ids[n.id] = 1; });
         b.state.notes.forEach(function (n) { if (!ids[n.id]) a.state.notes.push(n); });
@@ -123,7 +129,7 @@ function siteMeta(): Plugin {
       const tags: HtmlTagDescriptor[] = [
         { tag: 'script', children: move, injectTo: 'head-prepend' },
         meta({ name: 'description', content: SITE.description }),
-        meta({ name: 'robots', content: 'index, follow' }),
+        meta({ name: 'robots', content: SITE.listed ? 'index, follow' : 'noindex, nofollow' }),
         meta({ name: 'application-name', content: SITE.name }),
         meta({ name: 'theme-color', content: '#fcfbf8', media: '(prefers-color-scheme: light)' }),
         meta({ name: 'theme-color', content: '#1c1b19', media: '(prefers-color-scheme: dark)' }),
@@ -132,33 +138,59 @@ function siteMeta(): Plugin {
         meta({ property: 'og:locale', content: 'en_US' }),
         meta({ property: 'og:title', content: title }),
         meta({ property: 'og:description', content: SITE.description }),
-        meta({ property: 'og:image', content: image }),
-        meta({ property: 'og:image:width', content: '1200' }),
-        meta({ property: 'og:image:height', content: '630' }),
-        meta({ property: 'og:image:alt', content: `${SITE.name}: ${SITE.tagline}` }),
-        meta({ name: 'twitter:card', content: 'summary_large_image' }),
-        meta({ name: 'twitter:title', content: title }),
-        meta({ name: 'twitter:description', content: SITE.description }),
-        meta({ name: 'twitter:image', content: image }),
-        ...(SITE.verification.google ? [meta({ name: 'google-site-verification', content: SITE.verification.google })] : []),
-        ...(SITE.verification.bing ? [meta({ name: 'msvalidate.01', content: SITE.verification.bing })] : []),
-        { tag: 'script', attrs: { type: 'application/ld+json' }, children: JSON.stringify(website), injectTo: 'head' },
+        ...(SITE.listed
+          ? [
+              meta({ property: 'og:image', content: image }),
+              meta({ property: 'og:image:width', content: '1200' }),
+              meta({ property: 'og:image:height', content: '630' }),
+              meta({ property: 'og:image:alt', content: `${SITE.name}: ${SITE.tagline}` }),
+              meta({ name: 'twitter:card', content: 'summary_large_image' }),
+              meta({ name: 'twitter:title', content: title }),
+              meta({ name: 'twitter:description', content: SITE.description }),
+              meta({ name: 'twitter:image', content: image }),
+              ...(SITE.verification.google ? [meta({ name: 'google-site-verification', content: SITE.verification.google })] : []),
+              ...(SITE.verification.bing ? [meta({ name: 'msvalidate.01', content: SITE.verification.bing })] : []),
+              { tag: 'script', attrs: { type: 'application/ld+json' }, children: JSON.stringify(website), injectTo: 'head' } as HtmlTagDescriptor,
+            ]
+          : []),
+        ...(SITE.fonts ? [{ tag: 'link', attrs: { href: SITE.fonts, rel: 'stylesheet' }, injectTo: 'head' } as HtmlTagDescriptor] : []),
       ]
-      return { html: html.replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`), tags }
+      // index.html is written for the Bible: another edition gets its own name in the page that
+      // shows without JavaScript, and its own key for the theme the inline script reads.
+      let out = html.replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`)
+      if (SITE !== BIBLE) {
+        out = out
+          .replace("'biblemap.settings'", `'${SITE.storage}.settings'`)
+          .replace(/<noscript>[\s\S]*?<\/noscript>/, `<noscript>\n      <h1>${esc(SITE.name)}</h1>\n      <p>${esc(SITE.description)} ${esc(SITE.name)} needs JavaScript turned on.</p>\n    </noscript>`)
+      }
+      return { html: out, tags }
     },
   }
 }
 
 const base = process.env.BASE_PATH ?? '/'
 
-export default defineConfig({
-  base,
-  plugins: [react(), tailwindcss(), spaFallback(), devApi(), siteMeta()],
-  resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
-  server: {
-    port: 5173,
-    // The project lives on a Windows mount under WSL, where native file events do not fire.
-    watch: { usePolling: true, interval: 600, ignored: ['**/data/raw/**', '**/.screenshots/**', '**/dist/**'] },
-  },
-  build: { target: 'es2022', sourcemap: false, chunkSizeWarningLimit: 900 },
+export default defineConfig(({ mode }) => {
+  const edition = process.env.EDITION ?? (mode in SITES ? mode : 'bible')
+  const SITE = SITES[edition]
+  if (!SITE) throw new Error(`No edition called "${edition}"`)
+  return {
+    base,
+    plugins: [react(), tailwindcss(), spaFallback(), devApi(), siteMeta(SITE)],
+    resolve: {
+      // `@edition` is the folder of the edition being built; its order before `@` matters.
+      alias: [
+        { find: '@edition', replacement: fileURLToPath(new URL(`./src/editions/${edition}`, import.meta.url)) },
+        { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
+      ],
+    },
+    // Each edition serves its own compiled data and brand files.
+    publicDir: edition === 'bible' ? 'public' : `public-${edition}`,
+    server: {
+      port: 5173,
+      // The project lives on a Windows mount under WSL, where native file events do not fire.
+      watch: { usePolling: true, interval: 600, ignored: ['**/data/raw/**', '**/.screenshots/**', '**/dist/**'] },
+    },
+    build: { target: 'es2022', sourcemap: false, chunkSizeWarningLimit: 900 },
+  }
 })

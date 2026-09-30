@@ -1,0 +1,231 @@
+# The main themes of the Quran, one group each, with a few passages that state the theme plainly.
+# This is the place to start: every group names the study that follows the theme through the
+# whole Quran. Quotations follow Talal Itani's translation.
+id: main-themes
+title: "The Main Themes of the Quran"
+subtitle: "Start here: fifteen themes, from the oneness of God to fighting and peace, each in its own words, with the study that follows it through the whole book"
+added: "2026-09-30"
+summary: >-
+  The Quran is not arranged by subject. Apart from the short opening prayer, its 114 surahs run
+  roughly from longest to shortest, and most of them move between several themes at once. Read
+  straight through, it can feel like a collection of sermons, arguments, stories, laws and
+  prayers, and it is. But a small number of themes return on nearly every page, and together they
+  are what the Quran teaches. God is one, with no partner and no son. He made the world, and it is
+  full of signs pointing to Him. He sent prophets to every people with that one message, the last
+  of them Muhammad, and sent down the Quran through him in Arabic. Every person will be raised and
+  judged on the Last Day and go to the Garden or the Fire, by their faith and their deeds. So
+  believe, pray, give, fast and make the pilgrimage; keep the law; and know who is a believer, who
+  is not, and who only pretends. Around these stand the Quran's words about Jews and Christians,
+  about Jesus and Mary, about war and peace, and about the unseen world of angels and jinn. This
+  study gives each theme a few passages in the Quran's own words; the other studies on this site
+  take each one through the whole book. The views show where each theme falls: the early Meccan
+  surahs are full of God, creation and the Day; the law, the fighting and the People of the Book
+  belong to Medina.
+tags: [overview, themes, introduction, islam, teachings]
+views:
+  - title: "Fifteen themes"
+    note: "In roughly the order of importance the Quran itself gives them."
+    groups:
+      - title: "God is one"
+        note: "The first and greatest theme: there is no god but God, and nothing is like Him. Full study: God in the Quran."
+        refs:
+          - ref: "112"
+            label: "“He is God, the One … He begets not, nor was He begotten”"
+          - ref: "2:255"
+            label: "The Throne Verse"
+            note: "“God! There is no god except He, the Living, the Everlasting.”"
+          - ref: "59:22-24"
+            label: "“His are the Most Beautiful Names”"
+          - ref: "4:48"
+            label: "“God does not forgive association with Him”"
+          - ref: "6:12"
+            label: "“He has inscribed for Himself mercy”"
+
+      - title: "Creation and its signs"
+        note: "The world is full of signs of its Maker, and of the resurrection. Full study: Signs in Creation."
+        refs:
+          - ref: "2:164"
+            label: "“Signs for people who understand”"
+          - ref: "30:20-22"
+            label: "“And of His signs …”"
+          - ref: "36:33"
+            label: "“A sign for them in the dead land: We give it life”"
+
+      - title: "The prophets"
+        note: "One message to every people, and the punishment of those who refused. Full study: The Prophets and Their Stories."
+        refs:
+          - ref: "16:36"
+            label: "“To every community We sent a messenger”"
+          - ref: "21:25"
+            label: "“There is no god but I, so worship Me”"
+          - ref: "4:163-165"
+            label: "“As We had inspired Noah and the prophets after him”"
+          - ref: "11:120"
+            label: "“To strengthen your heart”"
+
+      - title: "Muhammad"
+        note: "A man and a messenger, the last of the prophets, to be followed and obeyed. Full study: Muhammad in the Quran."
+        refs:
+          - ref: "33:40"
+            label: "“The Messenger of God, and the seal of the prophets”"
+          - ref: "18:110"
+            label: "“I am only a human being like you”"
+          - ref: "21:107"
+            label: "“We did not send you except as mercy to mankind”"
+          - ref: "4:80"
+            label: "“Whoever obeys the Messenger is obeying God”"
+
+      - title: "The Quran"
+        note: "God's own speech in Arabic, beyond imitation. Full study: The Quran About Itself."
+        refs:
+          - ref: "12:1-2"
+            label: "“An Arabic Quran, so that you may understand”"
+          - ref: "2:23-24"
+            label: "“Produce a chapter like these”"
+          - ref: "2:106"
+            label: "“We never nullify a verse … unless We bring one better”"
+          - ref: "15:9"
+            label: "“We will surely preserve it”"
+
+      - title: "The Last Day"
+        note: "The end of the world, the resurrection, the judgment, the Garden and the Fire. Full study: The Last Day, Paradise and Hell."
+        refs:
+          - ref: "81:1-14"
+            label: "“When the sun is rolled up”"
+          - ref: "99"
+            label: "“Whoever has done an atom's weight of good will see it”"
+          - ref: "101:6-11"
+            label: "The scales, heavy and light"
+          - ref: "47:15"
+            label: "Rivers of water, milk, wine and honey"
+          - ref: "4:56"
+            label: "“Every time their skins are cooked, We will replace them”"
+
+      - title: "Faith, deeds and forgiveness"
+        note: "Those who believe and do good works are saved; God forgives those who repent; no one carries another's sins. Full study: Sin, Repentance and Salvation."
+        refs:
+          - ref: "103"
+            label: "“Except those who believe, and do good works”"
+          - ref: "39:53"
+            label: "“Do not despair of God's mercy”"
+          - ref: "53:38-41"
+            label: "“No soul bears the burdens of another soul”"
+          - ref: "46:9"
+            label: "“I do not know what will be done with me, or with you”"
+
+      - title: "Worship"
+        note: "Prayer, alms, the fast and the pilgrimage, and the constant remembrance of God. Full study: Worship."
+        refs:
+          - ref: "1"
+            label: "The Opening"
+          - ref: "2:183-185"
+            label: "The fast of Ramadan"
+          - ref: "3:96-97"
+            label: "The pilgrimage, “a duty to God”"
+          - ref: "9:60"
+            label: "Who the alms are for"
+          - ref: "2:177"
+            label: "“Righteousness does not consist of turning your faces towards the East and the West”"
+
+      - title: "The law"
+        note: "Commandments much like Moses', rules for food, killing, theft and money, and justice even to enemies. Full study: The Law."
+        refs:
+          - ref: "17:22-39"
+            label: "“Some of the wisdom your Lord has revealed to you”"
+          - ref: "5:3"
+            label: "Forbidden foods, and “Today I have perfected your religion”"
+          - ref: "5:38"
+            label: "“As for the thief … cut their hands”"
+          - ref: "2:275"
+            label: "“God has permitted commerce, and has forbidden usury”"
+          - ref: "5:8"
+            label: "“Let not the hatred of a certain people prevent you from acting justly”"
+
+      - title: "Women and the family"
+        note: "One soul, equal reward, and a family law that treats men and women differently. Full study: Women, Marriage and Family."
+        refs:
+          - ref: "4:1"
+            label: "“Created you from a single soul”"
+          - ref: "33:35"
+            label: "“Muslim men and Muslim women …”"
+          - ref: "4:3"
+            label: "“Two, or three, or four”"
+          - ref: "4:34"
+            label: "“Men are the protectors and maintainers of women”"
+          - ref: "4:11"
+            label: "“The male receives the equivalent of the share of two females”"
+
+      - title: "Believers, unbelievers and hypocrites"
+        note: "The three kinds of people, and how believers live among the others. Full study: Believers, Unbelievers and Hypocrites."
+        refs:
+          - ref: "23:1-11"
+            label: "“Successful are the believers”"
+          - ref: "63:1-4"
+            label: "“God bears witness that the hypocrites are liars”"
+          - ref: "2:256"
+            label: "“There shall be no compulsion in religion”"
+          - ref: "3:28"
+            label: "“Believers are not to take disbelievers for friends instead of believers”"
+
+      - title: "Jews and Christians"
+        note: "Praised, blamed, argued with and invited. Full study: Jews and Christians: the People of the Book."
+        refs:
+          - ref: "3:64"
+            label: "“Come to terms common between us and you”"
+          - ref: "3:113-115"
+            label: "“They are not alike”"
+          - ref: "2:75-79"
+            label: "“Those who write the Scripture with their own hands”"
+          - ref: "5:51"
+            label: "“Do not take the Jews and the Christians as allies”"
+
+      - title: "Jesus and Mary"
+        note: "Born of a virgin, a prophet of miracles; not God's son, and not crucified. Full study: Jesus and Mary in the Quran."
+        refs:
+          - ref: "19:16-21"
+            label: "The annunciation"
+          - ref: "3:49"
+            label: "Birds of clay, the blind, the leper, the dead"
+          - ref: "4:157-158"
+            label: "“They did not kill him, nor did they crucify him”"
+          - ref: "4:171"
+            label: "“Do not say, ‘Three’”"
+
+      - title: "Fighting and peace"
+        note: "Patience at Mecca; at Medina fighting permitted, then commanded, with limits. Full study: Fighting and Peace."
+        refs:
+          - ref: "41:34"
+            label: "“Repel evil with good”"
+          - ref: "22:39"
+            label: "“Permission is given to those who are fought against”"
+          - ref: "2:190"
+            label: "“Fight … those who fight you, but do not commit aggression”"
+          - ref: "8:61"
+            label: "“If they incline towards peace, then incline towards it”"
+          - ref: "9:5"
+            label: "“Kill the polytheists wherever you find them”"
+          - ref: "9:29"
+            label: "“Until they pay the due tax”"
+
+      - title: "Angels, jinn and Satan"
+        note: "The unseen world: God's servants, a second race of fire, and the enemy. Full study: Angels, Jinn and Satan."
+        refs:
+          - ref: "7:11-18"
+            label: "Satan will not bow to Adam"
+          - ref: "50:16-18"
+            label: "The two recorders"
+          - ref: "72:1-2"
+            label: "“We have heard a wondrous Quran”"
+          - ref: "114"
+            label: "“From the evil of the sneaky whisperer”"
+
+  - title: "Nöldeke's periods"
+    auto: period
+    note: "The same passages in the four periods of Theodor Nöldeke's dating of the surahs: God, creation and the Day fill the early Meccan surahs; the law, the People of the Book and the fighting come at Medina."
+
+  - title: "Mecca and Medina"
+    auto: place
+
+  - title: "The seven parts"
+    auto: part
+    note: "Where the passages stand in the book itself, divided into seven roughly equal parts (the traditional manzils)."

@@ -5,6 +5,7 @@ import type { Range } from '@/lib/refs'
 import { parseRefs } from '@/lib/refs'
 import type { Canon } from '@/lib/canon'
 import type { NameMeaning } from '@/data/types'
+import { EDITION } from '@edition/config'
 
 export function PageHeader({ kicker, title, subtitle, right }: { kicker?: ReactNode; title: ReactNode; subtitle?: ReactNode; right?: ReactNode }) {
   return (
@@ -75,7 +76,7 @@ export function EntityLink({ type, id, children, className = 'chip chip-link' }:
 
 const LINK = /\[([^\]]+)\]\(\(?([^)\s]+)\)/g
 
-/** Running text with its Bible references (and any markdown links) turned into links. */
+/** Running text with its references (and any markdown links) turned into links. */
 export function LinkedText({ text, canon }: { text: string; canon: Canon }) {
   return <>{renderInline(text, canon)}</>
 }
@@ -120,7 +121,8 @@ function renderInline(p: string, canon: Canon): ReactNode[] {
 }
 
 // "Book 3", "Book 3:16", "Book 3:16-18", "Book 3:16-4:2", and chapter ranges like "1 Kings 10–11".
-const BARE_REF = /\b((?:[1-3]\s?)?[A-Z][a-z]{1,14}\.?\s?\d{1,3}(?::\d{1,3}(?:\s?[-–]\s?\d{1,3}(?::\d{1,3})?)?|\s?[-–]\s?\d{1,3}(?!:))?)\b/g
+// An edition that writes references another way (the Quran's "2:255") brings its own pattern.
+const BARE_REF = EDITION.bareRef ?? /\b((?:[1-3]\s?)?[A-Z][a-z]{1,14}\.?\s?\d{1,3}(?::\d{1,3}(?:\s?[-–]\s?\d{1,3}(?::\d{1,3})?)?|\s?[-–]\s?\d{1,3}(?!:))?)\b/g
 
 /**
  * The references in plain text, in order. A match that is not a reference ("In 1" in "In 1 Kings 3")
@@ -156,18 +158,26 @@ function linkBareRefs(text: string, canon: Canon, keyPrefix: string): ReactNode[
 }
 
 
-/** The meaning of a name, with its Hebrew and Greek forms when known. */
+/** The meaning of a name, with its Hebrew and Greek (or Arabic) forms when known. */
 export function NameCard({ name, meaning }: { name: string; meaning?: NameMeaning }) {
-  if (!meaning?.meaning && !meaning?.hebrew) return null
+  if (!meaning?.meaning && !meaning?.hebrew && !meaning?.arabic) return null
   return (
     <div className="mt-3 rounded-xl border border-line bg-surface px-4 py-3 text-sm flex flex-wrap items-baseline gap-x-4 gap-y-1">
       <span className="kicker">Name</span>
+      {meaning.arabic && (
+        <span className="flex items-baseline gap-2">
+          <span lang="ar" dir="rtl" className="text-xl leading-none">
+            {meaning.arabic}
+          </span>
+          {meaning.translit && <span className="text-ink-2 italic">{meaning.translit}</span>}
+        </span>
+      )}
       {meaning.hebrew && (
         <span className="flex items-baseline gap-2">
           <span lang="he" dir="rtl" className="text-lg leading-none">
             {meaning.hebrew}
           </span>
-          {meaning.translit && <span className="text-ink-2 italic">{meaning.translit}</span>}
+          {meaning.translit && !meaning.arabic && <span className="text-ink-2 italic">{meaning.translit}</span>}
         </span>
       )}
       {meaning.greek && meaning.greek !== meaning.hebrew && (

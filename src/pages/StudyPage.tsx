@@ -6,6 +6,7 @@ import StudyTimeline from '@/components/viz/StudyTimeline'
 import TriangleChart from '@/components/viz/TriangleChart'
 import RefOverview from '@/components/study/RefOverview'
 import FacetTally from '@/components/study/FacetTally'
+import BibleLinks from '@/components/study/BibleLinks'
 import CanonStrip from '@/components/viz/CanonStrip'
 import Sunburst, { groupColor, refFill } from '@/components/viz/Sunburst'
 import { ErrorBlock, Loading, PageHeader, RefLink, Section } from '@/components/common/ui'
@@ -15,6 +16,7 @@ import type { StudyGroup, StudyRef } from '@/data/types'
 import { truncate } from '@/lib/format'
 import { useSettings } from '@/store/settings'
 import { usePageTitle, useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 export default function StudyPage() {
   const { id = '' } = useParams()
@@ -155,7 +157,7 @@ export default function StudyPage() {
       ) : isConnections && chart === 'arcs' ? (
         <div>
           <ArcDiagram study={study} view={view} canon={canon} bible={bible} selectedGroup={selected} hiddenCategories={hiddenCats} selected={selectedPair} onSelect={setSelectedPair} />
-          <p className="text-xs text-muted mt-1">Each arc joins a passage to where Scripture takes it up, colored by kind. Hover to read, click to pin a pair. Pick a group below to focus on it: its arcs take the group's color and the rest fade.</p>
+          <p className="text-xs text-muted mt-1">Each arc joins a passage to where {EDITION.id === 'bible' ? 'Scripture' : EDITION.words.scripture} takes it up, colored by kind. Hover to read, click to pin a pair. Pick a group below to focus on it: its arcs take the group's color and the rest fade.</p>
           {selectedPair && (
             <div className="mt-3 grid gap-3 md:grid-cols-2">
               {[
@@ -192,7 +194,7 @@ export default function StudyPage() {
           <div className="grid gap-6 @3xl:grid-cols-[minmax(0,1fr)_300px] items-start">
             <div>
               <Sunburst study={study} view={view} bible={bible} selected={selected} onSelect={setSelected} onRef={openRef} />
-              <p className="text-xs text-muted text-center mt-1">Sectors are sized by weight: the words of Jesus count three times, and are drawn solid. Click a group to zoom, a reference for its overview.</p>
+              <p className="text-xs text-muted text-center mt-1">{EDITION.redLetter ? 'Sectors are sized by weight: the words of Jesus count three times, and are drawn solid.' : 'Every reference is a sector of its group.'} Click a group to zoom, a reference for its overview.</p>
             </div>
             <div>
               {focusRef && (
@@ -218,14 +220,16 @@ export default function StudyPage() {
                   </li>
                 ))}
               </ol>
-              <div className="mt-4 text-xs text-ink-2 space-y-1">
-                <div className="flex items-center gap-2">
-                  <span className="swatch" style={{ background: refFill(0, true) }} /> {isConnections ? 'Jesus speaks, or makes the connection (weight 3)' : 'words of Jesus (weight 3)'}
+              {EDITION.redLetter && (
+                <div className="mt-4 text-xs text-ink-2 space-y-1">
+                  <div className="flex items-center gap-2">
+                    <span className="swatch" style={{ background: refFill(0, true) }} /> {isConnections ? 'Jesus speaks, or makes the connection (weight 3)' : 'words of Jesus (weight 3)'}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="swatch" style={{ background: refFill(0, false) }} /> other references (weight 1)
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="swatch" style={{ background: refFill(0, false) }} /> other references (weight 1)
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
@@ -268,8 +272,9 @@ export default function StudyPage() {
                       {r.note && <span>{r.note} </span>}
                       {bible && <span className={`font-serif text-ink${r.note ? ' block mt-0.5' : ''}`}>{snippet(r.ranges[0][0], r.note ? 120 : 140)}</span>}
                       {r.facets && <span className="block text-xs text-muted mt-0.5">{facetLine(r)}</span>}
+                      <BibleLinks item={r} className="mt-0.5" />
                     </span>
-                    <span className="hidden @2xl:inline text-xs text-muted shrink-0 tabular-nums">×{r.weight}</span>
+                    {EDITION.redLetter && <span className="hidden @2xl:inline text-xs text-muted shrink-0 tabular-nums">×{r.weight}</span>}
                   </li>
                 ))}
               </ul>

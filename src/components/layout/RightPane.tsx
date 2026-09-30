@@ -5,6 +5,7 @@ import { IconArrowLeft, IconExpand, IconMap, IconShrink, IconX } from '@/compone
 import { useData } from '@/data/useData'
 import { loadCanon } from '@/data/loaders'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 /**
  * The right pane: the page (a study, a person, this chapter…) and, over it, the map of a verse
@@ -52,8 +53,8 @@ export default function RightPane({ children, mobile }: { children: ReactNode; m
           )}
           <div className="ml-auto flex items-center gap-0.5 shrink-0">
             {!mapOpen && pathname !== '/' && (
-              <Link to="/" className="btn btn-ghost hover:no-underline" title="The chapter you are reading, and where it connects" style={{ color: 'var(--ink)' }}>
-                <IconMap /> <span className="max-[1180px]:hidden">This chapter</span>
+              <Link to="/" className="btn btn-ghost hover:no-underline" title={`The ${EDITION.words.chapter} you are reading, and where it connects`} style={{ color: 'var(--ink)' }}>
+                <IconMap /> <span className="max-[1180px]:hidden">{EDITION.search.explore.chapter.title}</span>
               </Link>
             )}
             {mapOpen && (
@@ -62,7 +63,7 @@ export default function RightPane({ children, mobile }: { children: ReactNode; m
               </button>
             )}
             {!mobile && (
-              <button type="button" className="btn btn-ghost" aria-pressed={wide} onClick={() => setWide(!wide)} title={wide ? 'Bring the Bible back' : 'Widen this pane over the Bible'} aria-label={wide ? 'Bring the Bible back' : 'Widen this pane over the Bible'}>
+              <button type="button" className="btn btn-ghost" aria-pressed={wide} onClick={() => setWide(!wide)} title={wide ? `Bring ${EDITION.words.scripture} back` : `Widen this pane over ${EDITION.words.scripture}`} aria-label={wide ? `Bring ${EDITION.words.scripture} back` : `Widen this pane over ${EDITION.words.scripture}`}>
                 {wide ? <IconShrink /> : <IconExpand />}
               </button>
             )}

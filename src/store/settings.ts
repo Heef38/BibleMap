@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { EDITION } from '@edition/config'
 
 export type Theme = 'system' | 'light' | 'dark'
 export type FontSize = 'sm' | 'md' | 'lg' | 'xl'
@@ -30,10 +31,10 @@ export interface Settings {
 export const useSettings = create<Settings>()(
   persist(
     (set) => ({
-      translation: 'bsb',
+      translation: EDITION.translation,
       theme: 'system',
       fontSize: 'md',
-      redLetter: true,
+      redLetter: EDITION.redLetter,
       showHeadings: true,
       showNumbers: true,
       showLeft: true,
@@ -46,7 +47,7 @@ export const useSettings = create<Settings>()(
       set: (patch) => set(patch),
     }),
     {
-      name: 'biblemap.settings',
+      name: `${EDITION.storage}.settings`,
       // v1: the right pane stopped being the Bible, so a hidden reading pane no longer hides it.
       version: 1,
       migrate: (old, version) => {

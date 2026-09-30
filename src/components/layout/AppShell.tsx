@@ -10,9 +10,10 @@ import { IconBook, IconChevronLeft, IconChevronRight, IconMap, IconSearch } from
 import { useSettings } from '@/store/settings'
 import { useSession, type MobilePane } from '@/store/session'
 import { useData } from '@/data/useData'
-import { loadCanon } from '@/data/loaders'
+import { loadCanon, loadWritingsIndex } from '@/data/loaders'
 import { parseRefs } from '@/lib/refs'
 import { useMediaQuery } from '@/lib/hooks'
+import { EDITION } from '@edition/config'
 
 /**
  * Keep the reader's position in the URL (?p=John.3.16), and the verse whose map is open (?v=), so any
@@ -154,7 +155,7 @@ function SplitHandle({ box, split, onDrag, onCommit }: { box: RefObject<HTMLDivE
     <div
       role="separator"
       aria-orientation="horizontal"
-      aria-label="Resize the Bible"
+      aria-label={`Resize ${EDITION.words.scripture}`}
       aria-valuemin={20}
       aria-valuemax={80}
       aria-valuenow={Math.round(split * 100)}
@@ -184,16 +185,25 @@ function SplitHandle({ box, split, onDrag, onCommit }: { box: RefObject<HTMLDivE
   )
 }
 
+/** Whether there are writings to list: an edition without any shows no panel for them. */
+function useHasWritings() {
+  const { data: writings } = useData('writings-index', loadWritingsIndex)
+  return writings?.length !== 0
+}
+
 /** Search on top, and the writings at the foot (up to a little under half the height). */
 function LeftPane() {
+  const hasWritings = useHasWritings()
   return (
     <div className="h-full flex flex-col min-h-0">
       <div className="flex-1 min-h-0 overflow-y-auto">
         <SearchPane />
       </div>
-      <div className="border-t border-line shrink-0 max-h-[45%] min-h-0 flex flex-col">
-        <WritingsPanel />
-      </div>
+      {hasWritings && (
+        <div className="border-t border-line shrink-0 max-h-[45%] min-h-0 flex flex-col">
+          <WritingsPanel />
+        </div>
+      )}
     </div>
   )
 }
@@ -220,6 +230,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
   const [colDrag, setColDrag] = useState<number | null>(null)
   const splitBox = useRef<HTMLDivElement>(null)
   const colBox = useRef<HTMLDivElement>(null)
+  const hasWritings = useHasWritings()
   useReaderHistory()
   useShortcuts()
 
@@ -237,9 +248,11 @@ export default function AppShell({ children }: { children: ReactNode }) {
           <div className="relative min-h-0" style={{ flex: mobileBible ? `${1 - split} 1 0` : '1 1 0' }}>
             <aside className={`pane absolute inset-0 overflow-y-auto ${shown('explore') ? '' : 'hidden'}`}>
               <SearchPane />
-              <div className="border-t border-line flex flex-col mt-2">
-                <WritingsPanel />
-              </div>
+              {hasWritings && (
+                <div className="border-t border-line flex flex-col mt-2">
+                  <WritingsPanel />
+                </div>
+              )}
             </aside>
             <div className={`absolute inset-0 ${shown('map') ? '' : 'hidden'}`}>
               <RightPane mobile>{children}</RightPane>
@@ -253,7 +266,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
           {mobileBible && (
             <>
               <SplitHandle box={splitBox} split={split} onDrag={setDrag} onCommit={(v) => set({ mobileSplit: v })} />
-              <aside className="pane flex flex-col min-h-0" style={{ flex: `${split} 1 0` }} aria-label="Bible">
+              <aside className="pane flex flex-col min-h-0" style={{ flex: `${split} 1 0` }} aria-label={EDITION.words.name}>
                 <ReaderPane />
               </aside>
             </>
@@ -297,7 +310,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
         )}
         <div ref={colBox} className="flex-1 min-w-0 min-h-0 flex">
           {bibleShown && (
-            <section className="pane min-w-[280px] min-h-0 flex flex-col" style={{ flex: showRight ? `${share} 1 0` : '1 1 0' }} aria-label="Bible">
+            <section className="pane min-w-[280px] min-h-0 flex flex-col" style={{ flex: showRight ? `${share} 1 0` : '1 1 0' }} aria-label={EDITION.words.name}>
               <ReaderPane
                 inlineConnections={!showRight}
                 edge={
@@ -310,7 +323,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
             </section>
           )}
           {bibleShown && showRight && (
-            <Splitter box={colBox} dir="col" value={share} min={0.25} max={0.75} label="Resize the Bible and the map pane" onDrag={setColDrag} onCommit={(v) => set({ bibleSplit: v })} reset={0.46} />
+            <Splitter box={colBox} dir="col" value={share} min={0.25} max={0.75} label={`Resize ${EDITION.words.scripture} and the map pane`} onDrag={setColDrag} onCommit={(v) => set({ bibleSplit: v })} reset={0.46} />
           )}
           {showRight && (
             <section className="min-w-[300px] min-h-0" style={{ flex: bibleShown ? `${1 - share} 1 0` : '1 1 0' }} aria-label="Studies and maps">

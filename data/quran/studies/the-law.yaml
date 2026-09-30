@@ -1,0 +1,246 @@
+# The law of the Quran: the commandments, food and drink, killing and injury, theft, money,
+# orphans, wills, oaths, and justice between people. (Marriage, divorce and inheritance are in the
+# study of women and family; war in the study of fighting and peace; worship in its own study.)
+# Each passage is tagged, where the comparison is clear, on how it stands beside the Law of Moses.
+# Quotations follow Talal Itani's translation.
+id: the-law
+title: "The Law: Food, Crime, Money and Justice"
+subtitle: "The Quran's commandments beside the Law of Moses: what it forbids to eat and drink, retaliation and the cutting of hands, usury and fair measure, orphans, oaths and justice"
+chart: patterns
+added: "2026-09-30"
+summary: >-
+  Islamic law (the sharia) is built from the Quran, the Prophet's practice, and centuries of
+  scholars' reasoning. The Quran is its smallest part by volume: a few hundred verses give legal
+  rulings, most of them in the Medinan surahs. A reader who knows the Law of Moses will find the
+  same kind of law, and often the same law: no other god, honor your parents, do not kill, do not
+  commit adultery, give full measure; no pork, blood or carrion; a life for a life, “but whoever
+  forgoes it in charity, it will serve as atonement for him.” Some of it is lighter than Moses'
+  law: only four foods are forbidden, and a murderer's family may accept blood money. Some is
+  stricter: wine and gambling are forbidden to everyone, usury is forbidden with everyone, and
+  the thief's hand is cut off. The Quran says its law is meant to lighten burdens (“God does not
+  burden any soul beyond its capacity”), and it asks justice even toward enemies. The tags mark
+  how each ruling stands beside the Law of Moses, where the comparison is clear.
+tags: [law, sharia, food, halal, wine, retaliation, theft, usury, orphans, oaths, justice]
+facetUnit: rulings
+facets:
+  moses:
+    title: "Beside the Law of Moses"
+    note: "Only where the comparison is plain."
+    values:
+      same: { title: "The same as the Law of Moses", note: "The Torah commands the same, whatever the differences in detail." }
+      lighter: { title: "Lighter", note: "Fewer rules, or a way out the Torah does not give." }
+      stricter: { title: "Stricter", note: "Forbids more, or punishes more severely." }
+      own: { title: "The Quran's own", note: "No clear counterpart in the Law of Moses." }
+views:
+  - title: "The rulings"
+    groups:
+      - title: "Commandments"
+        note: "Two passages gather the Quran's moral law in one place, much as the Ten Commandments do."
+        refs:
+          - ref: "17:22-39"
+            label: "“That is some of the wisdom your Lord has revealed to you”"
+            note: "No other god; kindness to parents; give to relatives, the poor and the traveler, without waste; do not kill your children; do not come near adultery; do not kill “except in the course of justice”; do not touch the orphan's property; keep your pledge; give full measure; do not follow what you do not know; do not walk proudly."
+            bible: "Exod 20:1-17"
+            facets: { moses: same }
+          - ref: "6:151-153"
+            label: "“Come, let me tell you what your Lord has forbidden you”"
+            note: "Much the same list: “This is My path, straight, so follow it.”"
+            bible: "Deut 5:6-21"
+            facets: { moses: same }
+
+      - title: "Food and drink"
+        refs:
+          - ref: "6:145"
+            label: "“I find nothing forbidden … except carrion, or spilled blood, or the flesh of swine”"
+            note: "“… or a sinful offering dedicated to other than God.” Four things, and even these are allowed to one “compelled by necessity.” The Law of Moses forbids many more animals; the Quran says those laws were a penalty on the Jews (6:146). The apostles in Acts ask Gentile believers to abstain from much the same four things."
+            bible: "Lev 11:1-8; Acts 15:28-29"
+            facets: { moses: lighter }
+            links:
+              - { to: "2:173", topic: "The same four" }
+              - { to: "16:115", topic: "The same four" }
+          - ref: "5:3-5"
+            label: "Strangled, beaten, fallen, gored"
+            note: "Animals killed by these means, or sacrificed on pagan altars, are forbidden; what hunting dogs and falcons catch is allowed with God's name said over it; “the food of those given the Scripture is lawful for you.”"
+            bible: "Exod 22:31; Gen 9:4"
+            facets: { moses: same }
+          - ref: "6:118-121"
+            label: "“Do not eat from that over which the Name of God was not pronounced”"
+            facets: { moses: own }
+          - ref: "5:96"
+            label: "“Permitted for you is the catch of sea”"
+            note: "The verse makes no exception; the Law of Moses allows only sea creatures with fins and scales. Some Muslim schools later allowed only fish."
+            bible: "Lev 11:9-12"
+            facets: { moses: lighter }
+          - ref: "7:31-32"
+            label: "“Who forbade God's finery … and the delights of livelihood?”"
+            note: "“Eat and drink, but do not be excessive.” Also 16:116: do not call things lawful and unlawful on your own."
+            facets: { moses: lighter }
+          - ref: "2:219"
+            label: "Wine and gambling: “some benefits … but their sinfulness outweighs their benefit”"
+            note: "By tradition the first of three steps: then “do not approach the prayer while you are drunk” (4:43), then the ban."
+            facets: { moses: own }
+          - ref: "5:90-91"
+            label: "“Intoxicants, gambling, idolatry, and divination are abominations of Satan's doing”"
+            note: "The Law of Moses forbids wine only to priests on duty and to Nazirites; Proverbs and Paul warn against drunkenness. In the Quran's Garden there are rivers of wine (47:15)."
+            bible: "Lev 10:8-9; Num 6:1-4; Eph 5:18"
+            facets: { moses: stricter }
+
+      - title: "Killing and injury"
+        refs:
+          - ref: "2:178-179"
+            label: "“Retaliation for the murdered is ordained upon you”"
+            note: "“The free for the free, the slave for the slave, the female for the female. But if he is forgiven by his kin,” he pays compensation. “There is life for you in retaliation.” The Law of Moses allows no ransom for a murderer."
+            bible: "Num 35:30-34"
+            facets: { moses: lighter }
+          - ref: "5:45"
+            label: "“A life for a life, an eye for an eye,” written in the Torah"
+            note: "“But whoever forgoes it in charity, it will serve as atonement for him.” Jesus: “Do not resist an evil person.”"
+            bible: "Exod 21:23-25; Matt 5:38-39"
+            facets: { moses: same }
+          - ref: "17:33"
+            label: "“Do not kill the soul which God has made sacred”"
+            note: "The next of kin has authority, “but he should not be excessive in killing.”"
+            facets: { moses: same }
+          - ref: "4:29-30"
+            label: "“Do not kill yourselves”"
+            note: "Also read as “do not kill one another.” Suicide is forbidden in Islamic law on this and on the Prophet's sayings."
+            facets: { moses: own }
+
+      - title: "Theft and robbery"
+        note: "Two of the few fixed punishments the Quran sets (with lashes for adultery and for false accusation, in the study of women and family)."
+        refs:
+          - ref: "5:38-39"
+            label: "“As for the thief, whether male or female, cut their hands”"
+            note: "“But whoever repents after his crime, and reforms, God will accept his repentance.” Jurists set conditions (a minimum value, no need, no doubt) and cut the right hand at the wrist. The Law of Moses makes the thief repay two to five times over."
+            bible: "Exod 22:1-4"
+            facets: { moses: stricter }
+          - ref: "5:33-34"
+            label: "“Those who fight God and His Messenger, and strive to spread corruption on earth”"
+            note: "Death, crucifixion, cutting off hand and foot on opposite sides, or exile; lifted for those who repent before they are caught. Jurists applied it to armed robbery."
+            facets: { moses: own }
+
+      - title: "Money and trade"
+        refs:
+          - ref: "2:275-281"
+            label: "“God has permitted commerce, and has forbidden usury”"
+            note: "Those who keep taking it are warned of “a war by God and His Messenger”; a debtor in hardship is to be given time, and remitting the debt is better. The Law of Moses forbids interest on loans to a fellow Israelite; the Quran forbids it with anyone. Muslim scholars have long argued whether all bank interest is usury."
+            bible: "Deut 23:19-20; Lev 25:35-37"
+            facets: { moses: stricter }
+          - ref: "3:130"
+            label: "“Usury, compounded over and over”"
+            facets: { moses: stricter }
+          - ref: "30:39"
+            label: "“The usury you practice … will not multiply with God”"
+            note: "An early, Meccan word against it."
+            facets: { moses: stricter }
+          - ref: "2:282-283"
+            label: "“When you incur debt … write it down”"
+            note: "The longest verse in the Quran: a debt written by a scribe, witnessed by two men or a man and two women."
+            facets: { moses: own }
+          - ref: "83:1-6"
+            label: "“Woe to the defrauders”"
+            note: "Those who take full measure and give short. Also 17:35 and 55:7-9, and Shuayb's whole mission (11:84-85)."
+            bible: "Lev 19:35-36; Amos 8:4-6"
+            facets: { moses: same }
+          - ref: "4:29"
+            label: "“Trade by mutual consent”"
+            facets: { moses: own }
+          - ref: "17:26-29"
+            label: "“Do not keep your hand tied to your neck, nor spread it out fully”"
+            note: "Neither stingy nor wasteful: “the extravagant are brethren of the devils.” Also 25:67."
+            facets: { moses: own }
+
+      - title: "Orphans"
+        note: "Muhammad was an orphan, and the Quran returns to orphans more than to any other group in need."
+        refs:
+          - ref: "4:2"
+            label: "“Give orphans their properties”"
+            bible: "Exod 22:22-24"
+            facets: { moses: same }
+          - ref: "4:5-10"
+            label: "Guardianship until they come of age"
+            note: "“Those who consume the wealth of orphans illicitly consume only fire into their bellies.”"
+            facets: { moses: own }
+          - ref: "6:152"
+            label: "“Do not come near the property of the orphan”"
+            note: "“We do not burden any soul beyond its capacity.”"
+            facets: { moses: same }
+
+      - title: "Wills"
+        refs:
+          - ref: "2:180-182"
+            label: "“To make a testament in favor of the parents and the relatives”"
+            note: "Many jurists held that the fixed shares of 4:11-12 took the place of this for heirs; a will may leave up to a third to others, by the Prophet's ruling."
+            facets: { moses: own }
+
+      - title: "Oaths and promises"
+        refs:
+          - ref: "5:89"
+            label: "The atonement for a broken oath"
+            note: "Feed ten poor people, clothe them, or free a slave; if not, fast three days. “So keep your oaths.” Jesus: “Do not swear at all.”"
+            bible: "Num 30:2; Matt 5:33-37"
+            facets: { moses: lighter }
+          - ref: "2:224-225"
+            label: "“Do not allow your oaths in God's name to hinder you from virtue”"
+            facets: { moses: own }
+          - ref: "16:91-92"
+            label: "“Like her who unravels her yarn”"
+            note: "“Do not break your oaths after ratifying them.”"
+            facets: { moses: same }
+
+      - title: "Justice between people"
+        refs:
+          - ref: "4:135"
+            label: "“Stand firmly for justice … even if against yourselves”"
+            bible: "Lev 19:15"
+            facets: { moses: same }
+          - ref: "5:8"
+            label: "“Let not the hatred of a certain people prevent you from acting justly”"
+            facets: { moses: own }
+          - ref: "4:58"
+            label: "“Give back things entrusted to you … judge with justice”"
+            facets: { moses: same }
+          - ref: "49:6"
+            label: "“If a troublemaker brings you any news, investigate”"
+            facets: { moses: own }
+          - ref: "49:9-12"
+            label: "Reconcile brothers; no mocking, no suspicion, no spying, no backbiting"
+            note: "“Would any of you like to eat the flesh of his dead brother? You would detest it.”"
+            bible: "Lev 19:16-18; Jas 4:11"
+            facets: { moses: same }
+          - ref: "24:27-28"
+            label: "“Do not enter homes other than your own, until you have asked permission”"
+            facets: { moses: own }
+          - ref: "42:38"
+            label: "“They conduct their affairs by mutual consultation”"
+            note: "Surah 42 is named for it (ash-Shura, consultation)."
+            facets: { moses: own }
+
+      - title: "Ease, not hardship"
+        note: "The Quran presents its law as lighter than what came before."
+        refs:
+          - ref: "2:286"
+            label: "“God does not burden any soul beyond its capacity”"
+            note: "“Our Lord, do not burden us as You have burdened those before us.”"
+            bible: "Matt 11:28-30"
+            facets: { moses: lighter }
+          - ref: "4:26-28"
+            label: "“God intends to lighten your burden, for the human being was created weak”"
+            facets: { moses: lighter }
+          - ref: "7:157"
+            label: "He “unloads the burdens and the shackles that are upon them”"
+            note: "Said of the unlettered Prophet, to the People of the Book. Peter at Jerusalem calls the Law “a yoke that neither we nor our fathers have been able to bear.”"
+            bible: "Acts 15:10"
+            facets: { moses: lighter }
+          - ref: "5:101-102"
+            label: "“Do not ask about things that would trouble you if disclosed to you”"
+            facets: { moses: own }
+
+  - title: "Beside the Law of Moses"
+    auto: facet
+    facet: moses
+    note: "The rulings sorted by how they compare with the Torah."
+
+  - title: "Mecca and Medina"
+    auto: place
+    note: "The moral commandments come at Mecca (17, 6, 83); almost all the rulings with penalties come at Medina."

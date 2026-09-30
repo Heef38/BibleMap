@@ -33,7 +33,7 @@ export default function FacetTally({ study, canon, bible }: { study: Study; cano
   const facets = study.facets ?? []
   // What one tagged passage is called here: events, accounts, promises.
   const unit = study.facetUnit ?? 'events'
-  const one = unit.replace(/s$/, '')
+  const one = unit.replace(/ies$/, 'y').replace(/s$/, '')
   const count = (n: number) => `${n} ${n === 1 ? one : unit}`
   const events = useMemo(() => tagged(study), [study])
   // Narrow the counts to one group of the scope view (for miracles: healings, spirits, raisings, nature).

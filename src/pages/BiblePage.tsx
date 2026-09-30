@@ -36,7 +36,7 @@ interface TNode {
   children?: TNode[]
 }
 
-const fillFor = (t: 'OT' | 'NT', hovered: boolean) => (hovered ? `var(--series-${t === 'OT' ? 1 : 2})` : `color-mix(in oklab, var(--series-${t === 'OT' ? 1 : 2}) 68%, var(--surface))`)
+const fillFor = (t: string, hovered: boolean) => (hovered ? `var(--series-${t === 'OT' ? 1 : 2})` : `color-mix(in oklab, var(--series-${t === 'OT' ? 1 : 2}) 68%, var(--surface))`)
 
 export default function BiblePage() {
   usePageTitle('How the Bible is laid out', { description: 'The 66 books of the Bible by testament and kind of writing, drawn to the length of their text, with how the books cross-reference one another.' })
@@ -52,7 +52,7 @@ export default function BiblePage() {
   const root = useMemo(() => {
     if (!canon || width <= 0) return null
     const byTestament = (t: 'OT' | 'NT'): TNode => {
-      const books = canon.books.filter((b) => b.testament === t)
+      const books = canon.books.filter((b) => b.group === t)
       const divisions = [...new Set(books.map((b) => b.division))]
       return {
         name: t === 'OT' ? 'Old Testament' : 'New Testament',
@@ -72,8 +72,8 @@ export default function BiblePage() {
 
   if (!canon) return <div className="p-6"><Loading /></div>
   const total = canon.total
-  const ot = canon.books.filter((b) => b.testament === 'OT')
-  const nt = canon.books.filter((b) => b.testament === 'NT')
+  const ot = canon.books.filter((b) => b.group === 'OT')
+  const nt = canon.books.filter((b) => b.group === 'NT')
   const sum = (bs: CanonBook[], f: (b: CanonBook) => number) => bs.reduce((s, b) => s + f(b), 0)
   const showTip = (e: PointerEvent, content: TipState['content']) => setTip({ x: e.clientX, y: e.clientY, content })
 
@@ -151,7 +151,7 @@ export default function BiblePage() {
                       setTip(null)
                     }}
                   >
-                    <rect x={n.x0} y={n.y0} width={Math.max(0, w)} height={Math.max(0, h)} rx={3} fill={fillFor(b.testament, hovered)} stroke="var(--surface)" strokeWidth={1} />
+                    <rect x={n.x0} y={n.y0} width={Math.max(0, w)} height={Math.max(0, h)} rx={3} fill={fillFor(b.group, hovered)} stroke="var(--surface)" strokeWidth={1} />
                     {w >= 28 && h >= 14 && (
                       <text x={n.x0 + w / 2} y={n.y0 + h / 2 + 3.5} textAnchor="middle" fontSize={w >= 60 && h >= 24 ? 11 : 9.5} fill="var(--ink)" pointerEvents="none" style={{ paintOrder: 'stroke', stroke: 'var(--surface)', strokeWidth: 2.5, strokeLinejoin: 'round' }}>
                         {w >= b.name.length * 6.5 + 6 ? b.name : b.short}
@@ -184,7 +184,7 @@ export default function BiblePage() {
               <div key={d.id} className="grid gap-x-6 gap-y-1 md:grid-cols-[13rem_1fr]">
                 <div>
                   <div className="font-medium flex items-center gap-2">
-                    <span className="swatch" style={{ background: fillFor(books[0].testament, false) }} />
+                    <span className="swatch" style={{ background: fillFor(books[0].group, false) }} />
                     {d.id}
                   </div>
                   <div className="text-xs text-muted tabular-nums mt-0.5">

@@ -1,0 +1,91 @@
+import type { BookMeta } from '@/lib/canon'
+
+/**
+ * The Protestant canon: 66 books in traditional order, with every spelling the
+ * data sources and users are likely to throw at us. Chapter/verse counts are not
+ * hard-coded here; they come from the data build (books.json) so the app and the
+ * pipeline always agree on the 31,102-verse grid.
+ */
+export type Testament = 'OT' | 'NT'
+
+type Row = [string, string, string, string, Testament, string, string]
+
+const ROWS: Row[] = [
+  ['Gen', 'GEN', 'Genesis', 'Gen', 'OT', 'Law', 'ge gn'],
+  ['Exod', 'EXO', 'Exodus', 'Exod', 'OT', 'Law', 'ex exo'],
+  ['Lev', 'LEV', 'Leviticus', 'Lev', 'OT', 'Law', 'le lv'],
+  ['Num', 'NUM', 'Numbers', 'Num', 'OT', 'Law', 'nu nm nb'],
+  ['Deut', 'DEU', 'Deuteronomy', 'Deut', 'OT', 'Law', 'de dt'],
+  ['Josh', 'JOS', 'Joshua', 'Josh', 'OT', 'History', 'jsh'],
+  ['Judg', 'JDG', 'Judges', 'Judg', 'OT', 'History', 'jg jgs jdgs'],
+  ['Ruth', 'RUT', 'Ruth', 'Ruth', 'OT', 'History', 'ru rth'],
+  ['1Sam', '1SA', '1 Samuel', '1 Sam', 'OT', 'History', '1sm 1s 1samuel'],
+  ['2Sam', '2SA', '2 Samuel', '2 Sam', 'OT', 'History', '2sm 2s 2samuel'],
+  ['1Kgs', '1KI', '1 Kings', '1 Kgs', 'OT', 'History', '1kg 1kin 1kings'],
+  ['2Kgs', '2KI', '2 Kings', '2 Kgs', 'OT', 'History', '2kg 2kin 2kings'],
+  ['1Chr', '1CH', '1 Chronicles', '1 Chr', 'OT', 'History', '1chron 1chronicles'],
+  ['2Chr', '2CH', '2 Chronicles', '2 Chr', 'OT', 'History', '2chron 2chronicles'],
+  ['Ezra', 'EZR', 'Ezra', 'Ezra', 'OT', 'History', ''],
+  ['Neh', 'NEH', 'Nehemiah', 'Neh', 'OT', 'History', 'ne'],
+  ['Esth', 'EST', 'Esther', 'Esth', 'OT', 'History', 'es'],
+  ['Job', 'JOB', 'Job', 'Job', 'OT', 'Poetry & Wisdom', 'jb'],
+  ['Ps', 'PSA', 'Psalms', 'Ps', 'OT', 'Poetry & Wisdom', 'psa psm pss psalm pslm'],
+  ['Prov', 'PRO', 'Proverbs', 'Prov', 'OT', 'Poetry & Wisdom', 'pr prv'],
+  ['Eccl', 'ECC', 'Ecclesiastes', 'Eccl', 'OT', 'Poetry & Wisdom', 'ec eccles qoh qoheleth'],
+  ['Song', 'SNG', 'Song of Solomon', 'Song', 'OT', 'Poetry & Wisdom', 'so sos ss songofsongs cant canticles canticle'],
+  ['Isa', 'ISA', 'Isaiah', 'Isa', 'OT', 'Major Prophets', 'is'],
+  ['Jer', 'JER', 'Jeremiah', 'Jer', 'OT', 'Major Prophets', 'je jr'],
+  ['Lam', 'LAM', 'Lamentations', 'Lam', 'OT', 'Major Prophets', 'la'],
+  ['Ezek', 'EZK', 'Ezekiel', 'Ezek', 'OT', 'Major Prophets', 'eze'],
+  ['Dan', 'DAN', 'Daniel', 'Dan', 'OT', 'Major Prophets', 'da dn'],
+  ['Hos', 'HOS', 'Hosea', 'Hos', 'OT', 'Minor Prophets', 'ho'],
+  ['Joel', 'JOL', 'Joel', 'Joel', 'OT', 'Minor Prophets', 'joe jl'],
+  ['Amos', 'AMO', 'Amos', 'Amos', 'OT', 'Minor Prophets', 'am'],
+  ['Obad', 'OBA', 'Obadiah', 'Obad', 'OT', 'Minor Prophets', 'ob'],
+  ['Jonah', 'JON', 'Jonah', 'Jonah', 'OT', 'Minor Prophets', 'jnh'],
+  ['Mic', 'MIC', 'Micah', 'Mic', 'OT', 'Minor Prophets', 'mi'],
+  ['Nah', 'NAM', 'Nahum', 'Nah', 'OT', 'Minor Prophets', 'na'],
+  ['Hab', 'HAB', 'Habakkuk', 'Hab', 'OT', 'Minor Prophets', 'hb'],
+  ['Zeph', 'ZEP', 'Zephaniah', 'Zeph', 'OT', 'Minor Prophets', 'zp'],
+  ['Hag', 'HAG', 'Haggai', 'Hag', 'OT', 'Minor Prophets', 'hg'],
+  ['Zech', 'ZEC', 'Zechariah', 'Zech', 'OT', 'Minor Prophets', 'zc'],
+  ['Mal', 'MAL', 'Malachi', 'Mal', 'OT', 'Minor Prophets', 'ml'],
+  ['Matt', 'MAT', 'Matthew', 'Matt', 'NT', 'Gospels', 'mt'],
+  ['Mark', 'MRK', 'Mark', 'Mark', 'NT', 'Gospels', 'mk mr'],
+  ['Luke', 'LUK', 'Luke', 'Luke', 'NT', 'Gospels', 'lk lu'],
+  ['John', 'JHN', 'John', 'John', 'NT', 'Gospels', 'jn joh'],
+  ['Acts', 'ACT', 'Acts', 'Acts', 'NT', 'Acts', 'ac'],
+  ['Rom', 'ROM', 'Romans', 'Rom', 'NT', 'Pauline Epistles', 'ro rm'],
+  ['1Cor', '1CO', '1 Corinthians', '1 Cor', 'NT', 'Pauline Epistles', '1corinthians'],
+  ['2Cor', '2CO', '2 Corinthians', '2 Cor', 'NT', 'Pauline Epistles', '2corinthians'],
+  ['Gal', 'GAL', 'Galatians', 'Gal', 'NT', 'Pauline Epistles', 'ga'],
+  ['Eph', 'EPH', 'Ephesians', 'Eph', 'NT', 'Pauline Epistles', 'ep'],
+  ['Phil', 'PHP', 'Philippians', 'Phil', 'NT', 'Pauline Epistles', 'phi pp philip'],
+  ['Col', 'COL', 'Colossians', 'Col', 'NT', 'Pauline Epistles', 'co'],
+  ['1Thess', '1TH', '1 Thessalonians', '1 Thess', 'NT', 'Pauline Epistles', '1thes 1thessalonians'],
+  ['2Thess', '2TH', '2 Thessalonians', '2 Thess', 'NT', 'Pauline Epistles', '2thes 2thessalonians'],
+  ['1Tim', '1TI', '1 Timothy', '1 Tim', 'NT', 'Pauline Epistles', '1tm 1timothy'],
+  ['2Tim', '2TI', '2 Timothy', '2 Tim', 'NT', 'Pauline Epistles', '2tm 2timothy'],
+  ['Titus', 'TIT', 'Titus', 'Titus', 'NT', 'Pauline Epistles', 'ti'],
+  ['Phlm', 'PHM', 'Philemon', 'Phlm', 'NT', 'Pauline Epistles', 'philem pm'],
+  ['Heb', 'HEB', 'Hebrews', 'Heb', 'NT', 'General Epistles', ''],
+  ['Jas', 'JAS', 'James', 'Jas', 'NT', 'General Epistles', 'jm jam'],
+  ['1Pet', '1PE', '1 Peter', '1 Pet', 'NT', 'General Epistles', '1pt 1peter'],
+  ['2Pet', '2PE', '2 Peter', '2 Pet', 'NT', 'General Epistles', '2pt 2peter'],
+  ['1John', '1JN', '1 John', '1 John', 'NT', 'General Epistles', '1jo 1jhn'],
+  ['2John', '2JN', '2 John', '2 John', 'NT', 'General Epistles', '2jo 2jhn'],
+  ['3John', '3JN', '3 John', '3 John', 'NT', 'General Epistles', '3jo 3jhn'],
+  ['Jude', 'JUD', 'Jude', 'Jude', 'NT', 'General Epistles', 'jd'],
+  ['Rev', 'REV', 'Revelation', 'Rev', 'NT', 'Revelation', 're revelations apoc apocalypse revelationofjohn'],
+]
+
+export const BOOKS: readonly BookMeta[] = ROWS.map((r, i) => ({
+  n: i + 1,
+  osis: r[0],
+  usfm: r[1],
+  name: r[2],
+  short: r[3],
+  group: r[4],
+  division: r[5],
+  aliases: r[6].split(' ').filter(Boolean),
+}))

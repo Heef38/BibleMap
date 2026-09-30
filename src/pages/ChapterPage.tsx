@@ -10,7 +10,8 @@ import type { Canon } from '@/lib/canon'
 import { PARTS, partColor, partOf, studiesTouching, xrefsFrom, type Xref } from '@/lib/connections'
 import { truncate } from '@/lib/format'
 import { useSettings } from '@/store/settings'
-import { SITE } from '@/config/site'
+import { EDITION } from '@edition/config'
+import { SITE } from '@edition/site'
 import { usePageTitle, useSession } from '@/store/session'
 
 /** How many chapters one branch of the map draws. */
@@ -24,9 +25,11 @@ interface Target {
   links: Xref[]
 }
 
-/** The right pane's resting view: the chapter open in the reader, and how it connects to the rest of the Bible. */
+const { scripture, xrefs: XREFS, book: BOOK, books: BOOKS, chapter: CHAPTER, chapters: CHAPTERS } = EDITION.words
+
+/** The right pane's resting view: the chapter open in the reader, and how it connects to the rest of the scripture. */
 export default function ChapterPage() {
-  usePageTitle('This chapter', { docTitle: `${SITE.name}: ${SITE.tagline}` })
+  usePageTitle(EDITION.search.explore.chapter.title, { docTitle: `${SITE.name}: ${SITE.tagline}` })
   const { data: canon } = useData('canon', loadCanon)
   const translation = useSettings((s) => s.translation)
   const { data: bible } = useData(`bible:${translation}`, () => loadBible(translation))
@@ -49,7 +52,7 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
   const { data: studyIndex } = useData('studies-index', loadStudiesIndex)
   const goTo = useSession((s) => s.goTo)
   const selectVerse = useSession((s) => s.selectVerse)
-  // One part of the Bible spread out by book, or null for the whole map.
+  // One part of the scripture spread out by book, or null for the whole map.
   const [zoom, setZoom] = useState<number | null>(null)
   useEffect(() => setZoom(null), [start])
   const welcomed = useSettings((s) => s.welcomed)
@@ -57,7 +60,7 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
 
   const links = useMemo(() => (xrefs ? xrefsFrom(xrefs, start, end) : []), [xrefs, start, end])
 
-  // Links grouped by the chapter they land in, then by part of the Bible.
+  // Links grouped by the chapter they land in, then by part of the scripture.
   const { branches, targets } = useMemo(() => {
     const byChapter = new Map<number, Target>()
     for (const l of links) {
@@ -147,21 +150,21 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
     <div className="p-6 @container">
       {!welcomed && <Welcome onDone={() => set({ welcomed: true })} />}
       <PageHeader
-        kicker="This chapter"
+        kicker={EDITION.search.explore.chapter.title}
         title={title}
         subtitle={
           <>
             {end - start + 1} verses
-            {xrefs && <> · {links.length.toLocaleString()} cross references to {targets.size} other chapters</>}
+            {xrefs && <> · {links.length.toLocaleString()} {XREFS} {EDITION.id === 'bible' ? 'to' : 'in'} {targets.size} other {CHAPTERS}</>}
             {named.people.length > 0 && <> · {named.people.length} {named.people.length === 1 ? 'person' : 'people'}</>}
             {named.places.length > 0 && <> · {named.places.length} place{named.places.length === 1 ? '' : 's'}</>}
           </>
         }
       />
-      {welcomed && <p className="text-sm text-ink-2 max-w-prose -mt-2">This pane follows the Bible. Pick any verse there to map where it connects.</p>}
+      {welcomed && <p className="text-sm text-ink-2 max-w-prose -mt-2">{EDITION.text.chapterHint}</p>}
 
       {outline.length > 1 && (
-        <Section title="In this chapter">
+        <Section title={`In this ${CHAPTER}`}>
           <ol className="text-sm space-y-0.5">
             {outline.map((h) => (
               <li key={h.o}>
@@ -180,17 +183,17 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
       ) : branches.length > 0 ? (
         <Section title="Where it connects" count={targets.size}>
           <ConnectionMap
-            center={zoom === null ? { label: title, sub: `${targets.size} chapters linked` } : { label: PARTS[zoom].title, sub: `from ${title}` }}
+            center={zoom === null ? { label: title, sub: `${targets.size} ${CHAPTERS} linked` } : { label: PARTS[zoom].title, sub: `from ${title}` }}
             branches={branches}
             canBack={zoom !== null}
             height={520}
             hint={
               zoom === null
-                ? 'Each line is a part of the Bible, each dot a chapter this one links to; bigger dots have more links. Click a dot to go there; click a line to spread that part out by book.'
-                : `The chapters of ${PARTS[zoom].title} that ${title} links to, by book. Click a dot to go there; click the center to step back.`
+                ? `Each line is a part of ${scripture}, each dot a ${CHAPTER} this one links to; bigger dots have more links. Click a dot to go there; click a line to spread that part out by ${BOOK}.`
+                : `The ${CHAPTERS} of ${PARTS[zoom].title} that ${title} links to, by ${BOOK}. Click a dot to go there; click the center to step back.`
             }
-            dotHint="click to go there: the Bible opens at the strongest link, and this map follows"
-            branchHint="click to spread these out by book"
+            dotHint={`click to go there: ${scripture} opens at the strongest link, and this map follows`}
+            branchHint={`click to spread these out by ${BOOK}`}
             onDot={(d) => {
               const t = targets.get(Number(d.id))
               if (!t) return
@@ -202,7 +205,7 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
           />
         </Section>
       ) : (
-        <p className="mt-6 text-sm text-muted">No recorded cross references leave this chapter.</p>
+        <p className="mt-6 text-sm text-muted">No recorded {XREFS} leave this {CHAPTER}.</p>
       )}
 
       {busiest.length > 0 && (
@@ -269,8 +272,8 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
       )}
 
       {reach.length > 0 && (
-        <Section title="Its reach across the Bible">
-          <CanonStrip canon={canon} ranges={reach} caption={`Every verse ${title} links to, on the 66 books. Click a book to open it up.`} />
+        <Section title={`Its reach across ${scripture}`}>
+          <CanonStrip canon={canon} ranges={reach} caption={`Every verse ${title} links to, on the ${canon.books.length} ${BOOKS}. Click a ${BOOK} to open it up.`} />
         </Section>
       )}
     </div>
@@ -281,10 +284,8 @@ function ChapterBody({ canon, bible, b, c }: { canon: Canon; bible: Bible; b: nu
 function Welcome({ onDone }: { onDone: () => void }) {
   return (
     <div className="rounded-xl border border-line bg-surface p-4 mb-6 max-w-prose">
-      <div className="font-semibold text-base">See how the story connects.</div>
-      <p className="text-sm text-ink-2 mt-1 leading-relaxed">
-        This pane follows the Bible as you read. Pick any verse to see where it connects across the whole Bible. Search a person, a place or a theme, or open a study, and it opens here while you keep reading.
-      </p>
+      <div className="font-semibold text-base">{EDITION.text.welcomeTitle}</div>
+      <p className="text-sm text-ink-2 mt-1 leading-relaxed">{EDITION.text.welcome}</p>
       <div className="flex flex-wrap gap-2 mt-3">
         <Link to="/studies" className="btn btn-primary hover:no-underline">
           Browse the studies

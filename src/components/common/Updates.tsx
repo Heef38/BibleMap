@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
-import { UPCOMING, type Update } from '@/config/updates'
+import { UPCOMING } from '@edition/updates'
+import type { Update } from '@/editions/types'
 import { formatDay } from '@/store/updates'
 
 /** A list of updates; the ones in `fresh` get a New marker. */

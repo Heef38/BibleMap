@@ -1,0 +1,891 @@
+# The people, peoples and beings the Quran names. Each entry's verses are read off the Arabic:
+#
+#   names:   dictionary forms (lemmas) counted where the Quranic Arabic Corpus tags the word a name
+#   lemmas:  dictionary forms counted wherever they occur
+#   text:    a pattern looked for in Talal Itani's English, for a name of several words
+#   refs / except:  verses added or taken away by hand
+#
+# `about` says what the Quran itself tells of them, with references, and says so where something
+# comes from later tradition instead. `bible` is the id of the same person on Bible-Map.
+
+# ---- The prophets and messengers --------------------------------------------------------------
+
+- id: adam
+  name: Adam
+  arabic: آدَم
+  translit: Ādam
+  kind: The first man
+  gender: Male
+  names: [آدَم]
+  bible: adam_78
+  about: >
+    The first human being, made from clay. God teaches him the names of all things and tells the
+    angels to bow down to him; Iblis refuses (2:30-34). Adam and his wife eat from the forbidden
+    tree, are sent down from the Garden, and are forgiven when Adam "received words from his Lord"
+    (2:37). His wife is not named. The story is told seven times, most fully in 7:11-25 and
+    20:115-123.
+
+- id: idris
+  name: Idris
+  title: Idris (Enoch)
+  arabic: إِدْرِيس
+  translit: Idrīs
+  aka: [Enoch]
+  kind: Prophet
+  gender: Male
+  names: [إِدْرِيس]
+  bible: enoch_1192
+  about: >
+    Named twice: "a man of truth, a prophet", raised to a high position (19:56-57), and one of the
+    steadfast (21:85). He is commonly identified with the Bible's Enoch, and Talal Itani's
+    translation calls him Enoch; the Quran itself does not say who he was.
+
+- id: noah
+  name: Noah
+  title: Noah (Nuh)
+  arabic: نُوح
+  translit: Nūḥ
+  aka: [Nuh]
+  kind: Prophet
+  gender: Male
+  names: [نُوح]
+  bible: noah_2210
+  about: >
+    Sent to warn his people, who mock him as he builds the Ark; they are drowned and those with him
+    are saved. A son of his refuses to board and is lost (11:42-46), and his wife is held up as an
+    example of unbelief (66:10). He stayed among his people "a thousand years minus fifty" (29:14).
+    Surah 71 is his preaching and his prayer; the fullest account is 11:25-48.
+
+- id: hud
+  name: Hud
+  arabic: هُود
+  translit: Hūd
+  kind: Prophet
+  gender: Male
+  names: [هُود]
+  except: "2:111; 2:135; 2:140"
+  about: >
+    The messenger sent to the people of Aad, in the sand dunes of Arabia. They reject him and are
+    destroyed by a roaring wind (7:65-72, 11:50-60, 46:21-25). He has no counterpart in the Bible.
+
+- id: salih
+  name: Salih
+  arabic: صالِح
+  translit: Ṣāliḥ
+  kind: Prophet
+  gender: Male
+  names: [صالِح]
+  about: >
+    The messenger sent to Thamud, a people who carved their houses out of the mountains. He brings
+    them a she-camel as a sign and tells them to let her drink; they hamstring her and are
+    destroyed (7:73-79, 11:61-68, 26:141-158). He has no counterpart in the Bible.
+
+- id: abraham
+  name: Abraham
+  title: Abraham (Ibrahim)
+  arabic: إِبْراهِيم
+  translit: Ibrāhīm
+  aka: [Ibrahim]
+  kind: Prophet
+  gender: Male
+  names: [إِبْراهِيم]
+  bible: abraham_58
+  father: [azar]
+  children: [ishmael, isaac]
+  about: >
+    Called God's friend (4:125) and the model of pure faith in one God: "neither a Jew nor a
+    Christian" but one who submitted (3:67). He reasons from the star, the moon and the sun to
+    their Maker (6:74-79), breaks his people's idols and is saved from the fire (21:51-70), and
+    breaks with his father. Angels bring him news of a son. He settles some of his offspring by
+    the Sacred House and raises its foundations with Ishmael (2:125-129, 14:35-41). He sees in a
+    dream that he is sacrificing his son, who is ransomed (37:100-111).
+
+- id: lot
+  name: Lot
+  title: Lot (Lut)
+  arabic: لُوط
+  translit: Lūṭ
+  aka: [Lut]
+  kind: Prophet
+  gender: Male
+  names: [لُوط]
+  bible: lot_1830
+  about: >
+    He believed Abraham and left with him (29:26), and was sent to a people who "lust after men
+    rather than women" (7:81). Angels come to him as guests, his people rush at them, and the town
+    is overturned under a rain of stones; his wife stays behind and perishes (11:77-83,
+    15:57-77). The Quran counts him among the messengers, without the Bible's story of his
+    daughters.
+
+- id: ishmael
+  name: Ishmael
+  title: Ishmael (Ismail)
+  arabic: إِسْماعِيل
+  translit: Ismāʿīl
+  aka: [Ismail]
+  kind: Prophet
+  gender: Male
+  names: [إِسْماعِيل]
+  bible: ishmael_630
+  father: [abraham]
+  siblings: [isaac]
+  about: >
+    Son of Abraham, who raises the foundations of the House with him (2:125-127). "True to his
+    promise, a messenger, a prophet" who bade his people pray and give alms (19:54-55). Muslim
+    tradition mostly holds that he was the son Abraham was told to sacrifice; the Quran does not
+    name the son (37:100-107).
+
+- id: isaac
+  name: Isaac
+  title: Isaac (Ishaq)
+  arabic: إِسْحاق
+  translit: Isḥāq
+  aka: [Ishaq]
+  kind: Prophet
+  gender: Male
+  names: [إِسْحاق]
+  bible: isaac_616
+  father: [abraham]
+  siblings: [ishmael]
+  children: [jacob]
+  about: >
+    The son promised to Abraham and his wife in their old age, when the angels visit (11:71,
+    37:112); a prophet, and the father of Jacob.
+
+- id: jacob
+  name: Jacob
+  title: Jacob (Yaqub)
+  arabic: يَعْقُوب
+  translit: Yaʿqūb
+  aka: [Yaqub, Israel]
+  kind: Prophet
+  gender: Male
+  names: [يَعْقُوب]
+  refs: "3:93; 19:58"
+  bible: israel_682
+  father: [isaac]
+  children: [joseph]
+  about: >
+    Son of Isaac and father of Joseph and his brothers; twice called Israel (3:93, 19:58). In
+    surah 12 he grieves for Joseph until his eyes turn white, and his sight returns when Joseph's
+    shirt is laid on his face. On his deathbed he asks his sons what they will worship after him
+    (2:133).
+
+- id: joseph
+  name: Joseph
+  title: Joseph (Yusuf)
+  arabic: يُوسُف
+  translit: Yūsuf
+  aka: [Yusuf]
+  kind: Prophet
+  gender: Male
+  names: [يُوسُف]
+  bible: joseph_1710
+  father: [jacob]
+  about: >
+    His whole story is told in surah 12, the only surah given to a single story: the dream, the
+    well, the wife of the Egyptian who bought him, prison, the king's dream, the storehouses, and
+    his reunion with his brothers and his father. He is named only twice outside it (6:84, 40:34).
+
+- id: job
+  name: Job
+  title: Job (Ayyub)
+  arabic: أَيُّوب
+  translit: Ayyūb
+  aka: [Ayyub]
+  kind: Prophet
+  gender: Male
+  names: [أَيُّوب]
+  bible: job_1639
+  about: >
+    He cries to his Lord in his affliction and is healed; his family is given back to him, "and
+    their like with them" (21:83-84, 38:41-44). "We found him patient. What an excellent servant!"
+
+- id: shuayb
+  name: Shuayb
+  arabic: شُعَيْب
+  translit: Shuʿayb
+  aka: [Shuaib]
+  kind: Prophet
+  gender: Male
+  names: [شُعَيْب]
+  about: >
+    The messenger sent to Midian and to the people of the Woods. He tells them to give full
+    measure and weight and not to cheat; they threaten to drive him out and are destroyed
+    (7:85-93, 11:84-95, 26:176-189). Later tradition often identifies him with Jethro, the
+    father-in-law of Moses; the Quran does not.
+
+- id: moses
+  name: Moses
+  title: Moses (Musa)
+  arabic: مُوسَى
+  translit: Mūsā
+  aka: [Musa]
+  kind: Prophet
+  gender: Male
+  names: [مُوسَى]
+  bible: moses_2108
+  siblings: [aaron]
+  about: >
+    The person the Quran names most: 136 times, in 34 surahs. His story is told again and again,
+    in pieces: the infant set adrift and taken in by Pharaoh's household, the man he kills, his
+    years in Midian (28:3-28); the fire and the voice, "I am God" (20:9-48); the staff, the
+    magicians, the plagues and the sea (7:103-137, 26:10-68); the mountain, the tablets and the
+    calf (7:142-156, 20:83-98). God "spoke to Moses directly" (4:164), and the Book given to him is
+    called a guide and a light (5:44).
+
+- id: aaron
+  name: Aaron
+  title: Aaron (Harun)
+  arabic: هارُون
+  translit: Hārūn
+  aka: [Harun]
+  kind: Prophet
+  gender: Male
+  names: [هارُون]
+  bible: aaron_1
+  siblings: [moses]
+  about: >
+    Brother of Moses, given to him as a helper because he is the better speaker (20:29-36, 28:34).
+    In the Quran he does not make the calf: he warns the people against it, and the Samiri makes it
+    (20:85-97). Mary is addressed as "sister of Aaron" (19:28).
+
+- id: dhul-kifl
+  name: Dhul-Kifl
+  arabic: ذُو الْكِفْل
+  translit: Dhū l-Kifl
+  aka: [Ezekiel]
+  kind: Prophet
+  gender: Male
+  refs: "21:85; 38:48"
+  about: >
+    Named twice, in lists of the steadfast and the outstanding (21:85, 38:48), with nothing told of
+    him. Some identify him with Ezekiel, and Talal Itani's translation says Ezekiel; others with
+    other figures. The Quran does not say who he was.
+
+- id: david
+  name: David
+  title: David (Dawud)
+  arabic: داوُد
+  translit: Dāwūd
+  aka: [Dawud]
+  kind: Prophet
+  gender: Male
+  names: [داوُد]
+  bible: david_994
+  children: [solomon]
+  about: >
+    He kills Goliath and is given kingship and wisdom (2:251). God gives him the Psalms (4:163,
+    17:55); the mountains and the birds sing God's praise with him, and iron is made soft for him
+    to make coats of mail (21:79-80, 34:10-11). Two disputants test him with a case about one
+    ewe and ninety-nine, and he asks forgiveness (38:21-25); the Quran does not tell the story of
+    Bathsheba.
+
+- id: solomon
+  name: Solomon
+  title: Solomon (Sulayman)
+  arabic: سُلَيْمان
+  translit: Sulaymān
+  aka: [Sulayman]
+  kind: Prophet
+  gender: Male
+  names: [سُلَيْمان]
+  bible: solomon_2762
+  father: [david]
+  about: >
+    David's heir, taught the speech of birds, with the wind, the jinn and the birds at his command
+    (27:15-17, 34:12-13, 38:36-38). He overhears an ant, and brings the queen of Sheba to faith
+    (27:18-44). "It was not Solomon who disbelieved" (2:102): the Quran calls him a prophet and a
+    penitent servant, and does not say that he turned to other gods.
+
+- id: elijah
+  name: Elijah
+  title: Elijah (Ilyas)
+  arabic: إِلْياس
+  translit: Ilyās
+  aka: [Ilyas, Elias]
+  kind: Prophet
+  gender: Male
+  names: [إِلْياس]
+  bible: elijah_1131
+  about: >
+    One of the messengers: he asks his people, "Do you call on Baal, and forsake the Best of
+    creators?" (37:123-132). Also named among the upright (6:85).
+
+- id: elisha
+  name: Elisha
+  title: Elisha (al-Yasa)
+  arabic: الْيَسَع
+  translit: al-Yasaʿ
+  aka: [al-Yasa]
+  kind: Prophet
+  gender: Male
+  names: [الْيَسَع]
+  bible: elisha_1153
+  about: >
+    Named twice in lists of those God favored (6:86, 38:48), with nothing told of him. (At 6:86
+    Talal Itani's translation prints "Elijah"; the Arabic has al-Yasa, Elisha.)
+
+- id: jonah
+  name: Jonah
+  title: Jonah (Yunus)
+  arabic: يُونُس
+  translit: Yūnus
+  aka: [Yunus, Dhul-Nun]
+  kind: Prophet
+  gender: Male
+  names: [يُونُس]
+  refs: "21:87-88; 68:48-50"
+  bible: jonah_1689
+  about: >
+    He flees to a laden ship, is swallowed by the fish, and cries from the darkness, "There is no
+    god but You! Glory to You! I was one of the wrongdoers!" (21:87). Cast up sick on the shore, he
+    is sent to a hundred thousand or more, and they believe (37:139-148): the one town that
+    believed in time (10:98). He is also called the man of the fish (68:48).
+
+- id: zechariah
+  name: Zechariah
+  title: Zechariah (Zakariyya)
+  arabic: زَكَرِيّا
+  translit: Zakariyyā
+  aka: [Zakariyya]
+  kind: Prophet
+  gender: Male
+  names: [زَكَرِيّا]
+  bible: zacharias_2971
+  children: [john]
+  about: >
+    Guardian of the young Mary in the sanctuary (3:37). Old, with a barren wife, he prays for an
+    heir and is given John; his sign is that he cannot speak to people for three days (3:38-41,
+    19:2-11).
+
+- id: john
+  name: John
+  title: John (Yahya)
+  arabic: يَحْيَى
+  translit: Yaḥyā
+  aka: [Yahya, John the Baptist]
+  kind: Prophet
+  gender: Male
+  names: [يَحْيَى]
+  bible: john_1676
+  father: [zechariah]
+  about: >
+    Son of Zechariah, "confirming a Word from God", honorable, chaste, a prophet (3:39); given
+    wisdom as a child, devout and kind to his parents (19:12-15). The Quran does not mention his
+    baptizing or his death.
+
+- id: jesus
+  name: Jesus
+  title: Jesus (Isa)
+  arabic: عِيسَى
+  translit: ʿĪsā
+  aka: [Isa, the Messiah, son of Mary]
+  kind: Prophet
+  gender: Male
+  names: [عِيسَى, مَسِيح]
+  refs: "23:50; 43:57"
+  bible: jesus_905
+  mother: [mary]
+  about: >
+    "The Messiah, Jesus, the son of Mary, the Messenger of God, and His Word that He conveyed to
+    Mary, and a Spirit from Him" (4:171). Born of a virgin (3:45-47, 19:16-22), he speaks from the
+    cradle, heals the blind and the leper and raises the dead by God's leave (3:49, 5:110), and is
+    given the Gospel (5:46). The Quran denies that he is God or God's son (5:72-75, 19:35), and
+    says of his enemies, "they did not kill him, nor did they crucify him, but it appeared to them
+    as if they did"; God raised him to Himself (4:157-158).
+
+- id: muhammad
+  name: Muhammad
+  arabic: مُحَمَّد
+  translit: Muḥammad
+  aka: [Ahmad, the Prophet, the Messenger]
+  kind: Prophet
+  gender: Male
+  names: [مُحَمَّد, أَحْمَد]
+  text: "O Prophet|O prophet|O Messenger"
+  about: >
+    The one to whom the Quran is addressed throughout, mostly as "you", "the Messenger" or "the
+    Prophet". He is named only four times as Muhammad (3:144, 33:40, 47:2, 48:29) and once as
+    Ahmad, in the words of Jesus (61:6); the verses listed here are those, and the verses that
+    address him "O Prophet" or "O Messenger". He is "no more than a messenger" (3:144), "a human
+    being like you" (18:110), "the seal of the prophets" (33:40), and sent "as mercy to mankind"
+    (21:107). The events of his life are known from the early biographies, not from the Quran.
+
+# ---- Other men and women -----------------------------------------------------------------------
+
+- id: mary
+  name: Mary
+  title: Mary (Maryam)
+  arabic: مَرْيَم
+  translit: Maryam
+  aka: [Maryam]
+  kind: Mother of Jesus
+  gender: Female
+  names: [مَرْيَم]
+  bible: mary_1938
+  father: [imran]
+  children: [jesus]
+  about: >
+    The only woman the Quran names, and it names her more often than the New Testament does.
+    Dedicated to God before her birth and raised in the sanctuary under Zechariah's care
+    (3:35-37); chosen "over all the women of the world" (3:42). A spirit from God announces a son
+    to her, and she gives birth alone beneath a palm tree (19:16-26). Surah 19 bears her name.
+    Most of the verses listed here name her in the phrase "Jesus son of Mary".
+
+- id: imran
+  name: Imran
+  arabic: عِمْران
+  translit: ʿImrān
+  kind: Father of Mary
+  gender: Male
+  names: [عِمْران]
+  children: [mary]
+  about: >
+    "The family of Imran" is chosen along with Adam, Noah and the family of Abraham (3:33). The
+    wife of Imran is Mary's mother (3:35), and Mary is "the daughter of Imran" (66:12). In the
+    Bible, Amram is the father of Moses, Aaron and Miriam; Muslim commentators take the Imran of
+    these verses to be a later man of the same name.
+
+- id: azar
+  name: Azar
+  arabic: آزَر
+  translit: Āzar
+  kind: Father of Abraham
+  gender: Male
+  names: [آزَر]
+  bible: terah_2841
+  children: [abraham]
+  about: >
+    Abraham's father, named once (6:74), an idol-worshiper whom Abraham tries to turn and at last
+    disowns (19:41-48, 9:114). The Bible calls Abraham's father Terah.
+
+- id: luqman
+  name: Luqman
+  arabic: لُقْمان
+  translit: Luqmān
+  kind: Sage
+  gender: Male
+  names: [لُقْمان]
+  about: >
+    A man given wisdom, whose advice to his son is recorded in the surah named for him
+    (31:12-19). He is not called a prophet, and is not known from the Bible.
+
+- id: dhul-qarnayn
+  name: Dhul-Qarnayn
+  arabic: ذُو الْقَرْنَيْن
+  translit: Dhū l-Qarnayn
+  aka: [Zul-Qarnain, "the Two-Horned"]
+  kind: Ruler
+  gender: Male
+  text: "Zul-Qarnain"
+  about: >
+    "The one of the two horns": a ruler given power on the earth, who travels to the setting and
+    the rising of the sun and builds a barrier of iron against Gog and Magog (18:83-98). Who he was
+    is disputed; he has often been identified with Alexander the Great, and by some with Cyrus.
+
+- id: uzayr
+  name: Uzayr
+  title: Uzayr (Ezra)
+  arabic: عُزَيْر
+  translit: ʿUzayr
+  aka: [Ezra]
+  kind: Man
+  gender: Male
+  names: [عُزَيْر]
+  bible: ezra_1245
+  about: >
+    Named once: "The Jews said, Ezra is the son of God" (9:30). He is usually identified with the
+    Bible's Ezra. No such belief is known from Jewish sources, and commentators differ on which
+    Jews are meant.
+
+- id: pharaoh
+  name: Pharaoh
+  title: Pharaoh (Firawn)
+  arabic: فِرْعَوْن
+  translit: Firʿawn
+  aka: [Firawn]
+  kind: King of Egypt
+  gender: Male
+  names: [فِرْعَوْن]
+  bible: pharaoh_2331
+  about: >
+    The tyrant who enslaves the Children of Israel and kills their sons, and the Quran's chief
+    example of pride: "I am your Lord, the most high" (79:24). He rejects Moses' signs, pursues
+    Israel into the sea, and says as he drowns, "I believe"; too late, but his body is preserved
+    as a sign (10:90-92). His wife is an example of faith (66:11).
+
+- id: haman
+  name: Haman
+  arabic: هامان
+  translit: Hāmān
+  kind: Minister of Pharaoh
+  gender: Male
+  names: [هامان]
+  about: >
+    Pharaoh's chief man, told to bake bricks and build a tower so that Pharaoh may look for the
+    God of Moses (28:38, 40:36-37). In the Bible, Haman is the minister of a Persian king in the
+    book of Esther, centuries later.
+
+- id: qarun
+  name: Qarun
+  title: Qarun (Korah)
+  arabic: قارُون
+  translit: Qārūn
+  aka: [Korah]
+  kind: Man
+  gender: Male
+  names: [قارُون]
+  bible: korah_1795
+  about: >
+    One of Moses' people, so rich that the keys of his treasures weighed down a band of strong
+    men. He says, "I was given all this on account of knowledge I possess", and the earth swallows
+    him and his house (28:76-82). He is named with Pharaoh and Haman (29:39, 40:24).
+
+- id: saul
+  name: Saul
+  title: Saul (Talut)
+  arabic: طالُوت
+  translit: Ṭālūt
+  aka: [Talut]
+  kind: King
+  gender: Male
+  names: [طالُوت]
+  bible: saul_2478
+  about: >
+    The king appointed for the Children of Israel when they ask their prophet for one. He tests
+    his troops at a river, and only a few stay with him to face Goliath (2:246-249).
+
+- id: goliath
+  name: Goliath
+  title: Goliath (Jalut)
+  arabic: جالُوت
+  translit: Jālūt
+  aka: [Jalut]
+  kind: Man
+  gender: Male
+  names: [جالُوت]
+  bible: goliath_1327
+  about: >
+    The enemy whom Saul's small force faces; "David killed Goliath" (2:249-251).
+
+- id: samiri
+  name: The Samiri
+  arabic: السَّامِرِيّ
+  translit: as-Sāmirī
+  aka: [the Samarian]
+  kind: Man
+  gender: Male
+  names: [سامِرِيّ]
+  about: >
+    The man who leads the Children of Israel astray while Moses is on the mountain, and makes the
+    calf that lows (20:85-97). Moses condemns him to say "No contact" all his life. The Quran gives
+    him no other name.
+
+- id: queen-of-sheba
+  name: The queen of Sheba
+  kind: Queen
+  gender: Female
+  refs: "27:22-44"
+  about: >
+    A queen who rules Sheba and worships the sun. Solomon writes to her; she comes to him, mistakes
+    a floor of glass for water, and says, "I have submitted with Solomon, to God, Lord of the
+    Worlds" (27:22-44). The Quran does not name her; later tradition calls her Bilqis.
+
+- id: wife-of-pharaoh
+  name: The wife of Pharaoh
+  kind: Woman
+  gender: Female
+  refs: "28:9; 66:11"
+  about: >
+    She asks that the infant Moses be spared (28:9), and is an example of those who believe: "My
+    Lord, build for me, with you, a house in Paradise, and save me from Pharaoh and his works"
+    (66:11). The Quran does not name her; tradition calls her Asiya.
+
+- id: companions-of-the-cave
+  name: The Companions of the Cave
+  kind: People
+  refs: "18:9-26"
+  about: >
+    Young men who take refuge in a cave from a people who worship other gods, and are put to sleep
+    there "three hundred years, adding nine" (18:9-26). The Quran declines to say how many they
+    were. The story is known among Christians as the Seven Sleepers of Ephesus.
+
+- id: abu-lahab
+  name: Abu Lahab
+  arabic: أَبُو لَهَب
+  translit: Abū Lahab
+  kind: Opponent of the Prophet
+  gender: Male
+  refs: "111:1-5"
+  about: >
+    "Father of Flame": condemned, with his wife, in surah 111. By tradition he was an uncle of
+    Muhammad and one of his fiercest opponents at Mecca. He is the only one of the Prophet's
+    opponents the Quran names.
+
+- id: zayd
+  name: Zayd
+  arabic: زَيْد
+  translit: Zayd
+  kind: Companion of the Prophet
+  gender: Male
+  names: [زَيْد]
+  about: >
+    The only companion of Muhammad the Quran names (33:37): by tradition Zayd ibn Haritha, his
+    freed slave and adopted son. When Zayd divorced his wife, she was given in marriage to the
+    Prophet, "that there may be no restriction for believers regarding the wives of their adopted
+    sons".
+
+# ---- Angels, and Satan -------------------------------------------------------------------------
+
+- id: gabriel
+  name: Gabriel
+  title: Gabriel (Jibril)
+  arabic: جِبْرِيل
+  translit: Jibrīl
+  aka: [Jibril]
+  kind: Angel
+  names: [جِبْرِيل]
+  bible: gabriel_1261
+  about: >
+    The angel who brings the revelation down to the Prophet's heart (2:97). Named three times
+    (2:97-98, 66:4). Tradition identifies him with the "Holy Spirit" and the "Trustworthy Spirit"
+    that bring the Quran (16:102, 26:193) and with the spirit sent to Mary (19:17).
+
+- id: michael
+  name: Michael
+  title: Michael (Mikal)
+  arabic: مِيكال
+  translit: Mīkāl
+  aka: [Mikal]
+  kind: Angel
+  names: [مِيكال]
+  bible: michael_2068
+  about: >
+    Named once, beside Gabriel: God is an enemy to whoever is an enemy to His angels and
+    messengers, to Gabriel and Michael (2:98).
+
+- id: harut-and-marut
+  name: Harut and Marut
+  arabic: هارُوت وَمارُوت
+  translit: Hārūt wa-Mārūt
+  kind: Angels
+  names: [هارُوت, مارُوت]
+  about: >
+    Two angels at Babylon through whom people learned sorcery, though they warned each one first,
+    "We are a test, so do not lose faith" (2:102).
+
+- id: malik
+  name: Malik
+  arabic: مالِك
+  translit: Mālik
+  kind: Angel
+  names: [مالِك]
+  about: >
+    The keeper of Hell, to whom its people cry, "Let your Lord finish us off"; he answers, "You
+    are staying" (43:77).
+
+- id: angels
+  name: The angels
+  arabic: مَلائِكَة
+  translit: malāʾika
+  kind: Beings
+  lemmas: [مَلَك]
+  about: >
+    God's servants and messengers, with two, three and four wings (35:1), who do what they are
+    commanded (66:6). They bow to Adam, bring revelation, record each person's deeds (82:10-12),
+    take souls at death (32:11), bear the Throne (40:7, 69:17), and keep Hell (74:30-31). The
+    Meccans called them God's daughters; the Quran calls that a lie (43:19).
+
+- id: satan
+  name: Satan
+  title: Satan (Iblis)
+  arabic: إِبْلِيس
+  translit: Iblīs
+  aka: [Iblis, the devil, Shaytan]
+  kind: Jinn
+  names: [إِبْلِيس, شَيْطان]
+  bible: satan_2476
+  about: >
+    Iblis refuses to bow to Adam: "I am better than he; You created me from fire, and You created
+    him from mud" (7:12). He "was of the jinn" (18:50). Cast out, he is given respite until the
+    Day of Resurrection and vows to mislead Adam's children, but has no authority over God's
+    sincere servants (15:39-42). As Satan he whispers to Adam and his wife, and is "to man an open
+    enemy" (17:53).
+
+- id: jinn
+  name: The jinn
+  arabic: الْجِنّ
+  translit: al-jinn
+  kind: Beings
+  lemmas: [جِنّ, جانّ]
+  about: >
+    Unseen beings made from fire before mankind (15:27), who, like humans, were created only to
+    worship God (51:56) and will be judged. Some believe and some do not: a band of them hear the
+    Quran and believe (46:29-32, 72:1-15). They worked for Solomon (34:12-14). Talal Itani's
+    translation sometimes calls them sprites.
+
+# ---- Peoples -----------------------------------------------------------------------------------
+
+- id: children-of-israel
+  name: The Children of Israel
+  arabic: بَنُو إِسْرائِيل
+  translit: Banū Isrāʾīl
+  kind: People
+  names: [إِسْرائِيل]
+  about: >
+    The people of Moses, addressed directly again and again ("O Children of Israel!"): reminded
+    that God favored them over all peoples (2:47), delivered them from Pharaoh and gave them the
+    Book, and charged with breaking their covenant, worshiping the calf and killing prophets. The
+    Quran also says that among them is a community that guides by the truth (7:159).
+
+- id: jews
+  name: The Jews
+  arabic: الْيَهُود
+  translit: al-Yahūd
+  kind: People
+  names: [يَهُود]
+  text: "\\bJew|Judaism"
+  refs: "2:111; 2:135; 2:140"
+  about: >
+    The Jews of the Prophet's own time, as distinct from the Children of Israel of the stories. The
+    Quran promises reward to those of them who believe in God and the Last Day and do right (2:62,
+    5:69), says the Torah holds guidance and light (5:44), and also charges some of them with
+    altering words, breaking treaties and hostility to the believers (4:46, 5:82).
+
+- id: christians
+  name: The Christians
+  arabic: النَّصارَى
+  translit: an-Naṣārā
+  kind: People
+  names: [نَصْرانِيّ]
+  text: "Christian"
+  about: >
+    Called Nasara. They are "nearest in affection towards the believers", because among them are
+    priests and monks and they are not arrogant (5:82); compassion and mercy were put in the
+    hearts of those who followed Jesus (57:27). They are told not to say "Three" (4:171), and the
+    sayings that God is the Messiah, or the third of three, are called unbelief (5:72-73).
+
+- id: people-of-the-book
+  name: The People of the Book
+  arabic: أَهْل الْكِتاب
+  translit: Ahl al-Kitāb
+  aka: [People of the Scripture]
+  kind: People
+  text: "People of the (Book|Scripture)"
+  about: >
+    Those who were given a scripture before the Quran: Jews and Christians. They are called to "a
+    common word" (3:64); "they are not alike", and some of them are upright (3:113-115). Their food
+    is lawful to the believers, and so is marriage to their chaste women (5:5). They are to be
+    argued with only in the best manner (29:46); and those of them who do not follow the religion
+    of truth are to be fought until they pay the tax (9:29).
+
+- id: sabians
+  name: The Sabians
+  arabic: الصَّابِئُون
+  translit: aṣ-Ṣābiʾūn
+  kind: People
+  names: [صابِئ]
+  about: >
+    Named three times beside the Jews and the Christians (2:62, 5:69, 22:17). Who they were is
+    not certain; the name has been applied to several groups.
+
+- id: magians
+  name: The Magians
+  arabic: الْمَجُوس
+  translit: al-Majūs
+  aka: [Zoroastrians]
+  kind: People
+  names: [مَجُوس]
+  about: >
+    Named once, in a list of the faiths God will judge between (22:17): the Zoroastrians of
+    Persia.
+
+- id: aad
+  name: Aad
+  arabic: عاد
+  translit: ʿĀd
+  kind: People
+  names: [عاد]
+  about: >
+    An ancient Arabian people, tall and strong, builders of monuments, "Iram of the pillars"
+    (89:6-8). They reject their messenger Hud and are destroyed by a wind that rages seven nights
+    and eight days (69:6-7). Unknown to the Bible.
+
+- id: thamud
+  name: Thamud
+  arabic: ثَمُود
+  translit: Thamūd
+  kind: People
+  names: [ثَمُود]
+  about: >
+    An ancient Arabian people who carved houses in the rock. They reject their messenger Salih,
+    kill the she-camel sent as a sign, and are destroyed by a blast or an earthquake. Usually
+    named together with Aad. Unknown to the Bible.
+
+- id: quraysh
+  name: Quraysh
+  arabic: قُرَيْش
+  translit: Quraysh
+  kind: People
+  names: [قُرَيْش]
+  about: >
+    The tribe of Mecca, and of Muhammad. Named once, in the surah that bears their name: for the
+    safety of their caravans, "let them worship the Lord of this House" (106:1-4).
+
+- id: romans
+  name: The Romans
+  arabic: الرُّوم
+  translit: ar-Rūm
+  aka: [Byzantines]
+  kind: People
+  names: [رُوم]
+  about: >
+    The Byzantine Empire. "The Romans have been defeated in a nearby territory. But following
+    their defeat, they will be victorious in a few years" (30:2-4): the only event of the wider
+    world of its day that the Quran mentions.
+
+- id: gog-and-magog
+  name: Gog and Magog
+  arabic: يَأْجُوج وَمَأْجُوج
+  translit: Yaʾjūj wa-Maʾjūj
+  kind: People
+  names: [يَأْجُوج, مَأْجُوج]
+  about: >
+    A people spreading chaos in the land, shut behind Dhul-Qarnayn's barrier of iron (18:94-98)
+    until they are let loose before the end (21:96).
+
+- id: people-of-tubba
+  name: The people of Tubba
+  arabic: قَوْم تُبَّع
+  translit: qawm Tubbaʿ
+  kind: People
+  names: [تُبَّع]
+  about: >
+    Named twice among the peoples destroyed for their sins (44:37, 50:14). Tubba was a title of
+    the kings of Yemen.
+
+- id: hypocrites
+  name: The hypocrites
+  arabic: الْمُنافِقُون
+  translit: al-munāfiqūn
+  kind: People
+  lemmas: [مُنافِق, مُنافِقَة]
+  about: >
+    Those at Medina who said "We believe" and did not: they hang back from fighting, make excuses,
+    side with the enemy in secret, and mock the believers. The word belongs to the Medinan surahs
+    (it appears once in a surah counted as Meccan, at 29:11). They "will be in the lowest level of
+    the Fire" (4:145), except those who repent. Surah 63 is named for them, and much of surah 9 is
+    about them.
+
+- id: desert-arabs
+  name: The desert Arabs
+  arabic: الْأَعْراب
+  translit: al-Aʿrāb
+  aka: [Bedouin]
+  kind: People
+  text: "Desert-Arabs|Bedouin"
+  about: >
+    The nomads around Medina. Some make excuses to stay behind from the campaigns; they are "the
+    most steeped in disbelief and hypocrisy" (9:97), yet some of them believe (9:99). "Say, You
+    have not believed; but say, We have submitted" (49:14).

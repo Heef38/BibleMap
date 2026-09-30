@@ -354,6 +354,25 @@ svg [role="button"]:focus:not(:focus-visible) {
   max-width: 44rem;
   margin-inline: auto;
 }
+/* Arabic, set right to left in its own face, larger and looser so the vowel marks have room. */
+.scripture[dir="rtl"] {
+  font-family: "Amiri Quran", "Amiri", "Noto Naskh Arabic", "Traditional Arabic", serif;
+  font-size: calc(var(--reader-size, 17px) * 1.45);
+  line-height: 2.15;
+}
+.scripture[dir="rtl"] .kicker, .scripture[dir="rtl"] .heading {
+  direction: ltr;
+  line-height: 1.5;
+}
+.scripture[dir="rtl"] .heading {
+  font-size: calc(var(--reader-size, 17px) * 0.8);
+}
+/* The line said before a surah: "In the name of God, the Gracious, the Merciful." */
+.scripture .opening {
+  text-align: center;
+  color: var(--ink-2);
+  margin: 0.2em 0 0.9em;
+}
 .scripture .heading {
   font-family: var(--font-sans);
   font-weight: 600;
@@ -365,21 +384,25 @@ svg [role="button"]:focus:not(:focus-visible) {
   display: block;
   padding: 2px 8px 2px 10px;
   margin: 0 -10px;
-  border-left: 3px solid transparent;
+  border-inline-start: 3px solid transparent;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: background-color 120ms ease;
+}
+.scripture[dir="rtl"] .verse {
+  padding: 2px 10px 2px 8px;
+  border-radius: 4px 0 0 4px;
 }
 .scripture .verse:hover {
   background: var(--surface-2);
 }
 .scripture .verse.hl {
   background: var(--hl);
-  border-left-color: var(--hl-color, var(--accent));
+  border-inline-start-color: var(--hl-color, var(--accent));
 }
 .scripture .verse.focus {
   background: var(--hl-strong);
-  border-left-color: var(--accent);
+  border-inline-start-color: var(--accent);
 }
 .scripture .vnum {
   font-family: var(--font-sans);
@@ -387,7 +410,7 @@ svg [role="button"]:focus:not(:focus-visible) {
   font-weight: 600;
   color: var(--muted);
   vertical-align: 0.45em;
-  margin-right: 0.35em;
+  margin-inline-end: 0.35em;
   user-select: none;
 }
 .scripture .wj {

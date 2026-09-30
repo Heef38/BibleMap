@@ -1,6 +1,8 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { UPDATES, type Update } from '@/config/updates'
+import { EDITION } from '@edition/config'
+import { UPDATES } from '@edition/updates'
+import type { Update } from '@/editions/types'
 
 const DAY = 86_400_000
 /** On a first visit, only what shipped in the last two weeks counts as new. */
@@ -20,7 +22,7 @@ export const useUpdates = create<UpdatesState>()(
       seen: null,
       markSeen: () => set({ seen: UPDATES.map((u) => u.id) }),
     }),
-    { name: 'biblemap.updates', partialize: (s) => ({ seen: s.seen }) },
+    { name: `${EDITION.storage}.updates`, partialize: (s) => ({ seen: s.seen }) },
   ),
 )
 

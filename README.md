@@ -32,7 +32,7 @@ To moderate, open `/feedback?admin` on the live site and enter the `ADMIN_TOKEN`
 
 To use the real database while developing, run `vercel env pull .env.local` (Vercel CLI); `pnpm dev` picks it up. Without it, `pnpm dev` uses an in-memory store.
 
-The About page, the owner's name on replies, and the Donate button are set in `src/config/site.ts`. The Donate buttons appear once `donateUrl` is filled in.
+The About page, the owner's name on replies, and the Donate button are set in `src/editions/bible/site.ts`. The Donate buttons appear once `donateUrl` is filled in.
 
 Any other static host still serves everything except the feedback board: `public/_redirects` covers Netlify and Cloudflare Pages, the build writes a `404.html` for GitHub Pages, and `BASE_PATH=/repo-name/` builds for a sub-path.
 
@@ -44,14 +44,36 @@ Any other static host still serves everything except the feedback board: `public
 | `data/raw/` | Downloaded sources, not committed. |
 | `scripts/build-data.ts` | Compiles every source into `public/data/`. Deterministic. |
 | `scripts/lib/usfm.ts` | USFM parser (verse text, words of Jesus, headings). |
-| `src/lib/canon.ts` | The 66 books, every spelling of their names, and the 31,102-verse grid. |
+| `src/lib/canon.ts` | The verse grid of any scripture, every spelling of its book names, and the labels of references. |
+| `src/editions/<id>/` | What makes an edition itself (see Editions below): its books, site settings, shelves, updates, wording and own pages. |
+| `scripts/lib/studies.ts` | The study and writing compiler both data builds share. |
 | `src/lib/refs.ts` | Reference parser: `John 3:16`, `Matt 13:24-30, 36-43`, `Gen.1.1-Gen.2.3`. |
 | `src/components/viz/` | Visualizations: the canon strip, the theme-map sunburst, the zoomable timeline, and the arc diagram for connection studies. |
 | `src/pages/` | One page per kind of thing: person, place, topic, event, study, search. |
 | `public/data/` | Compiled data the app fetches. Committed so the site deploys without a data build. |
 | `api/`, `server/feedback.js` | The feedback board's Vercel Functions and the logic behind them (plain JavaScript with JSDoc types). |
-| `src/config/site.ts` | Owner name, About text, donation link. |
-| `src/config/studies.ts` | The shelves on the Studies page. A study not on a shelf lands under "More studies". |
+| `src/editions/bible/site.ts` | Owner name, About text, donation link. |
+| `src/editions/bible/shelves.ts` | The shelves on the Studies page. A study not on a shelf lands under "More studies". |
+| `src/editions/bible/books.ts` | The 66 books and their names. |
+
+## Editions: the Quran
+
+The same app builds a second, separate site: **Quran-Map**, a map of the Quran. It is unlisted: every page asks search engines not to index it, it has no sitemap, and it is shared only by its link.
+
+```bash
+pnpm data:fetch:quran   # downloads the Quran sources into data/raw/quran (one time)
+pnpm data:build:quran   # compiles data/quran/* and the sources into public-quran/data
+pnpm dev:quran          # http://localhost:5183
+pnpm build:quran        # the static Quran site in dist/
+```
+
+An edition is chosen at build time, by the Vite mode (`--mode quran`) or `EDITION=quran`. `@edition/...` imports resolve to `src/editions/<id>/`, and the public folder is `public/` for the Bible and `public-quran/` for the Quran. Each edition folder has the same modules (`books.ts`, `site.ts`, `shelves.ts`, `updates.ts`, `config.ts`, `pages.tsx`); `config.ts` exports the `EDITION` object (see `src/editions/types.ts`) that holds everything the shared code needs to know: the translations, the groups and parts of the books, the words for "book" and "chapter", the time axis, feature switches.
+
+The Quran is modelled as 114 books (surahs) of one chapter each, so verse 255 of surah 2 is `Q.2.255` in a URL and "2:255" on the page (`src/editions/quran/refs.ts`). Hand-written content lives in `data/quran/`: `surahs.yaml` (a summary and section headings for every surah), `people.yaml`, `places.yaml`, `events.yaml`, `words.yaml` (key Arabic words, by their dictionary forms in the Quranic Arabic Corpus) and `studies/*.yaml`. People, places and words are found by the Arabic, not the English. Related verses are computed from the Arabic words two verses share.
+
+Quran studies use the same YAML as the Bible's, with three more derived views (`auto: place` for Meccan and Medinan surahs, `auto: period` for Nöldeke's four periods, `auto: part` for the seven parts) and a `bible:` field on a reference ("Gen 22:1-19") that links to the same story on Bible-Map.
+
+To deploy it, make a second Vercel project from this repository with the build command `pnpm build:quran` (or the environment variable `EDITION=quran`). `vercel.json` asks search engines not to index any host but www.bible-map.com, so the Quran site's addresses are covered.
 
 ## Adding a writing
 
@@ -213,7 +235,7 @@ On a desktop: search and notes on the left, the Bible in the center, and the rig
 
 ## Search engines and link previews
 
-The site's name, address, tagline and description live in `src/config/site.ts`. From them:
+The site's name, address, tagline and description live in `src/editions/bible/site.ts`. From them:
 
 - `siteMeta()` in `vite.config.ts` writes the page head at build time: the title and description, Open Graph and Twitter cards with `public/brand/og-image.png`, and a schema.org `WebSite` with the site search, so Google can offer a search box for the site.
 - Every page calls `usePageTitle(title, { description })`, which sets the tab title, the description, and the canonical address (the path alone, so `?p=` and `?v=` never count as separate pages). Search results and the not-found page ask not to be indexed.
@@ -227,7 +249,7 @@ The site's name, address, tagline and description live in `src/config/site.ts`. 
 
 ## Announcing what's new
 
-When a study or feature ships, add an entry at the top of `src/config/updates.ts` (an id that never changes, the date, a title, a sentence, and an optional link). Readers see a dot on **What's new** in the header until they open it. A first-time visitor only gets the dot for entries from the last two weeks. For a new study, also add `added: "YYYY-MM-DD"` to its YAML: it is tagged **New** and listed first for 30 days.
+When a study or feature ships, add an entry at the top of `src/editions/bible/updates.ts` (an id that never changes, the date, a title, a sentence, and an optional link). Readers see a dot on **What's new** in the header until they open it. A first-time visitor only gets the dot for entries from the last two weeks. For a new study, also add `added: "YYYY-MM-DD"` to its YAML: it is tagged **New** and listed first for 30 days.
 
 ## Phones
 

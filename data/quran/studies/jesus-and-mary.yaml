@@ -1,0 +1,265 @@
+# Jesus and Mary in the Quran: every passage that tells of them, set beside the Bible. Each is
+# tagged on `compare`: what the Bible also says, what is told only in Christian writings outside the
+# Bible (the infancy gospels and others, which the notes name and date), what the Quran says against
+# the Bible, and what is its own. Quotations follow Talal Itani's translation.
+id: jesus-and-mary
+title: "Jesus and Mary in the Quran"
+subtitle: "The virgin birth, the miracles and the message of Jesus as the Quran tells them, and what it denies: that he is the Son of God, and that he was crucified"
+kind: connections
+chart: patterns
+added: "2026-09-30"
+summary: >-
+  Jesus is named in the Quran twenty-five times, and called the Messiah eleven times. Mary is the
+  only woman it names, and a surah bears her name. Much of what it says will sound familiar to a
+  reader of the Gospels: an angel announces his birth to a virgin; he is the Messiah, “a Word
+  from God” and “a Spirit from Him”; he heals the blind and the leper and raises the dead; he has
+  disciples; he is taken up to God. Some of it comes from stories that Christians told but did
+  not put in the Bible: Mary raised in the Temple, the infant who speaks from the cradle, the boy
+  who makes birds of clay. And some of it is said against the Christian faith, plainly and more
+  than once: Jesus is not God and not the Son of God, “the Messiah son of Mary was only a
+  messenger”; God is not “three”; and the Jews “did not kill him, nor did they crucify him, but
+  it appeared to them as if they did.” The Patterns chart counts the passages each way.
+tags: [jesus, mary, messiah, virgin birth, crucifixion, christians, trinity, son of god]
+categories:
+  retold:
+    title: "Told again"
+    note: "The same scene in another surah."
+facetUnit: passages
+facets:
+  compare:
+    title: "Beside the Bible"
+    note: "A passage can agree with the Bible in one part and differ in another."
+    values:
+      agrees: { title: "The Bible says the same", note: "The Gospels or the rest of the Bible tell the same thing, whatever the differences in detail." }
+      outside: { title: "Told in Christian writings outside the Bible", note: "The Protevangelium of James, the Infancy Gospel of Thomas, the Syriac and Arabic infancy gospels, and others. The notes name them." }
+      denies: { title: "Says the opposite of the Bible", note: "Where the Quran rejects what the New Testament says of Jesus." }
+      own: { title: "The Quran's own", note: "Neither in the Bible nor, as far as is known, in earlier Christian writings." }
+views:
+  - title: "His life and message"
+    note: "In the order of his life, from his mother's birth to his end on earth, then what the Quran says he was not, and what it says of his followers."
+    groups:
+      - title: "Mary"
+        note: "The only woman named in the Quran, chosen “over all the women of the world.” Her story begins before her birth."
+        refs:
+          - ref: "3:35-37"
+            label: "Her mother's vow, and her childhood in the sanctuary"
+            note: "The wife of Imran dedicates her unborn child to God and is given a girl, whom she names Mary. Zechariah cares for her in the sanctuary and finds her always supplied with food: “It is from God.” The Protevangelium of James (second century) tells the same: Anna's vow, Mary raised in the Temple and fed by an angel. The Bible says nothing of Mary's childhood."
+            facets: { compare: outside }
+          - ref: "3:42-44"
+            label: "“Chosen over all the women of the world”; the lots"
+            note: "The angels speak to her; then “they cast their lots as to which of them would take charge of Mary.” In the Protevangelium too her guardian is picked by a sign: a dove from Joseph's rod."
+            bible: "Luke 1:28; Luke 1:42"
+            facets: { compare: [agrees, outside] }
+          - ref: "66:12"
+            label: "“Mary, the daughter of Imran”"
+            note: "Held up with Pharaoh's wife as an example for all believers: “she believed in the truth of her Lord's Words and His Books.” In the Bible, Amram (Imran) is the father of Moses, Aaron and Miriam; Muslim commentators say Mary's father had the same name."
+            bible: "Num 26:59"
+            facets: { compare: own }
+          - ref: "19:27-28"
+            label: "“O sister of Aaron”"
+            note: "Her people, when she brings the baby home: “your father was not an evil man, and your mother was not a whore.” Mary's name in Arabic, Maryam, is Miriam's, and Miriam is the sister of Aaron. Muslim commentators read it as a descendant of Aaron, or a namesake."
+            bible: "Exod 15:20"
+            facets: { compare: own }
+          - ref: "4:156"
+            label: "“A monstrous slander” against Mary"
+            note: "One of the charges the Quran lays against the Jews. It does not say what the slander was; commentators take it to be the charge of unchastity."
+            facets: { compare: own }
+
+      - title: "The annunciation and the birth"
+        refs:
+          - ref: "19:16-21"
+            label: "The spirit appears to Mary as a man"
+            note: "“I am only the messenger of your Lord, to give you the gift of a pure son.” “How can I have a son, when no man has touched me?” Commentators identify the spirit as Gabriel, as in Luke."
+            bible: "Luke 1:26-38"
+            facets: { compare: agrees }
+          - ref: "3:45-47"
+            label: "“Good news of a Word from Him”"
+            note: "“His name is the Messiah, Jesus, son of Mary.” He will speak from the crib. “God creates whatever He wills … He only says to it, ‘Be,’ and it is.”"
+            bible: "Luke 1:30-35"
+            facets: { compare: agrees }
+          - ref: "19:22-26"
+            label: "Born under a palm tree"
+            note: "Alone in labor she wishes she had died; a voice from beneath her points to a stream, and the palm drops ripe dates. There is no Bethlehem, no manger, no Joseph and no shepherds. A palm that bows to feed Mary, and a spring at its roots, are in the Gospel of Pseudo-Matthew (Latin, perhaps seventh century), on the flight to Egypt."
+            bible: "Luke 2:1-20"
+            facets: { compare: outside }
+          - ref: "19:29-33"
+            label: "The baby speaks from the cradle"
+            note: "“I am the servant of God. He has given me the Scripture, and made me a prophet.” The Syriac and Arabic infancy gospels also have the newborn Jesus speak, but there he says he is the Son of God."
+            facets: { compare: outside }
+          - ref: "3:59"
+            label: "“The likeness of Jesus … is that of Adam”"
+            note: "Made without a father, as Adam was made without father or mother: “He created him from dust, then said to him, ‘Be,’ and he was.” Paul also sets Christ beside Adam, as “the last Adam,” “from heaven.”"
+            bible: "1 Cor 15:45-49"
+            facets: { compare: [own, denies] }
+          - ref: "21:91"
+            label: "“We breathed into her of Our spirit”"
+            note: "“… and made her and her son a sign to the world.”"
+            bible: "Matt 1:18-20"
+            facets: { compare: agrees }
+
+      - title: "What he is called"
+        note: "The Quran gives Jesus titles it gives no one else: the Messiah, a Word from God, a Spirit from Him. It does not explain them, and it does not give them the meaning Christians do."
+        refs:
+          - ref: "4:171"
+            label: "“The Messenger of God, and His Word … and a Spirit from Him”"
+            note: "The fullest statement, set in a warning against saying “Three.” In John's Gospel the Word “was God” and “became flesh”; here the Word is what God “conveyed to Mary.”"
+            bible: "John 1:1-14"
+            facets: { compare: [agrees, denies] }
+          - ref: "2:87"
+            label: "“We supported him with the Holy Spirit”"
+            note: "Said three times (also 2:253, 5:110). Commentators take the Holy Spirit to be Gabriel."
+            bible: "Luke 4:1; Luke 4:14-18"
+            facets: { compare: agrees }
+          - ref: "43:59"
+            label: "“Just a servant whom We blessed”"
+            note: "Acts too calls Jesus God's servant, and Matthew applies Isaiah's servant songs to him; Christians hold that he is also the Son."
+            bible: "Isa 42:1-4; Acts 3:13"
+            facets: { compare: agrees }
+          - ref: "4:172"
+            label: "“The Messiah does not disdain to be a servant of God”"
+            facets: { compare: own }
+
+      - title: "His miracles"
+        note: "Every miracle is done “by God's leave.” The Quran lists them but tells none as a scene, save the table."
+        refs:
+          - ref: "3:49"
+            label: "Birds of clay, the blind, the leper, the dead"
+            note: "“I make for you out of clay the figure of a bird; then I breathe into it, and it becomes a bird by God's leave. And I heal the blind and the leprous, and I revive the dead.” The healings are the Gospels'. The clay birds are in the Infancy Gospel of Thomas (second century), where the boy Jesus makes sparrows of clay on the Sabbath and they fly."
+            bible: "Luke 7:21-22"
+            facets: { compare: [agrees, outside] }
+            links:
+              - { to: "5:110", category: retold, topic: "The same miracles, recalled on the Last Day" }
+          - ref: "5:112-115"
+            label: "The table from heaven"
+            note: "The disciples ask for a table spread with food from heaven, as a sign; Jesus prays for it, and God sends it with a warning. Surah 5, “The Table,” is named for it. Commentators compare the feeding of the crowds and the Last Supper."
+            bible: "John 6:30-35; Luke 22:14-20"
+            facets: { compare: own }
+          - ref: "5:110"
+            label: "“This is nothing but obvious sorcery”"
+            note: "God recalls the miracles to Jesus on the Last Day, and how those who disbelieved answered them (also 61:6). In the Gospels his enemies say he drives out demons by Beelzebul."
+            bible: "Matt 12:22-24"
+            facets: { compare: agrees }
+
+      - title: "His message"
+        note: "In the Quran Jesus preaches what every prophet preached: worship God, my Lord and your Lord."
+        refs:
+          - ref: "3:50-51"
+            label: "“God is my Lord and your Lord, so worship Him”"
+            note: "He confirms the Torah and makes lawful “some of what was forbidden to you.” After the resurrection in John, Jesus says, “I am ascending to My Father and your Father, to My God and your God.”"
+            bible: "John 20:17; Matt 5:17-18"
+            facets: { compare: agrees }
+            links:
+              - { to: "19:36", category: retold, topic: "The same words" }
+              - { to: "43:63-64", category: retold, topic: "The same words" }
+          - ref: "5:46-47"
+            label: "“We gave him the Gospel”"
+            note: "One Gospel, given to Jesus as the Torah was given to Moses, “wherein is guidance and light.” The New Testament has four Gospels, written about Jesus by his followers."
+            facets: { compare: own }
+          - ref: "61:6"
+            label: "“A messenger who will come after me, whose name is Ahmad”"
+            note: "Ahmad means “most praised,” as Muhammad means “praised.” Muslim writers since the eighth century have linked this to Jesus' promise of the Paraclete in John; some read the Greek parakletos (helper) as periklytos (renowned). John says the Paraclete is the Holy Spirit."
+            bible: "John 14:16-17; John 14:26"
+            facets: { compare: own }
+
+      - title: "His disciples"
+        refs:
+          - ref: "3:52-53"
+            label: "“Who are my allies towards God?”"
+            note: "“The disciples said, ‘We are God's allies; we have believed in God, and bear witness that we submit.’” The word is the one that gives “Muslim.”"
+            bible: "Matt 16:15-16"
+            facets: { compare: [agrees, own] }
+          - ref: "5:111"
+            label: "“We have believed, so bear witness that We have submitted”"
+            facets: { compare: own }
+          - ref: "61:14"
+            label: "“Be supporters of God”"
+            note: "A group of the Children of Israel believed and another did not; God supported the believers “so they became dominant.”"
+            facets: { compare: own }
+
+      - title: "The end of his life on earth"
+        note: "The Quran's best-known departure from the Gospels. What happened instead it does not say, and Muslims have read it in more than one way."
+        refs:
+          - ref: "4:157-158"
+            label: "“They did not kill him, nor did they crucify him”"
+            note: "“… but it appeared to them as if they did … Rather, God raised him up to Himself.” The common Muslim reading is that someone else was made to look like Jesus and crucified in his place, and that Jesus was raised alive; the Quran does not say who. Some earlier teachers outside the church had said much the same: Basilides, as reported by Irenaeus (about 180), taught that Simon of Cyrene died in Jesus' place. The Gospels and Paul put the cross and the empty tomb at the center."
+            bible: "Mark 15:21-39; 1 Cor 15:3-4"
+            facets: { compare: [denies, outside] }
+          - ref: "3:55"
+            label: "“I am terminating your life, and raising you to Me”"
+            note: "The Arabic verb (mutawaffika) is the one used of taking souls at death; Itani translates “terminating your life,” Pickthall “gathering thee.” Readers who hold that Jesus did not die take it to mean “taking you up.”"
+            facets: { compare: own }
+          - ref: "5:116-117"
+            label: "“When You took me to Yourself”"
+            note: "Jesus on the Last Day, of the end of his time on earth. Same verb."
+            facets: { compare: own }
+          - ref: "19:33"
+            label: "“Peace is upon me the day I was born, and the day I die”"
+            note: "“… and the Day I get resurrected alive.” The same words are said of John the Baptist (19:15)."
+            facets: { compare: own }
+          - ref: "4:159"
+            label: "Every one of the People of the Book will believe in him “before his death”"
+            note: "Whose death is meant, Jesus' or each person's own, has been read both ways. With 43:61 (“a portent of the Hour”) it is the basis of the Muslim belief that Jesus will return before the end."
+            bible: "Acts 1:11"
+            facets: { compare: own }
+          - ref: "43:61"
+            label: "“He is a portent of the Hour”"
+            note: "Some readings of the Arabic give “knowledge of the Hour.”"
+            facets: { compare: own }
+
+      - title: "What the Quran says he is not"
+        note: "Said to the Christians directly, and on the Last Day by Jesus himself."
+        refs:
+          - ref: "19:34-35"
+            label: "“It is not for God to have a child”"
+            note: "“That is Jesus son of Mary—the Word of truth about which they doubt.”"
+            bible: "Matt 3:17; John 3:16"
+            facets: { compare: denies }
+          - ref: "9:30"
+            label: "“The Christians said, ‘The Messiah is the son of God’”"
+            note: "“These are their statements, out of their mouths … May God assail them!”"
+            bible: "Mark 14:61-62"
+            facets: { compare: denies }
+          - ref: "5:17"
+            label: "“God is the Christ, the son of Mary”"
+            note: "“Who can prevent God, if He willed, from annihilating the Christ son of Mary, and his mother, and everyone on earth?”"
+            bible: "John 20:28"
+            facets: { compare: denies }
+          - ref: "5:72-75"
+            label: "“Only a messenger … They both used to eat food”"
+            note: "“They disbelieve those who say, ‘God is the third of three.’” That he ate is given as proof that he was only a man; the Gospels have him eat after he rose, to show he was not a ghost."
+            bible: "Luke 24:36-43; Matt 28:19"
+            facets: { compare: denies }
+          - ref: "5:116-118"
+            label: "“Take me and my mother as gods rather than God?”"
+            note: "On the Last Day God asks Jesus, and he denies it: “I only told them what You commanded me.” The three here seem to be God, Jesus and Mary; the Christian Trinity is Father, Son and Holy Spirit, and no church teaches that Mary is God, though some honor her highly."
+            facets: { compare: denies }
+          - ref: "9:31"
+            label: "“They have taken … the Messiah son of Mary” as a lord"
+            note: "With their rabbis and priests. The New Testament's first confession is “Jesus is Lord.”"
+            bible: "Rom 10:9; Phil 2:9-11"
+            facets: { compare: denies }
+          - ref: "3:79-80"
+            label: "No prophet would say, “Be my worshipers rather than God's”"
+            bible: "Matt 28:16-17; John 20:28-29"
+            facets: { compare: denies }
+
+      - title: "His followers"
+        note: "The Christians are praised and blamed in the same surahs."
+        refs:
+          - ref: "5:82-83"
+            label: "“The nearest in affection towards the believers”"
+            note: "“… are those who say, ‘We are Christians.’ That is because among them are priests and monks, and they are not arrogant.” Some weep when they hear the Quran."
+            facets: { compare: own }
+          - ref: "57:27"
+            label: "Compassion and mercy, and a monasticism they invented"
+            note: "“We did not ordain it for them … But they did not observe it with its due observance.”"
+            facets: { compare: own }
+
+  - title: "Beside the Bible"
+    auto: facet
+    facet: compare
+    note: "The same passages sorted by how they stand beside the Bible."
+
+  - title: "Mecca and Medina"
+    auto: place
+    note: "The birth stories come in Meccan surahs (19, 21, 23, 43); the denials of the Trinity and the crucifixion in Medinan ones (3, 4, 5, 9), when the community lived among Jews and met Christians."

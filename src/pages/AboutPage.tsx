@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router'
 import { PageHeader, Section } from '@/components/common/ui'
 import { IconHeart } from '@/components/common/icons'
 import BrandLogo from '@/components/common/BrandLogo'
-import { SITE } from '@/config/site'
+import { SITE } from '@edition/site'
 import { usePageTitle } from '@/store/session'
 
 export default function AboutPage() {

@@ -7,8 +7,9 @@ import type { Bible } from '@/data/types'
 import type { Canon } from '@/lib/canon'
 import { truncate } from '@/lib/format'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
-/** A verse's cross references, strongest first, each with the start of its text. */
+/** A verse's cross references (or the verses related to it), strongest first, each with the start of its text. */
 export function XrefList({ refs, canon, bible, first = 8, onPick }: { refs: [number, number, number][]; canon: Canon; bible: Bible; first?: number; onPick: (start: number) => void }) {
   const [showAll, setShowAll] = useState(false)
   const shown = showAll ? refs.slice(0, 80) : refs.slice(0, first)
@@ -76,7 +77,7 @@ export default function VerseConnections({ ordinal, canon, bible, onClose, onMap
     <div className="border-t border-line bg-surface-2/60 shrink-0 max-h-[45%] overflow-y-auto">
       <div className="flex items-center gap-2 px-4 pt-2.5 pb-1 sticky top-0 bg-surface z-10">
         <div className="font-medium text-sm">{canon.label(ordinal)}</div>
-        <div className="text-xs text-muted">{refs.length ? `${refs.length} cross references` : ''}</div>
+        <div className="text-xs text-muted">{refs.length ? `${refs.length} ${EDITION.words.xrefs}` : ''}</div>
         <div className="ml-auto -mr-2 flex items-center">
           {onMap && (
             <button type="button" className="btn btn-ghost" onClick={onMap} title="See these connections as a map">

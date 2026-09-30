@@ -1,0 +1,317 @@
+# The years of revelation: the life of Muhammad as the early Muslim biographies tell it, with the
+# passages of the Quran that tradition ties to each event. The Quran itself names very few of
+# these events (Badr, Hunayn, the defeat of the Romans); the dates, and most of the links between
+# an event and a passage, come from the biographies and the commentaries, not from the text. Each
+# note says which is which.
+#
+#   year: the year CE      duration: "12Y", "3M"      partOf: the period the event falls in
+#   people / places: ids from people.yaml and places.yaml      refs: the passages
+
+- id: mecca-years
+  title: The years at Mecca
+  year: 610
+  duration: 12Y
+  people: [muhammad]
+  places: [mecca]
+  notes: >
+    From the first revelation to the move to Medina. Muhammad preaches in his own city to a small
+    following, against the opposition of its leaders. By the traditional count, 86 of the 114
+    surahs belong to these years: most of the short surahs, and the long retellings of the
+    earlier prophets.
+
+- id: medina-years
+  title: The years at Medina
+  year: 622
+  duration: 10Y
+  people: [muhammad]
+  places: [medina]
+  notes: >
+    From the move to Medina to Muhammad's death. He now leads a community, and the surahs of
+    these years (28 by the traditional count, and the longest) turn to law, to war and treaties
+    with Mecca, and to the Jews, the Christians and the "hypocrites" of Medina.
+
+- id: year-of-the-elephant
+  title: The year of the Elephant
+  year: 570
+  people: [muhammad]
+  places: [mecca]
+  refs: "105:1-5"
+  notes: >
+    The Quran says only that God dealt with "the People of the Elephant" by sending flocks of
+    birds that pelted them with stones. Tradition tells of an army led by Abraha, the Abyssinian
+    ruler of Yemen, which marched on Mecca with an elephant and was destroyed, and says Muhammad
+    was born in that year. The date of about 570 is traditional and uncertain.
+
+- id: first-revelation
+  title: The first revelation
+  year: 610
+  partOf: mecca-years
+  people: [muhammad, gabriel]
+  places: [mecca]
+  refs: "96:1-5; 97:1-5; 2:185"
+  notes: >
+    Tradition says that the first words came to Muhammad at the age of about forty, in a cave on
+    Mount Hira outside Mecca, brought by the angel Gabriel: "Read: In the Name of your Lord who
+    created" (96:1-5). The Quran says it was sent down on the Night of Decree (97:1), in the month
+    of Ramadan (2:185); it does not describe the occasion.
+
+- id: public-preaching
+  title: The call to warn openly
+  year: 613
+  partOf: mecca-years
+  people: [muhammad]
+  places: [mecca]
+  refs: "74:1-7; 26:214; 15:94"
+  notes: >
+    "Arise and warn" (74:2); "warn your close relatives" (26:214); "proclaim openly what you are
+    commanded" (15:94). Tradition says that after a first period of private preaching Muhammad was
+    told to preach in public, about three years after the first revelation.
+
+- id: romans-defeated
+  title: The Romans are defeated
+  year: 614
+  partOf: mecca-years
+  people: [romans]
+  refs: "30:2-4"
+  notes: >
+    "The Romans have been defeated in a nearby territory. But following their defeat, they will be
+    victorious in a few years." The Persians took Syria and Jerusalem from the Byzantines in 613 and
+    614; the emperor Heraclius defeated them in the 620s. This is the one event of the wider
+    world of its day that the Quran mentions.
+
+- id: emigration-to-abyssinia
+  title: Some believers take refuge in Abyssinia
+  year: 615
+  partOf: mecca-years
+  places: [mecca]
+  refs: "16:41-42"
+  notes: >
+    Tradition says that a group of Muhammad's followers, persecuted at Mecca, crossed the sea to
+    the Christian king of Abyssinia. The Quran does not mention it; some commentators connect it
+    with the promise to "those who emigrate for God's sake after being persecuted" (16:41).
+
+- id: night-journey
+  title: The night journey
+  year: 621
+  partOf: mecca-years
+  people: [muhammad]
+  places: [sacred-mosque, farthest-mosque]
+  refs: "17:1; 53:1-18"
+  notes: >
+    "Glory to Him who journeyed His servant by night, from the Sacred Mosque, to the Farthest
+    Mosque" (17:1). That verse is all the Quran says of the journey. Tradition tells of a journey
+    to Jerusalem in one night and an ascent from there through the heavens, and reads the vision
+    "at the Lotus Tree of the Extremity" (53:13-18) as part of it. The date is traditional.
+
+- id: hijra
+  title: The move to Medina (the Hijra)
+  year: 622
+  partOf: medina-years
+  people: [muhammad]
+  places: [mecca, medina]
+  refs: "9:40; 8:30"
+  notes: >
+    Muhammad and his followers leave Mecca for Yathrib, afterward called Medina: the event from
+    which the Muslim calendar is counted. The Quran recalls that the unbelievers plotted "to
+    imprison you, or kill you, or expel you" (8:30), and that he was "the second of two in the
+    cave", saying to his friend, "Do not worry, God is with us" (9:40). By tradition the friend was
+    Abu Bakr, and the cave was on Mount Thawr near Mecca.
+
+- id: change-of-qibla
+  title: The direction of prayer is changed
+  year: 624
+  partOf: medina-years
+  people: [muhammad]
+  places: [medina, sacred-mosque]
+  refs: "2:142-150"
+  notes: >
+    "Turn your face towards the Sacred Mosque" (2:144). The passage says that the earlier
+    direction was a test, and that "the ignorant among the people" will ask why it changed.
+    Tradition says the believers had prayed toward Jerusalem until then; the Quran does not name
+    the earlier direction.
+
+- id: badr
+  title: The battle of Badr
+  year: 624
+  partOf: medina-years
+  people: [muhammad]
+  places: [badr]
+  refs: "3:123-127; 8:5-19; 8:41-44"
+  notes: >
+    "God had given you victory at Badr, when you were weak" (3:123): the one battle with Mecca
+    that the Quran names. Surah 8 speaks of "the Day of Distinction, the day when the two armies
+    met" (8:41), of angels sent to help, and of the spoils. Tradition says some three hundred
+    Muslims defeated a Meccan force three times their number.
+
+- id: uhud
+  title: The battle of Uhud
+  year: 625
+  partOf: medina-years
+  people: [muhammad]
+  places: [medina]
+  refs: "3:121-122; 3:139-175"
+  notes: >
+    The Quran does not name the battle. It speaks of a morning when the Prophet set the believers
+    in their positions (3:121), of a victory that turned into a setback when some "disputed the
+    command" (3:152), of the believers fleeing while the Messenger called to them (3:153), and of
+    the rumor of his death: "Muhammad is no more than a messenger" (3:144). Tradition places this
+    at Mount Uhud, outside Medina.
+
+- id: banu-nadir
+  title: A tribe of the People of the Book is driven out
+  year: 625
+  partOf: medina-years
+  people: [muhammad, people-of-the-book]
+  places: [medina]
+  refs: "59:2-6; 59:11-15"
+  notes: >
+    "It is He who evicted those who disbelieved among the People of the Book from their homes at
+    the first mobilization" (59:2); they thought their fortresses would protect them. Tradition
+    identifies them as the Banu Nadir, a Jewish tribe of Medina, exiled after being accused of
+    plotting against Muhammad. The Quran does not name the tribe.
+
+- id: the-trench
+  title: The siege of Medina (the Trench)
+  year: 627
+  partOf: medina-years
+  people: [muhammad, hypocrites]
+  places: [medina]
+  refs: "33:9-25"
+  notes: >
+    "Forces came against you", from above and below; the hypocrites said "O people of Yathrib, you
+    cannot make a stand"; and God sent against the confederates "a wind, and forces you did not
+    see" (33:9-13). The Quran does not mention a trench. Tradition tells of an alliance of Mecca
+    and other tribes besieging Medina, held off by a ditch dug around the town.
+
+- id: banu-qurayza
+  title: Those who backed the confederates are brought down
+  year: 627
+  partOf: medina-years
+  people: [muhammad, people-of-the-book]
+  places: [medina]
+  refs: "33:26-27"
+  notes: >
+    "He brought down from their strongholds those of the People of the Book who backed them, and
+    He threw terror into their hearts. Some of them you killed, and others you took captive"
+    (33:26). Tradition identifies them as the Banu Qurayza, a Jewish tribe of Medina, and says
+    that their men were put to death and their women and children enslaved. The Quran gives no
+    name and no number.
+
+- id: the-slander
+  title: The slander
+  year: 627
+  partOf: medina-years
+  places: [medina]
+  refs: "24:11-20"
+  notes: >
+    "Those who perpetrated the slander are a band of you" (24:11); the believers are rebuked for
+    repeating it without four witnesses. Tradition says the accusation was made against Aisha,
+    the Prophet's wife, after she was left behind by a caravan. The Quran does not name her.
+
+- id: zayd-and-zaynab
+  title: The Prophet marries the former wife of Zayd
+  year: 627
+  partOf: medina-years
+  people: [muhammad, zayd]
+  places: [medina]
+  refs: "33:36-40"
+  notes: >
+    "When Zaid ended his relationship with her, We gave her to you in marriage, that there may be
+    no restriction for believers regarding the wives of their adopted sons" (33:37). Tradition
+    names her as Zaynab bint Jahsh, a cousin of Muhammad, who had been married to his adopted son
+    Zayd. The same passage declares that Muhammad "is not the father of any of your men" (33:40).
+
+- id: hudaybiyya
+  title: The pledge under the tree, and the truce
+  year: 628
+  partOf: medina-years
+  people: [muhammad]
+  places: [mecca, sacred-mosque]
+  refs: "48:1-3; 48:10; 48:18-27"
+  notes: >
+    "God was pleased with the believers, when they pledged allegiance to you under the tree"
+    (48:18); He "withheld their hands from you, and your hands from them, in the valley of Mecca"
+    (48:24), after the unbelievers "barred you from the Sacred Mosque" (48:25). Tradition tells of
+    a journey to make the pilgrimage that was stopped at Hudaybiyya, outside Mecca, and ended in
+    a ten-year truce; the surah calls it "a conspicuous victory". The Quran does not name the
+    place.
+
+- id: conquest-of-mecca
+  title: Mecca is taken
+  year: 630
+  partOf: medina-years
+  people: [muhammad]
+  places: [mecca, kaaba]
+  refs: "110:1-3; 57:10"
+  notes: >
+    "When there comes God's victory, and conquest, and you see the people entering God's religion
+    in multitudes" (110:1-2). The Quran speaks of "the conquest" as a dividing line between
+    earlier and later believers (57:10) but does not describe it. Tradition says that Muhammad
+    entered Mecca with little fighting after the truce was broken, and cleared the Kaaba of its
+    idols.
+
+- id: hunayn
+  title: The battle of Hunayn
+  year: 630
+  partOf: medina-years
+  people: [muhammad]
+  places: [hunayn]
+  refs: "9:25-27"
+  notes: >
+    "On the day of Hunayn, your great number impressed you, but it availed you nothing; and the
+    land, as spacious as it was, narrowed for you; and you turned your backs in retreat. Then God
+    sent down His serenity" (9:25-26). Tradition places the battle shortly after the taking of
+    Mecca, against tribes to its east.
+
+- id: tabuk
+  title: The expedition many would not join
+  year: 630
+  partOf: medina-years
+  people: [muhammad, hypocrites, desert-arabs]
+  places: [medina]
+  refs: "9:38-59; 9:81-99; 9:117-118"
+  notes: >
+    "What is the matter with you, when it is said to you, Mobilize in the cause of God, you cling
+    heavily to the earth?" (9:38). Much of surah 9 concerns a distant march in the heat, those who
+    asked to be excused, and "the three who were left behind" and were forgiven (9:118). Tradition
+    identifies it as the expedition to Tabuk, toward the Byzantine frontier. The Quran does not
+    name the place.
+
+- id: declaration-of-immunity
+  title: The treaties with the idolaters are ended
+  year: 631
+  partOf: medina-years
+  people: [muhammad]
+  places: [mecca, sacred-mosque]
+  refs: "9:1-6; 9:28"
+  notes: >
+    "A proclamation from God and His Messenger to the people on the day of the Greater
+    Pilgrimage, that God has disowned the polytheists" (9:3): four months' notice, after which
+    those who had broken their treaties were to be fought unless they repented; and "let them not
+    approach the Sacred Mosque after this year of theirs" (9:28). Tradition says the proclamation
+    was read out at the pilgrimage of 631.
+
+- id: farewell-pilgrimage
+  title: The farewell pilgrimage
+  year: 632
+  partOf: medina-years
+  people: [muhammad]
+  places: [mecca, arafat]
+  refs: "5:3"
+  notes: >
+    "Today I have perfected your religion for you, and have completed My favor upon you, and have
+    approved Islam as a religion for you" (5:3). Tradition says these words were revealed at
+    Arafat during Muhammad's last pilgrimage, a few months before his death.
+
+- id: death-of-muhammad
+  title: The death of Muhammad
+  year: 632
+  partOf: medina-years
+  people: [muhammad]
+  places: [medina]
+  refs: "3:144; 39:30"
+  notes: >
+    The Quran does not record it. It had said, "Muhammad is no more than a messenger. Messengers
+    have passed on before him. If he dies or gets killed, will you turn on your heels?" (3:144),
+    and "You will die, and they will die" (39:30). Tradition says he died at Medina in June 632,
+    and that the first of these verses was recited to the people that day.

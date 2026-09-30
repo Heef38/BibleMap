@@ -8,6 +8,9 @@ import { loadCanon, loadEvents, loadPeopleIndex, loadPlace } from '@/data/loader
 import { formatYear } from '@/lib/format'
 import { ordinalsToRanges } from '@/lib/refs'
 import { usePageTitle, useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
+
+const { scripture, book: BOOK, books: BOOKS } = EDITION.words
 
 const COLOR = 'var(--series-3)'
 
@@ -31,7 +34,7 @@ export default function PlacePage() {
   usePageTitle(
     place?.name,
     place
-      ? { description: `${place.name} in the Bible${place.name_meaning?.meaning ? ` (the name means “${place.name_meaning.meaning}”)` : ''}: all ${place.verseCount.toLocaleString()} verse${place.verseCount === 1 ? '' : 's'} that mention it, the events that happened there, and the people born or buried there.` }
+      ? { description: `${place.name} in ${scripture}${place.name_meaning?.meaning ? ` (the name means “${place.name_meaning.meaning}”)` : ''}: all ${place.verseCount.toLocaleString()} verse${place.verseCount === 1 ? '' : 's'} that mention it, the events that happened there, and the people born or buried there.` }
       : undefined,
   )
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
@@ -45,7 +48,7 @@ export default function PlacePage() {
         title={place.name}
         subtitle={
           <>
-            {place.verseCount.toLocaleString()} verse{place.verseCount === 1 ? '' : 's'} in {books} book{books === 1 ? '' : 's'}
+            {place.verseCount.toLocaleString()} verse{place.verseCount === 1 ? '' : 's'} in {books} {books === 1 ? BOOK : BOOKS}
             {place.aliases.length > 0 && <span> · also called {place.aliases.join(', ')}</span>}
             {place.lat !== undefined && place.lon !== undefined && (
               <span>
@@ -64,9 +67,17 @@ export default function PlacePage() {
       <div className="mt-4" />
       <CanonStrip canon={canon} ranges={ranges} color={COLOR} caption={`Where ${place.name} appears`} />
       {place.dict && (
-        <Section title="Easton's Bible Dictionary">
+        <Section title={EDITION.dictTitle}>
           <DictText text={place.dict} canon={canon} />
         </Section>
+      )}
+      {place.bible && EDITION.bibleSite && (
+        <p className="mt-3 text-sm">
+          <a href={`${EDITION.bibleSite}/place/${place.bible}`} target="_blank" rel="noopener noreferrer">
+            {place.name} in the Bible →
+          </a>{' '}
+          <span className="text-muted">opens Bible-Map</span>
+        </p>
       )}
       {(place.peopleBorn.length > 0 || place.peopleDied.length > 0) && (
         <Section title="People">

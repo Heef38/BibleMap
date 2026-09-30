@@ -1,10 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { BOOKS, Canon } from './canon'
+import { BOOKS } from '../editions/bible/books'
+import { Canon } from './canon'
 import { mergeRanges, parseRefs } from './refs'
 
 // A synthetic grid: every book has 3 chapters of 10 verses, single-chapter books have 25.
 const SINGLE = new Set(['Obad', 'Phlm', '2John', '3John', 'Jude'])
-const canon = new Canon(BOOKS.map((b) => (SINGLE.has(b.osis) ? [25] : [10, 10, 10])))
+const canon = new Canon(
+  BOOKS,
+  BOOKS.map((b) => (SINGLE.has(b.osis) ? [25] : [10, 10, 10])),
+)
 const gen = canon.book(1)
 const john = canon.find('John')!
 

@@ -1,0 +1,203 @@
+# The unseen beings of the Quran: angels, jinn and Satan. What they are made of, what they do,
+# how Satan works on people, and the refuge God gives against him. Quotations follow Talal Itani,
+# who translates jinn as "sprites".
+id: angels-jinn-and-satan
+title: "Angels, Jinn and Satan"
+subtitle: "The winged messengers who record, guard and take souls; the jinn, made of fire, who can believe or disbelieve; and Satan, the jinn who would not bow"
+kind: connections
+chart: patterns
+added: "2026-09-30"
+summary: >-
+  “Those who believe in the unseen” is the Quran's first description of the righteous, and the
+  unseen is full. Angels carry the Throne, bring down revelation, record every word a person says,
+  take souls at death, guard Hell, and fought at Badr; they never disobey, and they are not God's
+  daughters, as the Meccans said. Gabriel and Michael are named. The jinn, a word Itani translates
+  “sprites,” are a second race made from fire before mankind, who like people can believe or
+  disbelieve; a surah is named for them, and some of them heard the Quran and believed. Satan,
+  also called Iblis, “was of the jinn” (18:50), and the Bible's Satan who tempts in Eden becomes
+  in the Quran the one who refused to bow to Adam and swore to lead his children astray. He has
+  no power over God's sincere servants; he whispers, promises and deceives, and on the Day he
+  will say, “do not blame me, but blame yourselves.” The last two surahs of the Quran are prayers
+  for refuge from him and from all evil. The tags sort the passages by which of the three they
+  concern.
+tags: [angels, gabriel, jinn, satan, iblis, devils, unseen, refuge]
+facetUnit: passages
+facets:
+  being:
+    title: "Whom it is about"
+    values:
+      angels: { title: "Angels" }
+      jinn: { title: "Jinn" }
+      satan: { title: "Satan and the devils" }
+views:
+  - title: "What the Quran says"
+    groups:
+      - title: "What angels are"
+        refs:
+          - ref: "35:1"
+            label: "“Messengers with wings—double, triple, and quadruple”"
+            note: "Isaiah's seraphim have six wings."
+            bible: "Isa 6:2"
+            facets: { being: angels }
+          - ref: "21:26-28"
+            label: "“Honored servants … They never speak before He has spoken”"
+            note: "Against the belief that they are God's children: “they do not intercede except for him whom He approves.”"
+            bible: "Heb 1:14"
+            facets: { being: angels }
+          - ref: "16:49-50"
+            label: "“They fear their Lord above them, and they do what they are commanded”"
+            facets: { being: angels }
+          - ref: "21:19-20"
+            label: "“They praise night and day, without ever tiring”"
+            bible: "Rev 4:8"
+            facets: { being: angels }
+          - ref: "53:27-28"
+            label: "“They give the angels the names of females”"
+            note: "The Meccans called the angels God's daughters (16:57, 43:19, 37:149-150); the Quran rejects it."
+            facets: { being: angels }
+
+      - title: "What angels do"
+        refs:
+          - ref: "2:97-98"
+            label: "Gabriel and Michael"
+            note: "The only two angels the Quran names, besides Harut and Marut and Malik, the keeper of Hell (43:77). Gabriel brought the Quran “to your heart.” Both are named in the Bible, Gabriel in Daniel and Luke, Michael in Daniel, Jude and Revelation."
+            bible: "Luke 1:19; Dan 10:13"
+            facets: { being: angels }
+          - ref: "16:2"
+            label: "“He sends down the angels with the Spirit … upon whom He wills”"
+            note: "Also 97:4, on the Night of Decree."
+            facets: { being: angels }
+          - ref: "50:16-18"
+            label: "Two recorders, “seated to the right and to the left”"
+            note: "“Not a word does he utter, but there is a watcher by him, ready.” Also 82:10-12: “honest recorders.”"
+            facets: { being: angels }
+          - ref: "6:61"
+            label: "Guardians sent over you, and envoys who take you at death"
+            note: "Also 32:11: “the angel of death put in charge of you.” Tradition names him Azrael; the Quran does not."
+            bible: "Ps 91:11"
+            facets: { being: angels }
+          - ref: "40:7-9"
+            label: "Those who carry the Throne pray for the believers"
+            note: "“Forgive those who repent … and admit them … into the Gardens of Eternity … and their parents, and their spouses, and their offspring.” Eight carry it on the Day (69:17)."
+            facets: { being: angels }
+          - ref: "66:6"
+            label: "“Over it are angels, fierce and powerful”"
+            note: "The keepers of Hell, nineteen (74:30-31)."
+            facets: { being: angels }
+          - ref: "8:9-12"
+            label: "A thousand angels at Badr"
+            note: "Also 3:124-125: three thousand, then five thousand. Elisha's servant sees horses and chariots of fire."
+            bible: "2 Kgs 6:15-17"
+            facets: { being: angels }
+          - ref: "2:102"
+            label: "Harut and Marut, the two angels at Babylon"
+            note: "They taught sorcery, warning, “We are a test, so do not lose faith.” Later stories make them angels who fell to earth; the Quran says little."
+            facets: { being: [angels, satan] }
+
+      - title: "The jinn"
+        note: "Beings of fire, unseen, who share the earth with people, are bound to worship God, and will be judged. Arabs believed in them before Islam; the Quran confirms they exist and brings them under God."
+        refs:
+          - ref: "15:26-27"
+            label: "“The jinn We created before, from piercing fire”"
+            note: "Man from clay; jinn from fire (also 55:14-15)."
+            facets: { being: jinn }
+          - ref: "51:56"
+            label: "“I did not create the jinn and the humans except to worship Me”"
+            facets: { being: jinn }
+          - ref: "72:1-15"
+            label: "Surah of the Jinn: “We have heard a wondrous Quran”"
+            note: "Jinn who listened and believed tell their own story: some are righteous and some not, some submit and some are “firewood for Hell,” and they used to eavesdrop on heaven until shooting stars drove them off."
+            facets: { being: jinn }
+          - ref: "46:29-32"
+            label: "Jinn sent to listen to the Quran"
+            note: "“We have heard a Scripture, sent down after Moses.”"
+            facets: { being: jinn }
+          - ref: "6:128-130"
+            label: "“O assembly of jinn, you have exploited multitudes of humans”"
+            note: "On the Day both jinn and humans are asked, “did there not come to you messengers from among you?”"
+            facets: { being: jinn }
+          - ref: "34:40-41"
+            label: "“They used to worship the jinn”"
+            note: "The angels disown those who worshiped them."
+            facets: { being: [jinn, angels] }
+          - ref: "34:12-14"
+            label: "The jinn who worked for Solomon"
+            facets: { being: jinn }
+          - ref: "6:100"
+            label: "“They attributed to God partners—the sprites”"
+            facets: { being: jinn }
+
+      - title: "Satan: the one who would not bow"
+        note: "The Quran calls him Iblis in the story of his refusal and Satan (ash-Shaytan) elsewhere. It says he “was of the jinn” (18:50), though he was among the angels when they were told to bow; commentators have argued over what he was."
+        refs:
+          - ref: "7:11-18"
+            label: "“I am better than he; You created me from fire”"
+            note: "He asks for respite until the resurrection, and swears to waylay people “from before them, and from behind them, and from their right, and from their left.” The Bible speaks of the devil's fall only in passing."
+            bible: "Isa 14:12-15; Luke 10:18"
+            facets: { being: satan }
+          - ref: "18:50"
+            label: "“He was of the jinn, and he defied the command of his Lord”"
+            facets: { being: [satan, jinn] }
+          - ref: "15:39-42"
+            label: "“Over My servants you have no authority”"
+            note: "“… except for the sinners who follow you.” Also 16:99-100 and 38:82-83."
+            bible: "Jas 4:7"
+            facets: { being: satan }
+          - ref: "4:117-121"
+            label: "“I will take to myself my due share of Your servants”"
+            note: "“I will mislead them … and I will prompt them to alter the creation of God.”"
+            facets: { being: satan }
+          - ref: "7:27"
+            label: "“He sees you, him and his clan, from where you cannot see them”"
+            bible: "1 Pet 5:8"
+            facets: { being: satan }
+          - ref: "2:168"
+            label: "“Do not follow the footsteps of Satan. He is to you an open enemy”"
+            note: "Also 24:21, 35:6, 36:60."
+            facets: { being: satan }
+          - ref: "2:268"
+            label: "“Satan promises you poverty, and urges you to immorality”"
+            facets: { being: satan }
+          - ref: "58:10"
+            label: "“Conspiracies are from Satan … but he will not harm them … except by leave of God”"
+            facets: { being: satan }
+          - ref: "14:22"
+            label: "Satan on the Day: “Do not blame me, but blame yourselves”"
+            note: "“I had no authority over you, except that I called you, and you answered me.”"
+            facets: { being: satan }
+
+      - title: "Shooting stars and eavesdropping devils"
+        refs:
+          - ref: "37:6-10"
+            label: "“Guarded … against every defiant devil”"
+            note: "The lower heaven is adorned with stars and guarded; a devil who snatches a word of the heavenly council “gets pursued by a piercing projectile.” Also 67:5 and 15:16-18."
+            facets: { being: satan }
+          - ref: "26:210-212"
+            label: "“It was not the devils that revealed it”"
+            note: "Against the charge that Muhammad was a soothsayer fed by jinn."
+            facets: { being: satan }
+
+      - title: "Refuge"
+        note: "The Quran's last two surahs, “the two refuges,” are recited for protection: tradition says Muhammad recited them when he was ill, and before sleep."
+        refs:
+          - ref: "113"
+            label: "“I take refuge with the Lord of Daybreak”"
+            note: "From the evil of what He created, of darkness, of sorcery, and of the envious."
+            facets: { being: satan }
+          - ref: "114"
+            label: "“From the evil of the sneaky whisperer … from among jinn and among people”"
+            bible: "Eph 6:10-12"
+            facets: { being: [satan, jinn] }
+          - ref: "7:200-201"
+            label: "“When a suggestion from Satan assails you, take refuge with God”"
+            facets: { being: satan }
+          - ref: "16:98"
+            label: "“When you read the Quran, seek refuge with God from Satan the outcast”"
+            facets: { being: satan }
+
+  - title: "By being"
+    auto: facet
+    facet: being
+
+  - title: "Nöldeke's periods"
+    auto: period

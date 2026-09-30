@@ -17,7 +17,7 @@
     "checkJs": true,
     "allowImportingTsExtensions": true,
     "types": ["node", "vite/client"],
-    "paths": { "@/*": ["./src/*"] }
+    "paths": { "@edition/*": ["./src/editions/bible/*"], "@/*": ["./src/*"] }
   },
   "include": ["src", "scripts", "api", "server", "vite.config.ts", "vitest.config.ts"]
 }

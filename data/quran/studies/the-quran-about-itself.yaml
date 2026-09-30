@@ -1,0 +1,201 @@
+# The Quran about itself: no scripture talks about itself as much. It says where it comes from,
+# how it came down, in what language, what it confirms, how it is to be read, that it cannot be
+# imitated, and that God replaces some verses with others. The notes add what Muslims came to
+# believe from these verses, and what is known of the text's history. Quotations follow Talal Itani.
+id: the-quran-about-itself
+title: "The Quran About Itself"
+subtitle: "Sent down in Arabic by Gabriel, piece by piece, from a heavenly original; the challenge to produce its like; clear and ambiguous verses; and verses replaced by others"
+kind: connections
+added: "2026-09-30"
+summary: >-
+  The Quran speaks about itself on almost every page, far more than the Bible does. It says it is
+  God's own speech, brought down by the angel Gabriel to Muhammad's heart “in a clear Arabic
+  tongue,” in the month of Ramadan and then piece by piece over some twenty-three years; that it
+  copies a book kept with God, “in a Preserved Tablet”; that it confirms the Torah and the Gospel
+  and guards them; and that no one, human or jinn, could produce a single surah like it. From
+  these verses Muslims came to hold that the Quran is the uncreated word of God, that it is truly
+  the Quran only in Arabic, and that its text has not changed since Muhammad. The Quran also says
+  that some of its verses are “definitive” and others “unspecific,” and that God replaces a verse
+  with a better one. The later doctrine of abrogation, which governs how Muslims read the verses
+  on fighting, wine and much else, was built on those words. The notes add what is known of how
+  the text was collected into a book after Muhammad's death.
+tags: [quran, revelation, gabriel, arabic, abrogation, inimitability, preserved tablet]
+categories:
+  retold:
+    title: "Said again"
+    note: "The same claim in another surah."
+views:
+  - title: "What it says of itself"
+    groups:
+      - title: "Sent down from God"
+        note: "The Quran presents itself as God speaking, in the first person (“We”) or of Himself, with Muhammad addressed and told what to “say.”"
+        refs:
+          - ref: "26:192-195"
+            label: "“The Honest Spirit came down with it, upon your heart”"
+            note: "“… that you may be one of the warners, in a clear Arabic tongue.” Commentators identify the Spirit with Gabriel, named in 2:97."
+            links:
+              - { to: "2:97", category: retold, topic: "Gabriel named" }
+              - { to: "16:102", category: retold, topic: "“The Holy Spirit has brought it down”" }
+          - ref: "42:51-52"
+            label: "How God speaks to a human being"
+            note: "“By inspiration, or from behind a veil, or by sending a messenger.” “You did not know what the Scripture is, nor what faith is.”"
+          - ref: "2:2"
+            label: "“This is the Book in which there is no doubt”"
+          - ref: "36:69-70"
+            label: "“We did not teach him poetry”"
+            note: "The Quran is rhymed prose, and the Meccans called Muhammad a poet; the Quran insists it is not poetry."
+          - ref: "18:109"
+            label: "“If the ocean were ink for the words of my Lord”"
+            note: "“… the ocean would run out, before the words of my Lord run out.” John ends with a similar thought about all that Jesus did."
+            bible: "John 21:25"
+
+      - title: "In Arabic"
+        note: "The Quran stresses that it is an Arabic Quran. Muslims hold that a translation is only an interpretation of its meanings, and pray in Arabic whatever their language."
+        refs:
+          - ref: "12:1-2"
+            label: "“An Arabic Quran, so that you may understand”"
+            links:
+              - { to: "43:3", category: retold, topic: "The same words" }
+          - ref: "14:4"
+            label: "“Every messenger … in the language of his people”"
+          - ref: "41:44"
+            label: "“Had We made it a Quran in a foreign language”"
+            note: "“… they would have said, ‘If only its verses were made clear.’ Non-Arabic and an Arab?”"
+          - ref: "16:103"
+            label: "“The tongue of him they allude to is foreign”"
+            note: "Against the charge that a foreigner taught him. Modern scholars count a few hundred words of Aramaic, Syriac, Hebrew, Greek and Persian origin in the Quran's Arabic, among them Injil (Gospel), from the Greek."
+
+      - title: "In Ramadan, and piece by piece"
+        refs:
+          - ref: "2:185"
+            label: "“Ramadan is the month in which the Quran was revealed”"
+            links:
+              - { to: "97:1-5", category: retold, topic: "“The Night of Decree”" }
+              - { to: "44:1-4", category: retold, topic: "“A Blessed Night”" }
+          - ref: "17:105-106"
+            label: "“A Quran which We unfolded gradually”"
+            note: "Commentators reconcile the two: sent down whole to the lowest heaven on the Night of Decree, then to Muhammad over some twenty-three years."
+          - ref: "25:32-33"
+            label: "“Why was the Quran not revealed to him at once?”"
+            note: "“In order to strengthen your heart thereby.”"
+          - ref: "75:16-19"
+            label: "“Do not wag your tongue with it, to hurry on with it”"
+            note: "“Upon Us is its collection and its recitation.” Also 20:114."
+          - ref: "87:6-7"
+            label: "“We will make you read, so do not forget—except what God wills”"
+
+      - title: "The book with God"
+        note: "The Quran speaks of an original kept with God, of which it is the recitation."
+        refs:
+          - ref: "43:4"
+            label: "“With Us, in the Source Book”"
+            note: "Literally “the Mother of the Book.” Pickthall: “the Source of Decrees.”"
+          - ref: "85:21-22"
+            label: "“A Glorious Quran, in a Preserved Tablet”"
+          - ref: "56:77-80"
+            label: "“None can grasp it except the purified”"
+            note: "Pickthall: “which none toucheth save the purified.” Muslim law reads it as forbidding anyone to touch a copy of the Quran without ritual washing; commentators also read it of the angels who touch the heavenly book."
+          - ref: "80:11-16"
+            label: "“On honorable pages … by the hands of scribes”"
+          - ref: "13:39"
+            label: "“God abolishes whatever He wills, and He affirms”"
+            note: "“With Him is the source of the Scripture.”"
+
+      - title: "The challenge"
+        note: "From these verses came the doctrine that the Quran's language is a miracle no one can equal (i'jaz), the proof of Muhammad's prophethood."
+        refs:
+          - ref: "17:88"
+            label: "“If mankind and jinn came together to produce the like of this Quran”"
+            note: "“… they could never produce the like of it.”"
+          - ref: "11:13"
+            label: "“Produce ten chapters like it”"
+          - ref: "10:37-38"
+            label: "“Produce a single chapter like it”"
+          - ref: "2:23-24"
+            label: "“Produce a chapter like these … But if you do not—and you will not”"
+          - ref: "52:33-34"
+            label: "“Let them produce a discourse like it”"
+
+      - title: "Clear verses and ambiguous ones"
+        refs:
+          - ref: "3:7"
+            label: "“Some of its verses are definitive … and others are unspecific”"
+            note: "Those with “deviation” in their hearts follow the unclear ones. The Arabic can be read two ways, depending on where one pauses: “none knows its interpretation except God” (Pickthall), or “except God and those firmly rooted in knowledge.” Itani's sentence runs the two together. Muslim scholars have held both."
+          - ref: "11:1"
+            label: "“A Scripture whose Verses were perfected, then elaborated”"
+          - ref: "39:23"
+            label: "“A Scripture consistent and paired”"
+            note: "“The skins of those who reverence their Lord shiver from it.”"
+          - ref: "4:82"
+            label: "“Had it been from any other than God, they would have found in it much discrepancy”"
+            note: "Also 47:24: “Will they not ponder the Quran? Or are there locks upon their hearts?”"
+
+      - title: "Verses replaced"
+        note: "The Quran says God replaces some verses. Muslim scholars built the doctrine of abrogation (naskh) on this: where two rulings conflict, the later one stands. They counted abrogated verses very differently, from over two hundred to five. Some modern Muslims read 2:106 as about earlier scriptures, and hold that no verse of the Quran cancels another."
+        refs:
+          - ref: "2:106"
+            label: "“We never nullify a verse, nor cause it to be forgotten, unless We bring one better”"
+            note: "The word translated “verse” (aya) also means a sign."
+          - ref: "16:101"
+            label: "“When We substitute a verse in place of another verse”"
+            note: "“… they say, ‘You are an impostor.’”"
+          - ref: "22:52-53"
+            label: "“Satan interfered in his wishes. But God nullifies what Satan interjects”"
+            note: "Said of every messenger and prophet. Early biographers (al-Tabari and others) tell that Satan once put words in praise of the three Meccan goddesses into Muhammad's recitation after 53:19-20, and that God withdrew them; this is the story behind the title of Salman Rushdie's novel. Many Muslim scholars since have rejected it as false."
+          - ref: "53:19-23"
+            label: "Al-Lat, al-Uzza and Manat"
+            note: "The passage where, by that story, the words were inserted and withdrawn. As it stands it condemns the goddesses: “These are nothing but names.”"
+
+      - title: "Confirming what came before"
+        refs:
+          - ref: "5:48"
+            label: "“Confirming the Scripture that preceded it, and superseding it”"
+            note: "The Arabic muhaymin means guardian or watcher over it; “superseding” is Itani's reading."
+          - ref: "46:12"
+            label: "“Before it was the Book of Moses, a model and a mercy”"
+          - ref: "26:196-197"
+            label: "“It is in the scriptures of the ancients”"
+            note: "“Is it not a sign for them that the scholars of the Children of Israel recognized it?”"
+          - ref: "3:3"
+            label: "“He sent down the Torah and the Gospel”"
+
+      - title: "Kept safe"
+        note: "Muslims hold that the Quran has been kept word for word as Muhammad recited it. By the traditional account it was gathered from memory and writings into one book under the first caliph, Abu Bakr, and a standard copy was sent out under the third, Uthman, around 650, with other copies burned. Manuscripts from the first Islamic century survive. Most match the standard text closely; one, the lower writing of a reused parchment found in Sanaa, differs from it in many small ways. Several traditional ways of reciting the text (qira'at) are accepted."
+        refs:
+          - ref: "15:9"
+            label: "“We revealed the Message, and We will surely preserve it”"
+          - ref: "41:41-42"
+            label: "“Falsehood cannot approach it, from before it or behind it”"
+          - ref: "6:115"
+            label: "“There is no changing to His words”"
+
+      - title: "How it is to be read"
+        refs:
+          - ref: "73:4"
+            label: "“Chant the Quran rhythmically”"
+            note: "The recitation of the Quran (tajwid) became an art with its own rules."
+          - ref: "16:98"
+            label: "“Seek refuge with God from Satan the outcast”"
+            note: "Why Muslims say “I seek refuge in God from Satan the accursed” before reciting."
+          - ref: "7:204"
+            label: "“When the Quran is recited, listen to it”"
+          - ref: "38:29"
+            label: "“That they may ponder its Verses”"
+          - ref: "59:21"
+            label: "“Had We sent this Quran down on a mountain”"
+            note: "“… you would have seen it trembling, crumbling in awe of God.”"
+          - ref: "17:82"
+            label: "“Healing and mercy for the believers”"
+          - ref: "72:1-2"
+            label: "The jinn who heard it"
+            note: "“We have heard a wondrous Quran. It guides to rectitude, so we have believed in it.” Also 46:29-31."
+          - ref: "25:30"
+            label: "“My Lord, my people have abandoned this Quran”"
+            note: "The Messenger's complaint on the Last Day."
+
+  - title: "Nöldeke's periods"
+    auto: period
+    note: "The Quran's talk about itself grows in the middle and late Meccan surahs, where it answers the charge that Muhammad made it up."
+
+  - title: "Mecca and Medina"
+    auto: place

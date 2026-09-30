@@ -1,0 +1,319 @@
+# Jews and Christians in the Quran, the "People of the Book": what it says of the Children of
+# Israel and their history, of the Jews and Christians of Muhammad's day, of their scriptures, and
+# how the believers are to deal with them. Each passage is tagged with its `tone` (praise, blame,
+# a claim answered, common ground, a warning, a rule) and with `who` it is about, for the views and
+# the Patterns chart. Quotations follow Talal Itani's translation.
+id: people-of-the-book
+title: "Jews and Christians: the People of the Book"
+subtitle: "The Children of Israel, the Jews and Christians of Muhammad's day, their scriptures, and how the believers are to treat them: praise, blame, argument and law"
+kind: connections
+chart: patterns
+added: "2026-09-30"
+summary: >-
+  The Quran calls Jews and Christians “the People of the Book”: those who were given scripture
+  before. It speaks to them and about them more than to any other group except the idolaters of
+  Mecca, and almost all of it is in the Medinan surahs, where Muhammad lived beside three Jewish
+  tribes. It says two kinds of things, often in the same passage. It honors the Children of
+  Israel as a people God favored “over all nations,” gave the Torah and many prophets, and
+  delivered from Pharaoh; it says some of the People of the Book are upright, recite God's
+  revelations through the night, and will have their reward. It also charges them, above all the
+  Jews, with breaking the covenant, worshiping the calf, killing the prophets, and twisting and
+  concealing their scripture, and it answers their claims to be God's children and the only ones
+  saved. It invites them to “terms common between us and you,” lets believers eat their food and
+  marry their women, and tells believers not to take them as allies. And in surah 9 it commands
+  fighting those among them who do not believe “until they pay the due tax.” The tags sort the
+  passages by tone, and by whether they speak of Jews, Christians or both.
+tags: [jews, christians, people of the book, children of israel, torah, gospel, covenant, scripture]
+facetUnit: passages
+facets:
+  tone:
+    title: "What the passage does"
+    values:
+      praise: { title: "Praise", note: "God's favor to them, or good said of some of them." }
+      blame: { title: "Blame", note: "A charge against them: past or present wrongdoing, or punishment for it." }
+      answer: { title: "A claim answered", note: "Something they say, and the Quran's reply." }
+      common: { title: "Common ground", note: "What is shared, and invitations to it." }
+      warn: { title: "A warning to the believers", note: "About trusting them, obeying them or taking them as allies." }
+      rule: { title: "A rule for dealing with them", note: "Food, marriage, judgment, argument, war and tax." }
+  who:
+    title: "Whom it is about"
+    values:
+      israel: { title: "The Children of Israel of old", note: "The people of Moses and the prophets after him." }
+      jews: { title: "Jews", note: "Named as Jews, or plainly the Jews of Muhammad's day." }
+      christians: { title: "Christians", note: "Named as Christians, or plainly them." }
+      both: { title: "The People of the Book together", note: "Jews and Christians without distinction." }
+views:
+  - title: "What the Quran says of them"
+    groups:
+      - title: "God's favor to the Children of Israel"
+        note: "The Quran speaks warmly and at length of what God did for Israel."
+        refs:
+          - ref: "2:40-47"
+            label: "“I favored you over all nations”"
+            note: "“Remember My blessings … and fulfill your pledge to Me, and I will fulfill My pledge to you.” Said again at 2:122."
+            bible: "Deut 7:6-8"
+            facets: { tone: [praise, blame], who: israel }
+          - ref: "45:16-17"
+            label: "“The Book, and wisdom, and prophecy”"
+            note: "“They fell into dispute only after knowledge came to them, out of mutual rivalry.”"
+            facets: { tone: [praise, blame], who: israel }
+          - ref: "5:20-21"
+            label: "“He placed prophets among you, and made you kings”"
+            note: "“Enter the Holy Land which God has assigned for you.”"
+            facets: { tone: praise, who: israel }
+          - ref: "7:159"
+            label: "“Among the people of Moses is a community that guides by truth”"
+            facets: { tone: praise, who: israel }
+          - ref: "2:83"
+            label: "The covenant: worship God, honor parents, give alms"
+            note: "“Then you turned away, except for a few of you.” The commands echo the Ten Commandments and the Shema."
+            bible: "Deut 6:4-5; Exod 20:12"
+            facets: { tone: [praise, blame], who: israel }
+
+      - title: "Israel's failings, retold"
+        note: "The same stories the Hebrew Bible tells against Israel, retold as a warning to the Jews of Medina. The Quran addresses them as “you,” as if they were there."
+        refs:
+          - ref: "2:49-61"
+            label: "The calf, the thunderbolt, the manna, the changed word"
+            note: "Delivered from Pharaoh, they worship the calf; ask to see God and are struck down; tire of manna and want “cucumbers, and its garlic, and its lentils, and its onions.” “They were struck with humiliation and poverty … because they rejected God's revelations and wrongfully killed the prophets.” 2:54, “kill your egos,” is Itani's; the Arabic says “kill yourselves,” taken by most as each killing the guilty among them, as in Exodus 32."
+            bible: "Exod 32:25-29; Num 11:4-6"
+            facets: { tone: blame, who: israel }
+          - ref: "2:87-91"
+            label: "“Why did you kill God's prophets before?”"
+            note: "“Whenever a messenger comes to you with anything your souls do not desire, you grew arrogant, calling some impostors, and killing others.” Jesus says the same: “Jerusalem, Jerusalem, who kills the prophets.”"
+            bible: "Matt 23:29-37; Acts 7:51-52"
+            facets: { tone: blame, who: [israel, jews] }
+          - ref: "4:153-155"
+            label: "“Show us God plainly”"
+            note: "The thunderbolt, the calf, the mountain raised over them, the Sabbath, the broken pledge."
+            facets: { tone: blame, who: [israel, jews] }
+          - ref: "5:70"
+            label: "“Some of them they accused of lying, and others they put to death”"
+            facets: { tone: blame, who: israel }
+          - ref: "5:78-79"
+            label: "“Cursed … by the tongue of David and Jesus son of Mary”"
+            note: "“They used not to prevent one another from the wrongs they used to commit.”"
+            bible: "Matt 23:13-36"
+            facets: { tone: blame, who: israel }
+          - ref: "17:4-8"
+            label: "“You will commit evil on earth twice”"
+            note: "Twice the Temple is entered and destroyed by God's servants. Commentators take them to be the Babylonians (586 BC) and the Romans (AD 70), or other pairs."
+            bible: "2 Kgs 25:8-10; Luke 21:20-24"
+            facets: { tone: blame, who: israel }
+
+      - title: "The Sabbath-breakers"
+        note: "A story the Quran tells three times and the Bible does not tell at all."
+        refs:
+          - ref: "7:163-166"
+            label: "The town by the sea"
+            note: "Their fish came on the Sabbath and not on other days; some broke the Sabbath to catch them, others warned them; “We said to them, ‘Be despicable apes.’”"
+            facets: { tone: blame, who: israel }
+            links:
+              - { to: "2:65-66", topic: "The same story" }
+          - ref: "5:60"
+            label: "“He turned some of them into apes, and swine”"
+            note: "“… and idol worshipers.” Said to the People of the Book who mock the believers' prayer."
+            facets: { tone: blame, who: both }
+          - ref: "4:47"
+            label: "“Or curse them as We cursed the Sabbath-breakers”"
+            facets: { tone: blame, who: both }
+
+      - title: "Their scripture"
+        note: "The Quran says God gave the Torah and the Gospel, tells Jews and Christians to judge by them, and says they twist, conceal and misquote them. Early Muslim writers mostly took this to mean false reading; from about the eleventh century (Ibn Hazm) many held that the text itself had been changed. The verses allow both readings."
+        refs:
+          - ref: "5:43-47"
+            label: "“They have the Torah, in which is God's Law”"
+            note: "“We have revealed the Torah, wherein is guidance and light … So let the people of the Gospel rule according to what God revealed in it.” 5:45 quotes the Torah's “a life for a life, an eye for an eye,” adding “whoever forgoes it in charity, it will serve as atonement for him.”"
+            bible: "Exod 21:23-25; Matt 5:38-39"
+            facets: { tone: [praise, rule], who: [jews, christians] }
+          - ref: "5:66"
+            label: "“Had they observed the Torah, and the Gospel”"
+            note: "“Among them is a moderate community, but evil is what many of them are doing.”"
+            facets: { tone: [praise, blame], who: both }
+          - ref: "5:68"
+            label: "“You have no basis until you uphold the Torah, and the Gospel”"
+            facets: { tone: answer, who: both }
+          - ref: "10:94"
+            label: "“Ask those who read the Scripture before you”"
+            note: "“If you are in doubt about what We revealed to you.” Said to Muhammad."
+            facets: { tone: common, who: both }
+          - ref: "7:157"
+            label: "“Whom they find mentioned in the Torah and the Gospel”"
+            note: "The unlettered Prophet. Muslim writers point to the prophet “like me” promised in Deuteronomy, and to the Paraclete in John; Jews read Deuteronomy of the prophets of Israel, and Christians read John of the Holy Spirit."
+            bible: "Deut 18:15-18; John 14:16-17"
+            facets: { tone: answer, who: both }
+          - ref: "2:75-79"
+            label: "“Those who write the Scripture with their own hands”"
+            note: "Some “used to hear the Word of God, and then deliberately distort it”; others “write the Scripture with their own hands, and then say, ‘This is from God.’”"
+            facets: { tone: blame, who: jews }
+          - ref: "4:46"
+            label: "“Among the Jews are some who take words out of context”"
+            note: "Twisting their tongues: “We hear and we disobey” for “we hear and we obey,” and a word of respect said as an insult."
+            facets: { tone: blame, who: jews }
+          - ref: "5:13"
+            label: "“They twist the words out of their context”"
+            note: "“… But pardon them, and overlook.” 5:14 says the Christians too “neglected some of what they were reminded of.”"
+            facets: { tone: [blame, rule], who: [jews, christians] }
+          - ref: "3:78"
+            label: "“Those who twist the Scripture with their tongues”"
+            facets: { tone: blame, who: both }
+          - ref: "2:146"
+            label: "“They recognize it as they recognize their own children”"
+            note: "“But some of them conceal the truth while they know.” Also 2:42, 3:71, 3:187."
+            facets: { tone: blame, who: both }
+          - ref: "62:5"
+            label: "“Like the donkey carrying works of literature”"
+            note: "Those entrusted with the Torah who failed to uphold it."
+            facets: { tone: blame, who: jews }
+
+      - title: "Their claims answered"
+        refs:
+          - ref: "2:111-113"
+            label: "“None will enter Heaven unless he is a Jew or a Christian”"
+            note: "“Produce your proof.” And “the Jews say, ‘The Christians are not based on anything;’ and the Christians say, ‘The Jews are not based on anything.’ Yet they both read the Scripture.”"
+            facets: { tone: answer, who: [jews, christians] }
+          - ref: "2:135-141"
+            label: "“Be Jews or Christians, and you will be guided”"
+            note: "“Rather, the religion of Abraham.” “Or do you say that Abraham, Ishmael, Isaac, Jacob, and the Patriarchs were Jews or Christians?”"
+            facets: { tone: answer, who: [jews, christians] }
+          - ref: "5:18"
+            label: "“We are the children of God, and His beloved”"
+            note: "“Why then does He punish you for your sins?”"
+            bible: "John 1:12; Rom 8:15-16"
+            facets: { tone: answer, who: [jews, christians] }
+          - ref: "62:6-8"
+            label: "“If you claim to be the chosen of God … then wish for death”"
+            note: "Also 2:94-96: “every one of them wishes he could live a thousand years.”"
+            facets: { tone: answer, who: jews }
+          - ref: "3:75"
+            label: "“We are under no obligation towards the gentiles”"
+            note: "Some can be trusted with a heap of gold, some not with a coin. The Law of Moses lets Israel charge interest to foreigners but not to one another."
+            bible: "Deut 23:19-20"
+            facets: { tone: [praise, blame, answer], who: both }
+          - ref: "3:181-183"
+            label: "“God is poor, and we are rich”"
+            note: "And their demand for “an offering to be consumed by fire.” In the Bible fire from heaven consumes the offerings of Aaron and Elijah."
+            bible: "Lev 9:24; 1 Kgs 18:36-39"
+            facets: { tone: answer, who: jews }
+          - ref: "5:64"
+            label: "“God's hand is tied”"
+            note: "“… We placed between them enmity and hatred, until the Day of Resurrection. Whenever they kindle the fire of war, God extinguishes it.”"
+            facets: { tone: answer, who: jews }
+          - ref: "4:160-161"
+            label: "Good things forbidden as a penalty"
+            note: "The Jewish food laws are a punishment “due to wrongdoing on the part of the Jews” (also 6:146, 16:118), and they took usury though forbidden it. 3:93 says all food was lawful to Israel before the Torah."
+            bible: "Lev 11:1-8"
+            facets: { tone: blame, who: jews }
+
+      - title: "Some of them are upright"
+        note: "“They are not alike.” The Quran never condemns all of them."
+        refs:
+          - ref: "3:113-115"
+            label: "“They recite God's revelations throughout the night”"
+            note: "“Among the People of the Scripture is a community that is upright … These are among the righteous.”"
+            facets: { tone: praise, who: both }
+          - ref: "3:199"
+            label: "“Those who believe in God, and in what was revealed to you, and … to them”"
+            facets: { tone: praise, who: both }
+          - ref: "28:52-55"
+            label: "“We were Muslims prior to it”"
+            note: "People of earlier scripture who accept the Quran “will be given their reward twice.”"
+            facets: { tone: praise, who: both }
+          - ref: "4:162"
+            label: "“Those among them firmly rooted in knowledge”"
+            facets: { tone: praise, who: jews }
+          - ref: "5:82-83"
+            label: "“The nearest in affection … those who say, ‘We are Christians’”"
+            note: "In the same verse: “the people most hostile towards the believers are the Jews and the polytheists.”"
+            facets: { tone: [praise, blame], who: [christians, jews] }
+          - ref: "2:62"
+            label: "“Their reward with their Lord”"
+            note: "Believers, Jews, Christians and Sabians: “any who believe in God and the Last Day, and act righteously.” How far this reaches after Muhammad has been read in different ways (see the Last Day study)."
+            facets: { tone: praise, who: [jews, christians] }
+          - ref: "3:110"
+            label: "“Among them are the believers, but most of them are sinners”"
+            facets: { tone: [praise, blame], who: both }
+
+      - title: "Common ground"
+        refs:
+          - ref: "3:64"
+            label: "“Come to terms common between us and you”"
+            note: "“That we worship none but God, and that we associate nothing with Him, and that none of us takes others as lords besides God.”"
+            bible: "Mark 12:29-30"
+            facets: { tone: common, who: both }
+          - ref: "29:46"
+            label: "“Our God and your God is One”"
+            note: "“Do not argue with the People of the Scripture except in the best manner possible, except those who do wrong among them.”"
+            facets: { tone: [common, rule], who: both }
+          - ref: "2:136"
+            label: "“We make no distinction between any of them”"
+            facets: { tone: common, who: both }
+          - ref: "5:48"
+            label: "“For each of you We have assigned a law and a method”"
+            note: "The Quran confirms “the Scripture that preceded it” and is its guardian (Itani: “superseding it”). “Had God willed, He could have made you a single nation … So compete in righteousness.”"
+            facets: { tone: [common, rule], who: both }
+          - ref: "5:5"
+            label: "Their food, and their women, lawful"
+            note: "“The food of those given the Scripture is lawful for you … and chaste women from the people who were given the Scripture.” Muslim law allows a Muslim man to marry a Jewish or Christian woman, but not a Muslim woman a Jewish or Christian man."
+            facets: { tone: [common, rule], who: both }
+          - ref: "2:109"
+            label: "“Pardon and overlook, until God brings His command”"
+            note: "“Many of the People of the Book wish to turn you back into unbelievers.”"
+            facets: { tone: [warn, rule], who: both }
+
+      - title: "Warnings to the believers"
+        refs:
+          - ref: "5:51"
+            label: "“Do not take the Jews and the Christians as allies”"
+            note: "“Whoever of you allies himself with them is one of them.” The word (awliya) can mean allies, protectors or friends; 60:8 allows kindness to those who have not fought the believers."
+            facets: { tone: warn, who: [jews, christians] }
+          - ref: "5:57"
+            label: "“Those who take your religion in mockery”"
+            facets: { tone: warn, who: both }
+          - ref: "2:120"
+            label: "“They will not approve of you, unless you follow their creed”"
+            facets: { tone: warn, who: [jews, christians] }
+          - ref: "3:100"
+            label: "“If you obey a party of those who were given the Scripture”"
+            note: "“… they will turn you, after your belief, into disbelievers.”"
+            facets: { tone: warn, who: both }
+          - ref: "3:118-120"
+            label: "“Do not befriend outsiders who never cease to wish you harm”"
+            note: "“You love them, but they do not love you.” The passage does not name the People of the Book; the verses around it are about them and the hypocrites."
+            facets: { tone: warn, who: both }
+
+      - title: "Their end"
+        refs:
+          - ref: "3:111-112"
+            label: "“They shall be humiliated wherever they are encountered”"
+            note: "“Except through a rope from God, and a rope from the people.”"
+            facets: { tone: blame, who: both }
+          - ref: "9:29"
+            label: "“Until they pay the due tax”"
+            note: "Fight those of the People of the Book who do not believe “until they pay the due tax (jizya), willingly or unwillingly” (Pickthall: “being brought low”). See the study of fighting and peace."
+            facets: { tone: rule, who: both }
+          - ref: "59:2"
+            label: "“He who evicted those who disbelieved among the People of the Book”"
+            note: "By tradition the Banu Nadir, a Jewish tribe of Medina, in 625."
+            facets: { tone: blame, who: jews }
+          - ref: "98:1-8"
+            label: "“The worst of creatures”"
+            note: "“Those who disbelieve among the People of the Scripture, and the Polytheists, will be in the Fire of Hell.”"
+            facets: { tone: blame, who: both }
+          - ref: "22:17"
+            label: "“God will judge between them on the Day of Resurrection”"
+            note: "Believers, Jews, Sabeans, Christians, Zoroastrians and polytheists."
+            facets: { tone: common, who: both }
+
+  - title: "By tone"
+    auto: facet
+    facet: tone
+    note: "The same passages sorted by what they do."
+
+  - title: "By whom"
+    auto: facet
+    facet: who
+
+  - title: "Mecca and Medina"
+    auto: place
+    note: "Almost everything here is Medinan. In the Meccan surahs the People of the Book appear mostly as witnesses who know the truth of the revelation."

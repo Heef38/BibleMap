@@ -14,11 +14,10 @@ import SearchPage from '@/pages/SearchPage'
 import StudyPage from '@/pages/StudyPage'
 import TopicPage from '@/pages/TopicPage'
 import TimelinePage from '@/pages/TimelinePage'
-import BiblePage from '@/pages/BiblePage'
 import ComparePage from '@/pages/ComparePage'
-import BookPage from '@/pages/BookPage'
-import AboutPage from '@/pages/AboutPage'
 import FeedbackPage from '@/pages/FeedbackPage'
+import { EDITION } from '@edition/config'
+import { AboutPage, BookPage, LayoutPage } from '@edition/pages'
 import { FONT_SIZES, useSettings } from '@/store/settings'
 
 export default function App() {
@@ -50,11 +49,11 @@ export default function App() {
         <Route path="/study/:id" element={<StudyPage />} />
         <Route path="/book/:osis" element={<BookPage />} />
         <Route path="/timeline" element={<TimelinePage />} />
-        <Route path="/bible" element={<BiblePage />} />
-        <Route path="/compare" element={<ComparePage />} />
+        <Route path={EDITION.layoutPath} element={<LayoutPage />} />
+        {EDITION.features.compare && <Route path="/compare" element={<ComparePage />} />}
         <Route path="/credits" element={<CreditsPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/feedback" element={<FeedbackPage />} />
+        {EDITION.features.feedback && <Route path="/feedback" element={<FeedbackPage />} />}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </AppShell>

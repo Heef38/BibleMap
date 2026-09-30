@@ -1,0 +1,177 @@
+# Signs in creation: the Quran's constant appeal to the sky, the earth, rain, animals and the
+# human body as signs (ayat, the same word as its verses) pointing to the one Creator and to the
+# resurrection. The notes mention the modern reading of some verses as scientific foreknowledge,
+# and the objections to it. Quotations follow Talal Itani's translation.
+id: signs-in-creation
+title: "Signs in Creation"
+subtitle: "Sky, earth, rain, animals and the human body as signs of the one Creator and of the resurrection, and the modern argument over the Quran and science"
+chart: map
+added: "2026-09-30"
+summary: >-
+  The Quran uses one word, aya, for a verse of its text and for a sign in the world, and it
+  points to the world constantly: the alternation of night and day, the ships on the sea, the
+  rain that revives dead land, the bee, the camel, the child growing in the womb. Each is a sign
+  “for people who reflect” of two things: that God alone made and rules everything, so He alone
+  should be worshiped; and that the One who made you and brings dead earth to life can raise you
+  from the dead. The Psalms and Paul make the first argument in much the same way. Since the
+  1970s many Muslim writers have also read some of these verses as foretelling modern science:
+  the heavens and earth split from “one mass” as the Big Bang, “We are expanding it” as the
+  expanding universe, the stages of the embryo, the barrier between fresh and salt water. Others,
+  Muslim scholars among them, answer that the verses speak in the words and picture of the world
+  of their own time, where the sky is a raised ceiling without visible pillars, mountains are
+  pegs that keep the earth from shifting, and the sun sets in a murky spring. The notes mark the
+  verses at the center of that argument.
+tags: [creation, signs, nature, science, embryology, sky, rain, animals]
+views:
+  - title: "The signs"
+    groups:
+      - title: "Signs for people who reflect"
+        refs:
+          - ref: "2:164"
+            label: "“Signs for people who understand”"
+            note: "The heavens and earth, night and day, ships on the sea, rain, animals, winds, and clouds “disposed between the sky and the earth.”"
+            bible: "Ps 19:1-4; Rom 1:20"
+          - ref: "3:190-191"
+            label: "“Our Lord, You did not create this in vain”"
+            note: "Those who remember God standing, sitting and lying down, and reflect on creation."
+          - ref: "30:20-25"
+            label: "“And of His signs …”"
+            note: "Six signs in a row: made from dust; spouses and love; the diversity of “your languages and colors”; sleep; lightning and rain; the heaven and earth standing by His command, “and then, when He calls you out of the earth, you will emerge at once.”"
+          - ref: "45:3-5"
+            label: "“In your own creation, and in the creatures He scattered”"
+          - ref: "41:53"
+            label: "“We will show them Our proofs on the horizons, and in their very souls”"
+          - ref: "27:60-64"
+            label: "“Is there another god with God?”"
+            note: "Asked five times, after each work of God: rain, a habitable earth, the answer to the one in need, guidance by the stars, the creation and its repetition."
+            bible: "Isa 40:12-26"
+
+      - title: "The heavens"
+        refs:
+          - ref: "21:30-33"
+            label: "“The heavens and the earth were one mass, and We tore them apart”"
+            note: "“And We made from water every living thing.” The sky is “a protected ceiling,” and sun and moon each float in an orbit. Many modern Muslim writers read 21:30 as the Big Bang; classical commentators read it of the sky and earth separated at creation, as in Genesis, or of rain split from the sky and plants from the earth."
+            bible: "Gen 1:6-8"
+          - ref: "51:47-49"
+            label: "“We constructed the universe with power, and We are expanding it”"
+            note: "Itani's translation follows the modern reading, the expanding universe. Pickthall: “We it is Who make the vast extent (thereof).” The Arabic word (musi'un) can mean making wide or having ample means."
+          - ref: "13:2"
+            label: "“He … raised the heavens without pillars that you can see”"
+            note: "Also 31:10. Job speaks of “the pillars of heaven.”"
+            bible: "Job 26:11"
+          - ref: "67:3-5"
+            label: "Seven heavens in layers; the lower adorned with lamps"
+            note: "“You see no discrepancy in the creation of the Compassionate. Look again. Can you see any cracks?” The stars are also “missiles against the devils.”"
+          - ref: "36:38-40"
+            label: "“The sun runs towards its destination … Each floats in an orbit”"
+            note: "“The sun is not to overtake the moon, nor is the night to outpace the day.”"
+            bible: "Ps 19:4-6"
+          - ref: "10:5-6"
+            label: "The sun radiant, the moon a light, “that you may know the number of years”"
+            note: "The Islamic calendar is lunar, twelve months of twenty-nine or thirty days, so Ramadan moves through the seasons."
+            bible: "Gen 1:14-18"
+          - ref: "41:37"
+            label: "“Do not bow down to the sun, nor to the moon”"
+            bible: "Deut 4:19"
+          - ref: "6:97"
+            label: "Stars “that you may be guided by them in the darkness of land and sea”"
+
+      - title: "The earth"
+        refs:
+          - ref: "78:6-16"
+            label: "“Did We not make the earth a cradle? And the mountains pegs?”"
+            note: "Eleven questions, from the earth to the gardens. Mountains as pegs, set “lest it shifts with you” (16:15, 21:31, 31:10), are read by some modern writers as the deep roots of mountains, and by others as a picture of a flat earth held steady."
+          - ref: "88:17-20"
+            label: "“Do they not look at the camels—how they are created?”"
+            note: "“And at the sky—how it is raised? And at the mountains—how they are installed? And at the earth—how it is spread out?”"
+          - ref: "79:27-33"
+            label: "“Are you more difficult to create, or the heaven?”"
+            note: "“And the earth after that He spread.” Commentators debated how this order, heaven then earth, fits 41:9-12, earth then heaven."
+          - ref: "25:53"
+            label: "Two seas, “fresh and sweet” and “salty and bitter,” with a barrier between"
+            note: "Also 55:19-22 and 27:61. Read today of where rivers meet the sea."
+          - ref: "13:3-4"
+            label: "“Irrigated with the same water. We make some taste better than others”"
+          - ref: "18:86"
+            label: "The sun “setting in a murky spring”"
+            note: "What Dhul-Qarnayn found at the western edge of his journey. Commentators said it only looked so to him; critics read it as the ancient picture of the world."
+
+      - title: "Rain and growth"
+        note: "The Quran's favorite sign: rain on dead land, and the harvest, which “likewise is the resurrection” (50:11)."
+        refs:
+          - ref: "6:95-99"
+            label: "“It is God Who splits the grain and the seed”"
+            note: "“Watch their fruits as they grow and ripen.”"
+          - ref: "16:10-11"
+            label: "“From it is drink, and with it grows vegetation”"
+          - ref: "36:33-36"
+            label: "“A sign for them in the dead land”"
+            note: "“Glory be to Him who created all the pairs.”"
+            bible: "John 12:24; 1 Cor 15:36-38"
+          - ref: "80:24-32"
+            label: "“Let man consider his food”"
+          - ref: "24:43"
+            label: "Clouds piled up, rain and hail"
+            bible: "Job 38:22-30"
+          - ref: "25:48-49"
+            label: "“The winds, bringing advance news of His mercy”"
+
+      - title: "Animals"
+        refs:
+          - ref: "16:5-8"
+            label: "Livestock for warmth, food, beauty and burdens; horses, mules and donkeys"
+            note: "“And He creates what you do not know.”"
+          - ref: "16:66"
+            label: "Milk “from between waste and blood”"
+          - ref: "16:68-69"
+            label: "“Your Lord inspired the bee”"
+            note: "Honey, “containing healing for the people.” Surah 16 is named “The Bee.”"
+          - ref: "6:38"
+            label: "“Communities like you”"
+            note: "“There is no animal on land, nor a bird flying with its wings, but are communities like you.”"
+            bible: "Matt 6:26"
+          - ref: "24:41"
+            label: "“The birds in formation … each knows its prayer”"
+          - ref: "24:45"
+            label: "“God created every living creature from water”"
+            note: "Some crawl, some walk on two feet, some on four."
+
+      - title: "The human being"
+        refs:
+          - ref: "23:12-14"
+            label: "Clay, a drop, a clot, a lump, bones, flesh"
+            note: "“Then We produced it into another creature. Most Blessed is God, the Best of Creators.” Modern writers read the stages as embryology revealed ahead of science; critics point out that the Greek physician Galen, in the second century, had described a similar sequence of stages."
+            bible: "Ps 139:13-16; Job 10:8-12"
+          - ref: "22:5"
+            label: "“From dust, then from a small drop, then from a clinging clot”"
+            note: "Given as proof of the resurrection."
+          - ref: "39:6"
+            label: "“In successive formations, in a triple darkness”"
+          - ref: "86:5-7"
+            label: "“Gushing liquid, issuing from between the backbone and the breastbones”"
+            note: "Pickthall: “between the loins and ribs.”"
+          - ref: "95:4-5"
+            label: "“In the best design. Then reduced him to the lowest of the low”"
+            bible: "Ps 8:3-8"
+          - ref: "55:1-4"
+            label: "“He created man, and taught him clear expression”"
+
+      - title: "All creation worships"
+        refs:
+          - ref: "22:18"
+            label: "Sun, moon, stars, mountains, trees and animals bow down"
+            note: "“… and many of the people. But many are justly deserving of punishment.”"
+            bible: "Ps 148:1-13"
+          - ref: "55:5-6"
+            label: "“The stars and the trees prostrate themselves”"
+          - ref: "16:17-18"
+            label: "“Is He who creates like him who does not create?”"
+            note: "“If you tried to enumerate the favors of God, you will not be able to count them.”"
+            bible: "Ps 40:5"
+
+  - title: "Nöldeke's periods"
+    auto: period
+    note: "The signs fill the Meccan surahs, where the Quran argues with those who worshiped other gods and doubted the resurrection."
+
+  - title: "Mecca and Medina"
+    auto: place

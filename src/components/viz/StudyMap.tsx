@@ -11,6 +11,7 @@ import type { Canon } from '@/lib/canon'
 import { formatYear, truncate } from '@/lib/format'
 import { ordinalsToRanges, type Range } from '@/lib/refs'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 type Focus =
   | { kind: 'study' }
@@ -75,7 +76,7 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
       color,
       r: r.weight >= 3 ? 6.5 : 4.5,
       solid: r.jesus,
-      sub: [catTitle(r.category), r.jesusOwn ? 'words of Jesus' : r.jesus ? 'connected by Jesus' : undefined, `weight ${r.weight}`].filter(Boolean).join(' · '),
+      sub: [catTitle(r.category), r.jesusOwn ? 'words of Jesus' : r.jesus ? 'connected by Jesus' : undefined, EDITION.redLetter ? `weight ${r.weight}` : undefined].filter(Boolean).join(' · '),
       note: r.note,
       snippet: snip(r.ranges),
     })
@@ -107,9 +108,9 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
           const dots = top.map((x, i) => {
             const id = `x:${i}`
             targets.set(id, { kind: 'passage', ranges: [[x[0], x[1]]], label: canon.rangeLabel(x[0], x[1]) })
-            return { id, label: canon.rangeLabel(x[0], x[1], 'short'), color: MUTED, r: 4.5, sub: `${x[2]} votes`, snippet: snip([[x[0], x[1]]]) }
+            return { id, label: canon.rangeLabel(x[0], x[1], 'short'), color: MUTED, r: 4.5, sub: EDITION.xrefs.weight(x[2]), snippet: snip([[x[0], x[1]]]) }
           })
-          branches.push({ id: 'auto:xrefs', title: 'Cross references', note: 'The passages readers most often connect with this one, from the OpenBible.info cross-reference votes.', color: MUTED, muted: true, dots })
+          branches.push({ id: 'auto:xrefs', title: EDITION.words.xrefs.replace(/^./, (c) => c.toUpperCase()), note: EDITION.xrefs.branch, color: MUTED, muted: true, dots })
         }
       }
       if (ents) {
@@ -408,7 +409,7 @@ export default function StudyMap({ study, view, canon, bible }: { study: Study; 
           </div>
           <label className="flex items-center gap-2 mt-3 text-xs text-ink-2">
             <input type="checkbox" checked={showAuto} onChange={(e) => setShowAuto(e.target.checked)} />
-            Show automatic connections (cross references, people, places)
+            Show automatic connections ({EDITION.words.xrefs}, people, places)
           </label>
         </div>
       </div>

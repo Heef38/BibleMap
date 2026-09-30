@@ -2,14 +2,15 @@ import { Loading, PageHeader, Section } from '@/components/common/ui'
 import { useData } from '@/data/useData'
 import { loadManifest } from '@/data/loaders'
 import { usePageTitle } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 export default function CreditsPage() {
-  usePageTitle('Sources and licenses', { description: 'The open data behind Bible-Map: public-domain Bible translations, cross references, people and places, and topical dictionaries, each with its license.' })
+  usePageTitle('Sources and licenses', { description: EDITION.text.creditsDescription })
   const { data: manifest } = useData('manifest', loadManifest)
   if (!manifest) return <div className="p-6"><Loading /></div>
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <PageHeader kicker="About" title="Sources and licenses" subtitle={`Data compiled ${manifest.generatedAt}. Bible-Map is built entirely on open data; each source keeps its own license.`} />
+      <PageHeader kicker="About" title="Sources and licenses" subtitle={`Data compiled ${manifest.generatedAt}. ${EDITION.text.creditsIntro}`} />
       <Section title="Sources">
         <ul className="divide-y divide-line text-sm">
           {manifest.sources.map((s) => (
@@ -18,16 +19,16 @@ export default function CreditsPage() {
                 {s.name}
               </a>
               <span className="text-ink-2">{s.license}</span>
+              {s.note && <span className="basis-full text-xs text-muted">{s.note}</span>}
             </li>
           ))}
         </ul>
       </Section>
       <Section title="Notes">
         <div className="text-sm text-ink-2 space-y-2 max-w-prose">
-          <p>Years attached to verses, people and events follow the traditional (Ussher-style) chronology used by the Theographic dataset. They are approximate and are shown to order the story, not to settle it.</p>
-          <p>Cross-reference weights are the community votes recorded by OpenBible.info; a higher bar means more readers found the link helpful.</p>
-          <p>Studies (the theme maps) are hand-authored in this project and carry the judgement of their author. The words of Jesus are taken from the red-letter markup of the Berean Standard Bible.</p>
-          <p>Theographic Bible Metadata is shared under CC BY-SA 4.0; derived entity data in this app is shared under the same terms.</p>
+          {EDITION.text.credits.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
         </div>
       </Section>
     </div>

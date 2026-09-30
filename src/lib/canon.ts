@@ -1,107 +1,38 @@
-/**
- * The Protestant canon: 66 books in traditional order, with every spelling the
- * data sources and users are likely to throw at us. Chapter/verse counts are not
- * hard-coded here; they come from the data build (books.json) so the app and the
- * pipeline always agree on the 31,102-verse grid.
- */
-export type Testament = 'OT' | 'NT'
+import type { ParseResult } from './refs'
 
+/**
+ * The verse grid of a scripture. The books themselves (the 66 of the Bible, the 114 surahs of the
+ * Quran) come from the edition in src/editions, with every spelling of their names. Chapter and
+ * verse counts are not hard-coded; they come from the data build (books.json), so the app and the
+ * pipeline always agree on the grid.
+ */
 export interface BookMeta {
   /** 1-based position in the canon */
   n: number
-  /** OSIS id, e.g. "Gen", "1Sam", "Phlm" */
+  /** OSIS id, e.g. "Gen", "1Sam", "Phlm" (a surah's number in the Quran) */
   osis: string
   /** USFM / Paratext code, e.g. "GEN", "1SA", "PHM" */
   usfm: string
   name: string
   /** Short label for tight spaces */
   short: string
-  testament: Testament
+  /** which of the edition's groups the book is in: a Testament, or where a surah was revealed */
+  group: string
   division: string
   aliases: string[]
 }
 
-type Row = [string, string, string, string, Testament, string, string]
-
-const ROWS: Row[] = [
-  ['Gen', 'GEN', 'Genesis', 'Gen', 'OT', 'Law', 'ge gn'],
-  ['Exod', 'EXO', 'Exodus', 'Exod', 'OT', 'Law', 'ex exo'],
-  ['Lev', 'LEV', 'Leviticus', 'Lev', 'OT', 'Law', 'le lv'],
-  ['Num', 'NUM', 'Numbers', 'Num', 'OT', 'Law', 'nu nm nb'],
-  ['Deut', 'DEU', 'Deuteronomy', 'Deut', 'OT', 'Law', 'de dt'],
-  ['Josh', 'JOS', 'Joshua', 'Josh', 'OT', 'History', 'jsh'],
-  ['Judg', 'JDG', 'Judges', 'Judg', 'OT', 'History', 'jg jgs jdgs'],
-  ['Ruth', 'RUT', 'Ruth', 'Ruth', 'OT', 'History', 'ru rth'],
-  ['1Sam', '1SA', '1 Samuel', '1 Sam', 'OT', 'History', '1sm 1s 1samuel'],
-  ['2Sam', '2SA', '2 Samuel', '2 Sam', 'OT', 'History', '2sm 2s 2samuel'],
-  ['1Kgs', '1KI', '1 Kings', '1 Kgs', 'OT', 'History', '1kg 1kin 1kings'],
-  ['2Kgs', '2KI', '2 Kings', '2 Kgs', 'OT', 'History', '2kg 2kin 2kings'],
-  ['1Chr', '1CH', '1 Chronicles', '1 Chr', 'OT', 'History', '1chron 1chronicles'],
-  ['2Chr', '2CH', '2 Chronicles', '2 Chr', 'OT', 'History', '2chron 2chronicles'],
-  ['Ezra', 'EZR', 'Ezra', 'Ezra', 'OT', 'History', ''],
-  ['Neh', 'NEH', 'Nehemiah', 'Neh', 'OT', 'History', 'ne'],
-  ['Esth', 'EST', 'Esther', 'Esth', 'OT', 'History', 'es'],
-  ['Job', 'JOB', 'Job', 'Job', 'OT', 'Poetry & Wisdom', 'jb'],
-  ['Ps', 'PSA', 'Psalms', 'Ps', 'OT', 'Poetry & Wisdom', 'psa psm pss psalm pslm'],
-  ['Prov', 'PRO', 'Proverbs', 'Prov', 'OT', 'Poetry & Wisdom', 'pr prv'],
-  ['Eccl', 'ECC', 'Ecclesiastes', 'Eccl', 'OT', 'Poetry & Wisdom', 'ec eccles qoh qoheleth'],
-  ['Song', 'SNG', 'Song of Solomon', 'Song', 'OT', 'Poetry & Wisdom', 'so sos ss songofsongs cant canticles canticle'],
-  ['Isa', 'ISA', 'Isaiah', 'Isa', 'OT', 'Major Prophets', 'is'],
-  ['Jer', 'JER', 'Jeremiah', 'Jer', 'OT', 'Major Prophets', 'je jr'],
-  ['Lam', 'LAM', 'Lamentations', 'Lam', 'OT', 'Major Prophets', 'la'],
-  ['Ezek', 'EZK', 'Ezekiel', 'Ezek', 'OT', 'Major Prophets', 'eze'],
-  ['Dan', 'DAN', 'Daniel', 'Dan', 'OT', 'Major Prophets', 'da dn'],
-  ['Hos', 'HOS', 'Hosea', 'Hos', 'OT', 'Minor Prophets', 'ho'],
-  ['Joel', 'JOL', 'Joel', 'Joel', 'OT', 'Minor Prophets', 'joe jl'],
-  ['Amos', 'AMO', 'Amos', 'Amos', 'OT', 'Minor Prophets', 'am'],
-  ['Obad', 'OBA', 'Obadiah', 'Obad', 'OT', 'Minor Prophets', 'ob'],
-  ['Jonah', 'JON', 'Jonah', 'Jonah', 'OT', 'Minor Prophets', 'jnh'],
-  ['Mic', 'MIC', 'Micah', 'Mic', 'OT', 'Minor Prophets', 'mi'],
-  ['Nah', 'NAM', 'Nahum', 'Nah', 'OT', 'Minor Prophets', 'na'],
-  ['Hab', 'HAB', 'Habakkuk', 'Hab', 'OT', 'Minor Prophets', 'hb'],
-  ['Zeph', 'ZEP', 'Zephaniah', 'Zeph', 'OT', 'Minor Prophets', 'zp'],
-  ['Hag', 'HAG', 'Haggai', 'Hag', 'OT', 'Minor Prophets', 'hg'],
-  ['Zech', 'ZEC', 'Zechariah', 'Zech', 'OT', 'Minor Prophets', 'zc'],
-  ['Mal', 'MAL', 'Malachi', 'Mal', 'OT', 'Minor Prophets', 'ml'],
-  ['Matt', 'MAT', 'Matthew', 'Matt', 'NT', 'Gospels', 'mt'],
-  ['Mark', 'MRK', 'Mark', 'Mark', 'NT', 'Gospels', 'mk mr'],
-  ['Luke', 'LUK', 'Luke', 'Luke', 'NT', 'Gospels', 'lk lu'],
-  ['John', 'JHN', 'John', 'John', 'NT', 'Gospels', 'jn joh'],
-  ['Acts', 'ACT', 'Acts', 'Acts', 'NT', 'Acts', 'ac'],
-  ['Rom', 'ROM', 'Romans', 'Rom', 'NT', 'Pauline Epistles', 'ro rm'],
-  ['1Cor', '1CO', '1 Corinthians', '1 Cor', 'NT', 'Pauline Epistles', '1corinthians'],
-  ['2Cor', '2CO', '2 Corinthians', '2 Cor', 'NT', 'Pauline Epistles', '2corinthians'],
-  ['Gal', 'GAL', 'Galatians', 'Gal', 'NT', 'Pauline Epistles', 'ga'],
-  ['Eph', 'EPH', 'Ephesians', 'Eph', 'NT', 'Pauline Epistles', 'ep'],
-  ['Phil', 'PHP', 'Philippians', 'Phil', 'NT', 'Pauline Epistles', 'phi pp philip'],
-  ['Col', 'COL', 'Colossians', 'Col', 'NT', 'Pauline Epistles', 'co'],
-  ['1Thess', '1TH', '1 Thessalonians', '1 Thess', 'NT', 'Pauline Epistles', '1thes 1thessalonians'],
-  ['2Thess', '2TH', '2 Thessalonians', '2 Thess', 'NT', 'Pauline Epistles', '2thes 2thessalonians'],
-  ['1Tim', '1TI', '1 Timothy', '1 Tim', 'NT', 'Pauline Epistles', '1tm 1timothy'],
-  ['2Tim', '2TI', '2 Timothy', '2 Tim', 'NT', 'Pauline Epistles', '2tm 2timothy'],
-  ['Titus', 'TIT', 'Titus', 'Titus', 'NT', 'Pauline Epistles', 'ti'],
-  ['Phlm', 'PHM', 'Philemon', 'Phlm', 'NT', 'Pauline Epistles', 'philem pm'],
-  ['Heb', 'HEB', 'Hebrews', 'Heb', 'NT', 'General Epistles', ''],
-  ['Jas', 'JAS', 'James', 'Jas', 'NT', 'General Epistles', 'jm jam'],
-  ['1Pet', '1PE', '1 Peter', '1 Pet', 'NT', 'General Epistles', '1pt 1peter'],
-  ['2Pet', '2PE', '2 Peter', '2 Pet', 'NT', 'General Epistles', '2pt 2peter'],
-  ['1John', '1JN', '1 John', '1 John', 'NT', 'General Epistles', '1jo 1jhn'],
-  ['2John', '2JN', '2 John', '2 John', 'NT', 'General Epistles', '2jo 2jhn'],
-  ['3John', '3JN', '3 John', '3 John', 'NT', 'General Epistles', '3jo 3jhn'],
-  ['Jude', 'JUD', 'Jude', 'Jude', 'NT', 'General Epistles', 'jd'],
-  ['Rev', 'REV', 'Revelation', 'Rev', 'NT', 'Revelation', 're revelations apoc apocalypse revelationofjohn'],
-]
-
-export const BOOKS: readonly BookMeta[] = ROWS.map((r, i) => ({
-  n: i + 1,
-  osis: r[0],
-  usfm: r[1],
-  name: r[2],
-  short: r[3],
-  testament: r[4],
-  division: r[5],
-  aliases: r[6].split(' ').filter(Boolean),
-}))
+/**
+ * How a scripture writes its references, when it is not the Bible's book, chapter and verse:
+ * the Quran counts surah and verse ("2:255"). An edition without one gets the Bible's way.
+ */
+export interface RefScheme {
+  /** the id used in URLs: a book or prefix, then chapter and verse, joined by dots */
+  osis(canon: Canon, o: number): string
+  label(canon: Canon, o: number, style: 'name' | 'short'): string
+  rangeLabel(canon: Canon, start: number, end: number, style: 'name' | 'short'): string
+  parse(input: string, canon: Canon): ParseResult
+}
 
 /** Normalize a book name for lookup: "I Sam." -> "1sam", "Song of Songs" -> "songofsongs". */
 export function normalizeBookName(s: string): string {
@@ -111,21 +42,6 @@ export function normalizeBookName(s: string): string {
     w.startsWith('1') || w === 'first' ? '1 ' : w.startsWith('2') || w === 'second' ? '2 ' : '3 ',
   )
   return t.replace(/[^a-z0-9]/g, '')
-}
-
-const ALIAS_INDEX: Map<string, BookMeta> = (() => {
-  const m = new Map<string, BookMeta>()
-  for (const b of BOOKS) {
-    for (const a of [b.osis, b.usfm, b.name, b.short, ...b.aliases]) {
-      const k = normalizeBookName(a)
-      if (k && !m.has(k)) m.set(k, b)
-    }
-  }
-  return m
-})()
-
-export function findBookMeta(name: string): BookMeta | undefined {
-  return ALIAS_INDEX.get(normalizeBookName(name))
 }
 
 export interface CanonBook extends BookMeta {
@@ -150,20 +66,31 @@ export interface VerseLoc {
 }
 
 /**
- * The verse grid. Every verse in the Bible has an ordinal 0..total-1 in canonical
- * order; everything in the data files refers to verses by that ordinal.
+ * The verse grid. Every verse has an ordinal 0..total-1 in canonical order; everything in the
+ * data files refers to verses by that ordinal.
  */
 export class Canon {
   readonly books: CanonBook[]
   readonly total: number
   private readonly starts: number[]
+  private readonly aliases = new Map<string, number>()
 
-  constructor(chaptersByBook: number[][]) {
-    if (chaptersByBook.length !== BOOKS.length) {
-      throw new Error(`Canon expects ${BOOKS.length} books, got ${chaptersByBook.length}`)
+  constructor(
+    meta: readonly BookMeta[],
+    chaptersByBook: number[][],
+    readonly scheme?: RefScheme,
+  ) {
+    if (chaptersByBook.length !== meta.length) {
+      throw new Error(`Canon expects ${meta.length} books, got ${chaptersByBook.length}`)
+    }
+    for (const b of meta) {
+      for (const a of [b.osis, b.usfm, b.name, b.short, ...b.aliases]) {
+        const k = normalizeBookName(a)
+        if (k && !this.aliases.has(k)) this.aliases.set(k, b.n)
+      }
     }
     let ordinal = 0
-    this.books = BOOKS.map((meta, i) => {
+    this.books = meta.map((m, i) => {
       const chapters = chaptersByBook[i]
       const chapterStarts: number[] = []
       let o = ordinal
@@ -171,7 +98,7 @@ export class Canon {
         chapterStarts.push(o)
         o += n
       }
-      const book: CanonBook = { ...meta, chapters, start: ordinal, verseCount: o - ordinal, chapterStarts }
+      const book: CanonBook = { ...m, chapters, start: ordinal, verseCount: o - ordinal, chapterStarts }
       ordinal = o
       return book
     })
@@ -179,9 +106,13 @@ export class Canon {
     this.starts = this.books.map((b) => b.start)
   }
 
-  static fromJson(j: BooksJson): Canon {
+  static fromJson(meta: readonly BookMeta[], j: BooksJson, scheme?: RefScheme): Canon {
     const sorted = [...j.books].sort((a, b) => a.n - b.n)
-    return new Canon(sorted.map((b) => b.chapters))
+    return new Canon(
+      meta,
+      sorted.map((b) => b.chapters),
+      scheme,
+    )
   }
 
   toJson(): BooksJson {
@@ -195,8 +126,8 @@ export class Canon {
   }
 
   find(name: string): CanonBook | undefined {
-    const meta = findBookMeta(name)
-    return meta ? this.books[meta.n - 1] : undefined
+    const n = this.aliases.get(normalizeBookName(name))
+    return n ? this.books[n - 1] : undefined
   }
 
   byOsis(osis: string): CanonBook | undefined {
@@ -247,11 +178,13 @@ export class Canon {
   }
 
   osis(o: number): string {
+    if (this.scheme) return this.scheme.osis(this, o)
     const { b, c, v } = this.locate(o)
     return `${this.books[b - 1].osis}.${c}.${v}`
   }
 
   label(o: number, style: 'name' | 'short' = 'name'): string {
+    if (this.scheme) return this.scheme.label(this, o, style)
     const { b, c, v } = this.locate(o)
     const book = this.books[b - 1]
     const single = book.chapters.length === 1
@@ -261,6 +194,7 @@ export class Canon {
   /** "John 3:16", "John 3:16–18", "John 3:16–4:2", "Psalm 23", "Genesis 1–2" */
   rangeLabel(start: number, end: number, style: 'name' | 'short' = 'name'): string {
     if (end < start) [start, end] = [end, start]
+    if (this.scheme) return this.scheme.rangeLabel(this, start, end, style)
     const a = this.locate(start)
     const z = this.locate(end)
     const book = this.books[a.b - 1]

@@ -6,6 +6,7 @@ import { useData } from '@/data/useData'
 import { loadBible, loadBibleIndex, loadCanon } from '@/data/loaders'
 import { useSettings } from '@/store/settings'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 function VerseText({ text, spans }: { text: string; spans?: [number, number][] }) {
   if (!spans?.length) return <>{text}</>
@@ -97,8 +98,10 @@ export default function ReaderPane({ inlineConnections = false, onMap, edge }: P
   const next = end + 1 < canon.total ? end + 1 : null
   const ordinals: number[] = []
   for (let o = start; o <= end; o++) ordinals.push(o)
-  const otBooks = canon.books.filter((b) => b.testament === 'OT')
-  const ntBooks = canon.books.filter((b) => b.testament === 'NT')
+  // Books sit under their group in the picker when each group is one stretch of the canon (the
+  // Testaments); surahs of Mecca and Medina are interleaved, so they are listed by number.
+  const grouped = canon.books.filter((b, i) => i === 0 || b.group !== canon.books[i - 1].group).length === EDITION.groups.length
+  const hasChapters = canon.books.some((b) => b.chapters.length > 1)
   const showWj = redLetter && !!bible?.wj
 
   return (
@@ -111,34 +114,39 @@ export default function ReaderPane({ inlineConnections = false, onMap, edge }: P
             </option>
           ))}
         </select>
-        <select className="field !w-auto !py-1 !px-2 text-sm min-w-0 max-w-[10rem]" value={loc.b} onChange={(e) => goTo(canon.chapterStart(+e.target.value, 1), { focus: false, pane: false })} aria-label="Book">
-          <optgroup label="Old Testament">
-            {otBooks.map((b) => (
-              <option key={b.n} value={b.n}>
-                {b.name}
+        <select className="field !w-auto !py-1 !px-2 text-sm min-w-0 max-w-[10rem]" value={loc.b} onChange={(e) => goTo(canon.chapterStart(+e.target.value, 1), { focus: false, pane: false })} aria-label={EDITION.words.book}>
+          {grouped
+            ? EDITION.groups.map((g) => (
+                <optgroup key={g.id} label={g.name}>
+                  {canon.books
+                    .filter((b) => b.group === g.id)
+                    .map((b) => (
+                      <option key={b.n} value={b.n}>
+                        {b.name}
+                      </option>
+                    ))}
+                </optgroup>
+              ))
+            : canon.books.map((b) => (
+                <option key={b.n} value={b.n}>
+                  {b.n}. {b.name}
+                </option>
+              ))}
+        </select>
+        {hasChapters && (
+          <select className="field !w-auto !py-1 !px-2 text-sm" value={loc.c} onChange={(e) => goTo(canon.chapterStart(loc.b, +e.target.value), { focus: false, pane: false })} aria-label="Chapter">
+            {Array.from({ length: chapterCount }, (_, i) => (
+              <option key={i + 1} value={i + 1}>
+                {i + 1}
               </option>
             ))}
-          </optgroup>
-          <optgroup label="New Testament">
-            {ntBooks.map((b) => (
-              <option key={b.n} value={b.n}>
-                {b.name}
-              </option>
-            ))}
-          </optgroup>
-        </select>
-        <select className="field !w-auto !py-1 !px-2 text-sm" value={loc.c} onChange={(e) => goTo(canon.chapterStart(loc.b, +e.target.value), { focus: false, pane: false })} aria-label="Chapter">
-          {Array.from({ length: chapterCount }, (_, i) => (
-            <option key={i + 1} value={i + 1}>
-              {i + 1}
-            </option>
-          ))}
-        </select>
+          </select>
+        )}
         <div className="ml-auto flex gap-1">
-          <button type="button" className="btn btn-ghost" disabled={prev === null} onClick={() => prev !== null && goTo(prev, { focus: false, pane: false, history: 'replace' })} title="Previous chapter">
+          <button type="button" className="btn btn-ghost" disabled={prev === null} onClick={() => prev !== null && goTo(prev, { focus: false, pane: false, history: 'replace' })} title={`Previous ${EDITION.words.chapter}`}>
             <IconChevronLeft />
           </button>
-          <button type="button" className="btn btn-ghost" disabled={next === null} onClick={() => next !== null && goTo(next, { focus: false, pane: false, history: 'replace' })} title="Next chapter">
+          <button type="button" className="btn btn-ghost" disabled={next === null} onClick={() => next !== null && goTo(next, { focus: false, pane: false, history: 'replace' })} title={`Next ${EDITION.words.chapter}`}>
             <IconChevronRight />
           </button>
         </div>
@@ -149,10 +157,8 @@ export default function ReaderPane({ inlineConnections = false, onMap, edge }: P
         {!bible ? (
           <Loading label={`Loading ${translation.toUpperCase()}…`} />
         ) : (
-          <div className="scripture">
-            <div className="kicker mb-3">
-              {book.name} {chapterCount > 1 ? loc.c : ''}
-            </div>
+          <div className="scripture" dir={bible.rtl ? 'rtl' : undefined} lang={bible.lang}>
+            <div className="kicker mb-3">{canon.scheme ? canon.rangeLabel(start, end) : `${book.name} ${chapterCount > 1 ? loc.c : ''}`}</div>
             {ordinals.map((o) => {
               const text = bible.verses[o]
               const heading = showHeadings && bible.headings?.[o]
@@ -164,6 +170,7 @@ export default function ReaderPane({ inlineConnections = false, onMap, edge }: P
               return (
                 <div key={o}>
                   {heading && <div className="heading">{heading}</div>}
+                  {bible.pre?.[o] && <div className="opening">{bible.pre[o]}</div>}
                   <span
                     data-o={o}
                     className={`verse${hl ? ' hl' : ''}${isFocus ? ' focus' : ''}`}
@@ -185,7 +192,7 @@ export default function ReaderPane({ inlineConnections = false, onMap, edge }: P
                 </div>
               )
             })}
-            <div className="flex justify-between mt-8 font-sans text-sm">
+            <div className="flex justify-between mt-8 font-sans text-sm" dir="ltr">
               {prev !== null ? (
                 <button type="button" className="btn btn-ghost" onClick={() => goTo(prev, { focus: false, pane: false, history: 'replace' })}>
                   <IconChevronLeft /> {canon.rangeLabel(canon.chapterStart(canon.locate(prev).b, canon.locate(prev).c), prev, 'short')}
@@ -199,7 +206,9 @@ export default function ReaderPane({ inlineConnections = false, onMap, edge }: P
                 </button>
               )}
             </div>
-            <div className="mt-6 text-[11px] font-sans text-muted leading-relaxed">{bible.attribution}</div>
+            <div className="mt-6 text-[11px] font-sans text-muted leading-relaxed" dir="ltr">
+              {bible.attribution}
+            </div>
           </div>
         )}
       </div>

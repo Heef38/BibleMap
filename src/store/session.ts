@@ -3,7 +3,7 @@ import { useLocation } from 'react-router'
 import { create } from 'zustand'
 import type { Range } from '@/lib/refs'
 import { useSettings } from './settings'
-import { SITE } from '@/config/site'
+import { SITE } from '@edition/site'
 
 export interface Highlight {
   ranges: Range[]
@@ -36,7 +36,7 @@ interface Session {
   focus: number | null
   /** the verse whose connection map covers the right pane (a verse picked in the reader) */
   mapVerse: number | null
-  /** the right pane spreads over the Bible (desktop), for wide charts */
+  /** the right pane spreads over the reader (desktop), for wide charts */
   wide: boolean
   /** what the right pane shows, for the pane's bar and the tab title */
   pageTitle: string
@@ -164,7 +164,8 @@ export function usePageTitle(title: string | undefined, meta?: PageMeta) {
     setMeta('property', 'og:title', full)
     setMeta('property', 'og:description', description)
     setMeta('property', 'og:url', `${SITE.url}${pathname}`)
-    setMeta('name', 'robots', noindex ? 'noindex' : 'index, follow')
+    // A site that is not listed asks the same of every page, whatever the page would say.
+    setMeta('name', 'robots', !SITE.listed ? 'noindex, nofollow' : noindex ? 'noindex' : 'index, follow')
     setCanonical(`${SITE.url}${pathname}`)
   }, [title, docTitle, description, noindex, pathname, setPageTitle])
 }

@@ -1,5 +1,6 @@
 import MiniSearch from 'minisearch'
-import { escapeRegExp } from '@/lib/format'
+import { EDITION } from '@edition/config'
+import { escapeRegExp, formatYear } from '@/lib/format'
 import { loadEvents, loadPeopleIndex, loadPlacesIndex, loadStudiesIndex, loadTopicsIndex } from './loaders'
 import type { Bible } from './types'
 
@@ -25,8 +26,11 @@ export const TYPE_LABELS: Record<EntityType, string> = {
   place: 'Places',
   topic: 'Topics',
   event: 'Events',
-  book: 'Books',
+  book: EDITION.words.books.replace(/^./, (c) => c.toUpperCase()),
 }
+
+/** A topic's source in a few letters, for the line under a search result. */
+const TOPIC_SOURCE: Record<string, string> = { nave: "Nave's", torrey: "Torrey's", word: 'Word' }
 
 export const TYPE_ORDER: EntityType[] = ['study', 'person', 'place', 'topic', 'event', 'book']
 
@@ -35,14 +39,8 @@ export function entityHref(type: EntityType, key: string): string {
 }
 
 export async function buildSearchIndex(): Promise<MiniSearch<EntityDoc>> {
-  const [people, places, topics, events, studies, books] = await Promise.all([
-    loadPeopleIndex(),
-    loadPlacesIndex(),
-    loadTopicsIndex(),
-    loadEvents(),
-    loadStudiesIndex(),
-    import('@/lib/canon').then((m) => m.BOOKS),
-  ])
+  const [people, places, topics, events, studies] = await Promise.all([loadPeopleIndex(), loadPlacesIndex(), loadTopicsIndex(), loadEvents(), loadStudiesIndex()])
+  const books = EDITION.books
   const docs: EntityDoc[] = []
   for (const s of studies) docs.push({ id: `study:${s.id}`, type: 'study', key: s.id, title: s.title, aka: s.tags.join(' '), sub: s.subtitle ?? `${s.refCount} references`, n: s.refCount })
   for (const p of people)
@@ -71,11 +69,11 @@ export async function buildSearchIndex(): Promise<MiniSearch<EntityDoc>> {
       type: 'topic',
       key: t.id,
       title: t.title,
-      aka: '',
-      sub: `${t.source === 'nave' ? "Nave's" : "Torrey's"} · ${t.verses.toLocaleString()} verses`,
+      aka: t.aka ?? '',
+      sub: `${TOPIC_SOURCE[t.source] ?? t.source} · ${t.verses.toLocaleString()} verses`,
       n: t.verses,
     })
-  for (const e of events) docs.push({ id: `event:${e.id}`, type: 'event', key: e.id, title: e.title, aka: '', sub: e.year === null ? '' : e.year < 0 ? `${-e.year} BC` : `AD ${e.year}`, n: e.verses.length })
+  for (const e of events) docs.push({ id: `event:${e.id}`, type: 'event', key: e.id, title: e.title, aka: '', sub: formatYear(e.year), n: e.verses.length })
   for (const b of books) docs.push({ id: `book:${b.osis}`, type: 'book', key: b.osis, title: b.name, aka: `${b.short} ${b.aliases.join(' ')}`, sub: b.division, n: 1 })
 
   const ms = new MiniSearch<EntityDoc>({

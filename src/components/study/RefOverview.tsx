@@ -3,10 +3,12 @@ import { RefLink } from '@/components/common/ui'
 import { categoryColor } from '@/components/viz/ArcDiagram'
 import { groupColor, refFill } from '@/components/viz/Sunburst'
 import { IconX } from '@/components/common/icons'
+import BibleLinks from '@/components/study/BibleLinks'
 import type { Bible, Study, StudyGroup, StudyRef, StudyView } from '@/data/types'
 import type { Canon } from '@/lib/canon'
 import { truncate } from '@/lib/format'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 /** What a reference is about: its note, its text, and everything it connects to. */
 export default function RefOverview({ study, view, group, item, canon, bible, onClose }: { study: Study; view: StudyView; group: StudyGroup; item: StudyRef; canon: Canon; bible?: Bible; onClose: () => void }) {
@@ -49,7 +51,7 @@ export default function RefOverview({ study, view, group, item, canon, bible, on
             <span className="swatch" style={{ background: refFill(gi, true) }} /> connected by Jesus
           </span>
         ) : null}
-        <span className="chip !py-0">weight {item.weight}</span>
+        {EDITION.redLetter && <span className="chip !py-0">weight {item.weight}</span>}
       </div>
       {item.note && <p className="text-ink-2 mt-2 leading-snug">{item.note}</p>}
       {item.facets && study.facets && (
@@ -65,6 +67,7 @@ export default function RefOverview({ study, view, group, item, canon, bible, on
         </dl>
       )}
       {text && <p className="scripture !text-[14.5px] !leading-snug mt-2">{text}</p>}
+      <BibleLinks item={item} className="mt-2" />
       {topics.length > 0 && (
         <div className="mt-3 space-y-1.5">
           {topics.map((topic) => (

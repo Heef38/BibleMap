@@ -41,7 +41,7 @@ export default function BookPage() {
         kicker={
           <>
             <Link to="/bible" className="text-muted hover:text-accent">
-              {book.testament === 'OT' ? 'Old Testament' : 'New Testament'} · {book.division}
+              {book.group === 'OT' ? 'Old Testament' : 'New Testament'} · {book.division}
             </Link>
           </>
         }

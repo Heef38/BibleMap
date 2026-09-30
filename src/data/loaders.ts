@@ -1,3 +1,4 @@
+import { EDITION } from '@edition/config'
 import { Canon } from '@/lib/canon'
 import type {
   Bible,
@@ -39,7 +40,7 @@ const topicShard = (id: string) => shardOf(id.split(':')[1] ?? id)
 
 let canonPromise: Promise<Canon> | null = null
 export function loadCanon(): Promise<Canon> {
-  canonPromise ??= fetchJson<BooksJson>('books.json').then((j) => Canon.fromJson(j))
+  canonPromise ??= fetchJson<BooksJson>('books.json').then((j) => Canon.fromJson(EDITION.books, j, EDITION.refs))
   return canonPromise
 }
 

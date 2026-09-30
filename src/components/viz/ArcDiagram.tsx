@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState, type PointerEvent } from 'react'
-import { layoutRow } from './CanonStrip'
+import { layoutRow, stripRows, STRIP_LEFT } from './CanonStrip'
 import { VizTooltip, type TipState } from './Tooltip'
 import { groupColor } from './Sunburst'
 import type { Bible, Study, StudyRef, StudyView } from '@/data/types'
@@ -7,6 +7,7 @@ import type { Canon, CanonBook } from '@/lib/canon'
 import type { Range } from '@/lib/refs'
 import { useWidth } from '@/lib/hooks'
 import { truncate } from '@/lib/format'
+import { EDITION } from '@edition/config'
 
 /** Category colors: the first three categorical slots validate for any-pair adjacency. */
 export function categoryColor(categories: { id: string }[] | undefined, id: string | undefined): string {
@@ -38,7 +39,7 @@ interface Link {
 
 const ROW_H = 16
 const LABEL_H = 14
-const LEFT = 26
+const LEFT = STRIP_LEFT
 const ARC_H = 190
 
 export default function ArcDiagram({
@@ -65,7 +66,7 @@ export default function ArcDiagram({
   const [tip, setTip] = useState<TipState | null>(null)
   const [hover, setHover] = useState<string | null>(null)
 
-  const rows: CanonBook[][] = useMemo(() => [canon.books.filter((b) => b.testament === 'OT'), canon.books.filter((b) => b.testament === 'NT')], [canon])
+  const rows: CanonBook[][] = useMemo(() => stripRows(canon), [canon])
   const avail = Math.max(0, width - LEFT)
   const layouts = useMemo(() => rows.map((r) => layoutRow(r, avail)), [rows, avail])
   const pos = useMemo(() => {
@@ -126,7 +127,7 @@ export default function ArcDiagram({
               const y2 = edgeY(l.row2)
               let d: string
               if (l.row1 === l.row2) {
-                // both passages in the same Testament: bow into the middle band
+                // both passages in the same row (the same Testament): bow into the middle band
                 const bow = l.row1 === 0 ? ARC_H * 0.5 : -ARC_H * 0.5
                 d = `M${l.x1},${y1} C${l.x1},${y1 + bow} ${l.x2},${y2 + bow} ${l.x2},${y2}`
               } else {
@@ -182,7 +183,7 @@ export default function ArcDiagram({
             return (
               <g key={ri}>
                 <text x={0} y={y + ROW_H / 2 + 4} fontSize={11} fontWeight={600} fill="var(--muted)">
-                  {ri === 0 ? 'OT' : 'NT'}
+                  {EDITION.groups[ri].short}
                 </text>
                 {r.map((b) => {
                   const p = pos.get(b.n)!

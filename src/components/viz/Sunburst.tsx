@@ -5,6 +5,7 @@ import type { Bible, Study, StudyGroup, StudyRef, StudyView } from '@/data/types
 import { useWidth } from '@/lib/hooks'
 import { truncate } from '@/lib/format'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 export const groupColor = (i: number) => (i < 8 ? `var(--series-${i + 1})` : 'var(--muted)')
 export const refFill = (gi: number, jesus: boolean) => `color-mix(in oklab, ${groupColor(gi)} ${jesus ? 100 : 58}%, var(--surface))`
@@ -121,7 +122,7 @@ export default function Sunburst({
         <>
           <div className="v">{g.title}</div>
           <div className="k">
-            {g.refs.length} references · {g.verses.toLocaleString()} verses · weight {g.weight}
+            {g.refs.length} references · {g.verses.toLocaleString()} verses{EDITION.redLetter ? ` · weight ${g.weight}` : ''}
           </div>
           {g.note && <div className="k mt-1">{truncate(g.note, 160)}</div>}
         </>
@@ -134,7 +135,8 @@ export default function Sunburst({
         <>
           <div className="v">{r.label}</div>
           <div className="k">
-            {n.data.group?.title} · weight {r.weight}
+            {n.data.group?.title}
+            {EDITION.redLetter ? ` · weight ${r.weight}` : ''}
             {r.jesusOwn ? ' · words of Jesus' : r.jesus ? ' · connected by Jesus' : ''}
           </div>
           {r.note && <div className="k mt-1">{r.note}</div>}

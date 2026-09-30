@@ -4,12 +4,16 @@
   "description": "Visualize the connections of the Bible",
   "scripts": {
     "dev": "vite",
+    "dev:quran": "vite --mode quran --port 5183",
     "build": "tsc --noEmit && vite build",
+    "build:quran": "tsc --noEmit && vite build --mode quran",
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "data:build": "tsx scripts/build-data.ts",
-    "data:fetch": "tsx scripts/fetch-raw.ts"
+    "data:build:quran": "tsx scripts/build-quran.ts",
+    "data:fetch": "tsx scripts/fetch-raw.ts",
+    "data:fetch:quran": "tsx scripts/fetch-quran.ts"
   },
   "keywords": [],
   "author": "",

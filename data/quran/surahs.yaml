@@ -1,0 +1,1453 @@
+# What each surah is about, and how it is built. Written for this project from the text itself
+# (Talal Itani's translation, checked against the others where the sense is in doubt).
+#
+#   summary:   a sentence or three on what the surah says
+#   letters:   the disconnected letters it opens with, when it has them
+#   sections:  [verse, heading] for each section, in order; they become the headings in the reader
+#              and the surah's outline
+#
+# Headings say what a section says, in the text's own terms; they do not judge it.
+
+1:
+  summary: >-
+    A seven-verse prayer that opens the book and is said in every one of the daily prayers: praise
+    of God as Lord of the worlds, Merciful, and Master of the Day of Judgment, then a plea to be
+    guided on the straight path.
+
+2:
+  letters: Alif, Lam, Mim
+  summary: >-
+    The longest surah, and the charter of the community at Medina. It sorts people into those who
+    believe, those who refuse and those who only say they believe; retells Adam's fall and Israel's
+    history as a warning; presents Abraham and Ishmael as the builders of the House at Mecca and
+    turns the direction of prayer toward it; then gives law on food, retaliation, fasting,
+    pilgrimage, fighting, marriage and divorce, charity, usury and debt. It holds the Throne Verse
+    (255) and "no compulsion in religion" (256).
+  sections:
+    - [1, "The Book, and those it guides"]
+    - [6, "Those who refuse, and those who only say \"We believe\""]
+    - [21, "Worship your Lord; bring a chapter like it if you doubt"]
+    - [30, "Adam, the angels and Satan"]
+    - [40, "Children of Israel, keep your pledge"]
+    - [47, "What God did for Israel, and how they answered"]
+    - [62, "Whoever believes and does right; the Sabbath-breakers"]
+    - [67, "The heifer"]
+    - [75, "Those who alter the Scripture"]
+    - [83, "The covenant with Israel, and its breaking"]
+    - [87, "Moses, Jesus and the messengers they rejected"]
+    - [97, "Gabriel, and the sorcery learned at Babylon"]
+    - [104, "Believers and the People of the Book; a verse replaced by a better"]
+    - [113, "Jews and Christians dispute; \"God has begotten a son\""]
+    - [122, "Abraham and Ishmael raise the House"]
+    - [130, "The religion of Abraham"]
+    - [142, "The direction of prayer is turned to the Sacred Mosque"]
+    - [153, "Patience under trial; Safa and Marwa"]
+    - [164, "Signs in creation, and those who set up equals to God"]
+    - [168, "Lawful food, and those who hide what God revealed"]
+    - [177, "What righteousness is"]
+    - [178, "Retaliation for the slain; bequests"]
+    - [183, "The fast of Ramadan"]
+    - [189, "Fight those who fight you"]
+    - [196, "The pilgrimage"]
+    - [204, "Two kinds of people; enter submission wholly"]
+    - [211, "One community, then the prophets; hardship before Paradise"]
+    - [215, "They ask you: giving, fighting, wine and gambling, orphans, marriage"]
+    - [222, "Wives, oaths and the waiting period after divorce"]
+    - [229, "Divorce and its limits"]
+    - [233, "Nursing, widows, betrothal and dowry"]
+    - [238, "Guard the prayers"]
+    - [243, "Saul, David and Goliath"]
+    - [253, "The messengers ranked; spend before the Day comes"]
+    - [255, "The Throne Verse; no compulsion in religion"]
+    - [258, "Abraham and the raising of the dead"]
+    - [261, "Parables of giving"]
+    - [267, "How to give"]
+    - [275, "Usury forbidden"]
+    - [282, "Writing down a debt"]
+    - [284, "\"We hear and we obey\": the closing prayer"]
+
+3:
+  letters: Alif, Lam, Mim
+  summary: >-
+    Named for the family into which Mary was born. It opens with the Book itself, some of whose
+    verses are definitive and others open to more than one reading; tells of Mary, Zechariah, John
+    and Jesus; and calls the People of the Book to a common word: to worship none but God. Its
+    second half speaks to the believers after a defeat in battle (Uhud, by tradition): why it
+    happened, who wavered, and that those killed in God's cause are alive with their Lord.
+  sections:
+    - [1, "The Book: its definitive verses and its unspecific ones"]
+    - [10, "Wealth will not save the unbelievers; what is better than this world"]
+    - [18, "Religion with God is Islam"]
+    - [21, "Those who kill the prophets; believers are not to take unbelievers for friends"]
+    - [31, "The family of Imran: Mary's birth, Zechariah and John"]
+    - [42, "The angels announce Jesus to Mary; his signs and his disciples"]
+    - [55, "\"I am raising you to Me\": Jesus is like Adam"]
+    - [64, "People of the Book, come to a common word; Abraham was neither Jew nor Christian"]
+    - [72, "Some of the People of the Book: trust, and twisting the Scripture"]
+    - [81, "The covenant of the prophets; no religion accepted but Islam"]
+    - [92, "Food before the Torah, the first House at Bekka, and the pilgrimage"]
+    - [102, "Hold fast to the rope of God: the best community"]
+    - [113, "They are not all alike; do not befriend those who wish you harm"]
+    - [121, "The day of battle, and the help given at Badr"]
+    - [130, "Leave usury; race to forgiveness"]
+    - [137, "Wounds and testing: \"Muhammad is no more than a messenger\""]
+    - [149, "After the setback: how you faltered"]
+    - [156, "Death, consultation and trust in God"]
+    - [165, "The hypocrites exposed; those killed are alive with their Lord"]
+    - [172, "Those who answered the call; respite for the unbelievers"]
+    - [181, "\"God is poor and we are rich\"; every soul will taste death"]
+    - [190, "The prayer of those who reflect on creation"]
+
+4:
+  summary: >-
+    Law for the household and for a community at war. It sets out the care of orphans' property,
+    marriage (up to four wives, if they can be treated fairly), the shares of inheritance, whom a
+    man may not marry, and men's charge over women; commands obedience to God, the Messenger and
+    those in authority; and deals with fighting, killing, emigration and the hypocrites who waver.
+    It ends with the People of the Scripture: it denies that Jesus was killed or crucified, and
+    tells them not to say "Three".
+  sections:
+    - [1, "One soul; orphans, their property, and how many wives"]
+    - [7, "The shares of inheritance"]
+    - [15, "Lewdness and repentance; how wives are to be treated"]
+    - [23, "Whom a man may not marry"]
+    - [26, "God wishes to lighten your burden; do not consume each other's wealth"]
+    - [34, "Men and women in the household; two arbiters"]
+    - [36, "Worship God and be good to those near you; the miserly"]
+    - [43, "Prayer: not while drunk; washing with clean earth"]
+    - [44, "Those given a share of the Book who twist words; the sin God does not forgive"]
+    - [51, "Their envy; the Fire and the Gardens"]
+    - [58, "Trusts, justice, and obedience to God, the Messenger and those in authority"]
+    - [60, "Hypocrites who look for another judge"]
+    - [71, "Fight in the cause of God, and for the oppressed"]
+    - [77, "Those who fear the fighting; ponder the Quran"]
+    - [88, "The hypocrites: whom to fight and whom to leave alone"]
+    - [92, "Killing a believer, by error and on purpose"]
+    - [95, "Those who strive and those who sit at home"]
+    - [97, "Those who did not emigrate"]
+    - [101, "Prayer on a journey and in danger"]
+    - [105, "Judge by what God has shown you; do not plead for the treacherous"]
+    - [116, "God does not forgive partners set beside Him; Satan's promises"]
+    - [127, "Rulings on women and orphans; fairness between wives"]
+    - [135, "Stand firm for justice; the hypocrites waver"]
+    - [153, "The People of the Scripture: the broken covenant; \"they did not kill him\""]
+    - [163, "Revelation as to the prophets before"]
+    - [171, "Do not say \"Three\": the Messiah is a servant of God"]
+    - [176, "A ruling on one who leaves no parent or child"]
+
+5:
+  summary: >-
+    Among the last surahs, by tradition. It completes the law (food, hunting on pilgrimage, washing
+    before prayer, oaths, wine and gambling forbidden, the penalties for theft and for making war
+    on God and His Messenger) and says, "Today I have perfected your religion for you." Much of it
+    is addressed to Jews and Christians: their broken pledges, judging by the Torah, the Gospel and
+    this Book, and the denial that God is the Messiah or "the third of three". It ends with God
+    questioning Jesus on the Last Day, and the table sent down from heaven.
+  sections:
+    - [1, "Keep your commitments; lawful food; \"Today I have perfected your religion\""]
+    - [6, "Washing for prayer; bear witness with justice"]
+    - [12, "The pledges of Israel and of the Christians; \"God is the Christ\" denied"]
+    - [20, "Moses and the people who would not enter the Holy Land"]
+    - [27, "Adam's two sons; to kill one person is to kill all mankind"]
+    - [33, "Those who make war on God and His Messenger; the thief"]
+    - [41, "Judge between them by what God revealed: the Torah, the Gospel and this Book"]
+    - [51, "Do not take the Jews and the Christians as allies"]
+    - [57, "Those who mock your religion; \"God's hand is tied\""]
+    - [67, "Messenger, deliver the message; God is not the Messiah, nor the third of three"]
+    - [78, "Those cursed among Israel; the Christians are nearest in affection"]
+    - [87, "Do not forbid good things; oaths; wine and gambling"]
+    - [94, "Game on the pilgrimage; the Kaaba"]
+    - [101, "Needless questions, pagan customs, and witnesses to a bequest"]
+    - [109, "God recalls his favor to Jesus; the table from heaven"]
+    - [116, "\"Did you say, Take me and my mother as gods?\""]
+
+6:
+  summary: >-
+    A long Meccan argument against idolatry. It answers the Meccans' objections one by one (why no
+    angel, no miracle, no book on paper), shows Abraham reasoning from the star, the moon and the
+    sun to the one who made them, names eighteen prophets God guided, and sets aside the pagans'
+    rules about which crops and animals are forbidden, giving in their place a short list of what
+    God has forbidden (151 to 153).
+  sections:
+    - [1, "The Creator, and those who set up equals with Him"]
+    - [11, "To whom does everything belong? God is witness between us"]
+    - [21, "The idolaters on the Day they are gathered"]
+    - [31, "This life is play; the Messenger is consoled"]
+    - [42, "Earlier communities were seized; \"I do not say I am an angel\""]
+    - [51, "Do not drive away those who call on their Lord"]
+    - [56, "The keys of the unseen are with Him"]
+    - [61, "He rescues you from land and sea; leave those who mock"]
+    - [71, "Abraham and the star, the moon and the sun"]
+    - [83, "The prophets God guided"]
+    - [91, "\"God revealed nothing to any human\": the Scripture of Moses, and this one"]
+    - [95, "Signs: the seed, the dawn, the stars, the rain"]
+    - [101, "He has no son and no partner; do not insult their gods"]
+    - [111, "They would not believe though angels came; eat what God's name was said over"]
+    - [122, "From death to light; God opens a heart to Islam"]
+    - [130, "Jinn and humans gathered; no town destroyed unwarned"]
+    - [136, "Pagan rules for crops, cattle and children"]
+    - [141, "What is in truth forbidden to eat"]
+    - [151, "\"Come, let me tell you what your Lord has forbidden\""]
+    - [155, "This blessed Scripture; no soul bears another's burden"]
+
+7:
+  letters: Alif, Lam, Mim, Sad
+  summary: >-
+    Named for the Heights between the Garden and the Fire, where men stand who can see both. After
+    Satan's refusal to bow to Adam and the loss of the Garden, it tells in one long sequence of
+    Noah, Hud, Salih, Lot and Shuaib, each rejected by his people, who were then destroyed; and
+    then, at greater length, of Moses: Pharaoh, the plagues, the sea, the calf and the mountain.
+    It says the Unlettered Prophet is found in the Torah and the Gospel (157).
+  sections:
+    - [1, "A Scripture to warn with; the scales on that Day"]
+    - [11, "Satan refuses to bow; Adam and his wife are deceived"]
+    - [26, "Children of Adam: clothing, Satan, and what God has forbidden"]
+    - [35, "Messengers will come to you; the crowds in the Fire"]
+    - [40, "The people of the Garden, the people of the Fire, and the men on the Heights"]
+    - [54, "Your Lord made the heavens and the earth in six days"]
+    - [59, "Noah"]
+    - [65, "Hud and the people of Aad"]
+    - [73, "Salih, Thamud and the she-camel"]
+    - [80, "Lot"]
+    - [85, "Shuaib and the people of Midian"]
+    - [94, "How God deals with the towns"]
+    - [103, "Moses before Pharaoh; the magicians believe"]
+    - [127, "The plagues, and the drowning of Pharaoh's people"]
+    - [138, "Israel asks for a god to see; Moses on the mountain"]
+    - [148, "The calf"]
+    - [155, "The seventy; the Unlettered Prophet"]
+    - [158, "A Messenger to all people; the twelve tribes; the town by the sea"]
+    - [172, "\"Am I not your Lord?\"; the man who cast off God's signs"]
+    - [180, "The Most Beautiful Names; the Hour will come suddenly"]
+    - [189, "They give partners to the One who made them; listen when the Quran is recited"]
+
+8:
+  summary: >-
+    Tied by tradition to the first battle, Badr (the "Day of Distinction", verse 41). It settles
+    who owns the spoils, explains the victory as God's doing, with angels sent to help, and gives
+    rules of war: stand firm, do not flee, fight until persecution ends, keep treaties unless they
+    are betrayed, prepare what force you can, and incline to peace if the enemy does. It ends with
+    the bond between those who emigrated and those who sheltered them.
+  sections:
+    - [1, "The spoils are God's and the Messenger's; who the true believers are"]
+    - [5, "The day of battle: angels, rain, and \"it was God who killed them\""]
+    - [20, "Obey God and the Messenger; answer when you are called"]
+    - [30, "The unbelievers plotted; their prayer at the House"]
+    - [38, "Fight until there is no more persecution; a fifth of the spoils"]
+    - [42, "The day the two armies met"]
+    - [45, "Stand firm; Satan deserted them"]
+    - [49, "Like Pharaoh's people; those who break their treaties"]
+    - [59, "Prepare what force you can; if they incline to peace"]
+    - [65, "Rouse the believers to battle; the prisoners"]
+    - [72, "Those who emigrated and those who sheltered them"]
+
+9:
+  summary: >-
+    The only surah that does not open with "In the name of God", and among the last by tradition.
+    It cancels the treaties of idolaters who broke them, orders that after the sacred months they
+    be fought unless they repent (5), bars them from the Sacred Mosque, and orders fighting those
+    of the People of the Scripture who do not follow the religion of truth until they pay the tax
+    (29). Most of the rest concerns an expedition many did not want to join (Tabuk, by tradition):
+    it exposes the hypocrites and their excuses, and praises those who strove.
+  sections:
+    - [1, "Immunity declared from the idolaters; after the sacred months"]
+    - [7, "Keep faith with those who keep it; fight those who break their oaths"]
+    - [17, "Who may tend God's places of worship; God before family"]
+    - [25, "The day of Hunayn; idolaters barred from the Sacred Mosque; the tax"]
+    - [30, "\"Ezra is the son of God\", \"the Messiah is the son of God\"; rabbis, monks and hoarders"]
+    - [36, "Twelve months, four of them sacred"]
+    - [38, "Why do you cling to the earth? The two in the cave"]
+    - [43, "Those who asked to stay behind"]
+    - [60, "Who the charities are for; those who insult the Prophet"]
+    - [67, "Hypocrite men and women; believing men and women"]
+    - [73, "Strive against the unbelievers and the hypocrites"]
+    - [81, "Those who stayed behind rejoiced; do not pray over them"]
+    - [90, "The desert Arabs and their excuses"]
+    - [100, "The first emigrants and helpers; the mosque built to do harm"]
+    - [111, "God has bought the believers' lives; the three who were left behind"]
+    - [119, "Do not stay behind the Messenger; let some remain to learn the religion"]
+    - [123, "Fight the unbelievers near you; a messenger from among yourselves"]
+
+10:
+  letters: Alif, Lam, Ra
+  summary: >-
+    A Meccan surah on revelation and those who deny it. They ask for a different Quran, or for a
+    miracle, and are challenged to produce one chapter like it (38). Noah and Moses are recalled;
+    Pharaoh believes as he drowns, too late. The surah is named for the one town that believed in
+    time, the people of Jonah (98), and it asks the Prophet, "Will you compel people to become
+    believers?" (99).
+  sections:
+    - [1, "A man sent to warn; the Creator, and the two ends"]
+    - [11, "People call on God in trouble, then forget; \"bring a different Quran\""]
+    - [21, "The storm at sea; this life is like rain on the earth"]
+    - [31, "Who provides for you? Produce one chapter like it"]
+    - [41, "\"I have my deeds and you have yours\"; every community has a messenger"]
+    - [54, "God's promise is true; a healing for what is in the hearts"]
+    - [61, "God's friends have nothing to fear; \"God has taken a son\""]
+    - [71, "Noah; Moses and Pharaoh's sorcerers"]
+    - [83, "Pharaoh believes as he drowns"]
+    - [93, "Israel settled; only the people of Jonah believed in time"]
+    - [104, "\"I serve God alone\": guidance is for one's own soul"]
+
+11:
+  letters: Alif, Lam, Ra
+  summary: >-
+    "Worship none but God", driven home by the stories of the messengers in order: Noah and the
+    flood (and the son who would not board), Hud, Salih, the angels who visit Abraham on their way
+    to Lot, Shuaib, and Moses. Each people refused and was destroyed. The stories are told, it
+    says, to strengthen the Prophet's heart (120).
+  sections:
+    - [1, "Worship none but God; He made the heavens and the earth in six days"]
+    - [9, "Human ingratitude; \"produce ten chapters like it\""]
+    - [25, "Noah argues with his people"]
+    - [36, "The Ark, the flood, and Noah's son"]
+    - [50, "Hud and the people of Aad"]
+    - [61, "Salih and Thamud"]
+    - [69, "The messengers visit Abraham; the people of Lot"]
+    - [84, "Shuaib and the people of Midian"]
+    - [96, "Moses and Pharaoh; the towns, and the Day to come"]
+    - [110, "Be upright; keep the prayer; why the stories are told"]
+
+12:
+  letters: Alif, Lam, Ra
+  summary: >-
+    The one surah that tells a single story from beginning to end: Joseph's dream, the well, the
+    wife of the Egyptian who bought him, prison, the king's dream, his charge over the storehouses
+    of Egypt, and his reunion with his brothers and his father Jacob. In prison he preaches the
+    one God (39 to 40). The surah calls the story a confirmation of what came before (111).
+  sections:
+    - [1, "An Arabic Quran; Joseph's dream"]
+    - [7, "His brothers throw him into the well"]
+    - [21, "In Egypt: the wife of the man who bought him"]
+    - [30, "The women of the city; Joseph chooses prison"]
+    - [36, "Two prisoners' dreams; Joseph preaches the one God"]
+    - [43, "The king's dream"]
+    - [50, "Joseph is cleared and set over the storehouses"]
+    - [58, "His brothers come for grain"]
+    - [69, "The cup in his brother's bag"]
+    - [80, "Jacob's grief; \"I am Joseph\""]
+    - [94, "Jacob's sight returns; the family comes to Egypt"]
+    - [102, "News of the unseen; the lesson in their stories"]
+
+13:
+  letters: Alif, Lam, Mim, Ra
+  summary: >-
+    The signs of God in the sky and the earth (the thunder itself praises Him), set against those
+    who ask for a miracle and doubt that dust can be raised. It says God does not change the
+    condition of a people until they change what is in themselves (11), and that hearts find rest
+    in the remembrance of God (28).
+  sections:
+    - [1, "Signs of the Creator; \"when we are dust?\""]
+    - [8, "God knows every womb; the thunder praises Him"]
+    - [19, "Those who keep God's pledge, and those who break it"]
+    - [27, "Hearts find rest in remembering God"]
+    - [32, "Messengers were mocked before; the Garden promised"]
+    - [38, "Every age has its scripture; God erases and confirms"]
+
+14:
+  letters: Alif, Lam, Ra
+  summary: >-
+    Messengers are sent in the language of their own people, to bring them out of darkness into
+    light. The surah holds Satan's speech to those who followed him (22), the parable of a good
+    word as a good tree (24 to 26), and Abraham's prayer for the barren valley by God's Sacred
+    House, where he settled some of his offspring (35 to 41).
+  sections:
+    - [1, "A Scripture to bring people out of darkness; each messenger in his people's tongue"]
+    - [7, "\"If you give thanks, I will give you more\"; the messengers and their peoples"]
+    - [13, "The tyrants threatened; works like ashes in the wind"]
+    - [22, "Satan's speech; the good word and the good tree"]
+    - [28, "Those who traded God's blessing for ingratitude; favors past counting"]
+    - [35, "Abraham's prayer for this land and his offspring"]
+    - [42, "God is not unaware of the wrongdoers; the Day the earth is changed"]
+
+15:
+  letters: Alif, Lam, Ra
+  summary: >-
+    Named for al-Hijr, the Rock, whose people carved their homes in the mountains and were
+    destroyed (80 to 84). God says He sent down the Message and will preserve it (9); Satan refuses
+    to bow to a creature of clay; angels visit Abraham and then Lot. It ends by telling the Prophet
+    to proclaim openly what he is commanded (94).
+  sections:
+    - [1, "The Book; \"We revealed the Message and We will preserve it\""]
+    - [16, "Signs in the sky and on the earth"]
+    - [26, "Man from clay, the jinn from fire; Satan refuses to bow"]
+    - [45, "The righteous in gardens; Abraham's guests"]
+    - [61, "The people of Lot; the people of the Woods"]
+    - [80, "The people of the Rock; proclaim openly what you are commanded"]
+
+16:
+  summary: >-
+    A catalogue of God's favors (cattle, rain, crops, the sea, the stars, milk, fruit, the bee and
+    its honey) as signs that He alone is to be worshiped. It commands justice and kindness (90),
+    speaks of one verse being put in place of another (101), excuses the one forced to deny his
+    faith while his heart stays firm (106), and tells the Prophet to call to God's way with wisdom
+    and good advice (125).
+  sections:
+    - [1, "God's command is coming; He made man, and the cattle for him"]
+    - [10, "Rain, crops, night and day, the sea: signs and favors"]
+    - [22, "Your God is one God; \"legends of the ancients\""]
+    - [26, "Those who plotted before; what the angels say to the dying"]
+    - [35, "\"Had God willed, we would not have worshiped others\"; a messenger to every community"]
+    - [41, "Those who emigrated; ask the people of knowledge"]
+    - [51, "Do not take two gods; daughters ascribed to God"]
+    - [61, "God defers punishment; rain revives the dead earth"]
+    - [66, "Milk, fruit and the bee"]
+    - [71, "The slave and the free man; the dumb man and the just"]
+    - [77, "The Hour; birds, homes and garments"]
+    - [84, "A witness from every community"]
+    - [90, "God commands justice; keep your oaths"]
+    - [101, "One verse in place of another; \"a human teaches him\"; faith under compulsion"]
+    - [111, "The town that was ungrateful; lawful food"]
+    - [120, "Abraham, devoted to God; call with wisdom; be patient"]
+
+17:
+  summary: >-
+    Opens with the journey by night from the Sacred Mosque to the Farthest Mosque (1). It gives a
+    code of conduct (22 to 39): worship none but God, be good to parents, give to the poor, do not
+    kill your children, do not come near adultery, do not kill unjustly, keep your pledge, give
+    full measure. It challenges humans and jinn together to produce the like of the Quran (88), and
+    says the Quran was revealed in stages (106).
+  sections:
+    - [1, "The night journey; Israel warned twice"]
+    - [9, "The Quran guides; each person's record hung on his neck"]
+    - [23, "Your Lord has commanded: a code of conduct"]
+    - [41, "All things praise Him; \"when we are bones?\""]
+    - [53, "Say what is best; those they call on themselves seek God"]
+    - [61, "Satan's vow against the children of Adam; God's favor at sea"]
+    - [71, "The Day each people is called with its leader; they nearly swayed you"]
+    - [78, "The prayer, and the Quran at dawn"]
+    - [85, "The Spirit; the Quran cannot be matched; the signs they demand"]
+    - [94, "\"Did God send a human messenger?\""]
+    - [101, "The nine signs of Moses; a Quran revealed in stages"]
+
+18:
+  summary: >-
+    Four stories: the young men who slept in a cave for three centuries; the owner of two gardens
+    who forgot God; Moses and the servant of God, who did three things Moses could not bear to
+    watch; and Dhul-Qarnayn, who traveled to the setting and the rising of the sun and built a
+    barrier of iron against Gog and Magog.
+  sections:
+    - [1, "The Book, and a warning to those who say God has a son"]
+    - [9, "The youths in the cave"]
+    - [23, "Say \"if God wills\"; stay with those who call on their Lord"]
+    - [32, "The man with two gardens"]
+    - [45, "This life is like rain on the earth; the book of deeds"]
+    - [50, "Satan was of the jinn"]
+    - [54, "Every kind of example; the towns destroyed at their time"]
+    - [60, "Moses and the servant of God"]
+    - [83, "Dhul-Qarnayn, and the barrier against Gog and Magog"]
+    - [102, "The greatest losers; the words of the Lord would outlast an ocean of ink"]
+
+19:
+  letters: Kaf, Ha, Ya, Ayn, Sad
+  summary: >-
+    Named for Mary. Zechariah is given John in his old age; Mary, alone, gives birth to Jesus
+    beneath a palm tree, and the infant speaks from the cradle: "I am the servant of God." Then
+    Abraham's break with his father, and Moses, Ishmael and Idris. Twice the surah rejects the
+    saying that God has a son (35, 88 to 92).
+  sections:
+    - [1, "Zechariah is given John"]
+    - [16, "Mary, and the birth of Jesus"]
+    - [34, "\"It is not for God to have a child\""]
+    - [41, "Abraham and his father"]
+    - [51, "Moses, Ishmael and Idris"]
+    - [59, "Those who came after; the Gardens of Eden"]
+    - [66, "\"When I am dead, will I be brought back?\""]
+    - [83, "\"The Most Merciful has begotten a son\": a monstrous saying"]
+
+20:
+  letters: Ta, Ha
+  summary: >-
+    Almost wholly the story of Moses, told more fully here than anywhere: the fire in the valley of
+    Tuwa and the voice, "I am God; there is no god but I", the staff and the white hand, Aaron
+    given as his helper, Pharaoh and the magicians, the sea, and the calf made at the prompting of
+    "the Samiri" while Moses was away. It ends with Adam's forgetting in the Garden, and a call to
+    patience and prayer.
+  sections:
+    - [1, "The Quran is a reminder, not a burden"]
+    - [9, "Moses at the fire: \"I am God\""]
+    - [25, "Moses asks for Aaron; his early life recalled"]
+    - [42, "Moses and Aaron before Pharaoh"]
+    - [56, "The contest with the magicians"]
+    - [77, "The sea crossed; the calf and the Samiri"]
+    - [99, "The Day the Trumpet is blown"]
+    - [113, "An Arabic Quran; Adam forgot, and the Garden was lost"]
+    - [129, "Bear what they say with patience; pray"]
+
+21:
+  summary: >-
+    The prophets in quick succession, each calling on God and being answered: Abraham, who breaks
+    his people's idols and is saved from the fire; then Lot, Noah, David and Solomon, Job, Ishmael,
+    Idris, Dhul-Kifl, Jonah, Zechariah, and Mary. All were told the same thing: "There is no god but
+    I, so worship Me" (25). Of the Prophet it says, "We did not send you except as mercy to
+    mankind" (107).
+  sections:
+    - [1, "The reckoning is near, and they turn away"]
+    - [11, "Towns crushed; creation is not a game; no god but He"]
+    - [30, "Heaven and earth were one mass; every soul will taste death"]
+    - [42, "Who guards you from the Merciful? The scales of justice"]
+    - [51, "Abraham breaks the idols and is saved from the fire"]
+    - [76, "Noah, David and Solomon, Job, Jonah, Zechariah, Mary"]
+    - [92, "One community; Gog and Magog; a mercy to mankind"]
+
+22:
+  summary: >-
+    Meccan in its warnings and Medinan in its law. It begins with the terror of the Hour; gives the
+    rites of pilgrimage to the House that Abraham was told to purify (26 to 37); and holds what
+    tradition takes to be the first permission to fight, given "to those who are fought against",
+    driven from their homes for saying "Our Lord is God" (39 to 40). The same verse names
+    monasteries, churches, synagogues and mosques as places where God's name is much mentioned.
+  sections:
+    - [1, "The quaking of the Hour; if you doubt the Resurrection"]
+    - [11, "Worship on an edge; God will judge between the faiths"]
+    - [19, "Two adversaries: garments of fire, gardens and silk"]
+    - [26, "Abraham and the House; the pilgrimage and its offerings"]
+    - [38, "Permission to fight, for those who were wronged"]
+    - [42, "Peoples before you denied; it is the hearts that go blind"]
+    - [49, "A plain warner; what Satan casts into a prophet's wish"]
+    - [58, "Those who emigrate; signs of God's power"]
+    - [65, "God's favors; the parable of the fly; \"He named you Muslims\""]
+
+23:
+  summary: >-
+    Opens with a portrait of the believers who will inherit Paradise: humble in prayer, charitable,
+    chaste, true to their trusts (1 to 11), and traces the making of a human being from clay to
+    clot to flesh (12 to 14). Then come the messengers, each dismissed by his people as only a
+    man, and the unbelievers' denial that the dead are raised.
+  sections:
+    - [1, "Who the believers are; how a human being is made"]
+    - [23, "Noah, and a messenger after him, called mere men"]
+    - [45, "Moses and Aaron; Mary's son and his mother"]
+    - [51, "One community, torn into sects; those who race to do good"]
+    - [78, "\"When we are dust and bones?\" To whom does the earth belong?"]
+    - [93, "Repel evil with what is better; the scales; \"did you think We made you in vain?\""]
+
+24:
+  summary: >-
+    Law for the household at Medina. It sets a hundred lashes for adultery and eighty for accusing
+    a chaste woman without four witnesses (2 to 4); rebukes those who spread a slander (11 to 20:
+    against the Prophet's wife Aisha, by tradition); tells men and women alike to restrain their
+    looks, and women to draw their coverings over their breasts (30 to 31); and gives rules for
+    entering homes. In its middle stands the Light Verse: "God is the Light of the heavens and the
+    earth" (35).
+  sections:
+    - [1, "Adultery, and accusing without witnesses"]
+    - [11, "The slander"]
+    - [21, "Do not follow Satan; those who slander chaste women"]
+    - [27, "Entering houses; restraining the eyes; women's covering"]
+    - [32, "Marriage; slaves who ask to be freed"]
+    - [35, "God is the Light of the heavens and the earth"]
+    - [41, "All creatures praise Him; cloud, rain and hail"]
+    - [47, "Those who turn from the Messenger's judgment; the promise to the believers"]
+    - [58, "Times of privacy in the home; eating together"]
+    - [62, "Manners with the Messenger"]
+
+25:
+  summary: >-
+    Answers the Meccans' objections to the Prophet: that he is a man who eats food and walks in
+    the markets, that the Quran is old tales dictated to him, that it did not come down all at
+    once (32). It closes with a portrait of "the servants of the Merciful": humble, in prayer by
+    night, moderate in spending, who neither kill nor commit adultery, and who repent (63 to 76).
+  sections:
+    - [1, "The Criterion; \"a messenger who eats food and walks in the markets?\""]
+    - [10, "The Blaze and the Garden; those they worshiped disown them"]
+    - [21, "The Day the sky is cleft; why the Quran came in stages"]
+    - [35, "Peoples destroyed before"]
+    - [45, "The shadow, the night, the winds, the two seas"]
+    - [61, "The servants of the Merciful"]
+
+26:
+  letters: Ta, Sin, Mim
+  summary: >-
+    Seven stories told to one refrain ("In that is a sign, but most of them are not believers. Your
+    Lord is the Almighty, the Merciful"): Moses, Abraham, Noah, Hud, Salih, Lot and Shuaib. Each
+    messenger says the same words to his people: "Fear God, and obey me. I ask of you no payment."
+    It ends by saying that the Quran was brought down by the Trustworthy Spirit in clear Arabic,
+    not by devils, and that the Prophet is no poet.
+  sections:
+    - [1, "The Clarifying Book, and those who turn away"]
+    - [10, "Moses sent to Pharaoh; the magicians"]
+    - [52, "The sea is parted"]
+    - [69, "Abraham and his people's idols; his prayer"]
+    - [105, "Noah"]
+    - [123, "Hud and the people of Aad"]
+    - [141, "Salih and Thamud"]
+    - [160, "Lot"]
+    - [176, "Shuaib and the people of the Woods"]
+    - [192, "Brought down by the Trustworthy Spirit, in clear Arabic; the poets"]
+
+27:
+  letters: Ta, Sin
+  summary: >-
+    Named for the ant that warned its fellows of Solomon's army. Its centerpiece is Solomon, who
+    was taught the speech of birds, and the queen of Sheba, a worshiper of the sun, who comes to
+    him and submits to God (15 to 44). A run of questions follows, each ending "Is there another
+    god with God?" (60 to 64).
+  sections:
+    - [1, "The Quran; Moses at the fire"]
+    - [15, "Solomon, the ant and the hoopoe"]
+    - [29, "The queen of Sheba"]
+    - [45, "Salih and the nine who plotted; Lot"]
+    - [59, "\"Is there another god with God?\""]
+    - [67, "\"When we are dust?\"; what the Quran tells the Children of Israel"]
+    - [83, "The Day they are gathered; the mountains pass like clouds"]
+
+28:
+  letters: Ta, Sin, Mim
+  summary: >-
+    The early life of Moses: set adrift as an infant and taken in by Pharaoh's household, his
+    killing of a man and flight to Midian, his marriage there, and the call at the fire. Pharaoh
+    tells Haman to build him a tower to reach the God of Moses (38). Later comes Qarun (Korah),
+    whose treasures the earth swallowed with him (76 to 82).
+  sections:
+    - [1, "Pharaoh's tyranny; the infant Moses in the river"]
+    - [14, "Moses kills a man and flees"]
+    - [22, "In Midian: the well, the two women, the marriage"]
+    - [29, "The fire; Moses before Pharaoh; Haman's tower"]
+    - [43, "You were not there: these things are revealed to you"]
+    - [51, "People of earlier Scripture who believe; no city destroyed unwarned"]
+    - [61, "The Day He calls: \"Where are My associates?\""]
+    - [76, "Qarun and his treasures"]
+    - [83, "The Home of the Hereafter; all things perish but Him"]
+
+29:
+  letters: Alif, Lam, Mim
+  summary: >-
+    Asks whether people think they will be left to say "We believe" without being tested. Earlier
+    peoples pass in review, and whoever takes a protector other than God is likened to the spider,
+    whose house is the frailest of houses (41). It tells the believers to argue with the People of
+    the Scripture only in the best manner, and to say, "Our God and your God is One" (46).
+  sections:
+    - [1, "Belief will be tested"]
+    - [14, "Noah; Abraham and his people; Lot"]
+    - [31, "The envoys and Lot's town; Midian, Aad, Thamud, Qarun, Pharaoh"]
+    - [41, "The spider's house"]
+    - [45, "Recite and pray; argue with the People of the Scripture in the best way"]
+    - [52, "They ask for the punishment to be hastened; every soul will taste death"]
+    - [61, "They admit God made all things; this life is play"]
+
+30:
+  letters: Alif, Lam, Mim
+  summary: >-
+    Begins with news: the Romans (the Byzantines) have been defeated in a nearby land, but within
+    a few years will be victorious (2 to 4). The heart of the surah is a list of "His signs" (20 to
+    25): creation from dust, spouses with love and compassion between them, the variety of
+    languages and colors, sleep, lightning and rain. It calls the worship of one God the nature on
+    which God made mankind (30).
+  sections:
+    - [1, "The Romans are defeated, and will be victorious"]
+    - [11, "The Hour; glorify God evening and morning"]
+    - [20, "And of His signs"]
+    - [28, "The religion of nature; sects; usury and charity"]
+    - [41, "Corruption on land and sea; the winds and the rain"]
+    - [54, "Weakness, strength, weakness again; be patient"]
+
+31:
+  letters: Alif, Lam, Mim
+  summary: >-
+    Named for Luqman, a man given wisdom, whose advice to his son it records (12 to 19): give God
+    no partners, keep the prayer, urge what is right and forbid what is wrong, be patient, do not
+    strut or shout. It commands gratitude to parents, but not obedience if they press their child
+    to worship another besides God (14 to 15).
+  sections:
+    - [1, "The Wise Book; the one who trades in distracting tales"]
+    - [12, "Luqman's counsel to his son"]
+    - [20, "God's blessings; \"we follow our parents\"; seven oceans of ink"]
+    - [33, "A Day no parent can help a child; what God alone knows"]
+
+32:
+  letters: Alif, Lam, Mim
+  summary: >-
+    A short surah on revelation, creation and return. God made the heavens and the earth in six
+    days and man from clay, breathing into him of His Spirit; the angel of death will take each
+    soul; the guilty will beg to be sent back. Those who believe fall down in prostration when
+    they are reminded of God's revelations (15), from which the surah has its name.
+  sections:
+    - [1, "The Book is from the Lord; creation in six days; man from clay"]
+    - [12, "The guilty before their Lord; those who fall prostrate"]
+    - [23, "The Book of Moses; \"when is this victory?\""]
+
+33:
+  summary: >-
+    Named for the clans who besieged Medina (the battle of the Trench, by tradition; 9 to 27). Much
+    of the rest concerns the Prophet's own household: adopted sons are not true sons, so he may
+    marry the former wife of his adopted son Zayd (37); his wives are mothers to the believers,
+    are to stay in their homes, and may never be married after him; and which women he may marry
+    (50). It calls Muhammad "the seal of the prophets" (40), and lists the virtues of believing men
+    and believing women side by side (35).
+  sections:
+    - [1, "Adopted sons are not sons; the Prophet and his wives"]
+    - [9, "The confederates at the gates of Yathrib; the hypocrites"]
+    - [21, "An example in the Messenger; those who backed the confederates"]
+    - [28, "To the wives of the Prophet"]
+    - [35, "Believing men and believing women"]
+    - [36, "Zayd's wife; Muhammad is the seal of the prophets"]
+    - [41, "Remember God often; the Prophet as witness and warner"]
+    - [49, "Whom the Prophet may marry"]
+    - [53, "Manners at the Prophet's houses; blessings on him"]
+    - [59, "Women's garments; the hypocrites threatened"]
+    - [63, "The Hour; Moses cleared; the Trust that man took up"]
+
+34:
+  summary: >-
+    David, for whom iron was made soft, and Solomon, served by the wind and the jinn, whose death
+    they did not notice until a worm ate through his staff (10 to 14); then the people of Sheba,
+    whose gardens were ruined by the flood of the dam when they turned ungrateful (15 to 19). The
+    rest argues with those who deny the Hour and trust in their wealth and numbers.
+  sections:
+    - [1, "Praise to God; the Hour will come"]
+    - [10, "David and Solomon; Sheba and the flood of the dam"]
+    - [22, "Those they call on own nothing; a messenger to all people"]
+    - [31, "The weak and the arrogant blame one another"]
+    - [37, "Wealth does not bring you near; the angels disown those who worshiped them"]
+    - [46, "\"One advice\": reflect; belief that comes too late"]
+
+35:
+  summary: >-
+    Praise of God as Originator of the heavens and the earth, who made the angels messengers with
+    two, three and four wings. People are "the poor, in need of God" (15); no soul will carry
+    another's burden (18); and those given the Book are of three kinds: those who wrong
+    themselves, those who keep a middle course, and those foremost in good deeds (32).
+  sections:
+    - [1, "The Originator; His mercy none can withhold"]
+    - [8, "God guides whom He wills; rain, the two seas, night and day"]
+    - [15, "You are the poor, in need of God"]
+    - [27, "Colors in fruit, rock and people; those who inherit the Book"]
+    - [38, "God holds the heavens and the earth; He defers the punishment"]
+
+36:
+  letters: Ya, Sin
+  summary: >-
+    It tells of a town that rejected three messengers and killed the one man who believed them (13
+    to 29), points to signs in the revived earth, the night, and the courses of the sun and the
+    moon, and answers the one who asks "Who will revive the bones?": He who made them the first
+    time (78 to 79). In Muslim tradition it is called the heart of the Quran, and is recited for
+    the dying.
+  sections:
+    - [1, "By the Wise Quran: a warning to a people not warned before"]
+    - [13, "The town and its three messengers"]
+    - [33, "Signs: the dead land, the night, the sun and the moon, the ship"]
+    - [51, "The Trumpet; the people of Paradise and the people of the Fire"]
+    - [68, "Not poetry; \"who will revive the bones?\""]
+
+37:
+  summary: >-
+    After the Day of Judgment, the Garden and the tree of Hell, it recalls the prophets, each with
+    the refrain "Peace be upon him": Noah, Abraham, Moses and Aaron, Elijah, Lot and Jonah. Here
+    Abraham sees in a dream that he is sacrificing his son, who consents, and the son is ransomed
+    "with a great sacrifice" (102 to 107). The son is not named; the good news of Isaac follows
+    (112), and Muslim tradition mostly holds that the son was Ishmael.
+  sections:
+    - [1, "Your God is One; \"when we are dust and bones?\""]
+    - [22, "The Day of Separation: the guilty blame one another"]
+    - [40, "The Gardens of Bliss, and the tree in the pit of Hell"]
+    - [75, "Noah"]
+    - [83, "Abraham: the idols, the furnace, and the son to be sacrificed"]
+    - [114, "Moses and Aaron, Elijah, Lot"]
+    - [139, "Jonah and the fish"]
+    - [149, "Daughters for God? The angels' ranks; God's word to His messengers"]
+
+38:
+  letters: Sad
+  summary: >-
+    Against the leaders of Mecca, who said, "Did he turn all the gods into one God?" (5), it sets
+    David, tested by two disputants over a single ewe; Solomon, tested by his love of fine horses;
+    and Job, patient under affliction. It ends with Satan's refusal to bow before the human being
+    God made "with My own hands" (75).
+  sections:
+    - [1, "\"Did he turn all the gods into one God?\""]
+    - [15, "David and the two disputants"]
+    - [27, "Creation is not in vain; Solomon, his horses and his kingdom"]
+    - [41, "Job; Abraham, Isaac, Jacob and the others"]
+    - [49, "The Gardens of Eden; the quarrel of the people of the Fire"]
+    - [65, "Only a warner; Satan refuses to bow to the human of clay"]
+
+39:
+  summary: >-
+    Devotion to God alone: the idolaters say of their gods, "We only worship them that they may
+    bring us nearer to God" (3). It holds one of the Quran's widest promises: "O My servants who
+    have transgressed against themselves, do not despair of God's mercy, for God forgives all
+    sins" (53). It ends with the two throngs, one driven to the gates of Hell and one led to the
+    gates of Paradise.
+  sections:
+    - [1, "Serve God with sincere devotion; He has no son"]
+    - [10, "\"I am commanded to serve God alone\""]
+    - [22, "A heart opened to Islam; the man with many masters"]
+    - [32, "Is God not enough for His servant?"]
+    - [42, "God takes the souls in death and in sleep; all intercession is His"]
+    - [53, "Do not despair of God's mercy"]
+    - [64, "The earth in His grip; the Trumpet and the Judgment"]
+    - [71, "The throngs driven to Hell, and the throngs led to Paradise"]
+
+40:
+  letters: Ha, Mim
+  summary: >-
+    Opens by naming God "Forgiver of sins, Accepter of repentance, Severe in punishment" (3). Its
+    centerpiece is a man of Pharaoh's own family who had hidden his faith and now speaks up for
+    Moses: "Are you going to kill a man for saying, My Lord is God?" (28 to 45). It says God has
+    told of some messengers and not of others (78), and that belief at the sight of the punishment
+    comes too late (85).
+  sections:
+    - [1, "Forgiver of sins, severe in punishment; those who bear the Throne pray for the believers"]
+    - [10, "The unbelievers' regret; the Day of Meeting"]
+    - [21, "Moses sent to Pharaoh, Haman and Qarun"]
+    - [28, "The believer of Pharaoh's family"]
+    - [51, "God helps His messengers; \"pray to Me, and I will respond\""]
+    - [61, "God's favors; the ages of a human life"]
+    - [69, "Those who dispute God's revelations; belief that came too late"]
+
+41:
+  letters: Ha, Mim
+  summary: >-
+    A Quran "in Arabic for people who know", its verses set out in detail. It describes the making
+    of the earth and the heavens over days, the end of Aad and Thamud, and the Day when people's
+    own hearing, sight and skins will testify against them (20 to 22). Its counsel: "Repel evil
+    with good, and the person who was your enemy becomes like an intimate friend" (34).
+  sections:
+    - [1, "A Quran in Arabic; \"our hearts are screened\""]
+    - [9, "The earth and the heavens made in days; Aad and Thamud"]
+    - [19, "Their own skins will testify against them"]
+    - [26, "\"Do not listen to this Quran\"; the angels descend on the upright"]
+    - [33, "Repel evil with good; a Book falsehood cannot approach"]
+    - [45, "The Book of Moses; man in ease and in hardship; signs on the horizons"]
+
+42:
+  letters: Ha, Mim; Ayn, Sin, Qaf
+  summary: >-
+    God has prescribed for the believers the same religion He enjoined on Noah, Abraham, Moses and
+    Jesus (13), and "there is nothing like Him" (11). The believers are those who "conduct their
+    affairs by mutual consultation" (38), which gives the surah its name. A wrong may be repaid in
+    kind, but to pardon is better (40). God speaks to a human only by inspiration, from behind a
+    veil, or by sending a messenger (51).
+  sections:
+    - [1, "Revelation, to you as to those before you; an Arabic Quran"]
+    - [10, "Nothing is like Him; the one religion of Noah, Abraham, Moses and Jesus"]
+    - [20, "The harvest of the Hereafter; God accepts repentance"]
+    - [30, "Misfortune and pardon; those who consult, forgive and defend themselves"]
+    - [44, "The wrongdoers before the torment; how God speaks to a human"]
+
+43:
+  letters: Ha, Mim
+  summary: >-
+    Against the Meccans who call the angels daughters of God and follow the ways of their fathers.
+    Wealth proves nothing: God could give the unbelievers roofs of silver and ornaments of gold,
+    and it would be only the stuff of this life (33 to 35). Jesus is "a servant whom We blessed"
+    and "a portent of the Hour" (59 to 61). "If the Most Gracious had a son, I would be the first
+    to worship" (81).
+  sections:
+    - [1, "An Arabic Quran from the Source Book; the Creator's favors"]
+    - [16, "Daughters ascribed to God; \"we follow our parents\""]
+    - [26, "Abraham disowns their idols; silver roofs and ornaments of gold"]
+    - [36, "A devil for a companion; hold fast to what is revealed"]
+    - [46, "Moses and Pharaoh"]
+    - [57, "The son of Mary: a servant, and a sign of the Hour"]
+    - [68, "The Garden and Hell; \"if the Most Gracious had a son\""]
+
+44:
+  letters: Ha, Mim
+  summary: >-
+    The Book was sent down on "a Blessed Night" (3). The surah warns of a Day when the sky brings
+    a visible smoke, recalls the army of Pharaoh, over whom "neither heaven nor earth wept" (29),
+    and sets the tree that feeds the sinner in Hell against the gardens and springs of the
+    righteous.
+  sections:
+    - [1, "Revealed on a Blessed Night; the Day of the smoke"]
+    - [17, "Pharaoh's people drowned; the Children of Israel delivered"]
+    - [34, "\"There is nothing but our first death\"; the Day of Sorting Out"]
+    - [43, "The food of the sinner; the righteous among gardens and springs"]
+
+45:
+  letters: Ha, Mim
+  summary: >-
+    Signs in creation for those who reason, and a warning to whoever hears the verses and mocks.
+    The deniers say, "There is nothing but this our present life; nothing destroys us except time"
+    (24). On the Day, every community will be on its knees, each called to its record (28): hence
+    the name of the surah.
+  sections:
+    - [1, "Signs for people who reason; the one who hears and mocks"]
+    - [12, "All things placed at your service; Israel given the Book; a pathway for you"]
+    - [22, "\"Nothing destroys us except time\""]
+    - [27, "Every community on its knees before its record"]
+
+46:
+  letters: Ha, Mim
+  summary: >-
+    The Prophet is told to say, "I am not different from the other messengers, and I do not know
+    what will be done with me, or with you" (9). The surah commands kindness to parents, tells of
+    Hud warning Aad among the sand dunes before the wind destroyed them, and of a company of jinn
+    who listened to the Quran and went back to warn their people (29 to 32).
+  sections:
+    - [1, "Creation has a purpose; \"I am not different from the other messengers\""]
+    - [11, "The Book of Moses before it; kindness to parents"]
+    - [21, "Hud warns Aad at the dunes"]
+    - [27, "The jinn listen to the Quran; be patient as the messengers were"]
+
+47:
+  summary: >-
+    A Medinan surah on war, also called "Fighting". When the believers meet the unbelievers in
+    battle they are to strike, then bind the captives, and afterward free them by grace or for
+    ransom, "until war lays down its burdens" (4). It describes the Garden's rivers of water, milk,
+    wine and honey (15), and rebukes those "in whose hearts is sickness", who look faint when
+    fighting is commanded.
+  sections:
+    - [1, "Believers and unbelievers; when you meet them in battle"]
+    - [12, "The Garden promised: rivers of water, milk, wine and honey"]
+    - [20, "Those who dread the command to fight"]
+    - [29, "God will expose them; do not weaken; spend in God's cause"]
+
+48:
+  summary: >-
+    Tied by tradition to the truce of Hudaybiyya (628), which it calls "a conspicuous victory". God
+    was pleased with the believers who pledged allegiance under the tree (18), held the two sides
+    back from fighting "in the valley of Mecca" (24), and promises they will enter the Sacred
+    Mosque in safety (27). It ends, "Muhammad is the Messenger of God", with a description of his
+    followers said to be in the Torah and the Gospel (29).
+  sections:
+    - [1, "A conspicuous victory; the pledge of allegiance"]
+    - [11, "The desert Arabs who stayed behind"]
+    - [18, "The pledge under the tree; hands held back in the valley of Mecca"]
+    - [27, "The vision fulfilled; Muhammad and those with him"]
+
+49:
+  summary: >-
+    Manners for the community: do not raise your voice above the Prophet's, check a report before
+    acting on it, make peace between believers who fight, and do not mock, spy on or backbite one
+    another. "We created you from a male and a female, and made you races and tribes, that you may
+    know one another. The best among you in the sight of God is the most righteous" (13).
+  sections:
+    - [1, "Manners before the Prophet; check what you are told"]
+    - [9, "Make peace between believers who fight"]
+    - [11, "No mockery, suspicion or backbiting; races and tribes, to know one another"]
+    - [14, "The desert Arabs: \"say, We have submitted\""]
+
+50:
+  letters: Qaf
+  summary: >-
+    On death and rising. God is nearer to a person than his jugular vein, and two recorders sit at
+    his right and his left (16 to 18). Then come the daze of death, the Trumpet, the driver and the
+    witness. Hell is asked, "Are you full?" and answers, "Are there any more?" (30).
+  sections:
+    - [1, "By the Glorious Quran: \"when we are dust?\""]
+    - [16, "Nearer than the jugular vein; death and the Trumpet"]
+    - [30, "Hell and Paradise; be patient, and remind by the Quran"]
+
+51:
+  summary: >-
+    Oaths by the winds that the Judgment is true. Angels visit Abraham with news of a son and go
+    on to the people of Lot; Pharaoh, Aad, Thamud and Noah's people each follow in a line or two.
+    It gives the purpose of creation in a sentence: "I did not create the jinn and the humans
+    except to worship Me" (56).
+  sections:
+    - [1, "By the scattering winds: the Judgment will come; the pious"]
+    - [24, "Abraham's guests; Pharaoh, Aad, Thamud, the people of Noah"]
+    - [47, "Flee to God; \"I created jinn and humans only to worship Me\""]
+
+52:
+  summary: >-
+    Swears by the Mount that the punishment is coming, and sets the Fire against the gardens of
+    the righteous. The second half defends the Prophet against the names he was called
+    (soothsayer, madman, poet) with a run of questions to his accusers: "Were they created out of
+    nothing? Or are they the creators?" (35).
+  sections:
+    - [1, "By the Mount: the punishment is coming; the Fire and the gardens"]
+    - [29, "Neither soothsayer, madman nor poet: questions for the deniers"]
+
+53:
+  summary: >-
+    Defends what the Prophet saw: the one who taught him, on the highest horizon, and again by the
+    Lotus Tree of the farthest limit (1 to 18). It names the three goddesses of Mecca, al-Lat,
+    al-Uzza and Manat, and calls them nothing but names (19 to 23). Then it gives what was in the
+    scrolls of Moses and Abraham: no soul bears another's burden, and a person has only what he
+    strives for (36 to 41).
+  sections:
+    - [1, "What the Prophet saw"]
+    - [19, "Al-Lat, al-Uzza and Manat: nothing but names"]
+    - [26, "The angels' intercession; those who avoid the great sins"]
+    - [33, "What is in the scrolls of Moses and Abraham"]
+
+54:
+  summary: >-
+    "The Hour has drawn near, and the moon has split." Five peoples who rejected the warnings:
+    Noah's, Aad, Thamud, Lot's and Pharaoh's, each followed by the refrain that the Quran has been
+    made easy to remember, "Is there anyone who would remember?"
+  sections:
+    - [1, "The Hour is near, and the moon has split"]
+    - [9, "The people of Noah; Aad"]
+    - [23, "Thamud; the people of Lot"]
+    - [41, "Pharaoh's people; are your unbelievers better than those?"]
+
+55:
+  summary: >-
+    A hymn to God's favors, addressed to humans and jinn together, with one refrain asked
+    thirty-one times: "So which of your Lord's marvels will you deny?" It moves from the creation
+    (sun, moon, sea, pearls) to the passing of everything on earth, to Hell, and then to two pairs
+    of gardens.
+  sections:
+    - [1, "The Compassionate taught the Quran; the balance; the earth and the seas"]
+    - [26, "All on earth will perish; jinn and humans called to account"]
+    - [46, "Two gardens, and two more"]
+
+56:
+  summary: >-
+    When "the Inevitable" comes, people will be sorted into three: the forerunners, brought
+    nearest; those on the Right; and those on the Left (7 to 56). Four questions follow: is it you
+    who create the seed, the crop, the rain, the fire, or We? (57 to 74). It calls the Quran a
+    noble recitation in a well-protected Book (77 to 78).
+  sections:
+    - [1, "The Inevitable: the forerunners, and those on the Right"]
+    - [41, "Those on the Left"]
+    - [57, "Who creates: you, or We?"]
+    - [75, "A noble Quran; the soul at the throat"]
+
+57:
+  summary: >-
+    God is "the First and the Last, the Outer and the Inner" (3). The believers are urged to give:
+    those who gave and fought before the conquest rank above those who did so after it (10). This
+    life is "play and distraction" (20). God sent down iron, with its violent force and its uses
+    (25). Of those who followed Jesus it says God put compassion and mercy in their hearts, but
+    that monasticism was their own invention (27).
+  sections:
+    - [1, "The First and the Last; believe and spend"]
+    - [11, "A loan to God; the light of the believers, and the hypocrites shut out"]
+    - [20, "This life is play; race to forgiveness; iron sent down"]
+    - [26, "Noah, Abraham and Jesus; monasticism"]
+
+58:
+  summary: >-
+    Begins with a wife's complaint against her husband, who had put her away by the old formula of
+    calling her as his mother to him: the formula is declared a lie, and a penalty is set for those
+    who use it and then go back on it (1 to 4). It warns against secret counsels, and ends by
+    saying that believers do not love those who oppose God and His Messenger, even their own kin
+    (22).
+  sections:
+    - [1, "The woman who pleaded; husbands who liken wives to their mothers"]
+    - [7, "Secret counsels; manners in gatherings and with the Messenger"]
+    - [14, "Those who befriend a people God is angry with; the partisans of God"]
+
+59:
+  summary: >-
+    Tells of "those who disbelieved among the People of the Book" driven from their fortresses and
+    homes (the Jewish tribe of Banu Nadir, by tradition), and how what was taken from them is to be
+    shared among the Messenger, his relatives, the orphans, the poor and the emigrants. It closes
+    with a list of the names of God: the Sovereign, the Holy, the Peace-Giver (22 to 24).
+  sections:
+    - [1, "The People of the Book evicted from their homes; how the gains are shared"]
+    - [11, "The hypocrites' promises to them"]
+    - [18, "Let every soul look to what it has sent ahead; the names of God"]
+
+60:
+  summary: >-
+    Believers are not to ally with those who drove them out. But "as for those who have not fought
+    against you for your religion, nor expelled you from your homes, God does not prohibit you from
+    dealing with them kindly and equitably" (8). Women who come as emigrants are to be tested in
+    their faith and not sent back, and the terms of the women's pledge to the Prophet are given
+    (12).
+  sections:
+    - [1, "Do not take My enemies for friends; the example of Abraham"]
+    - [7, "Kindness to those who did not fight you; the women who emigrate; the women's pledge"]
+
+61:
+  summary: >-
+    God loves those who fight in His cause in ranks, like a compact structure (4). Jesus announces
+    "a messenger who will come after me, whose name is Ahmad" (6). The believers are offered a
+    trade that will save them: faith, and striving with their possessions and their lives (10 to
+    11).
+  sections:
+    - [1, "Why say what you do not do? Moses, and Jesus who foretells Ahmad"]
+    - [10, "The trade that saves; be God's supporters, as the disciples were"]
+
+62:
+  summary: >-
+    God sent a messenger to an unlettered people. Those entrusted with the Torah who did not
+    uphold it are like a donkey carrying books (5). When the call to prayer is made on the day of
+    congregation (Friday), the believers are to leave their business and hasten to it (9).
+  sections:
+    - [1, "A messenger among the unlettered; those who were given the Torah"]
+    - [9, "The Friday prayer"]
+
+63:
+  summary: >-
+    A portrait of the hypocrites of Medina: they bear witness with their tongues, use their oaths
+    as a cover, and look impressive, "like propped-up timber" (4). It ends by urging the believers
+    to give before death comes.
+  sections:
+    - [1, "The hypocrites"]
+    - [9, "Do not let wealth and children distract you; give before death comes"]
+
+64:
+  summary: >-
+    All things praise God, who made some people believers and some unbelievers. The Day of
+    Gathering is the Day of "mutual exchange", of loss and gain (9). Wealth and children are a
+    test, and there may be enemies even in one's own family; yet it urges pardon (14 to 15).
+  sections:
+    - [1, "God made you all; messengers rejected; the Day of Gathering"]
+    - [11, "Nothing befalls but by God's leave; family and wealth are a test"]
+
+65:
+  summary: >-
+    Rules of divorce: it is to be pronounced at the proper time and the waiting period counted
+    (three months for those who do not menstruate, until delivery for the pregnant); the woman is
+    not to be driven from her home, and she is to be housed and provided for. "Whoever fears God,
+    He will make a way out for him" (2).
+  sections:
+    - [1, "How to divorce: the waiting period, housing and support"]
+    - [8, "Towns that defied their Lord; seven heavens, and their like of earth"]
+
+66:
+  summary: >-
+    Addressed to the Prophet about a matter in his own household: he had forbidden himself
+    something lawful to please his wives, and one wife had passed on a confidence. Two of them are
+    told to repent (4). It ends with four women as examples: the wives of Noah and of Lot, who
+    betrayed their husbands, and the wife of Pharaoh and Mary, who believed.
+  sections:
+    - [1, "The Prophet and his wives: an oath undone, a confidence betrayed"]
+    - [6, "Guard yourselves and your families from the Fire; repent sincerely"]
+    - [10, "Four women: the wives of Noah, Lot and Pharaoh, and Mary"]
+
+67:
+  summary: >-
+    God created death and life to test which of you is best in conduct (2). The seven heavens
+    show no flaw, however often one looks. The keepers of Hell ask each batch thrown in, "Has no
+    warner come to you?" (8). It ends with questions: who provides for you, who holds up the
+    birds, who would bring you water if yours drained away?
+  sections:
+    - [1, "He created death and life to test you; the heavens without a flaw; the Blaze"]
+    - [15, "Who can protect you from the Compassionate?"]
+
+68:
+  letters: Nun
+  summary: >-
+    Among the earliest surahs. It assures the Prophet that he is not mad, and is of great moral
+    character (2 to 4); tells of men who swore to harvest their garden at dawn, leaving nothing
+    for the poor, and found it ruined (17 to 33); and bids him be patient, and not like "the fellow
+    of the fish", Jonah (48).
+  sections:
+    - [1, "By the pen: you are not mad; do not obey the deniers"]
+    - [17, "The owners of the garden"]
+    - [34, "The righteous and the guilty; be patient, unlike the man of the fish"]
+
+69:
+  summary: >-
+    "The Reality": Thamud, Aad and Pharaoh denied it and were destroyed. Then the Trumpet sounds
+    once; each person is handed his book, in the right hand or in the left (19 to 37). It ends by
+    swearing that this is the speech of a noble messenger, not of a poet or a soothsayer.
+  sections:
+    - [1, "The Reality; Thamud, Aad and Pharaoh"]
+    - [13, "The Trumpet; the book in the right hand, and in the left"]
+    - [38, "Not the speech of a poet or a soothsayer"]
+
+70:
+  summary: >-
+    A questioner asks about the punishment to come, on a Day whose length is fifty thousand years.
+    Man was created restless, fretful in hardship and grudging in good fortune, except those who
+    pray, give the beggar his share, guard their chastity and keep their trusts (19 to 35).
+  sections:
+    - [1, "A Day of fifty thousand years"]
+    - [19, "Man was created restless, except those who pray"]
+    - [36, "The unbelievers who crowd around you"]
+
+71:
+  summary: >-
+    Noah speaks throughout: he called his people night and day, in public and in private, and they
+    put their fingers in their ears and clung to their gods Wadd, Suwa, Yaghuth, Yauq and Nasr.
+    He prays that no unbeliever be left on the earth.
+  sections:
+    - [1, "Noah calls his people night and day"]
+    - [21, "They cling to their gods; Noah's prayer against them"]
+
+72:
+  summary: >-
+    A band of jinn overhear the Quran and believe: "We have heard a wondrous Quran. It guides to
+    rectitude" (1 to 2). They report that heaven is now guarded against eavesdroppers. The Prophet
+    is told to say he cannot harm or guide anyone, and does not know when the promise will come.
+  sections:
+    - [1, "The jinn hear the Quran and believe"]
+    - [16, "The places of worship are God's; \"I call only on my Lord\""]
+
+73:
+  summary: >-
+    Among the first surahs: the Prophet, wrapped in his cloak, is told to stand in prayer for
+    much of the night and recite the Quran, for "a heavy message" is coming (5). The last verse,
+    which tradition dates later, eases the night vigil: "read of the Quran what is possible for
+    you".
+  sections:
+    - [1, "Stand in prayer by night; a heavy message is coming"]
+    - [10, "Be patient with what they say; a messenger as to Pharaoh"]
+    - [20, "The night prayer made lighter"]
+
+74:
+  summary: >-
+    "Arise and warn" (2): by tradition, among the very first commands to preach. A wealthy man who
+    weighed the Quran and called it magic and the word of a mortal is promised Saqar, the Fire,
+    over which are nineteen keepers. The guilty are asked what brought them there: "We were not of
+    those who prayed, nor did we feed the destitute" (43 to 44).
+  sections:
+    - [1, "Arise and warn"]
+    - [11, "The man who called it the word of a mortal; Saqar and its nineteen"]
+    - [32, "\"What drove you into Saqar?\""]
+
+75:
+  summary: >-
+    "Does man think that We will not reassemble his bones?" (3). Faces on that Day will be
+    radiant, looking toward their Lord, or gloomy. In the middle the Prophet is told not to hurry
+    his tongue with the revelation: its gathering and its recitation are God's to see to (16 to
+    19).
+  sections:
+    - [1, "Does man think his bones will not be gathered?"]
+    - [16, "Do not hurry your tongue with it"]
+    - [20, "Faces radiant and faces gloomy; the hour of death"]
+    - [31, "He neither believed nor prayed; was he not once a drop?"]
+
+76:
+  summary: >-
+    Man was made from a drop, to be tested, and shown the way, whether he is grateful or not. The
+    righteous "feed, for the love of Him, the poor, and the orphan, and the captive", wanting no
+    thanks (8 to 9); their reward is described at length. The Quran was sent down gradually (23).
+  sections:
+    - [1, "Man made from a drop, to be tested"]
+    - [5, "The reward of those who feed the poor, the orphan and the captive"]
+    - [23, "The Quran sent down gradually; be patient"]
+
+77:
+  summary: >-
+    Oaths by "those sent forth" that what is promised will happen, with one refrain ten times
+    over: "Woe on that Day to the deniers."
+  sections:
+    - [1, "By those sent forth: the Day of Decision"]
+    - [16, "Did We not destroy the ancients, and create you?"]
+    - [29, "\"Proceed to what you used to deny\""]
+    - [41, "The righteous amid shade and springs"]
+
+78:
+  summary: >-
+    "What are they asking one another about? About the Great Event." The earth, the mountains,
+    sleep, night and day, rain are recalled as signs; then the Day of Sorting, Hell lying in
+    ambush, and gardens for the righteous. The denier will say, "I wish I were dust" (40).
+  sections:
+    - [1, "The great news they dispute; signs of the Maker"]
+    - [17, "The Day of Sorting; Hell lies in ambush"]
+    - [31, "Gardens for the righteous; the Spirit and the angels in rows"]
+
+79:
+  summary: >-
+    Oaths by those who pull out souls; the Day of the Quake. Moses is sent to Pharaoh, who says,
+    "I am your Lord, the most high" (24), and is seized. Is man harder to create than the sky?
+    Whoever feared standing before his Lord and restrained himself has Paradise for a home.
+  sections:
+    - [1, "By those who pull out: the Day of the Quake"]
+    - [15, "Moses and Pharaoh"]
+    - [27, "The sky and the earth He made; the Great Cataclysm; the Hour"]
+
+80:
+  summary: >-
+    Opens with a rebuke: "He frowned and turned away when the blind man approached him", while
+    giving his attention to one who felt no need (1 to 10): the Prophet, by tradition. Then man is
+    told to consider his food, and the Day when a person will flee from his own family.
+  sections:
+    - [1, "He frowned when the blind man came"]
+    - [17, "How thankless man is; let him look at his food"]
+    - [33, "The Day a person flees from his own brother"]
+
+81:
+  summary: >-
+    Twelve signs of the end in twelve short lines: the sun rolled up, the stars dimmed, the
+    mountains moved, and the girl who was buried alive asked for what crime she was killed (8 to
+    9). Then each soul will know what it has brought. The second half swears that this is the word
+    of a noble messenger, and that "your friend is not possessed" (22).
+  sections:
+    - [1, "When the sun is rolled up"]
+    - [15, "The speech of a noble messenger"]
+
+82:
+  summary: >-
+    When the sky breaks apart and the graves are overturned, each soul will know what it sent
+    ahead and what it left behind. "O man! What deluded you concerning your Lord, the Most
+    Generous?" (6). Over everyone are watchers who record what he does.
+
+83:
+  summary: >-
+    "Woe to the defrauders", who take full measure for themselves and give short measure to
+    others. The record of the wicked is kept in Sijjin and that of the righteous in Illiyyun.
+    Those who used to laugh at the believers will be laughed at in turn.
+  sections:
+    - [1, "Woe to those who give short measure"]
+    - [7, "The record of the wicked, and the record of the righteous"]
+    - [29, "Those who laughed at the believers"]
+
+84:
+  summary: >-
+    When the sky is split and the earth gives up what is in it, man will meet the Lord he has
+    been toiling toward. One is given his book in his right hand and goes back to his people
+    glad; another is given it behind his back and calls for death.
+
+85:
+  summary: >-
+    A curse on "the People of the Trench", who sat watching as believers were thrown into a fire
+    for no reason but their faith in God (4 to 8). It ends by calling this "a Glorious Quran, in a
+    Preserved Tablet" (21 to 22).
+
+86:
+  summary: >-
+    By the sky and the piercing star: every soul has a watcher over it. Let man consider what he
+    was made from; the One who made him is able to bring him back. This is a decisive word, and
+    no joke.
+
+87:
+  summary: >-
+    "Praise the Name of your Lord, the Most High", who creates, measures and guides. The Prophet
+    is promised that he will be made to recite and will not forget, except what God wills (6 to
+    7). The one who purifies himself succeeds; and this, it says, is in the scriptures of Abraham
+    and Moses.
+
+88:
+  summary: >-
+    On that Day some faces will be downcast, in a scorching Fire, and some joyful, in a lofty
+    Garden. "Do they not look at the camels, how they are created?" (17). The Prophet is told:
+    "You are only a reminder. You have no control over them" (21 to 22).
+
+89:
+  summary: >-
+    How God dealt with Aad of Iram, with Thamud and with Pharaoh. Man thinks himself honored when
+    he prospers and insulted when he is straitened; but "you do not honor the orphan, and you do
+    not urge the feeding of the poor" (17 to 18). It ends with the soul at peace called home:
+    "Enter among My servants. Enter My Paradise."
+
+90:
+  summary: >-
+    Man was created into hardship, and shown the two ways. The steep way is "the freeing of a
+    slave, or the feeding on a day of hunger an orphan near of kin, or a destitute in the dust"
+    (13 to 16), and then to be of those who urge one another to patience and to kindness.
+
+91:
+  summary: >-
+    Seven oaths, by the sun, the moon, the day, the night, the sky, the earth and the soul, to one
+    point: "Successful is he who purifies it; failing is he who corrupts it" (9 to 10). Thamud is
+    the example, who killed the she-camel of God.
+
+92:
+  summary: >-
+    People's efforts differ. The one who gives and fears God will find his way made easy; the one
+    who is stingy and thinks himself in no need will find it made hard, and his wealth will not
+    help him when he falls.
+
+93:
+  summary: >-
+    A consolation to the Prophet: "Your Lord did not abandon you, nor did He forget." He found
+    you an orphan and sheltered you, wandering and guided you, in need and enriched you.
+    "Therefore, do not mistreat the orphan, nor rebuff the seeker."
+
+94:
+  summary: >-
+    "Did We not soothe your heart, and lift from you your burden?" Twice over: "With hardship
+    comes ease." When the work is done, turn to your Lord.
+
+95:
+  summary: >-
+    By the fig and the olive, Mount Sinai and "this safe land": man was created in the best
+    design, then brought down to the lowest of the low, except those who believe and do good.
+
+96:
+  summary: >-
+    Its first five verses are, by tradition, the first words revealed to Muhammad: "Read: In the
+    Name of your Lord who created, created man from a clot." The rest rebukes a man who forbids a
+    servant of God to pray, and ends, "kneel down, and come near."
+
+97:
+  summary: >-
+    "We sent it down on the Night of Decree", a night "better than a thousand months", on which
+    the angels and the Spirit descend. "Peace it is, until the rise of dawn."
+
+98:
+  summary: >-
+    The People of the Scripture and the idolaters did not divide until the clear proof came to
+    them: a messenger from God reciting purified pages. They were commanded only to worship God
+    with sincere devotion, to pray and to give alms (5). Those of them who disbelieve are "the
+    worst of creatures"; those who believe and do good, "the best of creatures".
+
+99:
+  summary: >-
+    When the earth is shaken with its last quake and gives up its burdens, it will tell its news.
+    "Whoever has done an atom's weight of good will see it. And whoever has done an atom's weight
+    of evil will see it."
+
+100:
+  summary: >-
+    An oath by horses charging at dawn, raising dust: the human being is ungrateful to his Lord,
+    and fierce in his love of wealth. Does he not know what happens when the graves are emptied
+    and what is in the hearts is brought out?
+
+101:
+  summary: >-
+    The Day when people will be like scattered moths and the mountains like tufted wool. The one
+    whose scales are heavy will have a pleasant life; the one whose scales are light, a raging
+    Fire.
+
+102:
+  summary: >-
+    "Abundance distracts you, until you visit the graveyards." Then you will see the Fire with
+    your own eyes, and be questioned about the comforts you enjoyed.
+
+103:
+  summary: >-
+    Three verses: by Time, the human being is in loss, "except those who believe, and do good
+    works, and encourage truth, and recommend patience".
+
+104:
+  summary: >-
+    Woe to every slanderer and backbiter who piles up wealth and counts it, thinking it will make
+    him live forever. He will be thrown into the Crusher: the kindled Fire of God, which reaches
+    the hearts.
+
+105:
+  summary: >-
+    "Have you not considered how your Lord dealt with the People of the Elephant?" Flocks of
+    birds pelted them with stones of baked clay. Tradition tells of an army with an elephant
+    that marched on Mecca in the year Muhammad was born.
+
+106:
+  summary: >-
+    For the safety of Quraysh on their winter and summer journeys, "let them worship the Lord of
+    this House, who has fed them against hunger, and has secured them against fear."
+
+107:
+  summary: >-
+    Who denies the religion? The one who drives away the orphan and does not urge the feeding of
+    the poor. "Woe to those who pray" and are heedless of their prayer, who make a show, and
+    withhold small kindnesses.
+
+108:
+  summary: >-
+    The shortest surah: "We have given you plenty. So pray to your Lord and sacrifice. He who
+    hates you is the loser."
+
+109:
+  summary: >-
+    "Say, O disbelievers: I do not worship what you worship, nor do you worship what I worship."
+    It ends, "You have your way, and I have my way."
+
+110:
+  summary: >-
+    "When there comes God's victory, and conquest, and you see the people entering God's religion
+    in multitudes, then celebrate the praise of your Lord, and seek His forgiveness." By
+    tradition, among the last surahs to be revealed.
+
+111:
+  summary: >-
+    A curse on Abu Lahab (an uncle of Muhammad and his opponent, by tradition) and on his wife:
+    his wealth will not help him, and he will burn in a flaming Fire. He is the only contemporary
+    opponent of the Prophet whom the Quran names.
+
+112:
+  summary: >-
+    Four verses that state the oneness of God: "He is God, the One. God, the Absolute. He begets
+    not, nor was He begotten. And there is nothing comparable to Him."
+
+113:
+  summary: >-
+    A prayer for refuge with the Lord of daybreak: from the evil of what He created, of the
+    darkness as it gathers, of those who practice sorcery, and of the envier when he envies.
+
+114:
+  summary: >-
+    A prayer for refuge with the Lord, the King, the God of mankind, from the whisperer who
+    whispers into people's hearts, "from among jinn and among people".

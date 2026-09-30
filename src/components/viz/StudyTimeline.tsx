@@ -8,6 +8,11 @@ import type { Bible, Study, StudyGroup, StudyRef, StudyView } from '@/data/types
 import type { Canon } from '@/lib/canon'
 import { formatYear, formatYearRange } from '@/lib/format'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
+
+const TIME = EDITION.verseTime
+const fmt = (v: number | null | undefined) => (v == null ? '' : TIME.format ? TIME.format(v) : formatYear(v))
+const fmtRange = (a: number, b: number) => (TIME.format ? (a === b ? fmt(a) : `${fmt(a)} – ${fmt(b)}`) : formatYearRange(a, b))
 
 interface Dated {
   ref: StudyRef
@@ -18,7 +23,7 @@ interface Dated {
   end: number
 }
 
-/** Where the years come from: the traditional year attached to every verse. */
+/** Where the years come from: the traditional year (or the place in the order of revelation) attached to every verse. */
 function yearsOf(ranges: [number, number][], years: (number | null)[]): [number, number] | null {
   let lo = Infinity
   let hi = -Infinity
@@ -57,13 +62,13 @@ export default function StudyTimeline({ study, view, canon, bible, selected, onR
     const out: TimelineLane[] = view.groups.map((g, gi) => {
       const mine = dated.filter((d) => d.gi === gi)
       const span: [number, number] | undefined = mine.length ? [Math.min(...mine.map((d) => d.start)), Math.max(...mine.map((d) => d.end))] : undefined
-      return { id: g.id, label: g.title, color: groupColor(gi), span, sub: span ? formatYearRange(span[0], span[1]) : 'undated' }
+      return { id: g.id, label: g.title, color: groupColor(gi), span, sub: span ? fmtRange(span[0], span[1]) : 'undated' }
     })
     return out
   }, [view, dated])
 
   const storyEvents = useMemo(() => {
-    if (!events || !dated.length) return []
+    if (!TIME.events || !events || !dated.length) return []
     const lo = Math.min(...dated.map((d) => d.start))
     const hi = Math.max(...dated.map((d) => d.end))
     const inStudy = (o: number) => study.ranges.some(([s, e]) => o >= s && o <= e)
@@ -80,7 +85,7 @@ export default function StudyTimeline({ study, view, canon, bible, selected, onR
       lane: d.group.id,
       sub: [d.ref.category ? study.categories?.find((c) => c.id === d.ref.category)?.title : undefined, d.ref.jesusOwn ? 'words of Jesus' : d.ref.jesus ? 'connected by Jesus' : undefined, 'click for the overview'].filter(Boolean).join(' · '),
     }))
-    for (const e of storyEvents) out.push({ id: `e:${e.id}`, label: e.title, year: e.year!, color: 'var(--muted)', lane: 'events', sub: `${formatYear(e.year)} · event from the data · click to read` })
+    for (const e of storyEvents) out.push({ id: `e:${e.id}`, label: e.title, year: e.year!, color: 'var(--muted)', lane: 'events', sub: `${fmt(e.year)} · event from the data · click to read` })
     return out
   }, [dated, storyEvents, study])
 
@@ -123,6 +128,9 @@ export default function StudyTimeline({ study, view, canon, bible, selected, onR
       <Timeline
         items={items}
         lanes={allLanes}
+        bands={TIME.bands}
+        format={TIME.format}
+        unit={TIME.unit}
         initialDomain={initialDomain}
         focusDomain={focusDomain}
         selectedId={selectedId}
@@ -144,12 +152,12 @@ export default function StudyTimeline({ study, view, canon, bible, selected, onR
         }}
       />
       <p className="text-xs text-muted mt-1">
-        Each row is a theme of the study; each dot is a reference placed by the traditional year of its verses, so the story reads left to right and the themes top to bottom. Click a dot for its overview, a row title to zoom to that theme.
+        {TIME.caption} Click a dot for its overview, a row title to zoom to that theme.
         {study.timeline?.note ? ` ${study.timeline.note}` : ''}
       </p>
       {undated.length > 0 && (
         <div className="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-ink-2">
-          <span>Without a year in the data:</span>
+          <span>Without a {TIME.unit} in the data:</span>
           {undated.map(({ ref, group }, i) => (
             <RefLink key={i} range={ref.ranges[0]} canon={canon} label={ref.label} color={groupColor(view.groups.indexOf(group))} />
           ))}

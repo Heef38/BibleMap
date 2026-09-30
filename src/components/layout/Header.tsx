@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { UpcomingList, UpdateList } from '@/components/common/Updates'
-import { UPDATES } from '@/config/updates'
+import { EDITION } from '@edition/config'
+import { UPCOMING, UPDATES } from '@edition/updates'
 import { isUnseen, useUnseen, useUpdates } from '@/store/updates'
 import { Link, NavLink, useLocation, useNavigate, useNavigationType } from 'react-router'
 import { IconArrowLeft, IconArrowRight, IconBook, IconHeart, IconInfo, IconMessage, IconSparkle, IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun } from '@/components/common/icons'
 import BrandLogo from '@/components/common/BrandLogo'
-import { SITE } from '@/config/site'
+import { SITE } from '@edition/site'
 import { useSession } from '@/store/session'
 import { useSettings, type FontSize, type Theme } from '@/store/settings'
 import { useData } from '@/data/useData'
@@ -78,10 +79,12 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
             ))}
           </div>
         </div>
-        <label className="flex items-center gap-2 py-1">
-          <input type="checkbox" checked={s.redLetter} onChange={(e) => s.set({ redLetter: e.target.checked })} />
-          Show the words of Jesus in red
-        </label>
+        {EDITION.redLetter && (
+          <label className="flex items-center gap-2 py-1">
+            <input type="checkbox" checked={s.redLetter} onChange={(e) => s.set({ redLetter: e.target.checked })} />
+            Show the words of Jesus in red
+          </label>
+        )}
         <label className="flex items-center gap-2 py-1">
           <input type="checkbox" checked={s.showHeadings} onChange={(e) => s.set({ showHeadings: e.target.checked })} />
           Section headings
@@ -94,10 +97,14 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
           <Link to="/about" onClick={onClose}>
             About
           </Link>
-          {' · '}
-          <Link to="/feedback" onClick={onClose}>
-            Feedback
-          </Link>
+          {EDITION.features.feedback && (
+            <>
+              {' · '}
+              <Link to="/feedback" onClick={onClose}>
+                Feedback
+              </Link>
+            </>
+          )}
           {' · '}
           <Link to="/credits" onClick={onClose}>
             Data sources and licenses
@@ -147,21 +154,25 @@ function WhatsNew() {
             role="dialog"
             aria-label="What's new"
           >
-            <div className="seg mb-3 text-[13px]" role="group" aria-label="Show">
-              <button type="button" aria-pressed={tab === 'new'} onClick={() => setTab('new')}>
-                What's new
-              </button>
-              <button type="button" aria-pressed={tab === 'soon'} onClick={() => setTab('soon')}>
-                Coming soon
-              </button>
-            </div>
+            {UPCOMING.length > 0 && (
+              <div className="seg mb-3 text-[13px]" role="group" aria-label="Show">
+                <button type="button" aria-pressed={tab === 'new'} onClick={() => setTab('new')}>
+                  What's new
+                </button>
+                <button type="button" aria-pressed={tab === 'soon'} onClick={() => setTab('soon')}>
+                  Coming soon
+                </button>
+              </div>
+            )}
             {tab === 'new' ? <UpdateList items={UPDATES} fresh={fresh} onNavigate={() => setOpen(false)} /> : <UpcomingList />}
-            <div className="mt-3 pt-3 border-t border-line text-xs text-ink-2">
-              {tab === 'soon' ? 'What would you use most?' : 'Have an idea?'}{' '}
-              <Link to="/feedback" onClick={() => setOpen(false)}>
-                Share it on the feedback board
-              </Link>
-            </div>
+            {EDITION.features.feedback && (
+              <div className="mt-3 pt-3 border-t border-line text-xs text-ink-2">
+                {tab === 'soon' ? 'What would you use most?' : 'Have an idea?'}{' '}
+                <Link to="/feedback" onClick={() => setOpen(false)}>
+                  Share it on the feedback board
+                </Link>
+              </div>
+            )}
           </div>
         </>
       )}
@@ -183,13 +194,13 @@ export function HistoryBar() {
     const idx = (window.history.state as { idx?: number } | null)?.idx ?? 0
     let max = idx
     try {
-      max = Math.max(idx, Number(sessionStorage.getItem('biblemap.historyMax')) || 0)
+      max = Math.max(idx, Number(sessionStorage.getItem(`${EDITION.storage}.historyMax`)) || 0)
     } catch {
       /* no storage: Forward only knows this page load */
     }
     if (navType === 'PUSH') max = idx
     try {
-      sessionStorage.setItem('biblemap.historyMax', String(max))
+      sessionStorage.setItem(`${EDITION.storage}.historyMax`, String(max))
     } catch {
       /* fine */
     }
@@ -218,24 +229,26 @@ export default function Header() {
   const [open, setOpen] = useState(false)
   return (
     <header className="h-12 shrink-0 flex items-center gap-3 max-[480px]:gap-1.5 px-3 max-[480px]:px-2 border-b border-line bg-surface relative z-20">
-      <Link to="/" className="flex items-center shrink-0 hover:no-underline" title="Bible-Map home">
+      <Link to="/" className="flex items-center shrink-0 hover:no-underline" title={`${SITE.name} home`}>
         {/* The book alone on a phone, the full name where there is room. */}
         <BrandLogo variant="wide" className="h-6 max-[480px]:hidden" />
         <BrandLogo variant="mark" className="h-7 min-[481px]:hidden" />
       </Link>
-      <span className="text-muted text-xs max-[900px]:hidden">see how the story connects</span>
+      <span className="text-muted text-xs max-[900px]:hidden">{SITE.motto}</span>
       <nav className="ml-auto flex items-center gap-1" aria-label="Site">
-        <NavLink to="/about" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="About Bible-Map">
+        <NavLink to="/about" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title={`About ${SITE.name}`}>
           <IconInfo />
           <span className="max-[900px]:hidden">About</span>
         </NavLink>
-        <NavLink to="/feedback" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="Ideas and feedback">
-          <IconMessage />
-          <span className="max-[900px]:hidden">Feedback</span>
-        </NavLink>
-        <WhatsNew />
+        {EDITION.features.feedback && (
+          <NavLink to="/feedback" className={({ isActive }) => `btn btn-ghost hover:no-underline ${isActive ? 'active' : ''}`} title="Ideas and feedback">
+            <IconMessage />
+            <span className="max-[900px]:hidden">Feedback</span>
+          </NavLink>
+        )}
+        {UPDATES.length > 0 && <WhatsNew />}
         {SITE.donateUrl && (
-          <a href={SITE.donateUrl} target="_blank" rel="noopener noreferrer" className="btn hover:no-underline" style={{ color: 'var(--ink)' }} title="Support Bible-Map">
+          <a href={SITE.donateUrl} target="_blank" rel="noopener noreferrer" className="btn hover:no-underline" style={{ color: 'var(--ink)' }} title={`Support ${SITE.name}`}>
             <IconHeart className="text-wj" />
             <span className="max-[480px]:hidden">Donate</span>
           </a>
@@ -248,8 +261,8 @@ export default function Header() {
           className="btn btn-ghost min-[901px]:hidden"
           aria-pressed={mobileBible}
           onClick={() => set({ mobileBible: !mobileBible })}
-          title={mobileBible ? 'Hide the Bible' : 'Show the Bible under the page'}
-          aria-label={mobileBible ? 'Hide the Bible' : 'Show the Bible under the page'}
+          title={mobileBible ? `Hide ${EDITION.words.scripture}` : `Show ${EDITION.words.scripture} under the page`}
+          aria-label={mobileBible ? `Hide ${EDITION.words.scripture}` : `Show ${EDITION.words.scripture} under the page`}
         >
           <IconBook />
         </button>

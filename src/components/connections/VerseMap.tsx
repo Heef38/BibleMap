@@ -10,11 +10,15 @@ import type { Canon } from '@/lib/canon'
 import { PARTS, partColor, partOf, studiesTouching } from '@/lib/connections'
 import { useSettings } from '@/store/settings'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
+
+const { scripture, xrefs: XREFS, book: BOOK } = EDITION.words
+const TITLE = XREFS.replace(/^./, (c) => c.toUpperCase())
 
 /** How many cross references one branch of the map draws (the list below has them all). */
 const PER_BRANCH = 12
 
-/** A verse picked in the reader: where it connects across the Bible, drawn as a map, then listed. */
+/** A verse picked in the reader: where it connects across the scripture, drawn as a map, then listed. */
 export default function VerseMap({ ordinal }: { ordinal: number }) {
   const { data: canon } = useData('canon', loadCanon)
   const translation = useSettings((s) => s.translation)
@@ -23,7 +27,7 @@ export default function VerseMap({ ordinal }: { ordinal: number }) {
   return <VerseMapBody ordinal={ordinal} canon={canon} bible={bible} />
 }
 
-/** Where the map is looking: the whole verse, or one part of the Bible spread out by book. */
+/** Where the map is looking: the whole verse, or one part of the scripture spread out by book. */
 type Zoom = number | null
 
 function VerseMapBody({ ordinal, canon, bible }: { ordinal: number; canon: Canon; bible: Bible }) {
@@ -117,7 +121,7 @@ function VerseMapBody({ ordinal, canon, bible }: { ordinal: number; canon: Canon
       {!xrefs ? (
         <Loading />
       ) : refs.length === 0 ? (
-        <p className="mt-6 text-sm text-muted">No recorded cross references for this verse.</p>
+        <p className="mt-6 text-sm text-muted">No recorded {XREFS} for this verse.</p>
       ) : (
         <>
           <Section title="Where it connects" count={refs.length}>
@@ -134,17 +138,17 @@ function VerseMapBody({ ordinal, canon, bible }: { ordinal: number; canon: Canon
               </div>
             )}
             <ConnectionMap
-              center={zoom === null ? { label: short, sub: `${refs.length} cross references` } : { label: PARTS[zoom].title, sub: `from ${short}` }}
+              center={zoom === null ? { label: short, sub: `${refs.length} ${XREFS}` } : { label: PARTS[zoom].title, sub: `from ${short}` }}
               branches={branches}
               canBack={zoom !== null || trail.length > 1}
               height={520}
               hint={
                 zoom === null
-                  ? 'Each line is a part of the Bible, strongest links nearest the center. Click a dot to follow it; click a line to spread that part out by book.'
-                  : `The links from ${short} into ${PARTS[zoom].title}, by book. Click a dot to follow it; click the center to step back.`
+                  ? `Each line is a part of ${scripture}, strongest links nearest the center. Click a dot to follow it; click a line to spread that part out by ${BOOK}.`
+                  : `The links from ${short} into ${PARTS[zoom].title}, by ${BOOK}. Click a dot to follow it; click the center to step back.`
               }
-              dotHint="click to follow it: the Bible and this map move there"
-              branchHint="click to spread these out by book"
+              dotHint={`click to follow it: ${scripture} and this map move there`}
+              branchHint={`click to spread these out by ${BOOK}`}
               onDot={(d) => {
                 const s = Number(d.id.split('-')[0])
                 if (s !== ordinal) follow(s, [...trail, s])
@@ -156,12 +160,12 @@ function VerseMapBody({ ordinal, canon, bible }: { ordinal: number; canon: Canon
               }}
             />
           </Section>
-          <Section title="Cross references" count={refs.length}>
+          <Section title={TITLE} count={refs.length}>
             <div className="-mx-2 max-w-prose">
               <XrefList refs={refs} canon={canon} bible={bible} first={10} onPick={(s) => goTo(s)} />
             </div>
           </Section>
-          <p className="mt-4 text-xs text-muted max-w-prose">Cross references are from OpenBible.info; the bars show how many readers voted for each link. Clicking one in this list reads it without moving the map.</p>
+          <p className="mt-4 text-xs text-muted max-w-prose">{EDITION.xrefs.source} Clicking one in this list reads it without moving the map.</p>
         </>
       )}
     </div>

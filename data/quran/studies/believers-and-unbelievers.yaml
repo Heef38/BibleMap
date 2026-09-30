@@ -1,0 +1,242 @@
+# Believers, unbelievers and hypocrites: the three kinds of people the Quran sorts its hearers
+# into, what it says of each, how believers are to treat the others, what it says of those who
+# leave the faith, and the character it asks of believers. Quotations follow Talal Itani.
+id: believers-and-unbelievers
+title: "Believers, Unbelievers and Hypocrites"
+subtitle: "The three kinds of people in the Quran, what it says of each, how believers are to live with the others, those who leave the faith, and the character asked of believers"
+kind: connections
+chart: patterns
+added: "2026-09-30"
+summary: >-
+  The Quran's second surah opens by sorting its hearers into three: those who believe, those who
+  refuse, and those who say “we believe” and do not. The whole book speaks in those terms. The
+  believers are humble in prayer, give, keep their trusts, forgive when angry, and answer the
+  ignorant with “Peace.” The unbelievers are deaf, dumb and blind, “like cattle,” “the worst of
+  creatures,” their hearts sealed. The hypocrites, a party at Medina, are worse still, “in the
+  lowest level of the Fire.” Toward unbelievers the Quran asks two things that sit side by side:
+  argue gently, do not insult their gods, “there shall be no compulsion in religion”; and do not
+  take them as friends or allies instead of believers, not even one's own family if they oppose
+  God. Of those who leave the faith it says God's wrath is on them, but it sets no punishment in
+  this world; the death penalty of later law comes from sayings of the Prophet. The last groups
+  gather the Quran's teaching on character: kindness to parents and neighbors, humility,
+  forgiveness, patience. The Patterns chart counts the passages by whom they are about.
+tags: [believers, unbelievers, hypocrites, apostasy, character, ethics, friendship]
+facetUnit: passages
+facets:
+  about:
+    title: "Whom it is about"
+    values:
+      believers: { title: "Believers" }
+      unbelievers: { title: "Unbelievers" }
+      hypocrites: { title: "Hypocrites" }
+      leavers: { title: "Those who leave the faith" }
+views:
+  - title: "The three kinds of people"
+    groups:
+      - title: "Three kinds of people"
+        refs:
+          - ref: "2:1-20"
+            label: "The opening of the second surah"
+            note: "Five verses on the righteous who believe in the unseen, two on those who disbelieve (“God has set a seal on their hearts”), and thirteen on those who say they believe and do not, likened to a man whose fire goes out and to people caught in a storm."
+            facets: { about: [believers, unbelievers, hypocrites] }
+
+      - title: "The believers"
+        refs:
+          - ref: "23:1-11"
+            label: "“Successful are the believers”"
+            note: "Humble in prayer, avoiding idle talk, giving, chaste, faithful to trusts; “these are the inheritors, who will inherit Paradise.”"
+            bible: "Matt 5:3-12"
+            facets: { about: believers }
+          - ref: "25:63-76"
+            label: "“The servants of the Merciful”"
+            note: "They “walk the earth in humility, and when the ignorant address them, they say, ‘Peace’”; they pray at night, spend neither wastefully nor stingily, do not kill or commit adultery or bear false witness."
+            facets: { about: believers }
+          - ref: "8:2-4"
+            label: "“Whose hearts tremble when God is mentioned”"
+            facets: { about: believers }
+          - ref: "49:15"
+            label: "“Then have not doubted, and strive … with their wealth and their persons”"
+            facets: { about: believers }
+          - ref: "48:29"
+            label: "“Stern against the disbelievers, yet compassionate amongst themselves”"
+            note: "“Their marks are on their faces from the effects of prostration.”"
+            facets: { about: [believers, unbelievers] }
+          - ref: "49:10-13"
+            label: "“The believers are brothers”"
+            note: "No mocking, name-calling, suspicion, spying or backbiting; and “We created you from a male and a female, and made you races and tribes, that you may know one another.”"
+            bible: "1 John 4:20-21"
+            facets: { about: believers }
+
+      - title: "The unbelievers"
+        note: "The Quran's word (kafir) means one who covers over, and so rejects or is ungrateful. It uses it above all of the Meccans who rejected Muhammad, and later of all who refuse the message."
+        refs:
+          - ref: "2:6-7"
+            label: "“It is the same for them, whether you have warned them”"
+            facets: { about: unbelievers }
+          - ref: "7:179"
+            label: "“These are like cattle. In fact, they are further astray”"
+            note: "“We have destined for Hell multitudes of jinn and humans. They have hearts with which they do not understand.” Jesus quotes Isaiah on eyes that do not see and ears that do not hear."
+            bible: "Matt 13:13-15"
+            facets: { about: unbelievers }
+          - ref: "8:55"
+            label: "“The worst of creatures in God's view are those who disbelieve”"
+            note: "Also 98:6, and 8:22: “the worst of animals to God are the deaf and dumb—those who do not reason.”"
+            facets: { about: unbelievers }
+          - ref: "2:171"
+            label: "“Deaf, dumb, and blind—they do not understand”"
+            facets: { about: unbelievers }
+          - ref: "47:12"
+            label: "“They enjoy themselves, and eat as cattle eat”"
+            facets: { about: unbelievers }
+
+      - title: "The hypocrites"
+        note: "At Medina the Quran faces a party who professed Islam and worked against it; surah 63 is named for them. Tradition names their leader Abd Allah ibn Ubayy."
+        refs:
+          - ref: "63:1-8"
+            label: "“God bears witness that the hypocrites are liars”"
+            note: "“Their appearance impresses you … They are like propped-up timber.” “If we return to the City, the more powerful therein will evict the weak.”"
+            facets: { about: hypocrites }
+          - ref: "4:138-145"
+            label: "“In the lowest level of the Fire”"
+            note: "“Wavering in between, neither with these, nor with those.” “When they stand for prayer, they stand lazily, showing off in front of people.”"
+            bible: "Matt 6:5; Matt 23:27-28"
+            facets: { about: hypocrites }
+          - ref: "9:64-68"
+            label: "“We were just joking and playing”"
+            note: "“Do not apologize. You have disbelieved after your belief.”"
+            facets: { about: hypocrites }
+          - ref: "2:8-16"
+            label: "“We believe in God and in the Last Day,” but they are not believers"
+            note: "“In their hearts is sickness, and God has increased their sickness.”"
+            facets: { about: hypocrites }
+
+  - title: "Living with those who do not believe"
+    groups:
+      - title: "Argue gently; no compulsion"
+        refs:
+          - ref: "16:125"
+            label: "“Invite to the way of your Lord with wisdom and good advice”"
+            bible: "1 Pet 3:15"
+            facets: { about: unbelievers }
+          - ref: "6:108"
+            label: "“Do not insult those they call upon besides God”"
+            facets: { about: unbelievers }
+          - ref: "2:256"
+            label: "“There shall be no compulsion in religion”"
+            facets: { about: unbelievers }
+          - ref: "109"
+            label: "“You have your way, and I have my way”"
+            facets: { about: unbelievers }
+          - ref: "60:8"
+            label: "“God does not prohibit you from dealing with them kindly and equitably”"
+            note: "Those who have not fought the believers or driven them from their homes."
+            facets: { about: unbelievers }
+
+      - title: "Not friends or allies"
+        note: "The word (wali, plural awliya) covers friend, ally and protector; translators choose among them."
+        refs:
+          - ref: "3:28"
+            label: "“Believers are not to take disbelievers for friends instead of believers”"
+            note: "“… unless it is to protect your own selves against them.” Shiite law and some Sunni scholars built on this a permission to hide one's faith in danger (taqiyya)."
+            facets: { about: unbelievers }
+          - ref: "4:144"
+            label: "“Do not befriend disbelievers rather than believers”"
+            facets: { about: unbelievers }
+          - ref: "58:22"
+            label: "“Even if they were their parents, or their children, or their siblings”"
+            note: "Believers will not love those who oppose God and His Messenger. Jesus: “Anyone who loves his father or mother more than Me is not worthy of Me.”"
+            bible: "Matt 10:34-37"
+            facets: { about: [believers, unbelievers] }
+          - ref: "4:140"
+            label: "“Do not sit with them” while God's revelations are ridiculed"
+            facets: { about: [unbelievers, hypocrites] }
+
+      - title: "Those who leave the faith"
+        note: "The Quran threatens apostates with God's wrath and the Fire, and accepts their repentance. It sets no punishment in this world. Classical Islamic law made apostasy a capital crime on the strength of sayings of the Prophet (“whoever changes his religion, kill him”); many modern Muslims argue from the Quran against it."
+        refs:
+          - ref: "16:106"
+            label: "“Except for someone who is compelled, while his heart rests securely in faith”"
+            note: "“Whoever willingly opens up his heart to disbelief—upon them falls wrath from God.” By tradition revealed about Ammar ibn Yasir, who denied Islam under torture."
+            facets: { about: leavers }
+          - ref: "3:86-91"
+            label: "“Disbelieved after having believed”"
+            note: "The curse of God, the angels and all mankind, “except those who repent afterwards, and reform.”"
+            facets: { about: leavers }
+          - ref: "4:137"
+            label: "“Believe, then disbelieve, then believe, then disbelieve”"
+            note: "Those who argue against a death penalty for apostasy point out that the verse assumes a person could leave the faith and return more than once."
+            facets: { about: leavers }
+          - ref: "2:217"
+            label: "“Whoever among you turns back from his religion, and dies a disbeliever”"
+            bible: "Heb 6:4-6"
+            facets: { about: leavers }
+          - ref: "5:54"
+            label: "“God will bring a people whom He loves and who love Him”"
+            note: "In place of those who go back on their religion."
+            facets: { about: [leavers, believers] }
+          - ref: "47:25-28"
+            label: "“Those who reverted after the guidance became clear to them”"
+            facets: { about: [leavers, hypocrites] }
+
+  - title: "The character of a believer"
+    groups:
+      - title: "Kindness and good dealing"
+        refs:
+          - ref: "4:36"
+            label: "“Be good to the parents, and the relatives, and the orphans … and the neighbor”"
+            note: "“… the neighbor next door, and the distant neighbor, and the close associate, and the traveler, and your servants.” The Law and Jesus: “love your neighbor as yourself.”"
+            bible: "Lev 19:18; Luke 10:27-37"
+            facets: { about: believers }
+          - ref: "16:90"
+            label: "“God commands justice, and goodness, and generosity towards relatives”"
+            note: "Recited in many mosques at the end of the Friday sermon."
+            facets: { about: believers }
+          - ref: "2:83"
+            label: "“Speak nicely to people”"
+            facets: { about: believers }
+          - ref: "5:2"
+            label: "“Cooperate with one another in virtuous conduct”"
+            note: "“… and let not the hatred of people who barred you from the Sacred Mosque incite you to aggression.”"
+            facets: { about: believers }
+
+      - title: "Humility"
+        refs:
+          - ref: "31:12-19"
+            label: "Luqman's advice to his son"
+            note: "“Do not associate anything with God … do not treat people with arrogance, nor walk proudly on earth … lower your voice. The most repulsive of voices is the donkey's voice.” The Quran's nearest thing to Proverbs."
+            bible: "Prov 1:8-9; Prov 16:18-19"
+            facets: { about: believers }
+          - ref: "17:37"
+            label: "“You can neither pierce the earth, nor can you match the mountains in height”"
+            facets: { about: believers }
+
+      - title: "Forgiveness and patience"
+        note: "The Quran allows retaliation in equal measure, and praises forgoing it."
+        refs:
+          - ref: "42:37-43"
+            label: "“If they become angry, they forgive”"
+            note: "“The repayment of a bad action is one equivalent to it. But whoever pardons and makes reconciliation, his reward lies with God.”"
+            bible: "Matt 5:38-44"
+            facets: { about: believers }
+          - ref: "3:134"
+            label: "“Those who restrain anger, and those who forgive people”"
+            facets: { about: believers }
+          - ref: "24:22"
+            label: "“Let them pardon, and let them overlook. Do you not love for God to pardon you?”"
+            note: "By tradition said to Abu Bakr, who had stopped supporting a relative who spread the slander against his daughter Aisha. Jesus: “forgive, and you will be forgiven.”"
+            bible: "Matt 6:14-15; Luke 6:37"
+            facets: { about: believers }
+          - ref: "64:14"
+            label: "“Among your wives and your children are enemies to you … But if you pardon”"
+            facets: { about: believers }
+          - ref: "2:263"
+            label: "“Kind words and forgiveness are better than charity followed by insults”"
+            facets: { about: believers }
+
+  - title: "By whom"
+    auto: facet
+    facet: about
+
+  - title: "Mecca and Medina"
+    auto: place
+    note: "The hypocrites appear almost only in Medinan surahs (the one exception is 29:11), and so do most of the rulings on friendship and on leaving the faith."

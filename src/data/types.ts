@@ -1,18 +1,35 @@
 import type { Range } from '@/lib/refs'
 
+/** What is known of a surah beyond its text. */
+export interface SurahInfo {
+  arabic: string
+  /** the name in English: "The Cow" */
+  meaning: string
+  /** where tradition says it was revealed */
+  place: 'Meccan' | 'Medinan'
+  /** its place in the traditional order of revelation, 1 to 114 */
+  order: number
+  /** its place in Nöldeke's order, and which of his four periods that falls in */
+  noldeke: number
+  period: string
+  /** what it is about, in a sentence or two */
+  summary?: string
+  /** the verses at which a prostration is made in recitation */
+  sajda?: number[]
+  /** the disconnected letters it opens with */
+  letters?: string
+}
 export interface BookJson {
   n: number
   osis: string
-  usfm: string
   name: string
-  short: string
-  testament: 'OT' | 'NT'
   division: string
   chapters: number[]
   /** traditional writers, as person ids */
   writers: string[]
   peopleCount: number
   placeCount: number
+  surah?: SurahInfo
 }
 export interface BooksJson {
   total: number
@@ -25,6 +42,8 @@ export interface BibleMeta {
   abbrev: string
   redLetter: boolean
   headings: boolean
+  /** the original, not a translation: set right to left in its own script */
+  original?: boolean
 }
 export interface Bible {
   id: string
@@ -33,15 +52,22 @@ export interface Bible {
   year?: string
   license: string
   attribution: string
+  /** the text runs right to left (Arabic) */
+  rtl?: boolean
+  lang?: string
   verses: string[]
   /** ordinal -> [start, end) character spans spoken by Jesus */
   wj?: Record<number, [number, number][]>
   /** ordinal -> section heading shown before that verse */
   headings?: Record<number, string>
+  /** ordinal -> a line of the text set before that verse: the basmala before a surah */
+  pre?: Record<number, string>
 }
 
 export interface NameMeaning {
   meaning?: string
+  /** the name as the Quran writes it */
+  arabic?: string
   hebrew?: string
   translit?: string
   strongs?: string
@@ -53,6 +79,8 @@ export interface NameMeaning {
 export interface PersonIndexEntry {
   id: string
   title: string
+  /** what kind of figure this is, when the data says: prophet, angel, people */
+  kind?: string
   gender?: string
   verseCount: number
   birth?: number
@@ -65,6 +93,7 @@ export interface Person {
   id: string
   name: string
   title: string
+  kind?: string
   gender?: string
   birth?: number
   death?: number
@@ -84,6 +113,8 @@ export interface Person {
   dict?: string
   status?: string
   name_meaning?: NameMeaning
+  /** the same person on Bible-Map, as a person id there */
+  bible?: string
 }
 
 export interface PlaceIndexEntry {
@@ -116,6 +147,8 @@ export interface Place {
   dict?: string
   comment?: string
   name_meaning?: NameMeaning
+  /** the same place on Bible-Map, as a place id there */
+  bible?: string
 }
 
 export interface BibleEvent {
@@ -144,6 +177,8 @@ export interface TopicIndexEntry {
   id: string
   title: string
   source: string
+  /** other names to find it by (the Arabic word, transliterated) */
+  aka?: string
   entries: number
   verses: number
   shard: string
@@ -152,6 +187,8 @@ export interface Topic {
   id: string
   title: string
   source: string
+  /** a line under the title: the Arabic word and what it means */
+  note?: string
   seeAlso: string[]
   entries: { text: string; refs: Range[] }[]
 }
@@ -183,6 +220,8 @@ export interface StudyRef {
   links?: StudyLink[]
   /** facet id -> the values this passage carries (see Study.facets) */
   facets?: Record<string, string[]>
+  /** in an edition that is not the Bible: where the Bible tells the same thing, and the id Bible-Map opens it by */
+  bible?: { label: string; osis: string }[]
 }
 export interface StudyCategory {
   id: string
@@ -296,5 +335,5 @@ export interface Manifest {
   people: number
   places: number
   events: number
-  sources: { id: string; name: string; license: string; url: string }[]
+  sources: { id: string; name: string; license: string; url: string; note?: string }[]
 }

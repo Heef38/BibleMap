@@ -12,8 +12,9 @@ import { useDebounce } from '@/lib/hooks'
 import { truncate } from '@/lib/format'
 import { useSettings } from '@/store/settings'
 import { useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
-const SUGGESTIONS = ['David', 'Jerusalem', 'Kingdom of heaven', 'Abraham', 'Covenant', 'Passover', 'Faith', 'Paul']
+const { suggestions: SUGGESTIONS, explore: EXPLORE } = EDITION.search
 
 export default function SearchPane() {
   const [q, setQ] = useState('')
@@ -59,10 +60,10 @@ export default function SearchPane() {
         <input
           ref={inputRef}
           className="field pl-9"
-          placeholder="Person, place, theme, or John 3:16"
+          placeholder={EDITION.search.placeholder}
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          aria-label="Search the Bible"
+          aria-label={EDITION.search.label}
           autoComplete="off"
           spellCheck={false}
         />
@@ -77,22 +78,12 @@ export default function SearchPane() {
             </div>
             <div className="text-xs text-ink-2">{studies?.length ? `${studies.length} themes, each drawn as maps and timelines` : 'Themes drawn as maps and timelines'}</div>
           </Link>
-          <Link to="/" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
-            <div className="font-medium">This chapter</div>
-            <div className="text-xs text-ink-2">Where the chapter you are reading connects</div>
-          </Link>
-          <Link to="/timeline" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
-            <div className="font-medium">The story in time</div>
-            <div className="text-xs text-ink-2">All dated events on one timeline</div>
-          </Link>
-          <Link to="/bible" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
-            <div className="font-medium">How the Bible is laid out</div>
-            <div className="text-xs text-ink-2">The 66 books by kind, drawn to size</div>
-          </Link>
-          <Link to="/compare" className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
-            <div className="font-medium">Compare two people</div>
-            <div className="text-xs text-ink-2">What two lives share, side by side</div>
-          </Link>
+          {[EXPLORE.chapter, EXPLORE.timeline, EXPLORE.layout, ...(EDITION.features.compare ? [EXPLORE.compare] : [])].map((l) => (
+            <Link key={l.to} to={l.to} className="block rounded-lg px-2 py-1.5 -mx-2 text-ink hover:bg-surface-2 hover:no-underline">
+              <div className="font-medium">{l.title}</div>
+              <div className="text-xs text-ink-2">{l.sub}</div>
+            </Link>
+          ))}
           <div className="kicker mt-6 mb-2">Try</div>
           <div className="flex flex-wrap gap-1.5">
             {SUGGESTIONS.map((s) => (
@@ -102,7 +93,7 @@ export default function SearchPane() {
             ))}
           </div>
           <p className="text-xs text-muted mt-6 leading-relaxed">
-            Search finds people, places, topics and events by name, and every verse containing your words. Type a reference such as <span className="text-ink-2">Ps 23</span> to read it.
+            Search finds people, places, topics and events by name, and every verse containing your words. Type a reference such as <span className="text-ink-2">{EDITION.search.example}</span> to read it.
           </p>
         </div>
       )}

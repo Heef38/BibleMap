@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState, type FormEvent } from 'react
 import { useSearchParams } from 'react-router'
 import { EmptyState, Loading, PageHeader } from '@/components/common/ui'
 import { IconUp } from '@/components/common/icons'
-import { SITE } from '@/config/site'
+import { SITE } from '@edition/site'
 import { KIND_LABELS, LIMITS, STATUS_LABELS, adminKey, feedbackApi, loadVoted, saveVoted, type FeedbackItem, type FeedbackKind, type FeedbackStatus } from '@/lib/feedback'
 import { usePageTitle } from '@/store/session'
 

@@ -51,6 +51,10 @@ interface Props {
   /** when this changes, the view animates to show these years (undefined = everything) */
   focusDomain?: [number, number] | null
   binLabel?: string
+  /** how a point on the axis reads: a year by default; a place in an order for another scale */
+  format?: (v: number) => string
+  /** what the axis counts, for the histogram's caption: "year" by default */
+  unit?: string
   selectedId?: string | null
   onItem?: (item: TimelineItem) => void
   onBand?: (band: TimelineBand) => void
@@ -102,7 +106,7 @@ function packLanes<T>(spans: { ref: T; x0: number; x1: number; flip?: boolean }[
 
 const NONE: never[] = []
 
-export default function Timeline({ items, bands = NONE, bins = NONE, lanes, initialDomain, focusDomain, binLabel = 'verses', selectedId, onItem, onBand, onBin, onLane, maxItemLanes = 10 }: Props) {
+export default function Timeline({ items, bands = NONE, bins = NONE, lanes, initialDomain, focusDomain, binLabel = 'verses', format: fmt = formatYear, unit = 'year', selectedId, onItem, onBand, onBin, onLane, maxItemLanes = 10 }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null)
@@ -286,7 +290,7 @@ export default function Timeline({ items, bands = NONE, bins = NONE, lanes, init
 
   const ticks = useMemo(() => x.ticks(Math.max(2, Math.floor((width - GUTTER) / 110))).filter((t) => Number.isInteger(t) && x(t) >= GUTTER + 28 && x(t) <= width - 28), [x, width, GUTTER])
   const showTip = (e: PointerEvent, content: TipState['content']) => setTip({ x: e.clientX, y: e.clientY, content })
-  const yearsLabel = (a: number, b?: number) => (b !== undefined && Math.round(b) !== Math.round(a) ? `${formatYear(Math.round(a))} – ${formatYear(Math.round(b))}` : formatYear(Math.round(a)))
+  const yearsLabel = (a: number, b?: number) => (b !== undefined && Math.round(b) !== Math.round(a) ? `${fmt(Math.round(a))} – ${fmt(Math.round(b))}` : fmt(Math.round(a)))
 
   const renderItem = (it: TimelineItem, y: number, hidden: boolean, flip = false) => {
     const cx = x(it.year)
@@ -337,7 +341,7 @@ export default function Timeline({ items, bands = NONE, bins = NONE, lanes, init
     <div ref={wrapRef} className="w-full">
       <div className="flex items-center gap-2 mb-1.5 text-[11px] text-muted">
         <span>
-          Showing {formatYear(Math.round(x.domain()[0]))} to {formatYear(Math.round(x.domain()[1]))}
+          Showing {fmt(Math.round(x.domain()[0]))} to {fmt(Math.round(x.domain()[1]))}
         </span>
         <span className="ml-auto">drag to pan · ctrl + scroll to zoom{lanes ? ' · click a row title to zoom to it' : ''}</span>
         <div className="seg">
@@ -449,7 +453,7 @@ export default function Timeline({ items, bands = NONE, bins = NONE, lanes, init
                   key={b.year}
                   role="button"
                   tabIndex={0}
-                  aria-label={`${b.count} ${binLabel} around ${formatYear(b.year)}`}
+                  aria-label={`${b.count} ${binLabel} around ${fmt(b.year)}`}
                   style={{ cursor: onBin ? 'pointer' : 'default' }}
                   onClick={() => onBin?.({ year: b.year, count: b.count, ordinals: b.ordinals })}
                   onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onBin?.({ year: b.year, count: b.count, ordinals: b.ordinals })}
@@ -460,7 +464,7 @@ export default function Timeline({ items, bands = NONE, bins = NONE, lanes, init
                         <div className="v">
                           {b.count} {binLabel}
                         </div>
-                        <div className="k">{b.span > 1 ? `${formatYear(b.year)} to ${formatYear(b.year + b.span - 1)}` : formatYear(b.year)}</div>
+                        <div className="k">{b.span > 1 ? `${fmt(b.year)} to ${fmt(b.year + b.span - 1)}` : fmt(b.year)}</div>
                         {onBin && <div className="k">click to read</div>}
                       </>,
                     )
@@ -474,7 +478,7 @@ export default function Timeline({ items, bands = NONE, bins = NONE, lanes, init
             })}
             {histH > 0 && (
               <text x={GUTTER + 2} y={histTop + 10} fontSize={9.5} fill="var(--muted)" fontWeight={600}>
-                {binLabel.toUpperCase()} BY YEAR
+                {binLabel.toUpperCase()} BY {unit.toUpperCase()}
               </text>
             )}
           </g>
@@ -506,7 +510,7 @@ export default function Timeline({ items, bands = NONE, bins = NONE, lanes, init
             <g key={t} transform={`translate(${x(t)},${axisTop})`}>
               <line y1={0} y2={4} stroke="var(--axis)" />
               <text y={16} fontSize={10.5} textAnchor="middle" fill="var(--ink-2)" style={{ fontVariantNumeric: 'tabular-nums' }}>
-                {formatYear(t)}
+                {fmt(t)}
               </text>
             </g>
           ))}

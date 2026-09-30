@@ -13,19 +13,17 @@ import { useDebounce } from '@/lib/hooks'
 import { ordinalsToRanges } from '@/lib/refs'
 import { useSettings } from '@/store/settings'
 import { usePageTitle, useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
+
+const TIME = EDITION.verseTime
+const { scripture, books: BOOKS } = EDITION.words
 
 const COLOR_A = 'var(--series-1)'
 const COLOR_B = 'var(--series-2)'
 const COLOR_SHARED = 'var(--series-7)'
 const CAP = 12
 
-const SUGGESTED: [string, string, string][] = [
-  ['david_994', 'saul_2478', 'David and Saul'],
-  ['david_994', 'jonathan_1692', 'David and Jonathan'],
-  ['moses_2108', 'aaron_1', 'Moses and Aaron'],
-  ['elijah_1131', 'elisha_1153', 'Elijah and Elisha'],
-  ['paul_2479', 'jesus_905', 'Paul and Jesus'],
-]
+const SUGGESTED = EDITION.comparePairs
 
 function PersonPicker({ value, label, onPick }: { value?: string; label: string; onPick: (id: string) => void }) {
   const [q, setQ] = useState('')
@@ -225,7 +223,8 @@ export default function ComparePage() {
   }, [a, b, cmp])
 
   const mentionYears = (p: Person) => {
-    if (!years) return null
+    // Only where verses carry years: a place in the order of revelation is not when someone lived.
+    if (!years || TIME.format) return null
     const ys = p.verses.map((o) => years[o]).filter((y): y is number => y !== null && y !== undefined).sort((x, y) => x - y)
     if (ys.length < 3) return null
     return [ys[Math.floor(ys.length * 0.05)], ys[Math.floor(ys.length * 0.95)]] as [number, number]
@@ -233,7 +232,7 @@ export default function ComparePage() {
 
   const err = errA ?? errB
   usePageTitle(a && b ? `${a.title} and ${b.title}` : 'Compare two people', {
-    description: a && b ? `${a.title} and ${b.title} in the Bible, side by side: the verses, people, places and events they share, and what belongs to each alone.` : 'Put two people from the Bible side by side: the verses, people, places and events they share.',
+    description: a && b ? `${a.title} and ${b.title} in ${scripture}, side by side: the verses, people, places and events they share, and what belongs to each alone.` : `Put two people from ${scripture} side by side: the verses, people, places and events they share.`,
   })
   if (err) return <div className="p-6 text-ink-2">Could not load one of the people: {err.message}</div>
 
@@ -282,7 +281,7 @@ export default function ComparePage() {
                     </div>
                   )}
                   <div className="text-ink-2 text-xs mt-1 leading-relaxed">
-                    {person.verseCount.toLocaleString()} verses in {new Set(person.verses.map((o) => canon.locate(o).b)).size} books
+                    {person.verseCount.toLocaleString()} verses in {new Set(person.verses.map((o) => canon.locate(o).b)).size} {BOOKS}
                     {person.birth !== undefined && person.death !== undefined ? <> · lived {formatYearRange(person.birth, person.death)}</> : span ? <> · appears {formatYearRange(...(span as [number, number]))}</> : null}
                   </div>
                 </div>
@@ -327,7 +326,7 @@ export default function ComparePage() {
             </Section>
           )}
 
-          <Section title="Across the Bible">
+          <Section title={`Across ${scripture}`}>
             <CanonStrip
               canon={canon}
               series={[

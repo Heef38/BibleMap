@@ -6,6 +6,7 @@ import { useData } from '@/data/useData'
 import { loadCanon, loadTopic } from '@/data/loaders'
 import { countVerses, mergeRanges } from '@/lib/refs'
 import { usePageTitle, useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 const COLOR = 'var(--series-7)'
 
@@ -21,11 +22,16 @@ export default function TopicPage() {
     return () => setHighlights([])
   }, [topic, ranges, setHighlights])
 
-  usePageTitle(topic?.title, topic ? { description: `${topic.title} in the Bible: every reference from the classic topical Bibles, grouped by what they say and shown across the whole of Scripture.` } : undefined)
+  usePageTitle(
+    topic?.title,
+    topic
+      ? { description: EDITION.id === 'bible' ? `${topic.title} in the Bible: every reference from the classic topical Bibles, grouped by what they say and shown across the whole of Scripture.` : `${topic.title} in ${EDITION.words.scripture}: every verse that uses the word, shown across the whole text.` }
+      : undefined,
+  )
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
   if (!canon || !topic) return <div className="p-6"><Loading /></div>
 
-  const source = topic.source === 'nave' ? "Nave's Topical Bible (1896)" : "Torrey's New Topical Textbook (1897)"
+  const source = EDITION.topicSources[topic.source] ?? topic.source
   return (
     <div className="p-6">
       <PageHeader
@@ -33,6 +39,7 @@ export default function TopicPage() {
         title={topic.title}
         subtitle={
           <>
+            {topic.note && <span className="block text-ink mb-0.5">{topic.note}</span>}
             {topic.entries.length} entries · {countVerses(ranges).toLocaleString()} verses
             {topic.seeAlso.length > 0 && (
               <>

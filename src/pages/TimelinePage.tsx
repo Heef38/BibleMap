@@ -8,6 +8,7 @@ import type { BibleEvent } from '@/data/types'
 import { durationYears, formatDuration, formatYear } from '@/lib/format'
 import { ordinalsToRanges } from '@/lib/refs'
 import { usePageTitle, useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
 
 const PERIOD_COLORS = ['var(--series-7)', 'var(--series-3)', 'var(--series-4)', 'var(--series-5)', 'var(--series-6)', 'var(--series-2)', 'var(--series-8)', 'var(--series-1)']
 
@@ -54,15 +55,15 @@ export default function TimelinePage() {
     return [lo - pad, hi + pad]
   }, [filter, items])
 
-  usePageTitle('The story in time', { description: 'Every dated event in the Bible, from creation to the apostles, on one zoomable timeline, with the passages that tell each one.' })
+  usePageTitle(EDITION.text.timelineTitle, { description: EDITION.text.timelineDescription })
   if (!canon || !events) return <div className="p-6"><Loading /></div>
 
   return (
     <div className="p-6">
       <PageHeader
         kicker="Timeline"
-        title="The story in time"
-        subtitle={`${events.length} dated events from creation to the apostles, on traditional chronology. Zoom in to see the labels; click an event to read it.`}
+        title={EDITION.text.timelineTitle}
+        subtitle={EDITION.text.timelineIntro(events.length)}
         right={<input className="field !w-56" placeholder="Filter by title, person or place" value={filter} onChange={(e) => setFilter(e.target.value)} aria-label="Filter events" />}
       />
       <Timeline items={items} bands={bands} focusDomain={focusDomain} selectedId={selected?.id ?? null} onItem={(it) => setSelected(byId.get(it.id) ?? null)} onBand={(b) => setSelected(byId.get(b.id) ?? null)} maxItemLanes={12} />

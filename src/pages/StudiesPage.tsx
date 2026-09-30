@@ -6,13 +6,15 @@ import { useData } from '@/data/useData'
 import { loadCanon, loadStudiesIndex } from '@/data/loaders'
 import type { StudyIndexEntry } from '@/data/types'
 import type { Canon } from '@/lib/canon'
-import { OTHER_SHELF, SHELVES } from '@/config/studies'
+import { EDITION } from '@edition/config'
+import { SITE } from '@edition/site'
+import { OTHER_SHELF, SHELVES } from '@edition/shelves'
 import { isNewStudy } from '@/store/updates'
 import { usePageTitle } from '@/store/session'
 
 /** Every study, on shelves by what it is about. */
 export default function StudiesPage() {
-  usePageTitle('Studies', { description: 'Guided Bible studies drawn as connection maps, arcs and timelines: the Trinity, the resurrection, the book of Isaiah, the parables, the promises of God, Christ in the Old Testament and more.' })
+  usePageTitle('Studies', { description: EDITION.text.studiesDescription })
   const { data: canon } = useData('canon', loadCanon)
   const { data: studies } = useData('studies-index', loadStudiesIndex)
 
@@ -30,9 +32,9 @@ export default function StudiesPage() {
   return (
     <div className="p-6 @container">
       <PageHeader
-        kicker="Bible-Map"
+        kicker={SITE.name}
         title="Studies"
-        subtitle="Each study gathers the passages on one theme and draws them as maps, arcs and timelines. Open one and it sits here beside the Bible; click any passage in it to read it."
+        subtitle={EDITION.text.studiesIntro}
       />
       {!studies || !canon ? (
         <Loading />
@@ -69,12 +71,15 @@ function StudyCard({ study: s, canon }: { study: StudyIndexEntry; canon: Canon }
   )
 }
 
-/** Where a study's passages fall, from Genesis to Revelation, as ticks on a thin bar. */
+/** Where a study's passages fall, from the first verse to the last, as ticks on a thin bar (the second Testament a shade darker). */
 function MiniStrip({ canon, ranges }: { canon: Canon; ranges: [number, number][] }) {
-  const ntStart = canon.books.find((b) => b.testament === 'NT')?.start ?? canon.total
+  // Only when the second group is one stretch at the end of the canon; Medinan surahs are not.
+  const second = canon.books.findIndex((b) => b.group !== canon.books[0].group)
+  const split = second > 0 && canon.books.slice(second).every((b) => b.group === canon.books[second].group)
+  const ntStart = split ? canon.books[second].start : canon.total
   const x = (o: number) => (o / canon.total) * 100
   return (
-    <svg viewBox="0 0 100 10" preserveAspectRatio="none" className="block w-full h-2.5" role="img" aria-label="Where its passages are in the Bible">
+    <svg viewBox="0 0 100 10" preserveAspectRatio="none" className="block w-full h-2.5" role="img" aria-label={`Where its passages are in ${EDITION.words.scripture}`}>
       <rect x={0} y={3} width={x(ntStart)} height={4} fill="var(--surface-2)" />
       <rect x={x(ntStart)} y={3} width={100 - x(ntStart)} height={4} fill="color-mix(in oklab, var(--surface-2) 70%, var(--line-strong))" />
       {ranges.map(([a, z], i) => (

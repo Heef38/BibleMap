@@ -19,16 +19,20 @@
     },
     {
       "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "biblemap-mauve.vercel.app"
-        }
-      ],
       "headers": [
         {
           "key": "X-Robots-Tag",
           "value": "noindex"
+        }
+      ],
+      "missing": [
+        {
+          "type": "host",
+          "value": "www.bible-map.com"
+        },
+        {
+          "type": "host",
+          "value": "bible-map.com"
         }
       ]
     }

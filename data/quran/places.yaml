@@ -1,0 +1,264 @@
+# The places the Quran names. Verses are found the same way as for people (see people.yaml).
+# Coordinates are given only where the place is known, and `precision` says how sure that is.
+
+- id: mecca
+  name: Mecca
+  arabic: مَكَّة
+  translit: Makka
+  aka: [Makkah, Bakkah, Bekka, the Mother of Cities]
+  kind: City
+  names: [مَكَّة, بَكَّة]
+  refs: "6:92; 42:7"
+  lat: 21.4225
+  lon: 39.8262
+  about: >
+    Muhammad's own city, where tradition places the first twelve years or so of the revelation.
+    The Quran names it twice: as Mecca (48:24) and as Bekka, site of "the first house established
+    for mankind" (3:96). It is also "the Mother of Cities" (6:92, 42:7), and often simply "this
+    town" or "this land" (90:1, 95:3).
+
+- id: medina
+  name: Medina
+  arabic: الْمَدِينَة
+  translit: al-Madīna
+  aka: [Yathrib, the City]
+  kind: City
+  names: [يَثْرِب, مَدِينَة]
+  lat: 24.4672
+  lon: 39.6112
+  about: >
+    The town to which Muhammad and his followers moved in 622, by tradition, and where he ruled
+    until his death. The Quran calls it Yathrib, its old name, once (33:13), and "the City"
+    (al-Madina) four times, each time of the hypocrites and desert Arabs in and around it (9:101,
+    9:120, 33:60, 63:8).
+
+- id: kaaba
+  name: The Kaaba
+  title: The Kaaba (the House)
+  arabic: الْكَعْبَة
+  translit: al-Kaʿba
+  aka: [the House, the Sacred House, the Ancient House]
+  kind: Sanctuary
+  names: [كَعْبَة]
+  text: "\\bthe House\\b(?! of)|this House|Sacred House|Ancient House"
+  refs: "3:96"
+  lat: 21.4225
+  lon: 39.8262
+  about: >
+    The House at Mecca: "the first house established for mankind" (3:96), whose foundations
+    Abraham and Ishmael raised (2:127), and which Abraham was told to purify for those who circle
+    it, stand, bow and prostrate (22:26). It is the goal of the pilgrimage (3:97) and the
+    direction of prayer (2:144). It is called the Kaaba twice (5:95, 5:97), and otherwise the
+    House, the Sacred House, or the Ancient House.
+
+- id: sacred-mosque
+  name: The Sacred Mosque
+  arabic: الْمَسْجِد الْحَرام
+  translit: al-Masjid al-Ḥarām
+  kind: Sanctuary
+  text: "Sacred Mosque|Holy Mosque"
+  lat: 21.4225
+  lon: 39.8262
+  about: >
+    The place of worship around the Kaaba at Mecca. The believers are told to turn their faces
+    toward it in prayer (2:144). The unbelievers barred them from it (48:25); fighting there is
+    forbidden unless the enemy fights there (2:191); and after a set year the idolaters are not to
+    come near it (9:28).
+
+- id: farthest-mosque
+  name: The Farthest Mosque
+  arabic: الْمَسْجِد الْأَقْصَى
+  translit: al-Masjid al-Aqṣā
+  aka: [al-Aqsa]
+  kind: Sanctuary
+  refs: "17:1"
+  lat: 31.7767
+  lon: 35.2358
+  precision: by tradition
+  about: >
+    Where God took His servant by night from the Sacred Mosque, "whose precincts We have blessed"
+    (17:1). The Quran does not say where it is. Muslim tradition identifies it with the Temple
+    Mount in Jerusalem, a city the Quran never names.
+
+- id: safa-and-marwa
+  name: Safa and Marwa
+  arabic: الصَّفا وَالْمَرْوَة
+  translit: aṣ-Ṣafā wa-l-Marwa
+  kind: Hills
+  names: [صَفا, مَرْوَة]
+  lat: 21.4237
+  lon: 39.8270
+  about: >
+    Two hills beside the Kaaba, "among the rites of God": a pilgrim does no wrong by going between
+    them (2:158).
+
+- id: arafat
+  name: Arafat
+  arabic: عَرَفات
+  translit: ʿArafāt
+  kind: Plain
+  names: [عَرَفات]
+  lat: 21.3549
+  lon: 39.9841
+  about: >
+    The plain east of Mecca where the pilgrims stand; "when you disperse from Arafat, remember God
+    at the Sacred Landmark" (2:198).
+
+- id: badr
+  name: Badr
+  arabic: بَدْر
+  translit: Badr
+  kind: Battlefield
+  names: [بَدْر]
+  lat: 23.7806
+  lon: 38.7906
+  about: >
+    "God had given you victory at Badr, when you were weak" (3:123): the one battle against the
+    Meccans that the Quran names. By tradition it was fought in 624, southwest of Medina; surah 8
+    is tied to it.
+
+- id: hunayn
+  name: Hunayn
+  arabic: حُنَيْن
+  translit: Ḥunayn
+  kind: Battlefield
+  names: [حُنَيْن]
+  about: >
+    "On the day of Hunayn, your great number impressed you, but it availed you nothing", and you
+    turned back in retreat, until God sent down His serenity and troops you did not see (9:25-26).
+    By tradition a valley near Mecca, where a battle was fought in 630.
+
+- id: egypt
+  name: Egypt
+  arabic: مِصْر
+  translit: Miṣr
+  kind: Land
+  names: [مِصْر]
+  bible: egypt_362
+  about: >
+    The land of Joseph's rise and of Pharaoh, who boasts, "Do I not own the Kingdom of Egypt, and
+    these rivers flow beneath me?" (43:51).
+
+- id: mount-sinai
+  name: Mount Sinai
+  title: Mount Sinai (the Mount)
+  arabic: الطُّور
+  translit: aṭ-Ṭūr
+  aka: [the Mount, Tur, Sinin]
+  kind: Mountain
+  names: [سَيْناء, سِينِين]
+  text: "\\bMount\\b"
+  bible: mount_sinai_855
+  about: >
+    The mountain beside which Moses was called and where he met his Lord (19:52, 28:29, 28:46),
+    and which was raised over the Children of Israel when the covenant was taken from them (2:63,
+    4:154). Surah 52 is named for it, and God swears by it (52:1, 95:2).
+
+- id: tuwa
+  name: Tuwa
+  arabic: طُوًى
+  translit: Ṭuwā
+  kind: Valley
+  refs: "20:12; 79:16"
+  about: >
+    "The sacred valley of Tuwa", where Moses is told to take off his shoes and hears the voice
+    from the fire (20:12, 79:16).
+
+- id: midian
+  name: Midian
+  arabic: مَدْيَن
+  translit: Madyan
+  aka: [Madyan, Median]
+  kind: Land and people
+  names: [مَدْيَن]
+  bible: midian_796
+  about: >
+    The people to whom Shuayb was sent, destroyed for cheating in weights and measures (7:85-93);
+    and the land where Moses fled, watered the flocks of two women, and married (28:22-28).
+
+- id: babylon
+  name: Babylon
+  arabic: بابِل
+  translit: Bābil
+  kind: City
+  names: [بابِل]
+  lat: 32.5422
+  lon: 44.4209
+  bible: babylon_151
+  about: >
+    Named once, as the place where sorcery was learned from the two angels Harut and Marut
+    (2:102).
+
+- id: sheba
+  name: Sheba
+  arabic: سَبَإ
+  translit: Sabaʾ
+  aka: [Saba]
+  kind: Land and people
+  names: [سَبَإ]
+  lat: 15.427
+  lon: 45.337
+  precision: the old capital, Marib
+  bible: sheba_1067
+  about: >
+    A kingdom in the south of Arabia. The hoopoe brings Solomon news of its queen (27:22), and
+    its people are given two gardens, turn ungrateful, and lose them to "the flood of the dam"
+    (34:15-19). Surah 34 bears its name.
+
+- id: judi
+  name: Judi
+  arabic: الْجُودِيّ
+  translit: al-Jūdī
+  kind: Mountain
+  names: [جُودِيّ]
+  about: >
+    Where the Ark came to rest when the waters went down (11:44). The Bible says the mountains of
+    Ararat.
+
+- id: al-ahqaf
+  name: Al-Ahqaf
+  arabic: الْأَحْقاف
+  translit: al-Aḥqāf
+  aka: [the Sand Dunes]
+  kind: Desert
+  names: [أَحْقاف]
+  about: >
+    "The sand dunes" where Hud warned the people of Aad (46:21); by tradition in the south of
+    Arabia. Surah 46 is named for them.
+
+- id: iram
+  name: Iram
+  arabic: إِرَم
+  translit: Iram
+  aka: [Erum]
+  kind: City
+  names: [إِرَم]
+  about: >
+    "Iram of the pillars, the like of which was never created in the land" (89:7-8): the city, or
+    the tribe, of Aad.
+
+- id: al-hijr
+  name: Al-Hijr
+  arabic: الْحِجْر
+  translit: al-Ḥijr
+  aka: [the Rock]
+  kind: Town
+  refs: "15:80-84"
+  lat: 26.7917
+  lon: 37.9542
+  precision: by tradition
+  about: >
+    "The people of the Rock" carved their homes in the mountains and rejected the messengers
+    (15:80-84). They are taken to be Thamud, and the place to be Hegra in northwest Arabia, where
+    rock-cut tombs still stand. Surah 15 is named for it.
+
+- id: holy-land
+  name: The Holy Land
+  arabic: الْأَرْض الْمُقَدَّسَة
+  translit: al-Arḍ al-Muqaddasa
+  kind: Land
+  refs: "5:21"
+  about: >
+    "O my people, enter the Holy Land which God has assigned for you" (5:21): Moses to the
+    Children of Israel, who refuse for fear of its people and are left to wander forty years.
+    Elsewhere it is "the land We blessed" (7:137, 21:71).

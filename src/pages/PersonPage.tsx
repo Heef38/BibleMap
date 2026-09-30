@@ -10,6 +10,12 @@ import { loadCanon, loadEvents, loadPeopleIndex, loadPerson, loadPlacesIndex, lo
 import { durationYears, formatDuration, formatYear, formatYearRange } from '@/lib/format'
 import { ordinalsToRanges } from '@/lib/refs'
 import { usePageTitle, useSession } from '@/store/session'
+import { EDITION } from '@edition/config'
+
+const TIME = EDITION.verseTime
+/** where the same person can be read about in the Bible, for an edition that is not the Bible */
+const BIBLE_SITE = EDITION.bibleSite
+const { scripture, book: BOOK, books: BOOKS } = EDITION.words
 
 const COLOR = 'var(--series-1)'
 
@@ -64,10 +70,11 @@ export default function PersonPage() {
       }
     return out
   }, [person, peopleById])
+  // Events sit on the timeline only when it counts years as they do (not the order of revelation).
   const items = useMemo<TimelineItem[]>(
     () =>
       myEvents
-        .filter((e) => e.year !== null)
+        .filter((e) => TIME.events && e.year !== null)
         .map((e) => {
           const y = durationYears(e.duration)
           return { id: e.id, label: e.title, year: e.year!, end: y !== undefined && y >= 1 ? e.year! + y : undefined, sub: e.duration ? formatDuration(e.duration) : undefined }
@@ -94,7 +101,7 @@ export default function PersonPage() {
   usePageTitle(
     person?.title,
     person
-      ? { description: `${person.title} in the Bible${person.name_meaning?.meaning ? ` (the name means “${person.name_meaning.meaning}”)` : ''}: all ${person.verseCount.toLocaleString()} verse${person.verseCount === 1 ? '' : 's'} that mention ${pronoun}, family, a timeline, and the people, places and events around ${pronoun}.` }
+      ? { description: `${person.title} in ${scripture}${person.name_meaning?.meaning ? ` (the name means “${person.name_meaning.meaning}”)` : ''}: all ${person.verseCount.toLocaleString()} verse${person.verseCount === 1 ? '' : 's'} that mention ${pronoun}, family, a timeline, and the people, places and events around ${pronoun}.` }
       : undefined,
   )
   if (error) return <div className="p-6"><ErrorBlock error={error} /></div>
@@ -120,14 +127,16 @@ export default function PersonPage() {
           <>
             {person.gender && <span>{person.gender} · </span>}
             {years && <span>{years} · </span>}
-            {person.verseCount.toLocaleString()} verse{person.verseCount === 1 ? '' : 's'} in {books} book{books === 1 ? '' : 's'}
+            {person.verseCount.toLocaleString()} verse{person.verseCount === 1 ? '' : 's'} in {books} {books === 1 ? BOOK : BOOKS}
             {person.aka.length > 0 && <span> · also called {person.aka.join(', ')}</span>}
           </>
         }
         right={
-          <Link to={`/compare?a=${person.id}`} className="btn">
-            Compare with…
-          </Link>
+          EDITION.features.compare ? (
+            <Link to={`/compare?a=${person.id}`} className="btn">
+              Compare with…
+            </Link>
+          ) : undefined
         }
       />
       <NameCard name={person.name} meaning={person.name_meaning} />
@@ -142,6 +151,8 @@ export default function PersonPage() {
             bins={bins}
             initialDomain={initialDomain}
             binLabel="mentions"
+            format={TIME.format}
+            unit={TIME.unit}
             onItem={(it) => {
               const e = eventById.get(it.id)
               if (e?.verses.length) goTo(e.verses[0])
@@ -151,14 +162,26 @@ export default function PersonPage() {
             }}
             onBin={(bin) => goTo(bin.ordinals[0])}
           />
-          <p className="text-xs text-muted mt-1">Bars count the verses that mention {person.title} in each year of the story; dots are events {person.title} took part in. Years are traditional and approximate.</p>
+          <p className="text-xs text-muted mt-1">
+            Bars count the verses that mention {person.title} {TIME.mentions}
+            {TIME.events ? `; dots are events ${person.title} took part in. Years are traditional and approximate.` : ''}
+          </p>
         </Section>
       )}
 
       {person.dict && (
-        <Section title="Easton's Bible Dictionary">
+        <Section title={EDITION.dictTitle}>
           <DictText text={person.dict} canon={canon} />
         </Section>
+      )}
+
+      {person.bible && BIBLE_SITE && (
+        <p className="mt-3 text-sm">
+          <a href={`${BIBLE_SITE}/person/${person.bible}`} target="_blank" rel="noopener noreferrer">
+            {person.name} in the Bible →
+          </a>{' '}
+          <span className="text-muted">opens Bible-Map</span>
+        </p>
       )}
 
       {hasFamily && (

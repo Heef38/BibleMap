@@ -1,0 +1,233 @@
+# Worship in the Quran: the practices Muslims call the five pillars (the confession, prayer, alms,
+# fasting and pilgrimage) and the remembrance of God, as the Quran itself commands them. The notes
+# say which details are in the Quran and which come from the Prophet's practice as the hadith
+# record it. `pillar` tags each passage for the Patterns chart. Quotations follow Talal Itani.
+id: worship
+title: "Worship: Prayer, Alms, Fasting and Pilgrimage"
+subtitle: "The five pillars as the Quran gives them, what it leaves to the Prophet's practice, and its warning that rites without righteousness are empty"
+chart: patterns
+added: "2026-09-30"
+summary: >-
+  Muslims speak of five pillars of Islam: bearing witness that there is no god but God and that
+  Muhammad is His Messenger; the prayer; the alms; the fast of Ramadan; and the pilgrimage to
+  Mecca. The list of five comes from a saying of the Prophet. The Quran commands all five, but
+  not as a list, and with fewer details than a reader might expect. It names the times of prayer
+  loosely (the ends of the day, the night, the dawn, “the middle prayer”) but never the number
+  five; it commands washing before prayer, facing Mecca, and the Friday congregation; it says who
+  may receive the alms but not how much to give; it sets the fast of Ramadan from dawn to
+  nightfall, with exemptions; and it describes the pilgrimage in scattered rulings. The five
+  daily times, the words and movements of the prayer, the rate of the alms and most of the rites
+  of the pilgrimage come from the Prophet's practice. The Quran also says, more than once, that
+  none of it is enough without faith and good deeds: “Righteousness does not consist of turning
+  your faces towards the East and the West.”
+tags: [worship, prayer, salat, zakat, fasting, ramadan, hajj, pilgrimage, five pillars, dhikr]
+facetUnit: passages
+facets:
+  pillar:
+    title: "Which practice"
+    values:
+      witness: { title: "The confession", note: "There is no god but God, and Muhammad is His Messenger." }
+      prayer: { title: "Prayer", note: "The set prayer (salat), its times, washing and direction." }
+      alms: { title: "Alms and giving", note: "The due alms (zakat) and voluntary charity." }
+      fast: { title: "The fast", note: "Ramadan." }
+      pilgrimage: { title: "The pilgrimage", note: "The Hajj and the Umrah to the House at Mecca." }
+      remembrance: { title: "Remembrance and calling on God", note: "Praise, glorifying and personal prayer (dua)." }
+views:
+  - title: "What the Quran commands"
+    groups:
+      - title: "The confession"
+        note: "The Muslim creed, the shahada, joins two sentences that the Quran says separately."
+        refs:
+          - ref: "47:19"
+            label: "“Know that there is no god but God”"
+            facets: { pillar: witness }
+          - ref: "48:29"
+            label: "“Muhammad is the Messenger of God”"
+            facets: { pillar: witness }
+          - ref: "3:18"
+            label: "“God bears witness that there is no god but He”"
+            note: "“… as do the angels, and those endowed with knowledge.”"
+            facets: { pillar: witness }
+          - ref: "63:1"
+            label: "“We bear witness that you are God's Messenger”"
+            note: "Said by the hypocrites: “God bears witness that the hypocrites are liars.” The words alone are not enough."
+            facets: { pillar: witness }
+
+      - title: "The prayer"
+        note: "The Quran commands the prayer more than any other act of worship, often with the alms. It gives times, washing, direction and the Friday congregation; the five fixed times, the number of bowings and the words recited come from the Prophet's practice."
+        refs:
+          - ref: "1"
+            label: "The Opening"
+            note: "Recited in every unit of every prayer: “It is You we worship, and upon You we call for help. Guide us to the straight path.” It is often compared with the Lord's Prayer."
+            bible: "Matt 6:9-13"
+            facets: { pillar: prayer }
+          - ref: "11:114"
+            label: "“At the borders of the day, and during the approaches of the night”"
+            note: "“The good deeds take away the bad deeds.”"
+            facets: { pillar: prayer }
+          - ref: "17:78-79"
+            label: "“At the decline of the sun, until the darkness of the night; and the Quran at dawn”"
+            note: "And a night vigil “as an extra prayer.” Commentators read the times in these verses as the five, some as three. Daniel prayed three times a day; a psalm has evening, morning and noon."
+            bible: "Ps 55:17; Dan 6:10"
+            facets: { pillar: prayer }
+          - ref: "20:130"
+            label: "“Before the rising of the sun, and before its setting”"
+            note: "Also 50:39-40 and 30:17-18."
+            facets: { pillar: [prayer, remembrance] }
+          - ref: "2:238-239"
+            label: "“Guard your prayers, and the middle prayer”"
+            note: "Which prayer is “the middle” was debated; most said the afternoon. In danger, pray on foot or riding."
+            facets: { pillar: prayer }
+          - ref: "4:101-103"
+            label: "Prayer while travelling and in battle"
+            note: "Shortened when travelling in danger; in battle, prayed in turns with weapons at hand. “The prayer is obligatory for believers at specific times.”"
+            facets: { pillar: prayer }
+          - ref: "5:6"
+            label: "“Wash your faces and your hands and arms to the elbows”"
+            note: "The washing before prayer (wudu), with clean sand when there is no water."
+            facets: { pillar: prayer }
+          - ref: "4:43"
+            label: "“Do not approach the prayer while you are drunk”"
+            note: "By tradition, an early step before wine was forbidden outright (5:90)."
+            facets: { pillar: prayer }
+          - ref: "2:142-150"
+            label: "The direction of prayer turned to Mecca"
+            note: "“What has turned them away from the direction of prayer they once followed?” Tradition says the believers faced Jerusalem for about sixteen months after the move to Medina; the Quran names only the new direction, the Sacred Mosque."
+            facets: { pillar: prayer }
+          - ref: "62:9-11"
+            label: "“When the call is made for prayer on Congregation Day”"
+            note: "The Friday prayer: “drop all business,” then afterward “disperse through the land, and seek God's bounty.” Surah 62 is named for Friday. No day of rest is commanded."
+            facets: { pillar: prayer }
+          - ref: "73:1-4"
+            label: "“Stay up the night, except a little”"
+            note: "The early command of night prayer, eased in 73:20: “read of the Quran what is possible for you.”"
+            facets: { pillar: prayer }
+          - ref: "22:77-78"
+            label: "“Kneel, and prostrate, and worship your Lord”"
+            note: "“He has chosen you, and has not burdened you in religion—the faith of your father Abraham. It is he who named you Muslims.”"
+            facets: { pillar: prayer }
+          - ref: "29:45"
+            label: "“The prayer prevents indecencies and evils”"
+            note: "“And the remembrance of God is greater.”"
+            facets: { pillar: [prayer, remembrance] }
+
+      - title: "The alms"
+        note: "The alms (zakat) are named with the prayer some two dozen times. The Quran says who may receive them, not how much to give; the usual rate, a fortieth of savings held a year, is from the Prophet's practice."
+        refs:
+          - ref: "9:60"
+            label: "Who the alms are for"
+            note: "The poor, the destitute, those who collect them, “reconciling hearts,” freeing slaves, debtors, “the path of God,” and the traveler."
+            facets: { pillar: alms }
+          - ref: "9:103"
+            label: "“Receive contributions from their wealth, to purify them”"
+            facets: { pillar: alms }
+          - ref: "2:261-265"
+            label: "A grain that produces seven spikes"
+            note: "“In each spike is a hundred grains.” “Do not nullify your charitable deeds with reminders and hurtful words, like him who spends his wealth to be seen by the people.” Jesus' sower has seed that yields a hundredfold, and he warns against giving to be seen."
+            bible: "Mark 4:8; Matt 6:2"
+            facets: { pillar: alms }
+          - ref: "2:271"
+            label: "“If you keep it secret, and give it to the needy in private, that is better”"
+            note: "“If you give charity openly, that is good.”"
+            bible: "Matt 6:3-4"
+            facets: { pillar: alms }
+          - ref: "2:273"
+            label: "The poor who do not ask insistently"
+            facets: { pillar: alms }
+          - ref: "51:17-19"
+            label: "“In their wealth, there was a share for the beggar and the deprived”"
+            note: "Also 70:24-25: “a rightful share.”"
+            facets: { pillar: [alms, prayer] }
+
+      - title: "The fast"
+        refs:
+          - ref: "2:183-185"
+            label: "“Fasting is prescribed for you, as it was prescribed for those before you”"
+            note: "In the month of Ramadan, “in which the Quran was revealed.” The sick and travelers make up the days later; those who are able may instead feed a poor person, though “to fast is best.” The Law of Moses sets one fast day a year, the Day of Atonement; Jesus teaches fasting in secret."
+            bible: "Lev 16:29-31; Matt 6:16-18"
+            facets: { pillar: fast }
+          - ref: "2:187"
+            label: "“Eat and drink until the white streak of dawn can be distinguished from the black streak”"
+            note: "The fast runs from dawn to nightfall; eating, drinking and relations with one's wife are allowed at night."
+            facets: { pillar: fast }
+          - ref: "97"
+            label: "The Night of Decree"
+            note: "“Better than a thousand months,” the night the Quran was sent down. Tradition places it among the last nights of Ramadan."
+            facets: { pillar: fast }
+
+      - title: "The pilgrimage"
+        note: "The Hajj, in the month of pilgrimage, and the lesser visit (Umrah) at any time. The rites Muslims perform (seven circuits of the Kaaba, kissing the Black Stone, stoning the pillars at Mina) are mostly from the Prophet's own pilgrimage."
+        refs:
+          - ref: "3:96-97"
+            label: "“A duty to God for all who can make the journey”"
+            note: "“The first house established for mankind is the one at Bekka.”"
+            facets: { pillar: pilgrimage }
+          - ref: "22:26-29"
+            label: "“Announce the pilgrimage to humanity”"
+            note: "Abraham is shown the place of the House and told to call people to it; “they will come from every distant point.”"
+            facets: { pillar: pilgrimage }
+          - ref: "2:196-203"
+            label: "The rules of the Hajj"
+            note: "Offerings, shaving the head, no quarrelling, Arafat and “the Sacred Landmark,” and the prayer, “Our Lord, give us goodness in this world, and goodness in the Hereafter.”"
+            facets: { pillar: pilgrimage }
+          - ref: "2:158"
+            label: "Safa and Marwa"
+            note: "Going between the two hills, which tradition says Hagar ran between looking for water for Ishmael. The Bible has Hagar find a well in the wilderness of Beersheba."
+            bible: "Gen 21:14-19"
+            facets: { pillar: pilgrimage }
+          - ref: "22:34-37"
+            label: "“Neither their flesh, nor their blood, ever reaches God”"
+            note: "The animal sacrifice of the pilgrimage, eaten and shared with the poor: “What reaches Him is the righteousness from you.” The psalms and prophets say something similar."
+            bible: "Ps 50:12-15; Hos 6:6"
+            facets: { pillar: pilgrimage }
+          - ref: "5:95-97"
+            label: "No hunting in pilgrim sanctity"
+            note: "“God has appointed the Kaabah, the Sacred House, a sanctuary for the people.”"
+            facets: { pillar: pilgrimage }
+
+      - title: "Remembrance and calling on God"
+        note: "Beyond the set prayer, the Quran asks constant remembrance of God (dhikr) and personal prayer (dua)."
+        refs:
+          - ref: "33:41-42"
+            label: "“Remember God with frequent remembrance”"
+            bible: "1 Thess 5:17"
+            facets: { pillar: remembrance }
+          - ref: "13:28"
+            label: "“In the remembrance of God … hearts find comfort”"
+            facets: { pillar: remembrance }
+          - ref: "40:60"
+            label: "“Pray to Me, and I will respond to you”"
+            bible: "Jer 33:3"
+            facets: { pillar: remembrance }
+          - ref: "2:186"
+            label: "“I answer the call of the caller”"
+            facets: { pillar: remembrance }
+          - ref: "7:205"
+            label: "“Remember your Lord within yourself, humbly and fearfully, and quietly”"
+            facets: { pillar: remembrance }
+          - ref: "24:36-37"
+            label: "Men whom “neither trading nor commerce distracts”"
+            facets: { pillar: [remembrance, prayer, alms] }
+
+      - title: "Worship without righteousness"
+        note: "The Quran warns more than once that rites are empty without faith and good deeds, as the Hebrew prophets did."
+        refs:
+          - ref: "2:177"
+            label: "“Righteousness does not consist of turning your faces towards the East and the West”"
+            note: "Righteousness is faith in God, the Last Day, the angels, the Book and the prophets, and giving to relatives, orphans, the needy, travelers and beggars, freeing slaves, keeping promises and patience, as well as prayer and alms."
+            bible: "Mic 6:6-8; Jas 1:27"
+            facets: { pillar: [prayer, alms] }
+          - ref: "107"
+            label: "“Woe to those who pray … who put on the appearance”"
+            note: "The one who “mistreats the orphan, and does not encourage the feeding of the poor.”"
+            bible: "Isa 1:11-17"
+            facets: { pillar: [prayer, alms] }
+
+  - title: "By practice"
+    auto: facet
+    facet: pillar
+    note: "The same passages sorted by the practice they concern."
+
+  - title: "Mecca and Medina"
+    auto: place
+    note: "Prayer and giving are commanded from the first Meccan surahs; the fast, the direction of prayer, the Friday prayer and the rules of the pilgrimage come at Medina."

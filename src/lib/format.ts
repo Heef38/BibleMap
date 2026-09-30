@@ -1,5 +1,8 @@
+import { EDITION } from '@edition/config'
+
 export function formatYear(y: number | null | undefined): string {
   if (y === null || y === undefined) return ''
+  if (EDITION.formatYear) return EDITION.formatYear(y)
   if (y < 0) return `${-y} BC`
   return `AD ${y}`
 }
@@ -7,6 +10,7 @@ export function formatYear(y: number | null | undefined): string {
 export function formatYearRange(a?: number | null, b?: number | null): string {
   if (a == null && b == null) return ''
   if (a != null && b != null) {
+    if (EDITION.formatYear) return a === b ? formatYear(a) : `${formatYear(a)} – ${formatYear(b)}`
     if (a < 0 && b < 0) return `${-a}–${-b} BC`
     return `${formatYear(a)} – ${formatYear(b)}`
   }

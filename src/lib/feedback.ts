@@ -1,4 +1,5 @@
 /** Client for the feedback board (server/feedback.js). No accounts: each browser gets a random voter id. */
+import { EDITION } from '@edition/config'
 
 export type FeedbackKind = 'idea' | 'problem' | 'content' | 'other'
 export type FeedbackStatus = 'open' | 'planned' | 'doing' | 'done' | 'declined'
@@ -16,13 +17,13 @@ export interface FeedbackItem {
   votes: number
 }
 
-export const KIND_LABELS: Record<FeedbackKind, string> = { idea: 'Idea', problem: 'Problem', content: 'Bible content', other: 'Other' }
+export const KIND_LABELS: Record<FeedbackKind, string> = { idea: 'Idea', problem: 'Problem', content: `${EDITION.words.name} content`, other: 'Other' }
 export const STATUS_LABELS: Record<FeedbackStatus, string> = { open: 'Open', planned: 'Planned', doing: 'In progress', done: 'Done', declined: 'Not planned' }
 export const LIMITS = { title: 120, body: 2000, name: 40, reply: 1000 }
 
-const VOTER_KEY = 'biblemap.voter'
-const VOTED_KEY = 'biblemap.voted'
-const ADMIN_KEY = 'biblemap.adminKey'
+const VOTER_KEY = `${EDITION.storage}.voter`
+const VOTED_KEY = `${EDITION.storage}.voted`
+const ADMIN_KEY = `${EDITION.storage}.adminKey`
 
 // Storage can be missing or throw (private windows, blocked site data); the board still works without it.
 function read(key: string): string | null {

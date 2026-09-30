@@ -1,0 +1,947 @@
+# Words of the Quran: its key words, each with every verse that uses it.
+#
+# A word here is one or more Arabic dictionary forms (lemmas), as tagged word by word in the
+# Quranic Arabic Corpus. The build finds every verse where each form occurs and writes the count.
+# `say` is how the form is said, `gloss` what it means. `seeAlso` names other words in this list.
+# A form is one Arabic word with all its senses: "garden" counts earthly gardens with the Garden,
+# and "sign" counts the signs in nature with the verses of the Book. The notes say so where it matters.
+
+# ---------------------------------------------------------------- God
+- id: god
+  title: God (Allah)
+  note: 'The word the Quran uses more than any other noun. Allah is "the God"; ilah is "a god", the word in "there is no god but He".'
+  seeAlso: [Lord, One, Associating others with God]
+  forms:
+    - { lemma: اللَّه, say: Allāh, gloss: God }
+    - { lemma: إِلٰه, say: ilāh, gloss: "a god" }
+    - { lemma: اللَّهُمَّ, say: Allāhumma, gloss: "O God" }
+
+- id: lord
+  title: Lord
+  note: 'How God is most often addressed and spoken of: "your Lord", "Lord of the Worlds". A servant is the other side of the same relation.'
+  seeAlso: [God (Allah), Servant and worship]
+  forms:
+    - { lemma: رَبّ, say: rabb, gloss: "lord, master, sustainer" }
+
+- id: one
+  title: One
+  note: 'The words for God''s oneness. Most uses of "one" are ordinary counting; the confession is in verses like 2:163, 112:1 and 37:4.'
+  seeAlso: [God (Allah), Associating others with God]
+  forms:
+    - { lemma: واحِد, say: wāḥid, gloss: one }
+    - { lemma: أَحَد, say: aḥad, gloss: "one; anyone" }
+    - { lemma: وَحْد, say: waḥd, gloss: "alone" }
+
+- id: mercy
+  title: Mercy
+  note: 'One root gives the two names that open every surah but one ("In the name of God, the Gracious, the Merciful") and the word for mercy itself.'
+  seeAlso: [Forgiveness, Repentance]
+  forms:
+    - { lemma: رَحْمَة, say: raḥma, gloss: mercy }
+    - { lemma: رَحِيم, say: raḥīm, gloss: "merciful (a name of God)" }
+    - { lemma: رَحْمٰن, say: ar-Raḥmān, gloss: "the Gracious (a name of God)" }
+    - { lemma: رَحِمَ, say: raḥima, gloss: "to have mercy" }
+    - { lemma: راحِم, say: rāḥim, gloss: "one who shows mercy" }
+    - { lemma: أَرْحَم, say: arḥam, gloss: "most merciful" }
+
+- id: forgiveness
+  title: Forgiveness
+  note: 'To forgive is literally to cover. God is called Forgiving more often than almost anything else.'
+  seeAlso: [Mercy, Repentance, Sin]
+  forms:
+    - { lemma: غَفَرَ, say: ghafara, gloss: "to forgive" }
+    - { lemma: غَفُور, say: ghafūr, gloss: "forgiving (a name of God)" }
+    - { lemma: غَفّار, say: ghaffār, gloss: "ever-forgiving" }
+    - { lemma: مَغْفِرَة, say: maghfira, gloss: forgiveness }
+    - { lemma: اسْتَغْفَرَ, say: istaghfara, gloss: "to ask forgiveness" }
+    - { lemma: عَفا, say: ʿafā, gloss: "to pardon, to overlook" }
+    - { lemma: عَفُوّ, say: ʿafuww, gloss: "pardoning (a name of God)" }
+
+- id: repentance
+  title: Repentance
+  note: 'To repent is to turn back. The same verb is used of God, who turns back to the one who turns to Him.'
+  seeAlso: [Forgiveness, Mercy]
+  forms:
+    - { lemma: تابَ, say: tāba, gloss: "to turn back, to repent; (of God) to relent" }
+    - { lemma: تَوّاب, say: tawwāb, gloss: "ever-relenting (a name of God); one who repents often" }
+    - { lemma: تَوْبَة, say: tawba, gloss: repentance }
+
+- id: creation
+  title: Creation
+  note: 'God as Creator of the heavens and the earth, of man from dust and from a drop, is the Quran''s first argument for worshiping Him alone and for the resurrection.'
+  seeAlso: [Signs, Heavens and earth]
+  forms:
+    - { lemma: خَلَقَ, say: khalaqa, gloss: "to create" }
+    - { lemma: خَلْق, say: khalq, gloss: creation }
+    - { lemma: خالِق, say: khāliq, gloss: creator }
+    - { lemma: فَطَرَ, say: faṭara, gloss: "to originate" }
+    - { lemma: فاطِر, say: fāṭir, gloss: originator }
+    - { lemma: بارِئ, say: bāriʾ, gloss: maker }
+
+- id: knowledge
+  title: Knowledge
+  note: 'God is All-Knowing; and "do they not know?" is asked of people again and again.'
+  seeAlso: [Wisdom, The unseen]
+  forms:
+    - { lemma: عَلِيم, say: ʿalīm, gloss: "all-knowing (a name of God)" }
+    - { lemma: عِلْم, say: ʿilm, gloss: knowledge }
+    - { lemma: عَلِمَ, say: ʿalima, gloss: "to know" }
+    - { lemma: عَلَّمَ, say: ʿallama, gloss: "to teach" }
+    - { lemma: عَلّام, say: ʿallām, gloss: "knower (of the unseen)" }
+    - { lemma: خَبِير, say: khabīr, gloss: "well-informed (a name of God)" }
+
+- id: wisdom
+  title: Wisdom and judgment
+  note: 'One root for the wise, for wisdom, and for giving judgment.'
+  seeAlso: [Knowledge, Justice]
+  forms:
+    - { lemma: حَكِيم, say: ḥakīm, gloss: "wise (a name of God)" }
+    - { lemma: حِكْمَة, say: ḥikma, gloss: wisdom }
+    - { lemma: حُكْم, say: ḥukm, gloss: "judgment, rule" }
+    - { lemma: حَكَمَ, say: ḥakama, gloss: "to judge" }
+
+- id: power
+  title: Power and might
+  note: '"God is capable of everything" is one of the Quran''s commonest endings to a verse.'
+  seeAlso: [God (Allah), The decree]
+  forms:
+    - { lemma: قَدِير, say: qadīr, gloss: "able, powerful" }
+    - { lemma: قادِر, say: qādir, gloss: able }
+    - { lemma: عَزِيز, say: ʿazīz, gloss: "mighty, almighty" }
+    - { lemma: قَوِيّ, say: qawiyy, gloss: strong }
+    - { lemma: قَهّار, say: qahhār, gloss: "the Irresistible" }
+    - { lemma: عَظِيم, say: ʿaẓīm, gloss: "great, tremendous" }
+
+- id: decree
+  title: The decree
+  note: 'Measure and decree, what later theology calls qadar. The same root is "power"; the Night of Decree (97:1) is named from it.'
+  seeAlso: [Power and might, Guidance, Going astray]
+  forms:
+    - { lemma: قَدَر, say: qadar, gloss: "measure, decree" }
+    - { lemma: قَدْر, say: qadr, gloss: "measure, worth, decree" }
+    - { lemma: قَدَّرَ, say: qaddara, gloss: "to measure out, to determine" }
+    - { lemma: تَقْدِير, say: taqdīr, gloss: "a determining" }
+
+- id: throne
+  title: The Throne
+  note: 'God "settled on the Throne" after creating the heavens and the earth. The same word is used of the thrones of Joseph and of the queen of Sheba.'
+  seeAlso: [God (Allah), Heavens and earth]
+  forms:
+    - { lemma: عَرْش, say: ʿarsh, gloss: throne }
+
+- id: light
+  title: Light
+  note: '"God is the Light of the heavens and the earth" (24:35). Light is also what the Books bring, against the darknesses.'
+  seeAlso: [Guidance, The Book]
+  forms:
+    - { lemma: نُور, say: nūr, gloss: light }
+    - { lemma: مُنِير, say: munīr, gloss: "giving light" }
+    - { lemma: ظُلُمَة, say: ẓuluma, gloss: darkness }
+
+- id: unseen
+  title: The unseen
+  note: 'What is hidden from people and known to God: the Hour, the future, the inner thought. The righteous are "those who believe in the unseen" (2:3).'
+  seeAlso: [Knowledge, Angels]
+  forms:
+    - { lemma: غَيْب, say: ghayb, gloss: "the unseen, the hidden" }
+    - { lemma: غُيُوب, say: ghuyūb, gloss: "hidden things" }
+
+# ---------------------------------------------------------------- Revelation
+- id: signs
+  title: Signs
+  note: 'One word for a wonder in nature, a miracle given to a prophet, and a verse of the Book. All are signs pointing to God.'
+  seeAlso: [The Book, Creation, Clear proof]
+  forms:
+    - { lemma: آيَة, say: āya, gloss: "sign; verse" }
+
+- id: clear-proof
+  title: Clear proof
+  note: 'The messengers come "with the clear proofs"; the Book is called clear, and its warner a clear warner.'
+  seeAlso: [Signs, The Book]
+  forms:
+    - { lemma: بَيِّنَة, say: bayyina, gloss: "clear proof" }
+    - { lemma: مُبِين, say: mubīn, gloss: "clear, plain" }
+    - { lemma: بُرْهان, say: burhān, gloss: proof }
+    - { lemma: فُرْقان, say: furqān, gloss: "the Criterion, what separates true from false" }
+
+- id: book
+  title: The Book
+  note: 'The Book is the Quran, the Scripture of Moses, Scripture in general, and the record of each person''s deeds. "People of the Book" are the Jews and Christians.'
+  seeAlso: [The Quran, The Torah, The Gospel, Sending down]
+  forms:
+    - { lemma: كِتاب, say: kitāb, gloss: "book, scripture, record" }
+    - { lemma: كَتَبَ, say: kataba, gloss: "to write; to prescribe" }
+
+- id: quran
+  title: The Quran
+  note: 'The Quran''s name for itself: a recitation. It first means what is being recited to Muhammad, then the whole.'
+  seeAlso: [The Book, Sending down, The Reminder]
+  forms:
+    - { lemma: قُرْءان, say: qurʾān, gloss: "recitation; the Quran" }
+    - { lemma: قَرَأَ, say: qaraʾa, gloss: "to recite, to read" }
+
+- id: torah
+  title: The Torah
+  note: 'The Scripture given to Moses. It is named eighteen times, all but one (7:157) in surahs counted Medinan; the Meccan surahs say "the Book of Moses".'
+  seeAlso: [The Gospel, The Psalms, The Book]
+  forms:
+    - { lemma: تَوْراة, say: Tawrāh, gloss: "the Torah" }
+
+- id: gospel
+  title: The Gospel
+  note: 'The Scripture given to Jesus, always in the singular, "wherein is guidance and light" (5:46).'
+  seeAlso: [The Torah, The Book, The Messiah]
+  forms:
+    - { lemma: إِنجِيل, say: Injīl, gloss: "the Gospel" }
+
+- id: psalms
+  title: The Psalms
+  note: '"We gave David the Psalms" (4:163, 17:55); 21:105 quotes them: "the earth will be inherited by My righteous servants".'
+  seeAlso: [The Torah, The Book]
+  forms:
+    - { lemma: زَبُور, say: Zabūr, gloss: "the Psalms; a scripture" }
+
+- id: sending-down
+  title: Sending down
+  note: 'How the Quran speaks of revelation: God sends the Book down. The same verbs are used of rain.'
+  seeAlso: [Revelation, The Book, The Quran]
+  forms:
+    - { lemma: أَنزَلَ, say: anzala, gloss: "to send down" }
+    - { lemma: نَزَّلَ, say: nazzala, gloss: "to send down, piece by piece" }
+    - { lemma: تَنزِيل, say: tanzīl, gloss: "a sending down, a revelation" }
+
+- id: revelation
+  title: Revelation
+  note: 'To inspire, to reveal: said of the prophets, and also of the bee (16:68), the mother of Moses (28:7) and the disciples (5:111).'
+  seeAlso: [Sending down, Prophet, Messenger]
+  forms:
+    - { lemma: أَوْحَى, say: awḥā, gloss: "to inspire, to reveal" }
+    - { lemma: وَحْى, say: waḥy, gloss: "inspiration, revelation" }
+
+- id: reminder
+  title: The Reminder
+  note: 'Remembrance of God, and the Reminder, a name for the Quran and for the earlier Scripture. "So remind. You are only a reminder" (88:21).'
+  seeAlso: [The Quran, Prayer]
+  forms:
+    - { lemma: ذِكْر, say: dhikr, gloss: "remembrance; reminder" }
+    - { lemma: ذَكَرَ, say: dhakara, gloss: "to remember, to mention" }
+    - { lemma: تَذَكَّرَ, say: tadhakkara, gloss: "to take heed" }
+    - { lemma: ذِكْرَى, say: dhikrā, gloss: "a reminder" }
+    - { lemma: تَذْكِرَة, say: tadhkira, gloss: "a reminder" }
+
+- id: messenger
+  title: Messenger
+  note: 'One sent with a message: Muhammad, the earlier messengers, and sometimes angels. "God and His Messenger" is the refrain of the Medinan surahs.'
+  seeAlso: [Prophet, Warner and bringer of good news]
+  forms:
+    - { lemma: رَسُول, say: rasūl, gloss: messenger }
+    - { lemma: أَرْسَلَ, say: arsala, gloss: "to send" }
+    - { lemma: مُرْسَل, say: mursal, gloss: "one who is sent" }
+    - { lemma: رِسالَة, say: risāla, gloss: message }
+
+- id: prophet
+  title: Prophet
+  note: '"The Prophet" as a way of addressing Muhammad belongs almost wholly to the Medinan surahs.'
+  seeAlso: [Messenger, Revelation]
+  forms:
+    - { lemma: نَبِيّ, say: nabiyy, gloss: prophet }
+    - { lemma: نُبُوَّة, say: nubuwwa, gloss: prophethood }
+
+- id: warner
+  title: Warner and bringer of good news
+  note: 'What a messenger is sent to be. "You are only a warner" is said to Muhammad many times in the Meccan surahs.'
+  seeAlso: [Messenger, Prophet]
+  forms:
+    - { lemma: نَذِير, say: nadhīr, gloss: warner }
+    - { lemma: أَنذَرَ, say: andhara, gloss: "to warn" }
+    - { lemma: مُنذِر, say: mundhir, gloss: warner }
+    - { lemma: بَشِير, say: bashīr, gloss: "bringer of good news" }
+    - { lemma: مُبَشِّر, say: mubashshir, gloss: "bringer of good news" }
+    - { lemma: بُشِّرَ, say: bashshara, gloss: "to give good news" }
+    - { lemma: بُشْرَى, say: bushrā, gloss: "good news" }
+
+- id: messiah
+  title: The Messiah
+  note: 'A title the Quran gives only to Jesus son of Mary, eleven times, all in Medinan surahs. It does not explain the word.'
+  seeAlso: [The Gospel, The Spirit]
+  forms:
+    - { lemma: مَسِيح, say: al-Masīḥ, gloss: "the Messiah" }
+
+- id: spirit
+  title: The Spirit
+  note: 'The Spirit comes down with the angels (97:4), is breathed into Adam and into Mary (15:29, 21:91), and the Holy Spirit strengthens Jesus (2:87). "They ask you about the Spirit. Say, the Spirit belongs to the domain of my Lord" (17:85).'
+  seeAlso: [Angels, The Messiah]
+  forms:
+    - { lemma: رُوح, say: rūḥ, gloss: spirit }
+    - { lemma: قُدُس, say: qudus, gloss: "holiness (the Holy Spirit)" }
+
+# ---------------------------------------------------------------- Faith and unbelief
+- id: faith
+  title: Faith
+  note: 'To believe is the commonest thing the Quran asks. "O you who believe" opens 89 addresses, every one in a surah counted Medinan.'
+  seeAlso: [Unbelief, Submission (Islam), Good deeds]
+  forms:
+    - { lemma: آمَنَ, say: āmana, gloss: "to believe" }
+    - { lemma: مُؤْمِن, say: muʾmin, gloss: believer }
+    - { lemma: مُؤْمِنَة, say: muʾmina, gloss: "believing woman" }
+    - { lemma: إِيمان, say: īmān, gloss: faith }
+
+- id: unbelief
+  title: Unbelief
+  note: 'The root means to cover over, and so to be ungrateful as well as to disbelieve; a few verses mean plain ingratitude. The kafir is the one who does it.'
+  seeAlso: [Faith, Associating others with God, Denial]
+  forms:
+    - { lemma: كَفَرَ, say: kafara, gloss: "to disbelieve, to deny; to be ungrateful" }
+    - { lemma: كافِر, say: kāfir, gloss: "unbeliever, denier" }
+    - { lemma: كُفْر, say: kufr, gloss: unbelief }
+    - { lemma: كَفُور, say: kafūr, gloss: "very ungrateful" }
+    - { lemma: كَفّار, say: kaffār, gloss: "stubborn unbeliever" }
+
+- id: shirk
+  title: Associating others with God
+  note: 'Shirk is giving God a partner. "God does not forgive association with Him, but He forgives anything less than that" (4:48, 4:116); 25:68-70 excepts "those who repent". The mushrikun are the idolaters of Arabia.'
+  seeAlso: [One, Unbelief, God (Allah)]
+  forms:
+    - { lemma: أَشْرَكَ, say: ashraka, gloss: "to associate (others with God)" }
+    - { lemma: مُشْرِك, say: mushrik, gloss: "one who associates, idolater" }
+    - { lemma: مُشْرِكَة, say: mushrika, gloss: "idolatress" }
+    - { lemma: شَرِيك, say: sharīk, gloss: "partner, associate" }
+    - { lemma: شِرْك, say: shirk, gloss: "association, idolatry" }
+
+- id: islam
+  title: Submission (Islam)
+  note: 'Islam is submission, and a muslim one who submits. The Quran uses the word of Abraham (3:67), of the disciples of Jesus (3:52) and of Pharaoh''s magicians (7:126) as well as of Muhammad''s followers. The same root gives "peace".'
+  seeAlso: [Faith, Religion, Peace]
+  forms:
+    - { lemma: أَسْلَمَ, say: aslama, gloss: "to submit" }
+    - { lemma: مُسْلِم, say: muslim, gloss: "one who submits" }
+    - { lemma: مُسْلِمَة, say: muslima, gloss: "a woman, or a people, who submits" }
+    - { lemma: إِسْلام, say: islām, gloss: submission }
+
+- id: peace
+  title: Peace
+  note: 'The greeting of the believers and of Paradise, a name of God ("the Peace-Giver", 59:23), and peace offered by an enemy.'
+  seeAlso: [Submission (Islam), Fighting]
+  forms:
+    - { lemma: سَلام, say: salām, gloss: peace }
+    - { lemma: سَلَم, say: salam, gloss: "peace, surrender" }
+    - { lemma: صُلْح, say: ṣulḥ, gloss: "reconciliation" }
+
+- id: religion
+  title: Religion
+  note: 'Din is religion, and also judgment: the Day of Judgment is "the day of din" (1:4). Milla is a people''s creed, above all "the religion of Abraham" (2:130).'
+  seeAlso: [Submission (Islam), Abraham's pure faith]
+  forms:
+    - { lemma: دِين, say: dīn, gloss: "religion; judgment" }
+    - { lemma: مِلَّة, say: milla, gloss: "creed, community of faith" }
+
+- id: hanif
+  title: Abraham's pure faith
+  note: 'A hanif is one who turns from idols to the one God. It is the word for Abraham: "neither a Jew nor a Christian, but he was a Monotheist, a Muslim" (3:67).'
+  seeAlso: [Religion, One]
+  forms:
+    - { lemma: حَنِيف, say: ḥanīf, gloss: "upright, a monotheist" }
+
+- id: taqwa
+  title: Fear of God (taqwa)
+  note: 'To guard oneself: to be conscious of God and keep from what He forbids. Translations say fear, piety, righteousness, or mindfulness. "The righteous" of the Quran are the muttaqun.'
+  seeAlso: [Faith, Good deeds]
+  forms:
+    - { lemma: اتَّقَى, say: ittaqā, gloss: "to be mindful (of God), to fear, to guard against" }
+    - { lemma: مُتَّقي, say: muttaqī, gloss: "one who is mindful of God" }
+    - { lemma: تَقْوَى, say: taqwā, gloss: "mindfulness of God, piety" }
+    - { lemma: خَشِيَ, say: khashiya, gloss: "to fear, to stand in awe" }
+    - { lemma: خَشْيَة, say: khashya, gloss: "fear, awe" }
+
+- id: guidance
+  title: Guidance
+  note: 'God guides whom He wills; the Book is guidance; "guide us to the straight path" is the prayer of the opening surah.'
+  seeAlso: [Going astray, The path, The decree]
+  forms:
+    - { lemma: هَدَى, say: hadā, gloss: "to guide" }
+    - { lemma: هُدًى, say: hudā, gloss: guidance }
+    - { lemma: اهْتَدَى, say: ihtadā, gloss: "to be guided" }
+    - { lemma: مُهْتَدي, say: muhtadī, gloss: "one who is guided" }
+
+- id: astray
+  title: Going astray
+  note: 'The opposite of guidance. God "leads astray whom He wills", and people, Satan and leaders lead others astray: the Quran says all of these.'
+  seeAlso: [Guidance, The decree]
+  forms:
+    - { lemma: ضَلَّ, say: ḍalla, gloss: "to go astray" }
+    - { lemma: أَضَلَّ, say: aḍalla, gloss: "to lead astray" }
+    - { lemma: ضَلال, say: ḍalāl, gloss: "error, a going astray" }
+    - { lemma: ضالّ, say: ḍāll, gloss: "one who is astray" }
+    - { lemma: ضَلالَة, say: ḍalāla, gloss: error }
+
+- id: path
+  title: The path
+  note: 'The straight path, and "the way of God", the cause for which the believers spend, emigrate and fight.'
+  seeAlso: [Guidance, Striving (jihad)]
+  forms:
+    - { lemma: صِراط, say: ṣirāṭ, gloss: path }
+    - { lemma: سَبِيل, say: sabīl, gloss: "way, cause" }
+    - { lemma: مُسْتَقِيم, say: mustaqīm, gloss: straight }
+
+- id: truth
+  title: Truth
+  note: 'The truth against falsehood. Haqq is also what is due, a right.'
+  seeAlso: [Denial, Clear proof]
+  forms:
+    - { lemma: حَقّ, say: ḥaqq, gloss: "truth; right, due" }
+    - { lemma: باطِل, say: bāṭil, gloss: "falsehood, what is vain" }
+    - { lemma: صِدْق, say: ṣidq, gloss: truthfulness }
+    - { lemma: صادِق, say: ṣādiq, gloss: truthful }
+
+- id: denial
+  title: Denial
+  note: 'To call a messenger a liar. Every story of an earlier people turns on it, and "Woe on that Day to the liars" is the refrain of surah 77.'
+  seeAlso: [Unbelief, Messenger]
+  forms:
+    - { lemma: كَذَّبَ, say: kadhdhaba, gloss: "to call a lie, to deny" }
+    - { lemma: مُكَذِّب, say: mukadhdhib, gloss: denier }
+    - { lemma: كَذِب, say: kadhib, gloss: "a lie" }
+    - { lemma: كاذِب, say: kādhib, gloss: liar }
+
+- id: hypocrisy
+  title: Hypocrisy
+  note: 'Those who say "we believe" and do not. All but one of the verses that use the word are in surahs counted Medinan, where the believers held power.'
+  seeAlso: [Unbelief, Faith]
+  forms:
+    - { lemma: مُنافِق, say: munāfiq, gloss: hypocrite }
+    - { lemma: مُنافِقَة, say: munāfiqa, gloss: "hypocrite (woman)" }
+    - { lemma: نِفاق, say: nifāq, gloss: hypocrisy }
+    - { lemma: نافَقُ, say: nāfaqa, gloss: "to act the hypocrite" }
+
+# ---------------------------------------------------------------- Worship
+- id: servant
+  title: Servant and worship
+  note: 'One root for a servant, a slave, and worship. To worship God is to serve Him, and His people are "My servants".'
+  seeAlso: [Lord, Prayer]
+  forms:
+    - { lemma: عَبَدَ, say: ʿabada, gloss: "to worship, to serve" }
+    - { lemma: عَبْد, say: ʿabd, gloss: "servant, slave" }
+    - { lemma: عابِد, say: ʿābid, gloss: worshiper }
+    - { lemma: عِبادَت, say: ʿibāda, gloss: worship }
+
+- id: prayer
+  title: Prayer
+  note: 'Salat is the set prayer. Prayer and the alms are named together in some two dozen verses (2:43, 2:110...). The Quran names times of prayer but not the number five.'
+  seeAlso: [Almsgiving, Bowing down, Calling on God]
+  forms:
+    - { lemma: صَلاة, say: ṣalāh, gloss: "the prayer" }
+    - { lemma: صَلَّى, say: ṣallā, gloss: "to pray; (of God) to bless" }
+
+- id: prostration
+  title: Bowing down
+  note: 'To prostrate, and the place of prostration: a masjid, a mosque. The angels are told to bow down to Adam.'
+  seeAlso: [Prayer, Servant and worship]
+  forms:
+    - { lemma: سَجَدَ, say: sajada, gloss: "to prostrate" }
+    - { lemma: ساجِد, say: sājid, gloss: "one who prostrates" }
+    - { lemma: سُجُود, say: sujūd, gloss: prostration }
+    - { lemma: مَسْجِد, say: masjid, gloss: "place of prostration, mosque" }
+
+- id: supplication
+  title: Calling on God
+  note: 'To call: on God in prayer, on idols that do not answer, or people to the faith.'
+  seeAlso: [Prayer, Glory and praise]
+  forms:
+    - { lemma: دَعا, say: daʿā, gloss: "to call, to call upon" }
+    - { lemma: دُعاء, say: duʿāʾ, gloss: "a call, a prayer" }
+
+- id: praise
+  title: Glory and praise
+  note: '"Praise be to God, Lord of the Worlds" opens the Book (1:2); "Glory be to Him" answers every claim that He has a son or a partner (4:171).'
+  seeAlso: [Calling on God, Gratitude]
+  forms:
+    - { lemma: حَمْد, say: ḥamd, gloss: praise }
+    - { lemma: سَبَّحَ, say: sabbaḥa, gloss: "to glorify" }
+    - { lemma: سُبْحان, say: subḥān, gloss: "glory be (to God)" }
+
+- id: zakat
+  title: Almsgiving
+  note: 'Zakat is the due alms, from a root meaning purity; sadaqa is a gift of charity. Spending "in the way of God" is asked more often than either.'
+  seeAlso: [Prayer, Wealth, The orphan and the poor]
+  forms:
+    - { lemma: زَكاة, say: zakāh, gloss: "the alms; purity" }
+    - { lemma: صَدَقَة, say: ṣadaqa, gloss: "charity" }
+    - { lemma: أَنفَقَ, say: anfaqa, gloss: "to spend" }
+    - { lemma: تَصَدَّقَ, say: taṣaddaqa, gloss: "to give in charity" }
+
+- id: fasting
+  title: Fasting
+  note: 'Prescribed in 2:183-187, "as it was prescribed for those before you", in the month of Ramadan. Elsewhere a fast is set as the making-good of a fault.'
+  seeAlso: [Prayer, The pilgrimage]
+  forms:
+    - { lemma: صِيام, say: ṣiyām, gloss: fasting }
+    - { lemma: صَوْم, say: ṣawm, gloss: "a fast" }
+
+- id: hajj
+  title: The pilgrimage
+  note: 'The Hajj to the House at Mecca, "a duty to God for all who can make the journey" (3:97), and the lesser visit, the Umrah.'
+  seeAlso: [Prayer, Fasting]
+  forms:
+    - { lemma: حَجّ, say: ḥajj, gloss: "the pilgrimage" }
+    - { lemma: عُمْرَة, say: ʿumra, gloss: "the visit, the lesser pilgrimage" }
+    - { lemma: شَعائِر, say: shaʿāʾir, gloss: "rites, waymarks" }
+
+- id: qibla
+  title: The direction of prayer
+  note: 'The qibla. 2:142-150 turns it from the earlier direction, which the Quran does not name, to the Sacred Mosque.'
+  seeAlso: [Prayer, The pilgrimage]
+  forms:
+    - { lemma: قِبْلَة, say: qibla, gloss: "direction faced in prayer" }
+
+# ---------------------------------------------------------------- The Last Day
+- id: hereafter
+  title: The Hereafter
+  note: '"The last": the life to come, always set against this nearer life. Also "the Last Day".'
+  seeAlso: [This world, The Day of Resurrection, The Garden]
+  forms:
+    - { lemma: آخِر, say: ākhir, gloss: "last; the Hereafter" }
+
+- id: dunya
+  title: This world
+  note: '"The nearer life": this world, "nothing but game and distraction" beside the Home of the Hereafter (6:32).'
+  seeAlso: [The Hereafter, Wealth]
+  forms:
+    - { lemma: دُنْيا, say: dunyā, gloss: "the nearer (life), this world" }
+    - { lemma: مَتاع, say: matāʿ, gloss: "passing enjoyment, goods" }
+
+- id: resurrection
+  title: The Day of Resurrection
+  note: 'The Day of Standing, when the dead are raised. With the Hour it is the great theme of the Meccan surahs.'
+  seeAlso: [The Hour, The reckoning, The Hereafter]
+  forms:
+    - { lemma: قِيامَة, say: qiyāma, gloss: "resurrection, the rising" }
+    - { lemma: بَعَثَ, say: baʿatha, gloss: "to raise; to send" }
+    - { lemma: مَبْعُوث, say: mabʿūth, gloss: "raised (from the dead)" }
+    - { lemma: حَشَرَ, say: ḥashara, gloss: "to gather" }
+    - { lemma: نُشُور, say: nushūr, gloss: "the raising" }
+
+- id: hour
+  title: The Hour
+  note: 'The Hour of the end, whose time only God knows (7:187). The trumpet and the Shout announce it.'
+  seeAlso: [The Day of Resurrection, The reckoning]
+  forms:
+    - { lemma: ساعَة, say: sāʿa, gloss: "the Hour; an hour" }
+    - { lemma: صُور, say: ṣūr, gloss: "the trumpet" }
+    - { lemma: صَيْحَة, say: ṣayḥa, gloss: "the Shout, the blast" }
+
+- id: reckoning
+  title: The reckoning
+  note: 'The account each soul must give, the scales that weigh deeds, and the repayment.'
+  seeAlso: [The Day of Resurrection, Reward, Punishment]
+  forms:
+    - { lemma: حِساب, say: ḥisāb, gloss: "reckoning, account" }
+    - { lemma: مِيزان, say: mīzān, gloss: "scale, balance" }
+    - { lemma: جَزَى, say: jazā, gloss: "to repay" }
+    - { lemma: جَزاء, say: jazāʾ, gloss: "repayment" }
+
+- id: garden
+  title: The Garden
+  note: 'Paradise is "the Garden", or "gardens beneath which rivers flow". The word also counts earthly gardens, such as the two gardens of 18:32.'
+  seeAlso: [The Fire, Reward, The Hereafter]
+  forms:
+    - { lemma: جَنَّة, say: janna, gloss: "garden; the Garden" }
+    - { lemma: عَدْن, say: ʿAdn, gloss: "Eden (gardens of Eden)" }
+    - { lemma: فِرْدَوْس, say: Firdaws, gloss: Paradise }
+    - { lemma: نَعِيم, say: naʿīm, gloss: "bliss" }
+    - { lemma: حُور, say: ḥūr, gloss: "fair ones, companions of Paradise" }
+
+- id: fire
+  title: The Fire
+  note: 'Hell is most often simply "the Fire". Its name Jahannam comes, like the Gehenna of the Gospels, from the Hebrew Gehinnom, the valley below Jerusalem.'
+  seeAlso: [The Garden, Punishment]
+  forms:
+    - { lemma: نار, say: nār, gloss: "fire; the Fire" }
+    - { lemma: جَهَنَّم, say: Jahannam, gloss: Hell }
+    - { lemma: جَحِيم, say: jaḥīm, gloss: "the Blaze, Hellfire" }
+    - { lemma: سَعِير, say: saʿīr, gloss: "the Inferno" }
+    - { lemma: سَقَر, say: Saqar, gloss: "Saqar, the Scorching Fire" }
+
+- id: punishment
+  title: Punishment
+  note: 'One of the Quran''s commonest nouns: the punishment that fell on earlier peoples in this world, and the punishment of the next.'
+  seeAlso: [The Fire, The reckoning]
+  forms:
+    - { lemma: عَذاب, say: ʿadhāb, gloss: "punishment, torment" }
+    - { lemma: عَذَّبَ, say: ʿadhdhaba, gloss: "to punish" }
+
+- id: reward
+  title: Reward
+  note: 'Literally a wage. The messengers say, "I ask of you no payment for this. My payment is only from the Lord of the Worlds" (26:109).'
+  seeAlso: [The reckoning, The Garden, Success and loss]
+  forms:
+    - { lemma: أَجْر, say: ajr, gloss: "wage, reward" }
+    - { lemma: ثَواب, say: thawāb, gloss: reward }
+
+- id: success
+  title: Success and loss
+  note: 'The Quran''s words for the final outcome: to prosper, the great triumph, and the losers.'
+  seeAlso: [Reward, The reckoning]
+  forms:
+    - { lemma: أَفْلَحَ, say: aflaḥa, gloss: "to prosper, to succeed" }
+    - { lemma: مُفْلِح, say: mufliḥ, gloss: "successful" }
+    - { lemma: فَوْز, say: fawz, gloss: "triumph, salvation" }
+    - { lemma: خاسِر, say: khāsir, gloss: loser }
+    - { lemma: خَسِرَ, say: khasira, gloss: "to lose" }
+
+- id: intercession
+  title: Intercession
+  note: 'No one intercedes with God "except with His permission" (2:255). The idols are called intercessors by those who serve them (10:18).'
+  seeAlso: [The reckoning, Associating others with God]
+  forms:
+    - { lemma: شَفاعَة, say: shafāʿa, gloss: intercession }
+    - { lemma: شَفِيع, say: shafīʿ, gloss: intercessor }
+    - { lemma: يَشْفَعُ, say: shafaʿa, gloss: "to intercede" }
+
+- id: death
+  title: Death and life
+  note: 'God "gives life and causes death", and gives life again: the argument for the resurrection. To "take" a soul at death is a third verb, used of Jesus in 3:55 and 5:117.'
+  seeAlso: [The Day of Resurrection, The soul]
+  forms:
+    - { lemma: مَوْت, say: mawt, gloss: death }
+    - { lemma: ماتَ, say: māta, gloss: "to die" }
+    - { lemma: أَماتَ, say: amāta, gloss: "to cause to die" }
+    - { lemma: أَحْيا, say: aḥyā, gloss: "to give life" }
+    - { lemma: حَياة, say: ḥayāh, gloss: life }
+    - { lemma: تَوَفَّى, say: tawaffā, gloss: "to take in full, to take (a soul)" }
+
+# ---------------------------------------------------------------- Beings
+- id: angels
+  title: Angels
+  note: 'Messengers and servants of God, who record deeds, take souls, bear the Throne and guard Hell.'
+  seeAlso: [The Spirit, Satan, Jinn]
+  forms:
+    - { lemma: مَلَك, say: malak, gloss: angel }
+
+- id: satan
+  title: Satan
+  note: 'The satan, "man''s sworn enemy" (12:5). Iblis is his name in the story of his refusal to bow to Adam. The plural is used of evil jinn and people.'
+  seeAlso: [Jinn, Angels]
+  forms:
+    - { lemma: شَيْطان, say: shayṭān, gloss: "satan, devil" }
+    - { lemma: إِبْلِيس, say: Iblīs, gloss: Iblis }
+
+- id: jinn
+  title: Jinn
+  note: 'Unseen beings made from fire, who like people can believe or disbelieve; surah 72 is theirs. Talal Itani''s translation calls them "sprites". "Possessed" is from the same root.'
+  seeAlso: [Satan, Angels, Mankind]
+  forms:
+    - { lemma: جِنّ, say: jinn, gloss: jinn }
+    - { lemma: جانّ, say: jānn, gloss: "jinn (as a kind)" }
+    - { lemma: جِنَّة, say: jinna, gloss: "jinn; madness" }
+    - { lemma: مَجْنُون, say: majnūn, gloss: "possessed, mad" }
+
+- id: mankind
+  title: Mankind
+  note: '"O people" is how the Quran most often addresses all its hearers. The human being, in the singular, is "very hasty" (17:11), "ungrateful to his Lord" (100:6), and created "in the best design" (95:4).'
+  seeAlso: [The soul, Jinn, Creation]
+  forms:
+    - { lemma: ناس, say: nās, gloss: "people, mankind" }
+    - { lemma: إِنسان, say: insān, gloss: "man, the human being" }
+    - { lemma: إِنس, say: ins, gloss: "humankind (beside the jinn)" }
+    - { lemma: بَشَر, say: bashar, gloss: "a human being, a mortal" }
+
+- id: soul
+  title: The soul
+  note: 'Nafs is the self: a soul, a person, oneself. "Every soul will have a taste of death" (3:185). The heart is where faith and unbelief sit.'
+  seeAlso: [Mankind, Death and life]
+  forms:
+    - { lemma: نَفْس, say: nafs, gloss: "soul, self, person" }
+    - { lemma: قَلْب, say: qalb, gloss: heart }
+
+- id: community
+  title: Community
+  note: 'An umma is a people with a messenger or a way. "You are the best community that ever emerged for humanity" (3:110).'
+  seeAlso: [Messenger, Religion]
+  forms:
+    - { lemma: أُمَّة, say: umma, gloss: "community, nation" }
+    - { lemma: قَوْم, say: qawm, gloss: "a people" }
+
+# ---------------------------------------------------------------- Character
+- id: good-deeds
+  title: Good deeds
+  note: '"Those who believe and do righteous deeds" is the Quran''s standing description of the saved: fifty times in those words, most of them in surahs counted Meccan.'
+  seeAlso: [Faith, Goodness, Fear of God (taqwa)]
+  forms:
+    - { lemma: صالِحَة, say: ṣāliḥa, gloss: "a righteous deed" }
+    - { lemma: صالِح, say: ṣāliḥ, gloss: "righteous (also the prophet Salih)" }
+    - { lemma: أَصْلَحَ, say: aṣlaḥa, gloss: "to set right, to reform" }
+
+- id: goodness
+  title: Goodness
+  note: 'To do good, the good deed against the bad one, and "the doers of good" whom God loves.'
+  seeAlso: [Good deeds, Sin]
+  forms:
+    - { lemma: مُحْسِن, say: muḥsin, gloss: "doer of good" }
+    - { lemma: أَحْسَنَ, say: aḥsana, gloss: "to do good" }
+    - { lemma: إِحْسان, say: iḥsān, gloss: "kindness, doing good" }
+    - { lemma: حَسَنَة, say: ḥasana, gloss: "a good deed, a good thing" }
+    - { lemma: بِرّ, say: birr, gloss: "righteousness, piety" }
+
+- id: sin
+  title: Sin
+  note: 'Several words: a fault, a wrong that burdens, an evil deed, an indecency.'
+  seeAlso: [Forgiveness, Wrongdoing, Goodness]
+  forms:
+    - { lemma: ذَنب, say: dhanb, gloss: "sin, fault" }
+    - { lemma: إِثْم, say: ithm, gloss: "sin, guilt" }
+    - { lemma: سَيِّئَة, say: sayyiʾa, gloss: "an evil deed" }
+    - { lemma: فاحِشَة, say: fāḥisha, gloss: "indecency" }
+    - { lemma: مُجْرِم, say: mujrim, gloss: "guilty one, sinner" }
+
+- id: wrongdoing
+  title: Wrongdoing
+  note: 'Zulm is to wrong, to put a thing where it does not belong. "God did not wrong them, but they used to wrong their own souls" (16:33). The darkness is from the same root.'
+  seeAlso: [Justice, Sin]
+  forms:
+    - { lemma: ظَلَمَ, say: ẓalama, gloss: "to wrong" }
+    - { lemma: ظالِم, say: ẓālim, gloss: wrongdoer }
+    - { lemma: ظُلْم, say: ẓulm, gloss: "wrong, injustice" }
+    - { lemma: فاسِق, say: fāsiq, gloss: "defiantly disobedient" }
+    - { lemma: مُفْسِد, say: mufsid, gloss: "one who spreads corruption" }
+    - { lemma: فَساد, say: fasād, gloss: corruption }
+
+- id: justice
+  title: Justice
+  note: '"Stand firmly for justice, as witnesses to God, even if against yourselves" (4:135).'
+  seeAlso: [Wrongdoing, Wisdom and judgment]
+  forms:
+    - { lemma: عَدْل, say: ʿadl, gloss: justice }
+    - { lemma: عَدَلَ, say: ʿadala, gloss: "to be just; to set up equals" }
+    - { lemma: قِسْط, say: qisṭ, gloss: "equity, fairness" }
+    - { lemma: مُقْسِط, say: muqsiṭ, gloss: "one who is fair" }
+
+- id: patience
+  title: Patience
+  note: 'Steadfastness under trial, asked of Muhammad again and again in the Meccan surahs, and of the believers in battle.'
+  seeAlso: [Trust in God, Trial]
+  forms:
+    - { lemma: صَبَرَ, say: ṣabara, gloss: "to be patient, to endure" }
+    - { lemma: صابِر, say: ṣābir, gloss: "patient, steadfast" }
+    - { lemma: صَبْر, say: ṣabr, gloss: patience }
+    - { lemma: صَبّار, say: ṣabbār, gloss: "very patient" }
+
+- id: gratitude
+  title: Gratitude
+  note: 'The answer the Quran looks for to God''s favors; its opposite is the same word as unbelief.'
+  seeAlso: [Unbelief, Favor and provision]
+  forms:
+    - { lemma: شَكَرَ, say: shakara, gloss: "to give thanks" }
+    - { lemma: شاكِر, say: shākir, gloss: "thankful" }
+    - { lemma: شَكُور, say: shakūr, gloss: "very thankful; (of God) appreciative" }
+
+- id: trust
+  title: Trust in God
+  note: 'Tawakkul: to rely on God and make Him one''s trustee.'
+  seeAlso: [Patience, Faith]
+  forms:
+    - { lemma: تَوَكَّلْ, say: tawakkala, gloss: "to put one's trust" }
+    - { lemma: وَكِيل, say: wakīl, gloss: "trustee, guardian" }
+    - { lemma: مُتَوَكِّل, say: mutawakkil, gloss: "one who trusts" }
+
+- id: love
+  title: Love
+  note: 'Mostly what God loves and does not love: "God loves the charitable" (2:195), "God does not love the aggressors" (2:190). He is called the Loving twice (11:90, 85:14).'
+  seeAlso: [Mercy, Goodness]
+  forms:
+    - { lemma: أَحْبَبْ, say: aḥabba, gloss: "to love" }
+    - { lemma: حُبّ, say: ḥubb, gloss: love }
+    - { lemma: مَوَدَّة, say: mawadda, gloss: "affection" }
+    - { lemma: وَدُود, say: wadūd, gloss: "loving (a name of God)" }
+
+- id: pride
+  title: Pride
+  note: 'The sin of Iblis and of Pharaoh: to think oneself too great to bow.'
+  seeAlso: [Satan, Unbelief]
+  forms:
+    - { lemma: اسْتَكْبَرَ, say: istakbara, gloss: "to be proud, to be arrogant" }
+    - { lemma: مُتَكَبِّر, say: mutakabbir, gloss: "arrogant; (of God) the Supreme" }
+    - { lemma: مُسْتَكْبِر, say: mustakbir, gloss: arrogant }
+    - { lemma: طَغَى, say: ṭaghā, gloss: "to transgress, to exceed all bounds" }
+    - { lemma: طاغُوت, say: ṭāghūt, gloss: "false gods, tyranny" }
+
+- id: trial
+  title: Trial
+  note: 'Fitna is a testing, and so also persecution, temptation, civil strife. "Fight them until there is no fitna" (2:193, 8:39) turns on which is meant; Talal Itani translates it "oppression" in the first and "persecution" in the second.'
+  seeAlso: [Patience, Fighting]
+  forms:
+    - { lemma: فِتْنَة, say: fitna, gloss: "trial; persecution; discord" }
+    - { lemma: فَتَنُ, say: fatana, gloss: "to try; to persecute" }
+    - { lemma: بَلَوْ, say: balā, gloss: "to test" }
+    - { lemma: ابْتَلَى, say: ibtalā, gloss: "to test" }
+    - { lemma: بَلاء, say: balāʾ, gloss: "a test" }
+
+- id: favor
+  title: Favor and provision
+  note: 'Whatever people have is from God: His favor, and the provision He gives "to whomever He wills without measure" (2:212).'
+  seeAlso: [Gratitude, Wealth]
+  forms:
+    - { lemma: نِعْمَة, say: niʿma, gloss: "favor, blessing" }
+    - { lemma: أَنْعَمَ, say: anʿama, gloss: "to bestow favor" }
+    - { lemma: رِزْق, say: rizq, gloss: provision }
+    - { lemma: رَزَقَ, say: razaqa, gloss: "to provide" }
+    - { lemma: فَضْل, say: faḍl, gloss: "bounty, grace" }
+
+# ---------------------------------------------------------------- Law and society
+- id: lawful
+  title: Lawful and forbidden
+  note: 'Halal and haram. Haram is also "sacred", as in the Sacred Mosque and the sacred months: what is set apart.'
+  seeAlso: [The limits of God, Right and wrong]
+  forms:
+    - { lemma: حَلال, say: ḥalāl, gloss: lawful }
+    - { lemma: أَحَلَّ, say: aḥalla, gloss: "to make lawful" }
+    - { lemma: حَرَّمَ, say: ḥarrama, gloss: "to forbid, to make sacred" }
+    - { lemma: حَرام, say: ḥarām, gloss: "forbidden; sacred" }
+
+- id: limits
+  title: The limits of God
+  note: 'Hudud: the bounds God sets, nearly always in the rules of marriage, divorce, fasting and inheritance. The later use for fixed punishments is not the Quran''s.'
+  seeAlso: [Lawful and forbidden, Marriage and divorce]
+  forms:
+    - { lemma: حُدُود, say: ḥudūd, gloss: "limits, bounds" }
+    - { lemma: فَرِيضَة, say: farīḍa, gloss: "an obligation, a fixed share" }
+    - { lemma: اعْتَدَى, say: iʿtadā, gloss: "to overstep, to transgress" }
+
+- id: right-and-wrong
+  title: Right and wrong
+  note: 'Ma''ruf is what is known to be right, munkar what is rejected. The believers "advocate what is moral, and forbid what is immoral" (3:110).'
+  seeAlso: [Good deeds, Lawful and forbidden]
+  forms:
+    - { lemma: مَعْرُوف, say: maʿrūf, gloss: "what is right, what is fair" }
+    - { lemma: مُنكَر, say: munkar, gloss: "what is wrong" }
+
+- id: covenant
+  title: Covenant
+  note: 'The pledge God took from the Children of Israel, from the prophets and from the believers, and treaties between people.'
+  seeAlso: [The Book, Fighting]
+  forms:
+    - { lemma: عَهْد, say: ʿahd, gloss: "covenant, promise" }
+    - { lemma: مِيثاق, say: mīthāq, gloss: "solemn pledge" }
+    - { lemma: عاهَدَ, say: ʿāhada, gloss: "to make a covenant, a treaty" }
+
+- id: fighting
+  title: Fighting
+  note: 'Qital is fighting, from the verb to kill. This is the word of the commands to fight; the counts include every killing the Quran tells of.'
+  seeAlso: [Striving (jihad), Trial, Peace]
+  forms:
+    - { lemma: قاتَلَ, say: qātala, gloss: "to fight" }
+    - { lemma: قِتال, say: qitāl, gloss: fighting }
+    - { lemma: قَتَلَ, say: qatala, gloss: "to kill" }
+    - { lemma: قَتْل, say: qatl, gloss: killing }
+    - { lemma: حَرْب, say: ḥarb, gloss: war }
+
+- id: jihad
+  title: Striving (jihad)
+  note: 'To strive, to struggle: "strive with your possessions and your lives in the cause of God" (9:41). The word is wider than fighting: it is used of parents who strive to make a child associate others with God (29:8, 31:15).'
+  seeAlso: [Fighting, The path, Emigration]
+  forms:
+    - { lemma: جاهَدَ, say: jāhada, gloss: "to strive, to struggle" }
+    - { lemma: جِهاد, say: jihād, gloss: "striving" }
+    - { lemma: مُجاهِد, say: mujāhid, gloss: "one who strives" }
+
+- id: emigration
+  title: Emigration
+  note: 'The Hijra: leaving home for the sake of God. The Emigrants are those who left Mecca for Medina; the Helpers, those who took them in.'
+  seeAlso: [Striving (jihad), Allies and protectors]
+  forms:
+    - { lemma: هاجَرَ, say: hājara, gloss: "to emigrate" }
+    - { lemma: مُهاجِر, say: muhājir, gloss: emigrant }
+
+- id: allies
+  title: Allies and protectors
+  note: 'A wali is one who is close: a protector, a patron, an ally, a friend. God is the wali of the believers; the question of whom the believers may take as allies runs through the Medinan surahs.'
+  seeAlso: [Fighting, Community]
+  forms:
+    - { lemma: وَلِيّ, say: waliyy, gloss: "protector, ally, friend" }
+    - { lemma: مَوْلَى, say: mawlā, gloss: "patron, master" }
+    - { lemma: نَصِير, say: naṣīr, gloss: helper }
+    - { lemma: عَدُوّ, say: ʿaduww, gloss: enemy }
+
+- id: marriage
+  title: Marriage and divorce
+  note: 'The words of the family law of surahs 2, 4, 33 and 65. "Spouse" also means one of a pair, and is used of the companions of Paradise.'
+  seeAlso: [Women, The limits of God]
+  forms:
+    - { lemma: نَكَحَ, say: nakaḥa, gloss: "to marry" }
+    - { lemma: نِكاح, say: nikāḥ, gloss: marriage }
+    - { lemma: زَوْج, say: zawj, gloss: "spouse; one of a pair; a kind" }
+    - { lemma: طَلَّقَ, say: ṭallaqa, gloss: "to divorce" }
+
+- id: women
+  title: Women
+  note: 'The plural "women", which names surah 4 and carries most of the law on marriage, inheritance and dress.'
+  seeAlso: [Marriage and divorce, The orphan and the poor]
+  forms:
+    - { lemma: نِساء, say: nisāʾ, gloss: women }
+    - { lemma: أُنثَى, say: unthā, gloss: female }
+
+- id: orphan
+  title: The orphan and the poor
+  note: 'Those to whom kindness and a share are owed: the orphan, the needy, the kinsman and the traveler. Muhammad is reminded that he was an orphan (93:6).'
+  seeAlso: [Almsgiving, Wealth]
+  forms:
+    - { lemma: يَتِيم, say: yatīm, gloss: orphan }
+    - { lemma: مِسْكِين, say: miskīn, gloss: "needy, destitute" }
+    - { lemma: فَقِير, say: faqīr, gloss: poor }
+    - { lemma: رَقَبَة, say: raqaba, gloss: "a neck - a slave to be freed" }
+
+- id: wealth
+  title: Wealth
+  note: 'Wealth and children are "the adornments of the present life" (18:46) and "a test" (64:15). Usury is forbidden and charity commended in the same breath (2:275-276).'
+  seeAlso: [Almsgiving, This world, Trial]
+  forms:
+    - { lemma: مال, say: māl, gloss: "wealth, property" }
+    - { lemma: رِبا, say: ribā, gloss: "usury, interest" }
+    - { lemma: كَنز, say: kanz, gloss: treasure }
+
+- id: witness
+  title: Witness
+  note: 'Shahid is a witness. Its later sense, a martyr who bears witness by dying, is how translators read a few verses (3:140, 4:69).'
+  seeAlso: [Justice, The reckoning]
+  forms:
+    - { lemma: شَهِيد, say: shahīd, gloss: witness }
+    - { lemma: شَهِدَ, say: shahida, gloss: "to witness, to testify" }
+    - { lemma: شَهادَة, say: shahāda, gloss: testimony }
+    - { lemma: شاهِد, say: shāhid, gloss: witness }
+
+# ---------------------------------------------------------------- The world
+- id: heavens-and-earth
+  title: Heavens and earth
+  note: '"To Him belongs everything in the heavens and everything on earth" (2:255). The heavens are named in 183 verses, most often with the earth.'
+  seeAlso: [Creation, Signs]
+  forms:
+    - { lemma: سَماء, say: samāʾ, gloss: "sky, heaven" }
+    - { lemma: أَرْض, say: arḍ, gloss: "earth, land" }
+
+- id: signs-in-nature
+  title: Sun, moon, night and day
+  note: 'The things of the sky and the round of time, named as signs "for people who reflect".'
+  seeAlso: [Signs, Heavens and earth, Creation]
+  forms:
+    - { lemma: شَمْس, say: shams, gloss: sun }
+    - { lemma: قَمَر, say: qamar, gloss: moon }
+    - { lemma: نَجْم, say: najm, gloss: star }
+    - { lemma: لَيْل, say: layl, gloss: night }
+    - { lemma: نَهار, say: nahār, gloss: day }
+
+- id: water
+  title: Water and rain
+  note: 'Water sent down from the sky revives a dead land: "Thus you will be brought out" (43:11). Rivers flow beneath the gardens of Paradise.'
+  seeAlso: [Signs, The Garden, Creation]
+  forms:
+    - { lemma: ماء, say: māʾ, gloss: water }
+    - { lemma: نَهَر, say: nahar, gloss: river }
+    - { lemma: بَحْر, say: baḥr, gloss: sea }
+
+- id: reason
+  title: Reason and reflection
+  note: '"Do you not understand?" The Quran''s appeal to think about what is seen.'
+  seeAlso: [Signs, Knowledge]
+  forms:
+    - { lemma: عَقَلُ, say: ʿaqala, gloss: "to understand, to use reason" }
+    - { lemma: يَتَفَكَّرُ, say: tafakkara, gloss: "to reflect" }
+    - { lemma: أَلْباب, say: albāb, gloss: "minds (people of understanding)" }

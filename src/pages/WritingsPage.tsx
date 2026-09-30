@@ -4,14 +4,16 @@ import { useData } from '@/data/useData'
 import { loadWritingsIndex } from '@/data/loaders'
 import { formatDay } from '@/store/updates'
 import { usePageTitle } from '@/store/session'
+import { EDITION } from '@edition/config'
+import { SITE } from '@edition/site'
 
 /** Every writing, newest first. */
 export default function WritingsPage() {
-  usePageTitle('Writings', { description: 'Writings on the Bible: answers to questions, with every passage behind them linked and checked against the text.' })
+  usePageTitle('Writings', { description: EDITION.text.writingsDescription })
   const { data: writings } = useData('writings-index', loadWritingsIndex)
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <PageHeader kicker="Bible-Map" title="Writings" subtitle="Answers to questions about the Bible, each with the passages behind it. Open one and it sits here beside the Bible; its references are links." />
+      <PageHeader kicker={SITE.name} title="Writings" subtitle={EDITION.text.writingsIntro} />
       {!writings ? (
         <Loading />
       ) : (

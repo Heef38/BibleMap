@@ -1,0 +1,30 @@
+import type { Shelf } from '../types'
+
+/**
+ * The shelves on the Studies page, in order. A study not listed here lands on the last shelf,
+ * so a new study shows up before anyone files it.
+ */
+export const SHELVES: Shelf[] = [
+  {
+    title: 'The life and words of Jesus',
+    note: 'What he taught, the stories he told, what he did, and how he rose.',
+    ids: ['resurrection-of-jesus', 'teachings-of-jesus', 'sermon-on-the-mount', 'the-parables', 'miracles-of-jesus', 'kingdom-of-heaven'],
+  },
+  {
+    title: 'Christ in the Old Testament',
+    note: 'The types, shadows and promises that point to him.',
+    ids: ['christ-in-the-old-testament', 'tabernacle-and-temple', 'materials-and-meanings', 'exodus-and-the-christian-life'],
+  },
+  {
+    title: 'Who God is',
+    note: 'The Father, the Son and the Spirit: his presence, his Spirit, and his promises.',
+    ids: ['trinity', 'presence-of-god', 'holy-spirit', 'promises-of-god'],
+  },
+  {
+    title: 'Books of the Bible',
+    note: 'One book at a time: how it is built, who it was written to, and where it leads.',
+    ids: ['isaiah', 'psalms'],
+  },
+]
+
+export const OTHER_SHELF = { title: 'More studies', note: '' }
