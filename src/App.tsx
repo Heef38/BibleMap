@@ -17,6 +17,7 @@ import ComparePage from '@/pages/ComparePage'
 import BookPage from '@/pages/BookPage'
 import AboutPage from '@/pages/AboutPage'
 import FeedbackPage from '@/pages/FeedbackPage'
+import StickersPage from '@/pages/StickersPage'
 import { FONT_SIZES, useSettings } from '@/store/settings'
 
 export default function App() {
@@ -51,6 +52,7 @@ export default function App() {
         <Route path="/credits" element={<CreditsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/madepurely" element={<StickersPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </AppShell>
