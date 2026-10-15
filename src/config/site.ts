@@ -9,7 +9,13 @@ export const SITE = {
    * The public address, without a trailing slash. Search engines, share previews and the sitemap
    * use it; after changing it (a custom domain, say), run `pnpm data:build` to rewrite the sitemap.
    */
-  url: 'https://biblemap-mauve.vercel.app',
+  url: 'https://www.bible-map.com',
+  /**
+   * Addresses the site used to live at. Opening one forwards to `url`, carrying the reader's
+   * settings and notes along (browsers keep them per address), and search engines are asked not
+   * to list them.
+   */
+  movedFrom: ['https://biblemap-mauve.vercel.app'],
   tagline: 'See how the story of the Bible connects',
   /** What search results and share previews say about the site. */
   description:

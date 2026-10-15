@@ -38,7 +38,7 @@ interface Session {
   mapVerse: number | null
   /** the right pane spreads over the Bible (desktop), for wide charts */
   wide: boolean
-  /** what the right pane shows, for the pane's bar, notes and the tab title */
+  /** what the right pane shows, for the pane's bar and the tab title */
   pageTitle: string
   highlights: Highlight[]
   mobilePane: MobilePane
@@ -145,7 +145,7 @@ export interface PageMeta {
 }
 
 /**
- * Name what the right pane shows: its bar, new notes and the browser tab use it. It also tells
+ * Name what the right pane shows: its bar and the browser tab use it. It also tells
  * search engines about the page: its title and description, and its canonical address, which is
  * the path alone, so the reader's position (?p=) and the verse map (?v=) never count as other pages.
  */

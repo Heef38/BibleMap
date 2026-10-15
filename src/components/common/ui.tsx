@@ -75,6 +75,11 @@ export function EntityLink({ type, id, children, className = 'chip chip-link' }:
 
 const LINK = /\[([^\]]+)\]\(\(?([^)\s]+)\)/g
 
+/** Running text with its Bible references (and any markdown links) turned into links. */
+export function LinkedText({ text, canon }: { text: string; canon: Canon }) {
+  return <>{renderInline(text, canon)}</>
+}
+
 /** Render a dictionary paragraph whose markdown links point at references or entities. */
 export function DictText({ text, canon }: { text: string; canon: Canon }) {
   const paras = text.split(/\n\s*\n|\n/).map((p) => p.trim()).filter(Boolean)
@@ -105,7 +110,7 @@ function renderInline(p: string, canon: Canon): ReactNode[] {
       )
     } else {
       const parsed = parseRefs(label, canon)
-      if (parsed.ranges.length) out.push(<RefLink key={k++} range={parsed.ranges[0]} canon={canon} label={label} className="text-accent hover:underline" />)
+      if (parsed.ranges.length) out.push(<RefLink key={k++} range={parsed.ranges[0]} canon={canon} label={label} className="ref-link" />)
       else out.push(label)
     }
     last = idx + m[0].length
@@ -114,19 +119,24 @@ function renderInline(p: string, canon: Canon): ReactNode[] {
   return out.flatMap((node, i) => (typeof node === 'string' ? linkBareRefs(node, canon, `t${i}`) : [node]))
 }
 
-const BARE_REF = /\b((?:[1-3]\s?)?[A-Z][a-z]{1,14}\.?\s?\d{1,3}(?::\d{1,3}(?:\s?[-–]\s?\d{1,3}(?::\d{1,3})?)?)?)\b/g
+// "Book 3", "Book 3:16", "Book 3:16-18", "Book 3:16-4:2", and chapter ranges like "1 Kings 10–11".
+const BARE_REF = /\b((?:[1-3]\s?)?[A-Z][a-z]{1,14}\.?\s?\d{1,3}(?::\d{1,3}(?:\s?[-–]\s?\d{1,3}(?::\d{1,3})?)?|\s?[-–]\s?\d{1,3}(?!:))?)\b/g
 
-/** The references written in plain text ("Rom 5:8", "1 Samuel 16:12"), in order, without repeats. */
-export function refsIn(text: string, canon: Canon): { label: string; range: Range }[] {
-  const out: { label: string; range: Range }[] = []
-  const seen = new Set<string>()
-  for (const m of text.matchAll(BARE_REF)) {
+/**
+ * The references in plain text, in order. A match that is not a reference ("In 1" in "In 1 Kings 3")
+ * is tried again one character on, so it does not swallow the real one after it.
+ */
+function scanRefs(text: string, canon: Canon): { index: number; label: string; range: Range }[] {
+  const out: { index: number; label: string; range: Range }[] = []
+  const re = new RegExp(BARE_REF.source, 'g')
+  let m: RegExpExecArray | null
+  while ((m = re.exec(text))) {
     const parsed = parseRefs(m[1], canon)
-    if (!parsed.ranges.length || parsed.errors.length) continue
-    const key = parsed.ranges[0].join('-')
-    if (seen.has(key)) continue
-    seen.add(key)
-    out.push({ label: canon.rangeLabel(parsed.ranges[0][0], parsed.ranges[0][1], 'short'), range: parsed.ranges[0] })
+    if (!parsed.ranges.length || parsed.errors.length) {
+      re.lastIndex = m.index + 1
+      continue
+    }
+    out.push({ index: m.index, label: m[1], range: parsed.ranges[0] })
   }
   return out
 }
@@ -136,13 +146,10 @@ function linkBareRefs(text: string, canon: Canon, keyPrefix: string): ReactNode[
   const out: ReactNode[] = []
   let last = 0
   let k = 0
-  for (const m of text.matchAll(BARE_REF)) {
-    const idx = m.index ?? 0
-    const parsed = parseRefs(m[1], canon)
-    if (!parsed.ranges.length || parsed.errors.length) continue
-    if (idx > last) out.push(text.slice(last, idx))
-    out.push(<RefLink key={`${keyPrefix}-${k++}`} range={parsed.ranges[0]} canon={canon} label={m[1]} className="text-accent hover:underline" />)
-    last = idx + m[0].length
+  for (const r of scanRefs(text, canon)) {
+    if (r.index > last) out.push(text.slice(last, r.index))
+    out.push(<RefLink key={`${keyPrefix}-${k++}`} range={r.range} canon={canon} label={r.label} className="ref-link" />)
+    last = r.index + r.label.length
   }
   if (last < text.length) out.push(text.slice(last))
   return out

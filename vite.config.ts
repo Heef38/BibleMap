@@ -89,7 +89,39 @@ function siteMeta(): Plugin {
           'query-input': 'required name=search_term_string',
         },
       }
+      // On an old address, forward to the new one with what this browser saved there (in the
+      // fragment, which never reaches a server); on the new one, take it in and tidy the address.
+      // It runs before the theme is read, so a carried-over theme applies at once.
+      const KEYS = ['biblemap.settings', 'biblemap.notes', 'biblemap.updates', 'biblemap.voter', 'biblemap.voted']
+      const move = `(function () {
+  var KEYS = ${JSON.stringify(KEYS)};
+  var OLD = ${JSON.stringify(SITE.movedFrom.map((u) => new URL(u).host))};
+  try {
+    if (OLD.indexOf(location.host) >= 0) {
+      var data = {};
+      KEYS.forEach(function (k) { var v = localStorage.getItem(k); if (v) data[k] = v; });
+      var carry = Object.keys(data).length ? '#moved=' + encodeURIComponent(JSON.stringify(data)) : location.hash;
+      location.replace(${JSON.stringify(SITE.url)} + location.pathname + location.search + carry);
+      return;
+    }
+    var m = /^#moved=(.*)$/.exec(location.hash);
+    if (!m) return;
+    var got = JSON.parse(decodeURIComponent(m[1]));
+    KEYS.forEach(function (k) {
+      if (!got[k]) return;
+      var mine = localStorage.getItem(k);
+      if (k === 'biblemap.notes' && mine) {
+        var a = JSON.parse(mine), b = JSON.parse(got[k]), ids = {};
+        a.state.notes.forEach(function (n) { ids[n.id] = 1; });
+        b.state.notes.forEach(function (n) { if (!ids[n.id]) a.state.notes.push(n); });
+        localStorage.setItem(k, JSON.stringify(a));
+      } else if (!mine) localStorage.setItem(k, got[k]);
+    });
+  } catch (e) {}
+  history.replaceState(history.state, '', location.pathname + location.search);
+})();`
       const tags: HtmlTagDescriptor[] = [
+        { tag: 'script', children: move, injectTo: 'head-prepend' },
         meta({ name: 'description', content: SITE.description }),
         meta({ name: 'robots', content: 'index, follow' }),
         meta({ name: 'application-name', content: SITE.name }),
