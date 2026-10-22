@@ -33,9 +33,9 @@ export function UpdateList({ items, fresh, onNavigate }: { items: Update[]; fres
   )
 }
 
-/** A small New tag for studies and features. */
-export function NewTag() {
-  return <span className="chip !py-0 !px-1.5 !text-[10.5px] font-semibold uppercase tracking-wide bg-accent-soft border-accent text-ink">New</span>
+/** A small New tag for studies and features (or another word, such as Current). */
+export function NewTag({ children = 'New' }: { children?: string }) {
+  return <span className="chip !py-0 !px-1.5 !text-[10.5px] font-semibold uppercase tracking-wide bg-accent-soft border-accent text-ink">{children}</span>
 }
 
 /** The planned features, for the Coming soon tab. */

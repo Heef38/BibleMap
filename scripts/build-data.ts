@@ -1243,6 +1243,7 @@ writeJson('writings/index.json', writings)
     { path: '/bible' },
     { path: '/compare' },
     { path: '/about' },
+    { path: '/versions' },
     { path: '/feedback' },
     { path: '/credits' },
     { path: '/writings' },

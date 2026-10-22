@@ -1,9 +1,12 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router'
-import { PageHeader, Section } from '@/components/common/ui'
+import { LinkedText, PageHeader, Section } from '@/components/common/ui'
 import { IconHeart } from '@/components/common/icons'
 import BrandLogo from '@/components/common/BrandLogo'
 import { SITE } from '@/config/site'
+import { CURRENT_VERSION } from '@/config/versions'
+import { useData } from '@/data/useData'
+import { loadCanon } from '@/data/loaders'
 import { usePageTitle } from '@/store/session'
 
 export default function AboutPage() {
@@ -12,11 +15,24 @@ export default function AboutPage() {
   useEffect(() => {
     if (hash) document.getElementById(hash.slice(1))?.scrollIntoView()
   }, [hash])
+  const { data: canon } = useData('canon', loadCanon)
 
   return (
     <div className="p-6 max-w-3xl mx-auto">
       <BrandLogo variant="stacked" className="h-28 mb-6" />
       <PageHeader kicker="About" title="About Bible-Map" subtitle="A free, interactive map of the Bible: its people, places and themes, and how they connect." />
+
+      <Section title="Why Bible-Map">
+        <div className="space-y-3 max-w-prose text-[15px] leading-relaxed">
+          {SITE.purpose.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+        <blockquote className="mt-5 max-w-prose border-l-2 border-accent pl-4">
+          <p className="font-serif text-[17px] leading-[1.6] text-ink">“{SITE.purposeVerse.text}”</p>
+          <footer className="mt-1 text-sm text-ink-2">{canon ? <LinkedText text={SITE.purposeVerse.ref} canon={canon} /> : SITE.purposeVerse.ref}</footer>
+        </blockquote>
+      </Section>
 
       <Section title="Who is building it">
         <div className="space-y-3 max-w-prose text-[15px] leading-relaxed">
@@ -64,6 +80,10 @@ export default function AboutPage() {
           </p>
         </div>
       </Section>
+
+      <p className="mt-10 text-xs text-muted">
+        Version {CURRENT_VERSION.version} · <Link to="/versions">Version history</Link>
+      </p>
     </div>
   )
 }

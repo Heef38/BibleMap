@@ -6,6 +6,7 @@ import { Link, NavLink, useLocation, useNavigate, useNavigationType } from 'reac
 import { IconArrowLeft, IconArrowRight, IconBook, IconHeart, IconInfo, IconMessage, IconSparkle, IconMoon, IconPanelLeft, IconPanelRight, IconSearch, IconSettings, IconSun } from '@/components/common/icons'
 import BrandLogo from '@/components/common/BrandLogo'
 import { SITE } from '@/config/site'
+import { CURRENT_VERSION } from '@/config/versions'
 import { useSession } from '@/store/session'
 import { useSettings, type FontSize, type Theme } from '@/store/settings'
 import { useData } from '@/data/useData'
@@ -102,6 +103,11 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
           <Link to="/credits" onClick={onClose}>
             Data sources and licenses
           </Link>
+          <div className="mt-1">
+            <Link to="/versions" onClick={onClose}>
+              Version {CURRENT_VERSION.version}
+            </Link>
+          </div>
         </div>
       </div>
     </>
@@ -161,6 +167,14 @@ function WhatsNew() {
               <Link to="/feedback" onClick={() => setOpen(false)}>
                 Share it on the feedback board
               </Link>
+              {tab === 'new' && (
+                <div className="mt-1">
+                  Every change, version by version:{' '}
+                  <Link to="/versions" onClick={() => setOpen(false)}>
+                    Version history
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </>

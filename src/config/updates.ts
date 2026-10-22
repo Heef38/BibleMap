@@ -14,6 +14,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 'about-and-versions',
+    date: '2026-10-22',
+    title: 'Why Bible-Map exists, and a version history',
+    body: 'The About page now opens with what Bible-Map is for: helping believers at every stage learn and grow, and helping anyone who doesn’t believe see what we see. A new page lists every version of Bible-Map and what changed in each.',
+    link: { to: '/versions', label: 'See the version history' },
+  },
+  {
     id: 'writings',
     date: '2026-09-21',
     title: 'Writings, and the first one: how King Solomon handled his wealth',

@@ -25,6 +25,21 @@ export const SITE = {
    * confirm you own the site. Leave empty until you have them.
    */
   verification: { google: '', bing: '' },
+  /**
+   * What Bible-Map is for, the first section of the About page. DRAFT: written 2026-10-22 from the
+   * owner's brief and not yet approved by them.
+   */
+  purpose: [
+    'Bible-Map is here to help people see how the Bible fits together. Its sixty-six books were written by many people over many centuries, yet they tell one story about one God, and that story keeps pointing to Jesus.',
+    'It is for believers at every stage. If you are just starting, it shows you where to begin and how the pieces connect. If you have read the Bible for years, it shows you the patterns that run from Genesis to Revelation. If you study it closely, the detail is here too: every reference, names in Hebrew and Greek, and the threads between the Testaments. Wherever you start, the aim is the same: to know God better and to grow in following him.',
+    'It is just as much for anyone who doesn’t believe, or isn’t sure. You are welcome here. We hope you will see what we see: a book that holds together across the centuries, and a story that leads to a person. You don’t have to take our word for it. Every connection on the map points back to the text, so you can read it and judge for yourself.',
+    'Bible-Map doesn’t replace reading the Bible, a church, or the people who walk with you. It is a map. It shows you where things are, so you can go and read them for yourself.',
+  ],
+  /** The verse that closes that section, quoted from the Berean Standard Bible. */
+  purposeVerse: {
+    text: 'These are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in His name.',
+    ref: 'John 20:31',
+  },
   author: 'Heath',
   /** A few short paragraphs about you, shown on the About page. */
   aboutMe: [
