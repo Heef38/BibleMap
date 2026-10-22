@@ -2,7 +2,7 @@
 
 Visualize the connections of the Bible: people, places, themes, and the story that runs through them.
 
-BibleMap is a static web app. The left pane finds people, places, topics, events and verses, with a notebook under it; the Bible sits in the center in several public-domain translations; the right pane shows the visualizations beside it. Every view is a URL.
+BibleMap is a static web app. The left pane finds people, places, topics, events and verses, with the writings under it; the Bible sits in the center in several public-domain translations; the right pane shows the visualizations beside it. Every view is a URL.
 
 ## Running it
 
@@ -52,6 +52,16 @@ Any other static host still serves everything except the feedback board: `public
 | `api/`, `server/feedback.js` | The feedback board's Vercel Functions and the logic behind them (plain JavaScript with JSDoc types). |
 | `src/config/site.ts` | Owner name, About text, donation link. |
 | `src/config/studies.ts` | The shelves on the Studies page. A study not on a shelf lands under "More studies". |
+
+## Documentation
+
+| File | What it holds |
+|---|---|
+| `README.md` | How Bible-Map works, and how to run, build and deploy it (this file). |
+| `CHANGELOG.md` | What changed, version by version. The site shows it at `/versions`. |
+| `docs/roadmap.md` | What comes next, in order, and the rules every plan keeps. |
+| `docs/decisions.md` | Why things are the way they are, newest first. |
+| `docs/design.md` | Layout, type, color and the charts. |
 
 ## Adding a writing
 
@@ -203,7 +213,7 @@ Every person page has a timeline: their lifespan when the text gives it, the lif
 
 ## The panes
 
-On a desktop: search and notes on the left, the Bible in the center, and the right pane beside it.
+On a desktop: search and the writings on the left, the Bible in the center, and the right pane beside it.
 
 - The right pane shows the page you open (a study, a person, a place, the timeline). At rest it shows **This chapter** (`/`), which follows the reader: the chapter's outline, a connection map of the chapters its cross references land in (one branch per part of the Bible), its most connected verses, who and what it names, its events, the studies that pass through it, and its reach on the canon strip.
 - Clicking a verse in the Bible opens its **verse map** over the right pane: the verse, the people and places in it, the studies it is in, a map of its cross references by part of the Bible (strongest nearest the center), and the full list. A dot's popup reads the passage or moves the map to it. The page underneath stays as it was; the bar's back arrow, the ✕, or a second click on the verse returns to it. Jumps the page itself makes (clicking a reference in a study) move the Bible but do not open a verse map.
@@ -225,13 +235,23 @@ The site's name, address, tagline and description live in `src/config/site.ts`. 
 
 `/` focuses the search box, `[` hides or shows the search pane, `]` hides or shows the right pane. Both also have edge handles on the Bible.
 
+## Shipping a version
+
+Every push to `main` that changes what visitors see is a new version:
+
+1. Add it at the top of `CHANGELOG.md`: a heading such as `## 0.6 (2026-11-02)` with the day it goes live, one sentence, then a list of what changed. Links work (`[The Trinity](/study/trinity)`). A new feature or study takes the next minor number (0.6); a fix on its own takes a patch number (0.5.1).
+2. Set the same version in `package.json` (`0.6.0`). `pnpm test` fails if the two disagree, if a heading can't be read, or if the versions are out of order.
+3. Announce what readers should notice in What's new (below), and note any decision behind it in `docs/decisions.md`.
+
+The site reads `CHANGELOG.md` when it is built and lists every version at `/versions`; the current one is shown on the About page and in Settings.
+
 ## Announcing what's new
 
 When a study or feature ships, add an entry at the top of `src/config/updates.ts` (an id that never changes, the date, a title, a sentence, and an optional link). Readers see a dot on **What's new** in the header until they open it. A first-time visitor only gets the dot for entries from the last two weeks. For a new study, also add `added: "YYYY-MM-DD"` to its YAML: it is tagged **New** and listed first for 30 days.
 
 ## Phones
 
-Below 900px the panes become tabs (Explore, Read, Map), in the order of the desktop panes; the notes sit under Explore. Tapping a verse lists its connections under the text, with a Map button that opens the verse map on the Map tab. The book button in the header docks the Bible under the page instead, so a study and the text it points to are on screen together; drag the bar between them (or focus it and use the arrow keys) to resize. Both choices are remembered.
+Below 900px the panes become tabs (Explore, Read, Map), in the order of the desktop panes; the writings sit under Explore. Tapping a verse lists its connections under the text, with a Map button that opens the verse map on the Map tab. The book button in the header docks the Bible under the page instead, so a study and the text it points to are on screen together; drag the bar between them (or focus it and use the arrow keys) to resize. Both choices are remembered.
 
 ## Back and Forward
 
